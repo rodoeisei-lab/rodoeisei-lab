@@ -45,3 +45,16 @@ h2{margin:0 0 12px}
 .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.6rem;text-decoration:none}
 .btn-primary{background:#2563eb;color:#fff}
 .btn-outline{border:1px solid #d1d5db;color:#111;background:#fff}
+/* --- Mobile nav fix --- */
+@media (max-width: 720px) {
+  .nav{ height:auto; padding:8px 0; }             /* 高さを可変に */
+  .nav ul{
+    flex-wrap: nowrap;                             /* 折り返さない */
+    overflow-x: auto;                              /* 横スクロール許可 */
+    -webkit-overflow-scrolling: touch;             /* iOS慣性スクロール */
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .nav li{ flex: 0 0 auto; }                       /* 各項目の幅を縮めすぎない */
+  .nav a{ white-space: nowrap; }                   /* 1文字ずつ改行させない */
+}
