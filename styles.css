@@ -42,3 +42,6 @@ h2{margin:0 0 12px}
 .meta p{margin:2px 0 0;color:var(--muted)}
 .site-footer{border-top:1px solid #eee;padding:24px 0;font-size:14px;color:var(--muted)}
 .site-footer .container{display:flex;align-items:center;gap:16px;justify-content:space-between;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.6rem;text-decoration:none}
+.btn-primary{background:#2563eb;color:#fff}
+.btn-outline{border:1px solid #d1d5db;color:#111;background:#fff}
