@@ -3,129 +3,163 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>作業環境測定士の情報発信 | 労働衛生×AI</title>
-  <meta name="description" content="作業環境測定・フィットテスト・局所排気・労働衛生の知見を発信する匿名サイト。YouTube / X / note / はてなブログへのリンク集。">
-  <meta property="og:title" content="作業環境測定士の情報発信 | 労働衛生×AI">
-  <meta property="og:description" content="作業環境測定・フィットテスト・局所排気・労働衛生の知見を発信する匿名サイト。YouTube / X / note / はてなブログへのリンク集。">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="og.jpg">
-  <meta property="og:locale" content="ja_JP">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "労働衛生×AI",
-    "description": "作業環境測定・フィットテスト・局所排気・労働衛生の知見を発信する匿名サイト。YouTube / X / note / はてなブログへのリンク集。",
-    "url": "https://example.github.io/",
-    "sameAs": ["https://www.youtube.com/@%E5%8A%B4%E5%83%8D%E8%A1%9B%E7%94%9FAI%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB","https://x.com/rodoeiseiai","https://note.com/eisei_ai_channel","https://roudoueisei-ai.hatenablog.com/"]
-  }
-  </script>
+  <title>労働衛生ラボ｜作業環境を「測って、下げる」</title>
+  <meta name="description" content="粉じん・有機溶剤・特定化学物質の作業環境測定から、対策提案まで一気通貫で支援します。">
+  <link rel="icon" href="./favicon.ico">
+  <meta property="og:title" content="労働衛生ラボ">
+  <meta property="og:description" content="作業環境を「測って、下げる」。測定→見える化→改善まで。">
+  <meta property="og:image" content="./og.jpg">
+  <style>
+    :root{
+      --ink:#0E2431; --bg:#F7FAFC; --paper:#fff; --accent:#1E88E5;
+      --container:1120px; --space:8px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--ink); background:var(--bg);
+      font-family: system-ui,-apple-system,"BIZ UDPGothic","Noto Sans JP",sans-serif;
+      font-size:clamp(16px,1.6vw,18px); line-height:1.8;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--container); margin:0 auto; padding:0 16px}
+    .section{padding:clamp(32px,6vw,88px) 0}
+    .prose{line-break:strict; font-feature-settings:"palt" 1}
+
+    /* Header */
+    .site-header{background:var(--paper); position:sticky; top:0; z-index:10; box-shadow:0 1px 6px rgba(0,0,0,.06)}
+    .hdr{display:flex; gap:16px; align-items:center; justify-content:space-between; height:56px}
+    .logo{font-weight:800}
+    .nav{display:flex; gap:16px; align-items:center}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:12px;
+      background:var(--accent); color:#fff; font-weight:700
+    }
+    .btn:hover{opacity:.9}
+
+    /* Hero */
+    h1,h2,h3{line-height:1.3; margin:24px 0 16px}
+    h1{font-size:clamp(28px,4vw,40px); letter-spacing:-0.01em}
+    h2{font-size:clamp(22px,2.6vw,28px)}
+    .lead{font-size:clamp(16px,1.9vw,19px)}
+    .grid{display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .hero{background:linear-gradient(180deg, #ffffff 0%, #F7FAFC 100%)}
+    .hero-img{width:100%; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    .hero-cta{margin-top:16px}
+
+    /* Cards & sections */
+    .card{background:var(--paper); border-radius:12px; padding:24px; box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .alt{background:#F3F7FB}
+    .stats .card strong{display:block; margin-bottom:6px}
+
+    /* Footer */
+    .site-footer{background:#0B1A24; color:#BFD2DF}
+    .ftr{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:24px 0}
+    .site-footer a{color:#D6E6F2}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="#top" aria-label="トップへ">労働衛生×AI</a>
-      <button class="menu-btn" aria-expanded="false" aria-controls="nav">メニュー</button>
-      <nav id="nav" class="nav">
-        <a href="#about">サイトについて</a>
-        <a href="#links">リンク</a>
-        <a href="#contact">お問い合わせ</a>
-      </nav>
-<a class="btn btn-primary" href="./sagyokankyo.html">作業環境測定とは？</a>
+<header class="site-header">
+  <div class="container hdr">
+    <a class="logo" href="./">労働衛生ラボ</a>
+    <nav class="nav">
+      <a href="#services">サービス</a>
+      <a href="#cases">実績</a>
+      <a href="./sagyokankyo.html">作業環境測定</a>
+      <a class="btn" href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ヒーロー -->
+  <section class="section hero">
+    <div class="container grid" style="align-items:center;">
+      <div>
+        <h1>作業環境の“ばく露リスク”を、<br>測って下げる。</h1>
+        <p class="lead prose">
+          粉じん・有機溶剤・特化物の測定から、換気や手順の見直しまで。
+          データに基づく改善で、現場の安全と生産性を両立します。
+        </p>
+        <p class="hero-cta">
+          <a class="btn" href="#contact">相談する</a>
+          <a style="margin-left:8px" href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">Xを見る</a>
+          <a style="margin-left:8px" href="https://www.youtube.com/@rodoeisei-ai" target="_blank" rel="noopener">YouTube</a>
+        </p>
+      </div>
+      <div>
+        <img src="./og.jpg" alt="作業環境測定の現場イメージ" class="hero-img">
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container">
-        <span class="badge">匿名</span>
-        <h1>作業環境測定士の情報発信</h1>
-        <p class="lead">作業環境測定・フィットテスト・局所排気・労働衛生の実務に役立つ内容を、動画と記事でわかりやすく届けます。</p>
-        <div class="cta">
-          <a class="btn primary" href="#links">公式リンクを開く</a>
-          <a class="btn ghost" href="https://www.youtube.com/@%E5%8A%B4%E5%83%8D%E8%A1%9B%E7%94%9FAI%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB" target="_blank" rel="noopener nofollow">YouTubeへ</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section alt">
-      <div class="container">
-        <h2>このサイトについて</h2>
-        <p>本サイトは、労働衛生の一次情報や現場ノウハウを、<strong>プラットフォーム横断</strong>で発信するためのハブです。個人名は出さず、内容で評価される形を目指します。</p>
-        <ul class="ticks">
-          <li>テーマ例：粉じん・有機溶剤・特化則・局所排気・フィットテスト（QNFT）</li>
-          <li>ゴール：安全と生産性の両立、実装できる運用設計</li>
-          <li>更新：動画／記事を中心に、週1目安</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="links" class="section">
-      <div class="container">
-        <h2>公式リンク</h2>
-        <div class="grid cards">
-          <a class="card linkcard" href="https://www.youtube.com/@%E5%8A%B4%E5%83%8D%E8%A1%9B%E7%94%9FAI%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB" target="_blank" rel="noopener">
-            <div class="icon yt" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8Z" fill="currentColor"></path><path d="M9.75 8.5v7l6.5-3.5-6.5-3.5z" fill="#fff"></path></svg>
-            </div>
-            <div class="meta">
-              <h3>YouTube</h3>
-              <p>労働衛生×AIチャンネル</p>
-            </div>
-          </a>
-
-          <a class="card linkcard" href="https://x.com/rodoeiseiai" target="_blank" rel="noopener">
-            <div class="icon x">
-              <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M18.244 3H21L13.5 11.06 22 21h-6.104l-5.01-5.86L4.9 21H2l7.98-9.08L2 3h6.18l4.64 5.41L18.244 3Zm-2.136 16.2h2.04L7.98 4.7H5.84l10.268 14.5Z"/></svg>
-            </div>
-            <div class="meta">
-              <h3>X（Twitter）</h3>
-              <p>@rodoeiseiai</p>
-            </div>
-          </a>
-
-          <a class="card linkcard" href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener">
-            <div class="icon note">
-              <svg viewBox="0 0 24 24" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="3" ry="3" fill="currentColor"/></svg>
-            </div>
-            <div class="meta">
-              <h3>note</h3>
-              <p>eisei_ai_channel</p>
-            </div>
-          </a>
-
-          <a class="card linkcard" href="https://roudoueisei-ai.hatenablog.com/" target="_blank" rel="noopener">
-            <div class="icon hatena">
-              <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>
-            </div>
-            <div class="meta">
-              <h3>はてなブログ</h3>
-              <p>roudoueisei-ai</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section alt">
-      <div class="container">
-        <h2>お問い合わせ</h2>
-        <p>ご連絡は各プラットフォームのDMやコメントをご利用ください。個人情報の送信はお控えください。</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
+  <!-- 信頼の根拠 -->
+  <section class="section">
     <div class="container">
-      <small>© <span id="year"></span> 労働衛生×AI</small>
-      <nav aria-label="フッターナビ">
-        <a href="#top">トップへ戻る</a>
-      </nav>
+      <h2>法令対応とエビデンスで、安心を担保</h2>
+      <div class="grid stats">
+        <div class="card"><strong>対応領域</strong><p class="prose">粉じん／有機溶剤／特定化学物質／金属等</p></div>
+        <div class="card"><strong>提供範囲</strong><p class="prose">測定計画→サンプリング→分析→改善提案→再測定</p></div>
+        <div class="card"><strong>方針</strong><p class="prose">“見える化”とPDCA。過不足ない対策でコスト最適化。</p></div>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- サービス -->
+  <section id="services" class="section alt">
+    <div class="container">
+      <h2>サービス</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>粉じん測定</h3>
+          <p class="prose">高リスク現場でも、原因特定から改善案まで同線で支援。管理区分の改善を再測定で確認。</p>
+          <p><a href="./sagyokankyo.html#dust">詳しく見る →</a></p>
+        </article>
+        <article class="card">
+          <h3>有機溶剤</h3>
+          <p class="prose">GCで定量。調合・洗浄・塗装・乾燥など工程別にばく露を可視化し、置換や換気を設計。</p>
+          <p><a href="./sagyokankyo.html#solvents">詳しく見る →</a></p>
+        </article>
+        <article class="card">
+          <h3>特化則・金属</h3>
+          <p class="prose">特定化学物質・金属の測定と評価。リスクに応じて優先度と実装手順を明確化。</p>
+          <p><a href="./sagyokankyo.html#specific">詳しく見る →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 実績 -->
+  <section id="cases" class="section">
+    <div class="container">
+      <h2>実績（抜粋）</h2>
+      <div class="grid">
+        <div class="card"><strong>塗装ブース</strong><p class="prose">換気設計の見直しで管理区分を改善。再測定で効果を確認。</p></div>
+        <div class="card"><strong>研磨工程</strong><p class="prose">粉じん対策の運用ルール化で、ばく露低減と品質を両立。</p></div>
+        <div class="card"><strong>洗浄工程</strong><p class="prose">溶剤置換＋局排メンテ計画を導入し、濃度を安定的に低下。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <h2>お問い合わせ</h2>
+      <p class="prose">状況（工程・物質・希望時期）を書ける範囲でお知らせください。</p>
+      <p style="margin-top:12px;">
+        <a class="btn" href="mailto:sample@example.com">メールで相談する</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container ftr">
+    <small>© 労働衛生ラボ｜作業環境測定・改善支援</small>
+    <a href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">X</a>
+  </div>
+</footer>
 </body>
 </html>
