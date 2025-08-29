@@ -2,10 +2,58 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>労働衛生ラボ｜作業環境を「測って、下げる」</title>
+  <title>労働衛生ラボ｜公式サイト｜作業環境測定・フィットテスト</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="粉じん・有機溶剤・特定化学物質の作業環境測定から、換気や手順の見直しまで。データに基づく改善で、現場の安全と生産性を両立します。愛知・岐阜・三重（他地域も応相談）。">
+  <meta name="description" content="作業環境測定士が、粉じん・有機溶剤・特定化学物質の測定から換気・手順の見直しまで“ばく露リスク”を下げる実務を支援。労働衛生×AIチャンネルの公式サイト。愛知・岐阜・三重（他地域も応相談）。">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://rodoeisei-lab.github.io/rodoeisei-lab/">
+  <link rel="icon" href="/rodoeisei-lab/favicon.ico">
+
+  <!-- OGP/Twitter -->
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="労働衛生ラボ（労働衛生×AIチャンネル）">
+  <meta property="og:title" content="労働衛生ラボ｜公式サイト｜作業環境測定・フィットテスト">
+  <meta property="og:description" content="粉じん・有機溶剤・特化物の測定から換気・手順見直しまで。現場の安全と生産性を両立します。">
+  <meta property="og:url" content="https://rodoeisei-lab.github.io/rodoeisei-lab/">
+  <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="労働衛生ラボ｜公式サイト｜作業環境測定・フィットテスト">
+  <meta name="twitter:description" content="粉じん・有機溶剤・特化物の測定から換気・手順見直しまで。現場の安全と生産性を両立します。">
+  <meta name="twitter:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
+
+  <!-- Schema.org（Organization + WebSite）-->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"労働衛生ラボ",
+    "alternateName":"労働衛生×AIチャンネル",
+    "url":"https://rodoeisei-lab.github.io/rodoeisei-lab/",
+    "email":"rodoeiseiai@gmail.com",
+    "sameAs":[
+      "https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw",
+      "https://x.com/rodoeiseiai?s=21",
+      "https://note.com/eisei_ai_channel",
+      "https://roudoueisei-ai.hatenablog.com/"
+    ],
+    "logo":"https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://rodoeisei-lab.github.io/rodoeisei-lab/",
+    "name":"労働衛生ラボ",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.google.com/search?q=site:rodoeisei-lab.github.io+{query}",
+      "query-input":"required name=query"
+    }
+  }
+  </script>
+
   <style>
     :root{
       --bg:#fff; --ink:#0a0a0a; --sub:#4a4a4a; --line:#e5e7eb; --brand:#0f766e; --brand-ink:#fff;
@@ -36,48 +84,20 @@
     .links{display:flex; flex-wrap:wrap; gap:12px}
     .muted{color:var(--sub)}
   </style>
-
-  <!-- Organization schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"労働衛生ラボ",
-    "url":"https://rodoeisei-lab.github.io/rodoeisei-lab/",
-    "email":"rodoeiseiai@gmail.com",
-    "sameAs":[
-      "https://x.com/rodoeiseiai?s=21",
-      "https://note.com/eisei_ai_channel",
-      "https://roudoueisei-ai.hatenablog.com/"
-    ]
-  }
-  </script>
-
-  <!-- FAQ schema（任意） -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"いつまでに実施が必要？","acceptedAnswer":{"@type":"Answer","text":"対象作業は定期実施が必要です。監督署や社内監査の前にご相談ください。"}},
-      {"@type":"Question","name":"におい・粉っぽさを減らしたい","acceptedAnswer":{"@type":"Answer","text":"強い時間帯／場所を特定し、換気・手順を見直します。効果は再測定で確認します。"}},
-      {"@type":"Question","name":"初めてで依頼内容が曖昧でも大丈夫？","acceptedAnswer":{"@type":"Answer","text":"ヒアリング→対象の仮決め→最小構成での実施が可能です。"}}
-    ]
-  }
-  </script>
 </head>
 <body>
   <header>
     <div class="wrap nav" aria-label="サイト内メニュー">
       <a class="logo" href="./">労働衛生ラボ</a>
-      <nav>
+      <nav aria-label="グローバルナビ">
         <ul>
           <li><a href="#service">サービス</a></li>
           <li><a href="#works">実績</a></li>
           <li><a href="sagyokankyo.html">作業環境測定</a></li>
-          <li><a href="#media">メディア</a></li><!-- 追加 -->
+          <li><a href="./mask/">マスク入門（フィットテスト・防じん）</a></li>
+          <li><a href="#media">メディア</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
-          <a href="./mask/">マスク入門（フィットテスト・防じん）</a>
+          <li><a href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener">YouTube</a></li>
         </ul>
       </nav>
     </div>
@@ -89,12 +109,12 @@
       <h1 id="hero-title">作業環境の「ばく露リスク」を、<br>測って下げる。</h1>
       <p>粉じん・有機溶剤・特定化学物質の測定から、換気や手順の見直しまで。データに基づく改善で、現場の安全と生産性を両立します。</p>
       <p>
-        <!-- シンプルで確実なメールCTA -->
         <a class="cta" href="mailto:rodoeiseiai@gmail.com">メールで相談（24h受付）</a>
       </p>
       <p class="muted">対応：愛知・岐阜・三重（他地域もご相談ください）</p>
-      <p>
-        <a href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">Xを見る</a>
+      <p class="muted">
+        <a href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener">YouTube</a> ／
+        <a href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">X</a>
       </p>
     </section>
 
@@ -125,18 +145,22 @@
       </div>
     </section>
 
-    <!-- ここが追加：メディア紹介（note／はてな） -->
     <section id="media" aria-labelledby="media-title">
       <h2 id="media-title">メディア</h2>
       <div class="grid">
         <article class="card">
-          <h3>note（労働衛生×AIチャンネル）</h3>
+          <h3>YouTube（労働衛生×AIチャンネル）</h3>
+          <p>作業環境測定やフィットテスト、衛生管理者対策の動画を公開中。</p>
+          <p><a href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener">チャンネルを見る</a></p>
+        </article>
+        <article class="card">
+          <h3>note</h3>
           <p>測定ノウハウやスライド裏話、実務の工夫を短く深く。現場ですぐ試せるTips多めです。</p>
           <p><a href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener">note を読む</a></p>
         </article>
         <article class="card">
-          <h3>はてなブログ（現場ログ）</h3>
-          <p>粉じん・有機溶剤・特化物の“やってみて分かったこと”を実務目線で記録しています。</p>
+          <h3>はてなブログ</h3>
+          <p>粉じん・有機溶剤・特化物の“やってみて分かったこと”を実務目線で記録。</p>
           <p><a href="https://roudoueisei-ai.hatenablog.com/" target="_blank" rel="noopener">はてなブログを見る</a></p>
         </article>
       </div>
@@ -146,8 +170,6 @@
       <h2 id="contact-title">お問い合わせ</h2>
       <p>状況（工程・物質・希望時期）を書ける範囲でお知らせください。</p>
       <p><a class="cta" href="mailto:rodoeiseiai@gmail.com">メールで相談する</a></p>
-      <!-- 予備：件名付きで開く（必要なら有効化） -->
-      <!-- <p><a href="mailto:rodoeiseiai@gmail.com?subject=%E3%80%90%E7%9B%B8%E8%AB%87%E3%80%91%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E6%B8%AC%E5%AE%9A">件名付きで開く</a></p> -->
       <p class="muted">宛先：rodoeiseiai@gmail.com</p>
     </section>
   </main>
@@ -156,6 +178,7 @@
     <div class="wrap">
       <div class="links">
         <a href="https://rodoeisei-lab.github.io/rodoeisei-lab/" target="_blank" rel="noopener">公式サイト</a>
+        <a href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener">YouTube</a>
         <a href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">X</a>
         <a href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener">note</a>
         <a href="https://roudoueisei-ai.hatenablog.com/" target="_blank" rel="noopener">はてなブログ</a>
