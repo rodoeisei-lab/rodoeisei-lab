@@ -47,6 +47,31 @@
     /* スクロールバーを隠したい場合（任意） */
     .cta.scroll-row::-webkit-scrollbar{ display:none; }
     .cta.scroll-row{ scrollbar-width: none; }
+  /* === CTA（上の3ボタン）だけ横スワイプに強制 === */
+.hero .cta.scroll-row{
+  display: flex !important;         /* 既存の縦積みを無効化 */
+  flex-wrap: nowrap !important;
+  gap: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  touch-action: pan-x;
+  margin: 0;
+  padding: 0 0 6px 0;
+}
+.hero .cta.scroll-row > a.btn,
+.hero .cta.scroll-row > .btn{
+  /* ボタンを“横並びアイテム”化（100%幅の上書き） */
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: 85vw;                   /* 画面に納まらない → 横スクロールが出る */
+  white-space: nowrap;
+  scroll-snap-align: start;
+}
+/* スクロールバー非表示（好みで） */
+.hero .cta.scroll-row::-webkit-scrollbar{ display:none; }
+.hero .cta.scroll-row{ scrollbar-width:none; }
   </style>
 </head>
 
