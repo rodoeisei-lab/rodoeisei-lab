@@ -2,10 +2,22 @@
 <meta charset="utf-8"><title>最新アップデート｜労働衛生ラボ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/rodoeisei-lab/styles.css">
+<style>
+  /* このページ専用の軽い装飾 */
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 20px}
+  .filterbtn{font-size:13px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;text-decoration:none;color:var(--fg)}
+  .filterbtn.active{border-color:var(--accent);color:var(--accent)}
+  .update-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;display:grid;gap:10px}
+  .update-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .update-head .date{margin-left:auto;color:var(--muted);font-size:12px}
+  .update-card h3{margin:0}
+  details summary{cursor:pointer;list-style:none}
+  details summary::-webkit-details-marker{display:none}
+</style>
 </head><body>
 <header class="site-header"><div class="container">
   <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
-  <nav class="main-nav"><ul>
+  <nav class="main-nav" aria-label="メインメニュー"><ul>
     <li><a href="/rodoeisei-lab/guides/">解説</a></li>
     <li><a href="/rodoeisei-lab/videos/">動画</a></li>
     <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
@@ -18,18 +30,100 @@
 
 <section class="section"><div class="container">
   <h1>最新アップデート</h1>
-  <div class="card-grid">
-    <article class="card">
-      <div class="meta"><span class="badge impact-high">影響：高</span><span class="readtime">更新日：—</span></div>
-      <h3>（例）〇〇則改正の要点</h3>
-      <ul class="list">
-        <li>何が変わる？（一文要約）</li>
-        <li>誰に影響？（対象と猶予）</li>
-        <li>いつから？（施行・経過措置）</li>
-        <li>最小ToDo（チェックリスト）</li>
-      </ul>
-    </article>
+  <p class="note">対象：労安衛法・関連則（有機溶剤/粉じん/特化物など）、厚労省通達・告示、PPE関連JIS/ISO 等。<br>表示は「要点→影響→最小ToDo」で統一。</p>
+
+  <!-- フィルタ（影響度） -->
+  <div class="toolbar" role="toolbar" aria-label="影響度で絞り込み">
+    <a href="#" data-filter="all" class="filterbtn active">すべて</a>
+    <a href="#" data-filter="high" class="filterbtn">影響：高</a>
+    <a href="#" data-filter="mid" class="filterbtn">影響：中</a>
+    <a href="#" data-filter="low" class="filterbtn">影響：低</a>
   </div>
+
+  <div class="card-grid">
+
+    <!-- （例）サンプル：熱中症関連の運用強化 ※本文はダミー。差し替えて使ってね。 -->
+    <article class="update-card" data-impact="mid">
+      <div class="update-head">
+        <span class="badge impact-mid">影響：中</span>
+        <span class="date">更新日：2025-06-01</span>
+      </div>
+      <h3>（例）熱中症対策：運用強化の要点</h3>
+      <ul class="list">
+        <li><strong>何が変わる？</strong> 事前の作業計画・WBGTの記録・休憩基準の明確化を推奨（例）。</li>
+        <li><strong>誰に影響？</strong> 屋内外の高温作業、季節要因の強い工程。</li>
+        <li><strong>いつから？</strong> 施行・経過措置に注意（例）。</li>
+      </ul>
+      <details>
+        <summary class="btn">最小ToDoを開く</summary>
+        <ul class="list">
+          <li>WBGT測定の計画表を作る（誰が・いつ・どこで）。</li>
+          <li>休憩・給水の基準表を作り、現場に掲示。</li>
+          <li>作業計画と記録の保存先を決める。</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- （例）フィットテスト運用メモ ※本文はダミー -->
+    <article class="update-card" data-impact="high">
+      <div class="update-head">
+        <span class="badge impact-high">影響：高</span>
+        <span class="date">更新日：2024-04-01</span>
+      </div>
+      <h3>（例）フィットテスト：実施・記録の運用ポイント</h3>
+      <ul class="list">
+        <li><strong>何が変わる？</strong> 年1回の実施・結果の保存を推奨（例）。</li>
+        <li><strong>誰に影響？</strong> 防じん/有機用の密着型マスクを使う業務。</li>
+        <li><strong>いつから？</strong> 運用開始時期・猶予を確認（例）。</li>
+      </ul>
+      <details>
+        <summary class="btn">最小ToDoを開く</summary>
+        <ul class="list">
+          <li>実施対象者リストを作る（新規入場者・型式変更者を含む）。</li>
+          <li>QNFT/QNFTの方式と機器の手配を決める。</li>
+          <li>結果台帳の様式を決め、保存年限を明記。</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- （例）有機溶剤の周知事項 ※本文はダミー -->
+    <article class="update-card" data-impact="low">
+      <div class="update-head">
+        <span class="badge impact-low">影響：低</span>
+        <span class="date">更新日：2024-10-15</span>
+      </div>
+      <h3>（例）有機溶剤：ラベル/ SDS 表記の微修正</h3>
+      <ul class="list">
+        <li><strong>何が変わる？</strong> 表記の統一・注意喚起文言の更新（例）。</li>
+        <li><strong>誰に影響？</strong> SDS更新が必要な取扱事業場。</li>
+        <li><strong>いつから？</strong> 在庫切替の経過措置あり（例）。</li>
+      </ul>
+      <details>
+        <summary class="btn">最小ToDoを開く</summary>
+        <ul class="list">
+          <li>仕入先から最新版SDSを取得し、版数を確認。</li>
+          <li>ラベル印刷のテンプレ更新。</li>
+          <li>現場掲示物の差し替え計画を作成。</li>
+        </ul>
+      </details>
+    </article>
+
+  </div>
+
+  <p class="note" style="margin-top:18px">※上の3件は“型の見本”です。実際の法令・通達内容で差し替えて使ってください。</p>
 </div></section>
+
+<script>
+  // 影響度フィルタ（超軽量）
+  const cards = () => Array.from(document.querySelectorAll('.update-card'));
+  const btns  = () => Array.from(document.querySelectorAll('[data-filter]'));
+  btns().forEach(b => b.addEventListener('click', e => {
+    e.preventDefault();
+    const v = b.dataset.filter;
+    cards().forEach(c => c.style.display = (v==='all'||c.dataset.impact===v)?'grid':'none');
+    btns().forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  }));
+</script>
 
 </body></html>
