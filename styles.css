@@ -43,3 +43,13 @@ body{margin:0;background:var(--bg);color:var(--fg);
 .site-footer .muted{color:var(--muted);margin:0}
 .list{display:grid;gap:10px;padding-left:20px}
 .note{font-size:14px;color:var(--muted)}
+/* --- Mobile nav: 1文字ずつ折れるのを防ぐ（横スクロール可） --- */
+@media (max-width: 768px){
+  .main-nav ul{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .main-nav a{ white-space: nowrap; }
+}
