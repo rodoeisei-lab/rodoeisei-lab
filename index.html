@@ -72,6 +72,37 @@
 /* スクロールバー非表示（好みで） */
 .hero .cta.scroll-row::-webkit-scrollbar{ display:none; }
 .hero .cta.scroll-row{ scrollbar-width:none; }
+  /* === ヘッダーメニューを横スクロール可能に（モバイル優先） === */
+@media (max-width: 900px){
+  .site-header .main-nav{ overflow: hidden; }
+
+  .site-header .main-nav ul{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+    margin: 0;                /* 不要なはみ出し防止 */
+    padding: 8px 0 10px;
+    overflow-x: auto;         /* ← 横スクロールの本体 */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    scroll-snap-type: x proximity;
+  }
+
+  .site-header .main-nav li{
+    list-style: none;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .site-header .main-nav a{
+    display: inline-block;    /* 幅が縮まらないように */
+    white-space: nowrap;
+  }
+
+  /* スクロールバーを隠したい場合（任意） */
+  .site-header .main-nav ul::-webkit-scrollbar{ display:none; }
+  .site-header .main-nav ul{ scrollbar-width: none; }
+}
   </style>
 </head>
 
