@@ -45,9 +45,22 @@
     margin-inline:calc(var(--page-pad) * -1); padding-inline:var(--page-pad); padding-bottom:6px;
   }
   .scroll-row > *{ scroll-snap-align:start; }
+/* CTAを横スワイプ化：1枚の幅を強めに確保して必ず横に流す */
+.cta.scroll-row{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 70%); /* ←1枚の幅。狭い画面でも横に流れる */
+  gap: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  margin-inline: calc(var(--page-pad) * -1);
+  padding-inline: var(--page-pad);
+  padding-bottom: 6px;
+}
+.cta.scroll-row > *{ scroll-snap-align: start; }
 </style>
 <!-- ▲ここまで追加 -->
-</head>
 </head>
 <body>
 
@@ -72,7 +85,7 @@
   <div class="container">
     <h1>現場と法令の「<span class="accent">あいだ</span>」をつなぐ学習サイト。</h1>
     <p class="sub">粉じん・有機溶剤・資格対策まで、<span class="accent">毎週更新</span>。</p>
-    <div class="cta">
+    <div class="cta scroll-row">
       <a class="btn primary" href="/rodoeisei-lab/guides/#this-week">今週の解説</a>
       <a class="btn" href="/rodoeisei-lab/videos/">YouTubeへ</a>
       <a class="btn" href="/rodoeisei-lab/sns/">SNSリンク集</a>
