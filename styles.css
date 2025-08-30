@@ -53,3 +53,73 @@ body{margin:0;background:var(--bg);color:var(--fg);
   }
   .main-nav a{ white-space: nowrap; }
 }
+/* ====== Color tokens (add) ====== */
+:root{
+  --accent-10:#fff1f5;  /* アクセントの超淡色 */
+  --accent-20:#ffe4ea;  /* ほんのり色面 */
+  --bg-soft:#fffdfd;
+  --shadow:0 10px 25px rgba(0,0,0,.05),0 2px 8px rgba(0,0,0,.04);
+}
+
+/* ====== Header: 固定＆にじみガラス、縦割れ防止 ====== */
+.site-header{
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(140%) blur(8px);
+}
+.brand{ white-space: nowrap; writing-mode: horizontal-tb; }
+.main-nav a{ white-space: nowrap; writing-mode: horizontal-tb; }
+
+/* モバイル：横スクロールで崩れ防止 */
+@media (max-width: 768px){
+  .main-nav ul{
+    flex-wrap: nowrap; gap: 12px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+  }
+}
+
+/* ====== Hero: 淡い色面＋コーナー装飾 ====== */
+.hero{
+  padding: 72px 0 56px;
+  background: linear-gradient(180deg,var(--accent-10),#fff 55%);
+  position: relative; overflow: hidden; border-bottom: 1px solid var(--border);
+}
+.hero::before,
+.hero::after{
+  content:""; position:absolute; border-radius:50%; pointer-events:none; filter: blur(8px);
+}
+.hero::before{ /* 右上のやわらかい色面 */
+  width:360px; height:360px; right:-120px; top:-140px;
+  background: radial-gradient(circle at 30% 30%, var(--accent-20), transparent 60%);
+}
+.hero::after{  /* 左下のさりげない色面 */
+  width:300px; height:300px; left:-140px; bottom:-160px;
+  background: radial-gradient(circle at 70% 70%, #ffeef2, transparent 60%);
+}
+
+/* ====== セクションと見出しのコントラスト強化 ====== */
+.section{ padding: 40px 0; }
+.section.alt{ background: #fff8fb; } /* 薄い色帯にしたい時に使うクラス */
+h2{ position:relative; padding-left:10px; }
+h2::before{
+  content:""; position:absolute; left:0; top:0.48em;
+  width:6px; height:0.9em; border-radius:3px; background: var(--accent);
+}
+
+/* ====== カードの立ち上がり（ホバー） ====== */
+.card{
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  background:#fff;
+}
+
+/* ====== ボタンのコントラストを少し上げる ====== */
+.btn.primary{ box-shadow: 0 3px 8px rgba(225,29,72,.18); }
+.btn{ transition: transform .15s ease, box-shadow .15s ease; }
+.btn:hover{ transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,.06); }
+
+/* ====== フッターの色面 ====== */
+.site-footer{ background: #fff7fa; }
