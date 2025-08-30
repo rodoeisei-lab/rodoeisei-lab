@@ -12,76 +12,44 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
   <link rel="stylesheet" href="/rodoeisei-lab/styles.css">
-<link rel="stylesheet" href="/rodoeisei-lab/…/styles.css">
-<!-- ▼ここから追加 -->
-<style>
-  *{ box-sizing:border-box; }
-  html,body{ width:100%; overflow-x:hidden; }   /* 横はみ出し封じ */
-  img,iframe,video{ max-width:100%; height:auto; display:block; }
 
-  :root{ --page-pad:clamp(16px,4vw,24px); --content:960px; }
-  .container{ max-width:var(--content); margin-inline:auto; padding-inline:var(--page-pad); }
+  <!-- 追加CSS（横はみ出し防止＋CTAだけ横スワイプ） -->
+  <style>
+    /* はみ出しの根治 */
+    *{ box-sizing: border-box; }
+    html,body{ width:100%; overflow-x:hidden; }
+    img,iframe,video{ max-width:100%; height:auto; display:block; }
 
-  .hero{
-    display:grid; gap:clamp(12px,2vw,20px);
-    grid-template-columns:1fr; margin-inline:auto; padding-inline:var(--page-pad);
-  }
-  @media (min-width:800px){ .hero{ grid-template-columns:1.2fr 1fr; } }
+    /* 余白の基準（既存CSSと競合しにくいように軽めに） */
+    :root{ --page-pad: clamp(16px,4vw,24px); --content: 960px; }
+    .container{ max-width: var(--content); margin-inline:auto; padding-inline: var(--page-pad); }
 
-  .hero-card{
-    width:100%; max-width:100%;
-    border-radius:16px;
-    padding:clamp(16px,4vw,28px);
-    background:linear-gradient(180deg,#ffeef3 0%,#fff 60%);
-  }
+    /* ヒーローの行間だけ微調整（任意） */
+    .hero h1{ line-height: 1.25; }
+    .hero .sub{ margin-top: .25rem; }
 
-  .hero-btns{ display:flex; gap:10px; flex-wrap:wrap; }
-  .hero-btns a, .hero-btns button{ white-space:nowrap; }
-
-  /* 横スワイプにしたい時だけ使う */
-  .scroll-row{
-    display:grid; grid-auto-flow:column; grid-auto-columns:max-content; gap:12px;
-    overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x proximity;
-    margin-inline:calc(var(--page-pad) * -1); padding-inline:var(--page-pad); padding-bottom:6px;
-  }
-  .scroll-row > *{ scroll-snap-align:start; }
-/* CTAを横スワイプ化：1枚の幅を強めに確保して必ず横に流す */
-.cta.scroll-row{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(220px, 70%); /* ←1枚の幅。狭い画面でも横に流れる */
-  gap: 12px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
-  margin-inline: calc(var(--page-pad) * -1);
-  padding-inline: var(--page-pad);
-  padding-bottom: 6px;
-}
-.cta.scroll-row > *{ scroll-snap-align: start; }
-/* --- CTA横スワイプ：安全版（切れない） --- */
-.cta.scroll-row{
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
-  touch-action: pan-x;
-
-  /* ここがポイント：はみ出しを無効化 */
-  margin: 0;
-  padding: 0 0 6px 0;
-}
-
-.cta.scroll-row > *{
-  /* 1個ずつの幅：必ず横に流れる */
-  flex: 0 0 clamp(200px, 60vw, 360px);
-  scroll-snap-align: start;
-  white-space: nowrap; /* ボタン文言の折返し防止 */
-}
-</style>
-<!-- ▲ここまで追加 -->
+    /* —— ここが主役：CTAだけ横スワイプ（安全版） —— */
+    .cta.scroll-row{
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      touch-action: pan-x;
+      margin: 0;               /* 端切れ防止：負のマージンは使わない */
+      padding: 0 0 6px 0;
+    }
+    .cta.scroll-row > *{
+      flex: 0 0 clamp(200px, 60vw, 360px); /* 1枚の幅を確保→必ず横に流れる */
+      scroll-snap-align: start;
+      white-space: nowrap; /* ボタン文言の折返し防止 */
+    }
+    /* スクロールバーを隠したい場合（任意） */
+    .cta.scroll-row::-webkit-scrollbar{ display:none; }
+    .cta.scroll-row{ scrollbar-width: none; }
+  </style>
 </head>
+
 <body>
 
 <header class="site-header">
@@ -105,6 +73,8 @@
   <div class="container">
     <h1>現場と法令の「<span class="accent">あいだ</span>」をつなぐ学習サイト。</h1>
     <p class="sub">粉じん・有機溶剤・資格対策まで、<span class="accent">毎週更新</span>。</p>
+
+    <!-- ★ここだけ横スワイプにする -->
     <div class="cta scroll-row">
       <a class="btn primary" href="/rodoeisei-lab/guides/#this-week">今週の解説</a>
       <a class="btn" href="/rodoeisei-lab/videos/">YouTubeへ</a>
@@ -126,7 +96,6 @@
         </div>
         <h3>作業環境測定の全体像：区分・手順・よくある誤解</h3>
         <p>管理区分、C/D測定の役割、現場で起きやすい落とし穴を図解で。</p>
-        <!-- 既存ページにリンク（sagyokankyo.html を活用） -->
         <a class="btn" href="/rodoeisei-lab/sagyokankyo.html">読む</a>
       </article>
 
@@ -158,7 +127,8 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p class="muted">© 労働衛生ラボ / リンク：<a href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">X</a>・
+    <p class="muted">© 労働衛生ラボ / リンク：
+      <a href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">X</a>・
       <a href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener">note</a>・
       <a href="https://roudoueisei-ai.hatenablog.com/" target="_blank" rel="noopener">はてなブログ</a></p>
   </div>
