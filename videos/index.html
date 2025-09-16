@@ -9,11 +9,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:100%;overflow-x:hidden}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;color:#222}
-
-  :root{
-    --primary:#d94e4e; --text:#1a1a1a; --muted:#6b7280;
-    --light:#fff; --bg:#f7f7f8; --max:1200px;
-  }
+  :root{ --primary:#d94e4e; --text:#1a1a1a; --muted:#6b7280; --light:#fff; --bg:#f7f7f8; --max:1200px; }
   .container{width:90%;max-width:var(--max);margin:0 auto}
 
   /* ヘッダー（簡略） */
@@ -26,7 +22,7 @@
   .nav a:hover{background:#efeff2}
 
   /* ヒーロー */
-  .hero{background:linear-gradient(135deg,#fbe4e6,#e8f0ff);padding:40px 0 24px;margin-bottom:6px}
+  .hero{background:linear-gradient(135deg,#fbe4e6,#e8f0ff);padding:40px 0 18px;margin-bottom:8px}
   .hero h1{font-size:1.6rem}
   .hero p{color:var(--muted);margin-top:6px}
 
@@ -50,7 +46,19 @@
   .btn:hover{filter:brightness(.98)}
   .hint{font-size:.9rem;color:var(--muted);margin-top:10px}
 
-  /* 画像など保険 */
+  /* クイックリンク（チップ） */
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+  .chip{display:inline-block;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #e5e7eb;text-decoration:none;color:#111}
+
+  /* リクエストカード & FAQ */
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px}
+  .card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 12px 28px rgba(0,0,0,.06)}
+  details{margin-top:6px}
+  summary{cursor:pointer;font-weight:700}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";margin-left:6px}
+  details[open] summary::after{content:"－"}
+
   img,iframe,video{max-width:100%;height:auto;display:block}
 </style>
 </head>
@@ -73,23 +81,19 @@
 <section class="hero">
   <div class="container">
     <h1>動画</h1>
-    <p>下のタブで再生リストを切り替えできます。新しく投稿した動画は「アップロード」へ自動反映されます。</p>
+    <p>タブで再生リストを切り替え。新しく投稿した動画は「アップロード」に自動反映されます。</p>
 
-    <!-- ▼ タブ（必要なものだけ残せばOK） -->
+    <!-- ▼タブ -->
     <div class="tabs" id="tabs">
-      <!-- アップロード一覧（固定で動く） -->
+      <!-- 固定：アップロード一覧（UC→UUに置換したID） -->
       <button class="tab" type="button" aria-selected="true"
         data-list="UUT2gRzcZrwl8W64LOGUb3cw">アップロード</button>
 
-      <!-- 例：任意の再生リスト（PL から始まるIDを入れると有効化） -->
+      <!-- 労働衛生（あなたの再生リスト） -->
       <button class="tab" type="button"
-        data-list="">法令アップデート（再生リスト）</button>
-
-      <!-- 例：任意の再生リストその2 -->
-      <button class="tab" type="button"
-        data-list="">資格対策（再生リスト）</button>
+        data-list="PLcX6JIIKYIDKWSlMpsZ1XMJc1dqtTozVr">労働衛生</button>
     </div>
-    <!-- ▲ タブ -->
+    <!-- ▲タブ -->
   </div>
 </section>
 
@@ -109,10 +113,45 @@
 
     <div class="player-actions">
       <a class="btn primary" href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw?sub_confirmation=1" target="_blank" rel="noopener">チャンネルを登録</a>
-      <a class="btn" href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw/videos" target="_blank" rel="noopener">YouTubeで見る</a>
+      <a class="btn" href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw/playlists" target="_blank" rel="noopener">YouTubeで見る</a>
     </div>
 
-    <p class="hint">もし再生できない場合：いちど <strong>YouTubeで見る</strong> を開くか、YouTube Studioで <em>埋め込みを許可</em> をONにしてください。</p>
+    <p class="hint">再生できない場合：いちど「YouTubeで見る」を開くか、YouTube Studioで <em>埋め込みを許可</em> をONにしてください。</p>
+  </div>
+
+  <!-- 関連リンク（ページ回遊） -->
+  <div class="chips">
+    <a class="chip" href="/rodoeisei-lab/updates/">最新アップデート解説</a>
+    <a class="chip" href="/rodoeisei-lab/guides/">記事まとめ</a>
+    <a class="chip" href="/rodoeisei-lab/licenses/">資格対策</a>
+  </div>
+
+  <!-- リクエスト & FAQ -->
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-bottom:6px;">動画のリクエスト</h3>
+      <p class="hint">「この法令をまとめて」「この作業のリスク評価も」など、気軽にどうぞ。</p>
+      <div style="margin-top:10px">
+        <a class="btn" href="/rodoeisei-lab/contact/">お問い合わせフォームへ</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-bottom:6px;">ヘルプ</h3>
+      <details>
+        <summary>再生が止まる／黒画面になる</summary>
+        <div class="hint" style="margin-top:8px">
+          1) モバイル通信→Wi-Fiに切替　2) YouTubeアプリで同じ動画が再生できるか確認　
+          3) 埋め込み許可がOFFの動画はYouTubeアプリで視聴してください。
+        </div>
+      </details>
+      <details>
+        <summary>「労働衛生」タブだけ空になる</summary>
+        <div class="hint" style="margin-top:8px">
+          再生リストを<strong>限定公開/公開</strong>にしているか、動画が再生リストに追加されているかをご確認ください。
+        </div>
+      </details>
+    </div>
   </div>
 </main>
 
@@ -121,7 +160,7 @@
 </footer>
 
 <script>
-  // --- 再生リスト切り替え ---
+  // 再生リスト切り替え
   const tabs = document.getElementById('tabs');
   const player = document.getElementById('ytPlayer');
 
@@ -129,18 +168,13 @@
     const btn = e.target.closest('.tab');
     if(!btn) return;
 
-    const list = btn.dataset.list.trim();
-    if(!list){
-      alert('このタブは、再生リストID（PLから始まるID）を設定すると有効になります。');
-      return;
-    }
-    // アクティブ表示
     [...tabs.querySelectorAll('.tab')].forEach(b=>b.setAttribute('aria-selected','false'));
     btn.setAttribute('aria-selected','true');
 
-    // 埋め込み先を切り替え
-    const url = `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(list)}`;
-    player.src = url;
+    const list = btn.dataset.list.trim();
+    player.src = `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(list)}`;
+    // 画面上部までスムーズに戻す（スマホでの使い勝手）
+    document.querySelector('.player-wrap').scrollIntoView({behavior:'smooth', block:'start'});
   });
 </script>
 
