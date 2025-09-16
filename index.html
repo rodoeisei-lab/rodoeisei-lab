@@ -279,6 +279,13 @@
         align-items: center;
       }
     }
+    /* カード全体を確実にクリック可にする */
+.cards a.card{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.cards a.card img{ pointer-events: none; }  /* 画像の上でもタップが親<a>に届くように */
   </style>
 </head>
 <body>
@@ -334,21 +341,35 @@
   </div>
 </section>
   <!-- 最新コンテンツセクション -->
-  <section class="latest-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>今週の解説</h2>
-      </div>
-      <div class="cards">
-        <!-- カード1: 最新の解説記事 -->
-        <a href="#" class="card">
-          <img src="https://picsum.photos/600/400" alt="記事サムネイル">
-          <div class="card-body">
-            <div class="card-meta">入門・5分要点・約5分</div>
-            <h3 class="card-title">作業環境測定の全体像: 区分・手順・よくある誤解</h3>
-            <p class="card-excerpt">管理区分の意味やC/D測定の役割など、現場で陥りがちな誤解を整理します...</p>
-          </div>
-        </a>
+<section class="latest-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 id="this-week">今週の解説</h2>
+    </div>
+
+    <div class="cards">
+      <!-- カード1：作業環境測定の全体像 -->
+      <a class="card" href="/rodoeisei-lab/sagyokankyo.html">
+        <img src="https://picsum.photos/600/400?random=21" alt="作業環境測定の全体像">
+        <div class="card-body">
+          <div class="card-meta">入門・5分要点・約5分</div>
+          <h3 class="card-title">作業環境測定の全体像：区分・手順・よくある誤解</h3>
+          <p class="card-excerpt">管理区分の意味やC/D測定の役割など、現場で陥りがちな誤解を整理します…</p>
+        </div>
+      </a>
+
+      <!-- カード2：最新アップデート -->
+      <a class="card" href="/rodoeisei-lab/updates/">
+        <img src="https://picsum.photos/601/400?random=22" alt="最新アップデート">
+        <div class="card-body">
+          <div class="card-meta">最新アップデート・法令改正</div>
+          <h3 class="card-title">【最新】有機溶剤中毒予防規則の改正ポイント</h3>
+          <p class="card-excerpt">2025年施行の改正内容について、現場担当者が押さえるべきポイントを解説…</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
         <!-- カード2: 他の最新アップデート例 -->
         <a href="#" class="card">
           <img src="https://picsum.photos/601/400" alt="記事サムネイル">
