@@ -5,69 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>労働衛生ラボ | 現場と法令の「あいだ」をつなぐ学習サイト</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;color:#333}
+    /* ベース */
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html,body{ width:100%; overflow-x:hidden; }
+    body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; color:#333; }
+
     :root{
-      --primary:#d94e4e; --secondary:#00695c; --bg:#f7f7f8; --text:#333; --light:#fff;
-      --max:1200px
+      --primary:#d94e4e; --secondary:#00695c;
+      --bg:#f7f7f8; --text:#333; --light:#fff;
+      --max:1200px;
     }
-    .container{width:90%;max-width:var(--max);margin:0 auto}
+    .container{ width:90%; max-width:var(--max); margin:0 auto; }
 
-    /* header */
-    .site-header{background:#fff;border-bottom:1px solid #e6e6e9}
-    .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .brand{font-weight:700;text-decoration:none;color:var(--text);font-size:1.2em}
-    .main-nav ul{list-style:none;display:flex;gap:16px}
-    .main-nav a{color:var(--text);text-decoration:none;padding:8px;border-radius:6px}
-    .main-nav a:hover{background:#efeff2}
-    .menu-btn{display:none;font-size:1.6em;background:none;border:none;color:var(--text);cursor:pointer}
+    /* Header */
+    .site-header{ background:#fff; border-bottom:1px solid #e6e6e9; }
+    .site-header .container{ display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+    .brand{ font-weight:700; text-decoration:none; color:var(--text); font-size:1.2em; }
+    .main-nav ul{ list-style:none; display:flex; gap:16px; }
+    .main-nav a{ color:var(--text); text-decoration:none; padding:8px; border-radius:6px; }
+    .main-nav a:hover{ background:#efeff2; }
+    .menu-btn{ display:none; font-size:1.6em; background:none; border:none; color:var(--text); cursor:pointer; }
     @media(max-width:768px){
-      .main-nav ul{display:none;flex-direction:column;position:absolute;right:20px;top:56px;background:#fff;border:1px solid #e6e6e9;border-radius:10px;padding:10px 14px;box-shadow:0 6px 24px rgba(0,0,0,.08)}
-      .main-nav.open ul{display:flex}
-      .menu-btn{display:block}
+      .main-nav ul{
+        display:none; flex-direction:column; position:absolute; right:20px; top:56px;
+        background:#fff; border:1px solid #e6e6e9; border-radius:10px; padding:10px 14px;
+        box-shadow:0 6px 24px rgba(0,0,0,.08);
+      }
+      .main-nav.open ul{ display:flex; }
+      .menu-btn{ display:block; }
     }
 
-    /* hero */
-    .hero{position:relative;overflow:hidden;color:var(--light);text-align:center;padding:56px 0}
-    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#d94e4e 30%,#6b9acc),url('https://picsum.photos/1200/800?blur=2') center/cover no-repeat;opacity:.9}
-    .hero-inner{position:relative;z-index:1}
-    .hero h1{font-size:1.6em;margin-bottom:.5em}
-    .hero .tagline{font-size:1.05em;margin-bottom:1.25em}
-    .cta-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-    .cta-buttons a{display:inline-block;padding:12px 20px;border-radius:28px;text-decoration:none;font-weight:700}
-    .cta-primary{background:var(--light);color:var(--primary)}
-    .cta-primary:hover{background:#f1f1f1}
-    .cta-secondary{border:2px solid var(--light);color:var(--light);background:transparent}
-    .cta-secondary:hover{background:rgba(255,255,255,.2)}
+    /* Hero */
+    .hero{ position:relative; overflow:hidden; color:var(--light); text-align:center; padding:56px 0; }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(135deg,#d94e4e 30%,#6b9acc),url('https://picsum.photos/1200/800?blur=2') center/cover no-repeat;
+      opacity:.9;
+    }
+    .hero-inner{ position:relative; z-index:1; }
+    .hero h1{ font-size:1.6em; margin-bottom:.5em; }
+    .hero .tagline{ font-size:1.05em; margin-bottom:1.25em; }
+    .cta-buttons{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+    .cta-buttons a{ display:inline-block; padding:12px 20px; border-radius:28px; text-decoration:none; font-weight:700; }
+    .cta-primary{ background:var(--light); color:var(--primary); }
+    .cta-primary:hover{ background:#f1f1f1; }
+    .cta-secondary{ border:2px solid var(--light); color:var(--light); background:transparent; }
+    .cta-secondary:hover{ background:rgba(255,255,255,.2); }
 
-    /* SNS */
-    .sns-section{background:#fff;padding:18px 0}
-    .sns-section .row{display:flex;align-items:center;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-    .sns-section .row::-webkit-scrollbar{display:none}
-    .sns-title{flex:0 0 auto;font-weight:700}
-    .sns-links{display:flex;gap:12px}
-    .sns-links a{flex:0 0 auto;width:48px;height:48px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#eee;text-decoration:none}
-    .sns-links img{width:60%;height:auto}
-    .sns-links .youtube{background:#ff0000}
-    .sns-links .x{background:#000}
-    .sns-links .note{background:#00c4b5}
-    .sns-links .youtube img,.sns-links .x img,.sns-links .note img{filter:brightness(0) invert(1)}
+    /* SNS：丸アイコン＋テキスト（横スワイプ） */
+    .sns-section{ background:#fff; padding:18px 0; }
+    .sns-title{ font-weight:700; margin-bottom:10px; }
+    .sns-row{
+      display:grid; grid-auto-flow:column; grid-auto-columns:max-content;
+      gap:12px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+    }
+    .sns-row::-webkit-scrollbar{ display:none; }
+    .sns-btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border:1px solid #e6e6e9; border-radius:999px;
+      background:#fff; text-decoration:none; color:#222; font-weight:600;
+      box-shadow:0 2px 8px rgba(0,0,0,.04);
+    }
+    .sns-btn:active{ transform:translateY(1px); }
+    .sns-btn .ico{
+      width:28px; height:28px; border-radius:50%; display:inline-grid; place-items:center;
+      color:#fff; font-weight:700; font-size:14px; line-height:1;
+    }
+    .sns-btn.youtube .ico{ background:#ff0000; }  /* YouTube */
+    .sns-btn.x .ico{ background:#000; }           /* X */
+    .sns-btn.note .ico{ background:#00c4b5; }     /* note */
+    .sns-btn.hatena .ico{ background:#00a4de; }   /* はてな */
 
-    /* latest */
-    .latest-section{background:var(--bg);padding:36px 0}
-    .section-header{text-align:center;margin-bottom:22px}
-    .cards{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
-    .card{width:300px;max-width:100%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(16,24,40,.06);color:inherit;text-decoration:none;display:block}
-    .card img{width:100%;display:block;pointer-events:none}
-    .card-body{padding:14px}
-    .card-meta{font-size:.85em;color:#777;margin-bottom:.4em}
-    .card-title{font-size:1.08em;font-weight:700;line-height:1.4;margin-bottom:.35em}
-    .card-excerpt{font-size:.92em;color:#4a4a4a}
+    /* 今週の解説 */
+    .latest-section{ background:var(--bg); padding:36px 0; }
+    .section-header{ text-align:center; margin-bottom:22px; }
+    .cards{ display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+    .card{
+      width:300px; max-width:100%; background:#fff; border-radius:12px; overflow:hidden;
+      box-shadow:0 8px 24px rgba(16,24,40,.06); color:inherit; text-decoration:none; display:block;
+    }
+    .card img{ width:100%; display:block; pointer-events:none; }
+    .card-body{ padding:14px; }
+    .card-meta{ font-size:.85em; color:#777; margin-bottom:.4em; }
+    .card-title{ font-size:1.08em; font-weight:700; line-height:1.4; margin-bottom:.35em; }
+    .card-excerpt{ font-size:.92em; color:#4a4a4a; }
+
     @media(max-width:768px){
-      .hero h1{font-size:1.35em}
-      .hero .tagline{font-size:1em}
-      .latest-section .cards{flex-direction:column;align-items:center}
+      .hero h1{ font-size:1.35em; }
+      .hero .tagline{ font-size:1em; }
+      .latest-section .cards{ flex-direction:column; align-items:center; }
     }
+
+    /* 画像・iframeのはみ出し防止（保険） */
+    img,iframe,video{ max-width:100%; height:auto; display:block; }
   </style>
 </head>
 <body>
@@ -101,25 +131,25 @@
   </section>
 
   <!-- SNS -->
-<section class="sns-section">
-  <div class="container">
-    <h2 class="sns-title" style="margin-bottom:10px;">公式SNS</h2>
-    <div class="sns-row">
-      <a class="sns-btn youtube" href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener" aria-label="YouTube">
-        <span class="ico">▶︎</span><span>YouTube</span>
-      </a>
-      <a class="sns-btn x" href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener" aria-label="X">
-        <span class="ico">X</span><span>X（旧Twitter）</span>
-      </a>
-      <a class="sns-btn note" href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener" aria-label="note">
-        <span class="ico">n</span><span>note</span>
-      </a>
-      <a class="sns-btn hatena" href="https://roudoueisei-ai.hatenablog.com/" target="_blank" rel="noopener" aria-label="はてなブログ">
-        <span class="ico">は</span><span>はてなブログ</span>
-      </a>
+  <section class="sns-section">
+    <div class="container">
+      <div class="sns-title">公式SNS</div>
+      <div class="sns-row">
+        <a class="sns-btn youtube" href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener" aria-label="YouTube">
+          <span class="ico">▶︎</span><span>YouTube</span>
+        </a>
+        <a class="sns-btn x" href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener" aria-label="X">
+          <span class="ico">X</span><span>X（旧Twitter）</span>
+        </a>
+        <a class="sns-btn note" href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener" aria-label="note">
+          <span class="ico">n</span><span>note</span>
+        </a>
+        <a class="sns-btn hatena" href="https://roudoueisei-ai.hatenablog.com/" target="_blank" rel="noopener" aria-label="はてなブログ">
+          <span class="ico">は</span><span>はてなブログ</span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- 今週の解説 -->
   <section class="latest-section">
@@ -160,33 +190,3 @@
   </script>
 </body>
 </html>
-
-/* —— SNS：ロゴ＋テキストの丸ボタン（横スワイプ） —— */
-.sns-section{background:#fff;padding:18px 0;}
-.sns-row{
-  display:grid; grid-auto-flow:column; grid-auto-columns:max-content;
-  gap:12px; overflow-x:auto; -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-.sns-row::-webkit-scrollbar{ display:none; }
-
-.sns-btn{
-  display:inline-flex; align-items:center; gap:10px;
-  padding:8px 12px; border:1px solid #e6e6e9; border-radius:999px;
-  background:#fff; text-decoration:none; color:#222; font-weight:600;
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
-}
-.sns-btn:active{ transform: translateY(1px); }
-
-/* アイコンの丸（中に文字／記号） */
-.sns-btn .ico{
-  width:28px; height:28px; border-radius:50%;
-  display:inline-grid; place-items:center; color:#fff; font-weight:700;
-  font-size:14px; line-height:1;
-}
-
-/* ブランド色 */
-.sns-btn.youtube .ico{ background:#ff0000; }   /* YouTube */
-.sns-btn.x .ico{ background:#000; }            /* X */
-.sns-btn.note .ico{ background:#00c4b5; }      /* note */
-.sns-btn.hatena .ico{ background:#00a4de; }    /* はてなブログ */
