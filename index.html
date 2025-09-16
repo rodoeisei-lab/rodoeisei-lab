@@ -160,3 +160,33 @@
   </script>
 </body>
 </html>
+
+/* —— SNS：ロゴ＋テキストの丸ボタン（横スワイプ） —— */
+.sns-section{background:#fff;padding:18px 0;}
+.sns-row{
+  display:grid; grid-auto-flow:column; grid-auto-columns:max-content;
+  gap:12px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.sns-row::-webkit-scrollbar{ display:none; }
+
+.sns-btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:8px 12px; border:1px solid #e6e6e9; border-radius:999px;
+  background:#fff; text-decoration:none; color:#222; font-weight:600;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.sns-btn:active{ transform: translateY(1px); }
+
+/* アイコンの丸（中に文字／記号） */
+.sns-btn .ico{
+  width:28px; height:28px; border-radius:50%;
+  display:inline-grid; place-items:center; color:#fff; font-weight:700;
+  font-size:14px; line-height:1;
+}
+
+/* ブランド色 */
+.sns-btn.youtube .ico{ background:#ff0000; }   /* YouTube */
+.sns-btn.x .ico{ background:#000; }            /* X */
+.sns-btn.note .ico{ background:#00c4b5; }      /* note */
+.sns-btn.hatena .ico{ background:#00a4de; }    /* はてなブログ */
