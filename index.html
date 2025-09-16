@@ -1,194 +1,377 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>労働衛生ラボ｜現場と法令の「あいだ」をつなぐ学習サイト</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="粉じん・有機溶剤・資格対策まで、毎週更新。動画と記事でサッと学べる労働衛生の解説サイト。">
-  <link rel="icon" href="/rodoeisei-lab/favicon.ico">
-  <link rel="canonical" href="https://rodoeisei-lab.github.io/rodoeisei-lab/">
-  <meta property="og:title" content="労働衛生ラボ">
-  <meta property="og:description" content="現場と法令の「あいだ」をつなぐ学習サイト。毎週更新。">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
-  <link rel="stylesheet" href="/rodoeisei-lab/styles.css">
-
-  <!-- 追加CSS（横はみ出し防止＋CTAだけ横スワイプ） -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- モバイル表示用のビューポート指定 [oai_citation:15‡qiita.com](https://qiita.com/free-honda/items/123438d7b63010c3d351#:~:text=%E3%82%B9%E3%83%9E%E3%83%9B%E7%94%BB%E9%9D%A2%E3%81%AE%E6%A8%AA%E5%B9%85%E3%81%AB%E5%90%88%E3%82%8F%E3%81%9B%E3%81%A6%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%8C%E8%AA%BF%E6%95%B4%E3%81%95%E3%82%8C%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82%E3%81%93%E3%82%8C%E3%81%AB%E3%82%88%E3%82%8A%E3%80%81%E3%82%B9%E3%83%9E%E3%83%9B%E3%81%A7%E3%81%AE%E6%A8%AA%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E3%81%8C%E4%B8%8D%E8%A6%81%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82) -->
+  <title>労働衛生ラボ | 現場と法令の「あいだ」をつなぐ学習サイト</title>
   <style>
-    /* はみ出しの根治 */
-    *{ box-sizing: border-box; }
-    html,body{ width:100%; overflow-x:hidden; }
-    img,iframe,video{ max-width:100%; height:auto; display:block; }
+    /* ベーススタイルのリセット（必要に応じて省略） */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; color: #333; }
 
-    /* 余白の基準（既存CSSと競合しにくいように軽めに） */
-    :root{ --page-pad: clamp(16px,4vw,24px); --content: 960px; }
-    .container{ max-width: var(--content); margin-inline:auto; padding-inline: var(--page-pad); }
+    /* カラー変数 */
+    :root {
+      --primary-color: #d94e4e;    /* アクセントに使うメインカラー（赤系） */
+      --secondary-color: #00695c; /* サブカラー（例：ボタンホバーやリンク） */
+      --bg-color: #f8f8f8;        /* 背景色 */
+      --text-color: #333;
+      --light-text: #fff;
+    }
 
-    /* ヒーローの行間だけ微調整（任意） */
-    .hero h1{ line-height: 1.25; }
-    .hero .sub{ margin-top: .25rem; }
+    /* コンテナレイアウト制御 */
+    .container {
+      width: 90%;
+      max-width: 1200px; /* PC表示では最大1200px幅 */
+      margin: 0 auto;
+    }
 
-    /* —— ここが主役：CTAだけ横スワイプ（安全版） —— */
-    .cta.scroll-row{
+    /* ヘッダー */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+    .site-header .container {
       display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x proximity;
-      touch-action: pan-x;
-      margin: 0;               /* 端切れ防止：負のマージンは使わない */
-      padding: 0 0 6px 0;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
     }
-    .cta.scroll-row > *{
-      flex: 0 0 clamp(200px, 60vw, 360px); /* 1枚の幅を確保→必ず横に流れる */
-      scroll-snap-align: start;
-      white-space: nowrap; /* ボタン文言の折返し防止 */
+    .brand {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: var(--text-color);
+      text-decoration: none;
     }
-    /* スクロールバーを隠したい場合（任意） */
-    .cta.scroll-row::-webkit-scrollbar{ display:none; }
-    .cta.scroll-row{ scrollbar-width: none; }
-  /* === CTA（上の3ボタン）だけ横スワイプに強制 === */
-.hero .cta.scroll-row{
-  display: flex !important;         /* 既存の縦積みを無効化 */
-  flex-wrap: nowrap !important;
-  gap: 12px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
-  touch-action: pan-x;
-  margin: 0;
-  padding: 0 0 6px 0;
-}
-.hero .cta.scroll-row > a.btn,
-.hero .cta.scroll-row > .btn{
-  /* ボタンを“横並びアイテム”化（100%幅の上書き） */
-  display: inline-flex !important;
-  flex: 0 0 auto !important;
-  width: auto !important;
-  max-width: 85vw;                   /* 画面に納まらない → 横スクロールが出る */
-  white-space: nowrap;
-  scroll-snap-align: start;
-}
-/* スクロールバー非表示（好みで） */
-.hero .cta.scroll-row::-webkit-scrollbar{ display:none; }
-.hero .cta.scroll-row{ scrollbar-width:none; }
-  /* === ヘッダーメニューを横スクロール可能に（モバイル優先） === */
-@media (max-width: 900px){
-  .site-header .main-nav{ overflow: hidden; }
+    /* デスクトップナビ */
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 0.95em;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .main-nav a:hover {
+      background: #eee;
+    }
 
-  .site-header .main-nav ul{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 18px;
-    margin: 0;                /* 不要なはみ出し防止 */
-    padding: 8px 0 10px;
-    overflow-x: auto;         /* ← 横スクロールの本体 */
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    scroll-snap-type: x proximity;
-  }
+    /* モバイルナビ: ハンバーガーメニュー */
+    .menu-toggle {
+      display: none; /* ハンバーガーアイコン用チェックボックス（非表示） */
+    }
+    .menu-btn {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--text-color);
+    }
+    /* メディアクエリでモバイル時に表示 */
+    @media(max-width: 768px) {
+      .main-nav ul { 
+        display: none; /* モバイルではデフォルト非表示 */
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;    /* ヘッダーの下に表示 */
+        right: 20px;
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      .main-nav.open ul {
+        display: flex; /* 切り替え時に表示 */
+      }
+      .menu-btn {
+        display: block;
+      }
+    }
 
-  .site-header .main-nav li{
-    list-style: none;
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-  }
+    /* ヒーローセクション */
+    .hero {
+      background: linear-gradient(135deg, #d94e4e 30%, #6b9acc); /* 斜めグラデーション例（左下から右上） */
+      color: var(--light-text);
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:before {
+      content: "";
+      background: url('https://picsum.photos/1200/800?grayscale') center/cover no-repeat;
+      opacity: 0.3;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    .hero p.tagline {
+      font-size: 1.1em;
+      margin-bottom: 1.5em;
+    }
+    .hero .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .hero .cta-buttons a {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero .cta-primary {
+      background: var(--light-text);
+      color: var(--primary-color);
+    }
+    .hero .cta-primary:hover {
+      background: #f0f0f0;
+    }
+    .hero .cta-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--light-text);
+      border: 2px solid var(--light-text);
+    }
+    .hero .cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
 
-  .site-header .main-nav a{
-    display: inline-block;    /* 幅が縮まらないように */
-    white-space: nowrap;
-  }
+    /* SNSリンクセクション */
+    .sns-section {
+      background: #fff;
+      padding: 20px 0;
+    }
+    .sns-section .container {
+      display: flex;
+      align-items: center;
+      overflow-x: auto;  /* 横スクロール許可 */
+      scrollbar-width: none; /* Firefox用: スクロールバー非表示 */
+    }
+    .sns-section .container::-webkit-scrollbar {
+      display: none;    /* Chrome/Safari用: スクロールバー非表示 */
+    }
+    .sns-section h2 {
+      flex: 0 0 auto;
+      font-size: 1em;
+      margin-right: 15px;
+      white-space: nowrap;
+    }
+    .sns-links {
+      display: flex;
+      flex: 1 1 auto;
+      gap: 15px;
+    }
+    .sns-links a {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #eee;
+      text-decoration: none;
+      overflow: hidden;
+    }
+    .sns-links a img {
+      width: 60%; /* アイコン画像はボタン円の60%程度のサイズで表示 */
+      height: auto;
+    }
+    /* 公式カラーに合わせて背景色調整（任意） */
+    .sns-links a.youtube { background: #FF0000; }   /* YouTube 赤 */
+    .sns-links a.x { background: #000; }            /* X (Twitter) 黒 */
+    .sns-links a.note { background: #00c4b5; }      /* Note 緑 (仮) */
+    .sns-links a.youtube img { filter: brightness(0) invert(1); } /* 白いアイコンなら不要 */
+    .sns-links a.x img { filter: brightness(0) invert(1); }      /* 白抜きに */
+    .sns-links a.note img { filter: brightness(0) invert(1); }   /* Noteロゴ白抜き */
 
-  /* スクロールバーを隠したい場合（任意） */
-  .site-header .main-nav ul::-webkit-scrollbar{ display:none; }
-  .site-header .main-nav ul{ scrollbar-width: none; }
-}
+    /* 最新コンテンツセクション */
+    .latest-section {
+      background: var(--bg-color);
+      padding: 40px 0;
+    }
+    .latest-section .section-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .latest-section .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      width: 300px;
+      max-width: 100%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card .card-body {
+      padding: 15px;
+    }
+    .card .card-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      line-height: 1.4;
+    }
+    .card .card-meta {
+      font-size: 0.85em;
+      color: #777;
+      margin-bottom: 0.5em;
+    }
+    .card .card-excerpt {
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+    .card .card-tag {
+      display: inline-block;
+      font-size: 0.75em;
+      color: #fff;
+      background: var(--primary-color);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+
+    /* フッター */
+    .footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85em;
+    }
+
+    /* レスポンシブメディアクエリ */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.3em; }
+      .hero p.tagline { font-size: 1em; }
+      .hero { padding: 50px 15px; }
+      .latest-section .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
-    <nav class="main-nav" aria-label="メインメニュー">
-      <ul>
-        <li><a href="/rodoeisei-lab/guides/">解説</a></li>
-        <li><a href="/rodoeisei-lab/videos/">動画</a></li>
-        <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
-        <li><a href="/rodoeisei-lab/licenses/">資格ガイド</a></li>
-        <li><a href="/rodoeisei-lab/sns/">SNS</a></li>
-        <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
-        <li class="muted"><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <h1>現場と法令の「<span class="accent">あいだ</span>」をつなぐ学習サイト。</h1>
-    <p class="sub">粉じん・有機溶剤・資格対策まで、<span class="accent">毎週更新</span>。</p>
-
-    <!-- ★ここだけ横スワイプにする -->
-    <div class="cta scroll-row">
-      <a class="btn primary" href="/rodoeisei-lab/guides/#this-week">今週の解説</a>
-      <a class="btn" href="/rodoeisei-lab/videos/">YouTubeへ</a>
-      <a class="btn" href="/rodoeisei-lab/sns/">SNSリンク集</a>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="brand">労働衛生ラボ</a>
+      <!-- ハンバーガーメニューのボタン（モバイル表示用） -->
+      <button class="menu-btn" id="menuBtn" aria-label="メニュー">☰</button>
+      <!-- ナビゲーションメニュー -->
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#">解説</a></li>
+          <li><a href="#">動画</a></li>
+          <li><a href="#">最新アップデート</a></li>
+          <li><a href="#">資格対策</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="section alt">
-  <div class="container">
-    <h2 id="this-week">今週の解説</h2>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="meta">
-          <span class="badge lv-beginner">入門</span>
-          <span class="badge">5分要点</span>
-          <span class="readtime">約5分</span>
-        </div>
-        <h3>作業環境測定の全体像：区分・手順・よくある誤解</h3>
-        <p>管理区分、C/D測定の役割、現場で起きやすい落とし穴を図解で。</p>
-        <a class="btn" href="/rodoeisei-lab/sagyokankyo.html">読む</a>
-      </article>
-
-      <article class="card">
-        <div class="meta">
-          <span class="badge">10分実務</span>
-          <span class="badge impact-high">影響：高</span>
-          <span class="readtime">約10分</span>
-        </div>
-        <h3>最新アップデート：要点と現場ToDo</h3>
-        <p>「何が変わる／誰に影響／いつから／最小ToDo」の4点だけ追う。</p>
-        <a class="btn" href="/rodoeisei-lab/updates/">読む</a>
-      </article>
-
-      <article class="card">
-        <div class="meta">
-          <span class="badge lv-practice">実務</span>
-          <span class="badge">5分要点</span>
-          <span class="readtime">約5分</span>
-        </div>
-        <h3>第一種衛生管理者：出題領域と最短1週間プラン</h3>
-        <p>頻出テーマと配点の偏り、毎日15分で回す最低限プラン。</p>
-        <a class="btn" href="/rodoeisei-lab/licenses/">読む</a>
-      </article>
-
+  <!-- ヒーローセクション -->
+  <section class="hero">
+    <div class="container">
+      <h1>現場と法令の「あいだ」をつなぐ学習サイト。</h1>
+      <p class="tagline">粉じん・有機溶剤・資格対策まで、毎週更新。</p>
+      <div class="cta-buttons">
+        <a href="#" class="cta-primary">今週の解説を見る</a>
+        <a href="#" class="cta-secondary">動画一覧</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p class="muted">© 労働衛生ラボ / リンク：
-      <a href="https://x.com/rodoeiseiai?s=21" target="_blank" rel="noopener">X</a>・
-      <a href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener">note</a>・
-      <a href="https://roudoueisei-ai.hatenablog.com/" target="_blank" rel="noopener">はてなブログ</a></p>
-  </div>
-</footer>
+  <!-- SNSリンクセクション -->
+  <section class="sns-section">
+    <div class="container">
+      <h2>公式SNS:</h2>
+      <div class="sns-links">
+        <a href="#" class="youtube" aria-label="YouTube">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_(2017).svg/512px-YouTube_full-color_icon_(2017).svg.png" alt="YouTube">
+        </a>
+        <a href="#" class="x" aria-label="X (Twitter)">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X">
+        </a>
+        <a href="#" class="note" aria-label="Note">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Note.com_Logo.png" alt="Note">
+        </a>
+      </div>
+    </div>
+  </section>
 
+  <!-- 最新コンテンツセクション -->
+  <section class="latest-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>今週の解説</h2>
+      </div>
+      <div class="cards">
+        <!-- カード1: 最新の解説記事 -->
+        <a href="#" class="card">
+          <img src="https://picsum.photos/600/400" alt="記事サムネイル">
+          <div class="card-body">
+            <div class="card-meta">入門・5分要点・約5分</div>
+            <h3 class="card-title">作業環境測定の全体像: 区分・手順・よくある誤解</h3>
+            <p class="card-excerpt">管理区分の意味やC/D測定の役割など、現場で陥りがちな誤解を整理します...</p>
+          </div>
+        </a>
+        <!-- カード2: 他の最新アップデート例 -->
+        <a href="#" class="card">
+          <img src="https://picsum.photos/601/400" alt="記事サムネイル">
+          <div class="card-body">
+            <div class="card-meta">最新アップデート・法令改正</div>
+            <h3 class="card-title">【最新】有機溶剤中毒予防規則の改正ポイント</h3>
+            <p class="card-excerpt">2025年施行の改正内容について、現場担当者が押さえるべきポイントを解説...</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <p>&copy; 2025 労働衛生ラボ. All rights reserved.</p>
+  </footer>
+
+  <!-- ハンバーガーメニュー開閉の簡易スクリプト（必要なら採用） -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    menuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
