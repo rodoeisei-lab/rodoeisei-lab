@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>作業環境測定の道具棚｜おすすめ保護具・測定器材</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="作業環境測定に役立つ保護具・測定器材・書籍を、現場目線で厳選して紹介します。" />
+  <style>
+    :root{
+      --primary:#d94e4e; --secondary:#00695c; --bg:#f7f7f8; --text:#1f2937; --card:#ffffff;
+      --muted:#6b7280; --ring:#e5e7eb; --max:1100px
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    a{color:var(--secondary);text-decoration:none}
+    .container{width:92%;max-width:var(--max);margin:0 auto}
+    header{background:#fff;border-bottom:1px solid var(--ring);position:sticky;top:0;z-index:10}
+    .topbar{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:700;letter-spacing:.02em}
+    .brand b{color:var(--primary)}
+    nav a{margin-left:1rem;font-size:.95rem;color:#374151}
+    .hero{padding:28px 0 16px}
+    .hero h1{font-size:clamp(22px,3.5vw,32px);margin-bottom:6px}
+    .hero p{color:var(--muted)}
+    .toolbar{display:flex;flex-wrap:wrap;gap:.75rem;margin:16px 0 8px}
+    .search{flex:1;min-width:220px;display:flex;align-items:center;background:#fff;border:1px solid var(--ring);border-radius:10px;padding:8px 10px}
+    .search input{border:0;outline:0;width:100%;font-size:14px}
+    .chips{display:flex;gap:.5rem;flex-wrap:wrap}
+    .chip{background:#fff;border:1px solid var(--ring);border-radius:999px;padding:6px 10px;font-size:13px;cursor:pointer}
+    .chip.active{background:var(--secondary);color:#fff;border-color:var(--secondary)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:10px 0 40px}
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+    .ph{background:linear-gradient(180deg,#f1f5f9,#e5e7eb);height:160px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:12px}
+    .meta{padding:12px}
+    .meta h3{font-size:16px;margin-bottom:4px}
+    .meta p{font-size:14px;color:#4b5563}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+    .tag{font-size:12px;background:#f3f4f6;border:1px solid var(--ring);color:#374151;padding:2px 8px;border-radius:999px}
+    .cta{margin-top:auto;display:flex;gap:8px;padding:12px;border-top:1px solid var(--ring)}
+    .btn{flex:1;text-align:center;background:var(--primary);color:#fff;padding:10px 12px;border-radius:10px;font-weight:600}
+    .btn.alt{background:#111827}
+    .notice{background:#fff;border:1px dashed var(--ring);border-radius:12px;padding:10px 12px;color:#374151;font-size:13px}
+    footer{color:#6b7280;padding:40px 0 50px}
+    .disclosure{margin-top:14px;font-size:12px;color:#6b7280}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">労働衛生<b>ラボ</b></div>
+      <nav>
+        <!-- ここは相対パスで統一（/products/ 直下想定） -->
+        <a href="../">ホーム</a>
+        <a href="../videos/">動画</a>
+        <a href="./">道具棚</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>作業環境測定の道具棚</h1>
+      <p>現場で「これで助かった」を集めました。価格は書かず、用途と選び方を端的に。</p>
+      <div class="disclosure">
+        ※開示：本ページにはアフィリエイトリンク（Amazonアソシエイト等）が含まれます。<br>
+        当サイトは<a href="#disclosure">Amazonアソシエイト参加表記</a>のとおり、適格販売により収入を得ています。
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <div class="search">
+        <input id="q" type="search" placeholder="検索：例）防じんマスク, 有機溶剤, 騒音計…" />
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip active" data-filter="all">すべて</button>
+        <button class="chip" data-filter="保護具">保護具</button>
+        <button class="chip" data-filter="測定器材">測定器材</button>
+        <button class="chip" data-filter="書籍">書籍</button>
+        <button class="chip" data-filter="消耗品">消耗品</button>
+      </div>
+    </div>
+
+    <section class="grid" id="grid">
+      <!-- 保護具：防じんマスク -->
+      <article class="card" data-cat="保護具" data-tags="防じんマスク 粉じん フィットテスト JIS T 8151">
+        <div class="ph">画像はSiteStripe/自前写真で</div>
+        <div class="meta">
+          <h3>防じんマスク（取替え式・国家検定合格品）</h3>
+          <p>粉じん作業の基本。サイズ調整しやすいモデルを推奨。フィットテスト（定量式）実施前提。</p>
+          <div class="tags"><span class="tag">粉じん</span><span class="tag">フィットテスト</span><span class="tag">保護具</span></div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN1?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn alt" href="#" target="_blank" rel="nofollow noopener">メーカー資料</a>
+        </div>
+      </article>
+
+      <!-- 測定器材：騒音計 -->
+      <article class="card" data-cat="測定器材" data-tags="騒音計 JIS 1級 2級 三脚">
+        <div class="ph">画像はSiteStripe/自前写真で</div>
+        <div class="meta">
+          <h3>騒音計（クラス1相当・三脚対応）</h3>
+          <p>評価用は型式認定・JIS対応を確認。三脚固定＋風防は必須。データ保存方式もチェック。</p>
+          <div class="tags"><span class="tag">騒音</span><span class="tag">測定器材</span></div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN2?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn alt" href="#" target="_blank" rel="nofollow noopener">校正証明の確認</a>
+        </div>
+      </article>
+
+      <!-- 測定器材：デジタル粉じん計 -->
+      <article class="card" data-cat="測定器材" data-tags="粉じん計 デジタル LD5R 個人ばく露">
+        <div class="ph">画像はSiteStripe/自前写真で</div>
+        <div class="meta">
+          <h3>デジタル粉じん計（拡散光式）</h3>
+          <p>現場の傾向把握に。ゼロ調整・吸引流量・温湿度ドリフトに留意。公式測定は規格手順で。</p>
+          <div class="tags"><span class="tag">粉じん</span><span class="tag">測定器材</span></div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN3?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <a class="btn alt" href="#" target="_blank" rel="nofollow noopener">取説・校正</a>
+        </div>
+      </article>
+
+      <!-- 書籍 -->
+      <article class="card" data-cat="書籍" data-tags="作業環境測定 有機溶剤 粉じん 安衛法">
+        <div class="ph">表紙画像はSiteStripeで</div>
+        <div class="meta">
+          <h3>作業環境測定と改善の実務（入門～中級）</h3>
+          <p>測定→評価→改善の流れを押さえる1冊。C/D測定や管理濃度、改善事例の章が現場で効く。</p>
+          <div class="tags"><span class="tag">書籍</span><span class="tag">基礎</span></div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN4?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+        </div>
+      </article>
+
+      <!-- 消耗品 -->
+      <article class="card" data-cat="消耗品" data-tags="防護手袋 ニトリル 有機溶剤">
+        <div class="ph">画像はSiteStripe/自前写真で</div>
+        <div class="meta">
+          <h3>耐溶剤手袋（ニトリル・使い捨て/厚手）</h3>
+          <p>厚みと透過性がポイント。採取・洗浄工程で使い分け。サイズ表と透過データを確認。</p>
+          <div class="tags"><span class="tag">消耗品</span><span class="tag">有機溶剤</span></div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN5?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="notice">
+      <b>画像と価格について：</b> Amazonの画像は必ずSiteStripe/PA-APIのURLを使用。価格は原則「非表示」。記載するなら取得日時を明記し手動更新。
+    </section>
+
+    <footer>
+      <div id="disclosure">
+        <p><b>Amazonアソシエイト参加表記</b></p>
+        <p>「Amazonのアソシエイトとして、労働衛生ラボは適格販売により収入を得ています。」</p>
+      </div>
+      <p style="margin-top:8px">© 労働衛生ラボ</p>
+    </footer>
+  </main>
+
+  <script>
+    const q = document.getElementById('q');
+    const chips = document.getElementById('chips');
+    const cards = [...document.querySelectorAll('.card')];
+    let active = 'all';
+    function render(){
+      const term = (q.value||'').trim().toLowerCase();
+      cards.forEach(c=>{
+        const cat = c.dataset.cat;
+        const tags = (c.dataset.tags||'').toLowerCase();
+        const text = (c.innerText||'').toLowerCase();
+        const hit = (!term || text.includes(term) || tags.includes(term));
+        const catOK = (active==='all' || active===cat);
+        c.style.display = (hit && catOK) ? '' : 'none';
+      });
+    }
+    q.addEventListener('input', render);
+    chips.addEventListener('click', e=>{
+      const b = e.target.closest('.chip'); if(!b) return;
+      document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); active = b.dataset.filter; render();
+    });
+  </script>
+</body>
+</html>
