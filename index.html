@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>労働衛生ラボ | 現場と法令の「あいだ」をつなぐ学習サイト</title>
+  <meta name="description" content="粉じん・有機溶剤・資格対策まで、現場と法令の「あいだ」をつなぐ学習サイト。作業環境測定の基礎から最新アップデート、道具棚（保護具・測定器材）まで毎週更新。">
   <style>
     /* ベース */
     *{ box-sizing:border-box; margin:0; padding:0; }
     html,body{ width:100%; overflow-x:hidden; }
-    body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; color:#333; }
+    body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; color:#333; background:#fff; }
 
     :root{
       --primary:#d94e4e; --secondary:#00695c;
@@ -83,6 +84,8 @@
     .cta-primary:hover{ background:#f1f1f1; }
     .cta-secondary{ border:2px solid var(--light); color:var(--light); background:transparent; }
     .cta-secondary:hover{ background:rgba(255,255,255,.2); }
+    .cta-tertiary{ border:2px solid rgba(255,255,255,.35); color:#fff; background:rgba(255,255,255,.10); }
+    .cta-tertiary:hover{ background:rgba(255,255,255,.18); }
 
     /* SNS（丸アイコン＋テキスト／横スワイプ） */
     .sns-section{ background:#fff; padding:18px 0; }
@@ -129,6 +132,7 @@
         <ul>
           <li><a href="/rodoeisei-lab/guides/">解説</a></li>
           <li><a href="/rodoeisei-lab/videos/">動画</a></li>
+          <li><a href="/rodoeisei-lab/products/">道具棚</a></li><!-- 追加 -->
           <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
           <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
         </ul>
@@ -144,6 +148,7 @@
     <ul>
       <li><a href="/rodoeisei-lab/guides/">解説</a></li>
       <li><a href="/rodoeisei-lab/videos/">動画</a></li>
+      <li><a href="/rodoeisei-lab/products/">道具棚</a></li><!-- 追加 -->
       <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
       <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
       <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
@@ -159,14 +164,15 @@
       <div class="cta-buttons">
         <a href="/rodoeisei-lab/guides/#this-week" class="cta-primary">今週の解説を見る</a>
         <a href="/rodoeisei-lab/videos/" class="cta-secondary">動画一覧</a>
+        <a href="/rodoeisei-lab/products/" class="cta-tertiary">道具棚（保護具・測定器材）</a><!-- 追加 -->
       </div>
     </div>
   </section>
 
   <!-- SNS -->
-  <section class="sns-section">
+  <section class="sns-section" aria-labelledby="sns-title">
     <div class="container">
-      <div class="sns-title">公式SNS</div>
+      <div class="sns-title" id="sns-title">公式SNS</div>
       <div class="sns-row">
         <a class="sns-btn youtube" href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener">
           <span class="ico">▶︎</span><span>YouTube</span>
@@ -192,7 +198,7 @@
       </div>
       <div class="cards">
         <a class="card" href="/rodoeisei-lab/sagyokankyo.html">
-          <img src="https://picsum.photos/600/400?random=21" alt="作業環境測定の全体像">
+          <img src="https://picsum.photos/600/400?random=21" alt="作業環境測定の全体像の解説イメージ">
           <div class="card-body">
             <div class="card-meta">入門・5分要点・約5分</div>
             <div class="card-title">作業環境測定の全体像：区分・手順・よくある誤解</div>
@@ -201,11 +207,21 @@
         </a>
 
         <a class="card" href="/rodoeisei-lab/updates/">
-          <img src="https://picsum.photos/601/400?random=22" alt="最新アップデート">
+          <img src="https://picsum.photos/601/400?random=22" alt="最新アップデートの案内イメージ">
           <div class="card-body">
             <div class="card-meta">最新アップデート・法令改正</div>
             <div class="card-title">【最新】有機溶剤中毒予防規則の改正ポイント</div>
             <p class="card-excerpt">2025年施行の改正内容について、現場担当者が押さえるべきポイントを解説…</p>
+          </div>
+        </a>
+
+        <!-- 追加：道具棚への導線カード -->
+        <a class="card" href="/rodoeisei-lab/products/">
+          <img src="https://picsum.photos/602/400?random=23" alt="保護具・測定器材の道具棚イメージ">
+          <div class="card-body">
+            <div class="card-meta">新設・実務</div>
+            <div class="card-title">道具棚：おすすめ保護具・測定器材</div>
+            <p class="card-excerpt">現場で「これで助かった」を厳選。防じんマスク、騒音計、粉じん計、消耗品まで。</p>
           </div>
         </a>
       </div>
@@ -246,6 +262,7 @@
 
     menuBtn.addEventListener('click', ()=> (mobileNav.hidden ? openNav() : closeNav()));
     overlay.addEventListener('click', closeNav);
+    closeBtn.addEventListener('click', closeNav);
     window.addEventListener('keydown', e => { if(e.key === 'Escape') closeNav(); });
   </script>
 </body>
