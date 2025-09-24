@@ -4,30 +4,40 @@
   <meta charset="UTF-8" />
   <title>作業環境測定の道具棚｜おすすめ保護具・測定器材</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="作業環境測定に役立つ保護具・測定器材・書籍を、現場目線で厳選して紹介します。" />
+  <meta name="description" content="作業環境測定に役立つ保護具・測定器材・書籍を、現場目線で厳選して紹介します。防じんマスク（DS2/DL/RL）、騒音計、粉じん計、消耗品まで。">
   <style>
     :root{
       --primary:#d94e4e; --secondary:#00695c; --bg:#f7f7f8; --text:#1f2937; --card:#ffffff;
       --muted:#6b7280; --ring:#e5e7eb; --max:1100px
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    html,body{width:100%;overflow-x:hidden}
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
     a{color:var(--secondary);text-decoration:none}
     .container{width:92%;max-width:var(--max);margin:0 auto}
+
+    /* header */
     header{background:#fff;border-bottom:1px solid var(--ring);position:sticky;top:0;z-index:10}
     .topbar{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{font-weight:700;letter-spacing:.02em}
     .brand b{color:var(--primary)}
     nav a{margin-left:1rem;font-size:.95rem;color:#374151}
+
+    /* hero */
     .hero{padding:28px 0 16px}
     .hero h1{font-size:clamp(22px,3.5vw,32px);margin-bottom:6px}
     .hero p{color:var(--muted)}
+    .disclosure{margin-top:10px;font-size:12px;color:#6b7280}
+
+    /* tools */
     .toolbar{display:flex;flex-wrap:wrap;gap:.75rem;margin:16px 0 8px}
     .search{flex:1;min-width:220px;display:flex;align-items:center;background:#fff;border:1px solid var(--ring);border-radius:10px;padding:8px 10px}
     .search input{border:0;outline:0;width:100%;font-size:14px}
     .chips{display:flex;gap:.5rem;flex-wrap:wrap}
     .chip{background:#fff;border:1px solid var(--ring);border-radius:999px;padding:6px 10px;font-size:13px;cursor:pointer}
     .chip.active{background:var(--secondary);color:#fff;border-color:var(--secondary)}
+
+    /* grid */
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:10px 0 40px}
     .card{background:var(--card);border:1px solid var(--ring);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
     .ph{background:linear-gradient(180deg,#f1f5f9,#e5e7eb);height:160px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:12px}
@@ -36,20 +46,20 @@
     .meta p{font-size:14px;color:#4b5563}
     .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
     .tag{font-size:12px;background:#f3f4f6;border:1px solid var(--ring);color:#374151;padding:2px 8px;border-radius:999px}
+    .note{font-size:12px;color:#6b7280;margin-top:6px}
     .cta{margin-top:auto;display:flex;gap:8px;padding:12px;border-top:1px solid var(--ring)}
     .btn{flex:1;text-align:center;background:var(--primary);color:#fff;padding:10px 12px;border-radius:10px;font-weight:600}
     .btn.alt{background:#111827}
-    .notice{background:#fff;border:1px dashed var(--ring);border-radius:12px;padding:10px 12px;color:#374151;font-size:13px}
+
     footer{color:#6b7280;padding:40px 0 50px}
-    .disclosure{margin-top:14px;font-size:12px;color:#6b7280}
   </style>
 </head>
 <body>
   <header>
     <div class="container topbar">
-      <div class="brand">労働衛生<b>ラボ</b></div>
+      <div class="brand"><a href="../" class="brand" aria-label="労働衛生ラボ トップへ">労働衛生<b>ラボ</b></a></div>
       <nav>
-        <!-- ここは相対パスで統一（/products/ 直下想定） -->
+        <!-- /products/ 直下想定：相対パスで統一 -->
         <a href="../">ホーム</a>
         <a href="../videos/">動画</a>
         <a href="./">道具棚</a>
@@ -63,15 +73,13 @@
       <p>現場で「これで助かった」を集めました。価格は書かず、用途と選び方を端的に。</p>
       <div class="disclosure">
         ※開示：本ページにはアフィリエイトリンク（Amazonアソシエイト等）が含まれます。<br>
-        当サイトは<a href="#disclosure">Amazonアソシエイト参加表記</a>のとおり、適格販売により収入を得ています。
+        当サイトは下記「Amazonアソシエイト参加表記」のとおり、適格販売により収入を得ています。
       </div>
     </section>
 
-    <div class="toolbar">
-      <div class="search">
-        <input id="q" type="search" placeholder="検索：例）防じんマスク, 有機溶剤, 騒音計…" />
-      </div>
-      <div class="chips" id="chips">
+    <div class="toolbar" role="search">
+      <div class="search"><input id="q" type="search" placeholder="検索：例）防じんマスク, DS2, 粉じん, 騒音計…"></div>
+      <div class="chips" id="chips" aria-label="カテゴリで絞り込み">
         <button class="chip active" data-filter="all">すべて</button>
         <button class="chip" data-filter="保護具">保護具</button>
         <button class="chip" data-filter="測定器材">測定器材</button>
@@ -80,78 +88,67 @@
       </div>
     </div>
 
+    <!-- ▼ 商品カード -->
     <section class="grid" id="grid">
-      <!-- 保護具：防じんマスク -->
-      <article class="card" data-cat="保護具" data-tags="防じんマスク 粉じん フィットテスト JIS T 8151">
-        <div class="ph">画像はSiteStripe/自前写真で</div>
+
+      <!-- 保護具：3M Aura 9322J+（DS2・排気弁付・使い捨て） -->
+      <article class="card"
+        data-cat="保護具"
+        data-tags="防じんマスク DS2 Aura 9322J+ 3M 排気弁 粉じん フィットテスト JIS T 8151">
+
+        <!-- ▼ 画像：自前/許諾画像を使うなら下の1行に差し替え（推奨） -->
+        <!-- <img src="./img/9322j-plus.jpg" alt="3M Aura 9322J+（DS2・排気弁付）正面" loading="lazy"> -->
+        <!-- いったん未アップでも見栄えするプレースホルダ -->
+        <div class="ph">ここに 9322J+ の商品画像が入ります</div>
+
         <div class="meta">
-          <h3>防じんマスク（取替え式・国家検定合格品）</h3>
-          <p>粉じん作業の基本。サイズ調整しやすいモデルを推奨。フィットテスト（定量式）実施前提。</p>
-          <div class="tags"><span class="tag">粉じん</span><span class="tag">フィットテスト</span><span class="tag">保護具</span></div>
+          <h3>3M™ Aura™ 9322J+（DS2・排気弁付・使い捨て）</h3>
+          <p>
+            3面立体の折りたたみ式で携帯しやすく、顔の動きに追随して密着性を保ちやすい設計。
+            鼻部形状で保護メガネの干渉・曇りを抑制。“のれん型”排気弁が熱・湿気を下方へ逃がし、こもりにくい＝長時間装着がラク。
+            主な用途：研磨・金属加工・溶接ヒューム等の粉じん作業。
+          </p>
+          <p class="note">
+            性能目安：国家検定 <b>DS2</b>（粒子捕集効率 95％以上）、検定番号：<b>TM664</b>。<br>
+            参考（メーカー資料の平均実測）：捕集<b>99.8％</b>・吸気<b>33Pa</b>・排気<b>26Pa</b>（ロット等で変動、保証値ではありません）。
+          </p>
+          <div class="tags">
+            <span class="tag">防じんマスク</span><span class="tag">DS2</span>
+            <span class="tag">排気弁</span><span class="tag">粉じん</span>
+          </div>
+          <p class="note">
+            選定ワンポイント：油性ミスト主体（例：切削油ミスト）は
+            <b>DL系（使い捨て）</b> または <b>RL系（取替式）</b>を検討。用途に合わせた区分選定とフィットテストは継続してください。
+          </p>
         </div>
+
         <div class="cta">
-          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN1?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-          <a class="btn alt" href="#" target="_blank" rel="nofollow noopener">メーカー資料</a>
+          <!-- ▼ Amazon商品ページ（9322J+ のASIN＝B07L64JY7M）。アフィリエイト時は ?tag=YOURTAG-22 を自分のタグに変更 -->
+          <a class="btn"
+             href="https://www.amazon.co.jp/dp/B07L64JY7M?tag=YOURTAG-22"
+             target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+          <!-- メーカー資料（日本語PDF） -->
+          <a class="btn alt"
+             href="https://multimedia.3m.com/mws/media/1481334O/ohs-4004.pdf"
+             target="_blank" rel="nofollow noopener">メーカー資料（PDF）</a>
         </div>
       </article>
 
-      <!-- 測定器材：騒音計 -->
-      <article class="card" data-cat="測定器材" data-tags="騒音計 JIS 1級 2級 三脚">
-        <div class="ph">画像はSiteStripe/自前写真で</div>
+      <!-- 例：今後のための空カード（複製して使う） -->
+      <article class="card" data-cat="測定器材" data-tags="サンプル 追加用">
+        <div class="ph">ここに次の商品を追加</div>
         <div class="meta">
-          <h3>騒音計（クラス1相当・三脚対応）</h3>
-          <p>評価用は型式認定・JIS対応を確認。三脚固定＋風防は必須。データ保存方式もチェック。</p>
-          <div class="tags"><span class="tag">騒音</span><span class="tag">測定器材</span></div>
+          <h3>（商品名）</h3>
+          <p>（一言の推しポイント。用途・選び方を20〜40字で）</p>
+          <div class="tags"><span class="tag">タグ</span></div>
+          <p class="note">（注意・選定のコツ・規格番号など任意）</p>
         </div>
         <div class="cta">
-          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN2?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-          <a class="btn alt" href="#" target="_blank" rel="nofollow noopener">校正証明の確認</a>
+          <a class="btn" href="#" target="_blank" rel="nofollow noopener">Amazonで見る</a>
+          <a class="btn alt" href="#" target="_blank" rel="nofollow noopener">関連資料</a>
         </div>
       </article>
 
-      <!-- 測定器材：デジタル粉じん計 -->
-      <article class="card" data-cat="測定器材" data-tags="粉じん計 デジタル LD5R 個人ばく露">
-        <div class="ph">画像はSiteStripe/自前写真で</div>
-        <div class="meta">
-          <h3>デジタル粉じん計（拡散光式）</h3>
-          <p>現場の傾向把握に。ゼロ調整・吸引流量・温湿度ドリフトに留意。公式測定は規格手順で。</p>
-          <div class="tags"><span class="tag">粉じん</span><span class="tag">測定器材</span></div>
-        </div>
-        <div class="cta">
-          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN3?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-          <a class="btn alt" href="#" target="_blank" rel="nofollow noopener">取説・校正</a>
-        </div>
-      </article>
-
-      <!-- 書籍 -->
-      <article class="card" data-cat="書籍" data-tags="作業環境測定 有機溶剤 粉じん 安衛法">
-        <div class="ph">表紙画像はSiteStripeで</div>
-        <div class="meta">
-          <h3>作業環境測定と改善の実務（入門～中級）</h3>
-          <p>測定→評価→改善の流れを押さえる1冊。C/D測定や管理濃度、改善事例の章が現場で効く。</p>
-          <div class="tags"><span class="tag">書籍</span><span class="tag">基礎</span></div>
-        </div>
-        <div class="cta">
-          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN4?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-        </div>
-      </article>
-
-      <!-- 消耗品 -->
-      <article class="card" data-cat="消耗品" data-tags="防護手袋 ニトリル 有機溶剤">
-        <div class="ph">画像はSiteStripe/自前写真で</div>
-        <div class="meta">
-          <h3>耐溶剤手袋（ニトリル・使い捨て/厚手）</h3>
-          <p>厚みと透過性がポイント。採取・洗浄工程で使い分け。サイズ表と透過データを確認。</p>
-          <div class="tags"><span class="tag">消耗品</span><span class="tag">有機溶剤</span></div>
-        </div>
-        <div class="cta">
-          <a class="btn" href="https://www.amazon.co.jp/dp/ASIN5?tag=YOURTAG-22" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="notice">
-      <b>画像と価格について：</b> Amazonの画像は必ずSiteStripe/PA-APIのURLを使用。価格は原則「非表示」。記載するなら取得日時を明記し手動更新。
     </section>
 
     <footer>
@@ -164,6 +161,7 @@
   </main>
 
   <script>
+    // 超軽量検索＆カテゴリフィルタ
     const q = document.getElementById('q');
     const chips = document.getElementById('chips');
     const cards = [...document.querySelectorAll('.card')];
