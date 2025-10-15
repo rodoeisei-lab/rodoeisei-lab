@@ -1,28 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>労働衛生ラボ | 現場と法令の「あいだ」をつなぐ学習サイト</title>
-  <meta name="description" content="粉じん・有機溶剤・資格対策まで、現場と法令の「あいだ」をつなぐ学習サイト。作業環境測定の基礎から最新アップデート、道具棚（保護具・測定器材）まで毎週更新。">
+  <meta name="description" content="粉じん・有機溶剤・資格対策まで。現場の判断に直結する要点を、一次情報ベースで毎週更新。道具棚（保護具・測定器材）も掲載。">
+  <link rel="canonical" href="https://rodoeisei-lab.github.io/rodoeisei-lab/">
+  <link rel="icon" href="/rodoeisei-lab/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- OGP -->
+  <meta property="og:title" content="労働衛生ラボ | 現場と法令の「あいだ」をつなぐ学習サイト">
+  <meta property="og:description" content="粉じん・有機溶剤・資格対策まで。一次情報ベースで毎週更新。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rodoeisei-lab.github.io/rodoeisei-lab/">
+  <meta property="og:site_name" content="労働衛生ラボ">
+  <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <style>
     /* ベース */
-    *{ box-sizing:border-box; margin:0; padding:0; }
+    *,*::before,*::after{ box-sizing:border-box; }
     html,body{ width:100%; overflow-x:hidden; }
-    body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; color:#333; background:#fff; }
+    body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,system-ui,sans-serif; line-height:1.6; color:#1a1a1a; background:#fff; }
 
     :root{
       --primary:#d94e4e; --secondary:#00695c;
       --bg:#f7f7f8; --text:#1a1a1a; --muted:#666; --light:#fff;
       --max:1200px;
+      --ring:#2684ff;
     }
     .container{ width:90%; max-width:var(--max); margin:0 auto; }
+
+    /* アクセシビリティ */
+    .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus{ left:16px; top:10px; width:auto; height:auto; padding:.6rem .8rem; background:#000; color:#fff; border-radius:.5rem; z-index:100; }
+    a:focus-visible,button:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; border-radius:6px; }
 
     /* Header（PCナビは横並び、SPはハンバーガー） */
     .site-header{ position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid #e6e6e9; }
     .site-header .container{ display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
     .brand{ font-weight:700; text-decoration:none; color:var(--text); font-size:1.2em; }
-    .desktop-nav ul{ list-style:none; display:flex; gap:16px; }
+    .desktop-nav ul{ list-style:none; display:flex; gap:16px; margin:0; padding:0; }
     .desktop-nav a{ color:var(--text); text-decoration:none; padding:8px; border-radius:6px; }
     .desktop-nav a:hover{ background:#efeff2; }
 
@@ -30,7 +49,7 @@
 
     @media(max-width:768px){
       .desktop-nav{ display:none; }     /* SPはデスクトップナビを隠す */
-      .menu-btn{ display:block; }       /* ハンバーガーを出す */
+      .menu-btn{ display:block; }       /* ハンバーガー */
     }
 
     /* ===== モバイル用：全画面ドロワー + オーバーレイ ===== */
@@ -46,11 +65,12 @@
       position:fixed; top:0; left:0; right:0; height:100vh;
       background:#fff; z-index:99;
       transform:translateY(-100%); transition:transform .28s ease;
-      padding: max(16px, env(safe-area-inset-top)) 20px 24px;
+      padding:max(16px, env(safe-area-inset-top)) 20px 24px;
       box-shadow:0 12px 32px rgba(0,0,0,.12);
       display:flex; flex-direction:column;
     }
     .mobile-nav.open{ transform:translateY(0); }
+    .mobile-nav[aria-hidden="true"]{ visibility:hidden; }
 
     .mobile-nav .close-btn{
       align-self:flex-end; font-size:28px; line-height:1;
@@ -60,7 +80,7 @@
       font-size:14px; color:var(--muted); font-weight:700; letter-spacing:.06em;
       margin:4px 0 8px;
     }
-    .mobile-nav ul{ list-style:none; margin-top:8px; }
+    .mobile-nav ul{ list-style:none; margin-top:8px; padding:0; }
     .mobile-nav li + li{ border-top:1px solid #eee; }
     .mobile-nav a{
       display:block; padding:14px 2px; font-size:18px; color:var(--text);
@@ -68,12 +88,14 @@
     }
     .mobile-nav a:active{ background:#f5f5f5; border-radius:8px; }
 
-    /* Hero */
+    /* Hero（背景にグラデ重ねで可読性UP） */
     .hero{ position:relative; overflow:hidden; color:var(--light); text-align:center; padding:56px 0; }
     .hero::before{
       content:""; position:absolute; inset:0;
-      background:linear-gradient(135deg,#d94e4e 30%,#6b9acc),url('https://picsum.photos/1200/800?blur=2') center/cover no-repeat;
-      opacity:.9;
+      background-image:
+        linear-gradient(135deg, rgba(217,78,78,.90) 0%, rgba(16,24,40,.75) 100%),
+        url('https://picsum.photos/1200/800?blur=2');
+      background-size:cover; background-position:center;
     }
     .hero-inner{ position:relative; z-index:1; }
     .hero h1{ font-size:1.6em; margin-bottom:.5em; }
@@ -119,52 +141,62 @@
 
     /* 画像・iframeのはみ出し保険 */
     img,iframe,video{ max-width:100%; height:auto; display:block; }
+
+    /* 省エネアニメ配慮 */
+    @media (prefers-reduced-motion: reduce) {
+      .nav-overlay, .mobile-nav { transition:none; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
 
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
       <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
       <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
-      <nav class="desktop-nav">
+      <nav class="desktop-nav" aria-label="グローバルナビゲーション">
         <ul>
           <li><a href="/rodoeisei-lab/guides/">解説</a></li>
           <li><a href="/rodoeisei-lab/videos/">動画</a></li>
-          <li><a href="/rodoeisei-lab/products/">道具棚</a></li><!-- 追加 -->
+          <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
           <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
           <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
+          <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
+          <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
+          <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- モバイル用ドロワー & オーバーレイ（ヘッダー直後に置く） -->
+  <!-- モバイル用ドロワー & オーバーレイ -->
   <div class="nav-overlay" id="navOverlay" hidden></div>
-  <nav class="mobile-nav" id="mobileNav" hidden>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
     <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
     <h2>メニュー</h2>
     <ul>
       <li><a href="/rodoeisei-lab/guides/">解説</a></li>
       <li><a href="/rodoeisei-lab/videos/">動画</a></li>
-      <li><a href="/rodoeisei-lab/products/">道具棚</a></li><!-- 追加 -->
+      <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
       <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
       <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
+      <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
       <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
       <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
     </ul>
   </nav>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" aria-label="サイト紹介">
     <div class="container hero-inner">
       <h1>現場と法令の「<span style="color:#ffe2e2">あいだ</span>」をつなぐ学習サイト。</h1>
       <p class="tagline">粉じん・有機溶剤・資格対策まで、<strong>毎週更新</strong>。</p>
       <div class="cta-buttons">
         <a href="/rodoeisei-lab/guides/#this-week" class="cta-primary">今週の解説を見る</a>
         <a href="/rodoeisei-lab/videos/" class="cta-secondary">動画一覧</a>
-        <a href="/rodoeisei-lab/products/" class="cta-tertiary">道具棚（保護具・測定器材）</a><!-- 追加 -->
+        <a href="/rodoeisei-lab/products/" class="cta-tertiary">道具棚（保護具・測定器材）</a>
       </div>
     </div>
   </section>
@@ -191,45 +223,48 @@
   </section>
 
   <!-- 今週の解説 -->
-  <section class="latest-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="this-week">今週の解説</h2>
-      </div>
-      <div class="cards">
-        <a class="card" href="/rodoeisei-lab/sagyokankyo.html">
-          <img src="https://picsum.photos/600/400?random=21" alt="作業環境測定の全体像の解説イメージ">
-          <div class="card-body">
-            <div class="card-meta">入門・5分要点・約5分</div>
-            <div class="card-title">作業環境測定の全体像：区分・手順・よくある誤解</div>
-            <p class="card-excerpt">管理区分の意味やC/D測定の役割など、現場で陥りがちな誤解を整理します…</p>
-          </div>
-        </a>
+  <main id="main">
+    <section class="latest-section" aria-labelledby="this-week">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="this-week">今週の解説</h2>
+        </div>
+        <div class="cards">
+          <a class="card" href="/rodoeisei-lab/sagyokankyo.html">
+            <img src="https://picsum.photos/600/400?random=21" alt="作業環境測定の全体像の解説イメージ" loading="lazy">
+            <div class="card-body">
+              <div class="card-meta">入門・5分要点</div>
+              <div class="card-title">作業環境測定の全体像：区分・手順・よくある誤解</div>
+              <p class="card-excerpt">管理区分の意味やC/D測定の役割など、現場で陥りがちな誤解を整理します…</p>
+            </div>
+          </a>
 
-        <a class="card" href="/rodoeisei-lab/updates/">
-          <img src="https://picsum.photos/601/400?random=22" alt="最新アップデートの案内イメージ">
-          <div class="card-body">
-            <div class="card-meta">最新アップデート・法令改正</div>
-            <div class="card-title">【最新】有機溶剤中毒予防規則の改正ポイント</div>
-            <p class="card-excerpt">2025年施行の改正内容について、現場担当者が押さえるべきポイントを解説…</p>
-          </div>
-        </a>
+          <a class="card" href="/rodoeisei-lab/updates/">
+            <img src="https://picsum.photos/601/400?random=22" alt="最新アップデートの案内イメージ" loading="lazy">
+            <div class="card-body">
+              <div class="card-meta">最新アップデート・法令改正</div>
+              <div class="card-title">【最新】有機溶剤中毒予防規則の改正ポイント</div>
+              <p class="card-excerpt">2025年施行の改正内容について、現場担当者が押さえるべきポイントを解説…</p>
+            </div>
+          </a>
 
-        <!-- 追加：道具棚への導線カード -->
-        <a class="card" href="/rodoeisei-lab/products/">
-          <img src="https://picsum.photos/602/400?random=23" alt="保護具・測定器材の道具棚イメージ">
-          <div class="card-body">
-            <div class="card-meta">新設・実務</div>
-            <div class="card-title">道具棚：おすすめ保護具・測定器材</div>
-            <p class="card-excerpt">現場で「これで助かった」を厳選。防じんマスク、騒音計、粉じん計、消耗品まで。</p>
-          </div>
-        </a>
+          <a class="card" href="/rodoeisei-lab/products/">
+            <img src="https://picsum.photos/602/400?random=23" alt="保護具・測定器材の道具棚イメージ" loading="lazy">
+            <div class="card-body">
+              <div class="card-meta">新設・実務</div>
+              <div class="card-title">道具棚：おすすめ保護具・測定器材</div>
+              <p class="card-excerpt">現場で「これで助かった」を厳選。防じんマスク、騒音計、粉じん計、消耗品まで。</p>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
-    <p>&copy; 2025 労働衛生ラボ</p>
+    <div class="container">
+      <p>&copy; 2025 労働衛生ラボ</p>
+    </div>
   </footer>
 
   <script>
@@ -240,27 +275,26 @@
     const overlay   = document.getElementById('navOverlay');
 
     function openNav(){
-      mobileNav.hidden = false;
-      overlay.hidden   = false;
-      requestAnimationFrame(()=>{
-        mobileNav.classList.add('open');
-        overlay.classList.add('show');
-        document.body.classList.add('nav-open');
-        menuBtn.setAttribute('aria-expanded','true');
-      });
+      mobileNav.setAttribute('aria-hidden','false');
+      document.body.classList.add('nav-open');
+      overlay.hidden = false;
+      mobileNav.classList.add('open');
+      overlay.classList.add('show');
+      menuBtn.setAttribute('aria-expanded','true');
     }
     function closeNav(){
+      mobileNav.setAttribute('aria-hidden','true');
+      document.body.classList.remove('nav-open');
       mobileNav.classList.remove('open');
       overlay.classList.remove('show');
-      document.body.classList.remove('nav-open');
       menuBtn.setAttribute('aria-expanded','false');
-      setTimeout(()=>{
-        mobileNav.hidden = true;
-        overlay.hidden   = true;
-      }, 280);
+      setTimeout(()=>{ overlay.hidden = true; }, 280);
     }
 
-    menuBtn.addEventListener('click', ()=> (mobileNav.hidden ? openNav() : closeNav()));
+    menuBtn.addEventListener('click', ()=> {
+      const hidden = mobileNav.getAttribute('aria-hidden') === 'true';
+      hidden ? openNav() : closeNav();
+    });
     overlay.addEventListener('click', closeNav);
     closeBtn.addEventListener('click', closeNav);
     window.addEventListener('keydown', e => { if(e.key === 'Escape') closeNav(); });
