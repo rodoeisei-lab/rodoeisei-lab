@@ -1,31 +1,275 @@
-<!doctype html><html lang="ja"><head>
-<meta charset="utf-8"><title>資格ガイド｜労働衛生ラボ</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/rodoeisei-lab/styles.css">
-</head><body>
-<header class="site-header"><div class="container">
-  <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
-  <nav class="main-nav"><ul>
-    <li><a href="/rodoeisei-lab/guides/">解説</a></li>
-    <li><a href="/rodoeisei-lab/videos/">動画</a></li>
-    <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
-    <li><a href="/rodoeisei-lab/licenses/">資格ガイド</a></li>
-    <li><a href="/rodoeisei-lab/sns/">SNS</a></li>
-    <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
-    <li class="muted"><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
-  </ul></nav>
-</div></header>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>資格ガイド｜労働衛生ラボ</title>
+  <meta name="description" content="第一種衛生管理者の合格ルートを最短で。頻出テーマ、学習プラン（1週間/3週間/8週間）、ミニテスト、FAQまで一枚で把握。">
+  <link rel="canonical" href="https://rodoeisei-lab.github.io/rodoeisei-lab/licenses/">
+  <link rel="icon" href="/rodoeisei-lab/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="資格ガイド｜労働衛生ラボ">
+  <meta property="og:description" content="第一種衛生管理者の合格ルートを最短で。頻出テーマ、学習プラン（1週間/3週間/8週間）、ミニテスト、FAQまで一枚で把握。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rodoeisei-lab.github.io/rodoeisei-lab/licenses/">
+  <meta property="og:site_name" content="労働衛生ラボ">
+  <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root{
+      --primary:#d94e4e; --text:#1a1a1a; --muted:#667085; --bg:#f7f7f8;
+      --card:#fff; --ring:#2684ff; --max:1100px;
+    }
+    *,*::before,*::after{ box-sizing:border-box; }
+    body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,system-ui,sans-serif; color:var(--text); line-height:1.7; }
+    a{ color:inherit; }
+    .container{ width:90%; max-width:var(--max); margin:0 auto; }
 
-<section class="section"><div class="container">
-  <h1>資格ガイド</h1>
-  <div class="card-grid">
-    <article class="card">
-      <div class="meta"><span class="badge lv-practice">実務</span><span class="badge">5分要点</span></div>
-      <h3>第一種衛生管理者：1週間プラン</h3>
-     <p>頻出テーマ／配点の傾向／毎日10分の回し方。</p>
-    <a class="btn" href="/rodoeisei-lab/licenses/eisei-1st/">読む</a>
-    </article>
+    header{ border-bottom:1px solid #eee; }
+    header .wrap{ display:flex; gap:16px; align-items:center; justify-content:space-between; padding:12px 0; }
+    .brand{ text-decoration:none; font-weight:700; }
+    .nav{ display:flex; gap:.9rem; flex-wrap:wrap; }
+    .nav a{ text-decoration:none; padding:8px; border-radius:6px; }
+    .nav a:hover{ background:#efeff2; }
+    @media (max-width:768px){ .nav{ display:none; } }
+
+    .hero{ padding:28px 0; background:var(--bg); }
+    .hero h1{ margin:.2rem 0 .6rem; font-size:clamp(1.4rem,3.2vw,2rem); }
+    .lead{ color:var(--muted); }
+
+    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
+    .col-8{ grid-column:span 8; } .col-4{ grid-column:span 4; }
+    @media (max-width:960px){ .col-8,.col-4{ grid-column:1/-1; } }
+
+    .card{ background:var(--card); border:1px solid #eee; border-radius:12px; padding:16px; box-shadow:0 8px 24px rgba(16,24,40,.06); }
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:.4rem 0 0; }
+    .chip{ display:inline-block; padding:.25rem .55rem; border-radius:999px; background:#f1f1f4; font-size:.85rem; color:#475467; }
+    .btn{ display:inline-block; padding:.55rem .85rem; border-radius:8px; border:1px solid #ddd; text-decoration:none; }
+    .btn.primary{ border-color:#d94e4e; }
+    .kicker{ color:#6941C6; font-weight:700; font-size:.85rem; letter-spacing:.04em; }
+    .muted{ color:var(--muted); }
+    .table{ width:100%; border-collapse:collapse; }
+    .table th,.table td{ border:1px solid #eee; padding:.6rem .7rem; vertical-align:top; }
+    .table th{ background:#fafafa; text-align:left; width:28%; }
+    details{ border:1px solid #eee; border-radius:10px; padding:.7rem .9rem; background:#fff; }
+    details + details{ margin-top:.6rem; }
+    details[open]{ box-shadow:0 8px 24px rgba(16,24,40,.06); }
+    summary{ cursor:pointer; font-weight:700; }
+    .list-tight li{ margin:.25rem 0; }
+    .qa details summary{ list-style:none; }
+    .qa details summary::-webkit-details-marker{ display:none; }
+    .callout{ border-left:4px solid #d94e4e; background:#fff6f6; padding:.6rem .8rem; border-radius:8px; }
+
+    footer{ border-top:1px solid #eee; margin-top:28px; color:#667085; }
+    .toc{ position:sticky; top:10px; }
+    img{ max-width:100%; height:auto; }
+    a:focus-visible,button:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; border-radius:6px; }
+  </style>
+</head>
+<body>
+<header role="banner">
+  <div class="container wrap">
+    <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
+    <nav class="nav" aria-label="グローバル">
+      <a href="/rodoeisei-lab/guides/">解説</a>
+      <a href="/rodoeisei-lab/videos/">動画</a>
+      <a href="/rodoeisei-lab/updates/">最新アップデート</a>
+      <a href="/rodoeisei-lab/licenses/">資格ガイド</a>
+      <a href="/rodoeisei-lab/glossary/">用語集</a>
+      <a href="/rodoeisei-lab/sns/">SNSリンク集</a>
+      <a href="/rodoeisei-lab/contact/">お問い合わせ</a>
+    </nav>
   </div>
-</div></section>
+</header>
 
-</body></html>
+<section class="hero">
+  <div class="container">
+    <h1>資格ガイド</h1>
+    <p class="lead">第一種衛生管理者を中心に、<strong>最小の学習で最大の点を取りに行く</strong>実務者向けロードマップ。10分/日の超時短プランから、3週間・8週間プランまで。</p>
+    <div class="chips">
+      <span class="chip">一次情報を前提</span>
+      <span class="chip">頻出優先</span>
+      <span class="chip">現場で使える理解</span>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="margin-top:18px;">
+  <div class="grid">
+    <!-- Main -->
+    <div class="col-8" aria-labelledby="main-ttl">
+      <h2 id="main-ttl" style="margin:0 0 10px;">第一種衛生管理者：全体像</h2>
+      <div class="card" style="margin-bottom:16px;">
+        <table class="table" aria-describedby="exam-outline">
+          <caption id="exam-outline" class="sr-only">試験の基本情報</caption>
+          <tbody>
+            <tr><th scope="row">区分</th><td>第一種衛生管理者（国家試験）</td></tr>
+            <tr><th scope="row">主な出題科目</th><td>①関係法令（安衛法・安衛則・各則）／②労働衛生（有害要因・測定・管理）／③労働生理</td></tr>
+            <tr><th scope="row">問題形式</th><td>択一式（計算・図表読解を含む）</td></tr>
+            <tr><th scope="row">合格の考え方</th><td>全体の得点最大化＋<strong>科目ごとの足切りを回避</strong>（最新の基準は実施要領を確認）</td></tr>
+            <tr><th scope="row">最新情報</th><td><a class="btn" href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">実施要領を確認</a>（試験日・手数料・申請方法）</td></tr>
+          </tbody>
+        </table>
+        <div class="callout" style="margin-top:10px;">方針：<strong>頻出の山に全振り</strong> →「安衛法・有機溶剤・粉じん・局排・リスクアセスメント・保護具」を軸に得点を稼ぎ、難問は深追いしない。</div>
+      </div>
+
+      <!-- Frequent topics -->
+      <h3 style="margin:10px 0 8px;">頻出テーマ（まずここ）</h3>
+      <div class="card">
+        <ul class="list-tight">
+          <li>安衛法・安衛則の体系／用語（事業者責務、作業主任者、健康診断、記録保存 など）</li>
+          <li>有機溶剤中毒予防規則／粉じん障害防止規則（適用範囲・測定・換気・保護具）</li>
+          <li>局所排気・換気（フード・ダクト・風量・囲い込み／希釈換気の限界）</li>
+          <li>化学物質のリスクアセスメント（SDS、ラベル、リスク低減の優先順位）</li>
+          <li>保護具（防じん・有機ガス・防毒・選定・フィット・表示）</li>
+          <li>生理・毒性の基礎（ガス/蒸気/粉じんの体内動態、TLVや管理濃度の考え方）</li>
+        </ul>
+      </div>
+
+      <!-- Study plans -->
+      <h2 style="margin:22px 0 10px;">学習プラン</h2>
+
+      <details open>
+        <summary>① 1週間プラン（<strong>10分/日</strong>）— 最小コストで合格ラインの“型”を作る</summary>
+        <div style="margin-top:.6rem">
+          <ol>
+            <li><strong>Day1：</strong>全体像と出題マップ（2分）／安衛法の骨組み（8分）</li>
+            <li><strong>Day2：</strong>有機溶剤（適用・分類・換気・保護具・貯蔵）（10分）</li>
+            <li><strong>Day3：</strong>粉じん（発生源・測定・局排・マスク区分）（10分）</li>
+            <li><strong>Day4：</strong>局所排気＆希釈換気の要点（10分）</li>
+            <li><strong>Day5：</strong>リスクアセスメント＆SDS/ラベル（10分）</li>
+            <li><strong>Day6：</strong>生理・毒性の超要点（換気の目的／吸入→血中→代謝→排泄）（10分）</li>
+            <li><strong>Day7：</strong>ミニテスト＋弱点1テーマを復習（10分）</li>
+          </ol>
+          <p class="muted">使い方：各日「要点→1問演習→答え合わせ→1行メモ」。迷った概念は用語集で用語を固定。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>② 3週間プラン（<strong>30分/日</strong>）— 頻出を網羅して安全域に</summary>
+        <div style="margin-top:.6rem">
+          <ul>
+            <li><strong>Week1：</strong>安衛法系（体系・作業主任者・記録・健康診断）＋有機溶剤</li>
+            <li><strong>Week2：</strong>粉じん・騒音・振動・温熱／局排・希釈換気・保護具</li>
+            <li><strong>Week3：</strong>リスクアセスメント・SDS・ラベル／生理・毒性／総合演習</li>
+          </ul>
+          <p class="muted">毎日：インプット20分＋過去問10分。週末は弱点テーマだけを復習。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>③ 8週間プラン（<strong>45–60分/日</strong>）— 点の“伸びしろ”まで取り切る</summary>
+        <div style="margin-top:.6rem">
+          <ul>
+            <li>各法令は「目的→適用→義務→数値→罰則」の順でノート化</li>
+            <li>計算系（換気量・稀釈・希釈倍数・マスク選定）を週1回固める</li>
+            <li>模試3セット。復習ノートは「誤答理由を名詞で1行」</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Mini test -->
+      <h3 style="margin:20px 0 8px;">ミニテスト（3問）</h3>
+      <div class="card">
+        <ol>
+          <li>希釈換気は、<strong>局所で高濃度の発生が続く作業</strong>では基本的に不適切である。<em>（○／×）</em></li>
+          <li>SDSの交付義務は、危険性・有害性が<strong>既知の化学物質</strong>等を含む製品の提供時に課される。<em>（○／×）</em></li>
+          <li>防じんマスクの選定で重要なのは、粒子径・作業強度・装着状態（フィット）である。<em>（○／×）</em></li>
+        </ol>
+        <details style="margin-top:.6rem;"><summary>解答・要点</summary>
+          <ul class="list-tight">
+            <li>1：○（局所高濃度→まず源対策/局排。希釈はムラと追従遅れが出やすい）</li>
+            <li>2：○（SDSは提供側の義務。ラベルとセットで考える）</li>
+            <li>3：○（等級だけで選ばない。フィット不良は実効性能を大きく落とす）</li>
+          </ul>
+        </details>
+      </div>
+
+      <!-- FAQ -->
+      <h3 style="margin:20px 0 8px;">よくある質問</h3>
+      <div class="qa">
+        <details><summary>1日10分でも受かる？</summary>
+          <p>“すでに現場知識がある前提”なら、合格ラインを狙う最低限の土台は作れます。未知の領域が多いなら、<strong>3週間プラン</strong>へ。</p>
+        </details>
+        <details><summary>過去問は何年分やる？</summary>
+          <p>少なくとも<strong>3回分</strong>。間違いノートは「根拠の一言メモ」を残すだけで十分。</p>
+        </details>
+        <details><summary>法令はどこまで覚える？</summary>
+          <p>“目的→適用→義務→数値→罰則”の骨組み。数値は<strong>選ばせ方</strong>を観察（上限・下限・例外）。</p>
+        </details>
+        <details><summary>計算が不安</summary>
+          <p>換気量・希釈計算・風速→風量・防じんマスクの等級選定の4点に絞って反復。</p>
+        </details>
+        <details><summary>最新の受験手続きは？</summary>
+          <p><a href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">実施要領</a>で、試験日・手数料・申請方法を毎回確認。</p>
+        </details>
+      </div>
+
+      <!-- CTA -->
+      <div style="margin:22px 0;">
+        <a class="btn primary" href="/rodoeisei-lab/guides/">解説へ</a>
+        <a class="btn" href="/rodoeisei-lab/videos/">動画</a>
+        <a class="btn" href="/rodoeisei-lab/glossary/">用語集</a>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="col-4 toc" aria-label="サイド情報">
+      <div class="card">
+        <div class="kicker">ショートカット</div>
+        <ul>
+          <li><a href="#main-ttl">全体像</a></li>
+          <li><a href="#this-week">学習プラン</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <div class="kicker">関連リンク</div>
+        <ul class="list-tight">
+          <li><a href="/rodoeisei-lab/guides/">解説（法令・局排・保護具）</a></li>
+          <li><a href="/rodoeisei-lab/videos/">動画（アップロード一覧）</a></li>
+          <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <div class="kicker">学習メモのコツ</div>
+        <ul class="list-tight">
+          <li>条文は「目的→適用→義務→数値→罰則」で1行ずつ</li>
+          <li>計算式は“単位”を必ず併記</li>
+          <li>覚えにくい語は<strong>用語集</strong>へ一元管理</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer role="contentinfo">
+  <div class="container" style="padding:18px 0 28px;">
+    <p>© 2025 労働衛生ラボ</p>
+  </div>
+</footer>
+
+<!-- SEO: FAQ構造化データ（要約版） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "1日10分でも受かる？",
+    "acceptedAnswer": { "@type": "Answer", "text": "現場知識がある前提なら、合格ラインの土台は作れます。未知が多い場合は3週間プランへ。" }
+  },{
+    "@type": "Question",
+    "name": "過去問は何年分やる？",
+    "acceptedAnswer": { "@type": "Answer", "text": "少なくとも3回分。誤答は“根拠の一言メモ”で管理します。" }
+  },{
+    "@type": "Question",
+    "name": "法令はどこまで覚える？",
+    "acceptedAnswer": { "@type": "Answer", "text": "目的→適用→義務→数値→罰則の骨組みを押さえ、数値は選ばせ方に注目。" }
+  }]
+}
+</script>
+</body>
+</html>
