@@ -1,275 +1,632 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>資格ガイド｜労働衛生ラボ</title>
-  <meta name="description" content="第一種衛生管理者の合格ルートを最短で。頻出テーマ、学習プラン（1週間/3週間/8週間）、ミニテスト、FAQまで一枚で把握。">
-  <link rel="canonical" href="https://rodoeisei-lab.github.io/rodoeisei-lab/licenses/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>資格ガイド | 労働衛生ラボ</title>
+  <meta name="description" content="第一種衛生管理者を中心に、最小の学習で最大の点を取りに行くためのロードマップ。超時短プランから3週間・8週間プランまで、実務者向けに整理した資格ガイドです。">
   <link rel="icon" href="/rodoeisei-lab/favicon.ico">
-  <meta name="theme-color" content="#ffffff">
-  <meta property="og:title" content="資格ガイド｜労働衛生ラボ">
-  <meta property="og:description" content="第一種衛生管理者の合格ルートを最短で。頻出テーマ、学習プラン（1週間/3週間/8週間）、ミニテスト、FAQまで一枚で把握。">
+  <meta name="theme-color" content="#050816">
+
+  <!-- OGP -->
+  <meta property="og:title" content="資格ガイド | 労働衛生ラボ">
+  <meta property="og:description" content="第一種衛生管理者など、労働衛生に関連する資格を現場目線で攻略するためのガイド。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rodoeisei-lab.github.io/rodoeisei-lab/licenses/">
   <meta property="og:site_name" content="労働衛生ラボ">
   <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
+
   <style>
-    :root{
-      --primary:#d94e4e; --text:#1a1a1a; --muted:#667085; --bg:#f7f7f8;
-      --card:#fff; --ring:#2684ff; --max:1100px;
-    }
+    /* ベース */
     *,*::before,*::after{ box-sizing:border-box; }
-    body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,system-ui,sans-serif; color:var(--text); line-height:1.7; }
-    a{ color:inherit; }
+    html,body{ width:100%; overflow-x:hidden; }
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Meiryo,system-ui,sans-serif;
+      line-height:1.6;
+      color:#e5e7eb;
+      background:#050816;
+    }
+
+    :root{
+      --primary:#f97373;
+      --secondary:#22d3ee;
+      --bg:#050816;
+      --panel:#020617;
+      --muted:#9ca3af;
+      --light:#f9fafb;
+      --max:1100px;
+      --ring:#38bdf8;
+    }
+
     .container{ width:90%; max-width:var(--max); margin:0 auto; }
 
-    header{ border-bottom:1px solid #eee; }
-    header .wrap{ display:flex; gap:16px; align-items:center; justify-content:space-between; padding:12px 0; }
-    .brand{ text-decoration:none; font-weight:700; }
-    .nav{ display:flex; gap:.9rem; flex-wrap:wrap; }
-    .nav a{ text-decoration:none; padding:8px; border-radius:6px; }
-    .nav a:hover{ background:#efeff2; }
-    @media (max-width:768px){ .nav{ display:none; } }
+    /* アクセシビリティ */
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:10px; width:auto; height:auto;
+      padding:.6rem .8rem; background:#000; color:#fff;
+      border-radius:.5rem; z-index:100;
+    }
+    a:focus-visible,button:focus-visible{
+      outline:2px solid var(--ring); outline-offset:2px; border-radius:6px;
+    }
 
-    .hero{ padding:28px 0; background:var(--bg); }
-    .hero h1{ margin:.2rem 0 .6rem; font-size:clamp(1.4rem,3.2vw,2rem); }
-    .lead{ color:var(--muted); }
+    /* Header */
+    .site-header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(5,8,22,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(148,163,184,.22);
+    }
+    .site-header .container{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0;
+    }
+    .brand{
+      font-weight:700; text-decoration:none;
+      color:var(--light); font-size:1.15em;
+      letter-spacing:.04em;
+    }
+    .desktop-nav ul{
+      list-style:none; display:flex; gap:16px; margin:0; padding:0;
+      font-size:.9rem;
+    }
+    .desktop-nav a{
+      color:#e5e7eb; text-decoration:none;
+      padding:8px 10px; border-radius:999px;
+      background:transparent;
+      transition:background .18s ease, color .18s ease, transform .1s ease;
+    }
+    .desktop-nav a:hover{
+      background:rgba(148,163,184,.16);
+      transform:translateY(-1px);
+    }
 
-    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
-    .col-8{ grid-column:span 8; } .col-4{ grid-column:span 4; }
-    @media (max-width:960px){ .col-8,.col-4{ grid-column:1/-1; } }
+    .menu-btn{
+      display:none; font-size:1.7em;
+      background:none; border:none; color:#e5e7eb; cursor:pointer;
+    }
 
-    .card{ background:var(--card); border:1px solid #eee; border-radius:12px; padding:16px; box-shadow:0 8px 24px rgba(16,24,40,.06); }
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:.4rem 0 0; }
-    .chip{ display:inline-block; padding:.25rem .55rem; border-radius:999px; background:#f1f1f4; font-size:.85rem; color:#475467; }
-    .btn{ display:inline-block; padding:.55rem .85rem; border-radius:8px; border:1px solid #ddd; text-decoration:none; }
-    .btn.primary{ border-color:#d94e4e; }
-    .kicker{ color:#6941C6; font-weight:700; font-size:.85rem; letter-spacing:.04em; }
-    .muted{ color:var(--muted); }
-    .table{ width:100%; border-collapse:collapse; }
-    .table th,.table td{ border:1px solid #eee; padding:.6rem .7rem; vertical-align:top; }
-    .table th{ background:#fafafa; text-align:left; width:28%; }
-    details{ border:1px solid #eee; border-radius:10px; padding:.7rem .9rem; background:#fff; }
-    details + details{ margin-top:.6rem; }
-    details[open]{ box-shadow:0 8px 24px rgba(16,24,40,.06); }
-    summary{ cursor:pointer; font-weight:700; }
-    .list-tight li{ margin:.25rem 0; }
-    .qa details summary{ list-style:none; }
-    .qa details summary::-webkit-details-marker{ display:none; }
-    .callout{ border-left:4px solid #d94e4e; background:#fff6f6; padding:.6rem .8rem; border-radius:8px; }
+    @media(max-width:768px){
+      .desktop-nav{ display:none; }
+      .menu-btn{ display:block; }
+    }
 
-    footer{ border-top:1px solid #eee; margin-top:28px; color:#667085; }
-    .toc{ position:sticky; top:10px; }
-    img{ max-width:100%; height:auto; }
-    a:focus-visible,button:focus-visible{ outline:2px solid var(--ring); outline-offset:2px; border-radius:6px; }
+    /* モバイルナビ */
+    body.nav-open{ overflow:hidden; }
+
+    .nav-overlay{
+      position:fixed; inset:0; background:rgba(15,23,42,.66);
+      z-index:48; opacity:0; pointer-events:none; transition:opacity .28s ease;
+    }
+    .nav-overlay.show{ opacity:1; pointer-events:auto; }
+
+    .mobile-nav{
+      position:fixed; top:0; left:0; right:0; height:100vh;
+      background:#020617; z-index:49;
+      transform:translateY(-100%); transition:transform .28s ease;
+      padding:max(16px, env(safe-area-inset-top)) 20px 24px;
+      box-shadow:0 12px 32px rgba(15,23,42,.65);
+      display:flex; flex-direction:column;
+      color:#e5e7eb;
+    }
+    .mobile-nav.open{ transform:translateY(0); }
+    .mobile-nav[aria-hidden="true"]{ visibility:hidden; }
+
+    .mobile-nav .close-btn{
+      align-self:flex-end; font-size:28px; line-height:1;
+      background:none; border:none; padding:8px; cursor:pointer; color:#e5e7eb;
+    }
+    .mobile-nav h2{
+      font-size:12px; color:var(--muted); font-weight:700; letter-spacing:.16em;
+      margin:4px 0 8px; text-transform:uppercase;
+    }
+    .mobile-nav ul{ list-style:none; margin-top:8px; padding:0; }
+    .mobile-nav li + li{ border-top:1px solid rgba(31,41,55,.8); }
+    .mobile-nav a{
+      display:block; padding:14px 2px; font-size:17px; color:#e5e7eb;
+      text-decoration:none;
+    }
+    .mobile-nav a:active{
+      background:rgba(15,23,42,.9); border-radius:8px;
+    }
+
+    /* メインレイアウト */
+    main{
+      padding:32px 0 40px;
+      background:
+        radial-gradient(circle at top left,#1e293b 0,transparent 55%),
+        radial-gradient(circle at bottom right,#0f172a 0,transparent 50%),
+        var(--panel);
+      min-height:calc(100vh - 64px);
+    }
+
+    .licenses-header{
+      margin-bottom:20px;
+    }
+    .licenses-eyebrow{
+      font-size:.75rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .licenses-title{
+      font-size:1.5rem;
+      margin:0 0 6px;
+    }
+    .licenses-title span{
+      background:linear-gradient(120deg,#f97373,#facc15);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .licenses-lead{
+      margin:0;
+      font-size:.95rem;
+      color:var(--muted);
+      max-width:44rem;
+    }
+    .licenses-note{
+      margin-top:6px;
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    .tag-row{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .tag-pill{
+      font-size:.78rem;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.6);
+      background:rgba(15,23,42,.96);
+      color:#d1d5db;
+    }
+
+    /* 全体レイアウト */
+    .licenses-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.9fr) minmax(0,1.3fr);
+      gap:22px;
+      align-items:flex-start;
+      margin-top:18px;
+    }
+    @media(max-width:900px){
+      .licenses-layout{
+        grid-template-columns:minmax(0,1fr);
+      }
+    }
+
+    /* 共通カード */
+    .card{
+      border-radius:18px;
+      border:1px solid rgba(148,163,184,.6);
+      background:
+        radial-gradient(circle at 0 0,rgba(248,250,252,.15),transparent 55%),
+        radial-gradient(circle at 100% 100%,rgba(34,211,238,.16),transparent 60%),
+        rgba(15,23,42,.96);
+      box-shadow:0 18px 46px rgba(15,23,42,.92);
+      padding:14px 14px 12px;
+      font-size:.9rem;
+    }
+    .card-title{
+      font-size:1rem;
+      font-weight:600;
+      margin:0 0 6px;
+    }
+    .card-sub{
+      font-size:.82rem;
+      color:var(--muted);
+      margin:0 0 6px;
+    }
+
+    /* 試験概要カード */
+    .exam-header-row{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:6px;
+    }
+    .pill-small{
+      font-size:.78rem;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.6);
+      background:rgba(15,23,42,.96);
+      color:#d1d5db;
+    }
+    .pill-main{
+      background:rgba(76,5,25,.9);
+      border-color:rgba(248,113,113,.85);
+    }
+    .pill-focus{
+      background:rgba(8,47,73,.9);
+      border-color:rgba(125,211,252,.8);
+    }
+
+    .exam-table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:6px;
+      font-size:.85rem;
+      background:rgba(15,23,42,.98);
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .exam-table th,
+    .exam-table td{
+      padding:6px 8px;
+      border-bottom:1px solid rgba(55,65,81,.9);
+      vertical-align:top;
+    }
+    .exam-table th{
+      width:28%;
+      background:rgba(15,23,42,1);
+      font-weight:600;
+    }
+    .exam-table tr:last-child th,
+    .exam-table tr:last-child td{
+      border-bottom:none;
+    }
+
+    .exam-note{
+      margin-top:6px;
+      font-size:.78rem;
+      color:var(--muted);
+    }
+
+    /* 学習プランカード */
+    .plan-list{
+      margin:4px 0 2px;
+      padding-left:1.1rem;
+      font-size:.88rem;
+      color:#d1d5db;
+    }
+    .plan-list li + li{ margin-top:2px; }
+
+    .plan-grid{
+      margin-top:6px;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:8px;
+    }
+    @media(max-width:600px){
+      .plan-grid{
+        grid-template-columns:minmax(0,1fr);
+      }
+    }
+    .plan-pill{
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.6);
+      background:rgba(15,23,42,.98);
+      padding:6px 8px;
+      font-size:.84rem;
+    }
+    .plan-pill strong{
+      display:block;
+      margin-bottom:2px;
+      font-size:.86rem;
+    }
+
+    /* サイドカード */
+    .side-block{
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.6);
+      background:
+        radial-gradient(circle at 0 0,rgba(248,250,252,.12),transparent 55%),
+        rgba(15,23,42,.96);
+      box-shadow:0 14px 36px rgba(15,23,42,.9);
+      padding:12px 14px 12px;
+      font-size:.86rem;
+      margin-bottom:12px;
+    }
+    .side-title{
+      font-size:.9rem;
+      font-weight:600;
+      margin:0 0 4px;
+    }
+    .side-title span{
+      font-size:.7rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:var(--muted);
+      margin-left:6px;
+    }
+    .side-body{
+      margin:0 0 4px;
+      color:#d1d5db;
+    }
+    .side-list{
+      margin:0;
+      padding-left:1.1rem;
+      color:#d1d5db;
+      font-size:.84rem;
+    }
+    .side-list li + li{ margin-top:2px; }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:6px;
+    }
+    .badge{
+      font-size:.78rem;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.6);
+      background:rgba(15,23,42,.96);
+      color:#d1d5db;
+    }
+
+    @media(max-width:768px){
+      main{ padding:26px 0 34px; }
+    }
+
+    /* フッター */
+    .footer{
+      background:#020617;
+      border-top:1px solid rgba(15,23,42,.95);
+      color:var(--muted);
+      font-size:.8rem;
+      padding:18px 0 22px;
+      text-align:center;
+    }
+
+    /* モーション削減 */
+    @media (prefers-reduced-motion: reduce){
+      .nav-overlay, .mobile-nav{ transition:none; }
+    }
   </style>
 </head>
 <body>
-<header role="banner">
-  <div class="container wrap">
-    <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
-    <nav class="nav" aria-label="グローバル">
-      <a href="/rodoeisei-lab/guides/">解説</a>
-      <a href="/rodoeisei-lab/videos/">動画</a>
-      <a href="/rodoeisei-lab/updates/">最新アップデート</a>
-      <a href="/rodoeisei-lab/licenses/">資格ガイド</a>
-      <a href="/rodoeisei-lab/glossary/">用語集</a>
-      <a href="/rodoeisei-lab/sns/">SNSリンク集</a>
-      <a href="/rodoeisei-lab/contact/">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
+  <a class="skip-link" href="#main">本文へスキップ</a>
 
-<section class="hero">
-  <div class="container">
-    <h1>資格ガイド</h1>
-    <p class="lead">第一種衛生管理者を中心に、<strong>最小の学習で最大の点を取りに行く</strong>実務者向けロードマップ。10分/日の超時短プランから、3週間・8週間プランまで。</p>
-    <div class="chips">
-      <span class="chip">一次情報を前提</span>
-      <span class="chip">頻出優先</span>
-      <span class="chip">現場で使える理解</span>
-    </div>
-  </div>
-</section>
-
-<div class="container" style="margin-top:18px;">
-  <div class="grid">
-    <!-- Main -->
-    <div class="col-8" aria-labelledby="main-ttl">
-      <h2 id="main-ttl" style="margin:0 0 10px;">第一種衛生管理者：全体像</h2>
-      <div class="card" style="margin-bottom:16px;">
-        <table class="table" aria-describedby="exam-outline">
-          <caption id="exam-outline" class="sr-only">試験の基本情報</caption>
-          <tbody>
-            <tr><th scope="row">区分</th><td>第一種衛生管理者（国家試験）</td></tr>
-            <tr><th scope="row">主な出題科目</th><td>①関係法令（安衛法・安衛則・各則）／②労働衛生（有害要因・測定・管理）／③労働生理</td></tr>
-            <tr><th scope="row">問題形式</th><td>択一式（計算・図表読解を含む）</td></tr>
-            <tr><th scope="row">合格の考え方</th><td>全体の得点最大化＋<strong>科目ごとの足切りを回避</strong>（最新の基準は実施要領を確認）</td></tr>
-            <tr><th scope="row">最新情報</th><td><a class="btn" href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">実施要領を確認</a>（試験日・手数料・申請方法）</td></tr>
-          </tbody>
-        </table>
-        <div class="callout" style="margin-top:10px;">方針：<strong>頻出の山に全振り</strong> →「安衛法・有機溶剤・粉じん・局排・リスクアセスメント・保護具」を軸に得点を稼ぎ、難問は深追いしない。</div>
-      </div>
-
-      <!-- Frequent topics -->
-      <h3 style="margin:10px 0 8px;">頻出テーマ（まずここ）</h3>
-      <div class="card">
-        <ul class="list-tight">
-          <li>安衛法・安衛則の体系／用語（事業者責務、作業主任者、健康診断、記録保存 など）</li>
-          <li>有機溶剤中毒予防規則／粉じん障害防止規則（適用範囲・測定・換気・保護具）</li>
-          <li>局所排気・換気（フード・ダクト・風量・囲い込み／希釈換気の限界）</li>
-          <li>化学物質のリスクアセスメント（SDS、ラベル、リスク低減の優先順位）</li>
-          <li>保護具（防じん・有機ガス・防毒・選定・フィット・表示）</li>
-          <li>生理・毒性の基礎（ガス/蒸気/粉じんの体内動態、TLVや管理濃度の考え方）</li>
-        </ul>
-      </div>
-
-      <!-- Study plans -->
-      <h2 style="margin:22px 0 10px;">学習プラン</h2>
-
-      <details open>
-        <summary>① 1週間プラン（<strong>10分/日</strong>）— 最小コストで合格ラインの“型”を作る</summary>
-        <div style="margin-top:.6rem">
-          <ol>
-            <li><strong>Day1：</strong>全体像と出題マップ（2分）／安衛法の骨組み（8分）</li>
-            <li><strong>Day2：</strong>有機溶剤（適用・分類・換気・保護具・貯蔵）（10分）</li>
-            <li><strong>Day3：</strong>粉じん（発生源・測定・局排・マスク区分）（10分）</li>
-            <li><strong>Day4：</strong>局所排気＆希釈換気の要点（10分）</li>
-            <li><strong>Day5：</strong>リスクアセスメント＆SDS/ラベル（10分）</li>
-            <li><strong>Day6：</strong>生理・毒性の超要点（換気の目的／吸入→血中→代謝→排泄）（10分）</li>
-            <li><strong>Day7：</strong>ミニテスト＋弱点1テーマを復習（10分）</li>
-          </ol>
-          <p class="muted">使い方：各日「要点→1問演習→答え合わせ→1行メモ」。迷った概念は用語集で用語を固定。</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>② 3週間プラン（<strong>30分/日</strong>）— 頻出を網羅して安全域に</summary>
-        <div style="margin-top:.6rem">
-          <ul>
-            <li><strong>Week1：</strong>安衛法系（体系・作業主任者・記録・健康診断）＋有機溶剤</li>
-            <li><strong>Week2：</strong>粉じん・騒音・振動・温熱／局排・希釈換気・保護具</li>
-            <li><strong>Week3：</strong>リスクアセスメント・SDS・ラベル／生理・毒性／総合演習</li>
-          </ul>
-          <p class="muted">毎日：インプット20分＋過去問10分。週末は弱点テーマだけを復習。</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>③ 8週間プラン（<strong>45–60分/日</strong>）— 点の“伸びしろ”まで取り切る</summary>
-        <div style="margin-top:.6rem">
-          <ul>
-            <li>各法令は「目的→適用→義務→数値→罰則」の順でノート化</li>
-            <li>計算系（換気量・稀釈・希釈倍数・マスク選定）を週1回固める</li>
-            <li>模試3セット。復習ノートは「誤答理由を名詞で1行」</li>
-          </ul>
-        </div>
-      </details>
-
-      <!-- Mini test -->
-      <h3 style="margin:20px 0 8px;">ミニテスト（3問）</h3>
-      <div class="card">
-        <ol>
-          <li>希釈換気は、<strong>局所で高濃度の発生が続く作業</strong>では基本的に不適切である。<em>（○／×）</em></li>
-          <li>SDSの交付義務は、危険性・有害性が<strong>既知の化学物質</strong>等を含む製品の提供時に課される。<em>（○／×）</em></li>
-          <li>防じんマスクの選定で重要なのは、粒子径・作業強度・装着状態（フィット）である。<em>（○／×）</em></li>
-        </ol>
-        <details style="margin-top:.6rem;"><summary>解答・要点</summary>
-          <ul class="list-tight">
-            <li>1：○（局所高濃度→まず源対策/局排。希釈はムラと追従遅れが出やすい）</li>
-            <li>2：○（SDSは提供側の義務。ラベルとセットで考える）</li>
-            <li>3：○（等級だけで選ばない。フィット不良は実効性能を大きく落とす）</li>
-          </ul>
-        </details>
-      </div>
-
-      <!-- FAQ -->
-      <h3 style="margin:20px 0 8px;">よくある質問</h3>
-      <div class="qa">
-        <details><summary>1日10分でも受かる？</summary>
-          <p>“すでに現場知識がある前提”なら、合格ラインを狙う最低限の土台は作れます。未知の領域が多いなら、<strong>3週間プラン</strong>へ。</p>
-        </details>
-        <details><summary>過去問は何年分やる？</summary>
-          <p>少なくとも<strong>3回分</strong>。間違いノートは「根拠の一言メモ」を残すだけで十分。</p>
-        </details>
-        <details><summary>法令はどこまで覚える？</summary>
-          <p>“目的→適用→義務→数値→罰則”の骨組み。数値は<strong>選ばせ方</strong>を観察（上限・下限・例外）。</p>
-        </details>
-        <details><summary>計算が不安</summary>
-          <p>換気量・希釈計算・風速→風量・防じんマスクの等級選定の4点に絞って反復。</p>
-        </details>
-        <details><summary>最新の受験手続きは？</summary>
-          <p><a href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">実施要領</a>で、試験日・手数料・申請方法を毎回確認。</p>
-        </details>
-      </div>
-
-      <!-- CTA -->
-      <div style="margin:22px 0;">
-        <a class="btn primary" href="/rodoeisei-lab/guides/">解説へ</a>
-        <a class="btn" href="/rodoeisei-lab/videos/">動画</a>
-        <a class="btn" href="/rodoeisei-lab/glossary/">用語集</a>
-      </div>
-    </div>
-
-    <!-- Sidebar -->
-    <aside class="col-4 toc" aria-label="サイド情報">
-      <div class="card">
-        <div class="kicker">ショートカット</div>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
+      <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
+      <nav class="desktop-nav" aria-label="グローバルナビゲーション">
         <ul>
-          <li><a href="#main-ttl">全体像</a></li>
-          <li><a href="#this-week">学習プラン</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div class="card" style="margin-top:16px;">
-        <div class="kicker">関連リンク</div>
-        <ul class="list-tight">
-          <li><a href="/rodoeisei-lab/guides/">解説（法令・局排・保護具）</a></li>
-          <li><a href="/rodoeisei-lab/videos/">動画（アップロード一覧）</a></li>
+          <li><a href="/rodoeisei-lab/guides/">解説</a></li>
+          <li><a href="/rodoeisei-lab/videos/">動画</a></li>
+          <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
+          <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
+          <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
+          <li><a href="/rodoeisei-lab/inspection/">労基署対策</a></li>
+          <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
           <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
+          <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- モバイルナビ -->
+  <div class="nav-overlay" id="navOverlay" hidden></div>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
+    <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="/rodoeisei-lab/guides/">解説</a></li>
+      <li><a href="/rodoeisei-lab/videos/">動画</a></li>
+      <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
+      <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
+      <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
+      <li><a href="/rodoeisei-lab/inspection/">労基署対策</a></li>
+      <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
+      <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
+      <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <header class="licenses-header">
+        <div class="licenses-eyebrow">LICENSE GUIDE</div>
+        <h1 class="licenses-title">資格ガイド<span>（労働衛生系）</span></h1>
+        <p class="licenses-lead">
+          第一種衛生管理者を中心に、「最小の学習で最大の点を取りに行く」ためのロードマップ。
+          10分／日の超時短プランから、3週間・8週間プランまで、実務者向けに整理しています。
+        </p>
+        <p class="licenses-note">
+          ※試験制度や出題範囲は年度で変更される可能性があります。ここでは「学習方針」をまとめており、
+          受験前には必ず最新の公式情報（試験機関の案内）を確認してください。
+        </p>
+        <div class="tag-row">
+          <span class="tag-pill">一次情報を前提に整理</span>
+          <span class="tag-pill">頻出優先・捨て問あり</span>
+          <span class="tag-pill">現場で使える理解を目標に</span>
+        </div>
+      </header>
+
+      <div class="licenses-layout">
+        <!-- 左：第一種衛生管理者メイン -->
+        <section aria-label="第一種衛生管理者ガイド">
+          <!-- 全体像 -->
+          <article class="card">
+            <div class="exam-header-row">
+              <div>
+                <h2 class="card-title">第一種衛生管理者：全体像</h2>
+                <p class="card-sub">「どんな試験か」「何が問われるか」をざっくりつかむための要約です。</p>
+              </div>
+              <div>
+                <span class="pill-small pill-main">国家試験</span>
+                <span class="pill-small pill-focus">労働安全衛生法／労働衛生</span>
+              </div>
+            </div>
+
+            <table class="exam-table">
+              <tr>
+                <th scope="row">区分</th>
+                <td>第一種衛生管理者（国家試験）</td>
+              </tr>
+              <tr>
+                <th scope="row">主な出題科目</th>
+                <td>
+                  ① 関係法令（安衛法・安衛則ほか）<br>
+                  ② 労働衛生（有害要因・測定・管理）<br>
+                  ③ 労働生理・人間工学 など
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">問題形式</th>
+                <td>択一式（計算・図表問題を含む）。マークシート方式。</td>
+              </tr>
+              <tr>
+                <th scope="row">難易度のイメージ</th>
+                <td>
+                  法令系：用語と条文イメージを押さえれば得点源にしやすい。<br>
+                  生理系：暗記量は多めだが、パターンをつかめば安定して点が取れる。
+                </td>
+              </tr>
+            </table>
+
+            <p class="exam-note">
+              ここでのポイント：細かい条文を全部覚えるのではなく、
+              「よく出る条文」「数字」「定義」にフォーカスして、残りは資料で補う前提にすること。
+            </p>
+          </article>
+
+          <!-- 学習プラン -->
+          <article class="card" style="margin-top:14px;">
+            <h2 class="card-title">学習プラン（例）</h2>
+            <p class="card-sub">
+              実務で忙しいことを前提に、「どれくらい時間が取れるか」から逆算した3パターンです。
+              すべて「過去問ベースで回す」ことを前提にしています。
+            </p>
+
+            <div class="plan-grid">
+              <div class="plan-pill">
+                <strong>超時短プラン：10分／日 × 2か月</strong>
+                <ul class="plan-list">
+                  <li>平日：過去問1テーマだけ解く（5問前後）。</li>
+                  <li>土日：間違えた問題だけ見直し＋解説を読む。</li>
+                  <li>目的：まずは「出題の空気感」に慣れること。</li>
+                </ul>
+              </div>
+              <div class="plan-pill">
+                <strong>3週間集中プラン</strong>
+                <ul class="plan-list">
+                  <li>1週目：法令と労働衛生の過去問をざっと1周。</li>
+                  <li>2週目：間違えた問題だけを再度解き直し。</li>
+                  <li>3週目：予想される弱点分野にしぼって暗記＋総復習。</li>
+                </ul>
+              </div>
+              <div class="plan-pill">
+                <strong>8週間じっくりプラン</strong>
+                <ul class="plan-list">
+                  <li>前半4週：テキストを読みつつ、章ごとに過去問をつぶす。</li>
+                  <li>後半4週：過去問中心で総復習＋苦手分野のメモ作り。</li>
+                  <li>最後の1週：本番形式で時間を測って解いてみる。</li>
+                </ul>
+              </div>
+              <div class="plan-pill">
+                <strong>＋α：実務者向けアレンジ</strong>
+                <ul class="plan-list">
+                  <li>自社の安全衛生ルールとリンクさせて覚える。</li>
+                  <li>気になった条文や通達は、あとで現場改善に転用できそうかメモしておく。</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- 右：サイド情報 -->
+        <aside aria-label="おすすめの対象・勉強の進め方">
+          <section class="side-block">
+            <h2 class="side-title">このガイドの想定読者<span>WHO</span></h2>
+            <p class="side-body">
+              「とりあえず受かればOK」ではなく、試験勉強を現場のアップデートにもつなげたい人向けです。
+            </p>
+            <ul class="side-list">
+              <li>総務・人事・安全衛生担当として、衛生管理の基礎を固めたい。</li>
+              <li>将来的に労働衛生コンサルタントなど、上位資格も視野に入れている。</li>
+              <li>条文丸暗記より「なぜこの規定があるのか」を押さえたい。</li>
+            </ul>
+            <div class="badge-row">
+              <span class="badge">現場で使える理解を重視</span>
+              <span class="badge">試験合格＋実務力アップ</span>
+            </div>
+          </section>
+
+          <section class="side-block">
+            <h2 class="side-title">使用する教材イメージ<span>MATERIALS</span></h2>
+            <p class="side-body">
+              市販テキスト1冊＋過去問題集1〜2冊をベースに、足りない部分を一次情報（法令・通達）で補う構成を想定しています。
+            </p>
+            <ul class="side-list">
+              <li>テキスト：全体像と図解を重視して選ぶ。</li>
+              <li>過去問：直近数年分＋頻出テーマ別の問題集が理想。</li>
+              <li>一次情報：気になった条文だけ、条文番号をメモして原文を確認。</li>
+            </ul>
+          </section>
+
+          <section class="side-block">
+            <h2 class="side-title">勉強の進め方のヒント<span>HOW</span></h2>
+            <p class="side-body">
+              「読む → 解く → まとめる」のサイクルを小さく回すほど、記憶に残りやすくなります。
+            </p>
+            <ul class="side-list">
+              <li>① テキストをざっと読み、「どんな世界観の試験か」をつかむ。</li>
+              <li>② 過去問で「よく聞かれる条文・単語」をマーキング。</li>
+              <li>③ 間違えた問題だけを、A4一枚のメモに集約（覚えるリストを小さくする）。</li>
+              <li>④ 試験直前は、新しい問題に手を出すより「自分メモの読み込み」を優先。</li>
+            </ul>
+          </section>
+        </aside>
       </div>
+    </div>
+  </main>
 
-      <div class="card" style="margin-top:16px;">
-        <div class="kicker">学習メモのコツ</div>
-        <ul class="list-tight">
-          <li>条文は「目的→適用→義務→数値→罰則」で1行ずつ</li>
-          <li>計算式は“単位”を必ず併記</li>
-          <li>覚えにくい語は<strong>用語集</strong>へ一元管理</li>
-        </ul>
-      </div>
-    </aside>
-  </div>
-</div>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 労働衛生ラボ</p>
+    </div>
+  </footer>
 
-<footer role="contentinfo">
-  <div class="container" style="padding:18px 0 28px;">
-    <p>© 2025 労働衛生ラボ</p>
-  </div>
-</footer>
+  <script>
+    // モバイルメニュー制御
+    const menuBtn   = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeBtn  = document.getElementById('closeBtn');
+    const overlay   = document.getElementById('navOverlay');
 
-<!-- SEO: FAQ構造化データ（要約版） -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "1日10分でも受かる？",
-    "acceptedAnswer": { "@type": "Answer", "text": "現場知識がある前提なら、合格ラインの土台は作れます。未知が多い場合は3週間プランへ。" }
-  },{
-    "@type": "Question",
-    "name": "過去問は何年分やる？",
-    "acceptedAnswer": { "@type": "Answer", "text": "少なくとも3回分。誤答は“根拠の一言メモ”で管理します。" }
-  },{
-    "@type": "Question",
-    "name": "法令はどこまで覚える？",
-    "acceptedAnswer": { "@type": "Answer", "text": "目的→適用→義務→数値→罰則の骨組みを押さえ、数値は選ばせ方に注目。" }
-  }]
-}
-</script>
+    function openNav(){
+      mobileNav.setAttribute('aria-hidden','false');
+      document.body.classList.add('nav-open');
+      overlay.hidden = false;
+      mobileNav.classList.add('open');
+      overlay.classList.add('show');
+      menuBtn.setAttribute('aria-expanded','true');
+    }
+    function closeNav(){
+      mobileNav.setAttribute('aria-hidden','true');
+      document.body.classList.remove('nav-open');
+      mobileNav.classList.remove('open');
+      overlay.classList.remove('show');
+      menuBtn.setAttribute('aria-expanded','false');
+      setTimeout(()=>{ overlay.hidden = true; }, 280);
+    }
+
+    menuBtn.addEventListener('click', ()=> {
+      const hidden = mobileNav.getAttribute('aria-hidden') === 'true';
+      hidden ? openNav() : closeNav();
+    });
+    overlay.addEventListener('click', closeNav);
+    closeBtn.addEventListener('click', closeNav);
+    window.addEventListener('keydown', e => { if(e.key === 'Escape') closeNav(); });
+  </script>
 </body>
 </html>
