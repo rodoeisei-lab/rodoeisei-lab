@@ -4,804 +4,602 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>作業環境測定の道具棚 | 労働衛生ラボ</title>
-  <meta name="description" content="現場で「これで助かった」作業環境測定まわりの保護具・測定器材・書籍・消耗品をまとめた道具棚。用途と選び方を端的に整理しています。">
+  <meta name="description" content="作業環境測定の現場で『これで助かった』と感じた、防じんマスク・騒音計・粉じん計・公式テキストなどを厳選して紹介します。すべて新品・現行モデルを前提に選定（2025年時点）。">
   <link rel="icon" href="/rodoeisei-lab/favicon.ico">
-  <meta name="theme-color" content="#050816">
-
-  <!-- OGP -->
-  <meta property="og:title" content="作業環境測定の道具棚 | 労働衛生ラボ">
-  <meta property="og:description" content="粉じん・有機溶剤・騒音などの現場で役立った保護具や測定器材を、用途・選び方とセットで紹介します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rodoeisei-lab.github.io/rodoeisei-lab/products/">
-  <meta property="og:site_name" content="労働衛生ラボ">
-  <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://rodoeisei-lab.github.io/rodoeisei-lab/products/">
 
   <style>
-    /* ベース */
-    *,*::before,*::after{ box-sizing:border-box; }
-    html,body{ width:100%; overflow-x:hidden; }
+    *,*::before,*::after{box-sizing:border-box;}
+    html,body{margin:0;padding:0;width:100%;overflow-x:hidden;}
     body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Meiryo,system-ui,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,system-ui,sans-serif;
       line-height:1.6;
-      color:#e5e7eb;
+      color:#111827;
       background:#050816;
+      -webkit-font-smoothing:antialiased;
     }
 
     :root{
-      --primary:#f97373;
-      --secondary:#22d3ee;
       --bg:#050816;
-      --panel:#020617;
+      --bg-soft:#0b1020;
+      --card:#0f172a;
+      --card-soft:#111827;
+      --accent:#38bdf8;
+      --accent-soft:rgba(56,189,248,.16);
+      --accent-strong:#22d3ee;
       --muted:#9ca3af;
-      --light:#f9fafb;
+      --border:#1f2937;
+      --radius-lg:18px;
+      --radius-xl:26px;
+      --shadow-soft:0 18px 45px rgba(15,23,42,.65);
+      --shadow-chip:0 10px 25px rgba(15,23,42,.8);
       --max:1100px;
-      --ring:#38bdf8;
     }
 
-    .container{ width:90%; max-width:var(--max); margin:0 auto; }
-
-    /* アクセシビリティ */
-    .skip-link{
-      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip-link:focus{
-      left:16px; top:10px; width:auto; height:auto;
-      padding:.6rem .8rem; background:#000; color:#fff;
-      border-radius:.5rem; z-index:100;
-    }
+    a{color:inherit;text-decoration:none;}
     a:focus-visible,button:focus-visible{
-      outline:2px solid var(--ring); outline-offset:2px; border-radius:6px;
+      outline:2px solid var(--accent);
+      outline-offset:3px;
+      border-radius:999px;
     }
 
-    /* Header */
+    .container{width:90%;max-width:var(--max);margin:0 auto;}
+
+    /* Header（シンプル＋上部固定） */
     .site-header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(5,8,22,.9);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(148,163,184,.22);
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(20px);
+      background:linear-gradient(to bottom,rgba(5,8,22,.94),rgba(5,8,22,.75) 60%,transparent);
+      border-bottom:1px solid rgba(148,163,184,.24);
     }
-    .site-header .container{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0;
+    .header-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 0 8px;
     }
     .brand{
-      font-weight:700; text-decoration:none;
-      color:var(--light); font-size:1.15em;
-      letter-spacing:.04em;
-    }
-    .desktop-nav ul{
-      list-style:none; display:flex; gap:16px; margin:0; padding:0;
-      font-size:.9rem;
-    }
-    .desktop-nav a{
-      color:#e5e7eb; text-decoration:none;
-      padding:8px 10px; border-radius:999px;
-      background:transparent;
-      transition:background .18s ease, color .18s ease, transform .1s ease;
-    }
-    .desktop-nav a:hover{
-      background:rgba(148,163,184,.16);
-      transform:translateY(-1px);
-    }
-
-    .menu-btn{
-      display:none; font-size:1.7em;
-      background:none; border:none; color:#e5e7eb; cursor:pointer;
-    }
-
-    @media(max-width:768px){
-      .desktop-nav{ display:none; }
-      .menu-btn{ display:block; }
-    }
-
-    /* モバイルナビ */
-    body.nav-open{ overflow:hidden; }
-
-    .nav-overlay{
-      position:fixed; inset:0; background:rgba(15,23,42,.66);
-      z-index:48; opacity:0; pointer-events:none; transition:opacity .28s ease;
-    }
-    .nav-overlay.show{ opacity:1; pointer-events:auto; }
-
-    .mobile-nav{
-      position:fixed; top:0; left:0; right:0; height:100vh;
-      background:#020617; z-index:49;
-      transform:translateY(-100%); transition:transform .28s ease;
-      padding:max(16px, env(safe-area-inset-top)) 20px 24px;
-      box-shadow:0 12px 32px rgba(15,23,42,.65);
-      display:flex; flex-direction:column;
-      color:#e5e7eb;
-    }
-    .mobile-nav.open{ transform:translateY(0); }
-    .mobile-nav[aria-hidden="true"]{ visibility:hidden; }
-
-    .mobile-nav .close-btn{
-      align-self:flex-end; font-size:28px; line-height:1;
-      background:none; border:none; padding:8px; cursor:pointer; color:#e5e7eb;
-    }
-    .mobile-nav h2{
-      font-size:12px; color:var(--muted); font-weight:700; letter-spacing:.16em;
-      margin:4px 0 8px; text-transform:uppercase;
-    }
-    .mobile-nav ul{ list-style:none; margin-top:8px; padding:0; }
-    .mobile-nav li + li{ border-top:1px solid rgba(31,41,55,.8); }
-    .mobile-nav a{
-      display:block; padding:14px 2px; font-size:17px; color:#e5e7eb;
+      font-weight:800;
+      letter-spacing:.08em;
+      font-size:1.0rem;
       text-decoration:none;
-    }
-    .mobile-nav a:active{
-      background:rgba(15,23,42,.9); border-radius:8px;
-    }
-
-    /* メインレイアウト */
-    main{
-      padding:32px 0 40px;
-      background:
-        radial-gradient(circle at top left,#1e293b 0,transparent 55%),
-        radial-gradient(circle at bottom right,#0f172a 0,transparent 50%),
-        var(--panel);
-      min-height:calc(100vh - 64px);
-    }
-
-    .products-header{
-      margin-bottom:18px;
-    }
-    .products-eyebrow{
-      font-size:.75rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:6px;
-    }
-    .products-title{
-      font-size:1.5rem;
-      margin:0 0 6px;
-    }
-    .products-title span{
-      background:linear-gradient(120deg,#f97373,#facc15);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .products-lead{
-      margin:0;
-      font-size:.95rem;
-      color:var(--muted);
-      max-width:44rem;
-    }
-    .products-note{
-      margin-top:6px;
-      font-size:.8rem;
-      color:var(--muted);
-    }
-
-    .tag-row{
-      margin-top:10px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-    }
-    .tag-pill{
-      font-size:.78rem;
-      padding:3px 8px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.6);
-      background:rgba(15,23,42,.96);
-      color:#d1d5db;
-    }
-
-    /* 検索 & フィルタ */
-    .filter-container{
-      margin:18px 0 14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .search-box{
-      position:relative;
-    }
-    .search-input{
-      width:100%;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.6);
-      padding:8px 14px 8px 32px;
-      background:rgba(15,23,42,.96);
       color:#e5e7eb;
-      font-size:.9rem;
     }
-    .search-input::placeholder{
-      color:#6b7280;
+    .brand span{color:#38bdf8;}
+    .nav-links{
+      display:flex;gap:18px;font-size:.9rem;
     }
-    .search-icon{
-      position:absolute;
-      left:10px; top:50%; transform:translateY(-50%);
-      font-size:.9rem; color:#9ca3af;
-    }
-
-    .filter-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      font-size:.8rem;
-    }
-    .filter-label{
-      align-self:center;
-      color:var(--muted);
-      margin-right:4px;
-    }
-    .filter-btn{
+    .nav-links a{
+      color:#e5e7eb;
+      padding:6px 10px;
       border-radius:999px;
-      border:1px solid rgba(148,163,184,.6);
+      border:1px solid transparent;
+    }
+    .nav-links a:hover{
+      border-color:rgba(148,163,184,.4);
       background:rgba(15,23,42,.9);
-      color:#e5e7eb;
-      padding:4px 10px;
-      cursor:pointer;
-      font-size:.8rem;
     }
-    .filter-btn.active{
-      background:linear-gradient(135deg,#22d3ee,#38bdf8);
-      color:#0f172a;
-      border-color:transparent;
-      box-shadow:0 8px 22px rgba(56,189,248,.55);
+    .nav-links a.active{
+      border-color:var(--accent);
+      background:rgba(15,23,42,.95);
+      color:var(--accent-strong);
+    }
+    @media(max-width:768px){
+      .nav-links{display:none;}
     }
 
-    /* 商品グリッド */
-    .products-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1fr);
-      gap:14px;
-      margin-top:4px;
-    }
-
-    .product-card{
-      border-radius:18px;
-      border:1px solid rgba(148,163,184,.6);
-      background:
-        radial-gradient(circle at 0 0,rgba(248,250,252,.14),transparent 55%),
-        radial-gradient(circle at 100% 100%,rgba(34,211,238,.14),transparent 60%),
-        rgba(15,23,42,.97);
-      box-shadow:0 18px 46px rgba(15,23,42,.93);
-      padding:12px 12px 10px;
-      font-size:.9rem;
-    }
-
-    .product-header{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      margin-bottom:8px;
-    }
-    .product-thumb{
-      flex:0 0 92px;
-      border-radius:12px;
-      background:radial-gradient(circle at 0 0,#f97373,transparent 65%),
-                 radial-gradient(circle at 100% 100%,#22d3ee,transparent 65%),
-                 #020617;
+    /* Hero */
+    .hero{
       position:relative;
+      padding:32px 0 28px;
       overflow:hidden;
-      aspect-ratio:4/3;
-      display:flex;
+    }
+    .hero-gradient{
+      position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 0% 0%,rgba(56,189,248,.32),transparent 55%),
+        radial-gradient(circle at 100% 0%,rgba(129,140,248,.32),transparent 55%),
+        radial-gradient(circle at 50% 120%,rgba(248,113,113,.18),transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns: minmax(0,2.1fr) minmax(0,1.4fr);
+      gap:26px;
       align-items:center;
-      justify-content:center;
-      font-size:.7rem;
-      color:#e5e7eb;
-      text-align:center;
-      padding:4px;
     }
-    .product-thumb img{
-      width:100%; height:100%; object-fit:cover;
-      display:block;
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;}
     }
-
-    .product-main{
-      flex:1;
+    .hero-heading{
+      font-size:1.7rem;
+      font-weight:800;
+      color:#f9fafb;
+      letter-spacing:.04em;
+      margin-bottom:10px;
     }
-    .product-top-row{
-      display:flex;
-      justify-content:space-between;
-      gap:6px;
-      flex-wrap:wrap;
-    }
-    .product-badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:4px;
-    }
-    .badge{
-      font-size:.78rem;
-      padding:3px 7px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.6);
-      background:rgba(15,23,42,.96);
-      color:#d1d5db;
-    }
-    .badge-category{
-      background:rgba(8,47,73,.92);
-      border-color:rgba(125,211,252,.8);
-    }
-    .badge-tag{
-      background:rgba(24,24,27,.96);
-      border-color:rgba(161,161,170,.8);
-    }
-
-    .product-title{
-      font-size:.98rem;
-      font-weight:600;
-      margin:4px 0 4px;
-    }
-    .product-desc{
-      margin:0 0 4px;
-      color:#d1d5db;
-      font-size:.88rem;
-    }
-
-    .product-meta{
-      font-size:.78rem;
+    .hero-heading span{color:var(--accent-strong);}
+    .hero-lead{
+      font-size:.96rem;
       color:var(--muted);
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:4px;
+      margin-bottom:14px;
     }
-
-    .product-points{
-      margin:0 0 6px;
-      padding-left:1.1rem;
-      color:#d1d5db;
-      font-size:.86rem;
+    .hero-tags{
+      display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;
     }
-    .product-points li + li{ margin-top:2px; }
-
-    .product-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:4px;
-    }
-    .btn{
+    .chip{
+      font-size:.72rem;
+      padding:4px 10px;
       border-radius:999px;
-      padding:7px 13px;
-      font-size:.82rem;
-      border:1px solid透明;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:6px;
+      border:1px solid rgba(148,163,184,.45);
+      color:#e5e7eb;
+      background:rgba(15,23,42,.9);
+      box-shadow:var(--shadow-chip);
+      backdrop-filter:blur(12px);
+    }
+    .chip.hot{border-color:var(--accent-soft);background:var(--accent-soft);color:#e0f2fe;}
+    .hero-cta-row{
+      display:flex;flex-wrap:wrap;gap:10px;
+      margin-top:6px;
+    }
+    .btn-primary,
+    .btn-ghost{
+      font-size:.9rem;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid transparent;
+      display:inline-flex;align-items:center;gap:8px;
       cursor:pointer;
-      white-space:nowrap;
+      transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
     }
     .btn-primary{
-      background:linear-gradient(135deg,#f97373,#fb7185);
-      color:#111827;
-      border-color:transparent;
-      box-shadow:0 10px 26px rgba(248,113,113,.6);
+      background:linear-gradient(135deg,#38bdf8,#22d3ee);
+      color:#0b1120;
+      font-weight:700;
+      box-shadow:0 16px 40px rgba(56,189,248,.45);
     }
-    .btn-secondary{
-      background:rgba(15,23,42,.96);
-      border-color:rgba(148,163,184,.7);
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 50px rgba(56,189,248,.6);
+    }
+    .btn-ghost{
+      background:rgba(15,23,42,.9);
       color:#e5e7eb;
-      box-shadow:0 6px 20px rgba(15,23,42,.85);
+      border-color:rgba(148,163,184,.5);
+    }
+    .btn-ghost:hover{
+      background:rgba(15,23,42,1);
+      transform:translateY(-1px);
+      box-shadow:0 14px 30px rgba(15,23,42,.9);
+    }
+    .badge-small{
+      font-size:.65rem;
+      padding:2px 7px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.4);
+      color:var(--muted);
+      margin-left:4px;
+    }
+
+    .hero-panel{
+      border-radius:var(--radius-xl);
+      background:radial-gradient(circle at 0 0,rgba(56,189,248,.32),transparent 60%),
+                 radial-gradient(circle at 100% 100%,rgba(248,113,113,.35),transparent 55%),
+                 #020617;
+      padding:14px 14px 16px;
+      border:1px solid rgba(148,163,184,.35);
+      box-shadow:var(--shadow-soft);
+      color:#e5e7eb;
+    }
+    .hero-panel-title{
+      font-size:.86rem;font-weight:600;margin-bottom:2px;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    .hero-panel-title span:last-child{
+      font-size:.7rem;color:var(--muted);
+    }
+    .hero-panel-body{
+      font-size:.76rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .hero-panel-list{
+      list-style:none;margin:0;padding:0;
+      font-size:.75rem;
+    }
+    .hero-panel-list li{
+      display:flex;gap:6px;align-items:flex-start;
+      padding:3px 0;
+    }
+    .pill-dot{
+      width:16px;height:16px;border-radius:999px;
+      background:rgba(15,23,42,.9);
+      border:1px solid rgba(148,163,184,.55);
+      display:inline-flex;align-items:center;justify-content:center;
+      font-size:.55rem;color:#a5b4fc;
+      flex-shrink:0;
+    }
+
+    /* 検索 + タブ */
+    .toolbar{
+      position:sticky;top:56px;z-index:10;
+      background:linear-gradient(to bottom,#050816 0,rgba(5,8,22,.97) 60%,rgba(5,8,22,.85) 95%,transparent);
+      border-bottom:1px solid rgba(31,41,55,.9);
+      padding:10px 0 10px;
+    }
+    .toolbar-inner{display:flex;flex-direction:column;gap:10px;}
+    .search-box{
+      display:flex;align-items:center;gap:10px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:#020617;
+      border:1px solid rgba(55,65,81,.9);
+    }
+    .search-box input{
+      flex:1;border:none;outline:none;
+      background:transparent;
+      color:#e5e7eb;font-size:.82rem;
+    }
+    .search-box input::placeholder{color:#6b7280;}
+    .tabs{
+      display:flex;flex-wrap:wrap;gap:6px;
+    }
+    .tab-btn{
+      font-size:.76rem;
+      padding:5px 11px;
+      border-radius:999px;
+      border:1px solid rgba(55,65,81,.9);
+      background:#020617;
+      color:#e5e7eb;
+      cursor:pointer;
+      opacity:.86;
+    }
+    .tab-btn.active{
+      background:var(--accent-soft);
+      border-color:var(--accent);
+      color:#e0f2fe;
+      opacity:1;
+    }
+
+    /* カード */
+    main{padding:14px 0 40px;}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(30,64,175,.65);
+      box-shadow:var(--shadow-soft);
+      padding:14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      min-height:210px;
+    }
+    .card-header{
+      display:flex;justify-content:space-between;align-items:flex-start;
+      gap:10px;margin-bottom:6px;
+    }
+    .card-title{
+      font-size:.98rem;
+      font-weight:600;
+      color:#f9fafb;
+    }
+    .card-meta{
+      font-size:.7rem;
+      color:var(--muted);
+    }
+    .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px;}
+    .tag{
+      font-size:.68rem;
+      padding:2px 7px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.35);
+      color:#cbd5f5;
+      background:rgba(15,23,42,.96);
+    }
+    .tag.cat{border-color:rgba(96,165,250,.6);color:#bfdbfe;}
+    .card-body{
+      font-size:.78rem;
+      color:#d1d5db;
+      flex:1;
+    }
+    .card-body ul{
+      margin:0.3rem 0 0 1rem;
+      padding:0;
+    }
+    .card-body li{margin-bottom:2px;}
+    .card-footer{
+      margin-top:10px;
+      display:flex;flex-wrap:wrap;gap:8px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .btn-link{
+      font-size:.78rem;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.5);
+      background:#020617;
+      color:#e5e7eb;
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .btn-link.primary{
+      border-color:var(--accent);
+      background:var(--accent-soft);
+      color:#e0f2fe;
+    }
+    .note{
+      font-size:.7rem;
+      color:var(--muted);
+      margin-top:4px;
     }
 
     @media(max-width:768px){
-      main{ padding:26px 0 34px; }
-      .product-header{ flex-direction:row; }
-    }
-
-    /* フッター */
-    .footer{
-      background:#020617;
-      border-top:1px solid rgba(15,23,42,.95);
-      color:var(--muted);
-      font-size:.8rem;
-      padding:18px 0 22px;
-      text-align:center;
-    }
-
-    /* モーション削減 */
-    @media (prefers-reduced-motion: reduce){
-      .nav-overlay, .mobile-nav{ transition:none; }
+      .toolbar{top:48px;}
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">本文へスキップ</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/rodoeisei-lab/" class="brand">労働衛生<span>ラボ</span></a>
+    <nav class="nav-links" aria-label="グローバルナビゲーション">
+      <a href="/rodoeisei-lab/">ホーム</a>
+      <a href="/rodoeisei-lab/videos/">動画</a>
+      <a href="/rodoeisei-lab/guides/">解説</a>
+      <a href="/rodoeisei-lab/products/" class="active">道具棚</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Header -->
-  <header class="site-header" role="banner">
-    <div class="container">
-      <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
-      <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
-      <nav class="desktop-nav" aria-label="グローバルナビゲーション">
-        <ul>
-          <li><a href="/rodoeisei-lab/guides/">解説</a></li>
-          <li><a href="/rodoeisei-lab/videos/">動画</a></li>
-          <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
-          <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
-          <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
-          <li><a href="/rodoeisei-lab/inspection/">労基署対策</a></li>
-          <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
-          <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
-          <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
-        </ul>
-      </nav>
+<section class="hero" aria-label="作業環境測定の道具棚">
+  <div class="hero-gradient"></div>
+  <div class="container hero-inner">
+    <div>
+      <h1 class="hero-heading">作業環境測定の<span>道具棚</span></h1>
+      <p class="hero-lead">
+        現場で「これで助かった」と感じた道具だけを、<br>
+        新品・現行モデルを前提にピックアップしました（2025年時点）。
+      </p>
+      <div class="hero-tags">
+        <span class="chip hot">A/B・C/D測定で使いやすい</span>
+        <span class="chip">公式テキスト／型式認定機・JIS準拠を優先</span>
+        <span class="chip">すべて外部サイトへのリンク（アフィリエイト含む場合あり）</span>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#grid" class="btn-primary">
+          道具一覧を見る
+          <span class="badge-small">防じんマスク／騒音計／粉じん計 など</span>
+        </a>
+        <a href="https://jawe-book.com/" target="_blank" rel="noopener" class="btn-ghost">
+          作業環境測定協会の公式テキストを開く
+        </a>
+      </div>
     </div>
-  </header>
 
-  <!-- モバイルナビ -->
-  <div class="nav-overlay" id="navOverlay" hidden></div>
-  <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
-    <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
-    <h2>Menu</h2>
-    <ul>
-      <li><a href="/rodoeisei-lab/guides/">解説</a></li>
-      <li><a href="/rodoeisei-lab/videos/">動画</a></li>
-      <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
-      <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
-      <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
-      <li><a href="/rodoeisei-lab/inspection/">労基署対策</a></li>
-      <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
-      <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
-      <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
-    </ul>
-  </nav>
+    <aside class="hero-panel" aria-label="こんな人向け">
+      <div class="hero-panel-title">
+        <span>こんな人向けの道具棚</span>
+        <span>更新：2025年時点</span>
+      </div>
+      <p class="hero-panel-body">
+        ・作業環境測定士として「最低限ここだけは押さえたい」<br>
+        ・総務／安衛担当として、まず1台そろえたい<br>
+        という人を想定しています。
+      </p>
+      <ul class="hero-panel-list">
+        <li><span class="pill-dot">A</span><span>防じんマスクは <strong>国家検定DS2</strong> を基本に、現行の人気モデルを掲載。</span></li>
+        <li><span class="pill-dot">B</span><span>騒音計・粉じん計は、<strong>JIS・型式認定・実務での使用実績</strong> があるものを中心に選定。</span></li>
+        <li><span class="pill-dot">C</span><span>書籍は旧「ガイドブック0」の後継にあたる、<strong>最新の公式テキスト</strong> を掲載。</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
 
-  <main id="main">
-    <div class="container">
-      <header class="products-header">
-        <div class="products-eyebrow">TOOLSHELF</div>
-        <h1 class="products-title">作業環境測定の<span>道具棚</span></h1>
-        <p class="products-lead">
-          現場で「これで助かった」を集めた、作業環境測定まわりの道具棚です。
-          価格表ではなく、「用途」「選び方」「現場での使い勝手」を中心に整理しています。
-        </p>
-        <p class="products-note">
-          ※本ページにはアフィリエイトリンク（Amazonアソシエイト等）が含まれる場合があります。
-          実際の購入にあたっては仕様・適合条件・最新の価格を必ずご確認ください。
-        </p>
-        <div class="tag-row">
-          <span class="tag-pill">現場で実際に使ったもの中心</span>
-          <span class="tag-pill">用途別・カテゴリ別に検索可能</span>
-          <span class="tag-pill">「なぜこれを選ぶか」を重視</span>
+<section class="toolbar" aria-label="絞り込みツール">
+  <div class="container toolbar-inner">
+    <div class="search-box">
+      <span style="font-size:.9rem;color:#6b7280;">🔍</span>
+      <input id="searchInput" type="search" placeholder="例：Vフレックス、騒音計、C・D測定テキスト…">
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-category="all">すべて</button>
+      <button class="tab-btn" data-category="ppe">保護具</button>
+      <button class="tab-btn" data-category="meter">測定器材</button>
+      <button class="tab-btn" data-category="book">書籍</button>
+    </div>
+  </div>
+</section>
+
+<main class="container" id="main">
+  <div id="grid" class="grid">
+    <!-- 1. 防じんマスク：3M Vフレックス 9105J-DS2 -->
+    <article class="card" data-category="ppe" data-keywords="防じんマスク DS2 3M Vフレックス 9105J 粉じん 有機溶剤 溶接">
+      <header class="card-header">
+        <div>
+          <div class="card-title">3M Vフレックス 防じんマスク 9105J-DS2</div>
+          <div class="card-meta">国家検定DS2・レギュラーサイズ／使い捨て式</div>
+          <div class="card-tags">
+            <span class="tag cat">保護具</span>
+            <span class="tag">粉じん・溶接ヒューム・研削</span>
+            <span class="tag">折りたたみ・個包装</span>
+          </div>
         </div>
       </header>
+      <div class="card-body">
+        <p>現場で定番の折りたたみタイプ。口元に空間ができるので、長時間装着でも会話しやすく、「とりあえずDS2」で迷ったらこれ、という位置付けです。</p>
+        <ul>
+          <li>国家検定区分2（粒子捕集効率≧95%）のDS2マスク。 [oai_citation:0‡アマゾン](https://www.amazon.co.jp/3M-V%E3%83%95%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9-%E9%98%B2%E3%81%98%E3%82%93%E3%83%9E%E3%82%B9%E3%82%AF/dp/B01NBE4W03?utm_source=chatgpt.com)</li>
+          <li>二面折りたたみ構造＋ノーズクリップでフィット性と漏れ込み低減。</li>
+          <li>個包装で携行しやすく、A/B測定の立会いなどに向く。</li>
+        </ul>
+      </div>
+      <footer class="card-footer">
+        <a class="btn-link primary" target="_blank" rel="noopener"
+           href="https://www.amazon.co.jp/3M-V%E3%83%95%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9-%E9%98%B2%E3%81%98%E3%82%93%E3%83%9E%E3%82%B9%E3%82%AF/dp/B01NBE4W03">
+          Amazonで詳細を見る
+        </a>
+        <span class="note">※在庫状況によりセット品が表示される場合があります。新品・DS2表記を確認してください。</span>
+      </footer>
+    </article>
 
-      <!-- 検索＆フィルタ -->
-      <section class="filter-container" aria-label="道具の検索・絞り込み">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input
-            id="productSearch"
-            class="search-input"
-            type="search"
-            placeholder="例：防じんマスク、DS2、粉じん、騒音計、9322J+ など"
-            aria-label="道具をキーワードで検索"
-          >
+    <!-- 2. 普通騒音計：RION NL-27 -->
+    <article class="card" data-category="meter" data-keywords="騒音計 普通騒音計 NL-27 RION JIS C 1509 労働衛生">
+      <header class="card-header">
+        <div>
+          <div class="card-title">RION 普通騒音計 NL-27（検定なし）</div>
+          <div class="card-meta">JIS・IEC規格に適合／超小型・超軽量</div>
+          <div class="card-tags">
+            <span class="tag cat">測定器材</span>
+            <span class="tag">騒音レベル測定</span>
+            <span class="tag">クラス2相当</span>
+          </div>
         </div>
-        <div class="filter-row">
-          <span class="filter-label">カテゴリ：</span>
-          <button class="filter-btn active" data-filter="all" type="button">すべて</button>
-          <button class="filter-btn" data-filter="ppe" type="button">保護具</button>
-          <button class="filter-btn" data-filter="instrument" type="button">測定器材</button>
-          <button class="filter-btn" data-filter="book" type="button">書籍</button>
-          <button class="filter-btn" data-filter="consumable" type="button">消耗品</button>
+      </header>
+      <div class="card-body">
+        <p>学校衛生・労働衛生・環境調査まで幅広く使える、リオンのコンパクト騒音計。検定付きが必須でない場面の「1台目」としてバランスが良いモデルです。 [oai_citation:1‡アマゾン](https://www.amazon.co.jp/RION-RION%EF%BC%88%E3%83%AA%E3%82%AA%E3%83%B3%EF%BC%89%E6%99%AE%E9%80%9A%E9%A8%92%E9%9F%B3%E8%A8%88-NL-27%EF%BC%88%E6%A4%9C%E5%AE%9A%E3%81%AA%E3%81%97%EF%BC%89%EF%BC%8F%E8%B6%85%E5%B0%8F%E5%9E%8B%EF%BC%8F%E8%B6%85%E8%BB%BD%E9%87%8F%EF%BC%8F%E9%AB%98%E6%80%A7%E8%83%BD/dp/B0BNB7GT3Q?utm_source=chatgpt.com)</p>
+        <ul>
+          <li>計量法・JIS・IEC規格に適合した普通騒音計。</li>
+          <li>レベルレンジ切り替え不要で30〜137dBを測定可能。</li>
+          <li>本体に約200データ保存可能。現場の記録を残しやすい。</li>
+        </ul>
+      </div>
+      <footer class="card-footer">
+        <a class="btn-link primary" target="_blank" rel="noopener"
+           href="https://www.amazon.co.jp/RION-RION%EF%BC%88%E3%83%AA%E3%82%AA%E3%83%B3%EF%BC%89%E6%99%AE%E9%80%9A%E9%A8%92%E9%9F%B3%E8%A8%88-NL-27%EF%BC%88%E6%A4%9C%E5%AE%9A%E3%81%AA%E3%81%97%EF%BC%89%EF%BC%8F%E8%B6%85%E5%B0%8F%E5%9E%8B%EF%BC%8F%E8%B6%85%E8%BB%BD%E9%87%8F%EF%BC%8F%E9%AB%98%E6%80%A7%E8%83%BD/dp/B0BNB7GT3Q">
+          Amazonで詳細を見る
+        </a>
+        <span class="note">※「検定付き」が必要な場合は、同シリーズの検定付きモデルを確認してください。</span>
+      </footer>
+    </article>
+
+    <!-- 3. デジタル粉じん計：SIBATA LD-5R -->
+    <article class="card" data-category="meter" data-keywords="粉じん計 デジタル LD-5R SIBATA 柴田科学 光散乱 作業環境測定">
+      <header class="card-header">
+        <div>
+          <div class="card-title">柴田科学 デジタル粉じん計 LD-5R型</div>
+          <div class="card-meta">光散乱方式／データロギング対応（相対濃度計）</div>
+          <div class="card-tags">
+            <span class="tag cat">測定器材</span>
+            <span class="tag">粉じん・浮遊粒子状物質</span>
+            <span class="tag">LDシリーズ現行機</span>
+          </div>
         </div>
-      </section>
+      </header>
+      <div class="card-body">
+        <p>LD-3B等の後継として位置づけられている、デジタル粉じん計の定番モデル。短時間で相対濃度がとれるため、作業環境測定の補助や改善検討に使いやすい一台です。 [oai_citation:2‡アマゾン](https://www.amazon.co.jp/%E6%9F%B4%E7%94%B0%E7%A7%91%E5%AD%A6-LD-5R-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E7%B2%89%E3%81%98%E3%82%93%E8%A8%88-080000-72/dp/B07DJ1RQ2V?utm_source=chatgpt.com)</p>
+        <ul>
+          <li>測定範囲：0.001〜10.000 mg/m³（標準粒子に対して）。</li>
+          <li>タイマー測定・ロギング測定・スパンチェック・BGキャンセルなど機能が豊富。</li>
+          <li>LD-3シリーズの後継で、現在も販売中の現行機種。</li>
+        </ul>
+      </div>
+      <footer class="card-footer">
+        <a class="btn-link primary" target="_blank" rel="noopener"
+           href="https://www.amazon.co.jp/%E6%9F%B4%E7%94%B0%E7%A7%91%E5%AD%A6-LD-5R-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E7%B2%89%E3%81%98%E3%82%93%E8%A8%88-080000-72/dp/B07DJ1RQ2V">
+          Amazonで詳細を見る
+        </a>
+        <span class="note">※PM2.5用途では「PM2.5デジタル粉じん計 LD-5R（080000-725）」のページも確認してください。</span>
+      </footer>
+    </article>
 
-      <!-- 商品一覧 -->
-      <section class="products-grid" aria-label="道具一覧">
-
-        <!-- 例1：3M Aura 9322J+ -->
-        <article
-          class="product-card"
-          data-category="ppe"
-          data-keywords="防じんマスク ds2 9322j+ 3m 粉じん 有機溶剤 溶接 作業環境測定 携帯用"
-        >
-          <div class="product-header">
-            <div class="product-thumb">
-              ここに 9322J+ の商品画像<br>（後で差し替え）
-            </div>
-            <div class="product-main">
-              <div class="product-top-row">
-                <div class="product-badges">
-                  <span class="badge badge-category">保護具（防じんマスク）</span>
-                  <span class="badge badge-tag">DS2・排気弁付</span>
-                  <span class="badge badge-tag">使い捨て</span>
-                </div>
-              </div>
-              <h2 class="product-title">3M™ Aura™ 9322J+（DS2・排気弁付・使い捨て）</h2>
-              <p class="product-desc">
-                3面立体の折りたたみ式で携帯しやすく、顔の動きに追随して密着性を保ちやすい設計。
-                鼻部形状で保護メガネの曇りも抑えやすく、粉じん作業やC測定の立ち会いに持っておきたい一枚。
-              </p>
-              <div class="product-meta">
-                <span>区分：DS2</span>
-                <span>用途：粉じん・一部ミスト</span>
-              </div>
-            </div>
+    <!-- 4. 書籍：A・B測定編（上） -->
+    <article class="card" data-category="book" data-keywords="作業環境測定 デザイン サンプリング A・B測定編 上 テキスト ガイドブック0 後継">
+      <header class="card-header">
+        <div>
+          <div class="card-title">作業環境測定のためのデザイン・サンプリングの実務 A・B測定編（上）</div>
+          <div class="card-meta">J-86／2025年 第2版・日本作業環境測定協会</div>
+          <div class="card-tags">
+            <span class="tag cat">書籍</span>
+            <span class="tag">A・B測定</span>
+            <span class="tag">第2種受験・講習テキスト</span>
           </div>
-          <ul class="product-points">
-            <li>立体構造で長時間でも呼吸しやすく、会話も比較的しやすい。</li>
-            <li>折りたたんでポケットに入れておけるので、「いざというとき」の予備にも便利。</li>
-            <li>排気弁付きで夏場の現場や長時間の測定立ち合いでも蒸れにくい。</li>
-          </ul>
-          <div class="product-actions">
-            <a class="btn btn-primary"
-               href="https://www.amazon.co.jp/-/en/dp/B07L64JY7M"
-               target="_blank" rel="noopener">
-              Amazonで見る
-            </a>
-            <a class="btn btn-secondary"
-               href="https://www.3mcompany.jp/3M/ja_JP/p/d/b00037958/"
-               target="_blank" rel="noopener">
-              仕様を確認する（3M）
-            </a>
-          </div>
-        </article>
+        </div>
+      </header>
+      <div class="card-body">
+        <p>旧「作業環境測定ガイドブック0（総論編）」の後継に位置づけられる、最新のデザイン・サンプリング解説書（A・B測定編 上巻）。作業環境測定士講習のテキストにも使われています。 [oai_citation:3‡公益社団法人 日本作業環境測定協会](https://www.jawe.or.jp/pdf/download/j_86_toc.pdf?utm_source=chatgpt.com)</p>
+        <ul>
+          <li>作業環境測定士規程に準拠したA・B測定のデザイン・サンプリングを体系的に解説。</li>
+          <li>第2種作業環境測定士試験の受験準備講習テキストとして位置付け。 [oai_citation:4‡公益社団法人 日本作業環境測定協会](https://www.jawe.or.jp/training/preparation/?utm_source=chatgpt.com)</li>
+          <li>B5判／2025年1月 第2版と、内容も最新状態に更新済み。</li>
+        </ul>
+      </div>
+      <footer class="card-footer">
+        <a class="btn-link primary" target="_blank" rel="noopener"
+           href="https://jawe-book.com/products/detail/62">
+          協会オンラインショップで見る
+        </a>
+        <span class="note">※Amazonでは中古のみのことが多いため、最新版を確実に入手したい場合は協会公式サイト推奨です。</span>
+      </footer>
+    </article>
 
-        <!-- 例2：粉じん計 -->
-        <article
-          class="product-card"
-          data-category="instrument"
-          data-keywords="粉じん計 デジタル 粉じん 測定器 測定環境 作業環境測定 3432"
-        >
-          <div class="product-header">
-            <div class="product-thumb">
-              粉じん計のイメージ画像<br>（後で差し替え）
-            </div>
-            <div class="product-main">
-              <div class="product-top-row">
-                <div class="product-badges">
-                  <span class="badge badge-category">測定器材（粉じん）</span>
-                  <span class="badge badge-tag">光散乱式</span>
-                </div>
-              </div>
-              <h2 class="product-title">日本カノマックス 光散乱式デジタル粉じん計 MODEL 3432</h2>
-              <p class="product-desc">
-                建築物衛生法や事務所則などに沿った空気環境測定に広く使われる光散乱式デジタル粉じん計。
-                作業環境測定に限らず、クリーンルームや事務所の評価にも利用できます。
-              </p>
-              <div class="product-meta">
-                <span>用途：粉じん濃度の連続測定・傾向管理</span>
-                <span>ポイント：校正方法と周期の確認が必須</span>
-              </div>
-            </div>
+    <!-- 5. 書籍：C・D測定編 -->
+    <article class="card" data-category="book" data-keywords="作業環境測定 デザイン サンプリング C・D測定編 個人サンプリング">
+      <header class="card-header">
+        <div>
+          <div class="card-title">作業環境測定のためのデザイン・サンプリングの実務 C・D測定編</div>
+          <div class="card-meta">J-90／2025年 第3版第3刷・個人サンプリング対応</div>
+          <div class="card-tags">
+            <span class="tag cat">書籍</span>
+            <span class="tag">C・D測定（個人サンプリング）</span>
+            <span class="tag">基準改正対応</span>
           </div>
-          <ul class="product-points">
-            <li>リアルタイム値が見られるので、局排の風量調整や作業方法の比較に使いやすい。</li>
-            <li>建築物衛生法・事務所則に沿った空気環境測定にも対応できるスペック。</li>
-          </ul>
-          <div class="product-actions">
-            <a class="btn btn-primary"
-               href="https://www.amazon.co.jp/%E6%97%A5%E6%9C%AC%E3%82%AB%E3%83%8E%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9-KANOMAX-%E5%85%89%E6%95%A3%E4%B9%B1%E5%BC%8F%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E7%B2%89%E3%81%98%E3%82%93%E8%A8%88-MODEL-3432/dp/B01KN926SG"
-               target="_blank" rel="noopener">
-              Amazonで見る
-            </a>
-            <a class="btn btn-secondary"
-               href="https://www.kanomax.co.jp/product/detail1015/"
-               target="_blank" rel="noopener">
-              仕様を確認する（KANOMAX）
-            </a>
-          </div>
-        </article>
+        </div>
+      </header>
+      <div class="card-body">
+        <p>令和3年以降に導入された「個人サンプリング法（C測定・D測定）」を、デザインから機器の取り扱いまでまとめた公式テキスト。2025年時点の改正内容（基準・告示）に対応しています。 [oai_citation:5‡Jawe Book](https://jawe-book.com/products/detail/61?utm_source=chatgpt.com)</p>
+        <ul>
+          <li>適用の意義・デザイン・サンプリング方法・必要な事前調査などを詳説。</li>
+          <li>令和5年の作業環境測定基準改正を踏まえて内容を見直した第3版。 [oai_citation:6‡Jawe Book](https://jawe-book.com/products/detail/61?utm_source=chatgpt.com)</li>
+          <li>C/D測定を実務で回し始める前の「必読テキスト」として位置付け可能。</li>
+        </ul>
+      </div>
+      <footer class="card-footer">
+        <a class="btn-link primary" target="_blank" rel="noopener"
+           href="https://jawe-book.com/products/detail/61">
+          協会オンラインショップで見る
+        </a>
+        <span class="note">※最新の補遺・正誤表は、日本作業環境測定協会サイトのダウンロードページから取得できます。</span>
+      </footer>
+    </article>
 
-        <!-- 例3：騒音計 -->
-        <article
-          class="product-card"
-          data-category="instrument"
-          data-keywords="騒音計 騒音 測定器 作業環境測定 騒音レベル dba che-sd1"
-        >
-          <div class="product-header">
-            <div class="product-thumb">
-              騒音計のイメージ画像<br>（後で差し替え）
-            </div>
-            <div class="product-main">
-              <div class="product-top-row">
-                <div class="product-badges">
-                  <span class="badge badge-category">測定器材（騒音）</span>
-                  <span class="badge badge-tag">クラス2相当</span>
-                </div>
-              </div>
-              <h2 class="product-title">サンワサプライ デジタル騒音計 CHE-SD1</h2>
-              <p class="product-desc">
-                IEC61672-1 CLASS2準拠の小型デジタル騒音計。
-                事務所や工場の騒音レベルの把握から、改善前後の比較まで日常的なチェックに使いやすいモデルです。
-              </p>
-              <div class="product-meta">
-                <span>用途：作業場の騒音レベル把握</span>
-                <span>機能：A特性・FAST/SLOW切替、温度測定など</span>
-              </div>
-            </div>
-          </div>
-          <ul class="product-points">
-            <li>持ち歩きやすいサイズで、現場ヒアリングとセットで使いやすい。</li>
-            <li>バックライト付きで暗い場所でも表示が確認しやすい。</li>
-          </ul>
-          <div class="product-actions">
-            <a class="btn btn-primary"
-               href="https://www.amazon.co.jp/%E3%82%B5%E3%83%B3%E3%83%AF%E3%82%B5%E3%83%97%E3%83%A9%E3%82%A4-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E9%A8%92%E9%9F%B3%E8%A8%88-CHE-SD1/dp/B0788YMY6D"
-               target="_blank" rel="noopener">
-              Amazonで見る
-            </a>
-            <a class="btn btn-secondary"
-               href="https://www.sanwa.co.jp/product/syohin?code=CHE-SD1"
-               target="_blank" rel="noopener">
-              仕様を確認する（サンワサプライ）
-            </a>
-          </div>
-        </article>
+  </div>
+</main>
 
-        <!-- 例4：書籍 -->
-        <article
-          class="product-card"
-          data-category="book"
-          data-keywords="書籍 テキスト 作業環境測定 有機溶剤 粉じん 入門 本 ガイドブック 総論編"
-        >
-          <div class="product-header">
-            <div class="product-thumb">
-              書籍の表紙イメージ<br>（後で差し替え）
-            </div>
-            <div class="product-main">
-              <div class="product-top-row">
-                <div class="product-badges">
-                  <span class="badge badge-category">書籍</span>
-                  <span class="badge badge-tag">作業環境測定ガイドブック</span>
-                </div>
-              </div>
-              <h2 class="product-title">作業環境測定ガイドブック0 総論編</h2>
-              <p class="product-desc">
-                作業環境測定の制度や考え方を体系的にまとめたガイドブック。
-                「なぜこの測定が必要なのか」を整理するのにちょうど良い、ベースとなる1冊です。
-              </p>
-              <div class="product-meta">
-                <span>対象：作業環境測定に関わる実務者</span>
-                <span>用途：制度理解／新人教育／社内説明用</span>
-              </div>
-            </div>
-          </div>
-          <ul class="product-points">
-            <li>制度面の背景や位置づけを押さえたいときに便利な総論編。</li>
-            <li>個別ガイドブック1〜5を読む前に、全体像の整理にも使えます。</li>
-          </ul>
-          <div class="product-actions">
-            <a class="btn btn-primary"
-               href="https://www.amazon.co.jp/%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E6%B8%AC%E5%AE%9A%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF0-%E7%B7%8F%E8%AB%96%E7%B7%A8-%E7%A4%BE-%E6%97%A5%E6%9C%AC%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E6%B8%AC%E5%AE%9A%E5%8D%94%E4%BC%9A/dp/4903989232"
-               target="_blank" rel="noopener">
-              Amazonで見る
-            </a>
-            <a class="btn btn-secondary"
-               href="https://www.amazon.co.jp/product-reviews/4903989232"
-               target="_blank" rel="noopener">
-              レビューを確認する
-            </a>
-          </div>
-        </article>
+<script>
+  // タブフィルタ
+  const tabs = document.querySelectorAll('.tab-btn');
+  const cards = document.querySelectorAll('.card');
+  const searchInput = document.getElementById('searchInput');
 
-        <!-- 例5：消耗品 -->
-        <article
-          class="product-card"
-          data-category="consumable"
-          data-keywords="消耗品 フィルタ カセット 作業環境測定 サンプリング 37mm"
-        >
-          <div class="product-header">
-            <div class="product-thumb">
-              フィルタ・カセットのイメージ<br>（後で差し替え）
-            </div>
-            <div class="product-main">
-              <div class="product-top-row">
-                <div class="product-badges">
-                  <span class="badge badge-category">消耗品</span>
-                  <span class="badge badge-tag">フィルタ／カセット</span>
-                </div>
-              </div>
-              <h2 class="product-title">作業環境測定用フィルタ／カセット（検索リンク）</h2>
-              <p class="product-desc">
-                粉じん・有機溶剤などのサンプリングに使うフィルタやカセット類。
-                型番や材質が測定対象ごとに細かく分かれるため、Amazonでは検索リンクでまとめています。
-              </p>
-              <div class="product-meta">
-                <span>用途：サンプリング用消耗品</span>
-                <span>ポイント：型番・材質・サイズの適合確認が必須</span>
-              </div>
-            </div>
-          </div>
-          <ul class="product-points">
-            <li>測定対象（粉じん／金属／有機溶剤など）ごとに必要なフィルタが異なるので、仕様書と照らし合わせて選定。</li>
-            <li>使用期限や保管条件が決まっている場合があるため、入荷後の在庫管理もセットでルール化しておくと安心。</li>
-          </ul>
-          <div class="product-actions">
-            <a class="btn btn-primary"
-               href="https://www.amazon.co.jp/s?k=%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E6%B8%AC%E5%AE%9A+%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF+%E3%82%AB%E3%82%BB%E3%83%83%E3%83%88"
-               target="_blank" rel="noopener">
-              Amazonで探す
-            </a>
-            <a class="btn btn-secondary"
-               href="https://www.jawe.or.jp/jawe/guidebook.html"
-               target="_blank" rel="noopener">
-              種類ごとの概要を確認する（JAWE）
-            </a>
-          </div>
-        </article>
+  function updateFilter(){
+    const activeTab = document.querySelector('.tab-btn.active');
+    const category = activeTab ? activeTab.dataset.category : 'all';
+    const keyword = (searchInput.value || '').toLowerCase();
 
-      </section>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 労働衛生ラボ</p>
-    </div>
-  </footer>
-
-  <script>
-    // モバイルメニュー制御
-    const menuBtn   = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const closeBtn  = document.getElementById('closeBtn');
-    const overlay   = document.getElementById('navOverlay');
-
-    function openNav(){
-      mobileNav.setAttribute('aria-hidden','false');
-      document.body.classList.add('nav-open');
-      overlay.hidden = false;
-      mobileNav.classList.add('open');
-      overlay.classList.add('show');
-      menuBtn.setAttribute('aria-expanded','true');
-    }
-    function closeNav(){
-      mobileNav.setAttribute('aria-hidden','true');
-      document.body.classList.remove('nav-open');
-      mobileNav.classList.remove('open');
-      overlay.classList.remove('show');
-      menuBtn.setAttribute('aria-expanded','false');
-      setTimeout(()=>{ overlay.hidden = true; }, 280);
-    }
-
-    menuBtn.addEventListener('click', ()=> {
-      const hidden = mobileNav.getAttribute('aria-hidden') === 'true';
-      hidden ? openNav() : closeNav();
+    cards.forEach(card => {
+      const cardCat = card.dataset.category;
+      const text = (card.dataset.keywords || card.textContent).toLowerCase();
+      const matchCategory = (category === 'all') || (cardCat === category);
+      const matchSearch = !keyword || text.includes(keyword);
+      card.style.display = (matchCategory && matchSearch) ? '' : 'none';
     });
-    overlay.addEventListener('click', closeNav);
-    closeBtn.addEventListener('click', closeNav);
-    window.addEventListener('keydown', e => { if(e.key === 'Escape') closeNav(); });
+  }
 
-    // 検索＆カテゴリフィルタ
-    const searchInput = document.getElementById('productSearch');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    let currentCategory = 'all';
-
-    function applyFilters(){
-      const query = searchInput.value.trim().toLowerCase();
-
-      productCards.forEach(card => {
-        const category = card.dataset.category;
-        const keywords = (card.dataset.keywords || '').toLowerCase();
-        const text = card.innerText.toLowerCase();
-
-        const matchCategory = (currentCategory === 'all') || (category === currentCategory);
-        const matchText = !query || keywords.includes(query) || text.includes(query);
-
-        card.style.display = (matchCategory && matchText) ? '' : 'none';
-      });
-    }
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        currentCategory = btn.dataset.filter;
-
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        applyFilters();
-      });
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateFilter();
     });
+  });
 
-    searchInput.addEventListener('input', applyFilters);
-  </script>
+  searchInput.addEventListener('input', updateFilter);
+</script>
 </body>
 </html>
