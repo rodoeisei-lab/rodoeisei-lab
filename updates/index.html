@@ -1,129 +1,597 @@
-<!doctype html><html lang="ja"><head>
-<meta charset="utf-8"><title>最新アップデート｜労働衛生ラボ</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/rodoeisei-lab/styles.css">
-<style>
-  /* このページ専用の軽い装飾 */
-  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 20px}
-  .filterbtn{font-size:13px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;text-decoration:none;color:var(--fg)}
-  .filterbtn.active{border-color:var(--accent);color:var(--accent)}
-  .update-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;display:grid;gap:10px}
-  .update-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .update-head .date{margin-left:auto;color:var(--muted);font-size:12px}
-  .update-card h3{margin:0}
-  details summary{cursor:pointer;list-style:none}
-  details summary::-webkit-details-marker{display:none}
-</style>
-</head><body>
-<header class="site-header"><div class="container">
-  <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
-  <nav class="main-nav" aria-label="メインメニュー"><ul>
-    <li><a href="/rodoeisei-lab/guides/">解説</a></li>
-    <li><a href="/rodoeisei-lab/videos/">動画</a></li>
-    <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
-    <li><a href="/rodoeisei-lab/licenses/">資格ガイド</a></li>
-    <li><a href="/rodoeisei-lab/sns/">SNS</a></li>
-    <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
-    <li class="muted"><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
-  </ul></nav>
-</div></header>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>最新アップデート | 労働衛生ラボ</title>
+  <meta name="description" content="労安法・関連則・厚労省通達・PPE関連JIS/ISOなど、労働衛生まわりの最新アップデートを「要点→影響→最小ToDo」で整理してまとめています。">
+  <link rel="icon" href="/rodoeisei-lab/favicon.ico">
+  <meta name="theme-color" content="#050816">
 
-<section class="section"><div class="container">
-  <h1>最新アップデート</h1>
-  <p class="note">対象：労安衛法・関連則（有機溶剤/粉じん/特化物など）、厚労省通達・告示、PPE関連JIS/ISO 等。<br>表示は「要点→影響→最小ToDo」で統一。</p>
+  <!-- OGP -->
+  <meta property="og:title" content="最新アップデート | 労働衛生ラボ">
+  <meta property="og:description" content="法令・通達・JIS/ISOなどのアップデートを、現場目線で「何が変わる？誰に影響？いつから？」で整理。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rodoeisei-lab.github.io/rodoeisei-lab/updates/">
+  <meta property="og:site_name" content="労働衛生ラボ">
+  <meta property="og:image" content="https://rodoeisei-lab.github.io/rodoeisei-lab/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- フィルタ（影響度） -->
-  <div class="toolbar" role="toolbar" aria-label="影響度で絞り込み">
-    <a href="#" data-filter="all" class="filterbtn active">すべて</a>
-    <a href="#" data-filter="high" class="filterbtn">影響：高</a>
-    <a href="#" data-filter="mid" class="filterbtn">影響：中</a>
-    <a href="#" data-filter="low" class="filterbtn">影響：低</a>
-  </div>
+  <style>
+    /* ベース */
+    *,*::before,*::after{ box-sizing:border-box; }
+    html,body{ width:100%; overflow-x:hidden; }
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Meiryo,system-ui,sans-serif;
+      line-height:1.6;
+      color:#e5e7eb;
+      background:#050816;
+    }
 
-  <div class="card-grid">
+    :root{
+      --primary:#f97373;
+      --secondary:#22d3ee;
+      --bg:#050816;
+      --panel:#020617;
+      --muted:#9ca3af;
+      --light:#f9fafb;
+      --max:1100px;
+      --ring:#38bdf8;
+    }
 
-    <!-- （例）サンプル：熱中症関連の運用強化 ※本文はダミー。差し替えて使ってね。 -->
-    <article class="update-card" data-impact="mid">
-      <div class="update-head">
-        <span class="badge impact-mid">影響：中</span>
-        <span class="date">更新日：2025-06-01</span>
-      </div>
-      <h3>（例）熱中症対策：運用強化の要点</h3>
-      <ul class="list">
-        <li><strong>何が変わる？</strong> 事前の作業計画・WBGTの記録・休憩基準の明確化を推奨（例）。</li>
-        <li><strong>誰に影響？</strong> 屋内外の高温作業、季節要因の強い工程。</li>
-        <li><strong>いつから？</strong> 施行・経過措置に注意（例）。</li>
-      </ul>
-      <details>
-        <summary class="btn">最小ToDoを開く</summary>
-        <ul class="list">
-          <li>WBGT測定の計画表を作る（誰が・いつ・どこで）。</li>
-          <li>休憩・給水の基準表を作り、現場に掲示。</li>
-          <li>作業計画と記録の保存先を決める。</li>
+    .container{ width:90%; max-width:var(--max); margin:0 auto; }
+
+    /* アクセシビリティ */
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:10px; width:auto; height:auto;
+      padding:.6rem .8rem; background:#000; color:#fff;
+      border-radius:.5rem; z-index:100;
+    }
+    a:focus-visible,button:focus-visible{
+      outline:2px solid var(--ring); outline-offset:2px; border-radius:6px;
+    }
+
+    /* Header */
+    .site-header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(5,8,22,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(148,163,184,.22);
+    }
+    .site-header .container{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0;
+    }
+    .brand{
+      font-weight:700; text-decoration:none;
+      color:var(--light); font-size:1.15em;
+      letter-spacing:.04em;
+    }
+    .desktop-nav ul{
+      list-style:none; display:flex; gap:16px; margin:0; padding:0;
+      font-size:.9rem;
+    }
+    .desktop-nav a{
+      color:#e5e7eb; text-decoration:none;
+      padding:8px 10px; border-radius:999px;
+      background:transparent;
+      transition:background .18s ease, color .18s ease, transform .1s ease;
+    }
+    .desktop-nav a:hover{
+      background:rgba(148,163,184,.16);
+      transform:translateY(-1px);
+    }
+
+    .menu-btn{
+      display:none; font-size:1.7em;
+      background:none; border:none; color:#e5e7eb; cursor:pointer;
+    }
+
+    @media(max-width:768px){
+      .desktop-nav{ display:none; }
+      .menu-btn{ display:block; }
+    }
+
+    /* モバイルナビ */
+    body.nav-open{ overflow:hidden; }
+
+    .nav-overlay{
+      position:fixed; inset:0; background:rgba(15,23,42,.66);
+      z-index:48; opacity:0; pointer-events:none; transition:opacity .28s ease;
+    }
+    .nav-overlay.show{ opacity:1; pointer-events:auto; }
+
+    .mobile-nav{
+      position:fixed; top:0; left:0; right:0; height:100vh;
+      background:#020617; z-index:49;
+      transform:translateY(-100%); transition:transform .28s ease;
+      padding:max(16px, env(safe-area-inset-top)) 20px 24px;
+      box-shadow:0 12px 32px rgba(15,23,42,.65);
+      display:flex; flex-direction:column;
+      color:#e5e7eb;
+    }
+    .mobile-nav.open{ transform:translateY(0); }
+    .mobile-nav[aria-hidden="true"]{ visibility:hidden; }
+
+    .mobile-nav .close-btn{
+      align-self:flex-end; font-size:28px; line-height:1;
+      background:none; border:none; padding:8px; cursor:pointer; color:#e5e7eb;
+    }
+    .mobile-nav h2{
+      font-size:12px; color:var(--muted); font-weight:700; letter-spacing:.16em;
+      margin:4px 0 8px; text-transform:uppercase;
+    }
+    .mobile-nav ul{ list-style:none; margin-top:8px; padding:0; }
+    .mobile-nav li + li{ border-top:1px solid rgba(31,41,55,.8); }
+    .mobile-nav a{
+      display:block; padding:14px 2px; font-size:17px; color:#e5e7eb;
+      text-decoration:none;
+    }
+    .mobile-nav a:active{
+      background:rgba(15,23,42,.9); border-radius:8px;
+    }
+
+    /* メインレイアウト */
+    main{
+      padding:32px 0 40px;
+      background:
+        radial-gradient(circle at top left,#1e293b 0,transparent 55%),
+        radial-gradient(circle at bottom right,#0f172a 0,transparent 50%),
+        var(--panel);
+      min-height:calc(100vh - 64px);
+    }
+
+    .updates-header{
+      margin-bottom:20px;
+    }
+    .updates-eyebrow{
+      font-size:.75rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .updates-title{
+      font-size:1.5rem;
+      margin:0 0 6px;
+    }
+    .updates-title span{
+      background:linear-gradient(120deg,#f97373,#facc15);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .updates-lead{
+      margin:0;
+      font-size:.95rem;
+      color:var(--muted);
+      max-width:44rem;
+    }
+    .updates-note{
+      margin-top:6px;
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    /* フィルター */
+    .filter-bar{
+      margin:18px 0 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      font-size:.8rem;
+    }
+    .filter-label{
+      align-self:center;
+      color:var(--muted);
+      margin-right:4px;
+    }
+    .filter-btn{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.6);
+      background:rgba(15,23,42,.86);
+      color:#e5e7eb;
+      padding:4px 10px;
+      cursor:pointer;
+      font-size:.8rem;
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+    }
+    .filter-btn span.dot{
+      width:8px; height:8px; border-radius:999px;
+      display:inline-block;
+    }
+    .dot-high{ background:#f97373; }
+    .dot-medium{ background:#facc15; }
+    .dot-low{ background:#4ade80; }
+    .filter-btn.active{
+      background:linear-gradient(135deg,#f97373,#fb7185);
+      color:#111827;
+      border-color:transparent;
+      box-shadow:0 8px 22px rgba(248,113,113,.55);
+    }
+
+    /* アップデートカード */
+    .updates-list{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .update-card{
+      border-radius:18px;
+      border:1px solid rgba(148,163,184,.6);
+      background:
+        radial-gradient(circle at 0 0,rgba(248,250,252,.15),transparent 55%),
+        radial-gradient(circle at 100% 100%,rgba(34,211,238,.16),transparent 60%),
+        rgba(15,23,42,.96);
+      box-shadow:0 18px 46px rgba(15,23,42,.92);
+      padding:14px 14px 12px;
+      font-size:.9rem;
+    }
+    .update-card-header{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:6px;
+      flex-wrap:wrap;
+    }
+    .update-tag-row{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .impact-pill{
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:.8rem;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border:1px solid rgba(148,163,184,.7);
+      background:rgba(15,23,42,.95);
+    }
+    .impact-pill span.dot{
+      width:8px; height:8px; border-radius:999px; display:inline-block;
+    }
+    .impact-high span.dot{ background:#f97373; }
+    .impact-medium span.dot{ background:#facc15; }
+    .impact-low span.dot{ background:#4ade80; }
+
+    .update-type{
+      font-size:.78rem;
+      color:var(--muted);
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.5);
+      background:rgba(15,23,42,.96);
+    }
+    .update-date{
+      font-size:.78rem;
+      color:var(--muted);
+    }
+
+    .update-title{
+      font-size:1.02rem;
+      font-weight:600;
+      margin:2px 0 6px;
+    }
+
+    .update-body p{
+      margin:0 0 4px;
+      color:#d1d5db;
+    }
+    .update-body strong{
+      color:#e5e7eb;
+    }
+    .update-list{
+      margin:0 0 6px;
+      padding-left:1.1rem;
+      color:#d1d5db;
+    }
+    .update-list li + li{ margin-top:2px; }
+
+    details.to-do{
+      margin-top:4px;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.6);
+      background:rgba(15,23,42,.96);
+      padding:6px 8px;
+    }
+    details.to-do summary{
+      list-style:none;
+      cursor:pointer;
+      font-size:.84rem;
+      color:#e5e7eb;
+    }
+    details.to-do summary::-webkit-details-marker{ display:none; }
+    details.to-do summary::after{
+      content:"▼";
+      font-size:.7rem;
+      margin-left:4px;
+    }
+    details.to-do[open] summary::after{
+      content:"▲";
+    }
+    .to-do-body{
+      margin-top:4px;
+      font-size:.82rem;
+      color:#d1d5db;
+    }
+    .to-do-body ul{
+      margin:0;
+      padding-left:1.1rem;
+    }
+    .to-do-body li + li{ margin-top:2px; }
+
+    @media(max-width:768px){
+      main{ padding:26px 0 34px; }
+    }
+
+    /* フッター */
+    .footer{
+      background:#020617;
+      border-top:1px solid rgba(15,23,42,.95);
+      color:var(--muted);
+      font-size:.8rem;
+      padding:18px 0 22px;
+      text-align:center;
+    }
+
+    /* モーション削減 */
+    @media (prefers-reduced-motion: reduce){
+      .nav-overlay, .mobile-nav{ transition:none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="/rodoeisei-lab/">労働衛生ラボ</a>
+      <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
+      <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="/rodoeisei-lab/guides/">解説</a></li>
+          <li><a href="/rodoeisei-lab/videos/">動画</a></li>
+          <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
+          <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
+          <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
+          <li><a href="/rodoeisei-lab/inspection/">労基署対策</a></li>
+          <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
+          <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
+          <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
         </ul>
-      </details>
-    </article>
+      </nav>
+    </div>
+  </header>
 
-    <!-- （例）フィットテスト運用メモ ※本文はダミー -->
-    <article class="update-card" data-impact="high">
-      <div class="update-head">
-        <span class="badge impact-high">影響：高</span>
-        <span class="date">更新日：2024-04-01</span>
+  <!-- モバイルナビ -->
+  <div class="nav-overlay" id="navOverlay" hidden></div>
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
+    <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="/rodoeisei-lab/guides/">解説</a></li>
+      <li><a href="/rodoeisei-lab/videos/">動画</a></li>
+      <li><a href="/rodoeisei-lab/products/">道具棚</a></li>
+      <li><a href="/rodoeisei-lab/updates/">最新アップデート</a></li>
+      <li><a href="/rodoeisei-lab/licenses/">資格対策</a></li>
+      <li><a href="/rodoeisei-lab/inspection/">労基署対策</a></li>
+      <li><a href="/rodoeisei-lab/glossary/">用語集</a></li>
+      <li><a href="/rodoeisei-lab/sns/">SNSリンク集</a></li>
+      <li><a href="/rodoeisei-lab/contact/">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <header class="updates-header">
+        <div class="updates-eyebrow">UPDATES</div>
+        <h1 class="updates-title">最新<span>アップデート</span></h1>
+        <p class="updates-lead">
+          対象：労安法・関連則（有機溶剤／粉じん／特化物など）、厚労省通達・告示、PPE関連JIS/ISO 等。
+          「何が変わる？」「誰に影響？」「いつから？」を、現場の最小ToDoとセットで整理します。
+        </p>
+        <p class="updates-note">
+          ※表示は「要点 → 影響 → 最小ToDo」の順で統一しています。
+        </p>
+      </header>
+
+      <!-- フィルター -->
+      <div class="filter-bar" aria-label="影響度フィルター">
+        <span class="filter-label">影響度で絞り込み：</span>
+        <button class="filter-btn active" data-filter="all" type="button">すべて</button>
+        <button class="filter-btn" data-filter="high" type="button">
+          <span class="dot dot-high"></span> 影響：高
+        </button>
+        <button class="filter-btn" data-filter="medium" type="button">
+          <span class="dot dot-medium"></span> 影響：中
+        </button>
+        <button class="filter-btn" data-filter="low" type="button">
+          <span class="dot dot-low"></span> 影響：低
+        </button>
       </div>
-      <h3>（例）フィットテスト：実施・記録の運用ポイント</h3>
-      <ul class="list">
-        <li><strong>何が変わる？</strong> 年1回の実施・結果の保存を推奨（例）。</li>
-        <li><strong>誰に影響？</strong> 防じん/有機用の密着型マスクを使う業務。</li>
-        <li><strong>いつから？</strong> 運用開始時期・猶予を確認（例）。</li>
-      </ul>
-      <details>
-        <summary class="btn">最小ToDoを開く</summary>
-        <ul class="list">
-          <li>実施対象者リストを作る（新規入場者・型式変更者を含む）。</li>
-          <li>QNFT/QNFTの方式と機器の手配を決める。</li>
-          <li>結果台帳の様式を決め、保存年限を明記。</li>
-        </ul>
-      </details>
-    </article>
 
-    <!-- （例）有機溶剤の周知事項 ※本文はダミー -->
-    <article class="update-card" data-impact="low">
-      <div class="update-head">
-        <span class="badge impact-low">影響：低</span>
-        <span class="date">更新日：2024-10-15</span>
-      </div>
-      <h3>（例）有機溶剤：ラベル/ SDS 表記の微修正</h3>
-      <ul class="list">
-        <li><strong>何が変わる？</strong> 表記の統一・注意喚起文言の更新（例）。</li>
-        <li><strong>誰に影響？</strong> SDS更新が必要な取扱事業場。</li>
-        <li><strong>いつから？</strong> 在庫切替の経過措置あり（例）。</li>
-      </ul>
-      <details>
-        <summary class="btn">最小ToDoを開く</summary>
-        <ul class="list">
-          <li>仕入先から最新版SDSを取得し、版数を確認。</li>
-          <li>ラベル印刷のテンプレ更新。</li>
-          <li>現場掲示物の差し替え計画を作成。</li>
-        </ul>
-      </details>
-    </article>
+      <!-- アップデート一覧 -->
+      <section class="updates-list" aria-label="アップデート一覧">
 
-  </div>
+        <!-- 例：熱中症対策 -->
+        <article class="update-card" data-impact="medium">
+          <div class="update-card-header">
+            <div class="update-tag-row">
+              <div class="impact-pill impact-medium">
+                <span class="dot"></span> 影響：中
+              </div>
+              <span class="update-type">テーマ：熱中症対策／WBGT運用</span>
+            </div>
+            <div class="update-date">更新日：2025-06-01</div>
+          </div>
+          <h2 class="update-title">（例）熱中症対策：運用強化の要点</h2>
+          <div class="update-body">
+            <p><strong>何が変わる？</strong> 事前の作業計画・WBGTの記録・休憩基準の明確化など、運用レベルでの強化が求められる方向性です（例）。</p>
+            <p><strong>誰に影響？</strong> 屋内外の高温作業、季節要因の強い工程、夜勤・交替制など。</p>
+            <p><strong>いつから？</strong> 施行・経過措置のスケジュールを確認しつつ、2025年夏季までに運用見直しを完了させるイメージ。</p>
+            <ul class="update-list">
+              <li>現状のWBGT測定・記録の実施状況を棚卸し。</li>
+              <li>暑熱リスクの高い作業の洗い出しと、優先度付け。</li>
+              <li>休憩・給水ルールが「紙ではなく現場で回っているか」を確認。</li>
+            </ul>
 
-  <p class="note" style="margin-top:18px">※上の3件は“型の見本”です。実際の法令・通達内容で差し替えて使ってください。</p>
-</div></section>
+            <details class="to-do">
+              <summary>最小ToDoを開く</summary>
+              <div class="to-do-body">
+                <ul>
+                  <li>① 暑熱リスクの高い作業リストを作る（A3一枚でOK）。</li>
+                  <li>② 直近1週間分のWBGT記録（または温湿度記録）を確認し、抜けをチェック。</li>
+                  <li>③ 現場リーダー向けに「熱中症の初期対応」と「迷ったら中止してよいライン」を共有。</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
 
-<script>
-  // 影響度フィルタ（超軽量）
-  const cards = () => Array.from(document.querySelectorAll('.update-card'));
-  const btns  = () => Array.from(document.querySelectorAll('[data-filter]'));
-  btns().forEach(b => b.addEventListener('click', e => {
-    e.preventDefault();
-    const v = b.dataset.filter;
-    cards().forEach(c => c.style.display = (v==='all'||c.dataset.impact===v)?'grid':'none');
-    btns().forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-  }));
-</script>
+        <!-- 例：有機溶剤中毒予防規則 -->
+        <article class="update-card" data-impact="high">
+          <div class="update-card-header">
+            <div class="update-tag-row">
+              <div class="impact-pill impact-high">
+                <span class="dot"></span> 影響：高
+              </div>
+              <span class="update-type">テーマ：有機溶剤中毒予防規則</span>
+            </div>
+            <div class="update-date">更新日：2025-04-15</div>
+          </div>
+          <h2 class="update-title">（例）有機溶剤中毒予防規則：改正ポイントの整理</h2>
+          <div class="update-body">
+            <p><strong>何が変わる？</strong> 対象物質の見直し、作業環境測定・局所排気装置の要件、健康診断項目などが更新される想定です（例）。</p>
+            <p><strong>誰に影響？</strong> 塗装・洗浄・印刷・実験室など、有機溶剤を扱う全ての事業場。</p>
+            <p><strong>いつから？</strong> 施行日＋経過措置期間を踏まえ、機器更新や作業環境測定のタイミングを計画的にずらす必要があります。</p>
+            <ul class="update-list">
+              <li>自社で使用している溶剤リストと、改正対象物質との突合せ。</li>
+              <li>局排の性能確認・整備計画の再確認。</li>
+              <li>作業環境測定・特殊健診のスケジュールを改正後仕様に合わせて見直し。</li>
+            </ul>
 
-</body></html>
+            <details class="to-do">
+              <summary>最小ToDoを開く</summary>
+              <div class="to-do-body">
+                <ul>
+                  <li>① 使用中の有機溶剤一覧（安全データシート含む）を最新化。</li>
+                  <li>② 改正ポイントと自社の該当箇所を、A4一枚のマトリクスで可視化。</li>
+                  <li>③ 必要に応じて、設備投資・測定計画の変更案を経営層と共有。</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- 例：防じんマスク関連 JIS -->
+        <article class="update-card" data-impact="low">
+          <div class="update-card-header">
+            <div class="update-tag-row">
+              <div class="impact-pill impact-low">
+                <span class="dot"></span> 影響：低
+              </div>
+              <span class="update-type">テーマ：PPE／防じんマスクJIS</span>
+            </div>
+            <div class="update-date">更新日：2025-03-10</div>
+          </div>
+          <h2 class="update-title">（例）防じんマスク関連JIS：表示・型式の見直し</h2>
+          <div class="update-body">
+            <p><strong>何が変わる？</strong> 型式名・表示方法・性能区分などが整理され、カタログやラベル表示が変わる方向性です（例）。</p>
+            <p><strong>誰に影響？</strong> 粉じん作業で防じんマスクを選定・購入・管理している担当者。</p>
+            <p><strong>いつから？</strong> 移行期間中は旧・新表示が混在するため、購入時の型式確認が重要になります。</p>
+            <ul class="update-list">
+              <li>現行マスクの型式と、新しい区分との対応表を確認。</li>
+              <li>選定基準（作業レベルごとの推奨区分）に変更が必要かを検討。</li>
+              <li>現場への説明資料に、新旧表示の対比図を1枚加えるだけでも混乱を防げます。</li>
+            </ul>
+
+            <details class="to-do">
+              <summary>最小ToDoを開く</summary>
+              <div class="to-do-body">
+                <ul>
+                  <li>① 使用中の防じんマスク型式を棚卸しし、新区分との対応をメモ。</li>
+                  <li>② 次回購入時に「新表示での型式指定」ができるよう、購買部門と共有。</li>
+                  <li>③ 粉じん作業の教育資料に、簡単な1枚スライドを追加。</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 労働衛生ラボ</p>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニュー制御
+    const menuBtn   = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeBtn  = document.getElementById('closeBtn');
+    const overlay   = document.getElementById('navOverlay');
+
+    function openNav(){
+      mobileNav.setAttribute('aria-hidden','false');
+      document.body.classList.add('nav-open');
+      overlay.hidden = false;
+      mobileNav.classList.add('open');
+      overlay.classList.add('show');
+      menuBtn.setAttribute('aria-expanded','true');
+    }
+    function closeNav(){
+      mobileNav.setAttribute('aria-hidden','true');
+      document.body.classList.remove('nav-open');
+      mobileNav.classList.remove('open');
+      overlay.classList.remove('show');
+      menuBtn.setAttribute('aria-expanded','false');
+      setTimeout(()=>{ overlay.hidden = true; }, 280);
+    }
+
+    menuBtn.addEventListener('click', ()=> {
+      const hidden = mobileNav.getAttribute('aria-hidden') === 'true';
+      hidden ? openNav() : closeNav();
+    });
+    overlay.addEventListener('click', closeNav);
+    closeBtn.addEventListener('click', closeNav);
+    window.addEventListener('keydown', e => { if(e.key === 'Escape') closeNav(); });
+
+    // 影響度フィルター
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.update-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        cards.forEach(card => {
+          const impact = card.dataset.impact;
+          if(filter === 'all' || filter === impact){
+            card.style.display = '';
+          }else{
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
