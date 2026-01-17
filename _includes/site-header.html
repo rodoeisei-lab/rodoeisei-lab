@@ -1,0 +1,24 @@
+<a class="skip-link" href="#main">本文へスキップ</a>
+<header class="site-header" role="banner">
+  <div class="container">
+    <a class="brand" href="{{ site.baseurl }}/">労働衛生ラボ</a>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
+    <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+      <ul>
+        {% for item in site.data.navigation %}
+        <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay" hidden></div>
+<nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
+  <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
+  <h2>Menu</h2>
+  <ul>
+    {% for item in site.data.navigation %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
