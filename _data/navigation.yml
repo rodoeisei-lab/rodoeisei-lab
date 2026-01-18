@@ -3,9 +3,9 @@
 - title: 動画
   url: /videos/
 - title: 道具棚
-  url: /products/
-- title: 道具棚
   url: /amazon/
+- title: おすすめ商品
+  url: /products/
 - title: 最新アップデート
   url: /updates/
 - title: 資格対策

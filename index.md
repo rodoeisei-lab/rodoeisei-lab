@@ -26,7 +26,7 @@ description: 現場と法令の「あいだ」をつなぐ学習サイト
   <article class="card">
     <h3>今週のピックアップ</h3>
     <p>フィットテスト導入の実務フローを1枚にまとめたサンプル記事を公開。</p>
-    <a href="{{ site.baseurl }}/guides/sample-article/">サンプル記事を見る →</a>
+    <a href="{{ site.baseurl }}/guides/fit-test/">サンプル記事を見る →</a>
   </article>
   <article class="card">
     <h3>動画（準備中）</h3>
