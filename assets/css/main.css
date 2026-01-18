@@ -470,6 +470,50 @@ body.nav-open { overflow: hidden; }
   text-decoration: none;
 }
 
+.amazon-page .amazon-category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+.amazon-page .amazon-category-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.amazon-page .amazon-category-nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(148, 163, 184, .4);
+}
+
+.amazon-page .amazon-category {
+  padding-top: 18px;
+  margin-top: 22px;
+  border-top: 1px solid rgba(30, 41, 59, .7);
+}
+.amazon-page .amazon-category-header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.amazon-page .amazon-category-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.amazon-page .amazon-category-guide {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
 .amazon-page .affiliate-disclosure {
   margin-bottom: 20px;
   padding: 16px 18px;
