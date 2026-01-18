@@ -6,6 +6,26 @@ lead: 難易度や読む目的に合わせて、今必要な情報だけを素�
 permalink: /guides/
 ---
 
+<h2 id="getting-started">まず最初に読む（全体像）</h2>
+<p>はじめて読む方向けに、全体像をつかむ3本を先に案内します。</p>
+<div class="cards" style="margin-bottom: 24px;">
+  <article class="card">
+    <h3>フィットテスト導入の最小セット</h3>
+    <p>制度導入の要点と最小フローを把握。</p>
+    <a href="{{ "/guides/fit-test/" | relative_url }}">この記事から始める →</a>
+  </article>
+  <article class="card">
+    <h3>作業環境測定の超入門（準備中）</h3>
+    <p>測定対象と頻度の全体像を整理。</p>
+    <a href="{{ "/guides/" | relative_url }}">解説一覧を見る →</a>
+  </article>
+  <article class="card">
+    <h3>有機溶剤の基礎（準備中）</h3>
+    <p>現場で押さえるべき最低限の用語を整理。</p>
+    <a href="{{ "/guides/" | relative_url }}">解説一覧を見る →</a>
+  </article>
+</div>
+
 <div class="cards">
   {% for guide in site.guides %}
   <article class="card">
