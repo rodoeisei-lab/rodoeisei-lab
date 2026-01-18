@@ -11,19 +11,41 @@ permalink: /amazon/
     <p>Amazonのアソシエイトとして、{{ site.title }}は適格販売により収入を得ています。</p>
   </div>
 
-  <div class="cards">
-    {% for item in site.data.amazon %}
-    <article class="card">
-      <span class="badge">{{ item.category }}</span>
-      <h3>{{ item.name }}</h3>
-      <p class="card-meta">{{ item.note }}</p>
-      <ul>
-        {% for bullet in item.bullets %}
-        <li>{{ bullet }}</li>
+  <nav class="amazon-category-nav" aria-label="Amazonカテゴリ">
+    <span>カテゴリ：</span>
+    <ul>
+      {% for category in site.data.amazon %}
+      <li><a href="#{{ category.title | slugify }}">{{ category.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  {% for category in site.data.amazon %}
+  <section class="amazon-category" id="{{ category.title | slugify }}">
+    <header class="amazon-category-header">
+      <h2>{{ category.title }}</h2>
+      <ul class="amazon-category-guide">
+        {% for line in category.guide %}
+        <li>{{ line }}</li>
         {% endfor %}
       </ul>
-      <a class="card-button" href="{{ item.url }}" target="_blank" rel="noopener sponsored">Amazonで見る</a>
-    </article>
-    {% endfor %}
-  </div>
+    </header>
+
+    <div class="cards">
+      {% for item in category.items %}
+      <article class="card">
+        <span class="badge">{{ category.title }}</span>
+        <h3>{{ item.name }}</h3>
+        <p class="card-meta">{{ item.note }}</p>
+        <ul>
+          {% for bullet in item.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+        <a class="card-button" href="{{ item.url }}" target="_blank" rel="noopener sponsored">Amazonで見る</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
 </div>
