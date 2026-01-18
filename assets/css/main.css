@@ -384,7 +384,22 @@ body.nav-open { overflow: hidden; }
 }
 .card h3 { margin-top: 0; }
 .card p { color: #cbd5f5; font-size: .9rem; }
+.sns-page .card-meta { color: var(--muted); font-size: .85rem; margin-top: -6px; }
 .card a { color: var(--secondary); text-decoration: none; }
+.sns-page .card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: rgba(34, 211, 238, .18);
+  border: 1px solid rgba(34, 211, 238, .4);
+}
 
 .badge {
   display: inline-flex;
@@ -437,6 +452,10 @@ body.nav-open { overflow: hidden; }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { order: -1; }
+}
+
+@media (max-width: 600px) {
+  .sns-page .cards { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
