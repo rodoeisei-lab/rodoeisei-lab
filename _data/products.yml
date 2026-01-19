@@ -1,0 +1,92 @@
+- title: 保護具（PPE）
+  guide:
+    - 作業内容とばく露リスクで必要性能を決める。
+    - サイズとフィット感が合うかを必ず確認する。
+    - 交換時期を基準化して在庫切れを防ぐ。
+  cards:
+    - title: 防じんマスク（基本モデル）
+      description: まず最初に検討する定番タイプ。
+      link: /amazon/#respiratory-protection
+      link_label: 商品を見る →
+    - title: フィルタ交換式面体
+      description: コストと性能のバランス重視。
+      link: /amazon/#respiratory-protection
+      link_label: 商品を見る →
+    - title: 耐薬品グローブ
+      description: 溶剤作業向けに材質を選ぶ。
+      link: /amazon/#hand-protection
+      link_label: 商品を見る →
+  alternatives:
+    - 安い: 使い捨て簡易マスク
+    - 軽い: 軽量バルブ付きマスク
+    - 頑丈: 再利用前提の高耐久面体
+- title: 測定器材
+  guide:
+    - 測定対象（粉じん/溶剤）で機器の型式を選ぶ。
+    - 校正の手順と頻度を現場に合わせて明記する。
+    - 記録フォーマットを1種類に統一する。
+  cards:
+    - title: サンプリングポンプ
+      description: 携帯性と連続稼働時間を重視。
+      link: /amazon/#measurement-inspection
+      link_label: 商品を見る →
+    - title: 校正用流量計
+      description: 測定前後の確認を簡略化。
+      link: /amazon/#measurement-inspection
+      link_label: 商品を見る →
+    - title: サンプルホルダー
+      description: 現場で扱いやすい標準タイプ。
+      link: /amazon/#measurement-inspection
+      link_label: 商品を見る →
+  alternatives:
+    - 安い: 手動ポンプ式の簡易セット
+    - 軽い: 小型バッテリー内蔵モデル
+    - 頑丈: 防塵ケース付きモデル
+- title: 記録・点検テンプレ
+  guide:
+    - 誰が見ても同じ判断ができる項目に絞る。
+    - 現場で書ける分量に抑える。
+    - 保存ルールと管理者を先に決める。
+  cards:
+    - title: フィットテスト記録シート
+      description: 面体・実施者・結果を1枚で管理。
+    - title: 作業環境測定ログ
+      description: 測定条件と結果を時系列で残す。
+    - title: 保護具点検チェック
+      description: 日次で抜け漏れが起きない設計。
+  alternatives:
+    - 安い: 既存Excelを最小項目にする
+    - 軽い: A4 1枚の簡易版
+    - 頑丈: 記録責任者印入りの正式版
+- title: 掲示・教育ツール
+  guide:
+    - 現場で1分で読めるサイズにする。
+    - 禁止事項より「やるべきこと」を先に書く。
+    - 更新日を必ず明記して差し替える。
+  cards:
+    - title: 保護具の着用ルール掲示
+      description: 着脱手順を図で示せるタイプ。
+    - title: 作業環境測定の注意喚起
+      description: 測定時の禁止行動を簡潔にまとめる。
+    - title: 教育用チェックリスト
+      description: 新人向けに基本項目を網羅。
+  alternatives:
+    - 安い: ラミネート掲示のみで運用
+    - 軽い: QRコードで電子配布
+    - 頑丈: 屋外対応の耐候素材
+- title: 現場共有ツール
+  guide:
+    - 担当者と締切が見える形式にする。
+    - 共有先を1つに集約して迷子を減らす。
+    - 更新履歴を残せる方法を選ぶ。
+  cards:
+    - title: 週次点検の進捗ボード
+      description: 誰が対応中か一目でわかる。
+    - title: 持ち出しチェック表
+      description: 保護具の貸出・返却を記録。
+    - title: 更新通知テンプレ
+      description: 法改正の共有を漏らさない。
+  alternatives:
+    - 安い: ホワイトボード運用
+    - 軽い: 共有チャットの固定メッセージ
+    - 頑丈: 紙と電子の二重管理
