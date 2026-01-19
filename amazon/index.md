@@ -1,8 +1,8 @@
 ---
-title: 道具棚
-description: 労働衛生の現場で使いやすい道具をまとめています。
+title: おすすめ商品（Amazon）
+description: 労働衛生の現場で使いやすいAmazon商品をまとめています。
 eyebrow: Amazon
-lead: 現場での選定や共有がしやすい、定番アイテムをカテゴリ別に紹介します。
+lead: 現場での選定や共有がしやすい、定番アイテムをAmazonカテゴリ別に紹介します。
 permalink: /amazon/
 ---
 
@@ -46,13 +46,13 @@ permalink: /amazon/
     <ul>
       <li><a href="#fixed-recommendations">固定おすすめ</a></li>
       {% for category in site.data.amazon %}
-      <li><a href="#{{ category.title | slugify }}">{{ category.title }}</a></li>
+      <li><a href="#{{ category.id | default: category.title | slugify }}">{{ category.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>
 
   {% for category in site.data.amazon %}
-  <section class="amazon-category" id="{{ category.title | slugify }}">
+  <section class="amazon-category" id="{{ category.id | default: category.title | slugify }}">
     <header class="amazon-category-header">
       <h2>{{ category.title }}</h2>
       <ul class="amazon-category-guide">

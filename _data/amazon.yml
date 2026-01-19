@@ -1,4 +1,5 @@
 - title: 呼吸用保護具
+  id: respiratory-protection
   guide:
     - 作業の粉じん・蒸気の種類に合わせて区分を確認
     - フィット性と装着負荷のバランスを重視
@@ -25,6 +26,7 @@
         - 個包装で衛生管理が簡単
       url: ""
 - title: 目の保護
+  id: eye-protection
   guide:
     - 粉じん・飛来物のリスクに合わせて密閉度を選ぶ
     - くもり対策と視界の確保を優先
@@ -49,6 +51,7 @@
         - マスクや眼鏡と併用しやすい
       url: ""
 - title: 騒音対策
+  id: hearing-protection
   guide:
     - 現場の騒音レベルに合わせて遮音性能を確認
     - 付け外しの頻度と装着性を考える
@@ -73,6 +76,7 @@
         - 短時間作業の切替に便利
       url: ""
 - title: 手の保護
+  id: hand-protection
   guide:
     - 作業リスクに合わせて耐切創・耐薬品を確認
     - サイズ展開と着脱のしやすさを重視
@@ -97,6 +101,7 @@
         - 長時間作業の安全確保に
       url: "https://amzn.to/4qvyMkW"
 - title: 測定・点検
+  id: measurement-inspection
   guide:
     - 日常点検は簡易計測で回せるかを確認
     - 記録の残しやすさを優先
