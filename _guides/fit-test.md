@@ -5,7 +5,15 @@ summary: 制度導入の目的と対象を1分で把握。<br>最小フローと
 category: Guides
 level: 実務
 reading_time: 6分
+minutes: 6
 updated: 2025-03-01
+status: published
+featured: true
+tags:
+  - 保護具
+  - フィットテスト
+  - 導入
+  - 記録
 audience: 現場担当者・安全衛生管理者・導入初期の責任者
 sources:
   - <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000132963.html" target="_blank" rel="noopener">厚生労働省: 呼吸用保護具のフィットテスト</a>

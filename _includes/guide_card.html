@@ -1,0 +1,28 @@
+{% assign description = guide.summary | default: guide.excerpt | strip_html %}
+<article class="card guide-card">
+  <div class="guide-card-header">
+    {% if guide.status == "wip" %}
+      <span class="guide-status is-wip">準備中</span>
+    {% else %}
+      <span class="guide-status is-published">公開中</span>
+    {% endif %}
+  </div>
+  <h3>{{ guide.title }}</h3>
+  <p>{{ description }}</p>
+  {% if guide.minutes or guide.updated %}
+  <div class="guide-meta">
+    {% if guide.minutes %}<span>実務 {{ guide.minutes }}分</span>{% endif %}
+    {% if guide.updated %}<span>更新: {{ guide.updated }}</span>{% endif %}
+  </div>
+  {% endif %}
+  {% if guide.tags %}
+  <div class="guide-tags">
+    {% for tag in guide.tags limit:4 %}
+      <span class="guide-tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if guide.status != "wip" %}
+    <a class="guide-card-link" href="{{ guide.url | relative_url }}">記事を読む →</a>
+  {% endif %}
+</article>
