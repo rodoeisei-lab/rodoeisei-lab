@@ -15,7 +15,7 @@
 <div class="nav-overlay" id="navOverlay" hidden></div>
 <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
   <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
-  <h2>Menu</h2>
+  <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
   <ul>
     {% for item in site.data.navigation %}
     <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>

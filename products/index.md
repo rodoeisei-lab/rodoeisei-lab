@@ -1,7 +1,7 @@
 ---
 title: 道具棚
 description: 保護具・測定器材・記録テンプレの選定ポイント。
-eyebrow: Tools
+eyebrow: 道具棚
 lead: 現場で迷いやすい「選定・更新・保守」をシンプルに整理します。
 permalink: /products/
 ---
@@ -20,7 +20,14 @@ permalink: /products/
       <h3>{{ card.title }}</h3>
       <p>{{ card.description }}</p>
       {% if card.link %}
+      {% assign link_prefix = card.link | slice: 0, 2 %}
+      {% assign link_mailto = card.link | slice: 0, 7 %}
+      {% assign link_tel = card.link | slice: 0, 4 %}
+      {% if card.link contains "://" or link_prefix == "//" or link_prefix == "#" or link_mailto == "mailto:" or link_tel == "tel:" %}
+      <a href="{{ card.link }}">{{ card.link_label }}</a>
+      {% else %}
       <a href="{{ card.link | relative_url }}">{{ card.link_label }}</a>
+      {% endif %}
       {% else %}
       <p class="card-meta">準備中</p>
       {% endif %}

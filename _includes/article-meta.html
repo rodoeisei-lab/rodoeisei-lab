@@ -2,19 +2,19 @@
 <div class="article-meta-box">
   {% if page.summary %}
   <div class="article-meta-item">
-    <h3>Summary</h3>
+    <h3>{{ site.data.ui.summary | default: "要点" }}</h3>
     <p>{{ page.summary }}</p>
   </div>
   {% endif %}
   {% if page.audience %}
   <div class="article-meta-item">
-    <h3>Audience</h3>
+    <h3>{{ site.data.ui.audience | default: "対象" }}</h3>
     <p>{{ page.audience }}</p>
   </div>
   {% endif %}
   {% if page.sources %}
   <div class="article-meta-item">
-    <h3>Sources</h3>
+    <h3>{{ site.data.ui.sources | default: "参考" }}</h3>
     <ul>
       {% for source in page.sources %}
       <li>{{ source }}</li>
@@ -24,7 +24,7 @@
   {% endif %}
   {% if page.last_updated %}
   <div class="article-meta-item">
-    <h3>Last updated</h3>
+    <h3>{{ site.data.ui.last_updated | default: "最終更新" }}</h3>
     <p>{{ page.last_updated }}</p>
   </div>
   {% endif %}

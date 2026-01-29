@@ -1,7 +1,7 @@
 ---
 title: 動画
 description: 移動中でも学べる短尺動画の一覧。
-eyebrow: Videos
+eyebrow: 動画
 lead: 図解や現場映像を交えて、5分で要点を理解できる動画を整理します。
 permalink: /videos/
 ---

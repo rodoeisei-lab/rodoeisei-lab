@@ -1,7 +1,7 @@
 ---
 title: 最新アップデート
 description: 法改正・通達・JIS/ISOの最新動向を要点で整理。
-eyebrow: Updates
+eyebrow: 更新情報
 lead: 「何が変わる？誰に影響？いつから？」の3点だけ先に掴める一覧を目指します。
 permalink: /updates/
 ---

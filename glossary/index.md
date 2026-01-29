@@ -1,7 +1,7 @@
 ---
 title: 用語集
 description: 現場で迷いやすい用語を短く整理。
-eyebrow: Glossary
+eyebrow: 用語集
 lead: 管理区分・所定地点・フィットファクタなど、最小の定義から確認できます。
 permalink: /glossary/
 ---

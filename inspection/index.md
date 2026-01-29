@@ -1,7 +1,7 @@
 ---
 title: 労基署対策
 description: 監督署対応で迷いやすいポイントを事前に整理。
-eyebrow: Compliance
+eyebrow: コンプライアンス
 lead: 立入検査の準備・是正指導の進め方・記録の整備をまとめます。
 permalink: /inspection/
 ---

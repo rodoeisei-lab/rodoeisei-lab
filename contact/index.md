@@ -1,7 +1,7 @@
 ---
 title: お問い合わせ
 description: 相談・取材・コラボの窓口。
-eyebrow: Contact
+eyebrow: お問い合わせ
 lead: 現場の課題相談、記事リクエスト、コラボレーションのご連絡はこちらから。
 permalink: /contact/
 ---

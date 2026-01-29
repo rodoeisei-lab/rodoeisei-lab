@@ -1,7 +1,7 @@
 ---
 title: SNSリンク集
 description: 最新情報を追うための公式アカウント一覧。
-eyebrow: Social
+eyebrow: SNS
 lead: 更新告知や短い解説はSNSで先行して流れる想定です。
 permalink: /sns/
 ---
