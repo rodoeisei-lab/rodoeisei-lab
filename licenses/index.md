@@ -1,7 +1,7 @@
 ---
 title: 資格対策
 description: 労働衛生関連資格の学習ポイントと試験対策。
-eyebrow: Licenses
+eyebrow: ライセンス
 lead: 試験範囲の全体像を掴み、実務に直結する知識へ落とし込みます。
 permalink: /licenses/
 ---

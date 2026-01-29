@@ -1,7 +1,7 @@
 ---
 title: 解説
 description: 粉じん・有機溶剤・作業環境測定・労基署対策など、一次情報ベースの解説一覧。
-eyebrow: Guides
+eyebrow: ガイド
 lead: 難易度や読む目的に合わせて、今必要な情報だけを素早く拾える構成に整理します。
 permalink: /guides/
 ---

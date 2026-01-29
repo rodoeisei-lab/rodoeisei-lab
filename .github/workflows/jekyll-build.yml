@@ -14,7 +14,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: .ruby-version
           bundler-cache: true
 
       - name: Install dependencies
@@ -22,3 +22,6 @@ jobs:
 
       - name: Build site
         run: bundle exec jekyll build
+
+      - name: Check internal links
+        run: bundle exec htmlproofer ./_site --check-html --allow-hash-href --disable-external
