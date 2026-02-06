@@ -5,6 +5,8 @@ summary: 点検頻度と記録の見直しに向けた、現場で使える3つ�
 category: Updates
 impact: 影響: 中
 updated: 2025-03-01
+target: 衛生管理者・現場リーダー
+effective_from: 2025-03-15
 lead: 週次・月次点検を見直す時に使える、最小のチェック項目だけを整理しました。
 ---
 
