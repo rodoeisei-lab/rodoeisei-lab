@@ -1,0 +1,38 @@
+{% assign card_classes = "card" %}
+{% if include.class %}
+  {% assign card_classes = card_classes | append: " " | append: include.class %}
+{% endif %}
+<article class="{{ card_classes }}"{% if include.data_attrs %} {{ include.data_attrs }}{% endif %}>
+  {% if include.status %}
+  <div class="card-status">
+    <span class="status {{ include.status_class }}">{{ include.status }}</span>
+  </div>
+  {% endif %}
+  {% if include.badges %}
+  <div class="card-badges">
+    {% for badge in include.badges %}
+      <span class="badge">{{ badge }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <h3>{{ include.title | default: "無題" }}</h3>
+  {% if include.description %}
+  <p>{{ include.description }}</p>
+  {% endif %}
+  {% if include.body %}
+    {{ include.body }}
+  {% endif %}
+  {% if include.tags %}
+  <div class="guide-tags">
+    {% for tag in include.tags %}
+      <span class="guide-tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if include.meta %}
+  <p class="card-meta">{{ include.meta }}</p>
+  {% endif %}
+  {% if include.link_url %}
+  <a class="card-link" href="{{ include.link_url }}">{{ include.link_label | default: "詳しく見る →" }}</a>
+  {% endif %}
+</article>

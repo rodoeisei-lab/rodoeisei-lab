@@ -1,32 +1,67 @@
-{% if page.summary or page.audience or page.sources or page.last_updated %}
-<div class="article-meta-box">
-  {% if page.summary %}
-  <div class="article-meta-item">
-    <h3>{{ site.data.ui.summary | default: "要点" }}</h3>
-    <p>{{ page.summary }}</p>
+{% assign is_guide = false %}
+{% if page.collection == "guides" or page.category == "Guides" %}
+  {% assign is_guide = true %}
+{% endif %}
+
+{% if is_guide %}
+  {% assign summary_text = page.summary | default: site.data.ui.summary_default | default: "要点は準備中です。" %}
+  {% assign audience_text = page.audience | default: site.data.ui.audience_default | default: "対象読者は準備中です。" %}
+  {% assign last_updated_text = page.last_updated | default: page.updated | default: site.data.ui.last_updated_default | default: "未記入" %}
+  <div class="article-meta-box">
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.summary | default: "要点" }}</h3>
+      <p>{{ summary_text }}</p>
+    </div>
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.audience | default: "対象" }}</h3>
+      <p>{{ audience_text }}</p>
+    </div>
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.sources | default: "参考" }}</h3>
+      {% if page.sources %}
+      <ul>
+        {% for source in page.sources %}
+        <li>{{ source }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>{{ site.data.ui.sources_default | default: "一次情報は準備中です。" }}</p>
+      {% endif %}
+    </div>
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.last_updated | default: "最終更新" }}</h3>
+      <p>{{ last_updated_text }}</p>
+    </div>
   </div>
-  {% endif %}
-  {% if page.audience %}
-  <div class="article-meta-item">
-    <h3>{{ site.data.ui.audience | default: "対象" }}</h3>
-    <p>{{ page.audience }}</p>
+{% elsif page.summary or page.audience or page.sources or page.last_updated %}
+  <div class="article-meta-box">
+    {% if page.summary %}
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.summary | default: "要点" }}</h3>
+      <p>{{ page.summary }}</p>
+    </div>
+    {% endif %}
+    {% if page.audience %}
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.audience | default: "対象" }}</h3>
+      <p>{{ page.audience }}</p>
+    </div>
+    {% endif %}
+    {% if page.sources %}
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.sources | default: "参考" }}</h3>
+      <ul>
+        {% for source in page.sources %}
+        <li>{{ source }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if page.last_updated %}
+    <div class="article-meta-item">
+      <h3>{{ site.data.ui.last_updated | default: "最終更新" }}</h3>
+      <p>{{ page.last_updated }}</p>
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
-  {% if page.sources %}
-  <div class="article-meta-item">
-    <h3>{{ site.data.ui.sources | default: "参考" }}</h3>
-    <ul>
-      {% for source in page.sources %}
-      <li>{{ source }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-  {% if page.last_updated %}
-  <div class="article-meta-item">
-    <h3>{{ site.data.ui.last_updated | default: "最終更新" }}</h3>
-    <p>{{ page.last_updated }}</p>
-  </div>
-  {% endif %}
-</div>
 {% endif %}

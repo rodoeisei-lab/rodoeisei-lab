@@ -1,28 +1,28 @@
 {% assign description = guide.summary | default: guide.excerpt | strip_html %}
-<article class="card guide-card">
-  <div class="guide-card-header">
-    {% if guide.status == "wip" %}
-      <span class="guide-status is-wip">準備中</span>
-    {% else %}
-      <span class="guide-status is-published">公開中</span>
-    {% endif %}
-  </div>
-  <h3>{{ guide.title }}</h3>
-  <p>{{ description }}</p>
-  {% if guide.minutes or guide.updated %}
-  <div class="guide-meta">
-    {% if guide.minutes %}<span>実務 {{ guide.minutes }}分</span>{% endif %}
-    {% if guide.updated %}<span>更新: {{ guide.updated }}</span>{% endif %}
-  </div>
-  {% endif %}
-  {% if guide.tags %}
-  <div class="guide-tags">
-    {% for tag in guide.tags limit:4 %}
-      <span class="guide-tag">{{ tag }}</span>
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% if guide.status != "wip" %}
-    <a class="guide-card-link" href="{{ guide.url | relative_url }}">記事を読む →</a>
-  {% endif %}
-</article>
+{% assign status_label = "公開中" %}
+{% assign status_class = "is-published" %}
+{% if guide.status == "wip" %}
+  {% assign status_label = "準備中" %}
+  {% assign status_class = "is-wip" %}
+{% endif %}
+{% capture meta %}
+  {% if guide.minutes %}実務 {{ guide.minutes }}分{% endif %}
+  {% if guide.minutes and guide.updated %} / {% endif %}
+  {% if guide.updated %}更新: {{ guide.updated }}{% endif %}
+{% endcapture %}
+{% assign meta = meta | strip %}
+{% assign link_url = nil %}
+{% if guide.status != "wip" %}
+  {% assign link_url = guide.url | relative_url %}
+{% endif %}
+{% include list-card.html
+  class="guide-card"
+  title=guide.title
+  description=description
+  status=status_label
+  status_class=status_class
+  tags=guide.tags
+  meta=meta
+  link_url=link_url
+  link_label="記事を読む →"
+%}

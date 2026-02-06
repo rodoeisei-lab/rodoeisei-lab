@@ -29,24 +29,26 @@ permalink: /glossary/
       {% assign related_text = entry.related | join: " " %}
     {% endif %}
     {% capture search_text %}{{ entry.term }} {{ entry.reading }} {{ entry.short }} {{ entry.detail | strip_newlines }} {{ tags_text }} {{ related_text }}{% endcapture %}
-    <article class="card glossary-card" data-glossary-card data-search="{{ search_text | strip | escape }}">
-      <h3>{{ entry.term }}</h3>
+    {% capture data_attrs %}data-glossary-card data-search="{{ search_text | strip | escape }}"{% endcapture %}
+    {% capture body %}
       {% if entry.reading %}
         <p class="guide-meta">よみ: {{ entry.reading }}</p>
       {% endif %}
       <p>{{ entry.short }}</p>
       <p class="glossary-detail">{{ entry.detail | newline_to_br }}</p>
-      {% if entry.tags %}
-        <div class="guide-tags">
-          {% for tag in entry.tags %}
-            <span class="guide-tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-      {% if entry.related %}
-        <p class="guide-meta">関連: {{ entry.related | join: " / " }}</p>
-      {% endif %}
-    </article>
+    {% endcapture %}
+    {% assign related_meta = nil %}
+    {% if entry.related %}
+      {% capture related_meta %}関連: {{ entry.related | join: " / " }}{% endcapture %}
+    {% endif %}
+    {% include list-card.html
+      class="glossary-card"
+      title=entry.term
+      body=body
+      tags=entry.tags
+      meta=related_meta
+      data_attrs=data_attrs
+    %}
   {% endfor %}
 </div>
 
