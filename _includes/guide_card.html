@@ -1,4 +1,14 @@
 {% assign description = guide.summary | default: guide.excerpt | strip_html %}
+{% assign tag_list = "" %}
+{% if guide.tags %}
+  {% assign tag_list = guide.tags | join: "|" %}
+{% endif %}
+{% assign tag_text = "" %}
+{% if guide.tags %}
+  {% assign tag_text = guide.tags | join: " " %}
+{% endif %}
+{% assign search_text = guide.title | append: " " | append: description | append: " " | append: tag_text | strip | strip_newlines %}
+{% capture data_attrs %}data-filter-card data-search="{{ search_text | escape }}" data-tags="{{ tag_list | escape }}"{% endcapture %}
 {% assign status_label = "公開中" %}
 {% assign status_class = "is-published" %}
 {% if guide.status == "wip" %}
@@ -17,6 +27,7 @@
 {% endif %}
 {% include list-card.html
   class="guide-card"
+  data_attrs=data_attrs
   title=guide.title
   description=description
   status=status_label
@@ -25,4 +36,5 @@
   meta=meta
   link_url=link_url
   link_label="記事を読む →"
+  tag_link_base="/guides/?tag=" | relative_url
 %}

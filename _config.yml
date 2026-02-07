@@ -18,3 +18,7 @@ defaults:
       path: ""
     values:
       layout: page
+
+community:
+  discussions_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/discussions"
+  discord_invite_url: ""
