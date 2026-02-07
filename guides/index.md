@@ -6,6 +6,32 @@ lead: 難易度や読む目的に合わせて、今必要な情報だけを素�
 permalink: /guides/
 ---
 
+<div class="filter-search">
+  <label class="sr-only" for="cardSearch">検索</label>
+  <input id="cardSearch" type="search" name="q" placeholder="例：粉じん、リスクアセスメント、フィットテスト…">
+</div>
+<p id="cardNoResults" class="no-results" hidden>該当する解説がありません。</p>
+{% assign tag_list = "" | split: "" %}
+{% assign tag_source = site.guides | where: "status", "published" %}
+{% for guide in tag_source %}
+  {% if guide.tags %}
+    {% for tag in guide.tags %}
+      {% unless tag_list contains tag %}
+        {% assign tag_list = tag_list | push: tag %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% assign tag_list = tag_list | sort %}
+{% if tag_list.size > 0 %}
+<div class="tag-chips">
+  <a class="tag-chip" href="{{ '/guides/' | relative_url }}">すべて</a>
+  {% for tag in tag_list %}
+    <a class="tag-chip" href="{{ '/guides/?tag=' | relative_url }}{{ tag | uri_escape }}">{{ tag }}</a>
+  {% endfor %}
+</div>
+{% endif %}
+
 <h2 id="getting-started">まず最初に読む（全体像）</h2>
 <p>はじめて読む方向けに、全体像をつかむ3本を先に案内します。</p>
 {% assign featured_guides = site.guides | where: "status", "published" | where: "featured", true %}
@@ -62,3 +88,5 @@ permalink: /guides/
 - [労基署対策]({{ "/inspection/" | relative_url }})
 - [資格対策]({{ "/licenses/" | relative_url }})
 - [最新アップデート]({{ "/updates/" | relative_url }})
+
+<script src="{{ '/assets/js/card-filter.js' | relative_url }}" defer></script>

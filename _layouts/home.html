@@ -17,10 +17,16 @@ layout: base
           粉じん・有機溶剤・労基署対策・資格対策まで。<br>
           現場と法令のあいだを埋める、一次情報ベースのナレッジハブ。
         </p>
+        <form class="hero-search" action="{{ '/search/' | relative_url }}" method="get">
+          <label class="sr-only" for="heroSearch">検索</label>
+          <input id="heroSearch" type="search" name="q" placeholder="例：個人ばく露測定、管理濃度、フィットテスト…">
+          <button type="submit" class="cta-primary">検索する</button>
+        </form>
         <div class="cta-buttons">
-          <a href="{{ site.baseurl }}/guides/" class="cta-primary">今週の解説を見る</a>
-          <a href="{{ site.baseurl }}/inspection/" class="cta-secondary">労基署対策</a>
-          <a href="{{ site.baseurl }}/products/" class="cta-tertiary">道具棚（保護具・測定器材）</a>
+          <a href="{{ '/community/' | relative_url }}" class="cta-primary">コミュニティ</a>
+          <a href="{{ '/learn/' | relative_url }}" class="cta-secondary">学習</a>
+          <a href="{{ '/tools/' | relative_url }}" class="cta-tertiary">ツール</a>
+          <a href="{{ '/updates/' | relative_url }}" class="cta-tertiary">最新情報</a>
         </div>
         <div class="hero-meta">
           <span>毎週更新</span>
@@ -60,52 +66,31 @@ layout: base
     <div class="cards">
       {% include list-card.html
         class="home-start-card"
-        title="まず全体像をつかむ"
-        description="はじめに読むべき3本で全体像を掴む。"
-        link_url=site.baseurl | append: "/guides/#getting-started"
-        link_label="全体像へ →"
+        title="コミュニティ"
+        description="悩みや気づきを共有し、議論を深める。"
+        link_url="/community/" | relative_url
+        link_label="コミュニティへ →"
       %}
       {% include list-card.html
         class="home-start-card"
-        title="現場で困った"
-        description="解説一覧から目的に近いテーマを探す。"
-        link_url=site.baseurl | append: "/guides/"
-        link_label="解説一覧へ →"
+        title="学習"
+        description="解説・資格・用語集から必要な知識を探す。"
+        link_url="/learn/" | relative_url
+        link_label="学習の入口へ →"
       %}
       {% include list-card.html
         class="home-start-card"
-        title="更新を先に確認"
-        description="法改正・通達の要点を素早く確認。"
-        link_url=site.baseurl | append: "/updates/"
-        link_label="最新アップデートへ →"
+        title="ツール"
+        description="道具選びやおすすめ商品をまとめて確認。"
+        link_url="/tools/" | relative_url
+        link_label="ツールへ →"
       %}
       {% include list-card.html
         class="home-start-card"
-        title="労基署対応"
-        description="指摘前に押さえる基本対応を整理。"
-        link_url=site.baseurl | append: "/inspection/"
-        link_label="労基署対策へ →"
-      %}
-      {% include list-card.html
-        class="home-start-card"
-        title="資格対策"
-        description="合格に直結する要点だけをまとめて確認。"
-        link_url=site.baseurl | append: "/licenses/"
-        link_label="資格対策へ →"
-      %}
-      {% include list-card.html
-        class="home-start-card"
-        title="道具を選ぶ"
-        description="保護具・測定器材の選定ポイント。"
-        link_url=site.baseurl | append: "/products/"
-        link_label="道具棚へ →"
-      %}
-      {% include list-card.html
-        class="home-start-card"
-        title="用語の意味を確認"
-        description="用語の定義と関連語を短時間で整理。"
-        link_url=site.baseurl | append: "/glossary/"
-        link_label="用語集へ →"
+        title="最新情報"
+        description="法改正・通達の更新を素早くキャッチ。"
+        link_url="/updates/" | relative_url
+        link_label="最新情報へ →"
       %}
     </div>
   </div>

@@ -8,10 +8,22 @@ permalink: /updates/
 
 {% assign updates_sorted = site.updates | sort: "updated" | reverse %}
 
+<div class="filter-search">
+  <label class="sr-only" for="cardSearch">検索</label>
+  <input id="cardSearch" type="search" name="q" placeholder="例：改正、省令、管理濃度…">
+</div>
+<p id="cardNoResults" class="no-results" hidden>該当する更新がありません。</p>
+
 <div class="cards updates-cards">
   {% for update in updates_sorted %}
     {% assign update_title = update.title | default: update.slug | default: update.basename | default: "更新情報" %}
     {% assign update_summary = update.summary | default: update.excerpt | strip_html | truncate: 120 %}
+    {% assign update_impact = update.impact | default: "" %}
+    {% assign update_target = update.target | default: "" %}
+    {% assign update_effective = update.effective_from | default: "" %}
+    {% assign update_updated = update.updated | default: "" %}
+    {% assign search_text = update_title | append: " " | append: update_summary | append: " " | append: update_impact | append: " " | append: update_target | append: " " | append: update_effective | append: " " | append: update_updated | strip | strip_newlines %}
+    {% capture data_attrs %}data-filter-card data-search="{{ search_text | escape }}" data-tags=""{% endcapture %}
     {% assign badges = "" | split: "|" %}
     {% if update.updated %}
       {% assign badges = badges | push: update.updated %}
@@ -24,6 +36,7 @@ permalink: /updates/
       title=update_title
       description=update_summary
       badges=badges
+      data_attrs=data_attrs
       link_url=update.url | relative_url
       link_label="詳細を見る →"
     %}
@@ -102,3 +115,5 @@ lead: 先に伝えたい結論や注意点（任意）
 - [資格対策]({{ "/licenses/" | relative_url }})
 - [用語集]({{ "/glossary/" | relative_url }})
 - [SNSリンク集]({{ "/sns/" | relative_url }})
+
+<script src="{{ '/assets/js/card-filter.js' | relative_url }}" defer></script>
