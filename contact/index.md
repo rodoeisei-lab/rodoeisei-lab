@@ -54,8 +54,8 @@ permalink: /contact/
 **A.** まずは相談内容だけでも送ってください。必要に応じて後から確認します。
 
 ## 関連ページ
-- [解説一覧](/guides/)
-- [用語集](/glossary/)
-- [労基署対策](/inspection/)
-- [資格対策](/licenses/)
-- [SNSリンク集](/sns/)
+- [解説一覧]({{ "/guides/" | relative_url }})
+- [用語集]({{ "/glossary/" | relative_url }})
+- [労基署対策]({{ "/inspection/" | relative_url }})
+- [資格対策]({{ "/licenses/" | relative_url }})
+- [SNSリンク集]({{ "/sns/" | relative_url }})

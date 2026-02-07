@@ -57,8 +57,8 @@ permalink: /guides/
 **A.** お問い合わせページから希望テーマと背景を送ってください。
 
 ## 関連ページ
-- [用語集](/glossary/)
-- [道具棚](/products/)
-- [労基署対策](/inspection/)
-- [資格対策](/licenses/)
-- [最新アップデート](/updates/)
+- [用語集]({{ "/glossary/" | relative_url }})
+- [道具棚]({{ "/products/" | relative_url }})
+- [労基署対策]({{ "/inspection/" | relative_url }})
+- [資格対策]({{ "/licenses/" | relative_url }})
+- [最新アップデート]({{ "/updates/" | relative_url }})

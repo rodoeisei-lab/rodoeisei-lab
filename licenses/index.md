@@ -137,8 +137,8 @@ permalink: /licenses/
 **A.** 1問1行の記録で「論点と根拠」だけ残すと回しやすくなります。
 
 ## 関連ページ
-- [解説一覧](/guides/)
-- [用語集](/glossary/)
-- [労基署対策](/inspection/)
-- [道具棚](/products/)
-- [最新アップデート](/updates/)
+- [解説一覧]({{ "/guides/" | relative_url }})
+- [用語集]({{ "/glossary/" | relative_url }})
+- [労基署対策]({{ "/inspection/" | relative_url }})
+- [道具棚]({{ "/products/" | relative_url }})
+- [最新アップデート]({{ "/updates/" | relative_url }})

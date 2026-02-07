@@ -16,8 +16,8 @@ tags:
   - 記録
 audience: 現場担当者・安全衛生管理者・導入初期の責任者
 sources:
-  - <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000132963.html" target="_blank" rel="noopener">厚生労働省: 呼吸用保護具のフィットテスト</a>
-  - <a href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">中央労働災害防止協会（ガイド類）</a>
+  - '<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000132963.html" target="_blank" rel="noopener">厚生労働省: 呼吸用保護具のフィットテスト</a>'
+  - '<a href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">中央労働災害防止協会（ガイド類）</a>'
 last_updated: 2025-03-01
 lead: 実施条件・記録・教育まで、導入直後にやるべきことだけを抜き出しました。
 ---
