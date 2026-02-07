@@ -67,8 +67,8 @@ permalink: /sns/
 **A.** 「最新アップデート」ページに履歴をまとめています。
 
 ## 関連ページ
-- [最新アップデート](/updates/)
-- [解説一覧](/guides/)
-- [用語集](/glossary/)
-- [動画](/videos/)
-- [お問い合わせ](/contact/)
+- [最新アップデート]({{ "/updates/" | relative_url }})
+- [解説一覧]({{ "/guides/" | relative_url }})
+- [用語集]({{ "/glossary/" | relative_url }})
+- [動画]({{ "/videos/" | relative_url }})
+- [お問い合わせ]({{ "/contact/" | relative_url }})

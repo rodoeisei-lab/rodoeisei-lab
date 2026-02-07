@@ -78,10 +78,10 @@ permalink: /glossary/
 **A.** 更新情報ページで追加・更新の履歴を追えます。
 
 ## 関連ページ
-- [解説一覧](/guides/)
-- [道具棚](/products/)
-- [労基署対策](/inspection/)
-- [資格対策](/licenses/)
-- [最新アップデート](/updates/)
+- [解説一覧]({{ "/guides/" | relative_url }})
+- [道具棚]({{ "/products/" | relative_url }})
+- [労基署対策]({{ "/inspection/" | relative_url }})
+- [資格対策]({{ "/licenses/" | relative_url }})
+- [最新アップデート]({{ "/updates/" | relative_url }})
 
 <script src="{{ '/assets/js/glossary-search.js' | relative_url }}" defer></script>

@@ -62,7 +62,7 @@ layout: article
 title: ここに更新タイトル
 summary: 変更点の要約（1〜2行）
 category: Updates
-impact: 影響: 中
+impact: "影響: 中"
 updated: 2025-04-01
 target: 対象（例: 衛生管理者）
 effective_from: 2025-04-15
@@ -97,8 +97,8 @@ lead: 先に伝えたい結論や注意点（任意）
 **A.** お問い合わせから情報源と要点を送ってください。
 
 ## 関連ページ
-- [解説一覧](/guides/)
-- [労基署対策](/inspection/)
-- [資格対策](/licenses/)
-- [用語集](/glossary/)
-- [SNSリンク集](/sns/)
+- [解説一覧]({{ "/guides/" | relative_url }})
+- [労基署対策]({{ "/inspection/" | relative_url }})
+- [資格対策]({{ "/licenses/" | relative_url }})
+- [用語集]({{ "/glossary/" | relative_url }})
+- [SNSリンク集]({{ "/sns/" | relative_url }})

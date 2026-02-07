@@ -150,8 +150,8 @@ permalink: /inspection/
 
 <a id="links"></a>
 ## 関連リンク
-- [解説一覧（/guides/）](/guides/)
-- [最新アップデート（/updates/）](/updates/)
+- [解説一覧（/guides/）]({{ "/guides/" | relative_url }})
+- [最新アップデート（/updates/）]({{ "/updates/" | relative_url }})
 
 ## 分かること
 - 立入検査の流れと、準備すべき資料の全体像。
@@ -179,8 +179,8 @@ permalink: /inspection/
 **A.** 指摘事項を1行化し、期限と証拠を1枚の表で管理すると回しやすいです。
 
 ## 関連ページ
-- [解説一覧](/guides/)
-- [用語集](/glossary/)
-- [道具棚](/products/)
-- [資格対策](/licenses/)
-- [お問い合わせ](/contact/)
+- [解説一覧]({{ "/guides/" | relative_url }})
+- [用語集]({{ "/glossary/" | relative_url }})
+- [道具棚]({{ "/products/" | relative_url }})
+- [資格対策]({{ "/licenses/" | relative_url }})
+- [お問い合わせ]({{ "/contact/" | relative_url }})

@@ -75,8 +75,8 @@ permalink: /products/
 **A.** 点検記録や教育記録の基礎として、監督署対応の資料整理にも使えます。
 
 ## 関連ページ
-- [解説一覧](/guides/)
-- [用語集](/glossary/)
-- [労基署対策](/inspection/)
-- [資格対策](/licenses/)
-- [最新アップデート](/updates/)
+- [解説一覧]({{ "/guides/" | relative_url }})
+- [用語集]({{ "/glossary/" | relative_url }})
+- [労基署対策]({{ "/inspection/" | relative_url }})
+- [資格対策]({{ "/licenses/" | relative_url }})
+- [最新アップデート]({{ "/updates/" | relative_url }})
