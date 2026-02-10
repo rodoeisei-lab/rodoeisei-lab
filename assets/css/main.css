@@ -96,6 +96,15 @@ a:focus-visible, button:focus-visible {
   background: rgba(148, 163, 184, .16);
   transform: translateY(-1px);
 }
+.desktop-nav a.nav-cta {
+  background: rgba(34, 211, 238, .18);
+  border: 1px solid rgba(34, 211, 238, .5);
+  color: #e2e8f0;
+  font-weight: 700;
+}
+.desktop-nav a.nav-cta:hover {
+  background: rgba(34, 211, 238, .3);
+}
 
 .menu-btn {
   display: none;
@@ -168,6 +177,14 @@ body.nav-open { overflow: hidden; }
   font-size: 17px;
   color: #e5e7eb;
   text-decoration: none;
+}
+.mobile-nav a.nav-cta {
+  margin: 8px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(34, 211, 238, .5);
+  background: rgba(34, 211, 238, .2);
+  font-weight: 700;
 }
 
 /* Hero */
@@ -257,7 +274,8 @@ body.nav-open { overflow: hidden; }
   gap: 12px;
   margin-bottom: 18px;
 }
-.cta-buttons a {
+.cta-buttons a,
+.cta-buttons span {
   text-decoration: none;
   padding: 10px 16px;
   border-radius: 999px;
