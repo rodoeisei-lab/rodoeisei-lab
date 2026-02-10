@@ -334,8 +334,8 @@ body.nav-open { overflow: hidden; }
 }
 .hero-stat-label {
   font-size: .7rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-transform: none;
   color: var(--muted);
 }
 .hero-stat-main {
@@ -347,12 +347,17 @@ body.nav-open { overflow: hidden; }
   color: #cbd5f5;
 }
 .hero-pill {
+  display: block;
   background: rgba(30, 41, 59, .8);
   border-radius: 12px;
   padding: 12px;
   font-size: .84rem;
-  color: #e2e8f0;
+  color: inherit;
+  text-decoration: none;
   border: 1px solid rgba(148, 163, 184, .25);
+}
+.hero-pill:hover {
+  border-color: rgba(148, 163, 184, .45);
 }
 
 /* Section */
@@ -843,7 +848,7 @@ body.nav-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { order: -1; }
+  .hero-visual { margin-top: 18px; }
 }
 
 @media (max-width: 600px) {
