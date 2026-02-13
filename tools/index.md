@@ -1,6 +1,6 @@
 ---
 title: ツール
-description: 現場で役立つ道具やおすすめ商品への導線。
+description: 現場担当者向けに、道具棚・Amazonおすすめ・テンプレ導線から保護具や測定ツールを探せるページ。
 permalink: /tools/
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: おすすめ商品（Amazon）
-description: 労働衛生の現場で使いやすいAmazon商品をまとめています。
+description: 現場担当者向けに、労働衛生で使う保護具・測定器・備品のAmazonおすすめ商品をカテゴリ別に紹介。
 eyebrow: Amazon
 lead: 現場での選定や共有がしやすい、定番アイテムをAmazonカテゴリ別に紹介します。
 permalink: /amazon/

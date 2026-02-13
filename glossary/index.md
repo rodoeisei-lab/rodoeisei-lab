@@ -1,6 +1,6 @@
 ---
 title: 用語集
-description: 現場で迷いやすい用語を短く整理。
+description: 初学者と実務担当者向けに、管理濃度・TWA・フィットテストなど労働衛生キーワードを短く確認できる用語集。
 eyebrow: 用語集
 lead: 管理区分・所定地点・フィットファクタなど、最小の定義から確認できます。
 permalink: /glossary/
