@@ -24,6 +24,12 @@ permalink: /amazon/
       {% for category in site.data.amazon %}
       {% for item in category.items %}
       {% if item.url contains 'amzn.to' %}
+      {% assign raw_url = item.url | to_s | strip %}
+      {% if raw_url contains '://' %}
+        {% assign item_url = raw_url %}
+      {% else %}
+        {% assign item_url = 'https://' | append: raw_url %}
+      {% endif %}
       <article class="card">
         <span class="badge">{{ category.title }}</span>
         <h3>{{ item.name }}</h3>
@@ -33,7 +39,7 @@ permalink: /amazon/
           <li>{{ bullet }}</li>
           {% endfor %}
         </ul>
-        <a class="card-button" href="{{ item.url }}" target="_blank" rel="noopener sponsored">Amazonで見る</a>
+        <a class="card-button" href="{{ item_url }}" target="_blank" rel="noopener noreferrer sponsored">Amazonで見る</a>
       </article>
       {% endif %}
       {% endfor %}
@@ -74,10 +80,18 @@ permalink: /amazon/
           <li>{{ bullet }}</li>
           {% endfor %}
         </ul>
-        {% if item.url != "" %}
-        <a class="card-button" href="{{ item.url }}" target="_blank" rel="noopener">Amazonで見る</a>
+        {% assign raw_url = item.url | to_s | strip %}
+        {% if raw_url != "" %}
+          {% if raw_url contains '://' %}
+            {% assign item_url = raw_url %}
+          {% elsif raw_url contains 'amzn.to' or raw_url contains 'amazon.' %}
+            {% assign item_url = 'https://' | append: raw_url %}
+          {% else %}
+            {% assign item_url = 'https://www.amazon.co.jp/s?k=' | append: raw_url | url_encode %}
+          {% endif %}
+        <a class="card-button" href="{{ item_url }}" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
         {% else %}
-        <a class="card-button" href="https://www.amazon.co.jp/s?k={{ item.name | url_encode }}" target="_blank" rel="noopener">Amazonで見る</a>
+        <a class="card-button" href="https://www.amazon.co.jp/s?k={{ item.name | url_encode }}" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
         <!-- TODO: replace with affiliate link -->
         {% endif %}
       </article>
