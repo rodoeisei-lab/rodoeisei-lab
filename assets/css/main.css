@@ -873,3 +873,30 @@ body.nav-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .nav-overlay, .mobile-nav { transition: none; }
 }
+
+
+.nav-join-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f7d32;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-join-button:hover {
+  opacity: 0.85;
+}
+
+.desktop-nav .nav-join-button {
+  margin-left: 4px;
+}
+
+.mobile-nav .nav-join-button {
+  width: 100%;
+  margin: 8px 0 4px;
+}

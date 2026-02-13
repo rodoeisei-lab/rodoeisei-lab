@@ -10,6 +10,11 @@
           <a href="{{ site.baseurl }}{{ item.url }}"{% if item.kind == "cta" %} class="nav-cta"{% endif %}>{{ item.title }}</a>
         </li>
         {% endfor %}
+        {% if site.community_url %}
+        <li>
+          <a class="nav-join-button" href="{{ site.community_url }}" target="_blank" rel="noopener">参加する</a>
+        </li>
+        {% endif %}
       </ul>
     </nav>
   </div>
@@ -19,6 +24,11 @@
   <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
   <ul>
+    {% if site.community_url %}
+    <li>
+      <a class="nav-join-button" href="{{ site.community_url }}" target="_blank" rel="noopener">参加する</a>
+    </li>
+    {% endif %}
     {% for item in site.data.navigation %}
     <li>
       <a href="{{ site.baseurl }}{{ item.url }}"{% if item.kind == "cta" %} class="nav-cta"{% endif %}>{{ item.title }}</a>
