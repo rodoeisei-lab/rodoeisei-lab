@@ -17,11 +17,6 @@ layout: base
           粉じん・有機溶剤・労基署対策・資格対策まで。<br>
           現場と法令のあいだを埋める、一次情報ベースのナレッジハブ。
         </p>
-        <form class="hero-search" action="{{ '/search/' | relative_url }}" method="get">
-          <label class="sr-only" for="heroSearch">検索</label>
-          <input id="heroSearch" type="search" name="q" placeholder="例：個人ばく露測定、管理濃度、フィットテスト…">
-          <button type="submit" class="cta-primary">検索する</button>
-        </form>
         <div class="cta-buttons">
           <a href="{{ '/community/' | relative_url }}" class="cta-primary">参加する</a>
           <a href="{{ '/qa/ask/' | relative_url }}" class="cta-secondary">質問する</a>
@@ -29,6 +24,11 @@ layout: base
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
         </div>
+        <form class="hero-search" action="{{ '/search/' | relative_url }}" method="get">
+          <label class="sr-only" for="heroSearch">検索</label>
+          <input id="heroSearch" type="search" name="q" placeholder="例：個人ばく露測定、管理濃度、フィットテスト…">
+          <button type="submit" class="cta-secondary">検索する</button>
+        </form>
         <div class="hero-meta">
           <span>毎週更新</span>
           <span>現場の一次情報</span>
