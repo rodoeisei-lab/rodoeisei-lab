@@ -49,13 +49,22 @@ permalink: /guides/
   {% endfor %}
 </div>
 
-<h2>準備中</h2>
+<h2>公開・更新計画（優先順）</h2>
+<p>公開済みテーマは追補更新へ切り替え、未公開テーマは優先順で制作します。法令変更が出た場合は更新情報ページのフローに合わせて反映します。</p>
 {% assign wip_guides = site.guides | where: "status", "wip" | sort: "title" %}
+{% if wip_guides.size > 0 %}
 <div class="cards guides-cards">
   {% for guide in wip_guides %}
     {% include guide_card.html guide=guide %}
   {% endfor %}
 </div>
+{% endif %}
+
+| 優先 | テーマ | 状態 | 次回予定 | 目的 |
+| --- | --- | --- | --- | --- |
+| P1 | [有機溶剤の基礎]({{ '/guides/organic-solvent-basics/' | relative_url }}) | 公開済み | 法令・通達差分の追補（月次） | 新任担当者の導入教育を最短で回す |
+| P2 | [作業環境測定の超入門]({{ '/guides/work-env-measurement-intro/' | relative_url }}) | 公開済み | 評価区分の事例追補（月次） | 測定計画と評価の読み方を統一する |
+| P3 | 粉じん作業の保護具選定（追加予定） | 制作中 | 次四半期公開予定 | 保護具の選定・更新判断を標準化する |
 
 ## 分かること
 - 粉じん・有機溶剤・測定・法令対応の論点整理。

@@ -66,6 +66,32 @@ permalink: /updates/
   </div>
 </section>
 
+
+<section class="section updates-flow">
+  <h2>更新フロー（法令変更対応）</h2>
+  <div class="card">
+    <ol>
+      <li><strong>収集（当日〜2営業日）</strong>：官公庁・通達・公表資料を確認し、要点を1行で記録。</li>
+      <li><strong>影響判定（+1営業日）</strong>：対象者・期限・現場対応の有無を「影響: 高/中/低」で分類。</li>
+      <li><strong>反映（+2営業日）</strong>：更新ページを先行公開し、必要に応じて解説/資格対策/動画ページへ反映。</li>
+      <li><strong>告知（同日）</strong>：SNSで更新告知し、重要案件はトップページの導線にも追記。</li>
+      <li><strong>再確認（施行前週）</strong>：施行日・対象範囲・実務影響を再確認し、差分があれば追記更新。</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section updates-release-policy">
+  <h2>公開予定の表示ルール</h2>
+  <div class="card">
+    <ul>
+      <li>「準備中」ではなく、<strong>優先度（P1〜P3）と公開予定枠</strong>を各ページに明記。</li>
+      <li>公開計画ページ: <a href="{{ "/guides/" | relative_url }}">解説</a> / <a href="{{ "/videos/" | relative_url }}">動画</a> / <a href="{{ "/licenses/" | relative_url }}">資格対策</a></li>
+      <li>公開日の変更が出た場合は、変更理由を更新ログに1行追記。</li>
+      <li>初版公開後14日以内に、FAQまたは補足ノートを最低1回更新。</li>
+    </ul>
+  </div>
+</section>
+
 <section class="section updates-template">
   <h2>更新追加のテンプレ</h2>
   <div class="card">
