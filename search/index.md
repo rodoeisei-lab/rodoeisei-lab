@@ -1,6 +1,6 @@
 ---
 title: 検索
-description: 解説と最新情報を横断検索。
+description: 解説記事と最新アップデートを横断し、粉じん・有機溶剤・管理濃度などのキーワードで探せる検索ページ。
 permalink: /search/
 ---
 

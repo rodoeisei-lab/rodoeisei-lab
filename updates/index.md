@@ -1,6 +1,6 @@
 ---
 title: 最新アップデート
-description: 法改正・通達・JIS/ISOの最新動向を要点で整理。
+description: 衛生管理者向けに、法改正・通達・JIS/ISO更新の要点、対象読者、施行時期を短時間で確認できる一覧。
 eyebrow: 更新情報
 lead: 「何が変わる？誰に影響？いつから？」の3点だけ先に掴める一覧を目指します。
 permalink: /updates/

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: コミュニティ参加
+description: 労働衛生の担当者・衛生管理者向けに、粉じん・有機溶剤・監督署対応の実務知見を匿名で相談・共有できる参加ページ。
 permalink: /community/
 ---
 

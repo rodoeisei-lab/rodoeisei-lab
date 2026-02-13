@@ -1,6 +1,6 @@
 ---
 title: SNSリンク集
-description: 最新情報を追うための公式アカウント一覧。
+description: 読者向けに、X・note・ブログ・YouTubeの公式アカウントから労働衛生の更新情報を追えるリンク集。
 eyebrow: SNS
 lead: 更新告知や短い解説はSNSで先行して流れる想定です。
 permalink: /sns/

@@ -1,7 +1,7 @@
 ---
 layout: home
 title: 労働衛生ラボ
-description: 現場と法令の「あいだ」をつなぐ学習サイト
+description: 現場担当者・衛生管理者向けに、労働衛生の解説・更新情報・用語集へ最短で進める学習ポータル。
 ---
 
 {% assign latest_guide = site.guides | where: "status", "published" | sort: "updated" | reverse | first %}
