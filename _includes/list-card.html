@@ -38,6 +38,25 @@
   <p class="card-meta">{{ include.meta }}</p>
   {% endif %}
   {% if include.link_url %}
-  <a class="card-link" href="{{ include.link_url | relative_url }}">{{ include.link_label | default: "詳しく見る →" }}</a>
+    {% assign link_prefix = include.link_url | slice: 0, 2 %}
+    {% assign link_mailto = include.link_url | slice: 0, 7 %}
+    {% assign link_tel = include.link_url | slice: 0, 4 %}
+    {% if include.link_url contains "://" or link_prefix == "//" or link_prefix == "#" or link_mailto == "mailto:" or link_tel == "tel:" %}
+      {% assign resolved_link_url = include.link_url %}
+    {% else %}
+      {% assign resolved_link_url = include.link_url | relative_url %}
+    {% endif %}
+  <a class="card-link" href="{{ resolved_link_url }}"{% if include.link_target %} target="{{ include.link_target }}"{% endif %}{% if include.link_rel %} rel="{{ include.link_rel }}"{% endif %}>{{ include.link_label | default: "詳しく見る →" }}</a>
+  {% endif %}
+  {% if include.secondary_link_url %}
+    {% assign secondary_prefix = include.secondary_link_url | slice: 0, 2 %}
+    {% assign secondary_mailto = include.secondary_link_url | slice: 0, 7 %}
+    {% assign secondary_tel = include.secondary_link_url | slice: 0, 4 %}
+    {% if include.secondary_link_url contains "://" or secondary_prefix == "//" or secondary_prefix == "#" or secondary_mailto == "mailto:" or secondary_tel == "tel:" %}
+      {% assign resolved_secondary_link_url = include.secondary_link_url %}
+    {% else %}
+      {% assign resolved_secondary_link_url = include.secondary_link_url | relative_url %}
+    {% endif %}
+  <a class="card-link" href="{{ resolved_secondary_link_url }}"{% if include.secondary_link_target %} target="{{ include.secondary_link_target }}"{% endif %}{% if include.secondary_link_rel %} rel="{{ include.secondary_link_rel }}"{% endif %}>{{ include.secondary_link_label | default: "関連カテゴリを見る →" }}</a>
   {% endif %}
 </article>

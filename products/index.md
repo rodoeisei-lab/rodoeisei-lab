@@ -16,19 +16,22 @@ permalink: /products/
   </ul>
   <div class="cards">
     {% for card in section.cards %}
-      {% assign link_url = nil %}
-      {% if card.link %}
-        {% assign link_prefix = card.link | slice: 0, 2 %}
-        {% assign link_mailto = card.link | slice: 0, 7 %}
-        {% assign link_tel = card.link | slice: 0, 4 %}
-        {% if card.link contains "://" or link_prefix == "//" or link_prefix == "#" or link_mailto == "mailto:" or link_tel == "tel:" %}
-          {% assign link_url = card.link %}
-        {% else %}
-          {% assign link_url = card.link | relative_url %}
+      {% assign primary_link_url = card.link %}
+      {% assign primary_link_label = card.link_label %}
+      {% assign primary_link_target = nil %}
+      {% assign primary_link_rel = nil %}
+      {% assign secondary_link_url = nil %}
+      {% if card.amazon_link %}
+        {% assign primary_link_url = card.amazon_link %}
+        {% assign primary_link_label = "Amazonで見る →" %}
+        {% assign primary_link_target = "_blank" %}
+        {% assign primary_link_rel = "noopener noreferrer sponsored" %}
+        {% if card.link %}
+          {% assign secondary_link_url = card.link %}
         {% endif %}
       {% endif %}
       {% assign meta_text = nil %}
-      {% if link_url == nil %}
+      {% if primary_link_url == nil %}
         {% assign meta_text = "準備中" %}
       {% endif %}
       {% include list-card.html
@@ -36,8 +39,12 @@ permalink: /products/
         title=card.title
         description=card.description
         meta=meta_text
-        link_url=link_url
-        link_label=card.link_label
+        link_url=primary_link_url
+        link_label=primary_link_label
+        link_target=primary_link_target
+        link_rel=primary_link_rel
+        secondary_link_url=secondary_link_url
+        secondary_link_label="カテゴリで見る →"
       %}
     {% endfor %}
   </div>
