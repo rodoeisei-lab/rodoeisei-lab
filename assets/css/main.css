@@ -841,6 +841,29 @@ body.nav-open { overflow: hidden; }
   margin-top: 10px;
 }
 
+
+.article-feedback {
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, .3);
+  background: rgba(15, 23, 42, .82);
+}
+.article-feedback h2 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+.article-feedback p {
+  margin: 0;
+  color: var(--text-soft);
+}
+.article-feedback-actions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .tools-category {
   margin-top: 28px;
   padding-top: 24px;

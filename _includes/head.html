@@ -41,3 +41,28 @@
   "image": {{ og_image_url | jsonify }}{% endif %}
 }
 </script>
+
+{% if site.analytics.ga4_measurement_id and site.analytics.ga4_measurement_id != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4_measurement_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.analytics.ga4_measurement_id }}');
+</script>
+{% endif %}
+
+{% if site.analytics.matomo_url and site.analytics.matomo_site_id and site.analytics.matomo_url != "" and site.analytics.matomo_site_id != "" %}
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="{{ site.analytics.matomo_url }}";
+    _paq.push(['setTrackerUrl', u + 'matomo.php']);
+    _paq.push(['setSiteId', '{{ site.analytics.matomo_site_id }}']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u + 'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+{% endif %}

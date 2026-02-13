@@ -19,5 +19,22 @@ layout: base
   <div class="container article">
     {% include article-meta.html %}
     {{ content }}
+
+    {% assign feedback_form_url = page.feedback_form_url | default: site.feedback.article_form_url %}
+    {% assign feedback_survey_url = page.feedback_survey_url | default: site.feedback.article_survey_url %}
+    {% if feedback_form_url or feedback_survey_url %}
+    <section class="article-feedback" aria-label="フィードバック">
+      <h2>この記事は役に立ちましたか？</h2>
+      <p>改善のため、感想・不足点・次に読みたいテーマを教えてください。</p>
+      <div class="article-feedback-actions">
+        {% if feedback_form_url %}
+        <a class="cta-secondary" href="{{ feedback_form_url }}" target="_blank" rel="noopener">フィードバックフォームを送る</a>
+        {% endif %}
+        {% if feedback_survey_url %}
+        <a class="cta-tertiary" href="{{ feedback_survey_url }}" target="_blank" rel="noopener">アンケートに回答する</a>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
   </div>
 </section>
