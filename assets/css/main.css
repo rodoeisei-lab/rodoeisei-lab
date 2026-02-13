@@ -969,3 +969,31 @@ body.nav-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .nav-overlay, .mobile-nav { transition: none; }
 }
+
+.search-page {
+  display: grid;
+  gap: 14px;
+}
+.search-page-intro {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: .92rem;
+}
+.search-page .pagefind-ui {
+  --pagefind-ui-primary: #67e8f9;
+  --pagefind-ui-text: #e5e7eb;
+  --pagefind-ui-background: rgba(15, 23, 42, .72);
+  --pagefind-ui-border: rgba(148, 163, 184, .38);
+  --pagefind-ui-tag: rgba(103, 232, 249, .2);
+  --pagefind-ui-border-radius: 12px;
+}
+.search-page .pagefind-ui__search-input {
+  background: rgba(15, 23, 42, .9);
+  color: #e5e7eb;
+}
+.search-page .pagefind-ui__result {
+  background: rgba(15, 23, 42, .5);
+  border: 1px solid rgba(148, 163, 184, .28);
+  border-radius: 12px;
+  padding: 12px;
+}

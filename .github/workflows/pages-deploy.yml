@@ -36,8 +36,19 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Build site
         run: bundle exec jekyll build
+
+      - name: Build Pagefind index
+        run: npx -y pagefind --config pagefind.yml
+
+      - name: Verify Pagefind output
+        run: test -d _site/pagefind
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
