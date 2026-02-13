@@ -328,7 +328,21 @@ body.nav-open { overflow: hidden; }
   display: flex;
   justify-content: center;
 }
+
+.hero-image-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: .3;
+}
+.hero-image-wrap {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .hero-orb {
+  position: relative;
+  z-index: 1;
   width: min(360px, 90%);
   aspect-ratio: 1 / 1;
   border-radius: 36px;
@@ -629,6 +643,19 @@ body.nav-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.card-media {
+  display: block;
+  margin: -16px -16px 0;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(148, 163, 184, .2);
+}
+.card-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 .card h3 { margin: 0; font-size: 1rem; }
 .card p { color: #cbd5f5; font-size: .9rem; margin: 0; line-height: 1.7; }

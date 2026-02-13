@@ -3,6 +3,37 @@
   {% assign card_classes = card_classes | append: " " | append: include.class %}
 {% endif %}
 <article class="{{ card_classes }}"{% if include.data_attrs %} {{ include.data_attrs }}{% endif %}>
+  {% if include.image_fallback %}
+  {% assign image_loading = include.image_loading | default: "lazy" %}
+  {% if include.link_url %}
+  <a class="card-media" href="{{ include.link_url | relative_url }}" aria-hidden="true" tabindex="-1">
+{% else %}
+  <div class="card-media" aria-hidden="true">
+{% endif %}
+    <picture>
+      {% if include.image_avif_srcset %}
+      <source type="image/avif" srcset="{{ include.image_avif_srcset }}" sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}">
+      {% endif %}
+      {% if include.image_webp_srcset %}
+      <source type="image/webp" srcset="{{ include.image_webp_srcset }}" sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}">
+      {% endif %}
+      <img
+        src="{{ include.image_fallback | relative_url }}"
+        srcset="{{ include.image_fallback_srcset | default: include.image_fallback }}"
+        sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}"
+        alt="{{ include.image_alt | default: include.title }}"
+        loading="{{ image_loading }}"
+        decoding="async"
+        width="{{ include.image_width | default: 640 }}"
+        height="{{ include.image_height | default: 360 }}"
+      >
+    </picture>
+{% if include.link_url %}
+  </a>
+{% else %}
+  </div>
+{% endif %}
+  {% endif %}
   {% if include.status %}
   <div class="card-status">
     <span class="status {{ include.status_class }}">{{ include.status }}</span>
