@@ -36,6 +36,17 @@ layout: base
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
+        <img
+          class="hero-image-wrap"
+          src="{{ '/assets/images/hero-lab.svg' | relative_url }}"
+          srcset="{{ '/assets/images/hero-lab.svg' | relative_url }} 640w, {{ '/assets/images/hero-lab.svg' | relative_url }} 1280w"
+          sizes="(max-width: 900px) 100vw, 46vw"
+          alt="労働衛生データの可視化イメージ"
+          width="1280"
+          height="720"
+          decoding="async"
+          fetchpriority="high"
+        >
         <div class="hero-orb">
           <div class="hero-orb-inner">
             <div>
@@ -71,6 +82,9 @@ layout: base
         description="悩みや気づきを共有し、議論を深める。"
         link_url="/community/"
         link_label="コミュニティへ →"
+        image_fallback="/assets/images/card-community.svg"
+        image_fallback_srcset="/assets/images/card-community.svg 320w, /assets/images/card-community.svg 640w"
+        image_alt="コミュニティのイメージ"
       %}
       {% include list-card.html
         class="home-start-card"
@@ -78,6 +92,9 @@ layout: base
         description="解説・資格・用語集から必要な知識を探す。"
         link_url="/learn/"
         link_label="学習の入口へ →"
+        image_fallback="/assets/images/card-learning.svg"
+        image_fallback_srcset="/assets/images/card-learning.svg 320w, /assets/images/card-learning.svg 640w"
+        image_alt="学習コンテンツのイメージ"
       %}
       {% include list-card.html
         class="home-start-card"
@@ -85,6 +102,9 @@ layout: base
         description="道具選びやおすすめ商品をまとめて確認。"
         link_url="/tools/"
         link_label="ツールへ →"
+        image_fallback="/assets/images/card-tools.svg"
+        image_fallback_srcset="/assets/images/card-tools.svg 320w, /assets/images/card-tools.svg 640w"
+        image_alt="道具棚のイメージ"
       %}
       {% include list-card.html
         class="home-start-card"
@@ -92,6 +112,9 @@ layout: base
         description="法改正・通達の更新を素早くキャッチ。"
         link_url="/updates/"
         link_label="最新情報へ →"
+        image_fallback="/assets/images/card-updates.svg"
+        image_fallback_srcset="/assets/images/card-updates.svg 320w, /assets/images/card-updates.svg 640w"
+        image_alt="更新情報のイメージ"
       %}
     </div>
   </div>
