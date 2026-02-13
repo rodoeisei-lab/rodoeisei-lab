@@ -31,11 +31,17 @@ permalink: /products/
       {% if link_url == nil %}
         {% assign meta_text = "準備中" %}
       {% endif %}
+      {% capture card_body %}
+      {% if card.amazon_link %}
+      <p><a class="card-link" href="{{ card.amazon_link }}" target="_blank" rel="noopener noreferrer sponsored">Amazonリンク →</a></p>
+      {% endif %}
+      {% endcapture %}
       {% include list-card.html
         class="product-card"
         title=card.title
         description=card.description
         meta=meta_text
+        body=card_body
         link_url=link_url
         link_label=card.link_label
       %}

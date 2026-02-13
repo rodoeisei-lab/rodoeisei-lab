@@ -8,6 +8,7 @@
       description: まず最初に検討する定番タイプ。
       link: /amazon/#respiratory-protection
       link_label: 商品を見る →
+      amazon_link: https://amzn.to/49ZC0XX
     - title: フィルタ交換式面体
       description: コストと性能のバランス重視。
       link: /amazon/#respiratory-protection
@@ -16,6 +17,7 @@
       description: 溶剤作業向けに材質を選ぶ。
       link: /amazon/#hand-protection
       link_label: 商品を見る →
+      amazon_link: https://amzn.to/4qvyMkW
   alternatives:
     - 安い: 使い捨て簡易マスク
     - 軽い: 軽量バルブ付きマスク
@@ -34,6 +36,7 @@
       description: 測定前後の確認を簡略化。
       link: /amazon/#measurement-inspection
       link_label: 商品を見る →
+      amazon_link: https://amzn.to/4jLNtgZ
     - title: サンプルホルダー
       description: 現場で扱いやすい標準タイプ。
       link: /amazon/#measurement-inspection
