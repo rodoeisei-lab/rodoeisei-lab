@@ -5,6 +5,11 @@
 <article class="{{ card_classes }}"{% if include.data_attrs %} {{ include.data_attrs }}{% endif %}>
   {% if include.image_fallback %}
   {% assign image_loading = include.image_loading | default: "lazy" %}
+  {% assign baseurl_assets = site.baseurl | append: "/assets/" %}
+  {% assign fallback_srcset = include.image_fallback_srcset | default: include.image_fallback %}
+  {% assign fallback_srcset = fallback_srcset | replace: '/assets/', baseurl_assets %}
+  {% assign avif_srcset = include.image_avif_srcset | replace: '/assets/', baseurl_assets %}
+  {% assign webp_srcset = include.image_webp_srcset | replace: '/assets/', baseurl_assets %}
   {% if include.link_url %}
   <a class="card-media" href="{{ include.link_url | relative_url }}" aria-hidden="true" tabindex="-1">
 {% else %}
@@ -12,14 +17,14 @@
 {% endif %}
     <picture>
       {% if include.image_avif_srcset %}
-      <source type="image/avif" srcset="{{ include.image_avif_srcset }}" sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}">
+      <source type="image/avif" srcset="{{ avif_srcset }}" sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}">
       {% endif %}
       {% if include.image_webp_srcset %}
-      <source type="image/webp" srcset="{{ include.image_webp_srcset }}" sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}">
+      <source type="image/webp" srcset="{{ webp_srcset }}" sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}">
       {% endif %}
       <img
         src="{{ include.image_fallback | relative_url }}"
-        srcset="{{ include.image_fallback_srcset | default: include.image_fallback }}"
+        srcset="{{ fallback_srcset }}"
         sizes="{{ include.image_sizes | default: '(max-width: 768px) 100vw, 420px' }}"
         alt="{{ include.image_alt | default: include.title }}"
         loading="{{ image_loading }}"

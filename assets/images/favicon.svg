@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">労働衛生ラボ</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <circle cx="20" cy="20" r="7" fill="url(#g)"/>
+  <path d="M18 43h28" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/>
+  <path d="M34 17v30" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/>
+</svg>
