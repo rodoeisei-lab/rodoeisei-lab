@@ -2,7 +2,10 @@
 <header class="site-header" role="banner">
   <div class="container">
     <a class="brand" href="{{ site.baseurl }}/">労働衛生ラボ</a>
-    <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="ダークモード切替" aria-pressed="true">🌙</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
+    </div>
     <nav class="desktop-nav" aria-label="グローバルナビゲーション">
       <ul>
         {% for item in site.data.navigation %}
@@ -16,7 +19,8 @@
 </header>
 <div class="nav-overlay" id="navOverlay" hidden></div>
 <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
-  <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
+  <button class="close-btn" id="closeBtn" type="button" aria-label="閉じる">×</button>
+  <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" type="button" aria-label="ダークモード切替" aria-pressed="true">🌙</button>
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
   <ul>
     {% for item in site.data.navigation %}

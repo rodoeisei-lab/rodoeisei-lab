@@ -12,6 +12,22 @@
 <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
 <meta name="theme-color" content="#050816">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+<script>
+(function () {
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    var preferredTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    var activeTheme = (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : preferredTheme;
+    document.documentElement.setAttribute('data-theme', activeTheme);
+    var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', activeTheme === 'light' ? '#f8fafc' : '#050816');
+    }
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
 
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta property="og:description" content="{{ page_description }}">

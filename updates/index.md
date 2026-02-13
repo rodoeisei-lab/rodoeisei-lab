@@ -9,7 +9,7 @@ permalink: /updates/
 {% assign updates_sorted = site.updates | sort: "updated" | reverse %}
 
 <div class="filter-search">
-  <label class="sr-only" for="cardSearch">検索</label>
+  <label class="form-label" for="cardSearch">キーワード検索</label>
   <input id="cardSearch" type="search" name="q" placeholder="例：改正、省令、管理濃度…">
 </div>
 <p id="cardNoResults" class="no-results" hidden>該当する更新がありません。</p>
