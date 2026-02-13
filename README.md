@@ -12,6 +12,11 @@
 
 Note: The production build should be verified via the GitHub Pages Actions logs.
 
+## Deploy (GitHub Pages)
+- Merges to `main` / `master` trigger `Deploy GitHub Pages`.
+- `Jekyll Build` is for validation; publishing is done by the deploy workflow.
+- If the site does not change after merge, check the deploy workflow run and the repository Pages setting.
+
 ## Recent updates
 - Aligned navigation labels with the actual Amazon/products page intent.
 - Connected /products cards to Amazon categories and removed placeholder links.
