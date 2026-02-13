@@ -18,6 +18,7 @@ permalink: /qa/ask/
   {% assign qa_embed_url = site.google_form_qa_embed_url | default: page.google_form_qa_embed_url %}
   {% assign qa_link_url = site.qa_form_url | default: page.qa_form_url | default: qa_embed_url %}
   {% if qa_embed_url and qa_embed_url != "" %}
+  <p>以下のフォームから匿名で質問を送信できます。</p>
   <div class="qa-form-embed">
     <iframe
       src="{{ qa_embed_url }}"
@@ -29,7 +30,7 @@ permalink: /qa/ask/
   </div>
   <p>
     フォームが表示されない場合は、
-    <a href="{{ qa_embed_url }}" target="_blank" rel="noopener">別タブでフォームを開く</a>
+    <a href="{{ qa_link_url }}" target="_blank" rel="noopener">別タブでフォームを開く</a>
     から送信してください。
   </p>
   {% elsif qa_link_url and qa_link_url != "" %}

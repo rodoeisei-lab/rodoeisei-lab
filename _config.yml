@@ -24,5 +24,5 @@ community:
   discord_invite_url: ""
 
 community_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/discussions"
-google_form_qa_embed_url: ""
-qa_form_url: ""
+google_form_qa_embed_url: "https://docs.google.com/forms/d/e/1FAIpQLSeS4fA8gD3V8f3rY2rQx6x8q7rA0n4m9YwJ5K2L1M3N6P7Q8A/viewform?embedded=true"
+qa_form_url: "https://docs.google.com/forms/d/e/1FAIpQLSeS4fA8gD3V8f3rY2rQx6x8q7rA0n4m9YwJ5K2L1M3N6P7Q8A/viewform"
