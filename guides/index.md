@@ -49,13 +49,20 @@ permalink: /guides/
   {% endfor %}
 </div>
 
-<h2>準備中</h2>
+<h2>公開予定（優先順）</h2>
+<p>「準備中」の記事は、現場で問い合わせの多い順に先に公開します。各テーマは初版公開後に更新ログへ反映し、法令変更に合わせて追補します。</p>
 {% assign wip_guides = site.guides | where: "status", "wip" | sort: "title" %}
 <div class="cards guides-cards">
   {% for guide in wip_guides %}
     {% include guide_card.html guide=guide %}
   {% endfor %}
 </div>
+
+| 優先 | テーマ | 初版公開予定 | 公開目的 |
+| --- | --- | --- | --- |
+| P1 | 有機溶剤の基礎 | 2026-03上旬 | 新任担当者の導入教育を最短で回す |
+| P2 | 作業環境測定の超入門 | 2026-03下旬 | 測定計画と評価の読み方を統一する |
+| P3 | 粉じん作業の保護具選定（追加予定） | 2026-04中旬 | 保護具の選定・更新判断を標準化する |
 
 ## 分かること
 - 粉じん・有機溶剤・測定・法令対応の論点整理。
