@@ -33,6 +33,14 @@ if (navOverlay) {
   navOverlay.addEventListener('click', closeNav);
 }
 
+if (mobileNav) {
+  mobileNav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      closeNav();
+    }
+  });
+}
+
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closeNav();
