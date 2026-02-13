@@ -9,6 +9,13 @@ let lastFocusedElement = null;
 
 const navFocusableSelector = 'a[href], button:not([disabled])';
 
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+const updateThemeColor = (theme) => {
+  if (!themeColorMeta) return;
+  themeColorMeta.setAttribute('content', theme === 'light' ? '#f8fafc' : '#050816');
+};
+
 const setTheme = (theme) => {
   if (theme !== 'light' && theme !== 'dark') return;
   document.documentElement.setAttribute('data-theme', theme);
@@ -19,6 +26,7 @@ const setTheme = (theme) => {
     toggle.setAttribute('aria-pressed', String(isDark));
     toggle.setAttribute('aria-label', isDark ? 'ライトモードに切替' : 'ダークモードに切替');
   });
+  updateThemeColor(theme);
   try {
     localStorage.setItem('theme', theme);
   } catch (error) {
@@ -145,8 +153,15 @@ if (mobileNav) {
 
     if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       event.preventDefault();
-      const startIndex = currentIndex === -1 ? 0 : currentIndex;
-      moveNavFocus(items, startIndex, event.key === 'ArrowDown' ? 1 : -1);
+      if (currentIndex === -1) {
+        if (event.key === 'ArrowDown') {
+          items[0].focus();
+        } else {
+          items[items.length - 1].focus();
+        }
+        return;
+      }
+      moveNavFocus(items, currentIndex, event.key === 'ArrowDown' ? 1 : -1);
     }
   });
 }
