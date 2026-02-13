@@ -1,11 +1,13 @@
-name: Jekyll Build
+name: CI Quality Gate
 
 on:
-  push:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  quality-gate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,8 +22,21 @@ jobs:
       - name: Install dependencies
         run: bundle install --jobs 4 --retry 3
 
-      - name: Build site
-        run: bundle exec jekyll build
+      - name: Read baseurl from Jekyll config
+        id: config
+        run: |
+          BASEURL=$(ruby -ryaml -e 'puts((YAML.load_file("_config.yml") || {})["baseurl"].to_s)')
+          echo "baseurl=$BASEURL" >> "$GITHUB_OUTPUT"
+          echo "Using baseurl: ${BASEURL:-/}"
 
-      - name: Check internal links
-        run: bundle exec htmlproofer ./_site --check-html --allow-hash-href --disable-external
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --baseurl "${{ steps.config.outputs.baseurl }}"
+
+      - name: Internal link and asset checks (external links disabled)
+        run: |
+          python3 scripts/ci/check_site_refs.py \
+            --site-dir _site \
+            --baseurl "${{ steps.config.outputs.baseurl }}" \
+            --exclude-prefix /pagefind/
