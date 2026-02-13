@@ -55,3 +55,25 @@ imageNodes.forEach((image) => {
     image.setAttribute('alt', fallbackText);
   }
 });
+
+
+const sendSearchAnalytics = () => {
+  const isSearchPage = window.location.pathname.includes('/search/');
+  if (!isSearchPage) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const query = (params.get('q') || '').trim();
+  if (!query) return;
+
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'search', {
+      search_term: query,
+    });
+  }
+
+  if (Array.isArray(window._paq)) {
+    window._paq.push(['trackSiteSearch', query, false, false]);
+  }
+};
+
+sendSearchAnalytics();

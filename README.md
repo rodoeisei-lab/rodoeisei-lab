@@ -35,3 +35,10 @@ Note: The production build should be verified via the GitHub Pages Actions logs.
 - Added `site-audit` skill template at `skills/site-audit/SKILL.md`.
 - To use immediately in this environment, the same file has been copied to `~/.codex/skills/site-audit/SKILL.md`.
 - If skills are not detected, restart Codex.
+
+
+## Analytics / Feedback setup
+1. Edit `_config.yml` and set either `analytics.ga4_measurement_id` or both `analytics.matomo_url` + `analytics.matomo_site_id`.
+2. Internal search terms (`/search/?q=...`) are sent as search events to the enabled analytics tool.
+3. Set `feedback.article_form_url` and `feedback.article_survey_url` for article-end feedback links.
+4. You can override feedback links per article with front matter keys `feedback_form_url` and `feedback_survey_url`.
