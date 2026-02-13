@@ -38,5 +38,11 @@ permalink: /learn/
       link_url="/inspection/"
       link_label="労基署対策へ →"
     %}
+    {% include list-card.html
+      title="運営者スキル"
+      description="Jekyll・SEO・WCAG 2.2・SNS連携を実装視点で学ぶ。"
+      link_url="/guides/operator-skill-expansion-roadmap/"
+      link_label="ロードマップへ →"
+    %}
   </div>
 </section>
