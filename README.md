@@ -22,3 +22,11 @@ Note: The production build should be verified via the GitHub Pages Actions logs.
 - Connected /products cards to Amazon categories and removed placeholder links.
 - Added fallback handling for updates without titles and a template snippet.
 - Added a copyable inquiry template to the contact page.
+
+## Development advice (safe, small, verifiable)
+1. Create a feature branch for every task; never push direct edits to `main` / `master`.
+2. Keep one objective per change set (for example: "fix glossary search typo"), and avoid unrelated edits.
+3. For breaking changes (API, config, dependencies, URLs, data formats), write a short note that covers reason, impact, and alternatives before implementation.
+4. Read only the minimum required files first, then expand scope with a clear reason.
+5. Run lightweight checks that match the change (`jekyll build`, targeted page preview, or relevant script checks) and record the command + result.
+6. In pull requests, always include: summary, changed files, key diffs, and reproduction / verification steps.
