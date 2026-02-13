@@ -621,10 +621,10 @@ body.nav-open { overflow: hidden; }
   box-shadow: 0 16px 30px rgba(15, 23, 42, .25);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 .card h3 { margin: 0; font-size: 1rem; }
-.card p { color: #cbd5f5; font-size: .9rem; margin: 0; }
+.card p { color: #cbd5f5; font-size: .9rem; margin: 0; line-height: 1.7; }
 .card p + p { margin-top: 6px; }
 .card-badges {
   display: flex;
@@ -642,7 +642,7 @@ body.nav-open { overflow: hidden; }
   font-weight: 600;
   align-self: flex-start;
 }
-.sns-page .card-meta { color: var(--muted); font-size: .85rem; margin-top: -6px; }
+.sns-page .card-meta { color: var(--muted); font-size: .85rem; margin-top: 2px; }
 .card a { color: var(--secondary); text-decoration: none; }
 .sns-page .card-button {
   display: inline-flex;
@@ -770,6 +770,11 @@ body.nav-open { overflow: hidden; }
   align-items: center;
   font-size: .9rem;
 }
+.updates-log-grid > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .updates-log-header {
   color: var(--muted);
   font-size: .75rem;
@@ -873,6 +878,13 @@ body.nav-open { overflow: hidden; }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { margin-top: 18px; }
+  .updates-log-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 14px;
+  }
+  .updates-log-grid span:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 600px) {
