@@ -1,9 +1,14 @@
 # rodoeisei-lab
 
-## CI (Jekyll build)
-1. Open a pull request.
-2. Go to the **Actions** tab and confirm the `Jekyll Build` workflow turns green.
-3. If it fails, check the logs for `Install dependencies` (bundle install) and `Build site` (jekyll build) first.
+## CI (Quality Gate)
+1. Open a pull request (or push to `main`).
+2. Go to the **Actions** tab and confirm the `CI Quality Gate` workflow turns green.
+3. This workflow builds with production settings and checks:
+   - zero-byte images (`assets/` and `_site/`, including `og.jpg` / `favicon.ico`)
+   - missing internal image/assets referenced from built HTML
+   - basic internal broken links
+4. External links are intentionally excluded in the initial phase so CI is not flaky due to network/provider issues.
+5. If it fails, fix missing files/paths first, then re-run. Common fixes are using `{{ "..." | relative_url }}` and restoring non-empty image files.
 
 ## Local preview
 1. `bundle install`
