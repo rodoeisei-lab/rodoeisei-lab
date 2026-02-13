@@ -9,6 +9,11 @@ body {
   background: #050816;
 }
 
+body.home-page {
+  color: #111827;
+  background: #fff;
+}
+
 :root {
   --primary: #f97373;
   --secondary: #22d3ee;
