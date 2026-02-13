@@ -4,7 +4,9 @@ title: 有機溶剤の基礎
 summary: 有機溶剤業務の全体像を10分で把握。<br>曝露リスクの見方と最初の対策を整理。<br>法令確認の入口までを最短でつなぐ。
 category: Guides
 level: 入門
-status: wip
+reading_time: 8分
+minutes: 8
+status: published
 tags:
   - 有機溶剤
   - 入門

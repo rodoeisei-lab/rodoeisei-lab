@@ -4,7 +4,9 @@ title: 作業環境測定の超入門
 summary: 作業環境測定の目的と流れを短時間で理解。<br>測定計画から評価区分までをつなげる。<br>結果を改善に使うための見方を整理。
 category: Guides
 level: 入門
-status: wip
+reading_time: 7分
+minutes: 7
+status: published
 tags:
   - 作業環境測定
   - 入門
