@@ -110,10 +110,10 @@ lead: 先に伝えたい結論や注意点（任意）
 **A.** お問い合わせから情報源と要点を送ってください。
 
 ## 関連ページ
-- [解説一覧]({{ "/guides/" | relative_url }})
+- [更新内容の背景を解説記事で確認する]({{ "/guides/" | relative_url }})
 - [労基署対策]({{ "/inspection/" | relative_url }})
 - [資格対策]({{ "/licenses/" | relative_url }})
-- [用語集]({{ "/glossary/" | relative_url }})
+- [通達や測定で出る専門用語を用語集で確認する]({{ "/glossary/" | relative_url }})
 - [SNSリンク集]({{ "/sns/" | relative_url }})
 
 <script src="{{ '/assets/js/card-filter.js' | relative_url }}" defer></script>

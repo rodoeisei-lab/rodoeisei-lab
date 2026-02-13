@@ -83,10 +83,10 @@ permalink: /guides/
 **A.** お問い合わせページから希望テーマと背景を送ってください。
 
 ## 関連ページ
-- [用語集]({{ "/glossary/" | relative_url }})
+- [解説で出てくる専門語の意味を用語集で確認する]({{ "/glossary/" | relative_url }})
 - [道具棚]({{ "/products/" | relative_url }})
 - [労基署対策]({{ "/inspection/" | relative_url }})
 - [資格対策]({{ "/licenses/" | relative_url }})
-- [最新アップデート]({{ "/updates/" | relative_url }})
+- [制度変更の影響を最新アップデートで確認する]({{ "/updates/" | relative_url }})
 
 <script src="{{ '/assets/js/card-filter.js' | relative_url }}" defer></script>

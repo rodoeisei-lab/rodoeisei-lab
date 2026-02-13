@@ -36,6 +36,16 @@ permalink: /glossary/
       {% endif %}
       <p>{{ entry.short }}</p>
       <p class="glossary-detail">{{ entry.detail | newline_to_br }}</p>
+      {% if entry.term == "フィットテスト" or entry.term == "フィットファクタ" %}
+        <p><a href="{{ '/guides/fit-test/' | relative_url }}">この用語が出てくる「フィットテスト導入ガイド」を読む</a></p>
+        <p><a href="{{ '/updates/ppe-checklist/' | relative_url }}">運用面の更新情報「PPE点検ルール」を確認する</a></p>
+      {% elsif entry.term == "管理区分" or entry.term == "作業環境測定" %}
+        <p><a href="{{ '/guides/work-env-measurement-intro/' | relative_url }}">測定評価の流れを「作業環境測定の超入門」で確認する</a></p>
+        <p><a href="{{ '/updates/' | relative_url }}">測定制度に関する最新の更新情報を見る</a></p>
+      {% elsif entry.term == "有機溶剤中毒予防規則" %}
+        <p><a href="{{ '/guides/organic-solvent-basics/' | relative_url }}">有機溶剤の基本対策をガイドで確認する</a></p>
+        <p><a href="{{ '/updates/' | relative_url }}">規則改正の有無を最新アップデートで確認する</a></p>
+      {% endif %}
     {% endcapture %}
     {% assign related_meta = nil %}
     {% if entry.related %}
@@ -78,10 +88,10 @@ permalink: /glossary/
 **A.** 更新情報ページで追加・更新の履歴を追えます。
 
 ## 関連ページ
-- [解説一覧]({{ "/guides/" | relative_url }})
+- [用語の背景と実務手順を解説ページで確認する]({{ "/guides/" | relative_url }})
 - [道具棚]({{ "/products/" | relative_url }})
 - [労基署対策]({{ "/inspection/" | relative_url }})
 - [資格対策]({{ "/licenses/" | relative_url }})
-- [最新アップデート]({{ "/updates/" | relative_url }})
+- [関連制度の変更点を最新アップデートで確認する]({{ "/updates/" | relative_url }})
 
 <script src="{{ '/assets/js/glossary-search.js' | relative_url }}" defer></script>
