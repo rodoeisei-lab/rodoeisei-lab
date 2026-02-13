@@ -5,7 +5,7 @@ permalink: /search/
 ---
 
 <div class="filter-search">
-  <label class="sr-only" for="cardSearch">検索</label>
+  <label class="form-label" for="cardSearch">キーワード検索</label>
   <input id="cardSearch" type="search" name="q" placeholder="例：個人ばく露測定、管理濃度、フィットテスト…">
 </div>
 <p id="cardNoResults" class="no-results" hidden>該当するコンテンツがありません。</p>

@@ -12,6 +12,18 @@
 <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
 <meta name="theme-color" content="#050816">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+<script>
+(function () {
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
 
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta property="og:description" content="{{ page_description }}">
