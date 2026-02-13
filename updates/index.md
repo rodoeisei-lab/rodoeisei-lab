@@ -37,7 +37,7 @@ permalink: /updates/
       description=update_summary
       badges=badges
       data_attrs=data_attrs
-      link_url=update.url | relative_url
+      link_url=update.url
       link_label="詳細を見る →"
     %}
   {% endfor %}

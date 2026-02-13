@@ -26,7 +26,7 @@
   <div class="guide-tags">
     {% for tag in include.tags %}
       {% if include.tag_link_base %}
-        {% assign tag_url = include.tag_link_base | append: tag | uri_escape %}
+        {% assign tag_url = include.tag_link_base | append: tag | uri_escape | relative_url %}
         <a class="guide-tag" href="{{ tag_url }}">{{ tag }}</a>
       {% else %}
         <span class="guide-tag">{{ tag }}</span>
@@ -38,6 +38,6 @@
   <p class="card-meta">{{ include.meta }}</p>
   {% endif %}
   {% if include.link_url %}
-  <a class="card-link" href="{{ include.link_url }}">{{ include.link_label | default: "詳しく見る →" }}</a>
+  <a class="card-link" href="{{ include.link_url | relative_url }}">{{ include.link_label | default: "詳しく見る →" }}</a>
   {% endif %}
 </article>
