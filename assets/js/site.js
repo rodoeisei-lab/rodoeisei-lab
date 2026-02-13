@@ -38,3 +38,20 @@ window.addEventListener('keydown', (event) => {
     closeNav();
   }
 });
+
+const imageNodes = document.querySelectorAll('img');
+
+imageNodes.forEach((image) => {
+  const isDecorative = image.dataset.decorative === 'true' || image.classList.contains('is-decorative');
+  const hasAlt = image.hasAttribute('alt');
+
+  if (isDecorative) {
+    image.setAttribute('alt', '');
+    return;
+  }
+
+  if (!hasAlt) {
+    const fallbackText = image.getAttribute('title') || image.getAttribute('aria-label') || '';
+    image.setAttribute('alt', fallbackText);
+  }
+});
