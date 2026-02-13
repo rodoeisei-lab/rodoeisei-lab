@@ -2,6 +2,49 @@ const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('closeBtn');
 const mobileNav = document.getElementById('mobileNav');
 const navOverlay = document.getElementById('navOverlay');
+const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+const THEME_KEY = 'theme';
+const THEME_ORDER = ['system', 'light', 'dark'];
+
+const setTheme = (preference = 'system') => {
+  const normalized = THEME_ORDER.includes(preference) ? preference : 'system';
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const resolved = normalized === 'dark' || (normalized === 'system' && prefersDark) ? 'dark' : 'light';
+
+  document.documentElement.setAttribute('data-theme', resolved);
+  document.documentElement.setAttribute('data-theme-preference', normalized);
+  localStorage.setItem(THEME_KEY, normalized);
+
+  const buttonText = normalized === 'system' ? 'Auto' : resolved === 'dark' ? '🌙' : '☀️';
+  const ariaText = normalized === 'system' ? '表示テーマ: 自動' : `表示テーマ: ${resolved === 'dark' ? 'ダーク' : 'ライト'}`;
+  themeButtons.forEach((button) => {
+    button.textContent = buttonText;
+    button.setAttribute('aria-label', ariaText);
+    button.dataset.theme = normalized;
+  });
+};
+
+const cycleTheme = () => {
+  const current = document.documentElement.getAttribute('data-theme-preference') || localStorage.getItem(THEME_KEY) || 'system';
+  const currentIndex = THEME_ORDER.indexOf(current);
+  const next = THEME_ORDER[(currentIndex + 1) % THEME_ORDER.length];
+  setTheme(next);
+};
+
+const currentTheme = localStorage.getItem(THEME_KEY) || 'system';
+setTheme(currentTheme);
+
+const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+darkScheme.addEventListener('change', () => {
+  const storedTheme = localStorage.getItem(THEME_KEY) || 'system';
+  if (storedTheme === 'system') {
+    setTheme('system');
+  }
+});
+
+themeButtons.forEach((button) => {
+  button.addEventListener('click', cycleTheme);
+});
 
 const openNav = () => {
   if (!mobileNav || !navOverlay || !menuBtn) return;
@@ -45,6 +88,13 @@ imageNodes.forEach((image) => {
   const isDecorative = image.dataset.decorative === 'true' || image.classList.contains('is-decorative');
   const hasAlt = image.hasAttribute('alt');
 
+  if (!image.hasAttribute('decoding')) {
+    image.setAttribute('decoding', 'async');
+  }
+  if (!image.hasAttribute('loading') && !image.hasAttribute('fetchpriority')) {
+    image.setAttribute('loading', 'lazy');
+  }
+
   if (isDecorative) {
     image.setAttribute('alt', '');
     return;
@@ -55,7 +105,6 @@ imageNodes.forEach((image) => {
     image.setAttribute('alt', fallbackText);
   }
 });
-
 
 const sendSearchAnalytics = () => {
   const isSearchPage = window.location.pathname.includes('/search/');

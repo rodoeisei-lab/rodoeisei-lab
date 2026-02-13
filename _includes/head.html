@@ -1,16 +1,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% assign page_description = page.description | default: site.description %}
-{% assign og_image = page.og_image | default: "/og.jpg" %}
-{% assign og_image_url = og_image | absolute_url %}
+{% assign og_image = page.og_image | default: "/assets/images/og-default.svg" %}
+{% assign og_image_url = og_image | relative_url | absolute_url %}
 {% assign is_article = page.layout == "article" %}
 {% assign published_time = page.date %}
 {% assign modified_time = page.last_modified_at | default: page.updated %}
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 <meta name="description" content="{{ page_description }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
-<link rel="icon" href="{{ site.baseurl }}/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="{{ "/assets/images/favicon.svg" | relative_url }}">
 <meta name="theme-color" content="#050816">
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme') || 'system';
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var resolved = stored === 'dark' || (stored === 'system' && prefersDark) ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', resolved);
+    document.documentElement.setAttribute('data-theme-preference', stored);
+  })();
+</script>
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
