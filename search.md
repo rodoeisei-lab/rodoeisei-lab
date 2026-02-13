@@ -15,6 +15,8 @@ lead: ページや記事をキーワードで横断検索できます。
 <script src="{{ '/pagefind/pagefind-ui.js' | relative_url }}" defer></script>
 <script>
   window.addEventListener("DOMContentLoaded", function () {
+    if (typeof PagefindUI !== "function") return;
+
     new PagefindUI({
       element: "#search-ui",
       bundlePath: "{{ '/pagefind/' | relative_url }}",
