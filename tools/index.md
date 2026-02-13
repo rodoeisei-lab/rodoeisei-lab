@@ -11,13 +11,13 @@ permalink: /tools/
     {% include list-card.html
       title="道具棚"
       description="保護具・測定器材の選定ポイントを整理。"
-      link_url="/products/" | relative_url
+      link_url="/products/"
       link_label="道具棚へ →"
     %}
     {% include list-card.html
       title="おすすめ商品（Amazon）"
       description="現場目線で選んだアイテムの一覧。"
-      link_url="/amazon/" | relative_url
+      link_url="/amazon/"
       link_label="おすすめ商品へ →"
     %}
     {% include list-card.html

@@ -1,46 +1,43 @@
 ---
-title: 質問する
-description: 労働衛生に関する質問を匿名化して送るための受付ページ。
+title: 現場の質問フォーム（Q&A）
+description: 労働衛生に関する質問を匿名で受け付けるフォームです。
 permalink: /qa/ask/
 ---
 
 <section class="section">
-  <h2>質問受付</h2>
-  <p>労働衛生に関する質問を受け付けます。送信前に、以下の注意事項を必ず確認してください。</p>
+  <h2>送信前の注意事項</h2>
+  <ul>
+    <li>個人情報/企業名/場所が特定できる情報は書かないでください。</li>
+    <li>回答は匿名化して記事として公開する場合があります。送信時点で公開可否に同意したものとして取り扱います。</li>
+    <li>回答は一般的な情報提供であり、法的助言ではありません（免責）。</li>
+  </ul>
+</section>
 
-  {% if site.qa_form_url %}
-  <div class="cta-buttons">
-    <a class="cta-primary" href="{{ site.qa_form_url }}" target="_blank" rel="noopener">フォームへ</a>
-    <span class="cta-secondary">匿名で送信できます</span>
-  </div>
-
+<section class="section">
+  <h2>質問フォーム</h2>
+  {% assign qa_embed_url = site.google_form_qa_embed_url | default: page.google_form_qa_embed_url %}
+  {% assign qa_link_url = site.qa_form_url | default: page.qa_form_url | default: qa_embed_url %}
+  {% if qa_embed_url and qa_embed_url != "" %}
   <div class="qa-form-embed">
     <iframe
-      src="{{ site.qa_form_url }}"
-      title="質問フォーム"
+      src="{{ qa_embed_url }}"
+      title="現場の質問フォーム"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
       allowfullscreen>
     </iframe>
   </div>
-  {% else %}
-  <div class="cta-buttons">
-    <span class="cta-tertiary">質問フォームは現在準備中です。</span>
-  </div>
   <p>
-    Googleフォームを作成し、公開URLを <code>_config.yml</code> の
-    <code>qa_form_url</code> に設定すると、このページにボタンと埋め込みが表示されます。
+    フォームが表示されない場合は、
+    <a href="{{ qa_embed_url }}" target="_blank" rel="noopener">別タブでフォームを開く</a>
+    から送信してください。
   </p>
+  {% elsif qa_link_url and qa_link_url != "" %}
+  <p>質問フォームは現在準備中です。埋め込み表示に対応するまで、別タブでご利用ください。</p>
+  <p>
+    <a href="{{ qa_link_url }}" target="_blank" rel="noopener">別タブでフォームを開く</a>
+  </p>
+  {% else %}
+  <p>質問フォームは現在準備中です。公開までお待ちください。</p>
   {% endif %}
-</section>
-
-<section class="section">
-  <h2>送信前の注意事項</h2>
-  <ul>
-    <li>個人名・会社名・所在地・機密情報・健康情報など、特定につながる情報は書かないでください。</li>
-    <li>内容は匿名化し、第三者が特定できない形にして送信してください。</li>
-    <li>回答は一般的な情報提供を目的とし、法令や一次情報の確認を前提にしてください。</li>
-    <li>回答は医療・法務の最終判断を行うものではありません（免責）。</li>
-    <li>緊急性がある場合は、所属先の産業医・法務担当・関係機関へ直接相談してください。</li>
-  </ul>
 </section>
