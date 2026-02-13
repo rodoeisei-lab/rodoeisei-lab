@@ -30,3 +30,8 @@ Note: The production build should be verified via the GitHub Pages Actions logs.
 4. Read only the minimum required files first, then expand scope with a clear reason.
 5. Run lightweight checks that match the change (`jekyll build`, targeted page preview, or relevant script checks) and record the command + result.
 6. In pull requests, always include: summary, changed files, key diffs, and reproduction / verification steps.
+
+## Codex custom skills
+- Added `site-audit` skill template at `skills/site-audit/SKILL.md`.
+- To use immediately in this environment, the same file has been copied to `~/.codex/skills/site-audit/SKILL.md`.
+- If skills are not detected, restart Codex.
