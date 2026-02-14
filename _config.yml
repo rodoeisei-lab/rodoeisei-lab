@@ -1,7 +1,7 @@
 title: 労働衛生ラボ
 description: 現場と法令の「あいだ」をつなぐ学習サイト
 url: https://rodoeisei-lab.github.io
-baseurl: ""
+baseurl: "/rodoeisei-lab"
 markdown: kramdown
 permalink: pretty
 
