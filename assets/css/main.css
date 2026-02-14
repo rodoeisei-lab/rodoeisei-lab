@@ -972,8 +972,12 @@ body.nav-open { overflow: hidden; }
   color: #cbd5f5;
   font-size: .88rem;
 }
-.tools-alternatives span {
-  display: block;
+.tools-alternatives ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.tools-alternatives li + li {
+  margin-top: 4px;
 }
 
 .footer {

@@ -2,6 +2,17 @@
 {% if include.class %}
   {% assign card_classes = card_classes | append: " " | append: include.class %}
 {% endif %}
+{% assign card_link_url = nil %}
+{% if include.link_url %}
+  {% assign link_prefix = include.link_url | slice: 0, 2 %}
+  {% assign link_mailto = include.link_url | slice: 0, 7 %}
+  {% assign link_tel = include.link_url | slice: 0, 4 %}
+  {% if include.link_url contains "://" or link_prefix == "//" or link_prefix == "#" or link_mailto == "mailto:" or link_tel == "tel:" %}
+    {% assign card_link_url = include.link_url %}
+  {% else %}
+    {% assign card_link_url = include.link_url | relative_url %}
+  {% endif %}
+{% endif %}
 <article class="{{ card_classes }}"{% if include.data_attrs %} {{ include.data_attrs }}{% endif %}>
   {% if include.image_fallback %}
   {% assign image_loading = include.image_loading | default: "lazy" %}
@@ -10,8 +21,8 @@
   {% assign fallback_srcset = fallback_srcset | replace: '/assets/', baseurl_assets %}
   {% assign avif_srcset = include.image_avif_srcset | replace: '/assets/', baseurl_assets %}
   {% assign webp_srcset = include.image_webp_srcset | replace: '/assets/', baseurl_assets %}
-  {% if include.link_url %}
-  <a class="card-media" href="{{ include.link_url | relative_url }}" aria-hidden="true" tabindex="-1">
+  {% if card_link_url %}
+  <a class="card-media" href="{{ card_link_url }}" aria-hidden="true" tabindex="-1">
 {% else %}
   <div class="card-media" aria-hidden="true">
 {% endif %}
@@ -33,7 +44,7 @@
         height="{{ include.image_height | default: 360 }}"
       >
     </picture>
-{% if include.link_url %}
+{% if card_link_url %}
   </a>
 {% else %}
   </div>
@@ -73,7 +84,7 @@
   {% if include.meta %}
   <p class="card-meta">{{ include.meta }}</p>
   {% endif %}
-  {% if include.link_url %}
-  <a class="card-link" href="{{ include.link_url | relative_url }}">{{ include.link_label | default: "詳しく見る →" }}</a>
+  {% if card_link_url %}
+  <a class="card-link" href="{{ card_link_url }}">{{ include.link_label | default: "詳しく見る →" }}</a>
   {% endif %}
 </article>
