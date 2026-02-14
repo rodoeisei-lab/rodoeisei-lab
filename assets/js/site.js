@@ -15,7 +15,7 @@ const setTheme = (preference = 'system') => {
   document.documentElement.setAttribute('data-theme-preference', normalized);
   localStorage.setItem(THEME_KEY, normalized);
 
-  const buttonText = normalized === 'system' ? 'Auto' : resolved === 'dark' ? '🌙' : '☀️';
+  const buttonText = normalized === 'system' ? '🖥️' : resolved === 'dark' ? '🌙' : '☀️';
   const ariaText = normalized === 'system' ? '表示テーマ: 自動' : `表示テーマ: ${resolved === 'dark' ? 'ダーク' : 'ライト'}`;
   themeButtons.forEach((button) => {
     button.textContent = buttonText;

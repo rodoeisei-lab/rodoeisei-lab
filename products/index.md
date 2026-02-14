@@ -49,7 +49,7 @@ permalink: /products/
   </div>
   <div class="tools-alternatives">
     {% for alt in section.alternatives %}
-    <span>{{ alt }}</span>
+    <span>{{ alt[0] }}: {{ alt[1] }}</span>
     {% endfor %}
   </div>
 </section>
