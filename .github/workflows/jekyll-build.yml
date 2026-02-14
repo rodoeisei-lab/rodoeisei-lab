@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: bundle install --jobs 4 --retry 3
 
+      - name: Optimize images
+        run: python3 scripts/assets/optimize_images.py
+
       - name: Read baseurl from Jekyll config
         id: config
         run: |
@@ -33,6 +36,56 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --baseurl "${{ steps.config.outputs.baseurl }}"
+
+      - name: Block root-absolute paths without baseurl
+        run: |
+          BASEURL="${{ steps.config.outputs.baseurl }}"
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import os
+
+          baseurl = os.environ.get("BASEURL", "")
+          html_files = sorted(Path("_site").rglob("*.html"))
+          if not html_files:
+              raise SystemExit("No HTML files found in _site")
+
+          pattern = re.compile(r'(?:href|src)="/(?!#|/|https?://|mailto:|tel:|javascript:|data:|pagefind/|' + re.escape(baseurl.lstrip('/')) + r'/)')
+          violations = []
+          for html in html_files:
+              text = html.read_text(encoding="utf-8")
+              for m in pattern.finditer(text):
+                  violations.append(f"{html}:{m.group(0)}")
+
+          if violations:
+              print("Found root-absolute paths that do not include baseurl:")
+              for v in violations[:50]:
+                  print(" -", v)
+              raise SystemExit(1)
+
+          print("No invalid root-absolute href/src values found.")
+          PY
+        env:
+          BASEURL: ${{ steps.config.outputs.baseurl }}
+
+      - name: Smoke check key routes (200)
+        run: |
+          python3 -m http.server 4000 --directory _site >/tmp/site.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+
+          BASEURL="${{ steps.config.outputs.baseurl }}"
+          for path in \
+            "$BASEURL/" \
+            "$BASEURL/community/" \
+            "$BASEURL/learn/" \
+            "$BASEURL/search/" \
+            "$BASEURL/guides/" \
+            "$BASEURL/updates/"; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:4000${path}")
+            echo "$path -> $code"
+            test "$code" = "200"
+          done
 
       - name: Internal link and asset checks (external links disabled)
         run: |

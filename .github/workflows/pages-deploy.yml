@@ -41,6 +41,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Optimize images
+        run: python3 scripts/assets/optimize_images.py
+
       - name: Build site
         run: bundle exec jekyll build
 

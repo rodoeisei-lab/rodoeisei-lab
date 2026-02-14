@@ -5,6 +5,11 @@ const navOverlay = document.getElementById('navOverlay');
 const themeButtons = document.querySelectorAll('[data-theme-toggle]');
 const THEME_KEY = 'theme';
 const THEME_ORDER = ['system', 'light', 'dark'];
+const THEME_LABELS = {
+  system: '自動',
+  light: 'ライト',
+  dark: 'ダーク',
+};
 
 const setTheme = (preference = 'system') => {
   const normalized = THEME_ORDER.includes(preference) ? preference : 'system';
@@ -16,9 +21,10 @@ const setTheme = (preference = 'system') => {
   localStorage.setItem(THEME_KEY, normalized);
 
   const buttonText = normalized === 'system' ? '🖥️' : resolved === 'dark' ? '🌙' : '☀️';
-  const ariaText = normalized === 'system' ? '表示テーマ: 自動' : `表示テーマ: ${resolved === 'dark' ? 'ダーク' : 'ライト'}`;
+  const label = THEME_LABELS[normalized] || THEME_LABELS.system;
+  const ariaText = `表示テーマ: ${label}`;
   themeButtons.forEach((button) => {
-    button.textContent = buttonText;
+    button.innerHTML = `<span aria-hidden="true">${buttonText}</span><span class="theme-toggle-label">${label}</span>`;
     button.setAttribute('aria-label', ariaText);
     button.dataset.theme = normalized;
   });

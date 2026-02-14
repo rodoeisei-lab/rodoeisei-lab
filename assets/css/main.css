@@ -180,6 +180,12 @@ a:focus-visible, button:focus-visible {
   font-size: .78rem;
   font-weight: 700;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.theme-toggle-label {
+  font-size: .74rem;
 }
 .theme-toggle:hover { background: var(--btn-surface); }
 .mobile-nav .theme-toggle {
