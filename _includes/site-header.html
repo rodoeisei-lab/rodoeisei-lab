@@ -7,7 +7,7 @@
       <ul>
         {% for item in site.data.navigation %}
         <li>
-          <a href="{{ item.url | relative_url }}"{% if item.kind == "cta" %} class="nav-cta"{% endif %}>{{ item.title }}</a>
+          <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.kind == "cta" %} class="nav-cta"{% endif %}{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a>
         </li>
         {% endfor %}
         <li>
@@ -25,7 +25,7 @@
   <ul>
     {% for item in site.data.navigation %}
     <li>
-      <a href="{{ item.url | relative_url }}"{% if item.kind == "cta" %} class="nav-cta"{% endif %}>{{ item.title }}</a>
+      <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.kind == "cta" %} class="nav-cta"{% endif %}{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a>
     </li>
     {% endfor %}
   </ul>

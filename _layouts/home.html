@@ -19,7 +19,7 @@ layout: base
         </p>
         <div class="cta-buttons">
           <a href="{{ '/community/' | relative_url }}" class="cta-primary">参加する</a>
-          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-secondary">質問する</a>
+          <a href="{{ site.qa_form_url }}" class="cta-secondary" target="_blank" rel="noopener">質問する</a>
           <a href="{{ '/guides/' | relative_url }}" class="cta-tertiary">今週の解説を見る</a>
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
@@ -60,9 +60,9 @@ layout: base
                 <strong>参加する</strong>
                 ルールを確認して参加する
               </a>
-              <a class="hero-pill" href="{{ '/qa/ask/' | relative_url }}">
+              <a class="hero-pill" href="{{ site.qa_form_url }}" target="_blank" rel="noopener">
                 <strong>質問する</strong>
-                匿名化した質問を送る
+                匿名で質問・リクエストを送る
               </a>
             </div>
           </div>
