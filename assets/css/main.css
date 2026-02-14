@@ -1,6 +1,7 @@
 /* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { width: 100%; overflow-x: hidden; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Meiryo, system-ui, sans-serif;
@@ -309,6 +310,11 @@ body.nav-open { overflow: hidden; }
   gap: 32px;
   align-items: center;
 }
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
 .hero-label {
   display: inline-flex;
   align-items: center;
@@ -345,6 +351,9 @@ body.nav-open { overflow: hidden; }
   font-size: .95rem;
   color: var(--text-soft);
   margin-bottom: 22px;
+  mix-blend-mode: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 .cta-buttons {
   display: flex;
