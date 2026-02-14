@@ -11,7 +11,7 @@
         </li>
         {% endfor %}
         <li>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え">🖥️</button>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
         </li>
       </ul>
     </nav>
@@ -21,7 +21,7 @@
 <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
   <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
-  <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え">🖥️</button>
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
   <ul>
     {% for item in site.data.navigation %}
     <li>
