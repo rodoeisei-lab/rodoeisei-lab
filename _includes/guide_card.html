@@ -23,7 +23,7 @@
 {% assign meta = meta | strip %}
 {% assign link_url = nil %}
 {% if guide.status != "wip" %}
-  {% assign link_url = guide.url | relative_url %}
+  {% assign link_url = guide.url %}
 {% endif %}
 {% include list-card.html
   class="guide-card"
