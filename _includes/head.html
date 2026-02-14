@@ -20,7 +20,7 @@
     document.documentElement.setAttribute('data-theme-preference', stored);
   })();
 </script>
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta property="og:description" content="{{ page_description }}">
