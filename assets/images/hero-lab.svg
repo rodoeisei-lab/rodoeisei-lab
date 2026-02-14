@@ -18,8 +18,4 @@
     <path d="M0 620H1280M0 520H1280M0 420H1280M0 320H1280M0 220H1280"/>
   </g>
   <path d="M120 500L280 430L420 455L560 360L720 390L860 290L1020 330L1160 240" fill="none" stroke="url(#line)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-  <g fill="#e2e8f0" font-family="system-ui, sans-serif">
-    <text x="120" y="150" font-size="40" font-weight="700">LABOR HYGIENE INSIGHT</text>
-    <text x="120" y="205" font-size="26" opacity=".9">現場と法令のあいだを埋めるナレッジハブ</text>
-  </g>
 </svg>
