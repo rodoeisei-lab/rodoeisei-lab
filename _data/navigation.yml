@@ -1,9 +1,5 @@
-- title: 参加する
-  url: /community/
-  kind: cta
 - title: 質問する
   url: "https://forms.gle/VkhwitiNsNXyNQ2C9"
-  kind: cta
   external: true
 - title: 学習
   url: /learn/
