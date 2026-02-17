@@ -760,6 +760,50 @@ body.nav-open { overflow: hidden; }
   border: 1px solid var(--btn-border);
   text-decoration: none;
 }
+
+.testimonials {
+  background-color: #f9fafb;
+  padding: 48px 20px;
+  text-align: center;
+}
+.testimonials h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+.testimonial {
+  margin: 0 auto 24px;
+  max-width: 640px;
+  font-style: italic;
+}
+.testimonial p {
+  margin: 0;
+}
+.testimonial span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #555;
+  font-style: normal;
+}
+.testimonial-cta {
+  margin-top: 8px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0ea5a0;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+
 .card {
   background: var(--panel);
   border-radius: 16px;
