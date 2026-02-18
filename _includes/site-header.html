@@ -14,9 +14,7 @@
           <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
         </li>
       </ul>
-      <a href="{{ "/community/" | relative_url }}" class="nav-cta">
-        コミュニティに参加（無料）
-      </a>
+      <a href="{{ "/community/" | relative_url }}" class="nav-cta">参加する</a>
     </nav>
   </div>
 </header>
@@ -25,9 +23,7 @@
   <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
   <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
-  <a href="{{ "/community/" | relative_url }}" class="nav-cta">
-    コミュニティに参加（無料）
-  </a>
+  <a href="{{ "/community/" | relative_url }}" class="nav-cta">参加する</a>
   <ul>
     {% for item in site.data.navigation %}
     <li>
