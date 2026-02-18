@@ -163,7 +163,7 @@ a:focus-visible, button:focus-visible {
 .mobile-nav .nav-cta {
   background-color: #0ea5a0;
   color: #ffffff;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
@@ -854,7 +854,7 @@ body.nav-open { overflow: hidden; }
   justify-content: center;
   gap: 6px;
   margin-top: 8px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 999px;
   font-size: .85rem;
   font-weight: 600;
@@ -878,7 +878,7 @@ body.nav-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 999px;
   font-size: .85rem;
   font-weight: 600;
