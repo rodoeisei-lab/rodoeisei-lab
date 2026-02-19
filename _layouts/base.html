@@ -8,6 +8,10 @@
   <main id="main">
     {{ content }}
   </main>
+  <section class="ask-banner" aria-label="質問導線">
+    <p>現場の悩みを匿名で相談できます</p>
+    <a href="{{ "/qa/ask/" | relative_url }}" class="btn-question">質問する</a>
+  </section>
   {% include site-footer.html %}
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </body>

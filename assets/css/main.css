@@ -1211,3 +1211,56 @@ body.nav-open { overflow: hidden; }
   --pagefind-ui-border: rgba(148, 163, 184, .38);
   --pagefind-ui-tag: rgba(103, 232, 249, .2);
 }
+
+
+.nav-question-cta {
+  background-color: #0ea5a0;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: 12px;
+}
+
+.desktop-nav .nav-question-cta:hover,
+.mobile-nav .nav-question-cta:hover {
+  opacity: 0.9;
+}
+
+.ask-banner {
+  background: #f0f9ff;
+  padding: 32px 20px;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.ask-banner p {
+  margin: 0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.btn-question {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #0ea5a0;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-question:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .mobile-nav .nav-question-cta {
+    display: block;
+    text-align: center;
+    margin: 12px 0;
+  }
+}

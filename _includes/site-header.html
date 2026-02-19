@@ -4,6 +4,7 @@
     <a class="brand" href="{{ "/" | relative_url }}">労働衛生ラボ</a>
     <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
     <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+      <a href="{{ "/qa/ask/" | relative_url }}" class="nav-question-cta">匿名で質問する</a>
       <ul>
         {% for item in site.data.navigation %}
         <li>
@@ -23,6 +24,7 @@
   <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
   <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
+  <a href="{{ "/qa/ask/" | relative_url }}" class="nav-question-cta">匿名で質問する</a>
   <a href="{{ "/community/" | relative_url }}" class="nav-cta">参加する</a>
   <ul>
     {% for item in site.data.navigation %}

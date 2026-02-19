@@ -42,3 +42,12 @@ permalink: /qa/ask/
   <p>質問フォームは現在準備中です。公開までお待ちください。</p>
   {% endif %}
 </section>
+
+<section class="section">
+  <h2>質問から記事化までの流れ</h2>
+  <ol>
+    <li>フォームから匿名投稿</li>
+    <li>内容を整理・一般化</li>
+    <li>記事として公開（個人・企業情報は削除）</li>
+  </ol>
+</section>
