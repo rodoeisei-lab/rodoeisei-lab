@@ -803,6 +803,21 @@ body.nav-open { overflow: hidden; }
   opacity: 0.92;
 }
 
+.btn-community {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 18px;
+  background-color: #0ea5a0;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.community-cta {
+  margin-top: 24px;
+}
+
 
 .card {
   background: var(--panel);
