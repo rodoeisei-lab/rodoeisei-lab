@@ -1,6 +1,3 @@
-- title: 質問する
-  url: "https://forms.gle/VkhwitiNsNXyNQ2C9"
-  external: true
 - title: 学習
   url: /learn/
 - title: ツール
@@ -9,6 +6,5 @@
   url: /updates/
 - title: 検索
   url: /search/
-
 - title: コミュニティ
   url: /community/

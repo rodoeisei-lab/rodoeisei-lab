@@ -18,15 +18,13 @@ layout: base
           現場と法令のあいだを埋める、一次情報ベースのナレッジハブ。
         </p>
         <div class="cta-buttons">
-          <a href="{{ '/community/' | relative_url }}" class="cta-primary">参加する</a>
-          <a href="{{ site.qa_form_url }}" class="cta-secondary" target="_blank" rel="noopener">質問する</a>
+          <a href="{{ '/participation-guide/' | relative_url }}" class="cta-primary">参加の手順を見る</a>
+          <a href="{{ site.qa_form_url }}" class="cta-secondary" target="_blank" rel="noopener">匿名で相談を投稿</a>
           <a href="{{ '/guides/' | relative_url }}" class="cta-tertiary">今週の解説を見る</a>
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
         </div>
-        <a href="{{ '/community/' | relative_url }}" class="btn-community">
-          コミュニティに参加する
-        </a>
+        
         <form class="hero-search" action="{{ '/search/' | relative_url }}" method="get">
           <label class="sr-only" for="heroSearch">検索</label>
           <input id="heroSearch" type="search" name="q" placeholder="例：個人ばく露測定、管理濃度、フィットテスト…">
@@ -59,17 +57,41 @@ layout: base
               <div class="hero-stat-sub">匿名OK / 質問→記事化 / 全国の実務者で知見共有</div>
             </div>
             <div class="hero-stat-row">
-              <a class="hero-pill" href="{{ '/community/' | relative_url }}">
-                <strong>参加する</strong>
-                ルールを確認して参加する
+              <a class="hero-pill" href="{{ '/participation-guide/' | relative_url }}">
+                <strong>参加の手順</strong>
+                参加前に目的とルールを確認する
               </a>
               <a class="hero-pill" href="{{ site.qa_form_url }}" target="_blank" rel="noopener">
-                <strong>質問する</strong>
-                匿名で質問・リクエストを送る
+                <strong>匿名で相談</strong>
+                匿名で相談・リクエストを送る
               </a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="participation-steps" aria-label="参加・相談の3ステップ">
+  <div class="container">
+    <div class="step-card">
+      <h2>コミュニティ参加・相談の3ステップ</h2>
+      <ol>
+        <li><strong>ステップ1:</strong> 目的・ルールを確認</li>
+        <li><strong>ステップ2:</strong> 匿名で相談を投稿</li>
+        <li><strong>ステップ3:</strong> 回答・記事化を待つ／共有</li>
+      </ol>
+      <div class="cta-buttons step-cta-buttons">
+        <a href="{{ '/participation-guide/' | relative_url }}" class="btn-step">詳しい手順を見る</a>
+        <a href="{{ site.qa_form_url }}" class="btn-step-primary" target="_blank" rel="noopener">今すぐ相談を投稿</a>
+      </div>
+      <div class="faq-mini">
+        <p><strong>よくある質問</strong></p>
+        <ul>
+          <li>匿名投稿ってどう扱われるの？</li>
+          <li>投稿はいつ反映される？</li>
+        </ul>
       </div>
     </div>
   </div>
