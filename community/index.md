@@ -10,7 +10,7 @@ permalink: /community/
 全国の労働衛生担当者が、実務の悩みや知見を共有するための場です。
 
 ## 参加方法
-- 匿名で質問する（/qa/ask/）
+- 匿名で質問する（[受付ページ](/qa/ask/)）
 - テーマ提案を送る
 - 記事寄稿の相談をする
 
@@ -20,5 +20,5 @@ permalink: /community/
 - 実務に役立つ情報共有を目的とする
 
 <div class="community-cta">
-  <a href="/qa/ask/" class="btn-primary">匿名で質問する</a>
+  <a href="{{ "/qa/ask/" | relative_url }}" class="btn-primary">匿名で質問する</a>
 </div>

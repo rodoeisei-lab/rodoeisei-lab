@@ -1363,3 +1363,20 @@ body.nav-open { overflow: hidden; }
     margin: 12px 0;
   }
 }
+
+
+.btn-ask-primary {
+  display: inline-block;
+  background: #0ea5a0;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.notice-box {
+  background: #f0fdf9;
+  border: 1px solid #99f6e4;
+  padding: 12px 14px;
+  border-radius: 8px;
+}
