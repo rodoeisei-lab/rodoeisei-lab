@@ -15,7 +15,7 @@
         </li>
       </ul>
       <a href="{{ "/participation-guide/" | relative_url }}" class="nav-cta">参加の手順を見る</a>
-      <a href="{{ site.qa_form_url }}" class="nav-cta-primary" target="_blank" rel="noopener">匿名で相談を投稿</a>
+      <a href="{{ "/qa/ask/" | relative_url }}" class="nav-cta-primary">匿名で相談を投稿</a>
     </nav>
   </div>
 </header>
@@ -25,7 +25,7 @@
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
   <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
   <a href="{{ "/participation-guide/" | relative_url }}" class="nav-cta">参加の手順を見る</a>
-  <a href="{{ site.qa_form_url }}" class="nav-cta-primary" target="_blank" rel="noopener">匿名で相談を投稿</a>
+  <a href="{{ "/qa/ask/" | relative_url }}" class="nav-cta-primary">匿名で相談を投稿</a>
   <ul>
     {% for item in site.data.navigation %}
     <li>
