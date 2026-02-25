@@ -1380,3 +1380,16 @@ body.nav-open { overflow: hidden; }
   padding: 12px 14px;
   border-radius: 8px;
 }
+
+.community-entry-buttons {
+  margin: 14px 0 24px;
+}
+
+.community-steps .step-card {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.community-steps ol {
+  line-height: 1.8;
+}
