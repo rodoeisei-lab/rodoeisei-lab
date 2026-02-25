@@ -1395,3 +1395,80 @@ body.nav-open { overflow: hidden; }
 .community-steps ol {
   line-height: 1.8;
 }
+
+/* Past exams page improvements */
+main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-ask-primary):not(.btn-question):not(.link-action) {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-ask-primary):not(.btn-question):not(.link-action):visited {
+  color: #7c3aed;
+}
+main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-ask-primary):not(.btn-question):not(.link-action):hover {
+  color: #1d4ed8;
+}
+main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-ask-primary):not(.btn-question):not(.link-action):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.past-exams-contribute {
+  margin-bottom: 16px;
+}
+
+.past-exams-actions {
+  margin: 10px 0 2px;
+}
+
+.past-exams-about {
+  margin: 10px 0 16px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: var(--panel-strong);
+}
+
+.past-exams-about summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.past-exams-about ul,
+.past-exams-about li {
+  color: var(--text-soft);
+}
+
+.link-card {
+  background: var(--panel);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 10px 0;
+}
+
+.link-title {
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.link-action {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.link-domain {
+  font-size: .84rem;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .link-card {
+    padding: 11px 12px;
+  }
+}
