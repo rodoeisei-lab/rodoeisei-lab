@@ -20,10 +20,12 @@ defaults:
       layout: page
 
 community:
+  repository_url: "https://github.com/rodoeisei-lab/rodoeisei-lab"
   discussions_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/discussions"
+  introduction_thread_url: ""
   discord_invite_url: ""
 
-community_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/discussions"
+community_url: "https://github.com/rodoeisei-lab/rodoeisei-lab"
 google_form_qa_embed_url: ""
 qa_form_url: "https://forms.gle/VkhwitiNsNXyNQ2C9"
 
