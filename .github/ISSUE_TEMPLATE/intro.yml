@@ -1,0 +1,78 @@
+name: 自己紹介
+description: コミュニティ参加用の自己紹介フォームです（1分で投稿）。
+title: "[自己紹介] "
+labels:
+  - introduction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        コミュニティ参加ありがとうございます！
+        個人名・企業名など特定情報は記載しないでください。
+
+  - type: input
+    id: name_or_handle
+    attributes:
+      label: お名前またはハンドルネーム
+      description: 公開されても問題ない呼び名を入力してください。
+      placeholder: 例）衛生管理者A
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: 役割
+      description: 近いものを選択してください。
+      options:
+        - 衛生管理者
+        - 作業環境測定
+        - 産業保健
+        - 安全担当
+        - 人事・労務
+        - その他
+    validations:
+      required: true
+
+  - type: input
+    id: industry
+    attributes:
+      label: 業種（任意）
+      placeholder: 例）製造業、建設業、医療 など
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: themes
+    attributes:
+      label: よく困るテーマ（複数選択可）
+      options:
+        - label: 粉じん
+        - label: 溶剤
+        - label: 騒音
+        - label: 熱中症
+        - label: 監査
+        - label: 教育
+        - label: その他
+    validations:
+      required: true
+
+  - type: textarea
+    id: value_exchange
+    attributes:
+      label: ここで得たいもの・共有できるもの
+      placeholder: 例）得たい：他社の教育事例 / 共有できる：改善提案の進め方
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: ルール同意
+      options:
+        - label: 個人・企業が特定できる情報は投稿しません。
+          required: true
+        - label: 誹謗中傷を行いません。
+          required: true
+        - label: 緊急案件は公的機関・専門機関への相談を優先します。
+          required: true

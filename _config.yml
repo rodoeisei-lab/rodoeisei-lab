@@ -21,8 +21,9 @@ defaults:
 
 community:
   repository_url: "https://github.com/rodoeisei-lab/rodoeisei-lab"
-  discussions_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/discussions"
-  introduction_thread_url: ""
+  issues_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/issues"
+  intro_issue_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/issues/new?template=intro.yml"
+  question_issue_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/issues/new?template=question.yml"
   discord_invite_url: ""
 
 community_url: "https://github.com/rodoeisei-lab/rodoeisei-lab"

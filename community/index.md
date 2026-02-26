@@ -10,11 +10,11 @@ permalink: /community/
 
 <div class="notice-box">
   <strong>まずはここから：</strong>
-  「コミュニティに参加する」は、常にアクセスできる<strong>GitHubリポジトリ入口</strong>へ案内します。
+  「コミュニティに参加する」で<strong>自己紹介Issueフォーム</strong>が1クリックで開きます。
 </div>
 
 <div class="cta-buttons community-entry-buttons">
-  <a href="{{ site.community.repository_url }}" class="btn-step-primary" target="_blank" rel="noopener">コミュニティに参加する（まずここ）</a>
+  <a href="{{ site.community.intro_issue_url }}" class="btn-step-primary" target="_blank" rel="noopener">コミュニティに参加する（まずここ）</a>
   <a href="{{ '/qa/ask/' | relative_url }}" class="btn-step">匿名で質問する</a>
 </div>
 
@@ -24,8 +24,8 @@ permalink: /community/
   <div class="step-card">
     <ol>
       <li>GitHubアカウントを作成／ログインする</li>
-      <li>コミュニティ入口（リポジトリ）を開く</li>
-      <li>Discussions（議論）で「自己紹介」に1投稿する（参加完了）</li>
+      <li>自己紹介を投稿する（Issue Form）</li>
+      <li>質問・知見を投稿する／既存Issueにコメントする</li>
     </ol>
   </div>
 </div>
@@ -33,13 +33,9 @@ permalink: /community/
 ## 入口リンク
 
 - リポジトリ（入口）: [{{ site.community.repository_url }}]({{ site.community.repository_url }})
-- Discussions（有効化後）: [{{ site.community.discussions_url }}]({{ site.community.discussions_url }})
-- 初参加はこちら（自己紹介スレ）:
-  {% if site.community.introduction_thread_url and site.community.introduction_thread_url != "" %}
-  [{{ site.community.introduction_thread_url }}]({{ site.community.introduction_thread_url }})
-  {% else %}
-  Discussions有効化後に固定URLへ差し替え予定
-  {% endif %}
+- Issues 一覧: [{{ site.community.issues_url }}]({{ site.community.issues_url }})
+- 自己紹介（Issue Form）: [{{ site.community.intro_issue_url }}]({{ site.community.intro_issue_url }})
+- 公開Q&Aを投稿（Issue Form）: [{{ site.community.question_issue_url }}]({{ site.community.question_issue_url }})
 
 ## 自己紹介テンプレ（コピペOK）
 
@@ -52,4 +48,5 @@ permalink: /community/
 
 - 個人名・企業名など特定情報は記載しない
 - 誹謗中傷は禁止
+- 緊急対応が必要な案件は公的機関・専門機関への相談を優先
 - 実務に役立つ情報共有を目的とする

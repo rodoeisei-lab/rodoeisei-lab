@@ -331,9 +331,12 @@ body.nav-open { overflow: hidden; }
 }
 .btn-step,
 .btn-step-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 8px 12px 0 0;
   padding: 10px 16px;
+  min-height: 44px;
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
@@ -348,6 +351,16 @@ body.nav-open { overflow: hidden; }
   background-color: #0ea5a0;
   color: #fff;
   font-weight: 700;
+}
+
+.btn-step:focus-visible,
+.btn-step-primary:focus-visible,
+.cta-buttons a:focus-visible,
+.cta-primary:focus-visible,
+.cta-secondary:focus-visible,
+.cta-tertiary:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 2px;
 }
 .faq-mini {
   margin-top: 14px;
@@ -469,6 +482,7 @@ body.nav-open { overflow: hidden; }
 .cta-buttons span {
   text-decoration: none;
   padding: 10px 16px;
+  min-height: 44px;
   border-radius: 999px;
   font-weight: 600;
   font-size: .9rem;
