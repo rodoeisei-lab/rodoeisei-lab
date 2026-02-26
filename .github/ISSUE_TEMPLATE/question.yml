@@ -1,0 +1,61 @@
+name: 公開Q&A
+description: 公開で相談・質問したいときのフォームです。
+title: "[質問] "
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        公開Q&Aありがとうございます。
+        個人名・企業名・現場を特定できる情報は避け、一般化して記載してください。
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景（一般化して）
+      placeholder: どんな業務・場面で困っているかを一般化して記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 困りごと
+      placeholder: 何がうまくいっていないか、どこが難しいか。
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: 知りたいこと
+      placeholder: 具体的に知りたいこと・判断基準を書いてください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_countermeasure
+    attributes:
+      label: 現状の対策
+      placeholder: すでに試したことや、実施中の対策があれば記載してください。
+    validations:
+      required: false
+
+  - type: input
+    id: source
+    attributes:
+      label: 一次情報リンク（任意）
+      placeholder: 法令・通達・ガイドラインなどのURL
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 確認事項
+      options:
+        - label: 特定情報を含んでいないことを確認しました。
+          required: true
+        - label: 緊急案件は公的機関・専門機関への相談を優先します。
+          required: true

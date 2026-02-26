@@ -10,7 +10,7 @@ permalink: /past-exams/
 <strong>このページを一緒に育てる</strong><br>
 リンクの追加提案や、リンク切れ・誤記の報告を歓迎しています。
 <div class="cta-buttons past-exams-actions">
-  <a class="btn-step-primary" href="{{ site.community.discussions_url }}" target="_blank" rel="noopener noreferrer">リンク追加</a>
+  <a class="btn-step-primary" href="{{ site.community.question_issue_url }}" target="_blank" rel="noopener noreferrer">リンク追加</a>
   <a class="btn-step" href="{{ site.qa_form_url }}" target="_blank" rel="noopener noreferrer">リンク切れ/誤記報告</a>
 </div>
 </div>
