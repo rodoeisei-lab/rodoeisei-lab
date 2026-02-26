@@ -1547,6 +1547,13 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
   color: var(--muted);
 }
 
+
+.link-note {
+  margin-top: 4px;
+  font-size: .92rem;
+  color: var(--text-soft);
+}
+
 @media (max-width: 768px) {
   .link-card {
     padding: 11px 12px;
