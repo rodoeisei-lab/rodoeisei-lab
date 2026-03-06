@@ -245,7 +245,7 @@ main a[class*="cta"] {
 }
 
 
-.nav-question-btn {
+.nav-consult-btn {
   background: #2563eb;
   color: #ffffff;
   padding: 8px 16px;
@@ -255,7 +255,7 @@ main a[class*="cta"] {
   margin-left: 12px;
 }
 
-.nav-question-btn:hover {
+.nav-consult-btn:hover {
   opacity: 0.9;
 }
 .menu-btn {
@@ -305,10 +305,10 @@ main a[class*="cta"] {
     margin: 12px 0;
   }
 
-  .nav-question-btn {
+  .nav-consult-btn {
     display: block;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 12px;
   }
 }
 
