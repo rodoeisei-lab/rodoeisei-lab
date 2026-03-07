@@ -430,7 +430,9 @@ body.nav-open { overflow: hidden; }
 .cta-buttons a:focus-visible,
 .cta-primary:focus-visible,
 .cta-secondary:focus-visible,
-.cta-tertiary:focus-visible {
+.cta-tertiary:focus-visible,
+.cta-participation-primary:focus-visible,
+.cta-participation-secondary:focus-visible {
   outline: 3px solid #22d3ee;
   outline-offset: 2px;
 }
@@ -574,6 +576,37 @@ body.nav-open { overflow: hidden; }
 }
 .cta-primary:hover {
   background: #1d4ed8;
+}
+
+.cta-participation-primary,
+.cta-participation-secondary {
+  text-decoration: none;
+  padding: 10px 16px;
+  min-height: 44px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.cta-participation-primary {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+.cta-participation-secondary {
+  background: #ecfeff;
+  border-color: #5eead4;
+  color: #115e59;
+}
+
+.cta-participation-primary:hover,
+.cta-participation-secondary:hover {
+  opacity: .92;
 }
 .cta-tertiary {
   background: rgba(188, 200, 223, .2);
@@ -1487,6 +1520,97 @@ section { margin: var(--space-5) 0; }
   line-height: 1.8;
 }
 
+
+.participation-hub {
+  margin: -8px 0 32px;
+}
+
+.participation-hub .container {
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--surface-shadow);
+}
+
+.participation-hub h2 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+}
+
+.participation-hub-lead {
+  margin: 0 0 18px;
+  color: #115e59;
+}
+
+.participation-hub-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.participation-hub-card {
+  background: #ffffff;
+  border: 1px solid #ccfbf1;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.participation-hub-card h3 {
+  margin: 0 0 8px;
+}
+
+.participation-hub-card p {
+  margin: 0;
+  color: #134e4a;
+}
+
+.participation-hub-actions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.participation-hub-note {
+  margin-top: 10px !important;
+  font-size: .85rem;
+}
+
+.participation-hub-guidelines {
+  margin: 16px 0 0;
+  padding-left: 18px;
+  color: #0f172a;
+}
+
+.participation-hub-guidelines li + li {
+  margin-top: 6px;
+}
+
+.entry-cards {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 16px 0 28px;
+}
+
+.entry-card {
+  background: var(--panel-strong);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.entry-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.entry-card p {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
 /* Past exams page improvements */
 main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-ask-primary):not(.btn-question):not(.link-action) {
   color: var(--link);
@@ -1556,5 +1680,15 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
 @media (max-width: 768px) {
   .link-card {
     padding: 11px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .participation-hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .participation-hub .container {
+    padding: 18px;
   }
 }
