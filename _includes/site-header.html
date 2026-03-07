@@ -14,9 +14,9 @@
           <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
         </li>
       </ul>
-      <a href="{{ "/participation-guide/" | relative_url }}" class="nav-cta">参加の手順を見る</a>
-      <a href="{{ "/qa/ask/" | relative_url }}" class="nav-cta-primary">匿名で相談を投稿</a>
-      <a href="https://github.com/rodoeisei-lab/rodoeisei-lab/discussions/new" class="nav-consult-btn" target="_blank" rel="noopener" title="匿名で相談できます">相談する</a>
+      <a href="{{ '/community/' | relative_url }}" class="nav-cta">公開Q&Aを見る</a>
+      <a href="{{ "/participation-guide/" | relative_url }}" class="nav-cta-primary">参加する</a>
+      <a href="{{ "/qa/ask/" | relative_url }}" class="nav-consult-btn" title="匿名で質問できます">匿名で質問する</a>
     </nav>
   </div>
 </header>
@@ -25,9 +25,9 @@
   <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
   <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
-  <a href="{{ "/participation-guide/" | relative_url }}" class="nav-cta">参加の手順を見る</a>
-  <a href="{{ "/qa/ask/" | relative_url }}" class="nav-cta-primary">匿名で相談を投稿</a>
-  <a href="https://github.com/rodoeisei-lab/rodoeisei-lab/discussions/new" class="nav-consult-btn" target="_blank" rel="noopener" title="匿名で相談できます">相談する</a>
+  <a href="{{ '/community/' | relative_url }}" class="nav-cta">公開Q&Aを見る</a>
+  <a href="{{ "/participation-guide/" | relative_url }}" class="nav-cta-primary">参加する</a>
+  <a href="{{ "/qa/ask/" | relative_url }}" class="nav-consult-btn" title="匿名で質問できます">匿名で質問する</a>
   <ul>
     {% for item in site.data.navigation %}
     <li>

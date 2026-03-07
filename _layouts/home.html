@@ -18,8 +18,9 @@ layout: base
           現場と法令のあいだを埋める、一次情報ベースのナレッジハブ。
         </p>
         <div class="cta-buttons">
-          <a href="{{ site.community.intro_issue_url }}" class="cta-primary" target="_blank" rel="noopener">自己紹介を投稿する</a>
-          <a href="{{ "/qa/ask/" | relative_url }}" class="cta-secondary">匿名で相談を投稿</a>
+          <a href="{{ '/participation-guide/' | relative_url }}" class="cta-participation-primary">参加する</a>
+          <a href="{{ "/qa/ask/" | relative_url }}" class="cta-participation-secondary">匿名で質問する</a>
+          <a href="{{ '/community/' | relative_url }}" class="cta-participation-secondary">公開Q&Aを見る</a>
           <a href="{{ '/guides/' | relative_url }}" class="cta-tertiary">今週の解説を見る</a>
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
@@ -57,13 +58,13 @@ layout: base
               <div class="hero-stat-sub">匿名OK / 質問→記事化 / 全国の実務者で知見共有</div>
             </div>
             <div class="hero-stat-row">
-              <a class="hero-pill" href="{{ site.community.intro_issue_url }}" target="_blank" rel="noopener">
-                <strong>自己紹介を投稿</strong>
-                1クリックでIssueフォームを開く
+              <a class="hero-pill" href="{{ '/participation-guide/' | relative_url }}">
+                <strong>参加する</strong>
+                参加ガイドと自己紹介投稿の入口
               </a>
               <a class="hero-pill" href="{{ "/qa/ask/" | relative_url }}">
-                <strong>匿名で相談</strong>
-                匿名で相談・リクエストを送る
+                <strong>匿名で質問する</strong>
+                匿名フォームから相談を送る
               </a>
             </div>
           </div>
@@ -73,29 +74,44 @@ layout: base
   </div>
 </section>
 
-<section class="participation-steps" aria-label="参加・相談の3ステップ">
+<section class="participation-hub" aria-label="コミュニティ参加ハブ">
   <div class="container">
-    <div class="step-card">
-      <h2>コミュニティ参加・相談の3ステップ</h2>
-      <ol>
-        <li><strong>ステップ1:</strong> 目的・ルールを確認</li>
-        <li><strong>ステップ2:</strong> 自己紹介を投稿（Issue Form）</li>
-        <li><strong>ステップ3:</strong> 質問・知見を投稿／共有</li>
-      </ol>
-      <div class="cta-buttons step-cta-buttons">
-        <a href="{{ '/participation-guide/' | relative_url }}" class="btn-step">参加の手順を見る</a>
-        <a href="{{ site.community.intro_issue_url }}" class="btn-step-primary" target="_blank" rel="noopener">自己紹介を投稿</a>
-      </div>
-      <div class="faq-mini">
-        <p><strong>よくある質問</strong></p>
-        <ul>
-          <li>匿名投稿ってどう扱われるの？</li>
-          <li>投稿はいつ反映される？</li>
-        </ul>
-      </div>
+    <h2>コミュニティに入る</h2>
+    <p class="participation-hub-lead">はじめての方は、まず次の3つから選んでください。</p>
+    <div class="participation-hub-grid">
+      <article class="participation-hub-card">
+        <h3>見る</h3>
+        <p>公開Q&Aやコミュニティ概要を見て、雰囲気を確認する。</p>
+        <div class="participation-hub-actions">
+          <a href="{{ '/community/' | relative_url }}" class="cta-participation-secondary">公開Q&Aを見る</a>
+          <a href="{{ '/community/' | relative_url }}" class="btn-step">コミュニティ概要</a>
+        </div>
+      </article>
+      <article class="participation-hub-card">
+        <h3>参加する</h3>
+        <p>公開でつながりたい人向け。自己紹介を投稿して参加を始める。</p>
+        <div class="participation-hub-actions">
+          <a href="{{ '/participation-guide/' | relative_url }}" class="cta-participation-primary">参加する</a>
+          <a href="{{ site.community.intro_issue_url }}" class="btn-step" target="_blank" rel="noopener">自己紹介を投稿する</a>
+        </div>
+      </article>
+      <article class="participation-hub-card">
+        <h3>匿名で質問する</h3>
+        <p>個別事情を含む悩みは匿名フォームから相談する。</p>
+        <div class="participation-hub-actions">
+          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-primary">匿名で質問する</a>
+        </div>
+        <p class="participation-hub-note">投稿内容は整理してQ&A化する場合があります。</p>
+      </article>
     </div>
+    <ul class="participation-hub-guidelines">
+      <li>個人名・企業名など特定情報は書かない</li>
+      <li>緊急案件は公的機関・専門機関への相談を優先</li>
+      <li>投稿内容は整理・要約して紹介する場合がある</li>
+    </ul>
   </div>
 </section>
+
 
 <section class="section" aria-label="目的別スタート">
   <div class="container">
