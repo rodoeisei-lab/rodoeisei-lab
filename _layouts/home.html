@@ -74,6 +74,29 @@ layout: base
   </div>
 </section>
 
+<section class="weekly-questions" aria-label="今週の相談ピックアップ">
+  <div class="container">
+    <h2>今週の相談ピックアップ</h2>
+    <p class="weekly-questions-lead">現場で寄せられた相談の一部を紹介します。</p>
+
+    <div class="question-grid">
+      {% for q in site.data.questions limit:3 %}
+      <article class="question-card status-{{ q.status }}">
+        <h3>{{ q.title }}</h3>
+        <p>{{ q.summary }}</p>
+        <span class="tag">{{ q.tag }}</span>
+        <a href="{{ q.url | relative_url }}" class="btn-read">回答を見る</a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="qa-actions">
+      <a href="{{ '/qa/' | relative_url }}" class="btn-primary">公開Q&A一覧を見る</a>
+      <a href="{{ '/qa/ask/' | relative_url }}" class="btn-secondary">匿名で相談する</a>
+    </div>
+  </div>
+</section>
+
 <section class="participation-hub" aria-label="コミュニティ参加ハブ">
   <div class="container">
     <h2>コミュニティに入る</h2>
