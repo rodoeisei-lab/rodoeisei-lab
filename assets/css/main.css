@@ -245,17 +245,17 @@ main a[class*="cta"] {
 }
 
 
-.nav-consult-btn {
-  background: #2563eb;
+.cta-question {
+  background: #e63946;
   color: #ffffff;
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
   margin-left: 12px;
 }
 
-.nav-consult-btn:hover {
+.cta-question:hover {
   opacity: 0.9;
 }
 .menu-btn {
@@ -305,8 +305,8 @@ main a[class*="cta"] {
     margin: 12px 0;
   }
 
-  .nav-consult-btn {
-    display: block;
+  .cta-question {
+    display: inline-block;
     text-align: center;
     margin-top: 12px;
   }
@@ -371,7 +371,8 @@ body.nav-open { overflow: hidden; }
   text-decoration: none;
 }
 .mobile-nav > .nav-cta,
-.mobile-nav > .nav-cta-primary {
+.mobile-nav > .nav-cta-primary,
+.mobile-nav > .cta-question {
   padding: 10px 14px;
   margin-left: 0;
 }
