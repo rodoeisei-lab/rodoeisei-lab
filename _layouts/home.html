@@ -135,6 +135,28 @@ layout: base
   </div>
 </section>
 
+<section class="open-questions" aria-label="回答募集中の相談">
+  <div class="container">
+    <h2>回答募集中の相談</h2>
+    <p class="open-questions-lead">現場の相談に、あなたの知見を貸してください。</p>
+
+    <div class="open-question-grid">
+      {% for q in site.data.open_questions limit:4 %}
+      <article class="open-question-card">
+        <span class="question-tag">{{ q.tag }}</span>
+        <h3>{{ q.title }}</h3>
+        <p class="question-date">{{ q.date }}</p>
+        <a href="{{ q.url | relative_url }}" class="btn-answer">回答する</a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p class="more-link">
+      <a href="{{ '/qa/' | relative_url }}">すべての相談を見る</a>
+    </p>
+  </div>
+</section>
+
 
 <section class="section" aria-label="目的別スタート">
   <div class="container">
