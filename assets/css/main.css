@@ -1609,6 +1609,77 @@ section { margin: var(--space-5) 0; }
 }
 
 
+
+.open-questions {
+  margin: -8px 0 32px;
+}
+
+.open-questions .container {
+  background: #fffaf3;
+  border: 1px solid #fed7aa;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--surface-shadow);
+}
+
+.open-questions h2 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+}
+
+.open-questions-lead {
+  margin: 0 0 18px;
+  color: #9a3412;
+}
+
+.open-question-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.open-question-card {
+  border: 1px solid #eee;
+  border-left: 4px solid #f4a261;
+  padding: 18px;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.open-question-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.question-tag {
+  font-size: 12px;
+  color: #777;
+}
+
+.question-date {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+}
+
+.btn-answer {
+  display: inline-block;
+  margin-top: 10px;
+  background: #f4a261;
+  color: #fff !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.more-link {
+  margin: 14px 0 0;
+}
+
 .participation-hub {
   margin: -8px 0 32px;
 }
@@ -1774,6 +1845,14 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
 @media (max-width: 768px) {
   .weekly-questions .container {
     padding: 18px;
+  }
+
+  .open-questions .container {
+    padding: 18px;
+  }
+
+  .open-question-grid {
+    grid-template-columns: 1fr;
   }
 
   .participation-hub-grid {
