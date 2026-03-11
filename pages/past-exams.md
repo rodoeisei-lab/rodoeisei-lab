@@ -63,6 +63,15 @@ permalink: /past-exams/
   <div class="link-domain">www.exam.or.jp</div>
 </div>
 
+## 労働衛生コンサルタント
+
+<div class="link-card">
+  <div class="link-title">労働衛生コンサルタント（公表試験問題）｜公益財団法人 安全衛生技術試験協会（外部リンク）</div>
+  <div class="link-note">公益財団法人 安全衛生技術試験協会の公式ページです。外部リンク。</div>
+  <a class="link-action" href="https://www.exam.or.jp/cskohyo/" target="_blank" rel="noopener noreferrer">公式ページを開く ↗</a>
+  <div class="link-domain">www.exam.or.jp</div>
+</div>
+
 ## その他（必要なら後で追加）
 
 - （ここに公式リンクを追記：リンクのみ）
