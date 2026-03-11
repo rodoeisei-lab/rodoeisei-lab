@@ -1863,3 +1863,71 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
     padding: 18px;
   }
 }
+
+
+.join-hero {
+  margin: 12px 0 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #ecfeff;
+  border: 1px solid #99f6e4;
+}
+
+.join-hero-lead {
+  margin: 0;
+  color: #115e59;
+}
+
+.join-cards {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 20px 0;
+}
+
+.join-card {
+  background: #ffffff;
+  border: 1px solid #ccfbf1;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.join-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.join-fit {
+  margin: 10px 0 0;
+  color: #0f766e;
+  font-size: .92rem;
+}
+
+.join-actions {
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.join-action-note {
+  margin: 0 0 4px;
+  font-size: .84rem;
+  color: #134e4a;
+}
+
+.join-rules h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.join-rules ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 900px) {
+  .join-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -18,9 +18,8 @@ layout: base
           現場と法令のあいだを埋める、一次情報ベースのナレッジハブ。
         </p>
         <div class="cta-buttons">
-          <a href="{{ '/participation-guide/' | relative_url }}" class="cta-participation-primary">参加する</a>
-          <a href="{{ "/qa/ask/" | relative_url }}" class="cta-participation-secondary">匿名で質問する</a>
-          <a href="{{ '/community/' | relative_url }}" class="cta-participation-secondary">公開Q&Aを見る</a>
+          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">参加する</a>
+          <a href="{{ "/qa/ask/" | relative_url }}" class="cta-participation-secondary">匿名で相談</a>
           <a href="{{ '/guides/' | relative_url }}" class="cta-tertiary">今週の解説を見る</a>
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
@@ -58,13 +57,17 @@ layout: base
               <div class="hero-stat-sub">匿名OK / 質問→記事化 / 全国の実務者で知見共有</div>
             </div>
             <div class="hero-stat-row">
-              <a class="hero-pill" href="{{ '/participation-guide/' | relative_url }}">
+              <a class="hero-pill" href="{{ '/join/' | relative_url }}">
                 <strong>参加する</strong>
-                参加ガイドと自己紹介投稿の入口
+                公開参加・匿名相談・Q&A閲覧の入口
               </a>
               <a class="hero-pill" href="{{ "/qa/ask/" | relative_url }}">
-                <strong>匿名で質問する</strong>
-                匿名フォームから相談を送る
+                <strong>匿名で相談</strong>
+                Googleフォームから匿名投稿する
+              </a>
+              <a class="hero-pill" href="{{ '/community/' | relative_url }}">
+                <strong>まずQ&Aを見る</strong>
+                コミュニティの雰囲気と公開Q&Aを確認
               </a>
             </div>
           </div>
@@ -103,28 +106,28 @@ layout: base
     <p class="participation-hub-lead">はじめての方は、まず次の3つから選んでください。</p>
     <div class="participation-hub-grid">
       <article class="participation-hub-card">
-        <h3>見る</h3>
-        <p>公開Q&Aやコミュニティ概要を見て、雰囲気を確認する。</p>
+        <h3>公開で参加する</h3>
+        <p>継続的に知見交換したい人向け。自己紹介や公開Q&Aに参加。</p>
         <div class="participation-hub-actions">
-          <a href="{{ '/community/' | relative_url }}" class="cta-participation-secondary">公開Q&Aを見る</a>
-          <a href="{{ '/community/' | relative_url }}" class="btn-step">コミュニティ概要</a>
-        </div>
-      </article>
-      <article class="participation-hub-card">
-        <h3>参加する</h3>
-        <p>公開でつながりたい人向け。自己紹介を投稿して参加を始める。</p>
-        <div class="participation-hub-actions">
-          <a href="{{ '/participation-guide/' | relative_url }}" class="cta-participation-primary">参加する</a>
+          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">参加する</a>
           <a href="{{ site.community.intro_issue_url }}" class="btn-step" target="_blank" rel="noopener">自己紹介を投稿する</a>
         </div>
       </article>
       <article class="participation-hub-card">
-        <h3>匿名で質問する</h3>
+        <h3>匿名で相談する</h3>
         <p>個別事情を含む悩みは匿名フォームから相談する。</p>
         <div class="participation-hub-actions">
-          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-primary">匿名で質問する</a>
+          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
         </div>
-        <p class="participation-hub-note">投稿内容は整理してQ&A化する場合があります。</p>
+        <p class="participation-hub-note">Googleフォーム（外部サイト）が開きます。</p>
+      </article>
+      <article class="participation-hub-card">
+        <h3>まずQ&Aを見る</h3>
+        <p>コミュニティの雰囲気や、過去のやり取りを先に確認する。</p>
+        <div class="participation-hub-actions">
+          <a href="{{ '/community/' | relative_url }}" class="btn-step">コミュニティを見る</a>
+          <a href="{{ '/join/' | relative_url }}" class="cta-participation-secondary">3つの入口を確認</a>
+        </div>
       </article>
     </div>
     <ul class="participation-hub-guidelines">
@@ -250,7 +253,7 @@ layout: base
     </div>
 
     <div class="testimonial-cta">
-      <a href="{{ '/community/' | relative_url }}" class="btn-primary">あなたも参加する</a>
+      <a href="{{ '/join/' | relative_url }}" class="btn-primary">あなたも参加する</a>
     </div>
   </div>
 </section>

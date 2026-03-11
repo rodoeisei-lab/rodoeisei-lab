@@ -10,10 +10,10 @@ permalink: /community/
 
 <div class="notice-box">
   <strong>はじめての方へ：</strong>
-  参加方法は「参加ガイドを見る」、公開Q&Aの雰囲気確認は「公開Q&Aを見る」、個別事情の相談は「匿名で質問する」を使ってください。
+  参加の入口は <a href="{{ '/join/' | relative_url }}">参加するページ（/join/）</a> に統一しました。このページは「場の説明」と「公開Q&Aの文脈確認」が役割です。
 </div>
 
-## 参加の入口
+## このページの役割（場の説明）
 
 <div class="entry-cards">
   <article class="entry-card">
@@ -22,9 +22,9 @@ permalink: /community/
     <a href="{{ '/community/' | relative_url }}" class="btn-step">コミュニティ概要を見る</a>
   </article>
   <article class="entry-card">
-    <h3>2. 参加ガイドを見る</h3>
-    <p>公開投稿と匿名相談の使い分け、投稿ルールを確認します。</p>
-    <a href="{{ '/participation-guide/' | relative_url }}" class="cta-participation-primary">参加ガイドを見る</a>
+    <h3>2. 参加ページを見る</h3>
+    <p>公開参加・匿名相談・Q&A閲覧の3分岐を確認します。</p>
+    <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">参加するページへ</a>
   </article>
   <article class="entry-card">
     <h3>3. 自己紹介を投稿する</h3>
@@ -37,9 +37,9 @@ permalink: /community/
     <a href="{{ site.community.issues_url }}" class="cta-participation-secondary" target="_blank" rel="noopener">公開Q&Aを見る</a>
   </article>
   <article class="entry-card">
-    <h3>5. 匿名で質問する</h3>
+    <h3>5. 匿名で相談する</h3>
     <p>個別事情や公開しづらい悩みは匿名フォームから送信します。</p>
-    <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-primary">匿名で質問する</a>
+    <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-primary">匿名で相談する</a>
   </article>
 </div>
 
@@ -48,7 +48,7 @@ permalink: /community/
 <div class="participation-steps community-steps">
   <div class="step-card">
     <ol>
-      <li>参加ガイドを確認する</li>
+      <li>参加ページ（/join/）を確認する</li>
       <li>公開参加の場合は自己紹介を投稿する（Issue Form）</li>
       <li>公開Q&Aまたは匿名フォームで質問・知見を投稿する</li>
     </ol>
