@@ -1,17 +1,34 @@
+- title: 作業環境測定で第3管理区分になった場合、まず何を優先して対応すべき？
+  summary: 第3管理区分での優先対応順序を整理。
+  key_answer: 原因特定 → 発生源対策 → 再測定の順で対応する。
+  tags:
+    - 粉じん
+    - 有機溶剤
+    - 作業環境測定
+    - 労基署対応
+    - リスクアセスメント
+  date: 2026-03-12
+  status: answered
+  url: /qa/third-control-class/
+
 - title: 局所排気装置の定期点検はどこまで記録すべき？
-  summary: 点検頻度と記録範囲の実務運用について
-  tag: 局所排気
+  summary: 点検記録の最低ラインと監査対応を整理。
+  key_answer: いつ・誰が・何を点検し、どう是正したかまで残す。
+  tags:
+    - 局所排気
+    - 定期点検
+    - 衛生管理
+  date: 2026-03-10
   status: answered
-  url: /qa/kyokuhai-check/
+  url: /qa/local-exhaust-inspection/
 
-- title: 作業環境測定で管理区分2が続いた場合の優先対応
-  summary: 改善措置と再測定の順序
-  tag: 作業環境測定
-  status: open
-  url: /qa/control-class-2/
-
-- title: 衛生委員会の議題が形骸化している
-  summary: 現場が関心を持つテーマの作り方
-  tag: 衛生委員会
+- title: 衛生委員会の議題が形骸化しているとき、どう立て直す？
+  summary: 現場課題ベースで議題を再設計する手順を整理。
+  key_answer: 議題を現場課題に寄せ、担当者と期限まで決める。
+  tags:
+    - 衛生委員会
+    - 安全衛生体制
+    - リスクアセスメント
+  date: 2026-03-08
   status: answered
-  url: /qa/eisei-iinkai/
+  url: /qa/hygiene-committee-agenda/

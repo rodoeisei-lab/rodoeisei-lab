@@ -77,24 +77,24 @@ layout: base
   </div>
 </section>
 
-<section class="weekly-questions" aria-label="今週の相談ピックアップ">
+<section class="weekly-questions" aria-label="現場Q&A">
   <div class="container">
-    <h2>今週の相談ピックアップ</h2>
-    <p class="weekly-questions-lead">現場で寄せられた相談の一部を紹介します。</p>
+    <h2>現場Q&A</h2>
+    <p class="weekly-questions-lead">現場でよく出る質問を、回答つきで公開しています。</p>
 
     <div class="question-grid">
       {% for q in site.data.questions limit:3 %}
       <article class="question-card status-{{ q.status }}">
         <h3>{{ q.title }}</h3>
-        <p>{{ q.summary }}</p>
-        <span class="tag">{{ q.tag }}</span>
+        <p>{{ q.key_answer }}</p>
+        <span class="tag">{{ q.tags[0] }}</span>
         <a href="{{ q.url | relative_url }}" class="btn-read">回答を見る</a>
       </article>
       {% endfor %}
     </div>
 
     <div class="qa-actions">
-      <a href="{{ '/qa/' | relative_url }}" class="btn-primary">公開Q&A一覧を見る</a>
+      <a href="{{ '/qa/' | relative_url }}" class="btn-primary">Q&A一覧を見る</a>
       <a href="{{ '/qa/ask/' | relative_url }}" class="btn-secondary">匿名で相談する</a>
     </div>
   </div>
