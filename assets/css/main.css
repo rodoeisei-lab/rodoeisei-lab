@@ -1866,72 +1866,101 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
 }
 
 
-.join-hero {
-  margin: 12px 0 20px;
-  padding: 16px;
-  border-radius: 14px;
-  background: #ecfeff;
-  border: 1px solid #99f6e4;
-}
 
-.join-hero-lead {
-  margin: 0;
-  color: #115e59;
-}
-
-.join-cards {
+.join-steps {
   display: grid;
-  gap: 14px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 20px 0;
+  gap: 16px;
+  margin: 22px 0 26px;
 }
 
+.join-step,
 .join-card {
   background: #ffffff;
-  border: 1px solid #ccfbf1;
+  border: 1px solid #bfdbfe;
   border-radius: 14px;
-  padding: 16px;
+  padding: 18px;
 }
 
-.join-card h2 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.2rem;
+.join-step-label {
+  display: inline-block;
+  margin: 0 0 8px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  background: #dbeafe;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
-.join-fit {
-  margin: 10px 0 0;
-  color: #0f766e;
-  font-size: .92rem;
+.join-step h2,
+.join-card h3 {
+  margin: 0 0 8px;
 }
 
-.join-actions {
-  margin-top: 14px;
+.join-step p,
+.join-card p {
+  margin: 0;
+  color: #334155;
+}
+
+.join-benefits {
   display: grid;
-  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 14px 0 24px;
 }
 
-.join-action-note {
-  margin: 0 0 4px;
-  font-size: .84rem;
-  color: #134e4a;
+.join-cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #1d4ed8;
+  transition: background .18s ease, transform .15s ease;
 }
 
-.join-rules h2 {
-  margin-top: 0;
-  font-size: 1.1rem;
+.join-cta:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
 }
 
-.join-rules ul {
-  margin: 8px 0 0;
-  padding-left: 18px;
+.join-cta.join-cta-secondary {
+  background: #1e40af;
+  border-color: #1e3a8a;
+}
+
+.join-rules {
+  margin: 0 0 20px;
+  padding-left: 20px;
+}
+
+.join-rules li {
+  margin-bottom: 8px;
+}
+
+.join-quick-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 8px 0 8px;
 }
 
 @media (max-width: 900px) {
-  .join-cards {
+  .join-steps,
+  .join-benefits,
+  .join-quick-links {
     grid-template-columns: 1fr;
   }
 }
+
 
 .qa-grid {
   display: grid;
