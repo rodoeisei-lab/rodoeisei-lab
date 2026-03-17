@@ -1946,6 +1946,47 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
   margin-bottom: 8px;
 }
 
+
+.answer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #7c3aed;
+  border: 1px solid #7c3aed;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.answer-cta:hover {
+  opacity: .92;
+}
+
+.answer-guide {
+  display: grid;
+  gap: 12px;
+}
+
+.answer-template {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(124, 58, 237, .35);
+  background: rgba(124, 58, 237, .08);
+  line-height: 1.9;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .cta-buttons .answer-cta,
+  .qa-actions .answer-cta,
+  .answer-guide .answer-cta {
+    width: 100%;
+  }
+}
+
 .join-quick-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
