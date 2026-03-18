@@ -140,6 +140,28 @@ layout: base
   </div>
 </section>
 
+<section class="answer-examples" aria-label="みんなの回答事例">
+  <div class="container">
+    <div class="answer-examples-header">
+      <h2>みんなの回答事例</h2>
+      <p class="answer-examples-lead">実在データがまだ少ないため、まずはサンプル事例を掲載しています。将来的には公開Q&Aから自動で反映できる構成を想定しています。</p>
+    </div>
+
+    <div class="answer-cards">
+      {% for item in site.data.answers %}
+      <article class="answer-card">
+        <h3>{{ item.title }}</h3>
+        <p class="answer-summary">{{ item.summary }}</p>
+        <p class="answer-meta">{{ item.meta }}</p>
+        {% if item.note %}<p class="answer-note">{{ item.note }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    <a href="{{ '/answer/' | relative_url }}" class="answer-cta">あなたの事例も共有する</a>
+  </div>
+</section>
+
 <section class="open-questions" aria-label="回答募集中の相談">
   <div class="container">
     <h2>回答募集中の相談</h2>
