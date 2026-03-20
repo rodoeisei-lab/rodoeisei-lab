@@ -1612,6 +1612,106 @@ section { margin: var(--space-5) 0; }
   margin: 14px 0 24px;
 }
 
+.community-guide {
+  margin: -8px 0 32px;
+}
+
+.community-guide .container {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef6ff 100%);
+  border: 1px solid #dbe4ee;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--surface-shadow);
+}
+
+.community-guide-header {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.community-guide-eyebrow {
+  margin: 0;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: #0f766e;
+}
+
+.community-guide h2 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.community-guide-lead,
+.community-guide-members {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.community-guide-members {
+  font-size: .92rem;
+}
+
+.community-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.community-step {
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.community-step-label {
+  display: inline-flex;
+  margin: 0 0 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.community-step h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+
+.community-step p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.community-guide-actions {
+  margin: 20px 0 12px;
+}
+
+.community-guide-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #115e59;
+  font-size: .88rem;
+}
+
+.community-guide-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(204, 251, 241, .9);
+  border: 1px solid #99f6e4;
+}
+
 .community-steps .step-card {
   background: #f8fafc;
   border-color: #cbd5e1;
@@ -2052,9 +2152,28 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
 }
 
 @media (max-width: 768px) {
+  .community-guide .container,
   .how-it-works .container,
   .weekly-questions .container {
     padding: 18px;
+  }
+
+  .community-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .community-step {
+    padding: 18px;
+  }
+
+  .community-guide-actions .cta-participation-primary,
+  .community-guide-actions .cta-participation-secondary {
+    width: 100%;
+  }
+
+  .community-guide-trust {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .flow {
