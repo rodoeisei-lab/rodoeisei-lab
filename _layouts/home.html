@@ -25,6 +25,18 @@ layout: base
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
         </div>
+
+        <article class="exam-cta-card" aria-label="過去問（公式）への案内">
+          <div class="exam-cta-copy">
+            <p class="exam-cta-eyebrow">資格対策の最短入口</p>
+            <h2 class="exam-cta-title">過去問（公式）</h2>
+            <p class="exam-cta-description">資格対策に使える公式過去問をまとめて確認。</p>
+            <p class="exam-cta-meta">作業環境測定士・第1種衛生管理者・労働衛生コンサルタント</p>
+          </div>
+          <div class="exam-cta-actions">
+            <a href="{{ '/past-exams/' | relative_url }}" class="exam-cta-button">過去問を見る</a>
+          </div>
+        </article>
         
         <form class="hero-search" action="{{ '/search/' | relative_url }}" method="get">
           <label class="sr-only" for="heroSearch">検索</label>
@@ -240,6 +252,16 @@ layout: base
         image_fallback="/assets/images/card-learning.svg"
         image_fallback_srcset="/assets/images/card-learning.svg 320w, /assets/images/card-learning.svg 640w"
         image_alt="学習コンテンツのイメージ"
+      %}
+      {% include list-card.html
+        class="home-start-card home-start-card-exam"
+        title="過去問"
+        description="公式過去問から資格対策を始める。"
+        link_url="/past-exams/"
+        link_label="過去問へ →"
+        image_fallback="/assets/images/card-learning.svg"
+        image_fallback_srcset="/assets/images/card-learning.svg 320w, /assets/images/card-learning.svg 640w"
+        image_alt="過去問学習のイメージ"
       %}
       {% include list-card.html
         class="home-start-card"

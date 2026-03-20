@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 公式 過去問リンク集
+title: 過去問（公式）リンク集
 permalink: /past-exams/
 ---
 
-# 公式 過去問リンク集（外部リンク）
+# 過去問（公式）リンク集（外部リンク）
 
 <div class="notice-box past-exams-contribute">
 <strong>このページを一緒に育てる</strong><br>
@@ -17,6 +17,10 @@ permalink: /past-exams/
 
 このページは、各団体が公開している「公表試験問題」等の**公式ページへのリンク集**です。
 このページの目的は、学習に必要な一次情報へ最短で辿れるようにすることです。
+
+<div class="exam-page-lead">
+  <p><strong>資格対策をすぐ始めたい方へ。</strong> 作業環境測定士・第1種衛生管理者・労働衛生コンサルタントの<strong>公式ページへの外部リンク</strong>をまとめています。</p>
+</div>
 
 <details class="past-exams-about">
 <summary>このページについて（解説）</summary>
