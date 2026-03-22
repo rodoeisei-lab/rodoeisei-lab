@@ -245,18 +245,60 @@ main a[class*="cta"] {
 }
 
 
-.cta-question {
-  background: #e63946;
+.cta-consult,
+.cta-consult-fixed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #e63946 0%, #ff6b6b 100%);
   color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 6px;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
+  box-shadow: 0 10px 24px rgba(230, 57, 70, .24);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.cta-consult {
   margin-left: 12px;
 }
 
-.cta-question:hover {
-  opacity: 0.9;
+.cta-consult:hover,
+.cta-consult-fixed:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(230, 57, 70, .28);
+}
+
+.cta-consult__label,
+.cta-consult-fixed__label {
+  line-height: 1.2;
+}
+
+.cta-consult__meta,
+.cta-consult-fixed__meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .18);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+.cta-consult-fixed {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 60;
+  min-width: min(320px, calc(100vw - 32px));
 }
 .menu-btn {
   display: none;
@@ -305,10 +347,30 @@ main a[class*="cta"] {
     margin: 12px 0;
   }
 
-  .cta-question {
-    display: inline-block;
-    text-align: center;
-    margin-top: 12px;
+  .cta-consult {
+    display: inline-flex;
+    width: 100%;
+    margin: 12px 0 0;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .cta-consult-fixed {
+    left: 16px;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    width: auto;
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 901px) {
+  .cta-consult-fixed {
+    display: none;
   }
 }
 
@@ -372,7 +434,7 @@ body.nav-open { overflow: hidden; }
 }
 .mobile-nav > .nav-cta,
 .mobile-nav > .nav-cta-primary,
-.mobile-nav > .cta-question {
+.mobile-nav > .cta-consult {
   padding: 10px 14px;
   margin-left: 0;
 }
