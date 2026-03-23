@@ -22,11 +22,12 @@ defaults:
 community:
   repository_url: "https://github.com/rodoeisei-lab/rodoeisei-lab"
   issues_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/issues"
+  discussions_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/discussions"
   intro_issue_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/issues/new?template=intro.yml"
   question_issue_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/issues/new?template=question.yml"
   discord_invite_url: ""
 
-community_url: "https://github.com/rodoeisei-lab/rodoeisei-lab"
+community_url: "https://github.com/rodoeisei-lab/rodoeisei-lab/discussions"
 google_form_qa_embed_url: ""
 qa_form_url: "https://forms.gle/VkhwitiNsNXyNQ2C9"
 

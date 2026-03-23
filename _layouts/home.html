@@ -18,9 +18,9 @@ layout: base
           現場と法令のあいだを埋める、一次情報ベースのナレッジハブ。
         </p>
         <div class="cta-buttons">
-          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">参加する</a>
-          <a href="{{ '/answer/' | relative_url }}" class="answer-cta">回答する</a>
-          <a href="{{ "/qa/ask/" | relative_url }}" class="cta-participation-secondary">匿名で相談</a>
+          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
+          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談</a>
+          <a href="{{ '/qa/' | relative_url }}" class="cta-tertiary">公開Q&amp;Aを見る</a>
           <a href="{{ '/guides/' | relative_url }}" class="cta-tertiary">今週の解説を見る</a>
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
@@ -66,21 +66,21 @@ layout: base
           <div class="hero-orb-inner">
             <div>
               <div class="hero-stat-label">COMMUNITY SNAPSHOT</div>
-              <div class="hero-stat-main">実務者の知見が集まる場所</div>
-              <div class="hero-stat-sub">匿名OK / 質問→記事化 / 全国の実務者で知見共有</div>
+              <div class="hero-stat-main">継続的に集まる公開コミュニティを主入口に</div>
+              <div class="hero-stat-sub">GitHub Discussions を主導線に、匿名相談は必要時だけ使える構成へ</div>
             </div>
             <div class="hero-stat-row">
-              <a class="hero-pill" href="{{ '/join/' | relative_url }}">
-                <strong>参加する</strong>
-                公開参加・匿名相談・Q&A閲覧の入口
+              <a class="hero-pill hero-pill-primary" href="{{ '/join/' | relative_url }}">
+                <strong>コミュニティに入る</strong>
+                公開参加の主入口を1クリックで確認
               </a>
-              <a class="hero-pill" href="{{ "/qa/ask/" | relative_url }}">
+              <a class="hero-pill" href="{{ '/qa/ask/' | relative_url }}">
                 <strong>匿名で相談</strong>
-                Googleフォームから匿名投稿する
+                個別事情が強いときは Google フォームへ
               </a>
-              <a class="hero-pill" href="{{ '/community/' | relative_url }}">
-                <strong>まずQ&Aを見る</strong>
-                コミュニティの雰囲気と公開Q&Aを確認
+              <a class="hero-pill" href="{{ '/qa/' | relative_url }}">
+                <strong>公開Q&amp;Aを見る</strong>
+                先に相談例や雰囲気を確認する
               </a>
             </div>
           </div>
@@ -90,99 +90,60 @@ layout: base
   </div>
 </section>
 
-<section class="community-guide" aria-label="コミュニティ参加ガイド">
+<section class="community-entry" aria-label="コミュニティに入る">
   <div class="container">
-    <div class="community-guide-header">
-      <p class="community-guide-eyebrow">COMMUNITY GUIDE</p>
-      <h2>全国の労働衛生担当者が集まる場です</h2>
-      <p class="community-guide-lead">匿名OK。現場の悩みをそのまま相談でき、参加したその日から質問・回答で知見を増やせます。</p>
-      <p class="community-guide-members">作業環境測定士 / 衛生管理者 / 労働衛生コンサルタント志望 など</p>
+    <div class="community-entry-header">
+      <p class="community-entry-eyebrow">COMMUNITY ENTRY</p>
+      <h2>全国の労働衛生担当者が集まる場に参加する</h2>
+      <p class="community-entry-lead">実務の悩み、他社事例、法令運用の考え方を継続的に共有できる場を主入口にしました。まずはコミュニティ本体に参加し、必要に応じて匿名相談も使えます。</p>
     </div>
-
-    <div class="community-steps">
-      <article class="community-step">
-        <p class="community-step-label">STEP 1</p>
-        <h3>参加する（匿名OK）</h3>
-        <p>まずは参加ページから入口を確認。公開参加でも匿名相談でも、1クリックで次の行動に進めます。</p>
-      </article>
-      <article class="community-step">
-        <p class="community-step-label">STEP 2</p>
-        <h3>質問する / 回答する</h3>
-        <p>困りごとは質問へ、経験は回答へ。現場で使える実務知見を、そのままコミュニティに持ち寄れます。</p>
-      </article>
-      <article class="community-step">
-        <p class="community-step-label">STEP 3</p>
-        <h3>知見が蓄積される</h3>
-        <p>やり取りは公開Q&amp;Aや記事として整理され、次に迷う人の判断材料として残ります。</p>
-      </article>
+    <div class="community-entry-actions">
+      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
+      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
+      <a href="{{ '/qa/' | relative_url }}" class="community-entry-link">公開Q&amp;Aを見る</a>
     </div>
-
-    <div class="cta-buttons community-guide-actions">
-      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">参加する</a>
-      <a href="{{ "/qa/ask/" | relative_url }}" class="cta-participation-secondary">匿名で相談</a>
-    </div>
-
-    <ul class="community-guide-trust">
-      <li>営業・勧誘は禁止</li>
-      <li>匿名で投稿可能</li>
-      <li>初心者の質問歓迎</li>
+    <ul class="community-entry-points">
+      <li>公開で継続参加する入口を一本化</li>
+      <li>匿名相談は残しつつ主導線から一段下げる</li>
+      <li>閲覧だけの人も公開Q&amp;Aから参加前の雰囲気確認が可能</li>
     </ul>
   </div>
 </section>
 
-<section class="how-it-works" aria-label="このサイトの使い方">
+<section class="participation-hub" aria-label="コミュニティ参加ハブ">
   <div class="container">
-    <h2>このサイトの使い方</h2>
-    <div class="flow">
-      <div class="flow-step">
-        <h3>① 相談する</h3>
-        <p>現場の悩みを匿名で投稿できます。</p>
-        <a href="{{ '/qa/ask/' | relative_url }}" class="flow-btn">相談する</a>
-      </div>
-
-      <div class="flow-arrow" aria-hidden="true">→</div>
-
-      <div class="flow-step">
-        <h3>② 回答が集まる</h3>
-        <p>他社の運用や対策が共有されます。</p>
-        <a href="{{ '/answer/' | relative_url }}" class="flow-btn">回答を見る</a>
-      </div>
-
-      <div class="flow-arrow" aria-hidden="true">→</div>
-
-      <div class="flow-step">
-        <h3>③ 知見が蓄積</h3>
-        <p>Q&amp;Aとして蓄積され、誰でも活用できます。</p>
-        <a href="{{ '/qa/' | relative_url }}" class="flow-btn">Q&amp;Aを見る</a>
-      </div>
+    <h2>コミュニティに入る</h2>
+    <p class="participation-hub-lead">役割を分けつつ、視覚上の主役は「公開で参加する」です。</p>
+    <div class="participation-hub-grid">
+      <article class="participation-hub-card participation-hub-card-featured">
+        <h3>公開で参加する</h3>
+        <p>継続的に知見交換したい人向け。GitHub Discussions を主入口にして、質問・回答・運用メモを蓄積します。</p>
+        <div class="participation-hub-actions">
+          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
+          <a href="{{ site.community.discussions_url | default: site.community.repository_url }}" class="btn-step" target="_blank" rel="noopener">GitHub Discussions を開く</a>
+        </div>
+      </article>
+      <article class="participation-hub-card">
+        <h3>匿名で相談する</h3>
+        <p>個別事情を含む悩みは匿名フォームから相談。既存の Google フォーム導線はそのまま残しています。</p>
+        <div class="participation-hub-actions">
+          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
+        </div>
+        <p class="participation-hub-note">個人名・企業名など特定情報は書かずにご利用ください。</p>
+      </article>
+      <article class="participation-hub-card">
+        <h3>まずQ&amp;Aを見る</h3>
+        <p>投稿前に、公開Q&amp;Aや過去の相談を見てテーマ感をつかみたい人向けです。</p>
+        <div class="participation-hub-actions">
+          <a href="{{ '/qa/' | relative_url }}" class="btn-step">公開Q&amp;Aを見る</a>
+        </div>
+      </article>
     </div>
-
-    <p class="flow-note">あなたの経験が他の労働衛生担当者の助けになります。</p>
-  </div>
-</section>
-
-<section class="home-anonymous-form" aria-label="匿名で相談する">
-  <div class="container">
-    <div class="home-anonymous-form-card">
-      <div class="home-anonymous-form-header">
-        <p class="home-anonymous-form-eyebrow">ANONYMOUS CONSULTATION</p>
-        <h2>匿名で相談する</h2>
-        <p class="home-anonymous-form-lead">現場の悩みを匿名で投稿できます。初歩的な質問でも問題ありません。個人名・企業名などの特定情報は書かずにお送りください。投稿内容は必要に応じて整理・要約し、公開Q&amp;Aとして紹介する場合があります。</p>
-      </div>
-      <div class="home-anonymous-form-frame-wrap">
-        <iframe
-          class="home-anonymous-form-frame"
-          src="https://docs.google.com/forms/d/e/1FAIpQLScaTfm-czqSSl2bFcgB2U8_a37FG9J7xG0lRoHH1kH2ujOwAA/viewform?embedded=true"
-          width="100%"
-          height="1260"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          loading="lazy"
-          title="匿名相談フォーム"
-        >読み込んでいます…</iframe>
-      </div>
-    </div>
+    <ul class="participation-hub-guidelines">
+      <li>主入口は「コミュニティに入る」</li>
+      <li>匿名相談は個別事情が強いケース向け</li>
+      <li>緊急案件は公的機関・専門機関への相談を優先</li>
+    </ul>
   </div>
 </section>
 
@@ -203,95 +164,11 @@ layout: base
     </div>
 
     <div class="qa-actions">
-      <a href="{{ '/qa/' | relative_url }}" class="btn-primary">Q&A一覧を見る</a>
-      <a href="{{ '/answer/' | relative_url }}" class="answer-cta">回答する</a>
+      <a href="{{ '/qa/' | relative_url }}" class="btn-primary">Q&amp;A一覧を見る</a>
       <a href="{{ '/qa/ask/' | relative_url }}" class="btn-secondary">匿名で相談する</a>
     </div>
   </div>
 </section>
-
-<section class="participation-hub" aria-label="コミュニティ参加ハブ">
-  <div class="container">
-    <h2>コミュニティに入る</h2>
-    <p class="participation-hub-lead">はじめての方は、まず次の3つから選んでください。</p>
-    <div class="participation-hub-grid">
-      <article class="participation-hub-card">
-        <h3>公開で参加する</h3>
-        <p>継続的に知見交換したい人向け。自己紹介や公開Q&Aに参加。</p>
-        <div class="participation-hub-actions">
-          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">参加する</a>
-          <a href="{{ site.community.intro_issue_url }}" class="btn-step" target="_blank" rel="noopener">自己紹介を投稿する</a>
-        </div>
-      </article>
-      <article class="participation-hub-card">
-        <h3>匿名で相談する</h3>
-        <p>個別事情を含む悩みは匿名フォームから相談する。</p>
-        <div class="participation-hub-actions">
-          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
-        </div>
-        <p class="participation-hub-note">ホーム上の埋め込みフォームからも匿名相談できます。</p>
-      </article>
-      <article class="participation-hub-card">
-        <h3>まずQ&Aを見る</h3>
-        <p>コミュニティの雰囲気や、過去のやり取りを先に確認する。</p>
-        <div class="participation-hub-actions">
-          <a href="{{ '/community/' | relative_url }}" class="btn-step">コミュニティを見る</a>
-          <a href="{{ '/join/' | relative_url }}" class="cta-participation-secondary">3つの入口を確認</a>
-        </div>
-      </article>
-    </div>
-    <ul class="participation-hub-guidelines">
-      <li>個人名・企業名など特定情報は書かない</li>
-      <li>緊急案件は公的機関・専門機関への相談を優先</li>
-      <li>投稿内容は整理・要約して紹介する場合がある</li>
-    </ul>
-  </div>
-</section>
-
-<section class="answer-examples" aria-label="みんなの回答事例">
-  <div class="container">
-    <div class="answer-examples-header">
-      <h2>みんなの回答事例</h2>
-      <p class="answer-examples-lead">実在データがまだ少ないため、まずはサンプル事例を掲載しています。将来的には公開Q&Aから自動で反映できる構成を想定しています。</p>
-    </div>
-
-    <div class="answer-cards">
-      {% for item in site.data.answers %}
-      <article class="answer-card">
-        <h3>{{ item.title }}</h3>
-        <p class="answer-summary">{{ item.summary }}</p>
-        <p class="answer-meta">{{ item.meta }}</p>
-        {% if item.note %}<p class="answer-note">{{ item.note }}</p>{% endif %}
-      </article>
-      {% endfor %}
-    </div>
-
-    <a href="{{ '/answer/' | relative_url }}" class="answer-cta">あなたの事例も共有する</a>
-  </div>
-</section>
-
-<section class="open-questions" aria-label="回答募集中の相談">
-  <div class="container">
-    <h2>回答募集中の相談</h2>
-    <p class="open-questions-lead">現場の相談に、あなたの知見を貸してください。</p>
-
-    <div class="open-question-grid">
-      {% for q in site.data.open_questions limit:4 %}
-      <article class="open-question-card">
-        <span class="question-tag">{{ q.tag }}</span>
-        <h3>{{ q.title }}</h3>
-        <p class="question-date">{{ q.date }}</p>
-        <a href="{{ q.url | relative_url }}" class="btn-answer">回答する</a>
-      </article>
-      {% endfor %}
-    </div>
-
-    <p class="more-link">
-      <a href="{{ '/qa/' | relative_url }}">すべての相談を見る</a>
-    </p>
-  </div>
-</section>
-
 
 <section class="section" aria-label="目的別スタート">
   <div class="container">
@@ -395,7 +272,7 @@ layout: base
     </div>
 
     <div class="testimonial-cta">
-      <a href="{{ '/join/' | relative_url }}" class="btn-primary">あなたも参加する</a>
+      <a href="{{ '/join/' | relative_url }}" class="btn-primary">あなたもコミュニティに入る</a>
     </div>
   </div>
 </section>
