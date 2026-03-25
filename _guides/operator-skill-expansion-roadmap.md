@@ -2,12 +2,19 @@
 layout: article
 title: 運営者スキル拡充ロードマップ（Jekyll・SEO・外部連携）
 description: 小さく試して高速に改善するために、Jekyllテーマ運用、GitHub Actions、SEO/WCAG 2.2、パフォーマンス、検索、SNS・外部導線連携を一気通貫で学ぶ実践計画。
-summary: 8週間で運営スキルを拡張する実践ロードマップ。<br>実装・計測・改善を同時に進める。<br>壊れても戻せる前提で、スピード優先の運用設計へ。
+article_type: guide
+summary:
+  - 8週間で運営スキルを拡張する実践ロードマップ。
+  - 実装・計測・改善を同時に進める運用設計。
+  - 壊れても戻せる前提でスピード優先に前進する。
 category: Guides
 level: 実務
 reading_time: 9分
 minutes: 9
 updated: 2026-02-13
+updated_at: 2026-02-13
+reviewed_at: 2026-02-13
+source_type: practical
 status: published
 featured: false
 tags:
@@ -20,6 +27,8 @@ tags:
   - Algolia
   - SNS
 audience: サイト運営者・コンテンツ管理者・改善を高速化したい個人/小チーム
+sources:
+  - '実務整理: サイト運営の改善サイクル（計測→実装→検証）'
 last_updated: 2026-02-13
 lead: 「壊れても戻せる」運用を前提に、学習と実装を同時進行するための短期集中プランです。
 ---

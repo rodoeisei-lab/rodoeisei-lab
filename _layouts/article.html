@@ -1,24 +1,37 @@
 ---
 layout: base
 ---
+{% assign inferred_article_type = page.article_type | default: nil %}
+{% if inferred_article_type == nil or inferred_article_type == "" %}
+  {% if page.collection == "guides" or page.category == "Guides" %}
+    {% assign inferred_article_type = "guide" %}
+  {% elsif page.collection == "updates" or page.category == "Updates" %}
+    {% assign inferred_article_type = "update" %}
+  {% else %}
+    {% assign inferred_article_type = "article" %}
+  {% endif %}
+{% endif %}
+
 <section class="page-hero">
   <div class="container">
-    <p class="page-eyebrow">{{ page.category | default: "Guide" }}</p>
+    <p class="page-eyebrow">{{ page.category | default: "Article" }}</p>
     {% assign page_title = page.title | default: page.slug | default: page.basename | default: "更新情報" %}
     <h1>{{ page_title }}</h1>
     {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
     <div class="article-meta">
-      {% if page.level %}<span class="badge">{{ page.level }}</span>{% endif %}
+      <span class="badge">{{ inferred_article_type }}</span>
       {% if page.reading_time %}<span class="badge">{{ page.reading_time }}</span>{% endif %}
-      {% if page.updated %}<span class="badge">更新: {{ page.updated }}</span>{% endif %}
+      {% assign hero_updated = page.updated_at | default: page.updated %}
+      {% if hero_updated %}<span class="badge">更新: {{ hero_updated }}</span>{% endif %}
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container article">
-    {% include article-meta.html %}
+    {% include article-meta-header.html %}
     {{ content }}
+    {% include article-footer-nav.html %}
 
     {% assign feedback_form_url = page.feedback_form_url | default: site.feedback.article_form_url %}
     {% assign feedback_survey_url = page.feedback_survey_url | default: site.feedback.article_survey_url %}

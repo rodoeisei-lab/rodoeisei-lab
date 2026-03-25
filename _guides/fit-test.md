@@ -2,12 +2,19 @@
 layout: article
 title: フィットテスト導入の最小セット
 description: 安全衛生管理者向けに、呼吸用保護具フィットテストの導入手順、記録方法、再評価の実務ポイントを解説。
-summary: 制度導入の目的と対象を1分で把握。<br>最小フローと担当の役割を整理。<br>記録・再評価までの要点を確認。
+article_type: guide
+summary:
+  - 制度導入の目的と対象を1分で把握できる。
+  - 最小フローと担当の役割を短時間で整理できる。
+  - 記録・再評価までの要点を現場運用に落とし込める。
 category: Guides
 level: 実務
 reading_time: 6分
 minutes: 6
 updated: 2025-03-01
+updated_at: 2025-03-01
+reviewed_at: 2025-03-01
+source_type: notice
 status: published
 featured: true
 tags:

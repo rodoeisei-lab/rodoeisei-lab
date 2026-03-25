@@ -2,12 +2,20 @@
 layout: article
 title: PPE点検ルールの再確認ポイント
 description: 衛生管理者・現場リーダー向けに、PPE点検頻度、記録運用、是正期限の見直しポイントを整理した更新記事。
-summary: 点検頻度と記録の見直しに向けた、現場で使える3つの確認事項。
+article_type: update
+summary:
+  - 点検頻度と記録の見直しで押さえるべき3つの確認事項。
+  - 週次・月次点検の線引きと是正期限の明確化が中心。
 category: Updates
 impact: "影響: 中"
 updated: 2025-03-01
+updated_at: 2025-03-01
+reviewed_at: 2025-03-01
+source_type: practical
 target: 衛生管理者・現場リーダー
+audience: 衛生管理者・現場リーダー
 effective_from: 2025-03-15
+next_action: 現行の点検票へ「是正期限」欄を追加し、担当者に共有する
 lead: 週次・月次点検を見直す時に使える、最小のチェック項目だけを整理しました。
 ---
 

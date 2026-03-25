@@ -1,0 +1,75 @@
+{% assign article_type = page.article_type | default: nil %}
+{% if article_type == nil or article_type == "" %}
+  {% if page.collection == "guides" or page.category == "Guides" %}
+    {% assign article_type = "guide" %}
+  {% elsif page.collection == "updates" or page.category == "Updates" %}
+    {% assign article_type = "update" %}
+  {% else %}
+    {% assign article_type = "article" %}
+  {% endif %}
+{% endif %}
+
+{% assign article_type_label = site.data.article-types.article_type_labels[article_type] | default: article_type | upcase %}
+{% assign reading_time = page.reading_time | default: page.minutes %}
+{% assign audience = page.audience | default: page.target | default: "対象読者は準備中です。" %}
+{% assign updated_at = page.updated_at | default: page.updated | default: "未記入" %}
+{% assign reviewed_at = page.reviewed_at | default: page.last_updated | default: page.updated_at | default: page.updated | default: "未確認" %}
+{% assign source_type = page.source_type | default: "pending" %}
+{% assign source_type_label = site.data.article-types.source_type_labels[source_type] | default: source_type %}
+
+<div class="article-meta-header">
+  <div class="article-meta-header__chips" aria-label="記事メタ">
+    <span class="badge">タイプ: {{ article_type_label }}</span>
+    {% if reading_time %}<span class="badge">読了目安: {{ reading_time }}</span>{% endif %}
+    <span class="badge">更新日: {{ updated_at }}</span>
+    <span class="badge">最終確認日: {{ reviewed_at }}</span>
+    <span class="badge">根拠種別: {{ source_type_label }}</span>
+  </div>
+
+  <div class="article-meta-box article-meta-box--header">
+    <div class="article-meta-item">
+      <h2>要点</h2>
+      {% if page.summary %}
+        {% if page.summary.first %}
+          <ul>
+            {% for point in page.summary limit:3 %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>{{ page.summary }}</p>
+        {% endif %}
+      {% else %}
+      <p>要点は準備中です。</p>
+      {% endif %}
+    </div>
+
+    <div class="article-meta-item">
+      <h2>対象</h2>
+      <p>{{ audience }}</p>
+      {% if page.next_action %}
+      <p class="article-meta-next">次アクション: {{ page.next_action }}</p>
+      {% endif %}
+    </div>
+
+    <div class="article-meta-item">
+      <h2>参考 / 根拠</h2>
+      <p class="article-meta-source-type">{{ source_type_label }}</p>
+      {% if page.sources %}
+      <ul>
+        {% for source in page.sources %}
+        <li>{{ source }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>一次情報準備中（確認中）</p>
+      {% endif %}
+    </div>
+
+    <div class="article-meta-item">
+      <h2>最終更新</h2>
+      <p>更新日: {{ updated_at }}</p>
+      <p>最終確認日: {{ reviewed_at }}</p>
+    </div>
+  </div>
+</div>

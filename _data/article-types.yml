@@ -1,0 +1,12 @@
+article_type_labels:
+  guide: ガイド
+  update: 更新
+  qa: Q&A
+  learn: 学習
+  article: 記事
+
+source_type_labels:
+  law: 法令
+  notice: 通達
+  practical: 実務整理
+  pending: 一次情報準備中
