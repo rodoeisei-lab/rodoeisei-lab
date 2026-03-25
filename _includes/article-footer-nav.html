@@ -1,0 +1,49 @@
+{% assign article_type = page.article_type | default: nil %}
+{% if article_type == nil or article_type == "" %}
+  {% if page.collection == "guides" or page.category == "Guides" %}
+    {% assign article_type = "guide" %}
+  {% elsif page.collection == "updates" or page.category == "Updates" %}
+    {% assign article_type = "update" %}
+  {% else %}
+    {% assign article_type = "article" %}
+  {% endif %}
+{% endif %}
+
+<section class="article-footer-nav" aria-label="記事末尾ナビゲーション">
+  <div class="article-footer-nav__grid">
+    <div class="article-footer-nav__item">
+      <h2>関連ページ</h2>
+      <ul>
+        {% if article_type == "update" %}
+        <li><a href="{{ '/updates/' | relative_url }}">更新一覧で他の変更も確認する</a></li>
+        <li><a href="{{ '/guides/' | relative_url }}">対応手順をガイドで確認する</a></li>
+        {% else %}
+        <li><a href="{{ '/guides/' | relative_url }}">解説一覧に戻る</a></li>
+        <li><a href="{{ '/updates/' | relative_url }}">最新アップデートを見る</a></li>
+        {% endif %}
+        <li><a href="{{ '/glossary/' | relative_url }}">用語集で専門語を確認する</a></li>
+      </ul>
+    </div>
+
+    <div class="article-footer-nav__item">
+      <h2>次に読む</h2>
+      <ul>
+        {% if article_type == "update" %}
+        <li><a href="{{ '/guides/fit-test/' | relative_url }}">フィットテスト導入の最小セット</a></li>
+        <li><a href="{{ '/guides/operator-skill-expansion-roadmap/' | relative_url }}">運営者スキル拡充ロードマップ</a></li>
+        {% else %}
+        <li><a href="{{ '/learn/' | relative_url }}">学習ハブでテーマ別に学ぶ</a></li>
+        <li><a href="{{ '/updates/' | relative_url }}">制度変更の最新情報を確認する</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <div class="article-footer-nav__item">
+      <h2>参加する</h2>
+      <ul>
+        <li><a href="{{ '/learn/' | relative_url }}">学習ハブへ</a></li>
+        <li><a href="{{ '/qa/' | relative_url }}">公開Q&Aを見る</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
