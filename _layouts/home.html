@@ -110,6 +110,50 @@ layout: base
   </div>
 </section>
 
+{% assign activities = site.data.community_activity %}
+<section class="community-activity" aria-label="最近のコミュニティ活動">
+  <div class="container">
+    <div class="community-activity-header">
+      <p class="community-activity-eyebrow">COMMUNITY ACTIVITY</p>
+      <h2>最近のコミュニティ活動</h2>
+      <p class="community-activity-lead">いま動いている相談や参加者を見る</p>
+    </div>
+
+    {% if activities and activities.size > 0 %}
+      <div class="community-activity-grid">
+        {% for item in activities limit:6 %}
+          {% assign activity_type = item.type | default: '公開Q&A' %}
+          {% assign activity_class = 'qa' %}
+          {% if activity_type contains '自己紹介' %}
+            {% assign activity_class = 'intro' %}
+          {% elsif activity_type contains '回答募集中' %}
+            {% assign activity_class = 'needs-answer' %}
+          {% endif %}
+          <article class="community-activity-card">
+            <p class="community-activity-type community-activity-type-{{ activity_class }}">{{ activity_type }}</p>
+            <h3>
+              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            </h3>
+            <p class="community-activity-meta">
+              <span>{{ item.date | date: "%Y.%m.%d" }}</span>
+              <span class="community-activity-tag">{{ item.tag }}</span>
+            </p>
+            <a class="community-activity-link" href="{{ item.url | relative_url }}">内容を見る</a>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="community-activity-empty">活動準備中。まずはコミュニティ参加または匿名相談からどうぞ。</p>
+    {% endif %}
+
+    <div class="community-activity-actions">
+      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
+      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
+      <a href="{{ '/qa/' | relative_url }}" class="community-activity-link-secondary">公開Q&amp;Aを見る</a>
+    </div>
+  </div>
+</section>
+
 <section class="participation-hub" aria-label="コミュニティ参加ハブ">
   <div class="container">
     <h2>コミュニティに入る</h2>
