@@ -1,0 +1,37 @@
+<section class="join-post-templates" aria-label="最初の投稿テンプレ">
+  <div class="join-post-templates-header">
+    <h2>最初の投稿テンプレ</h2>
+    <p class="join-post-templates-lead">そのまま使えます。<strong>このままコピペしてOK</strong>・<strong>1行だけでもOK</strong>です。</p>
+  </div>
+
+  {% assign discussion_post_url = site.community.repository_url | append: '/discussions/new/choose' %}
+
+  <div class="template-card-grid">
+    <article class="template-card">
+      <h3>自己紹介テンプレ</h3>
+      <pre><code>【担当業務】
+【業種】
+【困っていること】
+【一言】</code></pre>
+      <a class="join-cta join-cta-primary" href="{{ discussion_post_url }}" target="_blank" rel="noopener">この内容で投稿する</a>
+    </article>
+
+    <article class="template-card">
+      <h3>質問テンプレ</h3>
+      <pre><code>【何に困っているか】
+【状況（できる範囲で）】
+【試したこと】
+【知りたいこと】</code></pre>
+      <a class="join-cta join-cta-primary" href="{{ discussion_post_url }}" target="_blank" rel="noopener">この内容で投稿する</a>
+    </article>
+
+    <article class="template-card">
+      <h3>事例共有テンプレ</h3>
+      <pre><code>【テーマ】
+【背景】
+【やったこと】
+【結果・気づき】</code></pre>
+      <a class="join-cta join-cta-primary" href="{{ discussion_post_url }}" target="_blank" rel="noopener">この内容で投稿する</a>
+    </article>
+  </div>
+</section>
