@@ -2640,10 +2640,65 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
   margin: 8px 0 8px;
 }
 
+.join-post-templates {
+  margin: 20px 0 26px;
+}
+
+.join-post-templates-header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.join-post-templates-header h2 {
+  margin: 0;
+}
+
+.join-post-templates-lead {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.template-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.template-card {
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.template-card h3 {
+  margin: 0 0 10px;
+}
+
+.template-card pre {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: .95rem;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.template-card code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 @media (max-width: 900px) {
   .join-steps,
   .join-benefits,
-  .join-quick-links {
+  .join-quick-links,
+  .template-card-grid {
     grid-template-columns: 1fr;
   }
 }
