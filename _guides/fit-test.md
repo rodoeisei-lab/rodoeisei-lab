@@ -23,6 +23,24 @@ tags:
   - 導入
   - 記録
 audience: 現場担当者・安全衛生管理者・導入初期の責任者
+takeaway: 対象選定・実施方式・記録の3点を固定すれば、1部署から再現可能な運用を短期間で立ち上げられます。
+next_action:
+  - 対象者5〜10名のリストを作成する
+  - 使用マスクの型式とサイズ候補を2つ以上決める
+  - 合否と条件を残せる記録様式を当日用に準備する
+related_links:
+  - title: 学習ハブで導入テーマを横断して確認する
+    url: /learn/
+    group: next
+  - title: PPE点検ルールの再確認ポイント
+    url: /updates/ppe-checklist/
+    group: next
+  - title: 運営者スキル拡充ロードマップ
+    url: /guides/operator-skill-expansion-roadmap/
+    group: related
+  - title: 用語集でフィットテスト関連語を確認する
+    url: /glossary/
+    group: related
 sources:
   - '<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000132963.html" target="_blank" rel="noopener">厚生労働省: 呼吸用保護具のフィットテスト</a>'
   - '<a href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">中央労働災害防止協会（ガイド類）</a>'

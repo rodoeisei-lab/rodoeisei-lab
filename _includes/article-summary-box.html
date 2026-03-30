@@ -1,0 +1,125 @@
+{% assign article_type = page.article_type | default: nil %}
+{% if article_type == nil or article_type == "" %}
+  {% if page.collection == "guides" or page.category == "Guides" %}
+    {% assign article_type = "guide" %}
+  {% elsif page.collection == "updates" or page.category == "Updates" %}
+    {% assign article_type = "update" %}
+  {% else %}
+    {% assign article_type = "article" %}
+  {% endif %}
+{% endif %}
+
+{% assign audience = page.audience | default: page.target %}
+{% assign takeaway = page.takeaway | default: page.lead | default: page.description %}
+{% assign next_action = page.next_action %}
+{% assign has_related_links = false %}
+{% if page.related_links and page.related_links.size > 0 %}
+  {% assign has_related_links = true %}
+{% endif %}
+
+{% assign has_summary_box = false %}
+{% if article_type == "update" %}
+  {% if takeaway or next_action %}
+    {% assign has_summary_box = true %}
+  {% endif %}
+{% else %}
+  {% if audience or takeaway or next_action %}
+    {% assign has_summary_box = true %}
+  {% endif %}
+{% endif %}
+
+{% if has_summary_box %}
+<section class="article-summary-box" aria-label="この記事の要約">
+  <div class="article-summary-box__panel">
+    {% if article_type != "update" and audience %}
+    <div class="article-summary-box__item">
+      <p class="article-summary-box__label">対象者</p>
+      <p class="article-summary-box__value">{{ audience }}</p>
+    </div>
+    {% endif %}
+
+    {% if takeaway %}
+    <div class="article-summary-box__item">
+      <p class="article-summary-box__label">この記事の結論</p>
+      <p class="article-summary-box__value">{{ takeaway }}</p>
+    </div>
+    {% endif %}
+
+    {% if next_action %}
+    <div class="article-summary-box__item">
+      <p class="article-summary-box__label">読後にやること</p>
+      {% if next_action.first %}
+      <ul class="article-summary-box__list">
+        {% for action in next_action limit:3 %}
+        <li>{{ action }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="article-summary-box__value">{{ next_action }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="article-summary-links">
+    <div class="article-summary-links__group">
+      <p class="article-summary-box__label">次に読む</p>
+      <ul>
+        {% if has_related_links %}
+          {% assign next_count = 0 %}
+          {% for link in page.related_links %}
+            {% assign link_group = link.group | default: "next" %}
+            {% if link_group == "next" and next_count < 3 %}
+              <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+              {% assign next_count = next_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% if next_count == 0 %}
+            {% if article_type == "update" %}
+            <li><a href="{{ '/guides/' | relative_url }}">対応手順を解説一覧から探す</a></li>
+            <li><a href="{{ '/learn/' | relative_url }}">学習ハブで関連テーマを確認する</a></li>
+            {% else %}
+            <li><a href="{{ '/learn/' | relative_url }}">学習ハブでテーマ別に学ぶ</a></li>
+            <li><a href="{{ '/updates/' | relative_url }}">最新アップデートを確認する</a></li>
+            {% endif %}
+          {% endif %}
+        {% elsif article_type == "update" %}
+        <li><a href="{{ '/guides/' | relative_url }}">対応手順を解説一覧から探す</a></li>
+        <li><a href="{{ '/learn/' | relative_url }}">学習ハブで関連テーマを確認する</a></li>
+        {% else %}
+        <li><a href="{{ '/learn/' | relative_url }}">学習ハブでテーマ別に学ぶ</a></li>
+        <li><a href="{{ '/updates/' | relative_url }}">最新アップデートを確認する</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <div class="article-summary-links__group">
+      <p class="article-summary-box__label">関連解説</p>
+      <ul>
+        {% if has_related_links %}
+          {% assign related_count = 0 %}
+          {% for link in page.related_links %}
+            {% assign link_group = link.group | default: "related" %}
+            {% if link_group == "related" and related_count < 3 %}
+              <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+              {% assign related_count = related_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% if related_count == 0 %}
+            <li><a href="{{ '/guides/' | relative_url }}">他の解説を一覧で確認する</a></li>
+            <li><a href="{{ '/qa/' | relative_url }}">公開Q&Aを見る</a></li>
+          {% endif %}
+        {% else %}
+        <li><a href="{{ '/guides/' | relative_url }}">他の解説を一覧で確認する</a></li>
+        <li><a href="{{ '/qa/' | relative_url }}">公開Q&Aを見る</a></li>
+        {% if article_type == "update" %}
+        <li><a href="{{ '/updates/' | relative_url }}">他の更新記事を確認する</a></li>
+        {% else %}
+        <li><a href="{{ '/glossary/' | relative_url }}">用語集で専門語を確認する</a></li>
+        {% endif %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endif %}
