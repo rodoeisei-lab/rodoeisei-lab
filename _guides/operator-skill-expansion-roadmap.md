@@ -27,6 +27,24 @@ tags:
   - Algolia
   - SNS
 audience: サイト運営者・コンテンツ管理者・改善を高速化したい個人/小チーム
+takeaway: 8週間を「実装→計測→改善」の反復に固定し、毎週1つの成果物を残す運用にすると、再現性と速度を同時に上げられます。
+next_action:
+  - 今週の改善テーマを1つに絞る
+  - 小さなPR単位に分割して変更を実装する
+  - 実装後に最低1指標（404/PV/速度）を確認して記録する
+related_links:
+  - title: 学習ハブで関連カテゴリを確認する
+    url: /learn/
+    group: next
+  - title: 最新アップデート一覧で制度変更を確認する
+    url: /updates/
+    group: next
+  - title: フィットテスト導入の最小セット
+    url: /guides/fit-test/
+    group: related
+  - title: 公開Q&Aで実務課題を確認する
+    url: /qa/
+    group: related
 sources:
   - '実務整理: サイト運営の改善サイクル（計測→実装→検証）'
 last_updated: 2026-02-13

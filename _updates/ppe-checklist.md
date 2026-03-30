@@ -14,8 +14,25 @@ reviewed_at: 2025-03-01
 source_type: practical
 target: 衛生管理者・現場リーダー
 audience: 衛生管理者・現場リーダー
+takeaway: 点検票に是正期限と確認責任者を明記すると、週次・月次点検の抜け漏れを減らし、是正対応の遅延を防げます。
+next_action:
+  - 点検票に「是正期限」と「確認者」を追記する
+  - 週次点検と月次点検の対象を分けて掲示する
+  - 期限超過時の代替措置ルールを班長へ共有する
+related_links:
+  - title: 呼吸用保護具の導入フローを確認する
+    url: /guides/fit-test/
+    group: next
+  - title: 最新アップデート一覧に戻る
+    url: /updates/
+    group: next
+  - title: 学習ハブで実務テーマを探す
+    url: /learn/
+    group: related
+  - title: 用語集で点検関連語を確認する
+    url: /glossary/
+    group: related
 effective_from: 2025-03-15
-next_action: 現行の点検票へ「是正期限」欄を追加し、担当者に共有する
 lead: 週次・月次点検を見直す時に使える、最小のチェック項目だけを整理しました。
 ---
 
