@@ -14,21 +14,10 @@
           <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
         </li>
       </ul>
-      <a href="{{ '/qa/' | relative_url }}" class="nav-cta">公開Q&Aを見る</a>
-      <a href="{{ "/join/" | relative_url }}" class="nav-cta-primary">コミュニティに入る</a>
-      <a href="{{ "/qa/ask/" | relative_url }}" class="cta-consult" aria-label="匿名で相談する（匿名OK）" title="匿名OKで相談を投稿できます">
-        <span class="cta-consult__label">匿名で相談</span>
-        <span class="cta-consult__meta" aria-hidden="true">匿名OK</span>
-      </a>
       <div class="nav-action-stack">
-        <a
-          href="{{ site.community.discussions_url | default: site.community_url }}"
-          class="nav-cta-discuss"
-          target="_blank"
-          rel="noopener"
-          aria-label="公開で質問する（GitHub Discussions）"
-        >公開で質問する</a>
-        <a href="{{ "/qa/ask/" | relative_url }}" class="nav-sub-link" aria-label="匿名で相談する">匿名で相談する</a>
+        <a href="{{ "/join/" | relative_url }}" class="nav-cta-discuss">コミュニティに入る</a>
+        <a href="{{ '/qa/' | relative_url }}" class="nav-cta">公開Q&Aを見る</a>
+        <a href="{{ "/qa/ask/" | relative_url }}" class="nav-sub-link" aria-label="匿名で相談する">公開しづらい相談だけ匿名で相談</a>
       </div>
     </nav>
   </div>
@@ -37,21 +26,10 @@
 <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
   <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
   <h2>{{ site.data.ui.menu | default: "メニュー" }}</h2>
-  <a
-    href="{{ site.community.discussions_url | default: site.community_url }}"
-    class="nav-cta-discuss"
-    target="_blank"
-    rel="noopener"
-    aria-label="公開で質問する（GitHub Discussions）"
-  >公開で質問する</a>
-  <a href="{{ "/qa/ask/" | relative_url }}" class="nav-sub-link" aria-label="匿名で相談する">匿名で相談する</a>
-  <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
+  <a href="{{ "/join/" | relative_url }}" class="nav-cta-discuss">コミュニティに入る</a>
   <a href="{{ '/qa/' | relative_url }}" class="nav-cta">公開Q&Aを見る</a>
-  <a href="{{ "/join/" | relative_url }}" class="nav-cta-primary">コミュニティに入る</a>
-  <a href="{{ "/qa/ask/" | relative_url }}" class="cta-consult" aria-label="匿名で相談する（匿名OK）" title="匿名OKで相談を投稿できます">
-    <span class="cta-consult__label">匿名で相談</span>
-    <span class="cta-consult__meta" aria-hidden="true">匿名OK</span>
-  </a>
+  <a href="{{ "/qa/ask/" | relative_url }}" class="nav-sub-link" aria-label="匿名で相談する">公開しづらい相談だけ匿名で相談</a>
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="表示テーマを切り替え" data-theme-label>自動</button>
   <ul>
     {% for item in site.data.navigation %}
     <li>

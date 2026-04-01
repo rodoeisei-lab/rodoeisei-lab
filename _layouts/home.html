@@ -17,10 +17,12 @@ layout: base
           粉じん・有機溶剤・労基署対策・資格対策まで。<br>
           現場と法令のあいだを埋める、一次情報ベースのナレッジハブ。
         </p>
-        <div class="cta-buttons">
+        <div class="cta-buttons cta-buttons-entry">
           <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談</a>
-          <a href="{{ '/qa/' | relative_url }}" class="cta-tertiary">公開Q&amp;Aを見る</a>
+          <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
+          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談は匿名フォームへ</a>
+        </div>
+        <div class="cta-buttons cta-buttons-sub">
           <a href="{{ '/guides/' | relative_url }}" class="cta-tertiary">今週の解説を見る</a>
           <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
           <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
@@ -147,6 +149,39 @@ layout: base
   </div>
 </section>
 
+
+<section class="first-step-guide" aria-label="はじめての方へ 30秒ガイド">
+  <div class="container">
+    <div class="first-step-guide-header">
+      <p class="first-step-guide-eyebrow">FIRST STEP</p>
+      <h2>はじめての方へ</h2>
+      <p>30秒で参加方法が分かるように、最短の参加導線だけに整理しました。</p>
+    </div>
+    <div class="first-step-guide-grid">
+      <article class="first-step-card">
+        <p class="first-step-number">1</p>
+        <h3>閲覧だけでもOK</h3>
+        <p>まずは公開Q&amp;Aを見て、テーマや雰囲気を確認してください。登録前の閲覧だけでも歓迎です。</p>
+      </article>
+      <article class="first-step-card">
+        <p class="first-step-number">2</p>
+        <h3>GitHub Discussions に参加</h3>
+        <p>GitHubアカウントがあれば参加できます。主入口は公開コミュニティです。</p>
+      </article>
+      <article class="first-step-card">
+        <p class="first-step-number">3</p>
+        <h3>自己紹介 or 質問を投稿</h3>
+        <p>最初の投稿は短くて大丈夫。自己紹介でも、現場の困りごと質問でもOKです。</p>
+      </article>
+    </div>
+    <div class="first-step-guide-actions">
+      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
+      <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
+      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談だけ匿名フォームへ</a>
+    </div>
+  </div>
+</section>
+
 <section class="community-entry" aria-label="コミュニティに入る">
   <div class="container">
     <div class="community-entry-header">
@@ -156,8 +191,8 @@ layout: base
     </div>
     <div class="community-entry-actions">
       <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
-      <a href="{{ '/qa/' | relative_url }}" class="community-entry-link">公開Q&amp;Aを見る</a>
+      <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
+      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談だけ匿名フォームへ</a>
     </div>
     <ul class="community-entry-points">
       <li>公開で継続参加する入口を一本化</li>
@@ -205,8 +240,8 @@ layout: base
 
     <div class="community-activity-actions">
       <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
-      <a href="{{ '/qa/' | relative_url }}" class="community-activity-link-secondary">公開Q&amp;Aを見る</a>
+      <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
+      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談だけ匿名フォームへ</a>
     </div>
   </div>
 </section>

@@ -1,7 +1,11 @@
-- title: 学習
-  url: /learn/
+- title: コミュニティに入る
+  url: /join/
+- title: コミュニティ
+  url: /community/
 - title: Q&A
   url: /qa/
+- title: 学習
+  url: /learn/
 - title: 過去問（公式）
   url: /past-exams/
 - title: ツール
@@ -10,7 +14,3 @@
   url: /updates/
 - title: 検索
   url: /search/
-- title: コミュニティ
-  url: /community/
-- title: コミュニティに入る
-  url: /join/
