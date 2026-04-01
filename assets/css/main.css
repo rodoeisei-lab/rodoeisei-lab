@@ -2973,6 +2973,102 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
   border: 0;
 }
 
+.community-people {
+  margin: -2px 0 26px;
+}
+
+.community-people .container {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.community-people-header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.community-people-eyebrow {
+  margin: 0;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: #0f766e;
+}
+
+.community-people-header h2 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.community-people-lead {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.community-people-block + .community-people-block {
+  margin-top: 18px;
+}
+
+.community-people-block h3,
+.community-people-safe h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.community-people-grid,
+.community-posts-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.community-people-card,
+.community-post-card,
+.community-people-safe {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, .06);
+}
+
+.community-people-card h4 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.community-people-card p,
+.community-post-card p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.community-post-card {
+  display: grid;
+  gap: 8px;
+}
+
+.community-post-title {
+  font-weight: 800;
+  color: var(--text) !important;
+}
+
+.community-people-safe {
+  margin-top: 18px;
+}
+
+.community-people-safe ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.community-people-safe li + li {
+  margin-top: 6px;
+}
+
 @media (max-width: 768px) {
   .home-anonymous-form {
     padding: 20px 0 32px;
@@ -3258,6 +3354,7 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
 }
 
 @media (max-width: 768px) {
+  .community-people .container,
   .community-entry .container,
   .community-activity .container,
   .join-hero-card,
@@ -3267,6 +3364,8 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
     padding: 18px;
   }
 
+  .community-people-grid,
+  .community-posts-grid,
   .community-activity-grid {
     grid-template-columns: 1fr;
   }
