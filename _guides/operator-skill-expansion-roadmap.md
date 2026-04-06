@@ -46,7 +46,13 @@ related_links:
     url: /qa/
     group: related
 sources:
-  - '実務整理: サイト運営の改善サイクル（計測→実装→検証）'
+  - label: Google Search Central（SEO スターター ガイド）
+    url: https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=ja
+  - label: W3C Web Content Accessibility Guidelines (WCAG) 2.2
+    url: https://www.w3.org/TR/WCAG22/
+  - label: GitHub Actions 公式ドキュメント
+    url: https://docs.github.com/ja/actions
+source_checked_at: 2026-04-06
 last_updated: 2026-02-13
 lead: 「壊れても戻せる」運用を前提に、学習と実装を同時進行するための短期集中プランです。
 ---

@@ -3740,3 +3740,53 @@ main#main .section .container a:not(.btn-step):not(.btn-step-primary):not(.btn-a
     justify-content: center;
   }
 }
+
+.article-sources {
+  margin: 24px 0;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, .35);
+  background: rgba(14, 165, 160, .08);
+  font-size: .95rem;
+}
+
+.article-sources h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.article-sources__list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.article-sources__item + .article-sources__item {
+  margin-top: 8px;
+}
+
+.article-sources__item a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+.article-sources__checked-at {
+  margin: 12px 0 0;
+  font-size: .9rem;
+  color: var(--text-soft);
+}
+
+[data-theme="dark"] .article-sources {
+  background: rgba(45, 212, 191, .14);
+}
+
+@media (max-width: 780px) {
+  .article-sources {
+    padding: 14px;
+    font-size: .92rem;
+  }
+
+  .article-sources__item {
+    line-height: 1.7;
+  }
+}
