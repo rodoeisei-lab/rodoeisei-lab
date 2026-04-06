@@ -32,6 +32,7 @@ layout: base
     {% include article-summary-box.html %}
     {% include article-meta-header.html %}
     {{ content }}
+    {% include article-sources.html %}
     {% include article-footer-nav.html %}
 
     {% assign feedback_form_url = page.feedback_form_url | default: site.feedback.article_form_url %}
