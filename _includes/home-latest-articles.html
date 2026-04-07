@@ -1,0 +1,59 @@
+{% assign guide_articles = site.guides | where: "status", "published" | sort: "updated" | reverse %}
+{% if guide_articles and guide_articles.size > 0 %}
+<section class="home-latest-articles" aria-label="最新の解説記事">
+  <div class="container">
+    <div class="home-latest-articles-header">
+      <p class="home-latest-articles-eyebrow">LATEST GUIDES</p>
+      <h2>最新の解説記事</h2>
+      <p>現場で迷いやすい論点を、一次情報ベースで短く整理。</p>
+    </div>
+
+    <div class="home-latest-articles-grid">
+      {% for article in guide_articles limit:3 %}
+        {% assign summary_source = article.summary | default: article.description %}
+        {% assign summary_text = summary_source %}
+        {% if summary_source.first %}
+          {% assign summary_text = summary_source | first %}
+        {% endif %}
+
+        {% assign reason_source = article.article_reason | default: summary_text | default: article.description %}
+
+        {% assign updated_source = article.updated_at | default: article.updated %}
+        {% assign updated_iso = updated_source | date: "%Y-%m-%d" %}
+        {% assign updated_label = updated_source | date: "%Y.%m.%d" %}
+
+        <article class="home-latest-article-card">
+          <p class="home-latest-article-updated">更新日：<time datetime="{{ updated_iso }}">{{ updated_label }}</time></p>
+          <h3>
+            <a href="{{ article.url | relative_url }}">{{ article.title }}</a>
+          </h3>
+
+          {% if summary_text %}
+            <p class="home-latest-article-summary">{{ summary_text }}</p>
+          {% endif %}
+
+          {% if article.tags and article.tags.size > 0 %}
+            <ul class="home-latest-article-tags" aria-label="タグ">
+              {% for tag in article.tags limit:2 %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          {% elsif article.category %}
+            <ul class="home-latest-article-tags" aria-label="カテゴリ">
+              <li>{{ article.category }}</li>
+            </ul>
+          {% endif %}
+
+          <p class="home-latest-article-reason"><span>読む理由</span>{{ reason_source }}</p>
+
+          <a href="{{ article.url | relative_url }}" class="home-latest-article-link">解説を読む</a>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="home-latest-articles-footer">
+      <a href="{{ '/guides/' | relative_url }}" class="home-latest-articles-more">解説記事をもっと見る</a>
+    </div>
+  </div>
+</section>
+{% endif %}
