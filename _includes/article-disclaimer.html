@@ -1,0 +1,9 @@
+{% assign variant = include.variant | default: page.disclaimer_variant | default: "general" %}
+{% case variant %}
+  {% when "practical" %}
+  <p class="article-trust-meta__note">本記事は実務で使える判断材料を整理した一般情報です。個別案件の最終判断は、最新の法令・通達・メーカー一次資料と、所轄労基署・産業医など専門家の確認を前提にしてください。</p>
+  {% when "legal" %}
+  <p class="article-trust-meta__note">本記事は制度理解の補助を目的とした一般情報です。法令解釈や行政対応は、最新の原典確認と所轄機関・専門家への照会を前提にしてください。</p>
+  {% else %}
+  <p class="article-trust-meta__note">本記事は一般的な情報整理を目的としています。個別判断では、最新の一次情報（法令・通達・公的資料）や専門家確認を行ってください。</p>
+{% endcase %}
