@@ -15,15 +15,24 @@
   {% assign status_label = "準備中" %}
   {% assign status_class = "is-wip" %}
 {% endif %}
+{% assign card_updated = guide.updated_at | default: guide.updated | default: guide.last_updated %}
+{% assign card_checked = guide.checked_at | default: guide.source_checked_at | default: guide.reviewed_at %}
 {% capture meta %}
   {% if guide.minutes %}実務 {{ guide.minutes }}分{% endif %}
-  {% if guide.minutes and guide.updated %} / {% endif %}
-  {% if guide.updated %}更新: {{ guide.updated }}{% endif %}
+  {% if guide.minutes and card_updated %} / {% endif %}
+  {% if card_updated %}更新日: {{ card_updated }}{% endif %}
 {% endcapture %}
 {% assign meta = meta | strip %}
 {% assign link_url = nil %}
 {% if guide.status != "wip" %}
   {% assign link_url = guide.url %}
+{% endif %}
+{% assign badges = "" | split: "" %}
+{% if guide.sources and guide.sources.size > 0 %}
+  {% assign badges = badges | push: "根拠あり" %}
+{% endif %}
+{% if card_checked and card_checked != "未確認" and card_checked != "未定" %}
+  {% assign badges = badges | push: "確認済み" %}
 {% endif %}
 {% include list-card.html
   class="guide-card"
@@ -33,6 +42,7 @@
   status=status_label
   status_class=status_class
   tags=guide.tags
+  badges=badges
   meta=meta
   link_url=link_url
   link_label="記事を読む →"

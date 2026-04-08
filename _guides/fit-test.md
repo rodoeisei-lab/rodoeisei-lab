@@ -14,6 +14,7 @@ minutes: 6
 updated: 2025-03-01
 updated_at: 2025-03-01
 reviewed_at: 2025-03-01
+checked_at: 2026-04-07
 source_type: notice
 status: published
 featured: true
@@ -23,8 +24,12 @@ tags:
   - 導入
   - 記録
 article_reason: 法令の結論だけ先に確認して、導入時の抜け漏れを避けたい人向け。
-audience: 現場担当者・安全衛生管理者・導入初期の責任者
-takeaway: 対象選定・実施方式・記録の3点を固定すれば、1部署から再現可能な運用を短期間で立ち上げられます。
+audience:
+  - 現場担当者
+  - 安全衛生管理者
+  - 導入初期の責任者
+takeaway: 制度上の位置づけと導入初期に迷いやすい判断ポイント（対象選定・実施方式・記録条件）を先に整理できます。
+disclaimer_variant: practical
 next_action:
   - 対象者5〜10名のリストを作成する
   - 使用マスクの型式とサイズ候補を2つ以上決める
@@ -43,8 +48,12 @@ related_links:
     url: /glossary/
     group: related
 sources:
-  - '<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000132963.html" target="_blank" rel="noopener">厚生労働省: 呼吸用保護具のフィットテスト</a>'
-  - '<a href="https://www.jaish.gr.jp/" target="_blank" rel="noopener">中央労働災害防止協会（ガイド類）</a>'
+  - label: 厚生労働省（呼吸用保護具のフィットテスト）
+    url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000132963.html
+  - label: e-Gov法令検索（労働安全衛生規則）
+    url: https://elaws.e-gov.go.jp/
+  - label: 中央労働災害防止協会（呼吸用保護具関連資料）
+    url: https://www.jaish.gr.jp/
 last_updated: 2025-03-01
 lead: 実施条件・記録・教育まで、導入直後にやるべきことだけを抜き出しました。
 ---

@@ -11,48 +11,69 @@
 
 {% assign article_type_label = site.data.article-types.article_type_labels[article_type] | default: article_type | upcase %}
 {% assign reading_time = page.reading_time | default: page.minutes %}
-{% assign audience = page.audience | default: page.target | default: "対象読者は準備中です。" %}
-{% assign updated_at = page.updated_at | default: page.updated | default: "未記入" %}
-{% assign reviewed_at = page.source_checked_at | default: page.reviewed_at | default: page.last_updated | default: page.updated_at | default: page.updated | default: "未確認" %}
+{% assign updated_at = page.updated_at | default: page.updated | default: page.last_updated %}
+{% assign checked_at = page.checked_at | default: page.source_checked_at | default: page.reviewed_at %}
+{% assign takeaway = page.takeaway | default: page.summary %}
 
-<div class="article-meta-header">
+{% assign has_sources = false %}
+{% if page.sources and page.sources.size > 0 %}
+  {% assign has_sources = true %}
+{% endif %}
+
+<section class="article-trust-meta" aria-label="記事メタ情報">
   <div class="article-meta-header__chips" aria-label="記事メタ">
     <span class="badge">タイプ: {{ article_type_label }}</span>
     {% if reading_time %}<span class="badge">読了目安: {{ reading_time }}</span>{% endif %}
-    <span class="badge">最終更新: {{ updated_at }}</span>
-    {% if page.sources and page.sources.size > 0 %}<span class="badge">一次情報確認日: {{ reviewed_at }}</span>{% endif %}
+    {% if updated_at %}<span class="badge">更新日: {{ updated_at }}</span>{% endif %}
+    {% if checked_at %}<span class="badge">確認日: {{ checked_at }}</span>{% endif %}
+    {% if has_sources %}<span class="badge">根拠あり</span>{% endif %}
   </div>
 
-  <div class="article-meta-box article-meta-box--header">
-    <div class="article-meta-item">
-      <h2>要点</h2>
-      {% if page.summary %}
-        {% if page.summary.first %}
-          <ul>
-            {% for point in page.summary limit:3 %}
-            <li>{{ point }}</li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p>{{ page.summary }}</p>
-        {% endif %}
+  <div class="article-trust-meta__grid">
+    {% if updated_at %}
+    <div class="article-trust-meta__item">
+      <p class="article-trust-meta__label">更新日</p>
+      <p class="article-trust-meta__value">{{ updated_at }}</p>
+    </div>
+    {% endif %}
+
+    {% if checked_at %}
+    <div class="article-trust-meta__item">
+      <p class="article-trust-meta__label">確認日</p>
+      <p class="article-trust-meta__value">{{ checked_at }}</p>
+    </div>
+    {% endif %}
+
+    {% if page.audience %}
+    <div class="article-trust-meta__item">
+      <p class="article-trust-meta__label">対象読者</p>
+      {% if page.audience.first %}
+      <p class="article-trust-meta__value">{{ page.audience | join: " / " }}</p>
       {% else %}
-      <p>要点は準備中です。</p>
+      <p class="article-trust-meta__value">{{ page.audience }}</p>
       {% endif %}
     </div>
+    {% endif %}
 
-    <div class="article-meta-item">
-      <h2>対象</h2>
-      <p>{{ audience }}</p>
-      {% if page.next_action %}
-      <p class="article-meta-next">次アクション: {{ page.next_action }}</p>
+    {% if takeaway %}
+    <div class="article-trust-meta__item article-trust-meta__item--wide">
+      <p class="article-trust-meta__label">この記事で分かること</p>
+      {% if takeaway.first %}
+      <p class="article-trust-meta__value">{{ takeaway | first }}</p>
+      {% else %}
+      <p class="article-trust-meta__value">{{ takeaway }}</p>
       {% endif %}
     </div>
+    {% endif %}
 
-    <div class="article-meta-item">
-      <h2>最終更新</h2>
-      <p>最終更新: {{ updated_at }}</p>
-      {% if page.sources and page.sources.size > 0 %}<p>一次情報確認日: {{ reviewed_at }}</p>{% endif %}
+    <div class="article-trust-meta__item article-trust-meta__item--wide">
+      <p class="article-trust-meta__label">根拠リンク（一次情報）</p>
+      {% include article-sources.html compact=true %}
+    </div>
+
+    <div class="article-trust-meta__item article-trust-meta__item--wide">
+      <p class="article-trust-meta__label">免責</p>
+      {% include article-disclaimer.html variant=page.disclaimer_variant %}
     </div>
   </div>
-</div>
+</section>

@@ -1,7 +1,7 @@
 {% if page.sources and page.sources.size > 0 %}
-<section class="article-sources" aria-label="この記事の一次情報">
-  <h2>この記事の一次情報</h2>
-  <ul class="article-sources__list">
+  {% assign compact = include.compact | default: false %}
+  {% if compact %}
+  <ul class="article-sources__list article-sources__list--compact">
     {% for source in page.sources %}
       {% assign source_label = source.label | default: source.title | default: source %}
       {% assign source_url = source.url | default: nil %}
@@ -14,8 +14,28 @@
       </li>
     {% endfor %}
   </ul>
-  {% if page.source_checked_at %}
-  <p class="article-sources__checked-at">一次情報確認日：{{ page.source_checked_at }}</p>
+  {% else %}
+  <section class="article-sources" aria-label="この記事の一次情報">
+    <h2>この記事の一次情報</h2>
+    <ul class="article-sources__list">
+      {% for source in page.sources %}
+        {% assign source_label = source.label | default: source.title | default: source %}
+        {% assign source_url = source.url | default: nil %}
+        <li class="article-sources__item">
+          {% if source_url %}
+          <a href="{{ source_url }}" target="_blank" rel="noopener">{{ source_label }}</a>
+          {% else %}
+          {{ source_label }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% assign checked_at = page.checked_at | default: page.source_checked_at | default: page.reviewed_at %}
+    {% if checked_at %}
+    <p class="article-sources__checked-at">一次情報確認日：{{ checked_at }}</p>
+    {% endif %}
+  </section>
   {% endif %}
-</section>
+{% elsif include.compact %}
+  <p class="article-trust-meta__note">一次情報リンクは現在整備中です。公開元の最新情報で最終確認してください。</p>
 {% endif %}

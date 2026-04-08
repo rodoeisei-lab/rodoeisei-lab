@@ -24,15 +24,14 @@ layout: base
       {% assign hero_updated = page.updated_at | default: page.updated %}
       {% if hero_updated %}<span class="badge">更新: {{ hero_updated }}</span>{% endif %}
     </div>
+    {% include article-meta-header.html %}
   </div>
 </section>
 
 <section class="section">
   <div class="container article">
     {% include article-summary-box.html %}
-    {% include article-meta-header.html %}
     {{ content }}
-    {% include article-sources.html %}
     {% include article-footer-nav.html %}
 
     {% assign feedback_form_url = page.feedback_form_url | default: site.feedback.article_form_url %}
