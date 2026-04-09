@@ -32,6 +32,7 @@ layout: base
   <div class="container article">
     {% include article-summary-box.html %}
     {{ content }}
+    {% include related-articles.html limit=3 %}
     {% include article-footer-nav.html %}
 
     {% assign feedback_form_url = page.feedback_form_url | default: site.feedback.article_form_url %}

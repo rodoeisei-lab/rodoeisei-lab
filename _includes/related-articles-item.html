@@ -1,0 +1,18 @@
+{% assign article = include.article %}
+{% assign article_title = article.title | default: article.slug | default: article.basename | default: '記事詳細へ' %}
+{% assign article_summary = article.summary | default: article.excerpt %}
+{% assign article_updated = article.updated_at | default: article.updated | default: article.date %}
+
+<article class="related-article-card">
+  <h3><a href="{{ article.url | relative_url }}">{{ article_title }}</a></h3>
+  {% if article_summary %}
+    {% if article_summary.first %}
+      <p>{{ article_summary | first | strip_html | strip_newlines }}</p>
+    {% else %}
+      <p>{{ article_summary | strip_html | strip_newlines }}</p>
+    {% endif %}
+  {% endif %}
+  {% if article_updated %}
+    <time datetime="{{ article_updated | date: '%Y-%m-%d' }}">更新日: {{ article_updated | date: "%Y-%m-%d" }}</time>
+  {% endif %}
+</article>

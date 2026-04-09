@@ -1,0 +1,90 @@
+{% assign related_limit = include.limit | default: 3 %}
+{% assign current_url = page.url | default: '' %}
+{% assign current_tags = page.tags | default: empty %}
+{% assign current_category = page.category | default: '' %}
+
+{% assign all_articles = site.posts | default: empty %}
+{% if site.guides %}
+  {% assign all_articles = all_articles | concat: site.guides %}
+{% endif %}
+{% if site.updates %}
+  {% assign all_articles = all_articles | concat: site.updates %}
+{% endif %}
+
+{% assign prioritized_articles = all_articles | sort: 'updated_at' | reverse %}
+
+{% assign shown_urls = '|' | append: current_url | append: '|' %}
+{% assign related_count = 0 %}
+{% capture related_cards %}{% endcapture %}
+
+{% for candidate in prioritized_articles %}
+  {% if related_count >= related_limit %}{% break %}{% endif %}
+  {% assign candidate_url = candidate.url | default: '' %}
+  {% assign url_token = '|' | append: candidate_url | append: '|' %}
+  {% if candidate_url == '' or shown_urls contains url_token %}{% continue %}{% endif %}
+
+  {% assign tag_matched = false %}
+  {% for tag in current_tags %}
+    {% if candidate.tags contains tag %}
+      {% assign tag_matched = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if tag_matched %}
+    {% assign shown_urls = shown_urls | append: candidate_url | append: '|' %}
+    {% assign related_count = related_count | plus: 1 %}
+    {% capture related_cards %}
+      {{ related_cards }}
+      {% include related-articles-item.html article=candidate %}
+    {% endcapture %}
+  {% endif %}
+{% endfor %}
+
+{% if related_count < related_limit and current_category != '' %}
+  {% for candidate in prioritized_articles %}
+    {% if related_count >= related_limit %}{% break %}{% endif %}
+    {% assign candidate_url = candidate.url | default: '' %}
+    {% assign url_token = '|' | append: candidate_url | append: '|' %}
+  {% if candidate_url == '' or shown_urls contains url_token %}{% continue %}{% endif %}
+    {% if candidate.category == current_category %}
+      {% assign shown_urls = shown_urls | append: candidate_url | append: '|' %}
+      {% assign related_count = related_count | plus: 1 %}
+      {% capture related_cards %}
+        {{ related_cards }}
+        {% include related-articles-item.html article=candidate %}
+      {% endcapture %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if related_count < related_limit %}
+  {% for candidate in prioritized_articles %}
+    {% if related_count >= related_limit %}{% break %}{% endif %}
+    {% assign candidate_url = candidate.url | default: '' %}
+    {% assign url_token = '|' | append: candidate_url | append: '|' %}
+  {% if candidate_url == '' or shown_urls contains url_token %}{% continue %}{% endif %}
+
+    {% assign shown_urls = shown_urls | append: candidate_url | append: '|' %}
+    {% assign related_count = related_count | plus: 1 %}
+    {% capture related_cards %}
+      {{ related_cards }}
+      {% include related-articles-item.html article=candidate %}
+    {% endcapture %}
+  {% endfor %}
+{% endif %}
+
+<section class="related-articles" aria-label="関連記事">
+  <div class="related-articles__header">
+    <h2>関連記事</h2>
+    <p>同じテーマの解説を続けて読む</p>
+  </div>
+
+  {% if related_count > 0 %}
+  <div class="related-articles__list">
+    {{ related_cards }}
+  </div>
+  {% else %}
+  <p class="related-articles__empty">関連記事は準備中です。最新記事一覧から他の解説もご覧ください。</p>
+  {% endif %}
+</section>
