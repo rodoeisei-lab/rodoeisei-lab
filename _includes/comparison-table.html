@@ -1,0 +1,53 @@
+{% comment %}
+運用ルール:
+- 条件分岐がある記事では比較表を使う。
+- 文章で3つ以上を比較している箇所は、比較表への置き換えを優先する。
+{% endcomment %}
+{% assign comparison_headers = include.headers | default: "" | split: "," %}
+{% assign comparison_rows_raw = include.rows | default: "" | strip %}
+{% assign comparison_rows = comparison_rows_raw | split: ";" %}
+{% assign comparison_colspan = comparison_headers.size %}
+{% if comparison_colspan < 1 %}
+  {% assign comparison_colspan = 1 %}
+{% endif %}
+
+<div class="comparison-table-wrap" role="region" aria-label="比較表（横スクロール対応）" tabindex="0">
+  <table class="comparison-table">
+    {% if comparison_headers.size > 0 and comparison_headers[0] != "" %}
+      <thead>
+        <tr>
+          {% for header in comparison_headers %}
+            <th scope="col">{{ header | strip }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+    {% endif %}
+    <tbody>
+      {% assign has_row = false %}
+      {% for row in comparison_rows %}
+        {% assign row_text = row | strip %}
+        {% if row_text != "" %}
+          {% assign has_row = true %}
+          {% assign row_cells = row_text | split: "," %}
+          <tr>
+            {% if comparison_headers.size > 0 and comparison_headers[0] != "" %}
+              {% for header in comparison_headers %}
+                {% assign cell_text = row_cells[forloop.index0] | default: "" | strip %}
+                <td>{{ cell_text }}</td>
+              {% endfor %}
+            {% else %}
+              {% for cell in row_cells %}
+                <td>{{ cell | strip }}</td>
+              {% endfor %}
+            {% endif %}
+          </tr>
+        {% endif %}
+      {% endfor %}
+      {% unless has_row %}
+        <tr>
+          <td class="comparison-table__empty" colspan="{{ comparison_colspan }}">比較データは準備中です。</td>
+        </tr>
+      {% endunless %}
+    </tbody>
+  </table>
+</div>
