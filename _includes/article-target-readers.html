@@ -1,0 +1,14 @@
+{% assign target_readers = page.target_readers %}
+{% if target_readers and target_readers.size > 0 %}
+<section class="article-target-readers" aria-label="この記事はこんな人向け">
+  <h2 class="article-target-readers__title">この記事はこんな人向け</h2>
+  <ul class="article-target-readers__list">
+    {% for reader in target_readers limit:5 %}
+      {% assign reader_text = reader | strip %}
+      {% if reader_text != "" %}
+      <li>{{ reader_text }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

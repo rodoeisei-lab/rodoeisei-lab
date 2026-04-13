@@ -30,6 +30,7 @@ layout: base
 
 <section class="section">
   <div class="container article">
+    {% include article-target-readers.html %}
     {% include article-summary-box.html %}
     {{ content }}
     {% include related-articles.html limit=3 %}
