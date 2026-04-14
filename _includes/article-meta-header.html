@@ -25,7 +25,7 @@
     <span class="badge">タイプ: {{ article_type_label }}</span>
     {% if reading_time %}<span class="badge">読了目安: {{ reading_time }}</span>{% endif %}
     {% if updated_at %}<span class="badge">更新日: {{ updated_at }}</span>{% endif %}
-    {% if checked_at %}<span class="badge">確認日: {{ checked_at }}</span>{% endif %}
+    {% if checked_at %}<span class="badge">法令確認日: {{ checked_at }}</span>{% endif %}
     {% if has_sources %}<span class="badge">根拠あり</span>{% endif %}
   </div>
 
@@ -39,7 +39,7 @@
 
     {% if checked_at %}
     <div class="article-trust-meta__item">
-      <p class="article-trust-meta__label">確認日</p>
+      <p class="article-trust-meta__label">法令確認日</p>
       <p class="article-trust-meta__value">{{ checked_at }}</p>
     </div>
     {% endif %}

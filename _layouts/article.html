@@ -22,7 +22,24 @@ layout: base
       <span class="badge">{{ inferred_article_type }}</span>
       {% if page.reading_time %}<span class="badge">{{ page.reading_time }}</span>{% endif %}
       {% assign hero_updated = page.updated_at | default: page.updated %}
-      {% if hero_updated %}<span class="badge">更新: {{ hero_updated }}</span>{% endif %}
+      {% assign hero_checked = page.checked_at | default: page.source_checked_at | default: page.reviewed_at %}
+      {% assign show_unchecked_legal_date = page.show_unchecked_legal_date | default: site.show_unchecked_legal_date %}
+      {% if hero_updated or hero_checked or show_unchecked_legal_date %}
+      <p class="article-meta-dates">
+        {% if hero_updated %}
+        <span class="article-meta-dates__item">更新日：{{ hero_updated }}</span>
+        {% endif %}
+        {% if hero_updated and hero_checked %}
+        <span class="article-meta-dates__separator" aria-hidden="true">｜</span>
+        {% endif %}
+        {% if hero_checked %}
+        <span class="article-meta-dates__item article-meta-dates__item--checked" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：{{ hero_checked }}</span>
+        {% elsif show_unchecked_legal_date %}
+        {% if hero_updated %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
+        <span class="article-meta-dates__item article-meta-dates__item--pending" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：未確認</span>
+        {% endif %}
+      </p>
+      {% endif %}
     </div>
     {% include article-meta-header.html %}
   </div>
