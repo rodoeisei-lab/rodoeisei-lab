@@ -11,6 +11,7 @@ impact: "影響: 中"
 updated: 2025-03-01
 updated_at: 2025-03-01
 reviewed_at: 2025-03-01
+checked_at: 2026-04-10
 source_type: practical
 target: 衛生管理者・現場リーダー
 audience: 衛生管理者・現場リーダー

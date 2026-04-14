@@ -1572,7 +1572,49 @@ section { margin: var(--space-5) 0; }
   margin-top: 10px;
 }
 
+.article-meta-dates {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: .9rem;
+  line-height: 1.5;
+}
 
+.article-meta-dates__item {
+  white-space: nowrap;
+}
+
+.article-meta-dates__item--checked {
+  font-weight: 700;
+  color: color-mix(in srgb, var(--text) 86%, var(--accent));
+}
+
+.article-meta-dates__item--pending {
+  font-weight: 600;
+}
+
+.article-meta-dates__separator {
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .article-meta-dates {
+    column-gap: 4px;
+    row-gap: 2px;
+    font-size: .84rem;
+  }
+
+  .article-meta-dates__separator {
+    display: none;
+  }
+
+  .article-meta-dates__item {
+    white-space: normal;
+  }
+}
 
 .related-articles {
   margin-top: 26px;
