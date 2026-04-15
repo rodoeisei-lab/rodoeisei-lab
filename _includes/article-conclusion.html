@@ -1,0 +1,37 @@
+{% assign conclusion_text = page.conclusion | to_s | strip %}
+{% assign actions = page.next_actions %}
+{% assign has_conclusion = false %}
+{% assign has_actions = false %}
+
+{% if conclusion_text != "" %}
+  {% assign has_conclusion = true %}
+{% endif %}
+
+{% if actions and actions.size > 0 %}
+  {% assign has_actions = true %}
+{% endif %}
+
+{% if has_conclusion or has_actions %}
+<section class="article-conclusion" aria-label="結論と次にやること">
+  {% if has_conclusion %}
+  <div class="article-conclusion__block article-conclusion__block--conclusion">
+    <p class="article-conclusion__label">結論</p>
+    <p class="article-conclusion__text">{{ conclusion_text }}</p>
+  </div>
+  {% endif %}
+
+  {% if has_actions %}
+  <div class="article-conclusion__block article-conclusion__block--actions">
+    <p class="article-conclusion__label">次にやること</p>
+    <ul class="article-conclusion__list">
+      {% for action in actions %}
+        {% assign action_text = action | to_s | strip %}
+        {% if action_text != "" %}
+        <li>{{ action_text }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</section>
+{% endif %}
