@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>月末在庫メモ</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --line: #d7deea;
+      --text: #1f2a37;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-soft: #e8f0ff;
+      --danger: #b91c1c;
+      --ok: #166534;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px 14px 40px;
+    }
+    .hero, .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero { padding: 18px; margin-bottom: 14px; }
+    .hero h1 {
+      font-size: 1.45rem;
+      margin: 0 0 8px;
+    }
+    .hero p, .help {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    label {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 12px;
+      font-size: 16px;
+      background: #fff;
+      color: var(--text);
+    }
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 14px;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      padding: 8px 0;
+      background: linear-gradient(var(--bg), var(--bg));
+    }
+    .tab {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 11px 14px;
+      font-weight: 700;
+      cursor: pointer;
+      flex: 1;
+    }
+    .tab.active {
+      background: var(--accent-soft);
+      border-color: #bfd1ff;
+      color: var(--accent);
+    }
+    .section {
+      display: none;
+      margin-bottom: 14px;
+    }
+    .section.active { display: block; }
+    .card {
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .item small { color: var(--muted); }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      z-index: 8;
+      background: linear-gradient(transparent, rgba(245,247,251,0.96) 18%);
+      padding-top: 16px;
+      margin-top: 8px;
+    }
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 12px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      cursor: pointer;
+    }
+    .primary { background: var(--accent); color: white; }
+    .sub { background: #eef2f7; color: var(--text); }
+    .danger { background: #fee2e2; color: var(--danger); }
+    .success { background: #dcfce7; color: var(--ok); }
+    .result {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .status {
+      font-size: 0.93rem;
+      color: var(--muted);
+      min-height: 1.2em;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      background: #eef2ff;
+      color: #3730a3;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: #fbfcff;
+      margin-top: 8px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    @media (max-width: 720px) {
+      .meta, .grid, .action-grid { grid-template-columns: 1fr; }
+      .wrap { padding: 12px 10px 28px; }
+      .hero h1 { font-size: 1.28rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="badge">スマホ用メモ</div>
+      <h1>月末在庫メモ</h1>
+      <p>現場で数量を入力し、最後にコピーまたはCSV保存してください。ページを閉じても、この端末では途中入力が残ります。</p>
+      <div class="meta">
+        <div class="field">
+          <label for="checkDate">点検日</label>
+          <input id="checkDate" type="date">
+        </div>
+        <div class="field">
+          <label for="inspector">入力者名</label>
+          <input id="inspector" type="text" placeholder="任意">
+        </div>
+      </div>
+      <details>
+        <summary>使い方</summary>
+        <div class="help">
+          1. 数量を入力します。<br>
+          2. 在庫なしは 0 を入れます。<br>
+          3. 最後に「コピー用テキスト作成」または「CSV保存」を押します。<br>
+          4. コピーした内容やCSVを見ながら、あとでExcelへ入力します。
+        </div>
+      </details>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="在庫メモの切り替え">
+      <button class="tab active" data-tab="tube" type="button">検知管</button>
+      <button class="tab" data-tab="supplies" type="button">備品</button>
+    </div>
+
+    <section class="section active" id="tube"></section>
+    <section class="section" id="supplies"></section>
+
+    <div class="actions">
+      <div class="action-grid">
+        <button type="button" class="primary" id="buildSummary">コピー用テキスト作成</button>
+        <button type="button" class="success" id="downloadCsv">CSV保存</button>
+        <button type="button" class="sub" id="copySummary">作成済みテキストをコピー</button>
+        <button type="button" class="danger" id="resetForm">この端末の入力を消す</button>
+      </div>
+      <div class="result card">
+        <label for="summary">コピー用テキスト</label>
+        <textarea id="summary" placeholder="ここに集計テキストが表示されます"></textarea>
+        <div class="status" id="status"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'inventory-memo-v1';
+    const dataDef = {
+      tube: [
+        {
+          title: 'ガステック',
+          note: '数量を数字で入力してください。',
+          items: [
+            'アセトン', 'フッ化水素', 'シアン化水素', 'スチレン', 'キシレン', '酢酸ブチル',
+            'アミン類', '硝酸', '2-ブタノール', 'クロロホルム（5本）', 'メチルエチルケトン（5本）'
+          ]
+        },
+        {
+          title: '北川',
+          note: '数量を数字で入力してください。',
+          items: [
+            'イソプロピルアルコール', 'エチレンオキシド（5本）', 'トルエン', '酢酸エチル',
+            '硫化水素', 'N,N-ジメチルホルムアミド', 'ベンゼン（5本）', 'ホルマリン（20本）'
+          ]
+        },
+        {
+          title: 'メモ',
+          textareas: [
+            '補充が必要なもの',
+            '廃棄したもの',
+            '期限が近いもの・気づいたこと'
+          ]
+        }
+      ],
+      supplies: [
+        {
+          title: '準備室',
+          note: '数量を数字で入力してください。',
+          items: [
+            '発煙管', 'カーボンビーズ（活性炭）', 'シリカゲルチューブ', 'アルカリ乾電池 単3', 'アルカリ乾電池 単1',
+            'ガラス繊維ろ紙 GA-55（金属 大）', 'ワットマン定量ろ紙 No.41 φ55（Be用）', 'ユニパック マークA（Be用）',
+            '捕集板用グリス', 'ヒドラジンカートリッジ', '石綿用吸収缶'
+          ]
+        },
+        {
+          title: '検査室',
+          note: '数量を数字で入力してください。',
+          items: [
+            'メンブランフィルター AAWP04700 φ25mm（Mn）',
+            'メンブランフィルター AAWP-02500 φ47mm（Co・Ni・Pb）',
+            'アドバンテック 定量ろ紙 No.6'
+          ]
+        },
+        {
+          title: 'メモ',
+          textareas: [
+            '準備室メモ', '検査室メモ', '事務所メモ', '倉庫メモ', '補充が必要なもの'
+          ]
+        }
+      ]
+    };
+
+    function safeId(text) {
+      return text.replace(/[^\w\u3040-\u30ff\u3400-\u9fff]+/g, '_');
+    }
+
+    function loadData() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    const state = loadData();
+
+    function saveData() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      setStatus('この端末に保存しました。');
+    }
+
+    function setStatus(message) {
+      document.getElementById('status').textContent = message;
+    }
+
+    function createItemInput(sectionKey, groupTitle, itemName) {
+      const key = `${sectionKey}__${groupTitle}__${itemName}`;
+      const value = state[key] ?? '';
+      return `
+        <div class="item">
+          <label for="${safeId(key)}">${itemName}</label>
+          <input id="${safeId(key)}" inputmode="numeric" pattern="[0-9]*" type="number" min="0" step="1" value="${value}">
+          <small>在庫なしは 0</small>
+        </div>
+      `;
+    }
+
+    function createTextarea(sectionKey, groupTitle, labelName) {
+      const key = `${sectionKey}__${groupTitle}__${labelName}`;
+      const value = state[key] ?? '';
+      return `
+        <div class="field">
+          <label for="${safeId(key)}">${labelName}</label>
+          <textarea id="${safeId(key)}">${value}</textarea>
+        </div>
+      `;
+    }
+
+    function renderSection(sectionKey) {
+      const el = document.getElementById(sectionKey);
+      el.innerHTML = dataDef[sectionKey].map(group => {
+        const body = group.items
+          ? `<div class="grid">${group.items.map(item => createItemInput(sectionKey, group.title, item)).join('')}</div>`
+          : `<div>${group.textareas.map(name => createTextarea(sectionKey, group.title, name)).join('')}</div>`;
+        return `
+          <div class="card">
+            <h2>${group.title}</h2>
+            ${group.note ? `<p class="help">${group.note}</p>` : ''}
+            ${body}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function attachListeners() {
+      for (const sectionKey of Object.keys(dataDef)) {
+        dataDef[sectionKey].forEach(group => {
+          (group.items || []).forEach(item => {
+            const key = `${sectionKey}__${group.title}__${item}`;
+            const input = document.getElementById(safeId(key));
+            input.addEventListener('input', () => {
+              state[key] = input.value;
+              saveData();
+            });
+          });
+          (group.textareas || []).forEach(name => {
+            const key = `${sectionKey}__${group.title}__${name}`;
+            const area = document.getElementById(safeId(key));
+            area.addEventListener('input', () => {
+              state[key] = area.value;
+              saveData();
+            });
+          });
+        });
+      }
+
+      const checkDate = document.getElementById('checkDate');
+      const inspector = document.getElementById('inspector');
+      checkDate.addEventListener('input', () => { state.checkDate = checkDate.value; saveData(); });
+      inspector.addEventListener('input', () => { state.inspector = inspector.value; saveData(); });
+    }
+
+    function initMeta() {
+      const today = new Date();
+      const y = today.getFullYear();
+      const m = String(today.getMonth() + 1).padStart(2, '0');
+      const d = String(today.getDate()).padStart(2, '0');
+      document.getElementById('checkDate').value = state.checkDate || `${y}-${m}-${d}`;
+      document.getElementById('inspector').value = state.inspector || '';
+      if (!state.checkDate) state.checkDate = `${y}-${m}-${d}`;
+    }
+
+    function buildSummaryText() {
+      const lines = [];
+      lines.push(`点検日: ${state.checkDate || ''}`);
+      lines.push(`入力者: ${state.inspector || ''}`);
+      lines.push('');
+
+      const sectionTitles = { tube: '【検知管】', supplies: '【備品】' };
+      for (const sectionKey of Object.keys(dataDef)) {
+        lines.push(sectionTitles[sectionKey]);
+        dataDef[sectionKey].forEach(group => {
+          lines.push(`■ ${group.title}`);
+          if (group.items) {
+            group.items.forEach(item => {
+              const key = `${sectionKey}__${group.title}__${item}`;
+              const val = state[key];
+              if (val !== undefined && val !== '') lines.push(`${item}: ${val}`);
+            });
+          }
+          if (group.textareas) {
+            group.textareas.forEach(name => {
+              const key = `${sectionKey}__${group.title}__${name}`;
+              const val = (state[key] || '').trim();
+              if (val) lines.push(`${name}: ${val}`);
+            });
+          }
+          lines.push('');
+        });
+      }
+      return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    }
+
+    function toCsvValue(value) {
+      const text = String(value ?? '');
+      return '"' + text.replaceAll('"', '""') + '"';
+    }
+
+    function buildCsv() {
+      const rows = [['点検日', '入力者', '区分', '分類', '品目', '数量または内容']];
+      for (const sectionKey of Object.keys(dataDef)) {
+        const sectionLabel = sectionKey === 'tube' ? '検知管' : '備品';
+        dataDef[sectionKey].forEach(group => {
+          (group.items || []).forEach(item => {
+            const key = `${sectionKey}__${group.title}__${item}`;
+            const val = state[key];
+            if (val !== undefined && val !== '') {
+              rows.push([state.checkDate || '', state.inspector || '', sectionLabel, group.title, item, val]);
+            }
+          });
+          (group.textareas || []).forEach(name => {
+            const key = `${sectionKey}__${group.title}__${name}`;
+            const val = (state[key] || '').trim();
+            if (val) rows.push([state.checkDate || '', state.inspector || '', sectionLabel, group.title, name, val]);
+          });
+        });
+      }
+      return rows.map(row => row.map(toCsvValue).join(',')).join('\r\n');
+    }
+
+    function downloadCsv() {
+      const csv = buildCsv();
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const date = state.checkDate || 'inventory';
+      a.href = url;
+      a.download = `inventory-memo-${date}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      setStatus('CSVを保存しました。');
+    }
+
+    function copySummary() {
+      const area = document.getElementById('summary');
+      if (!area.value.trim()) {
+        setStatus('先に「コピー用テキスト作成」を押してください。');
+        return;
+      }
+      area.select();
+      area.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(area.value)
+        .then(() => setStatus('コピーしました。'))
+        .catch(() => setStatus('コピーできないため、表示されたテキストを手動でコピーしてください。'));
+    }
+
+    function resetForm() {
+      const ok = confirm('この端末に保存された入力を消します。よろしいですか。');
+      if (!ok) return;
+      localStorage.removeItem(STORAGE_KEY);
+      location.reload();
+    }
+
+    function setupTabs() {
+      document.querySelectorAll('.tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+          document.querySelectorAll('.section').forEach(x => x.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    }
+
+    renderSection('tube');
+    renderSection('supplies');
+    initMeta();
+    attachListeners();
+    setupTabs();
+
+    document.getElementById('buildSummary').addEventListener('click', () => {
+      document.getElementById('summary').value = buildSummaryText();
+      setStatus('コピー用テキストを作成しました。');
+    });
+    document.getElementById('downloadCsv').addEventListener('click', downloadCsv);
+    document.getElementById('copySummary').addEventListener('click', copySummary);
+    document.getElementById('resetForm').addEventListener('click', resetForm);
+  </script>
+</body>
+</html>
