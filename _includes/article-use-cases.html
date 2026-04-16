@@ -1,0 +1,42 @@
+{% assign use_cases = page.use_cases %}
+{% if use_cases and use_cases.size > 0 %}
+<section class="article-use-cases" aria-label="この知識を使う場面">
+  <h2 class="article-use-cases__title">この知識を使う場面</h2>
+  <div class="article-use-cases__list">
+    {% for use_case in use_cases limit: 3 %}
+      {% assign has_content = false %}
+      {% if use_case.title or use_case.situation or use_case.decision or use_case.relevance %}
+        {% assign has_content = true %}
+      {% endif %}
+      {% if has_content %}
+      <article class="article-use-cases__item">
+        {% if use_case.title %}
+        <h3 class="article-use-cases__item-title">{{ use_case.title }}</h3>
+        {% endif %}
+
+        {% if use_case.situation %}
+        <p class="article-use-cases__item-row">
+          <span class="article-use-cases__label">状況説明</span>
+          <span class="article-use-cases__text">{{ use_case.situation }}</span>
+        </p>
+        {% endif %}
+
+        {% if use_case.decision %}
+        <p class="article-use-cases__item-row">
+          <span class="article-use-cases__label">判断ポイント</span>
+          <span class="article-use-cases__text">{{ use_case.decision }}</span>
+        </p>
+        {% endif %}
+
+        {% if use_case.relevance %}
+        <div class="article-use-cases__item-row article-use-cases__item-row--relevance">
+          <span class="article-use-cases__label">記事との関係</span>
+          <div class="article-use-cases__text">{{ use_case.relevance | markdownify }}</div>
+        </div>
+        {% endif %}
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
