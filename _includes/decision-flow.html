@@ -1,0 +1,50 @@
+{% assign flow_nodes = include.flow | default: page.flow %}
+{% if flow_nodes and flow_nodes.size > 0 %}
+<section class="decision-flow" aria-label="判断フローチャート">
+  <div class="decision-flow__header">
+    <p class="decision-flow__eyebrow">判断ツール</p>
+    <h2 class="decision-flow__title">判断フローチャート</h2>
+  </div>
+
+  <ol class="decision-flow__list">
+    {% for node in flow_nodes %}
+    <li class="decision-flow__node">
+      <article class="decision-flow__card">
+        {% if node.question %}
+        <p class="decision-flow__node-type">Q{{ forloop.index }}</p>
+        <p class="decision-flow__question">{{ node.question }}</p>
+        <ul class="decision-flow__branches" role="list">
+          {% for branch in node %}
+          {% assign branch_label = branch[0] | strip %}
+          {% assign branch_target = branch[1] %}
+          {% unless branch_label == "question" or branch_label == "result" %}
+          {% assign normalized_label = branch_label | downcase %}
+          <li class="decision-flow__branch decision-flow__branch--{{ normalized_label | replace: ' ', '-' }}">
+            <span class="decision-flow__label">{{ branch_label | upcase }}</span>
+            <span class="decision-flow__arrow" aria-hidden="true">→</span>
+            <span class="decision-flow__target">
+              {% if branch_target == nil or branch_target == "" %}
+              未設定
+              {% elsif branch_target == branch_target | plus: 0 %}
+              ノード {{ branch_target | plus: 1 }} へ
+              {% else %}
+              {{ branch_target }}
+              {% endif %}
+            </span>
+          </li>
+          {% endunless %}
+          {% endfor %}
+        </ul>
+        {% elsif node.result %}
+        <p class="decision-flow__node-type">RESULT</p>
+        <p class="decision-flow__result">{{ node.result }}</p>
+        {% else %}
+        <p class="decision-flow__node-type">INFO</p>
+        <p class="decision-flow__result">このノードは定義が不足しています。</p>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
