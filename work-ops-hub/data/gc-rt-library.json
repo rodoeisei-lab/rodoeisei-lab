@@ -1,0 +1,41 @@
+{
+  "version": "2026-04-20",
+  "machine_groups": [
+    {
+      "group_id": "gc2014",
+      "group_label": "GC2014",
+      "column_policy": {
+        "treat_same_machine_cbp_as_single_column": true,
+        "normalize_cbp20_to_cbp": true
+      }
+    }
+  ],
+  "records": [
+    {"id":"gc2014-cbp-60-001","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_60c","rt_min":1.21,"analyte_original":"メタノール","analyte_normalized":"メタノール","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-60-002","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_60c","rt_min":1.77,"analyte_original":"アセトン","analyte_normalized":"アセトン","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-60-003","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_60c","rt_min":2.88,"analyte_original":"酢酸エチル","analyte_normalized":"酢酸エチル","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-60-004","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_60c","rt_min":3.64,"analyte_original":"IPA","analyte_normalized":"イソプロパノール","certainty":"medium","source":"manual_scan_pdf","note":"手書き追記"},
+    {"id":"gc2014-cbp-60-005","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_60c","rt_min":4.22,"analyte_original":"ブロワ","analyte_normalized":"名称未確定","certainty":"low","source":"manual_scan_pdf","note":"手書き名称が不確か"},
+
+    {"id":"gc2014-cbp-80-001","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_80c","rt_min":0.98,"analyte_original":"メタノール","analyte_normalized":"メタノール","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-80-002","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_80c","rt_min":1.34,"analyte_original":"アセトン","analyte_normalized":"アセトン","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-80-003","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_80c","rt_min":2.16,"analyte_original":"MEK","analyte_normalized":"MEK","certainty":"medium","source":"manual_scan_pdf","note":"手書きだが判読可"},
+    {"id":"gc2014-cbp-80-004","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_80c","rt_min":2.71,"analyte_original":"酢酸エチル","analyte_normalized":"酢酸エチル","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-80-005","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_80c","rt_min":3.25,"analyte_original":"トルエン?","analyte_normalized":"トルエン","certainty":"low","source":"manual_scan_pdf","note":"手書き末尾不鮮明"},
+
+    {"id":"gc2014-cbp-90-2-001","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_90c_2","rt_min":0.89,"analyte_original":"メタノール","analyte_normalized":"メタノール","certainty":"high","source":"manual_scan_pdf","note":"90C(2) 印字"},
+    {"id":"gc2014-cbp-90-2-002","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_90c_2","rt_min":1.20,"analyte_original":"アセトン","analyte_normalized":"アセトン","certainty":"high","source":"manual_scan_pdf","note":"90C(2) 印字"},
+    {"id":"gc2014-cbp-90-2-003","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_90c_2","rt_min":1.96,"analyte_original":"MEK","analyte_normalized":"MEK","certainty":"high","source":"manual_scan_pdf","note":"90C(2) 印字"},
+    {"id":"gc2014-cbp-90-2-004","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_90c_2","rt_min":2.49,"analyte_original":"酢酸エチル","analyte_normalized":"酢酸エチル","certainty":"high","source":"manual_scan_pdf","note":"90C(2) 印字"},
+    {"id":"gc2014-cbp-90-2-005","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_90c_2","rt_min":2.94,"analyte_original":"酢酸n-ブチル","analyte_normalized":"酢酸n-ブチル","certainty":"medium","source":"manual_scan_pdf","note":"手書きで追記"},
+
+    {"id":"gc2014-cbp-120-001","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_120c","rt_min":0.68,"analyte_original":"メタノール","analyte_normalized":"メタノール","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-120-002","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_120c","rt_min":0.95,"analyte_original":"アセトン","analyte_normalized":"アセトン","certainty":"high","source":"manual_scan_pdf","note":"印字値"},
+    {"id":"gc2014-cbp-120-003","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_120c","rt_min":1.59,"analyte_original":"MEK","analyte_normalized":"MEK","certainty":"medium","source":"manual_scan_pdf","note":"手書き"},
+    {"id":"gc2014-cbp-120-004","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_120c","rt_min":2.21,"analyte_original":"キシレン(mix)","analyte_normalized":"キシレン","certainty":"low","source":"manual_scan_pdf","note":"手書き混合表記"},
+
+    {"id":"gc2014-cbp-70iso-001","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_70c_isothermal","rt_min":1.52,"analyte_original":"アセトン","analyte_normalized":"アセトン","certainty":"high","source":"manual_scan_pdf","note":"等温70C 印字"},
+    {"id":"gc2014-cbp-70iso-002","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_70c_isothermal","rt_min":2.42,"analyte_original":"酢酸エチル","analyte_normalized":"酢酸エチル","certainty":"medium","source":"manual_scan_pdf","note":"等温70C 手書き"},
+    {"id":"gc2014-cbp-70iso-003","machine_id":"gc2014","column_id":"cbp","temp_program_id":"cbp_70c_isothermal","rt_min":3.98,"analyte_original":"ブロワ(再読不能)","analyte_normalized":"名称未確定","certainty":"low","source":"manual_scan_pdf","note":"手書き読取不可"}
+  ]
+}

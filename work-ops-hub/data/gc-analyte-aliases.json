@@ -1,0 +1,13 @@
+{
+  "version": "2026-04-20",
+  "aliases": [
+    {"alias":"IPA","normalized":"イソプロパノール","note":"略称"},
+    {"alias":"i-PrOH","normalized":"イソプロパノール","note":"英語略記"},
+    {"alias":"MIBK","normalized":"メチルイソブチルケトン","note":"英語略記"},
+    {"alias":"酢酸ブチル","normalized":"酢酸n-ブチル","note":"表記ゆれ"},
+    {"alias":"キシレン(mix)","normalized":"キシレン","note":"混合物表記"},
+    {"alias":"トルエン?","normalized":"トルエン","note":"手書き疑義付き"},
+    {"alias":"ブロワ","normalized":"名称未確定","note":"採用しない名称"},
+    {"alias":"ブロワ(再読不能)","normalized":"名称未確定","note":"採用しない名称"}
+  ]
+}
