@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GC RTデータ投入ビュー</title>
+    <link rel="stylesheet" href="./assets/app.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>GC RT 候補提案（GC2014 / CBP）</h1>
+      <p class="caption">「最適条件」ではなく、確度付きデータによる<strong>候補提案</strong>を表示します。</p>
+
+      <section class="card">
+        <h2>分析対象</h2>
+        <p class="hint">名称未確定は候補提案の主対象から除外されます（RT一覧には表示）。</p>
+        <div id="analyte-checkboxes" class="chips"></div>
+        <button id="run-suggest">候補提案を更新</button>
+      </section>
+
+      <section class="card">
+        <h2>候補提案</h2>
+        <div id="suggestions"></div>
+      </section>
+
+      <section class="card">
+        <h2>RT一覧（source / note 付き）</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>温度条件</th>
+              <th>RT(min)</th>
+              <th>物質（正規化）</th>
+              <th>元表記</th>
+              <th>certainty</th>
+              <th>source</th>
+              <th>note</th>
+            </tr>
+          </thead>
+          <tbody id="rt-table-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="./assets/app.js" type="module"></script>
+  </body>
+</html>
