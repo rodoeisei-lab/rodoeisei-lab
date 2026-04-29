@@ -1,26 +1,11 @@
 <a class="skip-link" href="#main">本文へスキップ</a>
 <header class="site-header" role="banner">
   <div class="container header-shell">
-    <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-icon">⚗</span>労働衛生ラボ</a>
+    <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-icon" aria-hidden="true">⚗</span><span>労働衛生ラボ</span></a>
     <div class="header-actions">
       <a href="{{ '/search/' | relative_url }}" class="icon-btn" aria-label="検索">⌕</a>
       <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
-<div class="nav-overlay" id="navOverlay" hidden></div>
-<nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="モバイルメニュー">
-  <div class="mobile-menu-head">
-    <h2>メニュー</h2>
-    <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
-  </div>
-  <a href="{{ '/join/' | relative_url }}" class="menu-cta-primary">コミュニティに入る</a>
-  <a href="{{ '/qa/' | relative_url }}" class="menu-cta-secondary">公開Q&amp;Aを見る</a>
-  <a href="{{ '/past-exams/' | relative_url }}" class="menu-featured-card"><small>最短でアクセス</small><strong>過去問（公式）</strong><span>›</span></a>
-  <ul>
-    {% for item in site.data.navigation %}
-    <li><a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a></li>
-    {% endfor %}
-  </ul>
-  <a href="{{ '/qa/ask/' | relative_url }}" class="menu-consult">匿名で相談する <em>匿名OK</em></a>
-</nav>
+{% include mobile-menu.html %}

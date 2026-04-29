@@ -1,74 +1,20 @@
 ---
 layout: base
 ---
-<section class="home-hero" aria-label="ヒーロー">
-  <div class="container narrow">
-    <div class="hero-copy-block">
-      <h1>労働衛生の学びを、<br>もっと実務的に。</h1>
-      <p>実務に役立つ知識とコミュニティで、日々の課題解決と成長をサポートします。</p>
-    </div>
-    <div class="hero-illustration" aria-hidden="true">
-      <div class="hero-blob">
-        <svg viewBox="0 0 160 130" role="img" aria-label="チェックとシールド" xmlns="http://www.w3.org/2000/svg">
-          <rect x="44" y="18" width="72" height="90" rx="10" fill="#fff" stroke="#b9c6df" stroke-width="4"/>
-          <rect x="65" y="10" width="30" height="12" rx="5" fill="#9fb2d6"/>
-          <path d="M55 44l4 4 8-9" stroke="#7f96bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M55 61l4 4 8-9" stroke="#7f96bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M55 78l4 4 8-9" stroke="#7f96bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="74" y1="45" x2="102" y2="45" stroke="#d7dfef" stroke-width="3"/>
-          <line x1="74" y1="62" x2="102" y2="62" stroke="#d7dfef" stroke-width="3"/>
-          <line x1="74" y1="79" x2="102" y2="79" stroke="#d7dfef" stroke-width="3"/>
-          <path d="M116 67 137 74 136 94c0 11-8 22-20 26-12-4-20-15-20-26l-1-20z" fill="#2d6bff"/>
-          <path d="M116 77v14M109 84h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<main class="home-main" id="main">
+{% assign home = site.data.home %}
+<div class="home-main" id="main">
   <div class="container narrow home-stack">
-    <section class="quick-search-card">
-      <h2>クイック検索</h2>
-      <form action="{{ '/search/' | relative_url }}" method="get" class="search-field">
-        <span aria-hidden="true">⌕</span>
-        <input type="search" name="q" placeholder="キーワードで検索（例：腰痛対策、長時間労働）">
-      </form>
-      <div class="chips" aria-label="よく検索されるテーマ">
-        <a href="{{ '/search/?q=メンタルヘルス' | relative_url }}">よく検索されるテーマ</a>
-        <a href="{{ '/search/?q=メンタルヘルス' | relative_url }}">メンタルヘルス</a>
-        <a href="{{ '/search/?q=化学物質管理' | relative_url }}">化学物質管理</a>
-        <a href="{{ '/search/?q=腰痛予防' | relative_url }}">腰痛予防</a>
-      </div>
+    <section class="home-hero" aria-label="ヒーロー">
+      <div class="hero-copy-block"><h1>{{ home.hero.title | newline_to_br }}</h1><p>{{ home.hero.description }}</p></div>
+      <div class="hero-illustration" aria-hidden="true"><div class="hero-blob">📋🛡️</div></div>
     </section>
 
-    <article class="primary-topic-card">
-      <div class="topic-leading">
-        <div class="topic-icon">📘</div>
-        <div>
-          <span class="chip-highlight">最重要</span>
-          <h2>過去問（公式）</h2>
-          <p>試験対策に。年度別の過去問と解説を掲載。</p>
-        </div>
-      </div>
-      <a href="{{ '/past-exams/' | relative_url }}" class="primary-topic-btn">過去問を見る →</a>
-    </article>
+    <section class="quick-search-card"><h2>クイック検索</h2><form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><span aria-hidden="true">⌕</span><input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"></form><div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div></section>
 
-    <section class="feature-grid" aria-label="カテゴリ">
-      <a class="feature-card" href="{{ '/community/' | relative_url }}"><h3>コミュニティ</h3><p>相談・情報交換ができるメンバー限定の場。</p><span>→</span></a>
-      <a class="feature-card" href="{{ '/qa/' | relative_url }}"><h3>公開Q&amp;A</h3><p>よくある質問や知見をみんなで共有。</p><span>→</span></a>
-      <a class="feature-card" href="{{ '/learn/' | relative_url }}"><h3>学習</h3><p>解説・まとめ・用語集など学びを深める。</p><span>→</span></a>
-      <a class="feature-card" href="{{ '/tools/' | relative_url }}"><h3>ツール</h3><p>計算ツールやチェックリストなど実務に便利。</p><span>→</span></a>
-    </section>
+    <article class="primary-topic-card"><div class="topic-leading"><div class="topic-icon">📘</div><div><span class="chip-highlight">{{ home.primary_card.label }}</span><h2>{{ home.primary_card.title }}</h2><p>{{ home.primary_card.description }}</p></div></div><a href="{{ home.primary_card.url | relative_url }}" class="primary-topic-btn">過去問を見る</a></article>
 
-    <a class="notice-card" href="{{ '/sns/' | relative_url }}">
-      <strong>お知らせ</strong>
-      <p>最新の更新情報はSNSでも先に流れます。</p>
-      <span>SNSリンク集へ →</span>
-    </a>
+    <section class="feature-grid">{% for card in home.main_cards %}<a class="feature-card" href="{{ card.url | relative_url }}"><i>{{ card.icon }}</i><h3>{{ card.title }}</h3><p>{{ card.description }}</p><span>›</span></a>{% endfor %}</section>
+
+    <a class="notice-card" href="{{ home.notice.url | relative_url }}"><strong>🔔 {{ home.notice.title }}</strong><p>{{ home.notice.description }}</p><span>SNSリンク集へ ›</span></a>
   </div>
-</main>
-
-<a class="sticky-consult-cta" href="{{ '/qa/ask/' | relative_url }}">
-  匿名で相談する <em>匿名OK</em> <span>→</span>
-</a>
+</div>

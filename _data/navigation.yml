@@ -1,14 +1,21 @@
 - title: コミュニティに入る
   url: /join/
+  icon: 👥
 - title: コミュニティ
   url: /community/
+  icon: 💬
 - title: Q&A
   url: /qa/
+  icon: ❓
 - title: 学習
   url: /learn/
+  icon: 🎓
 - title: 過去問（公式）
   url: /past-exams/
+  icon: 📘
 - title: ツール
   url: /tools/
+  icon: 🔧
 - title: SNSリンク集
-  url: /sns/
+  url: /sns-links/
+  icon: 🔗
