@@ -11,7 +11,7 @@
   {% assign all_articles = all_articles | concat: site.updates %}
 {% endif %}
 
-{% assign prioritized_articles = all_articles | sort: 'updated_at' | reverse %}
+{% assign prioritized_articles = all_articles %}
 
 {% assign shown_urls = '|' | append: current_url | append: '|' %}
 {% assign related_count = 0 %}
