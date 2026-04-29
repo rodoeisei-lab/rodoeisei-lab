@@ -1,503 +1,74 @@
 ---
 layout: base
 ---
-<section class="hero" aria-label="サイト紹介">
-  <div class="container hero-inner">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="hero-label">
-          <span class="hero-label-dot"></span>
-          LABOR HYGIENE / SAFETY TECH
-        </div>
-        <h1>
-          労働衛生の「判断」を、<br>
-          <span class="hero-accent">アップデートする。</span>
-        </h1>
-        <p class="tagline">
-          労働衛生の実務で迷ったときに、相談・事例・回答ストックへすぐアクセスできるコミュニティです。
-        </p>
-        <div class="cta-buttons cta-buttons-entry">
-          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-          <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
-          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談は匿名フォームへ</a>
-        </div>
-        <div class="cta-buttons cta-buttons-sub">
-          <a href="{{ '/guides/' | relative_url }}" class="cta-tertiary">今週の解説を見る</a>
-          <a href="{{ '/inspection/' | relative_url }}" class="cta-tertiary">労基署対策</a>
-          <a href="{{ '/products/' | relative_url }}" class="cta-tertiary">道具棚（保護具・測定器材）</a>
-        </div>
-
-        <article class="exam-cta-card" aria-label="過去問（公式）への案内">
-          <div class="exam-cta-copy">
-            <p class="exam-cta-eyebrow">資格対策の最短入口</p>
-            <h2 class="exam-cta-title">過去問（公式）</h2>
-            <p class="exam-cta-description">資格対策に使える公式過去問をまとめて確認。</p>
-            <p class="exam-cta-meta">作業環境測定士・第1種衛生管理者・労働衛生コンサルタント</p>
-          </div>
-          <div class="exam-cta-actions">
-            <a href="{{ '/past-exams/' | relative_url }}" class="exam-cta-button">過去問を見る</a>
-          </div>
-        </article>
-        
-        <form class="hero-search" action="{{ '/search/' | relative_url }}" method="get">
-          <label class="sr-only" for="heroSearch">検索</label>
-          <input id="heroSearch" type="search" name="q" placeholder="例：個人ばく露測定、管理濃度、フィットテスト…">
-          <button type="submit" class="cta-secondary">検索する</button>
-        </form>
-        <div class="hero-meta">
-          <span>毎週更新</span>
-          <span>現場の一次情報</span>
-          <span>実務で使える要約</span>
-        </div>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <img
-          class="hero-image-wrap"
-          src="{{ '/assets/images/hero-lab.svg' | relative_url }}"
-          srcset="{{ '/assets/images/hero-lab.svg' | relative_url }} 640w, {{ '/assets/images/hero-lab.svg' | relative_url }} 1280w"
-          sizes="(max-width: 900px) 100vw, 46vw"
-          alt="労働衛生データの可視化イメージ"
-          width="1280"
-          height="720"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        >
-        <div class="hero-orb">
-          <div class="hero-orb-inner">
-            <div>
-              <div class="hero-stat-label">COMMUNITY SNAPSHOT</div>
-              <div class="hero-stat-main">継続的に集まる公開コミュニティを主入口に</div>
-              <div class="hero-stat-sub">GitHub Discussions を主導線に、匿名相談は必要時だけ使える構成へ</div>
-            </div>
-            <div class="hero-stat-row">
-              <a class="hero-pill hero-pill-primary" href="{{ '/join/' | relative_url }}">
-                <strong>コミュニティに入る</strong>
-                公開参加の主入口を1クリックで確認
-              </a>
-              <a class="hero-pill" href="{{ '/qa/ask/' | relative_url }}">
-                <strong>匿名で相談</strong>
-                個別事情が強いときは Google フォームへ
-              </a>
-              <a class="hero-pill" href="{{ '/qa/' | relative_url }}">
-                <strong>公開Q&amp;Aを見る</strong>
-                先に相談例や雰囲気を確認する
-              </a>
-            </div>
-          </div>
-        </div>
+<section class="home-hero" aria-label="ヒーロー">
+  <div class="container narrow">
+    <div class="hero-copy-block">
+      <h1>労働衛生の学びを、<br>もっと実務的に。</h1>
+      <p>実務に役立つ知識とコミュニティで、日々の課題解決と成長をサポートします。</p>
+    </div>
+    <div class="hero-illustration" aria-hidden="true">
+      <div class="hero-blob">
+        <svg viewBox="0 0 160 130" role="img" aria-label="チェックとシールド" xmlns="http://www.w3.org/2000/svg">
+          <rect x="44" y="18" width="72" height="90" rx="10" fill="#fff" stroke="#b9c6df" stroke-width="4"/>
+          <rect x="65" y="10" width="30" height="12" rx="5" fill="#9fb2d6"/>
+          <path d="M55 44l4 4 8-9" stroke="#7f96bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M55 61l4 4 8-9" stroke="#7f96bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M55 78l4 4 8-9" stroke="#7f96bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="74" y1="45" x2="102" y2="45" stroke="#d7dfef" stroke-width="3"/>
+          <line x1="74" y1="62" x2="102" y2="62" stroke="#d7dfef" stroke-width="3"/>
+          <line x1="74" y1="79" x2="102" y2="79" stroke="#d7dfef" stroke-width="3"/>
+          <path d="M116 67 137 74 136 94c0 11-8 22-20 26-12-4-20-15-20-26l-1-20z" fill="#2d6bff"/>
+          <path d="M116 77v14M109 84h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+        </svg>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="community-value" aria-label="このコミュニティでできること">
-  <div class="container">
-    <div class="community-value-header">
-      <p class="community-value-eyebrow">COMMUNITY VALUE</p>
-      <h2>このコミュニティでできること</h2>
-      <p>「何が得られるか」を先に確認してから、参加を判断できます。</p>
-    </div>
-
-    <div class="community-value-grid">
-      <article class="community-value-card">
-        <p class="community-value-icon" aria-hidden="true">💬</p>
-        <h3>現場の悩みをすぐ相談できる</h3>
-        <p>匿名相談も可能。実務者からリアルな回答が得られます。</p>
-      </article>
-      <article class="community-value-card">
-        <p class="community-value-icon" aria-hidden="true">📚</p>
-        <h3>他社の運用・事例が分かる</h3>
-        <p>法令だけでなく、実際の回し方・工夫が見えます。</p>
-      </article>
-      <article class="community-value-card">
-        <p class="community-value-icon" aria-hidden="true">🗂️</p>
-        <h3>回答が蓄積され、あとから使える</h3>
-        <p>Q&amp;Aとして整理され、同じ悩みで繰り返し使えます。</p>
-      </article>
-    </div>
-
-    <div class="community-value-action">
-      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-    </div>
-  </div>
-</section>
-
-<section class="community-people" aria-label="こんな人が参加しています">
-  <div class="container">
-    <div class="community-people-header">
-      <p class="community-people-eyebrow">COMMUNITY PEOPLE</p>
-      <h2>こんな人が参加しています</h2>
-      <p class="community-people-lead">「自分が入っていい場か」を判断しやすいよう、参加者像と投稿イメージを先に公開しています。</p>
-    </div>
-
-    <div class="community-people-block">
-      <h3>参加者タイプ</h3>
-      <div class="community-people-grid">
-        <article class="community-people-card">
-          <h4>製造業の衛生担当</h4>
-          <p>総務と兼任しながら、現場巡視・帳票・教育の実務を回している担当者。</p>
-        </article>
-        <article class="community-people-card">
-          <h4>作業環境測定士</h4>
-          <p>測定の計画・実施から評価、改善提案までを一気通貫で担う専門職。</p>
-        </article>
-        <article class="community-people-card">
-          <h4>産業保健スタッフ</h4>
-          <p>産業医・保健師と連携し、現場実装やフォロー体制を整える役割。</p>
-        </article>
-        <article class="community-people-card">
-          <h4>中小企業の一人担当</h4>
-          <p>安全衛生・法令対応・教育を一人で兼務し、相談先を求めるケース。</p>
-        </article>
+<main class="home-main" id="main">
+  <div class="container narrow home-stack">
+    <section class="quick-search-card">
+      <h2>クイック検索</h2>
+      <form action="{{ '/search/' | relative_url }}" method="get" class="search-field">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" name="q" placeholder="キーワードで検索（例：腰痛対策、長時間労働）">
+      </form>
+      <div class="chips" aria-label="よく検索されるテーマ">
+        <a href="{{ '/search/?q=メンタルヘルス' | relative_url }}">よく検索されるテーマ</a>
+        <a href="{{ '/search/?q=メンタルヘルス' | relative_url }}">メンタルヘルス</a>
+        <a href="{{ '/search/?q=化学物質管理' | relative_url }}">化学物質管理</a>
+        <a href="{{ '/search/?q=腰痛予防' | relative_url }}">腰痛予防</a>
       </div>
-    </div>
+    </section>
 
-    <div class="community-people-block">
-      <h3>投稿例（匿名化・一般化）</h3>
-      <div class="community-posts-grid">
-        <article class="community-post-card">
-          <p class="community-post-title">局所排気の風速測定の頻度に悩んでいる</p>
-          <p><strong>Before：</strong>定期自主検査と日常点検の線引きが曖昧で、現場の運用ルールが決め切れない。</p>
-          <p><strong>After：</strong>法令要件と実務運用を分けて整理し、月次点検と異常時確認の運用フローを作れた。</p>
-        </article>
-        <article class="community-post-card">
-          <p class="community-post-title">有機溶剤作業の保護具選定で迷っている</p>
-          <p><strong>Before：</strong>カタログの性能は見ても、現場条件に合う吸収缶の選び方に自信がない。</p>
-          <p><strong>After：</strong>使用時間・濃度・交換管理の考え方を共有してもらい、選定基準をチームで統一できた。</p>
-        </article>
-      </div>
-    </div>
-
-    <div class="community-people-safe" aria-label="安心メッセージ">
-      <h3>はじめての方へ</h3>
-      <ul>
-        <li>初歩的な質問も歓迎</li>
-        <li>現場レベルの悩みでOK</li>
-        <li>一言の経験共有でも価値があります</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-{% include home-latest-articles.html %}
-
-<section class="first-step-guide" aria-label="はじめての方へ 30秒ガイド">
-  <div class="container">
-    <div class="first-step-guide-header">
-      <p class="first-step-guide-eyebrow">FIRST STEP</p>
-      <h2>はじめての方へ</h2>
-      <p>30秒で参加方法が分かるように、最短の参加導線だけに整理しました。</p>
-    </div>
-    <div class="first-step-guide-grid">
-      <article class="first-step-card">
-        <p class="first-step-number">1</p>
-        <h3>閲覧だけでもOK</h3>
-        <p>まずは公開Q&amp;Aを見て、テーマや雰囲気を確認してください。登録前の閲覧だけでも歓迎です。</p>
-      </article>
-      <article class="first-step-card">
-        <p class="first-step-number">2</p>
-        <h3>GitHub Discussions に参加</h3>
-        <p>GitHubアカウントがあれば参加できます。主入口は公開コミュニティです。</p>
-      </article>
-      <article class="first-step-card">
-        <p class="first-step-number">3</p>
-        <h3>自己紹介 or 質問を投稿</h3>
-        <p>最初の投稿は短くて大丈夫。自己紹介でも、現場の困りごと質問でもOKです。</p>
-      </article>
-    </div>
-    <div class="first-step-guide-actions">
-      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-      <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
-      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談だけ匿名フォームへ</a>
-    </div>
-  </div>
-</section>
-
-<section class="community-entry" aria-label="コミュニティに入る">
-  <div class="container">
-    <div class="community-entry-header">
-      <p class="community-entry-eyebrow">COMMUNITY ENTRY</p>
-      <h2>全国の労働衛生担当者が集まる場に参加する</h2>
-      <p class="community-entry-lead">実務の悩み、他社事例、法令運用の考え方を継続的に共有できる場を主入口にしました。まずはコミュニティ本体に参加し、必要に応じて匿名相談も使えます。</p>
-    </div>
-    <div class="community-entry-actions">
-      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-      <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
-      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談だけ匿名フォームへ</a>
-    </div>
-    <ul class="community-entry-points">
-      <li>公開で継続参加する入口を一本化</li>
-      <li>匿名相談は残しつつ主導線から一段下げる</li>
-      <li>閲覧だけの人も公開Q&amp;Aから参加前の雰囲気確認が可能</li>
-    </ul>
-  </div>
-</section>
-
-{% assign activities = site.data.community_activity %}
-<section class="community-activity" aria-label="最近のコミュニティ活動">
-  <div class="container">
-    <div class="community-activity-header">
-      <p class="community-activity-eyebrow">COMMUNITY ACTIVITY</p>
-      <h2>最近のコミュニティ活動</h2>
-      <p class="community-activity-lead">いま動いている相談や参加者を見る</p>
-    </div>
-
-    {% if activities and activities.size > 0 %}
-      <div class="community-activity-grid">
-        {% for item in activities limit:6 %}
-          {% assign activity_type = item.type | default: '公開Q&A' %}
-          {% assign activity_class = 'qa' %}
-          {% if activity_type contains '自己紹介' %}
-            {% assign activity_class = 'intro' %}
-          {% elsif activity_type contains '回答募集中' %}
-            {% assign activity_class = 'needs-answer' %}
-          {% endif %}
-          <article class="community-activity-card">
-            <p class="community-activity-type community-activity-type-{{ activity_class }}">{{ activity_type }}</p>
-            <h3>
-              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-            </h3>
-            <p class="community-activity-meta">
-              <span>{{ item.date | date: "%Y.%m.%d" }}</span>
-              <span class="community-activity-tag">{{ item.tag }}</span>
-            </p>
-            <a class="community-activity-link" href="{{ item.url | relative_url }}">内容を見る</a>
-          </article>
-        {% endfor %}
-      </div>
-    {% else %}
-      <p class="community-activity-empty">活動準備中。まずはコミュニティ参加または匿名相談からどうぞ。</p>
-    {% endif %}
-
-    <div class="community-activity-actions">
-      <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-      <a href="{{ '/qa/' | relative_url }}" class="cta-participation-secondary">公開Q&amp;Aを見る</a>
-      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-anonymous-link">公開しづらい相談だけ匿名フォームへ</a>
-    </div>
-  </div>
-</section>
-
-<section class="participation-hub" aria-label="コミュニティ参加ハブ">
-  <div class="container">
-    <h2>コミュニティに入る</h2>
-    <p class="participation-hub-lead">役割を分けつつ、視覚上の主役は「公開で参加する」です。</p>
-    <div class="participation-hub-grid">
-      <article class="participation-hub-card participation-hub-card-featured">
-        <h3>公開で参加する</h3>
-        <p>継続的に知見交換したい人向け。GitHub Discussions を主入口にして、質問・回答・運用メモを蓄積します。</p>
-        <div class="participation-hub-actions">
-          <a href="{{ '/join/' | relative_url }}" class="cta-participation-primary">コミュニティに入る</a>
-          <a href="{{ site.community.discussions_url | default: site.community.repository_url }}" class="btn-step" target="_blank" rel="noopener">GitHub Discussions を開く</a>
-        </div>
-      </article>
-      <article class="participation-hub-card">
-        <h3>匿名で相談する</h3>
-        <p>個別事情を含む悩みは匿名フォームから相談。既存の Google フォーム導線はそのまま残しています。</p>
-        <div class="participation-hub-actions">
-          <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
-        </div>
-        <p class="participation-hub-note">個人名・企業名など特定情報は書かずにご利用ください。</p>
-      </article>
-      <article class="participation-hub-card">
-        <h3>まずQ&amp;Aを見る</h3>
-        <p>投稿前に、公開Q&amp;Aや過去の相談を見てテーマ感をつかみたい人向けです。</p>
-        <div class="participation-hub-actions">
-          <a href="{{ '/qa/' | relative_url }}" class="btn-step">公開Q&amp;Aを見る</a>
-        </div>
-      </article>
-    </div>
-    <ul class="participation-hub-guidelines">
-      <li>主入口は「コミュニティに入る」</li>
-      <li>匿名相談は個別事情が強いケース向け</li>
-      <li>緊急案件は公的機関・専門機関への相談を優先</li>
-    </ul>
-  </div>
-</section>
-
-<section class="question-value-flow" aria-label="質問の活用フロー">
-  <div class="container">
-    <h2>質問はこう活用されます</h2>
-    <p class="question-value-flow-lead">投稿された内容は整理され、他の現場にも役立つQ&amp;Aとして公開されます。</p>
-
-    <div class="question-value-steps" role="list" aria-label="匿名相談から公開Q&amp;Aまでの流れ">
-      <article class="question-value-step" role="listitem">
-        <p class="question-value-step-number">1</p>
-        <h3>匿名で投稿する</h3>
-        <p>Googleフォームから匿名で相談</p>
-      </article>
-      <div class="question-value-arrow" aria-hidden="true">→</div>
-      <article class="question-value-step" role="listitem">
-        <p class="question-value-step-number">2</p>
-        <h3>運営で整理</h3>
-        <p>内容を一般化・個人情報除去</p>
-      </article>
-      <div class="question-value-arrow" aria-hidden="true">→</div>
-      <article class="question-value-step" role="listitem">
-        <p class="question-value-step-number">3</p>
-        <h3>公開Q&amp;Aとして掲載</h3>
-        <p>他の担当者も閲覧・活用可能</p>
-      </article>
-    </div>
-
-    <div class="question-value-example" aria-label="質問整理の具体例">
-      <p class="question-value-example-title">Before / After 例</p>
-      <div class="question-value-example-grid">
-        <div class="question-value-example-card">
-          <p class="question-value-example-label">Before</p>
-          <p>「有機溶剤の換気について相談したい」</p>
-        </div>
-        <div class="question-value-arrow" aria-hidden="true">→</div>
-        <div class="question-value-example-card question-value-example-card-after">
-          <p class="question-value-example-label">After</p>
-          <p>「有機溶剤作業における局所排気装置の運用ポイント」</p>
+    <article class="primary-topic-card">
+      <div class="topic-leading">
+        <div class="topic-icon">📘</div>
+        <div>
+          <span class="chip-highlight">最重要</span>
+          <h2>過去問（公式）</h2>
+          <p>試験対策に。年度別の過去問と解説を掲載。</p>
         </div>
       </div>
-      <p class="question-value-example-note">このように整理されて公開されます。</p>
-    </div>
+      <a href="{{ '/past-exams/' | relative_url }}" class="primary-topic-btn">過去問を見る →</a>
+    </article>
 
-    <div class="question-value-cta">
-      <p>投稿内容は整理され、公開Q&amp;Aとして蓄積されます。</p>
-      <a href="{{ '/qa/ask/' | relative_url }}" class="cta-participation-secondary">匿名で相談する</a>
-    </div>
+    <section class="feature-grid" aria-label="カテゴリ">
+      <a class="feature-card" href="{{ '/community/' | relative_url }}"><h3>コミュニティ</h3><p>相談・情報交換ができるメンバー限定の場。</p><span>→</span></a>
+      <a class="feature-card" href="{{ '/qa/' | relative_url }}"><h3>公開Q&amp;A</h3><p>よくある質問や知見をみんなで共有。</p><span>→</span></a>
+      <a class="feature-card" href="{{ '/learn/' | relative_url }}"><h3>学習</h3><p>解説・まとめ・用語集など学びを深める。</p><span>→</span></a>
+      <a class="feature-card" href="{{ '/tools/' | relative_url }}"><h3>ツール</h3><p>計算ツールやチェックリストなど実務に便利。</p><span>→</span></a>
+    </section>
 
-    <p class="question-value-message">あなたの1件が、他の現場の悩みを解決します。</p>
+    <a class="notice-card" href="{{ '/sns/' | relative_url }}">
+      <strong>お知らせ</strong>
+      <p>最新の更新情報はSNSでも先に流れます。</p>
+      <span>SNSリンク集へ →</span>
+    </a>
   </div>
-</section>
+</main>
 
-<section class="weekly-questions" aria-label="現場Q&A">
-  <div class="container">
-    <h2>現場Q&A</h2>
-    <p class="weekly-questions-lead">現場でよく出る質問を、回答つきで公開しています。</p>
-
-    <div class="question-grid">
-      {% for q in site.data.questions limit:3 %}
-      <article class="question-card status-{{ q.status }}">
-        <h3>{{ q.title }}</h3>
-        <p>{{ q.key_answer }}</p>
-        <span class="tag">{{ q.tags[0] }}</span>
-        <a href="{{ q.url | relative_url }}" class="btn-read">回答を見る</a>
-      </article>
-      {% endfor %}
-    </div>
-
-    <div class="qa-actions">
-      <a href="{{ '/qa/' | relative_url }}" class="btn-primary">Q&amp;A一覧を見る</a>
-      <a href="{{ '/qa/ask/' | relative_url }}" class="btn-secondary">匿名で相談する</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-label="目的別スタート">
-  <div class="container">
-    <h2>目的別スタート</h2>
-    <p>いまの目的に合わせて、最短距離で必要な情報へ。</p>
-    <div class="cards">
-      {% include list-card.html
-        class="home-start-card"
-        title="コミュニティ"
-        description="悩みや気づきを共有し、議論を深める。"
-        link_url="/community/"
-        link_label="コミュニティへ →"
-        image_fallback="/assets/images/card-community.svg"
-        image_fallback_srcset="/assets/images/card-community.svg 320w, /assets/images/card-community.svg 640w"
-        image_alt="コミュニティのイメージ"
-      %}
-      {% include list-card.html
-        class="home-start-card"
-        title="学習"
-        description="解説・資格・用語集から必要な知識を探す。"
-        link_url="/learn/"
-        link_label="学習の入口へ →"
-        image_fallback="/assets/images/card-learning.svg"
-        image_fallback_srcset="/assets/images/card-learning.svg 320w, /assets/images/card-learning.svg 640w"
-        image_alt="学習コンテンツのイメージ"
-      %}
-      {% include list-card.html
-        class="home-start-card home-start-card-exam"
-        title="過去問"
-        description="公式過去問から資格対策を始める。"
-        link_url="/past-exams/"
-        link_label="過去問へ →"
-        image_fallback="/assets/images/card-learning.svg"
-        image_fallback_srcset="/assets/images/card-learning.svg 320w, /assets/images/card-learning.svg 640w"
-        image_alt="過去問学習のイメージ"
-      %}
-      {% include list-card.html
-        class="home-start-card"
-        title="ツール"
-        description="道具選びやおすすめ商品をまとめて確認。"
-        link_url="/tools/"
-        link_label="ツールへ →"
-        image_fallback="/assets/images/card-tools.svg"
-        image_fallback_srcset="/assets/images/card-tools.svg 320w, /assets/images/card-tools.svg 640w"
-        image_alt="道具棚のイメージ"
-      %}
-      {% include list-card.html
-        class="home-start-card"
-        title="最新情報"
-        description="法改正・通達の更新を素早くキャッチ。"
-        link_url="/updates/"
-        link_label="最新情報へ →"
-        image_fallback="/assets/images/card-updates.svg"
-        image_fallback_srcset="/assets/images/card-updates.svg 320w, /assets/images/card-updates.svg 640w"
-        image_alt="更新情報のイメージ"
-      %}
-    </div>
-  </div>
-</section>
-
-<section class="section home-sns" aria-label="SNS導線">
-  <div class="container">
-    <div class="home-sns-header">
-      <a href="{{ "/sns/" | relative_url }}" class="cta-secondary">SNSリンク集へ</a>
-      <p>最新の更新告知はSNSでも先に流れます。</p>
-    </div>
-    <div class="cards home-sns-cards">
-      <article class="card home-sns-card">
-        <h3>X</h3>
-        <p>短いアップデートを速報で共有。</p>
-        <a class="card-button" href="https://x.com/rodoeiseiai?s=21">開く</a>
-      </article>
-      <article class="card home-sns-card">
-        <h3>YouTube</h3>
-        <p>解説・デモ動画をまとめて配信。</p>
-        <a class="card-button" href="https://youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw">開く</a>
-      </article>
-      <article class="card home-sns-card">
-        <h3>note</h3>
-        <p>長文の整理記事を公開予定。</p>
-        <a class="card-button" href="https://note.com/eisei_ai_channel">開く</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials" aria-label="参加メンバーの声">
-  <div class="container">
-    <h2>参加メンバーの声</h2>
-    <div class="testimonial">
-      <p>「他社の安全衛生活動事例が具体的で参考になります。」</p>
-      <span>製造業／衛生担当3年目</span>
-    </div>
-    <div class="testimonial">
-      <p>「匿名で相談できるのがありがたいです。」</p>
-      <span>建設業／安全衛生管理者</span>
-    </div>
-    <div class="testimonial">
-      <p>「法令解釈の考え方が整理されました。」</p>
-      <span>医療業界／産業保健スタッフ</span>
-    </div>
-
-    <div class="testimonial-cta">
-      <a href="{{ '/join/' | relative_url }}" class="btn-primary">あなたもコミュニティに入る</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    {{ content }}
-  </div>
-</section>
+<a class="sticky-consult-cta" href="{{ '/qa/ask/' | relative_url }}">
+  匿名で相談する <em>匿名OK</em> <span>→</span>
+</a>
