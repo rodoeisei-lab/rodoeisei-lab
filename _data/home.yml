@@ -1,0 +1,57 @@
+hero:
+  title: "労働衛生の学びを、\nもっと実務的に。"
+  description: "実務に役立つ知識とコミュニティで、日々の課題解決と成長をサポートします。"
+quick_search:
+  placeholder: "キーワードで検索（例：腰痛対策、長時間労働）"
+  chips:
+    - label: よく検索されるテーマ
+      url: /search/?q=メンタルヘルス
+    - label: メンタルヘルス
+      url: /search/?q=メンタルヘルス
+    - label: 化学物質管理
+      url: /search/?q=化学物質管理
+    - label: 腰痛予防
+      url: /search/?q=腰痛予防
+primary_card:
+  label: 最重要
+  title: 過去問（公式）
+  description: 試験対策に。年度別の過去問と解説を掲載。
+  url: /past-exams/
+main_cards:
+  - title: コミュニティ
+    description: 相談・情報交換ができるメンバー限定の場。
+    icon: 👥
+    url: /community/
+  - title: 公開Q&A
+    description: よくある質問や知見をみんなで共有。
+    icon: 💬
+    url: /qa/
+  - title: 学習
+    description: 解説・まとめ・用語集など学びを深めるコンテンツ。
+    icon: 🎓
+    url: /learn/
+  - title: ツール
+    description: 計算ツールやチェックリストなど実務に便利。
+    icon: 🔧
+    url: /tools/
+notice:
+  title: お知らせ
+  description: 最新の更新情報はSNSでも先に流れます。
+  url: /sns-links/
+sns:
+  - title: X
+    description: 短いアップデートを速報で共有。
+    url: https://x.com/rodoeiseiai?s=21
+    icon: X
+  - title: YouTube
+    description: 解説・デモ動画をまとめて配信。
+    url: https://youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
+    icon: ▶
+  - title: note
+    description: 長文の整理記事を公開予定。
+    url: https://note.com/eisei_ai_channel
+    icon: n
+  - title: はてなブログ
+    description: 雑記やお知らせを中心に更新。
+    url: https://roudoueisei-ai.hatenablog.com/
+    icon: h
