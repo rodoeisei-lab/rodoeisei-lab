@@ -5,16 +5,55 @@ layout: base
 <div class="home-main" id="main">
   <div class="container narrow home-stack">
     <section class="home-hero" aria-label="ヒーロー">
-      <div class="hero-copy-block"><h1>{{ home.hero.title | newline_to_br }}</h1><p>{{ home.hero.description }}</p></div>
-      <div class="hero-illustration" aria-hidden="true"><div class="hero-blob">📋🛡️</div></div>
+      <div class="hero-copy-block">
+        <h1>{{ home.hero.title | newline_to_br }}</h1>
+        <p>{{ home.hero.description }}</p>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="hero-blob">📋🛡️</div>
+      </div>
     </section>
 
-    <section class="quick-search-card"><h2>クイック検索</h2><form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><span aria-hidden="true">⌕</span><input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"></form><div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div></section>
+    <section class="quick-search-card">
+      <h2>クイック検索</h2>
+      <form action="{{ '/search/' | relative_url }}" method="get" class="search-field">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}">
+      </form>
+      <div class="chips">
+        {% for chip in home.quick_search.chips %}
+          <a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>
+        {% endfor %}
+      </div>
+    </section>
 
-    <article class="primary-topic-card"><div class="topic-leading"><div class="topic-icon">📘</div><div><span class="chip-highlight">{{ home.primary_card.label }}</span><h2>{{ home.primary_card.title }}</h2><p>{{ home.primary_card.description }}</p></div></div><a href="{{ home.primary_card.url | relative_url }}" class="primary-topic-btn">過去問を見る</a></article>
+    <article class="primary-topic-card">
+      <div class="topic-leading">
+        <div class="topic-icon">📘</div>
+        <div>
+          <span class="chip-highlight">{{ home.primary_card.label }}</span>
+          <h2>{{ home.primary_card.title }}</h2>
+          <p>{{ home.primary_card.description }}</p>
+        </div>
+      </div>
+      <a href="{{ home.primary_card.url | relative_url }}" class="primary-topic-btn">{{ home.primary_card.cta }}</a>
+    </article>
 
-    <section class="feature-grid">{% for card in home.main_cards %}<a class="feature-card" href="{{ card.url | relative_url }}"><i>{{ card.icon }}</i><h3>{{ card.title }}</h3><p>{{ card.description }}</p><span>›</span></a>{% endfor %}</section>
+    <section class="feature-grid">
+      {% for card in home.main_cards %}
+        <a class="feature-card" href="{{ card.url | relative_url }}">
+          <i>{{ card.icon }}</i>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+          <span>›</span>
+        </a>
+      {% endfor %}
+    </section>
 
-    <a class="notice-card" href="{{ home.notice.url | relative_url }}"><strong>🔔 {{ home.notice.title }}</strong><p>{{ home.notice.description }}</p><span>SNSリンク集へ ›</span></a>
+    <a class="notice-card" href="{{ home.notice.url | relative_url }}">
+      <strong>🔔 {{ home.notice.title }}</strong>
+      <p>{{ home.notice.description }}</p>
+      <span>{{ home.notice.cta }} ›</span>
+    </a>
   </div>
 </div>

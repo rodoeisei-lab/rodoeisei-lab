@@ -5,7 +5,7 @@ quick_search:
   placeholder: "キーワードで検索（例：腰痛対策、長時間労働）"
   chips:
     - label: よく検索されるテーマ
-      url: /search/?q=メンタルヘルス
+      url: /search/?q=よく検索されるテーマ
     - label: メンタルヘルス
       url: /search/?q=メンタルヘルス
     - label: 化学物質管理
@@ -16,6 +16,7 @@ primary_card:
   label: 最重要
   title: 過去問（公式）
   description: 試験対策に。年度別の過去問と解説を掲載。
+  cta: 過去問を見る
   url: /past-exams/
 main_cards:
   - title: コミュニティ
@@ -37,6 +38,7 @@ main_cards:
 notice:
   title: お知らせ
   description: 最新の更新情報はSNSでも先に流れます。
+  cta: SNSリンク集へ
   url: /sns-links/
 sns:
   - title: X
