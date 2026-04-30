@@ -5,6 +5,7 @@ layout: base
 <div class="home-main" id="main">
   <div class="container narrow home-stack">
     <section class="home-hero" aria-label="ヒーロー">
+      <p class="hero-kicker">労働衛生・作業環境測定の実務ナレッジベース</p>
       <div class="hero-copy-block">
         <h1>{{ home.hero.title | newline_to_br }}</h1>
         <p>{{ home.hero.description }}</p>
@@ -12,6 +13,11 @@ layout: base
       <div class="hero-illustration" aria-hidden="true">
         <div class="hero-blob">📋🛡️</div>
       </div>
+          <ul class="hero-points" aria-label="サイトの特徴">
+        <li>制度・法令の要点を現場目線で解説</li>
+        <li>測定・評価・改善の流れを短時間で確認</li>
+        <li>学習・Q&A・ツールへ最短でアクセス</li>
+      </ul>
     </section>
 
     <section class="quick-search-card">
@@ -38,6 +44,21 @@ layout: base
       </div>
       <a href="{{ home.primary_card.url | relative_url }}" class="primary-topic-btn">{{ home.primary_card.cta }}</a>
     </article>
+
+        <section class="home-trust-strip" aria-label="信頼性情報">
+      <div class="trust-item">
+        <strong>実務直結</strong>
+        <p>現場判断で使える解説とチェック観点を重視</p>
+      </div>
+      <div class="trust-item">
+        <strong>学びやすい構成</strong>
+        <p>検索・カテゴリ・関連記事で迷わず辿れる導線</p>
+      </div>
+      <div class="trust-item">
+        <strong>継続更新</strong>
+        <p>ガイド・Q&A・SNSで最新情報をフォロー可能</p>
+      </div>
+    </section>
 
     <section class="feature-grid">
       {% for card in home.main_cards %}
