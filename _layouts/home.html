@@ -11,13 +11,21 @@ layout: base
         <p>{{ home.hero.description }}</p>
       </div>
       <div class="hero-illustration" aria-hidden="true">
-        <div class="hero-blob">📋🛡️</div>
+        <div class="hero-blob">
+          <p class="hero-stat"><strong>30秒</strong><span>で要点確認</span></p>
+          <p class="hero-stat"><strong>3ステップ</strong><span>で実務に接続</span></p>
+          <p class="hero-stat"><strong>継続更新</strong><span>法令・運用の変化に追随</span></p>
+        </div>
       </div>
           <ul class="hero-points" aria-label="サイトの特徴">
         <li>制度・法令の要点を現場目線で解説</li>
         <li>測定・評価・改善の流れを短時間で確認</li>
         <li>学習・Q&A・ツールへ最短でアクセス</li>
       </ul>
+      <div class="hero-actions">
+        <a class="hero-primary-btn" href="{{ '/learn/' | relative_url }}">まず学習ページへ</a>
+        <a class="hero-secondary-link" href="{{ '/qa/' | relative_url }}">公開Q&Aを見る</a>
+      </div>
     </section>
 
     <section class="quick-search-card">
@@ -58,6 +66,11 @@ layout: base
         <strong>継続更新</strong>
         <p>ガイド・Q&A・SNSで最新情報をフォロー可能</p>
       </div>
+    </section>
+
+    <section class="home-section-heading">
+      <h2>目的別の入口</h2>
+      <p>迷わず辿れるように、相談・学習・実務ツールを整理しています。</p>
     </section>
 
     <section class="feature-grid">
