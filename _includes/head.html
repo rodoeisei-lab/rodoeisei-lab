@@ -10,12 +10,11 @@
 <meta name="description" content="{{ page_description }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/svg+xml" href="{{ "/assets/images/favicon.svg" | relative_url }}">
-<meta name="theme-color" content="#050816">
+<meta name="theme-color" content="#f8fafc">
 <script>
   (function () {
-    var stored = localStorage.getItem('theme') || 'system';
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var resolved = stored === 'dark' || (stored === 'system' && prefersDark) ? 'dark' : 'light';
+    var stored = localStorage.getItem('theme') || 'light';
+    var resolved = stored === 'dark' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', resolved);
     document.documentElement.setAttribute('data-theme-preference', stored);
   })();
