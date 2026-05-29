@@ -3,6 +3,7 @@ layout: page
 title: コミュニティに入る
 permalink: /join/
 description: 労働衛生ラボの公開コミュニティ参加、匿名相談、公開Q&A閲覧の入口をまとめたページです。
+published: false
 ---
 
 # コミュニティに入る

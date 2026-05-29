@@ -34,4 +34,4 @@ tags:
 
 ## 関連記事
 
-- [コミュニティ]({{ '/community/' | relative_url }})
+- [公開Q&A一覧]({{ '/qa/' | relative_url }})
