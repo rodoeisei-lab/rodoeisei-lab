@@ -3,6 +3,7 @@ layout: page
 title: 参加・投稿ガイド
 permalink: /participation-guide/
 description: コミュニティ参加と匿名相談投稿の手順、公開までの流れをまとめたガイドです。
+published: false
 ---
 
 # 参加・投稿ガイド

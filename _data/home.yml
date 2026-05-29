@@ -19,10 +19,6 @@ primary_card:
   cta: 過去問を見る
   url: /past-exams/
 main_cards:
-  - title: コミュニティ
-    description: 相談・情報交換ができるメンバー限定の場。
-    icon: 👥
-    url: /community/
   - title: 公開Q&A
     description: よくある質問や知見をみんなで共有。
     icon: 💬

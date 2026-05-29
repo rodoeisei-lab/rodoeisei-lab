@@ -2,6 +2,7 @@
 layout: page
 title: コミュニティについて
 permalink: /community/
+published: false
 ---
 
 # rodoeisei-lab コミュニティ
