@@ -13,8 +13,7 @@ const THEME_LABELS = {
 
 const setTheme = (preference = 'system') => {
   const normalized = THEME_ORDER.includes(preference) ? preference : 'system';
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const resolved = normalized === 'dark' || (normalized === 'system' && prefersDark) ? 'dark' : 'light';
+  const resolved = normalized === 'dark' ? 'dark' : 'light';
 
   document.documentElement.setAttribute('data-theme', resolved);
   document.documentElement.setAttribute('data-theme-preference', normalized);
@@ -37,7 +36,7 @@ const cycleTheme = () => {
   setTheme(next);
 };
 
-const currentTheme = localStorage.getItem(THEME_KEY) || 'system';
+const currentTheme = localStorage.getItem(THEME_KEY) || 'light';
 setTheme(currentTheme);
 
 const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
