@@ -1,6 +1,9 @@
 - title: Q&A
   url: /qa/
   icon: ❓
+- title: 法令・規則
+  url: /regulations/
+  icon: ⚖️
 - title: 学習
   url: /learn/
   icon: 🎓
