@@ -3,306 +3,273 @@ layout: page
 title: 労働衛生の法令・規則
 permalink: /regulations/
 description: 作業環境測定や職場の化学物質管理に関係する主な法令・規則を、正式名称・通称・対象・実務ポイント・公式リンクで整理しています。
+hide_page_hero: true
 ---
 
-# 労働衛生の法令・規則
+<div class="regulations-page">
+  <section class="regulations-hero" aria-labelledby="regulations-title">
+    <div class="regulations-hero__copy">
+      <p class="regulations-hero__eyebrow">Laws and rules</p>
+      <h1 id="regulations-title">労働衛生の法令・規則</h1>
+      <p>粉じん則・有機則・特化則など、作業環境測定や化学物質管理で確認する主な法令・規則を整理しました。</p>
+      <div class="regulations-alert" role="note">
+        <span aria-hidden="true">i</span>
+        <strong>最終確認は e-Gov 法令検索などの一次情報で行ってください。</strong>
+      </div>
+    </div>
+    <div class="regulations-hero__visual" aria-hidden="true">
+      <span class="regulations-hero__book"></span>
+      <span class="regulations-hero__scale">⚖</span>
+    </div>
+  </section>
 
-作業環境測定や職場の化学物質管理では、労働安全衛生法だけでなく、粉じん則、有機則、特化則など複数の規則を確認する必要があります。  
-このページでは、実務で確認することが多い法令・規則を、正式名称・通称・対象・実務で見るポイント・公式リンクに分けて整理します。
+  <section class="regulations-search-panel" aria-label="法令・規則のクイックジャンプ">
+    <a class="regulations-search-field" href="https://laws.e-gov.go.jp/search/elawsSearch/elaws_search/lsg0100/" target="_blank" rel="noopener">
+      <span aria-hidden="true">⌕</span>
+      <strong>法令・規則を検索</strong>
+      <em>e-Gov 法令検索へ</em>
+    </a>
+    <div class="regulations-jump">
+      <p>クイックジャンプ</p>
+      <div>
+        <a href="#dust">粉じん則</a>
+        <a href="#organic-solvent">有機則</a>
+        <a href="#specified-chemical">特化則</a>
+        <a href="#industrial-safety-health-regulations">安衛則</a>
+      </div>
+    </div>
+  </section>
 
-<div class="notice-box">
-<strong>確認時の注意</strong><br>
-法令は改正されることがあります。このページは実務の入口としての整理であり、医学的・法的な最終判断を行うものではありません。最終確認は必ず e-Gov 法令検索や厚生労働省などの一次情報で行ってください。
+  <section class="regulations-summary" aria-labelledby="summary-title">
+    <h2 id="summary-title"><span aria-hidden="true">▦</span>早見表</h2>
+    <div class="regulations-table-wrap">
+      <table class="regulations-table">
+        <thead>
+          <tr>
+            <th>分野</th>
+            <th>よく見る法令・規則</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>基本法令</th><td><a href="#industrial-safety-health-act">安衛法</a>、<a href="#industrial-safety-health-order">安衛令</a>、<a href="#industrial-safety-health-regulations">安衛則</a></td></tr>
+          <tr><th>粉じん</th><td><a href="#dust">粉じん則</a></td></tr>
+          <tr><th>有機溶剤</th><td><a href="#organic-solvent">有機則</a></td></tr>
+          <tr><th>特定化学物質</th><td><a href="#specified-chemical">特化則</a></td></tr>
+          <tr><th>鉛</th><td><a href="#lead">鉛則</a>、<a href="#tetraalkyl-lead">四アルキル鉛則</a></td></tr>
+          <tr><th>石綿</th><td><a href="#asbestos">石綿則</a></td></tr>
+          <tr><th>酸欠</th><td><a href="#oxygen-deficiency">酸欠則</a></td></tr>
+          <tr><th>放射線</th><td><a href="#ionizing-radiation">電離則</a></td></tr>
+          <tr><th>事務所環境</th><td><a href="#office-hygiene">事務所則</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="regulations-list" aria-labelledby="main-rules-title">
+    <h2 id="main-rules-title"><span aria-hidden="true">⚖</span>主な法令・規則</h2>
+
+    <article id="industrial-safety-health-act" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">盾</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">基本法令</p>
+        <h3>労働安全衛生法（安衛法）</h3>
+        <p>職場の安全衛生管理の基本となる法律。事業者の責務、健康確保、化学物質管理、作業環境測定などの枠組みを確認します。</p>
+        <ul>
+          <li>安全衛生管理体制</li>
+          <li>健康診断・教育</li>
+          <li>作業環境測定の根拠</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347AC0000000057" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="industrial-safety-health-order" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">令</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">基本法令</p>
+        <h3>労働安全衛生法施行令（安衛令）</h3>
+        <p>安衛法の対象業務・対象物質・資格などを具体化する政令。規制対象物質や作業主任者の要否を確認するときに参照します。</p>
+        <ul>
+          <li>規制対象物質</li>
+          <li>作業主任者の選任</li>
+          <li>特定業務への該当性</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347CO0000000318" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="industrial-safety-health-regulations" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">衛</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">基本法令</p>
+        <h3>労働安全衛生規則（安衛則）</h3>
+        <p>安全衛生管理、衛生基準、健康診断、教育、記録などを定める基本的な規則です。</p>
+        <ul>
+          <li>衛生管理者・衛生委員会</li>
+          <li>安全衛生教育</li>
+          <li>記録・掲示の要否</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000032" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="dust" class="regulation-card regulation-card--featured">
+      <div class="regulation-card__icon" aria-hidden="true">粉</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">作業環境測定・粉じん</p>
+        <h3>粉じん障害防止規則（粉じん則）</h3>
+        <p>粉じん作業によるじん肺などの健康障害を防ぐ規則。研磨、切断、破砕、鋳物、溶接周辺作業などで確認します。</p>
+        <ul>
+          <li>特定粉じん作業</li>
+          <li>局所排気装置・湿潤化</li>
+          <li>測定、保護具、清掃、教育</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/354M50002000018" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="organic-solvent" class="regulation-card regulation-card--featured">
+      <div class="regulation-card__icon" aria-hidden="true">溶</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">作業環境測定・有機溶剤</p>
+        <h3>有機溶剤中毒予防規則（有機則）</h3>
+        <p>有機溶剤による中毒を防ぐ規則。塗装、洗浄、印刷、接着、脱脂などの作業で該当性を確認します。</p>
+        <ul>
+          <li>第1種・第2種・第3種有機溶剤</li>
+          <li>局所排気装置・全体換気装置</li>
+          <li>作業主任者、測定、特殊健康診断</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000036" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="specified-chemical" class="regulation-card regulation-card--featured">
+      <div class="regulation-card__icon" aria-hidden="true">化</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">作業環境測定・化学物質</p>
+        <h3>特定化学物質障害予防規則（特化則）</h3>
+        <p>特定化学物質による健康障害を防ぐ規則。発がん性など有害性が高い物質の取り扱いで確認します。</p>
+        <ul>
+          <li>対象物質・特別管理物質</li>
+          <li>発散抑制措置と作業環境測定</li>
+          <li>特殊健康診断、記録、掲示</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000039" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="lead" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">Pb</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">鉛</p>
+        <h3>鉛中毒予防規則（鉛則）</h3>
+        <p>鉛や鉛化合物による中毒を防ぐ規則。鉛を含む原料、塗料、はんだ、鋳造、解体・研磨などで確認します。</p>
+        <ul>
+          <li>鉛業務への該当性</li>
+          <li>発散抑制・保護具</li>
+          <li>作業環境測定、特殊健康診断</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000037" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="tetraalkyl-lead" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">4Pb</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">鉛</p>
+        <h3>四アルキル鉛中毒予防規則（四アルキル鉛則）</h3>
+        <p>四アルキル鉛による中毒を防ぐための規則。限られた特殊な作業で、厳格な管理が必要になります。</p>
+        <ul>
+          <li>対象業務への該当性</li>
+          <li>作業方法・保護具</li>
+          <li>教育と緊急時対応</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000038" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="asbestos" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">石</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">石綿</p>
+        <h3>石綿障害予防規則（石綿則）</h3>
+        <p>石綿による肺がん、中皮腫、石綿肺などの健康障害を防止する規則。解体・改修工事で特に重要です。</p>
+        <ul>
+          <li>事前調査と掲示</li>
+          <li>隔離・湿潤化</li>
+          <li>保護具、作業記録、特別教育</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/417M60000100021" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="oxygen-deficiency" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">O₂</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">酸欠</p>
+        <h3>酸素欠乏症等防止規則（酸欠則）</h3>
+        <p>酸素欠乏や硫化水素中毒を防止する規則。タンク、ピット、マンホール、地下室などで確認します。</p>
+        <ul>
+          <li>酸欠危険場所</li>
+          <li>濃度測定、換気、監視人</li>
+          <li>特別教育と救出時の二次災害防止</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000042" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="ionizing-radiation" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">線</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">放射線</p>
+        <h3>電離放射線障害防止規則（電離則）</h3>
+        <p>放射線業務による被ばくを管理し、健康障害を防止する規則。エックス線装置や非破壊検査などで確認します。</p>
+        <ul>
+          <li>管理区域の設定</li>
+          <li>線量測定と被ばく管理</li>
+          <li>健康診断と記録保存</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000041" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="high-pressure" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">圧</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">高気圧</p>
+        <h3>高気圧作業安全衛生規則（高圧則）</h3>
+        <p>高気圧作業による減圧症などを防止する規則。潜函作業、圧気工法、潜水作業などで確認します。</p>
+        <ul>
+          <li>潜函作業・潜水作業</li>
+          <li>減圧管理と作業時間</li>
+          <li>健康管理と緊急時対応</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000040" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+
+    <article id="office-hygiene" class="regulation-card">
+      <div class="regulation-card__icon" aria-hidden="true">室</div>
+      <div class="regulation-card__body">
+        <p class="regulation-card__kicker">事務所環境</p>
+        <h3>事務所衛生基準規則（事務所則）</h3>
+        <p>事務所の空気環境、照度、温度、清潔、休養設備などを定める規則です。</p>
+        <ul>
+          <li>CO2濃度・換気</li>
+          <li>温湿度・照度</li>
+          <li>清潔、便所、休養設備</li>
+        </ul>
+      </div>
+      <a class="regulation-card__action" href="https://laws.e-gov.go.jp/law/347M50002000043" target="_blank" rel="noopener">e-Govで確認</a>
+    </article>
+  </section>
+
+  <section class="regulations-related" aria-labelledby="related-title">
+    <h2 id="related-title"><span aria-hidden="true">↔</span>関連ページ</h2>
+    <div class="regulations-related__grid">
+      <a href="{{ '/qa/' | relative_url }}"><span aria-hidden="true">💬</span>公開Q&amp;A</a>
+      <a href="{{ '/learn/' | relative_url }}"><span aria-hidden="true">🎓</span>学習</a>
+      <a href="{{ '/tools/' | relative_url }}"><span aria-hidden="true">🔧</span>ツール</a>
+    </div>
+  </section>
 </div>
-
-## 早見表
-
-| 分野 | よく見る法令・規則 |
-|---|---|
-| 基本法令 | 安衛法、安衛令、安衛則 |
-| 粉じん | 粉じん則 |
-| 有機溶剤 | 有機則 |
-| 特定化学物質 | 特化則 |
-| 鉛 | 鉛則、四アルキル鉛則 |
-| 石綿 | 石綿則 |
-| 酸欠 | 酸欠則 |
-| 放射線 | 電離則 |
-| 事務所環境 | 事務所則 |
-
-## 基本法令
-
-<section id="industrial-safety-health-act" class="link-card">
-  <h2>労働安全衛生法（安衛法）</h2>
-  <p><strong>正式名称：</strong>労働安全衛生法</p>
-  <p><strong>通称：</strong>安衛法</p>
-  <p><strong>ひとことでいうと：</strong>職場の安全衛生管理の基本となる法律です。</p>
-
-  <h3>主な対象</h3>
-  <p>事業者が行う安全衛生管理全般、労働者の健康確保、危険・有害業務、化学物質管理、作業環境測定などの基本的な枠組みが対象になります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>事業者の責務を確認する</li>
-    <li>安全衛生管理体制を確認する</li>
-    <li>健康診断の根拠を確認する</li>
-    <li>化学物質管理の根拠を確認する</li>
-    <li>作業環境測定の根拠を確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347AC0000000057" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="industrial-safety-health-order" class="link-card">
-  <h2>労働安全衛生法施行令（安衛令）</h2>
-  <p><strong>正式名称：</strong>労働安全衛生法施行令</p>
-  <p><strong>通称：</strong>安衛令</p>
-  <p><strong>ひとことでいうと：</strong>安衛法の対象業務・対象物質・資格などを具体化する政令です。</p>
-
-  <h3>主な対象</h3>
-  <p>安衛法で定める規制の対象となる物質、業務、作業主任者、資格、特定業務などを確認するときに参照します。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>規制対象物質に該当するか</li>
-    <li>作業主任者の選任が必要か</li>
-    <li>特定業務に該当するか</li>
-    <li>関連する規則の対象になるか</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347CO0000000318" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="industrial-safety-health-regulations" class="link-card">
-  <h2>労働安全衛生規則（安衛則）</h2>
-  <p><strong>正式名称：</strong>労働安全衛生規則</p>
-  <p><strong>通称：</strong>安衛則</p>
-  <p><strong>ひとことでいうと：</strong>安全衛生管理、衛生基準、健康診断、教育、記録などを定める基本的な規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>安全衛生管理体制、衛生管理者、衛生委員会、安全衛生教育、健康診断、作業場の衛生基準、記録・掲示など幅広い事項が対象になります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>衛生管理者や衛生委員会の運用を確認する</li>
-    <li>安全衛生教育の対象や内容を確認する</li>
-    <li>一般的な職場衛生管理の基準を確認する</li>
-    <li>記録や掲示の要否を確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000032" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-## 作業環境測定・化学物質関係
-
-<section id="dust" class="link-card">
-  <h2>粉じん障害防止規則（粉じん則）</h2>
-  <p><strong>正式名称：</strong>粉じん障害防止規則</p>
-  <p><strong>通称：</strong>粉じん則</p>
-  <p><strong>ひとことでいうと：</strong>粉じん作業によるじん肺などの健康障害を防止するための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>鉱物性粉じん、研磨、切断、破砕、鋳物、溶接周辺作業など、粉じんが発生する作業が対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>特定粉じん作業に該当するか</li>
-    <li>局所排気装置や湿潤化が必要か</li>
-    <li>作業環境測定の対象か</li>
-    <li>呼吸用保護具の選定が必要か</li>
-    <li>清掃、教育、記録ができているか</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/354M50002000018" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="organic-solvent" class="link-card">
-  <h2>有機溶剤中毒予防規則（有機則）</h2>
-  <p><strong>正式名称：</strong>有機溶剤中毒予防規則</p>
-  <p><strong>通称：</strong>有機則</p>
-  <p><strong>ひとことでいうと：</strong>有機溶剤による中毒や健康障害を防ぐための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>塗装、洗浄、接着、印刷、試験研究などで有機溶剤を取り扱う作業が対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>第1種・第2種・第3種有機溶剤の区分を確認する</li>
-    <li>局所排気装置や全体換気装置が必要か</li>
-    <li>作業環境測定の対象か</li>
-    <li>特殊健康診断の対象か</li>
-    <li>掲示、保護具、作業主任者の選任などを確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000036" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="specified-chemical" class="link-card">
-  <h2>特定化学物質障害予防規則（特化則）</h2>
-  <p><strong>正式名称：</strong>特定化学物質障害予防規則</p>
-  <p><strong>通称：</strong>特化則</p>
-  <p><strong>ひとことでいうと：</strong>がん、中毒、慢性障害などを起こすおそれのある特定化学物質による健康障害を防止するための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>第1類・第2類・第3類物質、特別管理物質などに該当する化学物質を製造・取り扱う作業が対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>物質の区分と適用条項を確認する</li>
-    <li>特別管理物質に該当するか</li>
-    <li>局所排気装置などの発散抑制措置が必要か</li>
-    <li>作業環境測定や特殊健康診断の対象か</li>
-    <li>作業記録、掲示、保護具などの管理ができているか</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000039" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="lead" class="link-card">
-  <h2>鉛中毒予防規則（鉛則）</h2>
-  <p><strong>正式名称：</strong>鉛中毒予防規則</p>
-  <p><strong>通称：</strong>鉛則</p>
-  <p><strong>ひとことでいうと：</strong>鉛業務による鉛中毒を防ぐための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>鉛や鉛化合物を取り扱う作業、鉛を含む塗料・材料の加工、溶解、研磨、はんだ付けなどが対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>鉛業務に該当するか</li>
-    <li>作業環境測定の対象か</li>
-    <li>特殊健康診断の対象か</li>
-    <li>保護具や作業主任者の選任が必要か</li>
-    <li>清掃、飲食禁止、洗浄設備などを確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000037" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="tetraalkyl-lead" class="link-card">
-  <h2>四アルキル鉛中毒予防規則（四アルキル鉛則）</h2>
-  <p><strong>正式名称：</strong>四アルキル鉛中毒予防規則</p>
-  <p><strong>通称：</strong>四アルキル鉛則</p>
-  <p><strong>ひとことでいうと：</strong>四アルキル鉛による中毒を防ぐための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>四アルキル鉛を取り扱う業務など、限られた特殊な作業が対象になります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>対象業務に該当するか</li>
-    <li>該当する場合は厳格な管理が必要か</li>
-    <li>作業方法、保護具、教育、緊急時対応を確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000038" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="asbestos" class="link-card">
-  <h2>石綿障害予防規則（石綿則）</h2>
-  <p><strong>正式名称：</strong>石綿障害予防規則</p>
-  <p><strong>通称：</strong>石綿則</p>
-  <p><strong>ひとことでいうと：</strong>石綿による肺がん、中皮腫、石綿肺などの健康障害を防止するための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>建築物・工作物の解体や改修、石綿含有建材の取り扱い、石綿粉じんが発生するおそれのある作業が対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>事前調査が必要か</li>
-    <li>掲示、隔離、湿潤化などの措置が必要か</li>
-    <li>呼吸用保護具や保護衣を適切に選定しているか</li>
-    <li>作業記録を作成・保存しているか</li>
-    <li>特別教育の対象か</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/417M60000100021" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-## その他、実務で確認することがある規則
-
-<section id="oxygen-deficiency" class="link-card">
-  <h2>酸素欠乏症等防止規則（酸欠則）</h2>
-  <p><strong>正式名称：</strong>酸素欠乏症等防止規則</p>
-  <p><strong>通称：</strong>酸欠則</p>
-  <p><strong>ひとことでいうと：</strong>酸素欠乏や硫化水素中毒を防止するための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>タンク、ピット、マンホール、井戸、地下室、密閉・通気不十分な場所など、酸素欠乏や硫化水素発生のおそれがある場所での作業が対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>酸欠危険場所に該当するか</li>
-    <li>酸素濃度・硫化水素濃度の測定が必要か</li>
-    <li>換気や監視人の配置が必要か</li>
-    <li>特別教育の対象か</li>
-    <li>救出時の二次災害防止を確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000042" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="ionizing-radiation" class="link-card">
-  <h2>電離放射線障害防止規則（電離則）</h2>
-  <p><strong>正式名称：</strong>電離放射線障害防止規則</p>
-  <p><strong>通称：</strong>電離則</p>
-  <p><strong>ひとことでいうと：</strong>放射線業務による被ばくを管理し、健康障害を防止するための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>エックス線装置、放射性物質、非破壊検査、医療・研究・製造現場などで電離放射線を扱う業務が対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>管理区域の設定が必要か</li>
-    <li>線量測定と被ばく管理ができているか</li>
-    <li>健康診断の対象か</li>
-    <li>記録の作成・保存ができているか</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000041" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="high-pressure" class="link-card">
-  <h2>高気圧作業安全衛生規則（高圧則）</h2>
-  <p><strong>正式名称：</strong>高気圧作業安全衛生規則</p>
-  <p><strong>通称：</strong>高圧則</p>
-  <p><strong>ひとことでいうと：</strong>高気圧作業による減圧症などを防止するための規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>潜函作業、圧気工法、潜水作業など、高気圧環境または水中で行う作業が対象になる場合があります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>潜函作業や潜水作業に該当するか</li>
-    <li>減圧管理が適切か</li>
-    <li>作業時間の管理が必要か</li>
-    <li>健康管理や緊急時対応を確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000040" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-<section id="office-hygiene" class="link-card">
-  <h2>事務所衛生基準規則（事務所則）</h2>
-  <p><strong>正式名称：</strong>事務所衛生基準規則</p>
-  <p><strong>通称：</strong>事務所則</p>
-  <p><strong>ひとことでいうと：</strong>事務所の空気環境、照度、温度、清潔、休養設備などを定める規則です。</p>
-
-  <h3>主な対象</h3>
-  <p>事務作業を行う室内環境、事務所の空気環境、採光・照明、温湿度、清潔、便所、休養設備などが対象になります。</p>
-
-  <h3>実務で見るポイント</h3>
-  <ul>
-    <li>CO2濃度や換気の状態を確認する</li>
-    <li>温湿度や照度が適切か</li>
-    <li>清潔、便所、休養設備の管理ができているか</li>
-    <li>苦情や体調不良の背景に環境要因がないか確認する</li>
-  </ul>
-
-  <p><a class="btn-step-primary" href="https://laws.e-gov.go.jp/law/347M50002000043" target="_blank" rel="noopener">e-Govで確認する</a></p>
-</section>
-
-## 関連ページ
-
-- [公開Q&A]({{ '/qa/' | relative_url }})
-- [学習]({{ '/learn/' | relative_url }})
-- [ツール]({{ '/tools/' | relative_url }})
