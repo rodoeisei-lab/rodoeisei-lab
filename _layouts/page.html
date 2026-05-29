@@ -1,6 +1,7 @@
 ---
 layout: base
 ---
+{% unless page.hide_page_hero %}
 <section class="page-hero">
   <div class="container">
     <p class="page-eyebrow">{{ page.eyebrow | default: site.data.ui.lab_name | default: "労働衛生ラボ" }}</p>
@@ -8,6 +9,7 @@ layout: base
     {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
   </div>
 </section>
+{% endunless %}
 
 <section class="section">
   <div class="container">
