@@ -1,65 +1,126 @@
 hero:
-  title: "労働衛生の判断を、\n現場で迷わない形に。"
-  description: "作業環境測定、化学物質管理、粉じん則・有機則・特化則など、労働衛生の実務で確認したい要点を整理しています。"
-quick_search:
-  placeholder: "例：粉じん則、有機則、作業環境測定"
-  chips:
-    - label: 粉じん則
-      url: /regulations/#dust
-    - label: 有機則
-      url: /regulations/#organic-solvent
-    - label: 特化則
-      url: /regulations/#specified-chemical
-    - label: 作業環境測定
-      url: /search/?q=作業環境測定
-    - label: 化学物質管理
+  title: "労働衛生を、現場目線でわかりやすく。"
+  description: "作業環境測定、化学物質管理、個人ばく露測定、労働衛生コンサルタントの学習を、実務者目線で整理するサイトです。"
+  kicker: "労働衛生・作業環境測定・化学物質管理の専門メディア"
+  audience: "作業環境測定士・衛生管理者・化学物質管理担当者向け"
+  actions:
+    - label: 作業環境測定を学ぶ
+      url: /guides/work-env-measurement-intro/
+      style: primary
+    - label: 化学物質管理を学ぶ
       url: /search/?q=化学物質管理
-    - label: 局所排気装置
-      url: /search/?q=局所排気装置
-    - label: 健康診断
-      url: /search/?q=健康診断
+      style: secondary
+    - label: YouTubeを見る
+      url: https://youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
+      style: text
+      external: true
+  points:
+    - A測定・B測定、管理区分を実務の流れで理解
+    - SDS、リスクアセスメント、保護具の選び方まで整理
+    - 労働衛生コンサルタント学習と現場改善をつなぐ
+  stats:
+    - value: 測定
+      label: デザイン・サンプリング・評価を整理
+    - value: 管理
+      label: 自律的管理とリスク低減措置を確認
+    - value: 学習
+      label: 労働衛生工学と口述対策に接続
+features:
+  - title: 作業環境測定を基礎から整理
+    description: A測定・B測定、管理区分、有機溶剤、粉じん、特定化学物質などを初心者向けに解説。
+    icon: 🧪
+  - title: 化学物質管理の実務に対応
+    description: 自律的管理、リスクアセスメント、濃度基準値、保護具、SDSの読み方などを整理。
+    icon: 🧭
+  - title: 労働衛生コンサルタント学習にも活用
+    description: 労働衛生工学の勉強、口述試験対策、実務経験の整理に役立つ情報を蓄積。
+    icon: 📘
+categories:
+  - label: 作業環境測定
+    url: /guides/work-env-measurement-intro/
+  - label: 化学物質管理
+    url: /search/?q=化学物質管理
+  - label: 個人ばく露測定
+    url: /search/?q=個人ばく露測定
+  - label: 局所排気装置
+    url: /qa/local-exhaust-inspection/
+  - label: 保護具・フィットテスト
+    url: /guides/fit-test/
+  - label: 労働衛生コンサルタント
+    url: /search/?q=労働衛生コンサルタント
+  - label: AI活用
+    url: /search/?q=AI活用
+  - label: YouTube連動記事
+    url: /videos/
+articles:
+  - title: 作業環境測定とは？A測定・B測定・管理区分を初心者向けに解説
+    category: 作業環境測定
+    description: 測定計画から評価、管理区分ごとの改善検討まで、作業環境測定士が押さえたい基本を整理します。
+    url: /guides/work-env-measurement-intro/
+  - title: 個人ばく露測定とは？作業環境測定との違いを整理
+    category: 個人ばく露測定
+    description: 場の測定と人のばく露をどう使い分けるか、化学物質管理の文脈で解説します。
+    url: "#"
+  - title: 有機溶剤中毒予防規則とは？対象作業と管理の基本
+    category: 化学物質管理
+    description: 有機則の対象作業、換気、保護具、健康診断、SDS確認の入口を実務者向けにまとめます。
+    url: /guides/organic-solvent-basics/
+  - title: 局所排気装置とは？フード・ダクト・排風機の基本
+    category: 局所排気装置
+    description: 制御風速、点検、改善提案の前に理解したい局所排気装置の構成要素を整理します。
+    url: /qa/local-exhaust-inspection/
+  - title: 労働衛生コンサルタントを目指す人へ｜作業環境測定士からの学習戦略
+    category: 労働衛生コンサルタント
+    description: 実務経験を労働衛生工学の知識へ接続し、筆記・口述試験の準備に活かす考え方を紹介します。
+    url: "#"
+  - title: AIで労働衛生を学ぶときの注意点
+    category: AI活用
+    description: AIの要約を活用しながら、法令・通達・一次情報で必ず確認すべきポイントをまとめます。
+    url: "#"
+quick_search:
+  placeholder: "例：A測定、B測定、SDS、フィットテスト"
+  chips:
+    - label: A測定・B測定
+      url: /search/?q=A測定+B測定
+    - label: 管理区分
+      url: /search/?q=管理区分
+    - label: SDS
+      url: /search/?q=SDS
+    - label: リスクアセスメント
+      url: /search/?q=リスクアセスメント
+    - label: フィットテスト
+      url: /guides/fit-test/
+    - label: 保護具
+      url: /search/?q=保護具
 primary_card:
-  label: 重点導線
-  title: 過去問（公式）
-  description: 試験対策に必要な年度別の過去問と解説を、移動中でも確認しやすく整理しています。
-  cta: 過去問を見る
-  url: /past-exams/
-main_cards:
-  - title: 法令・規則
-    description: 粉じん則・有機則・特化則などを確認
-    icon: ⚖️
-    url: /regulations/
-  - title: 学習
-    description: 基礎から実務まで体系的に学ぶ
-    icon: 🎓
-    url: /learn/
-  - title: 公開Q&A
-    description: よくある疑問と回答を見る
-    icon: 💬
-    url: /qa/
-  - title: ツール
-    description: 計算・判定・チェックに使う
-    icon: 🔧
-    url: /tools/
+  label: 学習導線
+  title: 作業環境測定の入門から、化学物質管理の実務へ
+  description: 作業環境測定士としての基礎知識を、個人ばく露測定、局所排気装置、保護具選定、リスクアセスメントの判断に接続して学べます。
+  cta: 入門ガイドを読む
+  url: /guides/work-env-measurement-intro/
 notice:
-  title: お知らせ
-  description: 最新の更新情報はSNSでも先に流れます。
-  cta: SNSリンク集へ
-  url: /sns-links/
+  title: 質問・改善提案はこちら
+  description: 取り上げてほしいテーマ、記事の誤り、現場で迷うポイントは GitHub Issues から送れます。
+  cta: GitHub Issuesを開く
+  url: https://github.com/rodoeisei-lab/rodoeisei-lab/issues
 sns:
-  - title: X
-    description: 短いアップデートを速報で共有。
-    url: https://x.com/rodoeiseiai?s=21
-    icon: X
   - title: YouTube
-    description: 解説・デモ動画をまとめて配信。
+    description: 作業環境測定、化学物質管理、AI活用の解説動画を配信。
     url: https://youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
     icon: ▶
+  - title: X
+    description: 法改正、更新情報、短い実務メモを共有。
+    url: https://x.com/rodoeiseiai?s=21
+    icon: X
   - title: note
-    description: 長文の整理記事を公開予定。
+    description: 労働衛生コンサルタント学習や実務整理の長文記事。
     url: https://note.com/eisei_ai_channel
     icon: n
   - title: はてなブログ
-    description: 雑記やお知らせを中心に更新。
+    description: お知らせ、雑記、サイト更新の補足を掲載。
     url: https://roudoueisei-ai.hatenablog.com/
     icon: h
+  - title: GitHub Issues
+    description: 質問・改善提案はこちら。
+    url: https://github.com/rodoeisei-lab/rodoeisei-lab/issues
+    icon: 💬
