@@ -2,6 +2,7 @@
 layout: base
 ---
 {% assign home = site.data.home %}
+<!-- home-version: 2026-05-30-home-ui-v3 -->
 <div class="home-main">
   <div class="container narrow home-stack">
     <section class="home-hero" aria-label="ヒーロー">
@@ -16,8 +17,8 @@ layout: base
           <li>学習・Q&amp;A・ツールへ最短でアクセス</li>
         </ul>
         <div class="hero-actions" aria-label="主要導線">
-          <a class="hero-primary-btn" href="{{ '/learn/' | relative_url }}">学習ページへ</a>
-          <a class="hero-secondary-btn" href="{{ '/regulations/' | relative_url }}">法令・規則を見る</a>
+          <a class="hero-primary-btn" href="{{ '/regulations/' | relative_url }}">法令・規則を見る</a>
+          <a class="hero-secondary-btn" href="{{ '/learn/' | relative_url }}">学習ページへ</a>
           <a class="hero-text-link" href="{{ '/qa/' | relative_url }}">公開Q&amp;Aを見る</a>
         </div>
       </div>
@@ -75,21 +76,16 @@ layout: base
     <section class="home-trust-strip" aria-label="信頼性情報">
       <div class="trust-item">
         <strong>実務直結</strong>
-        <p>現場判断で使える解説とチェック観点を重視</p>
+        <p>現場で確認したい要点を短く整理</p>
+      </div>
+      <div class="trust-item">
+        <strong>一次情報を重視</strong>
+        <p>e-Govや厚生労働省などの確認導線を明示</p>
       </div>
       <div class="trust-item">
         <strong>探しやすい構成</strong>
-        <p>制度・学習・Q&amp;A・ツールを目的別に整理</p>
+        <p>法令・学習・Q&amp;A・ツールを目的別に整理</p>
       </div>
-      <div class="trust-item">
-        <strong>継続更新</strong>
-        <p>法令確認や現場運用の変化に合わせて改善</p>
-      </div>
-    </section>
-
-    <section class="home-section-heading">
-      <h2>目的別の入口</h2>
-      <p>知りたい内容に合わせて、法令・学習・Q&amp;A・ツールへ進めます。</p>
     </section>
 
     <a class="notice-card" href="{{ home.notice.url | relative_url }}">

@@ -77,11 +77,12 @@ jobs:
           BASEURL="${{ steps.config.outputs.baseurl }}"
           for path in \
             "$BASEURL/" \
-            "$BASEURL/community/" \
+            "$BASEURL/regulations/" \
             "$BASEURL/learn/" \
-            "$BASEURL/search/" \
-            "$BASEURL/guides/" \
-            "$BASEURL/updates/"; do
+            "$BASEURL/qa/" \
+            "$BASEURL/tools/" \
+            "$BASEURL/past-exams/" \
+            "$BASEURL/sns-links/"; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:4000${path}")
             echo "$path -> $code"
             test "$code" = "200"
