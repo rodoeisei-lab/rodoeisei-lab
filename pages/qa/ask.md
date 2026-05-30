@@ -2,6 +2,7 @@
 layout: page
 title: 匿名で質問する
 permalink: /qa/ask/
+published: false
 ---
 
 # 匿名で質問する（受付ページ）

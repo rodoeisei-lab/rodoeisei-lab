@@ -25,27 +25,27 @@ primary_card:
   cta: 過去問を見る
   url: /past-exams/
 main_cards:
-  - title: 公開Q&A
-    description: 公開された質問と回答を確認できます。
-    icon: 💬
-    url: /qa/
-  - title: 学習
-    description: 基礎から実務まで体系的に学べます。
-    icon: 🎓
-    url: /learn/
   - title: 法令・規則
-    description: 主要な法令・規則をわかりやすく整理。
+    description: 粉じん則・有機則・特化則などを確認
     icon: ⚖️
     url: /regulations/
+  - title: 学習
+    description: 基礎から実務まで体系的に学ぶ
+    icon: 🎓
+    url: /learn/
+  - title: 公開Q&A
+    description: よくある疑問と回答を見る
+    icon: 💬
+    url: /qa/
   - title: ツール
-    description: 計算・判定・チェックに便利な実務ツール。
+    description: 計算・判定・チェックに使う
     icon: 🔧
     url: /tools/
 notice:
   title: お知らせ
   description: 最新の更新情報はSNSでも先に流れます。
   cta: SNSリンク集へ
-  url: /sns-links/
+  url: /sns/
 sns:
   - title: X
     description: 短いアップデートを速報で共有。
