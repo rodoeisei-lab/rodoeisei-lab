@@ -1,14 +1,14 @@
 ---
 layout: page
-title: SNSリンク集へ
-description: 最新の更新告知はSNSでも先に流れます。
+title: SNSリンク集
+description: X、YouTube、note、はてなブログなど、労働衛生ラボの関連リンクをまとめています。
 permalink: /sns-links/
 ---
 {% assign home = site.data.home %}
 
 <div class="sns-collection" id="main">
-  <h1>SNSリンク集へ</h1>
-  <p class="sns-lead">最新の更新告知はSNSでも先に流れます。</p>
+  <h1>SNSリンク集</h1>
+  <p class="sns-lead">X、YouTube、note、はてなブログなど、労働衛生ラボの関連リンクをまとめています。</p>
 
   <article class="primary-topic-card sns-primary-topic">
     <div class="topic-leading"><div class="topic-icon">📘</div><div><span class="chip-highlight">おすすめ</span><h2>過去問（公式）</h2><p>年度別の過去問にすぐアクセス。</p></div></div>

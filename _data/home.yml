@@ -1,6 +1,6 @@
 hero:
   title: "労働衛生の判断を、\n現場で迷わない形に。"
-  description: "作業環境測定・化学物質管理・法令確認を、スマホでも読みやすく実務につなげやすい形で整理しています。"
+  description: "作業環境測定、化学物質管理、粉じん則・有機則・特化則など、労働衛生の実務で確認したい要点を整理しています。"
 quick_search:
   placeholder: "例：粉じん則、有機則、作業環境測定"
   chips:
@@ -45,7 +45,7 @@ notice:
   title: お知らせ
   description: 最新の更新情報はSNSでも先に流れます。
   cta: SNSリンク集へ
-  url: /sns/
+  url: /sns-links/
 sns:
   - title: X
     description: 短いアップデートを速報で共有。

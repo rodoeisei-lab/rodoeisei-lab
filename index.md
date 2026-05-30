@@ -1,7 +1,7 @@
 ---
 layout: home
 title: 労働衛生ラボ
-description: 現場担当者・衛生管理者向けに、労働衛生の解説・更新情報・用語集へ最短で進める学習ポータル。
+description: 作業環境測定、化学物質管理、粉じん則・有機則・特化則など、労働衛生の実務で確認したい要点を整理しています。
 ---
 
 {% assign latest_guide = site.guides | where: "status", "published" | sort: "updated" | reverse | first %}

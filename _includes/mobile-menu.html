@@ -4,11 +4,11 @@
     <h2>メニュー</h2>
     <button class="close-btn" id="closeBtn" aria-label="閉じる">×</button>
   </div>
-  <a href="{{ '/regulations/' | relative_url }}" class="menu-cta-primary">法令・規則を見る</a>
-  <a href="{{ '/learn/' | relative_url }}" class="menu-cta-secondary">学習ページへ</a>
-  <a href="{{ '/qa/' | relative_url }}" class="menu-cta-secondary">公開Q&amp;Aを見る</a>
-  <a href="{{ '/tools/' | relative_url }}" class="menu-cta-secondary">ツールを見る</a>
-  <a href="{{ '/past-exams/' | relative_url }}" class="menu-featured-card"><small>重点導線</small><strong>過去問（公式）</strong><span>›</span></a>
+  <div class="menu-cta-grid" aria-label="おすすめ導線">
+    <a href="{{ '/regulations/' | relative_url }}" class="menu-cta-primary">法令・規則を見る</a>
+    <a href="{{ '/learn/' | relative_url }}" class="menu-cta-secondary">学習ページへ</a>
+    <a href="{{ '/past-exams/' | relative_url }}" class="menu-featured-card"><small>重点導線</small><strong>過去問（公式）</strong><span>›</span></a>
+  </div>
   <ul>
     {% for item in site.data.navigation %}
     <li><a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">{{ item.icon }} {{ item.title }}</a></li>
