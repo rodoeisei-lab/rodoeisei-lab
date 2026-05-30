@@ -19,8 +19,9 @@
     document.documentElement.setAttribute('data-theme-preference', stored);
   })();
 </script>
-<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "/assets/css/components.css" | relative_url }}">
+{% assign asset_version = site.time | date: "%Y%m%d%H%M%S" %}
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}?v={{ asset_version }}">
+<link rel="stylesheet" href="{{ "/assets/css/components.css" | relative_url }}?v={{ asset_version }}">
 
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta property="og:description" content="{{ page_description }}">
