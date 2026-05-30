@@ -1,8 +1,8 @@
 hero:
-  title: "労働衛生の学びと実務を、\nもっとわかりやすく。"
-  description: "制度の理解から現場改善まで、実務で役立つ知識とツールをすぐに確認できるサイトです。"
+  title: "労働衛生の判断を、\n現場で迷わない形に。"
+  description: "作業環境測定・化学物質管理・法令確認を、スマホでも読みやすく実務につなげやすい形で整理しています。"
 quick_search:
-  placeholder: "キーワードで検索（例：粉じん則、有機則、作業環境測定）"
+  placeholder: "例：粉じん則、有機則、作業環境測定"
   chips:
     - label: 粉じん則
       url: /regulations/#dust
@@ -19,9 +19,9 @@ quick_search:
     - label: 健康診断
       url: /search/?q=健康診断
 primary_card:
-  label: 最重要
+  label: 重点導線
   title: 過去問（公式）
-  description: 試験対策に。年度別の過去問と解説を掲載。
+  description: 試験対策に必要な年度別の過去問と解説を、移動中でも確認しやすく整理しています。
   cta: 過去問を見る
   url: /past-exams/
 main_cards:

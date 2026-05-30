@@ -7,6 +7,7 @@ layout: base
     <section class="home-hero" aria-label="ヒーロー">
       <p class="hero-kicker">労働衛生・作業環境測定の実務ガイド</p>
       <div class="hero-copy-block">
+        <div class="hero-audience" aria-label="対象者">測定士・衛生管理者・現場担当者向け</div>
         <h1>{{ home.hero.title | newline_to_br }}</h1>
         <p>{{ home.hero.description }}</p>
       </div>
@@ -26,13 +27,15 @@ layout: base
         <a class="hero-primary-btn" href="{{ '/learn/' | relative_url }}">まず学習ページへ</a>
         <a class="hero-secondary-link" href="{{ '/qa/' | relative_url }}">公開Q&Aを見る</a>
       </div>
+      <p class="hero-mobile-note">スマホでも、要点 → 詳細 → 実務ツールへすぐ移動できます。</p>
     </section>
 
     <section class="quick-search-card">
       <h2>クイック検索</h2>
       <form action="{{ '/search/' | relative_url }}" method="get" class="search-field">
         <span aria-hidden="true">⌕</span>
-        <input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}">
+        <input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}" aria-label="サイト内検索">
+        <button type="submit">検索</button>
       </form>
       <div class="chips">
         {% for chip in home.quick_search.chips %}
