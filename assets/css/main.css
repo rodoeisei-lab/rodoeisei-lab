@@ -4695,9 +4695,16 @@ main a:hover {
 .regulations-page {
   display: grid;
   gap: 16px;
-  max-width: 980px;
+  width: min(100%, 980px);
+  max-width: 100%;
+  min-width: 0;
   margin: -22px auto 0;
   color: #0f2353;
+}
+
+.regulations-page,
+.regulations-page * {
+  box-sizing: border-box;
 }
 
 .regulations-page section {
@@ -4735,6 +4742,7 @@ main a:hover {
 .regulations-hero__visual {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .regulations-hero__eyebrow {
@@ -4752,11 +4760,14 @@ main a:hover {
 }
 
 .regulations-hero h1 {
+  max-width: 100%;
   margin: 0;
   color: #061842;
-  font-size: clamp(2.35rem, 7vw, 4.2rem);
+  font-size: clamp(2.15rem, 6vw, 4.2rem);
   line-height: 1.12;
   letter-spacing: .02em;
+  overflow-wrap: anywhere;
+  line-break: strict;
 }
 
 .regulations-hero__copy > p:not(.regulations-hero__eyebrow) {
@@ -4781,6 +4792,11 @@ main a:hover {
   background: rgba(255, 255, 255, .78);
   color: #1f5fac;
   box-shadow: 0 10px 24px rgba(31, 95, 172, .09);
+}
+
+.regulations-alert strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .regulations-alert span {
@@ -4834,7 +4850,8 @@ main a:hover {
 
 .regulations-search-field {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  max-width: 100%;
   gap: 12px;
   align-items: center;
   min-height: 64px;
@@ -4853,11 +4870,14 @@ main a:hover {
 }
 
 .regulations-search-field strong {
+  min-width: 0;
   color: #6a7280;
+  overflow-wrap: anywhere;
   font-size: 1.05rem;
 }
 
 .regulations-search-field em {
+  min-width: 0;
   color: #2362c7;
   font-style: normal;
   font-weight: 800;
@@ -4876,6 +4896,7 @@ main a:hover {
 .regulations-jump div {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  min-width: 0;
   gap: 12px;
 }
 
@@ -4991,6 +5012,10 @@ main a:hover {
   font-size: 1.35rem;
   font-weight: 900;
   box-shadow: inset 0 0 0 1px #cfe0f7;
+}
+
+.regulation-card__body {
+  min-width: 0;
 }
 
 .regulation-card__kicker {
@@ -5112,8 +5137,10 @@ main a:hover {
 
 @media (max-width: 560px) {
   .regulations-page {
+    width: 100%;
     max-width: none;
     margin-top: -34px;
+    gap: 12px;
   }
 
   .regulations-hero,
@@ -5125,7 +5152,17 @@ main a:hover {
   }
 
   .regulations-hero {
-    padding: 24px 18px;
+    padding: 22px 16px;
+    gap: 16px;
+  }
+
+  .regulations-hero h1 {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .regulations-hero__copy > p:not(.regulations-hero__eyebrow) {
+    font-size: 1rem;
+    line-height: 1.8;
   }
 
   .regulations-alert {
@@ -5134,7 +5171,8 @@ main a:hover {
   }
 
   .regulations-search-field {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 12px;
   }
 
   .regulations-search-field em {
