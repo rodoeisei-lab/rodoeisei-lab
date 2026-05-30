@@ -2,14 +2,24 @@
 layout: base
 ---
 {% assign home = site.data.home %}
-<div class="home-main" id="main">
+<div class="home-main">
   <div class="container narrow home-stack">
     <section class="home-hero" aria-label="ヒーロー">
-      <p class="hero-kicker">労働衛生・作業環境測定の実務ガイド</p>
       <div class="hero-copy-block">
+        <p class="hero-kicker">労働衛生・作業環境測定の実務ガイド</p>
         <div class="hero-audience" aria-label="対象者">測定士・衛生管理者・現場担当者向け</div>
         <h1>{{ home.hero.title | newline_to_br }}</h1>
         <p>{{ home.hero.description }}</p>
+        <ul class="hero-points" aria-label="サイトの特徴">
+          <li>制度・法令の要点を現場目線で解説</li>
+          <li>測定・評価・改善の流れを短時間で確認</li>
+          <li>学習・Q&amp;A・ツールへ最短でアクセス</li>
+        </ul>
+        <div class="hero-actions" aria-label="主要導線">
+          <a class="hero-primary-btn" href="{{ '/learn/' | relative_url }}">学習ページへ</a>
+          <a class="hero-secondary-btn" href="{{ '/regulations/' | relative_url }}">法令・規則を見る</a>
+          <a class="hero-text-link" href="{{ '/qa/' | relative_url }}">公開Q&amp;Aを見る</a>
+        </div>
       </div>
       <div class="hero-illustration" aria-hidden="true">
         <div class="hero-blob">
@@ -18,26 +28,27 @@ layout: base
           <p class="hero-stat"><strong>継続更新</strong><span>法令・運用の変化に追随</span></p>
         </div>
       </div>
-          <ul class="hero-points" aria-label="サイトの特徴">
-        <li>制度・法令の要点を現場目線で解説</li>
-        <li>測定・評価・改善の流れを短時間で確認</li>
-        <li>学習・Q&A・ツールへ最短でアクセス</li>
-      </ul>
-      <div class="hero-actions">
-        <a class="hero-primary-btn" href="{{ '/learn/' | relative_url }}">まず学習ページへ</a>
-        <a class="hero-secondary-link" href="{{ '/qa/' | relative_url }}">公開Q&Aを見る</a>
-      </div>
-      <p class="hero-mobile-note">スマホでも、要点 → 詳細 → 実務ツールへすぐ移動できます。</p>
     </section>
 
-    <section class="quick-search-card">
+    <section class="feature-grid feature-grid--primary" aria-label="主要導線">
+      {% for card in home.main_cards %}
+        <a class="feature-card" href="{{ card.url | relative_url }}">
+          <i aria-hidden="true">{{ card.icon }}</i>
+          <h2>{{ card.title }}</h2>
+          <p>{{ card.description }}</p>
+          <span aria-hidden="true">›</span>
+        </a>
+      {% endfor %}
+    </section>
+
+    <section class="quick-search-card" aria-label="クイック検索">
       <h2>クイック検索</h2>
       <form action="{{ '/search/' | relative_url }}" method="get" class="search-field">
         <span aria-hidden="true">⌕</span>
-        <input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}" aria-label="サイト内検索">
+        <input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}" aria-label="サイト内検索キーワード">
         <button type="submit">検索</button>
       </form>
-      <div class="chips">
+      <div class="chips" aria-label="よく使う検索テーマ">
         {% for chip in home.quick_search.chips %}
           <a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>
         {% endfor %}
@@ -46,7 +57,7 @@ layout: base
 
     <article class="primary-topic-card">
       <div class="topic-leading">
-        <div class="topic-icon">📘</div>
+        <div class="topic-icon" aria-hidden="true">📘</div>
         <div>
           <span class="chip-highlight">{{ home.primary_card.label }}</span>
           <h2>{{ home.primary_card.title }}</h2>
@@ -56,35 +67,29 @@ layout: base
       <a href="{{ home.primary_card.url | relative_url }}" class="primary-topic-btn">{{ home.primary_card.cta }}</a>
     </article>
 
-        <section class="home-trust-strip" aria-label="信頼性情報">
+    <aside class="home-reference-note" aria-label="利用時の注意">
+      <strong aria-hidden="true">i</strong>
+      <p>本サイトの内容は実務の参考情報です。法令や制度は改正されることがあるため、最終確認は e-Gov 法令検索や厚生労働省などの一次情報で行ってください。</p>
+    </aside>
+
+    <section class="home-trust-strip" aria-label="信頼性情報">
       <div class="trust-item">
         <strong>実務直結</strong>
         <p>現場判断で使える解説とチェック観点を重視</p>
       </div>
       <div class="trust-item">
-        <strong>学びやすい構成</strong>
-        <p>検索・カテゴリ・関連記事で迷わず辿れる導線</p>
+        <strong>探しやすい構成</strong>
+        <p>制度・学習・Q&amp;A・ツールを目的別に整理</p>
       </div>
       <div class="trust-item">
         <strong>継続更新</strong>
-        <p>ガイド・Q&A・SNSで最新情報をフォロー可能</p>
+        <p>法令確認や現場運用の変化に合わせて改善</p>
       </div>
     </section>
 
     <section class="home-section-heading">
       <h2>目的別の入口</h2>
-      <p>迷わず辿れるように、学習・Q&A・実務ツールを整理しています。</p>
-    </section>
-
-    <section class="feature-grid">
-      {% for card in home.main_cards %}
-        <a class="feature-card" href="{{ card.url | relative_url }}">
-          <i>{{ card.icon }}</i>
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.description }}</p>
-          <span>›</span>
-        </a>
-      {% endfor %}
+      <p>知りたい内容に合わせて、法令・学習・Q&amp;A・ツールへ進めます。</p>
     </section>
 
     <a class="notice-card" href="{{ home.notice.url | relative_url }}">
