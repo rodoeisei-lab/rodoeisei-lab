@@ -47,6 +47,22 @@ layout: base
       {% endfor %}
     </section>
 
+    <section class="home-workflow-card" aria-labelledby="home-workflow-title">
+      <div class="workflow-intro">
+        <p class="section-kicker">{{ home.workflow.kicker }}</p>
+        <h2 id="home-workflow-title">{{ home.workflow.title }}</h2>
+        <p>{{ home.workflow.description }}</p>
+      </div>
+      <div class="workflow-steps" aria-label="現場での確認ステップ">
+        {% for step in home.workflow.steps %}
+          <article class="workflow-step">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
     <section class="quick-search-card" aria-labelledby="home-categories-title">
       <div class="section-title-row">
         <div>
