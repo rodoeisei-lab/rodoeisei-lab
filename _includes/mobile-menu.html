@@ -11,7 +11,7 @@
   </div>
   <ul>
     {% for item in site.data.navigation %}
-    <li><a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">{{ item.icon }} {{ item.title }}</a></li>
+    <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
     {% endfor %}
   </ul>
 </nav>

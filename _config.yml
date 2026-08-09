@@ -4,6 +4,8 @@ url: https://rodoeisei-lab.github.io
 baseurl: "/rodoeisei-lab"
 markdown: kramdown
 permalink: pretty
+plugins:
+  - jekyll-sitemap
 
 collections:
   guides:

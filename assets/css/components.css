@@ -1085,6 +1085,23 @@ body { background: #f5f7fb; color: #0b1f3f; }
   line-height: 1.75;
 }
 
+.home-page .article-status {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: auto;
+  padding: 5px 10px;
+  border: 1px solid #d5deea;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #52637a;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+@media (min-width: 901px) {
+  .site-header .menu-btn { display: none; }
+}
+
 .home-page .external-links-card {
   display: grid;
   grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);

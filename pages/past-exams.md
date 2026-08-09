@@ -4,7 +4,7 @@ title: 過去問（公式）リンク集
 permalink: /past-exams/
 ---
 
-# 過去問（公式）リンク集（外部リンク）
+## 過去問（公式）リンク集（外部リンク）
 
 <div class="notice-box past-exams-contribute">
 <strong>このページを一緒に育てる</strong><br>

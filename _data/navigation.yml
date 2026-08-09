@@ -1,18 +1,10 @@
-- title: Q&A
-  url: /qa/
-  icon: ❓
-- title: 法令・規則
-  url: /regulations/
-  icon: ⚖️
+- title: 作業環境測定
+  url: /guides/work-env-measurement-intro/
 - title: 学習
   url: /learn/
-  icon: 🎓
-- title: 過去問（公式）
-  url: /past-exams/
-  icon: 📘
+- title: Q&A
+  url: /qa/
+- title: 法令・規則
+  url: /regulations/
 - title: ツール
   url: /tools/
-  icon: 🔧
-- title: SNSリンク集
-  url: /sns-links/
-  icon: 🔗

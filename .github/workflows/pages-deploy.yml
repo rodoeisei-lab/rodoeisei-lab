@@ -5,7 +5,6 @@ on:
     branches:
       - main
       - master
-      - work
   workflow_dispatch:
 
 permissions:
@@ -48,15 +47,10 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Build Pagefind index
-        run: |
-          if ! npx -y pagefind --config pagefind.yml; then
-            echo "Pagefind indexing failed; continuing with an empty placeholder so Pages can deploy." >&2
-            mkdir -p _site/pagefind
-            printf 'console.warn("Pagefind index was not generated during this deploy.");\n' > _site/pagefind/pagefind.js
-          fi
+        run: npx -y pagefind --config pagefind.yml
 
       - name: Verify Pagefind output
-        run: test -d _site/pagefind
+        run: test -f _site/pagefind/pagefind.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
