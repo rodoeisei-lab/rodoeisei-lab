@@ -2,11 +2,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% assign page_description = page.description | default: site.description %}
 {% assign og_image = page.og_image | default: "/assets/images/og-default.svg" %}
-{% assign og_image_url = og_image | relative_url | absolute_url %}
+{% if og_image contains "://" %}
+  {% assign og_image_url = og_image %}
+{% else %}
+  {% assign og_image_url = og_image | absolute_url %}
+{% endif %}
 {% assign is_article = page.layout == "article" %}
+{% assign page_title = site.title %}
+{% if page.title and page.title != site.title %}
+  {% assign page_title = page.title | append: " | " | append: site.title %}
+{% endif %}
 {% assign published_time = page.date %}
 {% assign modified_time = page.last_modified_at | default: page.updated %}
-<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<title>{{ page_title }}</title>
 <meta name="description" content="{{ page_description }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/svg+xml" href="{{ "/assets/images/favicon.svg" | relative_url }}">
@@ -23,7 +31,7 @@
 <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}?v={{ asset_version }}">
 <link rel="stylesheet" href="{{ "/assets/css/components.css" | relative_url }}?v={{ asset_version }}">
 
-<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+<meta property="og:title" content="{{ page_title }}">
 <meta property="og:description" content="{{ page_description }}">
 <meta property="og:type" content="{% if is_article %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">

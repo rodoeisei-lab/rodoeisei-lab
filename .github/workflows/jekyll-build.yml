@@ -19,6 +19,11 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
       - name: Install dependencies
         run: bundle install --jobs 4 --retry 3
 
@@ -36,6 +41,9 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --baseurl "${{ steps.config.outputs.baseurl }}"
+
+      - name: Build Pagefind index
+        run: bash scripts/ci/build_pagefind.sh
 
       - name: Block root-absolute paths without baseurl
         run: |
@@ -74,15 +82,36 @@ jobs:
           SERVER_PID=$!
           trap 'kill $SERVER_PID' EXIT
 
-          BASEURL="${{ steps.config.outputs.baseurl }}"
+          for attempt in {1..20}; do
+            if curl --fail --silent --output /dev/null http://127.0.0.1:4000/; then
+              break
+            fi
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+              cat /tmp/site.log
+              exit 1
+            fi
+            if [[ "$attempt" == 20 ]]; then
+              cat /tmp/site.log
+              exit 1
+            fi
+            sleep 0.5
+          done
+
+          # Jekyll's baseurl is part of generated URLs, not the _site directory
+          # layout served by this local test server.
           for path in \
-            "$BASEURL/" \
-            "$BASEURL/regulations/" \
-            "$BASEURL/learn/" \
-            "$BASEURL/qa/" \
-            "$BASEURL/tools/" \
-            "$BASEURL/past-exams/" \
-            "$BASEURL/sns-links/"; do
+            "/" \
+            "/regulations/" \
+            "/learn/" \
+            "/qa/" \
+            "/tools/" \
+            "/past-exams/" \
+            "/sns-links/" \
+            "/pagefind/pagefind.js" \
+            "/pagefind/pagefind-ui.js" \
+            "/pagefind/pagefind-ui.css" \
+            "/work-ops-hub/" \
+            "/inventory-memo.html"; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:4000${path}")
             echo "$path -> $code"
             test "$code" = "200"
