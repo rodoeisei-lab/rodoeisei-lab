@@ -91,15 +91,16 @@ layout: base
     <section class="home-section-heading" aria-labelledby="sample-articles-title">
       <p class="section-kicker">記事カード</p>
       <h2 id="sample-articles-title">まず読んでほしいテーマ</h2>
-      <p>A測定・B測定、管理区分、SDS、リスクアセスメント、局所排気装置、フィットテストなど、今後の記事化したい実務テーマを先に並べています。</p>
+      <p>A測定・B測定、管理区分、SDS、局所排気装置、フィットテストなど、実務と学習の入口になるテーマをまとめています。</p>
     </section>
 
     <section class="article-card-grid" aria-label="記事カード一覧">
       {% for article in home.articles %}
         <article class="article-card">
           <span class="article-category">{{ article.category }}</span>
-          <h3><a href="{% if article.url == '#' %}#{% else %}{{ article.url | relative_url }}{% endif %}">{{ article.title }}</a></h3>
+          <h3>{% if article.url %}<a href="{{ article.url | relative_url }}">{{ article.title }}</a>{% else %}{{ article.title }}{% endif %}</h3>
           <p>{{ article.description }}</p>
+          {% unless article.url %}<span class="article-status" aria-label="この記事は準備中です">{{ article.status | default: "準備中" }}</span>{% endunless %}
         </article>
       {% endfor %}
     </section>
@@ -108,7 +109,7 @@ layout: base
       <div>
         <p class="section-kicker">外部連携</p>
         <h2 id="external-links-title">動画・SNS・改善提案とつなげる</h2>
-        <p>YouTube、X、note、はてなブログでも更新情報を発信します。質問・改善提案は GitHub Issues へお寄せください。</p>
+        <p>YouTube、X、noteでも更新情報を発信します。質問・改善提案は GitHub Issues へお寄せください。</p>
       </div>
       <div class="external-link-grid">
         {% for link in home.sns %}

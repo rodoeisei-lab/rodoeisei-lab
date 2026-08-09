@@ -17,7 +17,7 @@ lead: ページや記事をキーワードで横断検索できます。
   window.addEventListener("DOMContentLoaded", function () {
     if (typeof PagefindUI !== "function") return;
 
-    new PagefindUI({
+    var search = new PagefindUI({
       element: "#search-ui",
       bundlePath: "{{ '/pagefind/' | relative_url }}",
       showSubResults: true,
@@ -27,5 +27,8 @@ lead: ページや記事をキーワードで横断検索できます。
         placeholder: "例: 有機溶剤 / 騒音 / 作業環境測定"
       }
     });
+
+    var query = new URLSearchParams(window.location.search).get("q");
+    if (query) search.triggerSearch(query.replace(/\+/g, " "));
   });
 </script>
