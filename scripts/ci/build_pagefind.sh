@@ -32,3 +32,5 @@ npx --yes pagefind@1.4.0
 test -f "$site_dir/pagefind/pagefind.js"
 test -f "$site_dir/pagefind/pagefind-ui.js"
 test -f "$site_dir/pagefind/pagefind-ui.css"
+
+node scripts/ci/verify_pagefind.mjs

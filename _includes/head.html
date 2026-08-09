@@ -7,7 +7,10 @@
 {% else %}
   {% assign og_image_url = og_image | absolute_url %}
 {% endif %}
-{% assign is_article = page.layout == "article" %}
+{% assign is_article = false %}
+{% if page.layout == "article" %}
+  {% assign is_article = true %}
+{% endif %}
 {% assign page_title = site.title %}
 {% if page.title and page.title != site.title %}
   {% assign page_title = page.title | append: " | " | append: site.title %}
@@ -48,7 +51,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "{% if is_article %}Article{% else %}WebSite{% endif %}",
+  "@type": "{% if is_article %}Article{% elsif page.layout == 'home' %}WebSite{% else %}WebPage{% endif %}",
   "name": {{ site.title | jsonify }},
   {% if is_article and page.title %}
   "headline": {{ page.title | jsonify }},

@@ -3,11 +3,12 @@ layout: page
 title: サイト内検索
 permalink: /search/
 lead: ページや記事をキーワードで横断検索できます。
+pagefind_ignore: true
 ---
 
 <link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | relative_url }}">
 
-<div class="search-page" data-pagefind-body>
+<div class="search-page">
   <p class="search-page-intro">キーワードを入力すると、関連するページをすぐに表示します。</p>
   <div id="search-ui"></div>
 </div>

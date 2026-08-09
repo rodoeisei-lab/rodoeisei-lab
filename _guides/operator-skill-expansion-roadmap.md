@@ -139,4 +139,4 @@ lead: 「壊れても戻せる」運用を前提に、学習と実装を同時�
 - [解説一覧に戻る]({{ '/guides/' | relative_url }})
 - [アップデート一覧]({{ '/updates/' | relative_url }})
 - [学習ハブ]({{ '/learn/' | relative_url }})
-- [SNSリンク集]({{ '/sns/' | relative_url }})
+- [SNSリンク集]({{ '/sns-links/' | relative_url }})

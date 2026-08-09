@@ -114,6 +114,6 @@ lead: 先に伝えたい結論や注意点（任意）
 - [労基署対策]({{ "/inspection/" | relative_url }})
 - [資格対策]({{ "/licenses/" | relative_url }})
 - [通達や測定で出る専門用語を用語集で確認する]({{ "/glossary/" | relative_url }})
-- [SNSリンク集]({{ "/sns/" | relative_url }})
+- [SNSリンク集]({{ "/sns-links/" | relative_url }})
 
 <script src="{{ '/assets/js/card-filter.js' | relative_url }}" defer></script>

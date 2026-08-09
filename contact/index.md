@@ -58,4 +58,4 @@ permalink: /contact/
 - [用語集]({{ "/glossary/" | relative_url }})
 - [労基署対策]({{ "/inspection/" | relative_url }})
 - [資格対策]({{ "/licenses/" | relative_url }})
-- [SNSリンク集]({{ "/sns/" | relative_url }})
+- [SNSリンク集]({{ "/sns-links/" | relative_url }})

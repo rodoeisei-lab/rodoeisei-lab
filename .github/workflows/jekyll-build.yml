@@ -45,6 +45,10 @@ jobs:
       - name: Build Pagefind index
         run: bash scripts/ci/build_pagefind.sh
 
+      - name: Verify generated metadata and search query handoff
+        run: |
+          python3 scripts/ci/check_generated_metadata.py --site-dir _site
+
       - name: Block root-absolute paths without baseurl
         run: |
           BASEURL="${{ steps.config.outputs.baseurl }}"
