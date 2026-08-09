@@ -47,10 +47,13 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Build Pagefind index
-        run: npx -y pagefind --config pagefind.yml
+        run: bash scripts/ci/build_pagefind.sh
 
       - name: Verify Pagefind output
-        run: test -f _site/pagefind/pagefind.js
+        run: |
+          test -f _site/pagefind/pagefind.js
+          test -f _site/pagefind/pagefind-ui.js
+          test -f _site/pagefind/pagefind-ui.css
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
