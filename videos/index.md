@@ -10,7 +10,7 @@ permalink: /videos/
   <article class="card">
     <h3>準備中のプレイリスト</h3>
     <p>短尺解説の公開に向けて構成中です。最新の動きはSNSで告知します。</p>
-    <a href="{{ "/sns/" | relative_url }}">SNSリンク集へ →</a>
+    <a href="{{ "/sns-links/" | relative_url }}">SNSリンク集へ →</a>
   </article>
   <article class="card">
     <h3>視聴ガイド</h3>
@@ -44,7 +44,7 @@ permalink: /videos/
 **A.** 解説一覧や用語集で背景を確認してください。
 
 ## 関連ページ
-- [SNSリンク集]({{ "/sns/" | relative_url }})
+- [SNSリンク集]({{ "/sns-links/" | relative_url }})
 - [解説一覧]({{ "/guides/" | relative_url }})
 - [用語集]({{ "/glossary/" | relative_url }})
 - [最新アップデート]({{ "/updates/" | relative_url }})

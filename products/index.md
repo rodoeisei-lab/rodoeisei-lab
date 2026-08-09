@@ -16,17 +16,7 @@ permalink: /products/
   </ul>
   <div class="cards">
     {% for card in section.cards %}
-      {% assign link_url = nil %}
-      {% if card.link %}
-        {% assign link_prefix = card.link | slice: 0, 2 %}
-        {% assign link_mailto = card.link | slice: 0, 7 %}
-        {% assign link_tel = card.link | slice: 0, 4 %}
-        {% if card.link contains "://" or link_prefix == "//" or link_prefix == "#" or link_mailto == "mailto:" or link_tel == "tel:" %}
-          {% assign link_url = card.link %}
-        {% else %}
-          {% assign link_url = card.link | relative_url %}
-        {% endif %}
-      {% endif %}
+      {% assign link_url = card.link %}
       {% assign meta_text = nil %}
       {% if link_url == nil %}
         {% assign meta_text = "準備中" %}

@@ -5,7 +5,11 @@
 </head>
 <body{% if page.layout == 'home' %} class="home-page"{% endif %}>
   {% include site-header.html %}
-  <main id="main">
+  {% assign pagefind_excluded = false %}
+  {% if page.pagefind_ignore or page.published == false or page.status == "wip" or page.status == "internal" %}
+    {% assign pagefind_excluded = true %}
+  {% endif %}
+  <main id="main"{% unless pagefind_excluded %} data-pagefind-body{% else %} data-pagefind-ignore{% endunless %}>
     {{ content }}
   </main>
     {% include site-footer.html %}
