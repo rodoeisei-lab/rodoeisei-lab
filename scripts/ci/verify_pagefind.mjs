@@ -68,7 +68,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/guides/work-env-measurement-intro/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/guides/work-env-measurement-intro/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -79,6 +79,14 @@ try {
     if (results.length === 0) {
       throw new Error(`Pagefind returned no results for required query: ${query}`);
     }
+  }
+
+  const measurementResults = await search("作業環境測定");
+  if (!measurementResults.some((page) =>
+    page.url.includes("/work-environment-measurement/") ||
+    page.url.includes("/guides/work-env-measurement-intro/"),
+  )) {
+    throw new Error("Work environment measurement search did not return the category or introduction page.");
   }
 
   for (const query of ["GC2014", "月末在庫メモ"]) {
