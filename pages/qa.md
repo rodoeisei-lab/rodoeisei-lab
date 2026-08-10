@@ -12,7 +12,7 @@ description: 現場でよく出る労働衛生の疑問を、質問→回答→�
 
   <section class="qa-hero-card">
     <p class="qa-hero-label">労働衛生ラボ</p>
-    <h1>公開Q&amp;A</h1>
+    <h2>現場の疑問を、根拠とともに解決</h2>
     <p>現場でよく出る労働衛生の疑問を、質問→回答→根拠の形で整理した知見データベース。</p>
   </section>
 

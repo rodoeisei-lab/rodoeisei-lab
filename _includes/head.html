@@ -21,15 +21,7 @@
 <meta name="description" content="{{ page_description }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/svg+xml" href="{{ "/assets/images/favicon.svg" | relative_url }}">
-<meta name="theme-color" content="#f8fafc">
-<script>
-  (function () {
-    var stored = localStorage.getItem('theme') || 'light';
-    var resolved = stored === 'dark' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', resolved);
-    document.documentElement.setAttribute('data-theme-preference', stored);
-  })();
-</script>
+<meta name="theme-color" content="#ffffff">
 {% assign asset_version = site.time | date: "%Y%m%d%H%M%S" %}
 <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}?v={{ asset_version }}">
 <link rel="stylesheet" href="{{ "/assets/css/components.css" | relative_url }}?v={{ asset_version }}">

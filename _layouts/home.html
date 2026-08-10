@@ -2,131 +2,29 @@
 layout: base
 ---
 {% assign home = site.data.home %}
-<!-- home-version: 2026-05-30-occupational-hygiene-specialized -->
-<div class="home-main">
-  <div class="container narrow home-stack">
-    <section class="home-hero" aria-label="ファーストビュー">
-      <div class="hero-copy-block">
-        <p class="hero-kicker">{{ home.hero.kicker }}</p>
-        <div class="hero-audience" aria-label="対象者">{{ home.hero.audience }}</div>
-        <h1>{{ home.hero.title }}</h1>
-        <p>{{ home.hero.description }}</p>
-        <ul class="hero-points" aria-label="このサイトでできること">
-          {% for point in home.hero.points %}
-            <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
-        <div class="hero-actions" aria-label="主要導線">
-          {% for action in home.hero.actions %}
-            <a class="hero-{{ action.style }}-btn" href="{% if action.external %}{{ action.url }}{% else %}{{ action.url | relative_url }}{% endif %}"{% if action.external %} target="_blank" rel="noopener"{% endif %}>{{ action.label }}</a>
-          {% endfor %}
-        </div>
-      </div>
-      <div class="hero-illustration" aria-hidden="true">
-        <div class="hero-blob">
-          {% for stat in home.hero.stats %}
-            <p class="hero-stat"><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span></p>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
+<div class="home-main"><div class="container home-stack">
+  <section class="home-hero" aria-labelledby="home-title">
+    <p class="hero-kicker">{{ home.hero.kicker }}</p>
+    <h1 id="home-title">{{ home.hero.title }}</h1>
+    <p class="hero-lead">{{ home.hero.description }}</p>
+    <div class="hero-actions">
+      {% for action in home.hero.actions limit:2 %}<a class="hero-{{ action.style }}-btn" href="{{ action.url | relative_url }}">{{ action.label }}</a>{% endfor %}
+    </div>
+  </section>
 
-    <section class="home-section-heading" aria-labelledby="home-features-title">
-      <p class="section-kicker">サイトの特徴</p>
-      <h2 id="home-features-title">資格試験だけでなく、現場の判断に使える労働衛生情報へ。</h2>
-      <p>作業環境測定士、衛生管理者、化学物質管理担当者、労働衛生コンサルタント受験者が、実務と学習の両方で使える導線を用意しています。</p>
-    </section>
+  <section class="home-section" aria-labelledby="home-categories-title">
+    <div class="home-section-heading"><p class="section-kicker">主要カテゴリ</p><h2 id="home-categories-title">知りたいテーマから探す</h2><p>現場の課題や学びたい分野から、必要な情報へ進めます。</p></div>
+    <nav class="category-grid" aria-label="カテゴリ一覧">{% for category in home.categories %}<a href="{{ category.url | relative_url }}"><strong>{{ category.label }}</strong><span>情報を見る →</span></a>{% endfor %}</nav>
+  </section>
 
-    <section class="feature-grid feature-grid--three" aria-label="サイトの特徴">
-      {% for card in home.features %}
-        <article class="feature-card">
-          <i aria-hidden="true">{{ card.icon }}</i>
-          <h2>{{ card.title }}</h2>
-          <p>{{ card.description }}</p>
-        </article>
-      {% endfor %}
-    </section>
+  <section class="home-section" aria-labelledby="sample-articles-title">
+    <div class="home-section-heading"><p class="section-kicker">まず読む記事</p><h2 id="sample-articles-title">基礎をつかむ3つのテーマ</h2><p>公開済みの記事から、実務と学習の入口になるものを選びました。</p></div>
+    <div class="article-card-grid">{% assign shown = 0 %}{% for article in home.articles %}{% if article.url and shown < 3 %}<article class="article-card"><span class="article-category">{{ article.category }}</span><h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3><p>{{ article.description }}</p><a class="card-link" href="{{ article.url | relative_url }}">記事を読む →</a></article>{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}</div>
+  </section>
 
-    <section class="quick-search-card" aria-labelledby="home-categories-title">
-      <div class="section-title-row">
-        <div>
-          <p class="section-kicker">カテゴリ</p>
-          <h2 id="home-categories-title">知りたいテーマから探す</h2>
-        </div>
-        <p>作業環境測定、化学物質管理、個人ばく露測定、局所排気装置、保護具・フィットテスト、AI活用まで横断して整理します。</p>
-      </div>
-      <div class="category-grid" aria-label="カテゴリ一覧">
-        {% for category in home.categories %}
-          <a href="{{ category.url | relative_url }}">{{ category.label }}</a>
-        {% endfor %}
-      </div>
-    </section>
+  <section class="quick-search-card" aria-labelledby="quick-search-title"><div><p class="section-kicker">サイト内検索</p><h2 id="quick-search-title">キーワードから探す</h2></div><form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form><div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div></section>
 
-    <section class="quick-search-card" aria-labelledby="quick-search-title">
-      <h2 id="quick-search-title">クイック検索</h2>
-      <form action="{{ '/search/' | relative_url }}" method="get" class="search-field">
-        <span aria-hidden="true">⌕</span>
-        <input type="search" name="q" placeholder="{{ home.quick_search.placeholder }}" aria-label="サイト内検索キーワード">
-        <button type="submit">検索</button>
-      </form>
-      <div class="chips" aria-label="よく使う検索テーマ">
-        {% for chip in home.quick_search.chips %}
-          <a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>
-        {% endfor %}
-      </div>
-    </section>
+  <section class="external-links-card" aria-labelledby="external-links-title"><div><p class="section-kicker">外部メディア</p><h2 id="external-links-title">動画・SNSでも発信しています</h2></div><div class="external-link-grid">{% for link in home.sns limit:3 %}<a href="{{ link.url }}" target="_blank" rel="noopener"><strong>{{ link.title }}</strong><span>{{ link.description }}</span></a>{% endfor %}</div></section>
 
-    <article class="primary-topic-card">
-      <div class="topic-leading">
-        <div class="topic-icon" aria-hidden="true">📘</div>
-        <div>
-          <span class="chip-highlight">{{ home.primary_card.label }}</span>
-          <h2>{{ home.primary_card.title }}</h2>
-          <p>{{ home.primary_card.description }}</p>
-        </div>
-      </div>
-      <a href="{{ home.primary_card.url | relative_url }}" class="primary-topic-btn">{{ home.primary_card.cta }}</a>
-    </article>
-
-    <section class="home-section-heading" aria-labelledby="sample-articles-title">
-      <p class="section-kicker">記事カード</p>
-      <h2 id="sample-articles-title">まず読んでほしいテーマ</h2>
-      <p>A測定・B測定、管理区分、SDS、局所排気装置、フィットテストなど、実務と学習の入口になるテーマをまとめています。</p>
-    </section>
-
-    <section class="article-card-grid" aria-label="記事カード一覧">
-      {% for article in home.articles %}
-        <article class="article-card">
-          <span class="article-category">{{ article.category }}</span>
-          <h3>{% if article.url %}<a href="{{ article.url | relative_url }}">{{ article.title }}</a>{% else %}{{ article.title }}{% endif %}</h3>
-          <p>{{ article.description }}</p>
-          {% unless article.url %}<span class="article-status" aria-label="この記事は準備中です">{{ article.status | default: "準備中" }}</span>{% endunless %}
-        </article>
-      {% endfor %}
-    </section>
-
-    <section class="external-links-card" aria-labelledby="external-links-title">
-      <div>
-        <p class="section-kicker">外部連携</p>
-        <h2 id="external-links-title">動画・SNS・改善提案とつなげる</h2>
-        <p>YouTube、X、noteでも更新情報を発信します。質問・改善提案は GitHub Issues へお寄せください。</p>
-      </div>
-      <div class="external-link-grid">
-        {% for link in home.sns %}
-          <a href="{{ link.url }}" target="_blank" rel="noopener"><span aria-hidden="true">{{ link.icon }}</span><strong>{{ link.title }}</strong><small>{{ link.description }}</small></a>
-        {% endfor %}
-      </div>
-    </section>
-
-    <aside class="home-reference-note" aria-label="利用時の注意">
-      <strong aria-hidden="true">i</strong>
-      <p>本サイトの内容は実務の参考情報です。法令や制度は改正されることがあるため、最終確認は e-Gov 法令検索や厚生労働省などの一次情報で行ってください。</p>
-    </aside>
-
-    <a class="notice-card" href="{{ home.notice.url }}" target="_blank" rel="noopener">
-      <strong>🔔 {{ home.notice.title }}</strong>
-      <p>{{ home.notice.description }}</p>
-      <span>{{ home.notice.cta }} ›</span>
-    </a>
-  </div>
-</div>
+  <aside class="home-reference-note"><strong>一次情報の確認について</strong><p>本サイトは実務の参考情報です。法令や制度は改正されるため、最終判断は e-Gov 法令検索や厚生労働省などの一次情報で確認してください。</p></aside>
+</div></div>

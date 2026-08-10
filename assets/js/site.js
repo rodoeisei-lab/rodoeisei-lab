@@ -2,54 +2,6 @@ const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('closeBtn');
 const mobileNav = document.getElementById('mobileNav');
 const navOverlay = document.getElementById('navOverlay');
-const themeButtons = document.querySelectorAll('[data-theme-toggle]');
-const THEME_KEY = 'theme';
-const THEME_ORDER = ['system', 'light', 'dark'];
-const THEME_LABELS = {
-  system: '自動',
-  light: 'ライト',
-  dark: 'ダーク',
-};
-
-const setTheme = (preference = 'system') => {
-  const normalized = THEME_ORDER.includes(preference) ? preference : 'system';
-  const resolved = normalized === 'dark' ? 'dark' : 'light';
-
-  document.documentElement.setAttribute('data-theme', resolved);
-  document.documentElement.setAttribute('data-theme-preference', normalized);
-  localStorage.setItem(THEME_KEY, normalized);
-
-  const buttonText = normalized === 'system' ? '🖥️' : resolved === 'dark' ? '🌙' : '☀️';
-  const label = THEME_LABELS[normalized] || THEME_LABELS.system;
-  const ariaText = `表示テーマ: ${label}`;
-  themeButtons.forEach((button) => {
-    button.innerHTML = `<span aria-hidden="true">${buttonText}</span><span class="theme-toggle-label">${label}</span>`;
-    button.setAttribute('aria-label', ariaText);
-    button.dataset.theme = normalized;
-  });
-};
-
-const cycleTheme = () => {
-  const current = document.documentElement.getAttribute('data-theme-preference') || localStorage.getItem(THEME_KEY) || 'system';
-  const currentIndex = THEME_ORDER.indexOf(current);
-  const next = THEME_ORDER[(currentIndex + 1) % THEME_ORDER.length];
-  setTheme(next);
-};
-
-const currentTheme = localStorage.getItem(THEME_KEY) || 'light';
-setTheme(currentTheme);
-
-const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-darkScheme.addEventListener('change', () => {
-  const storedTheme = localStorage.getItem(THEME_KEY) || 'system';
-  if (storedTheme === 'system') {
-    setTheme('system');
-  }
-});
-
-themeButtons.forEach((button) => {
-  button.addEventListener('click', cycleTheme);
-});
 
 const openNav = () => {
   if (!mobileNav || !navOverlay || !menuBtn) return;
@@ -63,12 +15,14 @@ const openNav = () => {
 
 const closeNav = () => {
   if (!mobileNav || !navOverlay || !menuBtn) return;
+  const wasOpen = mobileNav.classList.contains('open');
   mobileNav.classList.remove('open');
   navOverlay.classList.remove('show');
   navOverlay.hidden = true;
   mobileNav.setAttribute('aria-hidden', 'true');
   menuBtn.setAttribute('aria-expanded', 'false');
   document.body.classList.remove('nav-open');
+  if (wasOpen) menuBtn.focus();
 };
 
 if (menuBtn) {
