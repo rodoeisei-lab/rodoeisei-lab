@@ -1,7 +1,7 @@
 - title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
   description: 化学物質管理の全体像を実務の順番で整理します。
-  status: wip
-  url:
+  status: published
+  url: /guides/chemical-management-basics/
   section: 全体像
 - title: SDSの読み方｜実務で確認したい項目
   description: 危険有害性、取扱い、ばく露防止措置、法規制情報の確認点を整理します。

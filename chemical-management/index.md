@@ -43,10 +43,21 @@ permalink: /chemical-management/
   </section>
 
   <section class="chemical-section" aria-labelledby="roadmap-title">
-    <div class="chemical-section-heading"><p class="chemical-section-label">記事ロードマップ</p><h2 id="roadmap-title">今後追加予定の記事</h2><p>本文の確認が完了したものから公開します。現在はすべて準備中です。</p></div>
+    <div class="chemical-section-heading"><p class="chemical-section-label">記事ロードマップ</p><h2 id="roadmap-title">公開状況から記事を選ぶ</h2><p>公開済みの入門記事から全体像を確認し、各テーマの詳しい記事は公開までお待ちください。</p></div>
+    <h3>公開中の記事</h3>
     <ul class="chemical-roadmap">
       {% for article in site.data.chemical_management %}
+      {% if article.status == "published" and article.url %}
+      <li class="chemical-roadmap__item--published"><a href="{{ article.url | relative_url }}"><span>{{ article.section }}</span><strong>{{ article.title }}</strong><p>{{ article.description }}</p><small class="chemical-status chemical-status--published">公開中・記事を読む</small></a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h3>今後追加予定の記事</h3>
+    <ul class="chemical-roadmap">
+      {% for article in site.data.chemical_management %}
+      {% unless article.status == "published" and article.url %}
       <li><div><span>{{ article.section }}</span><strong>{{ article.title }}</strong><p>{{ article.description }}</p></div><small class="chemical-status">準備中</small></li>
+      {% endunless %}
       {% endfor %}
     </ul>
   </section>

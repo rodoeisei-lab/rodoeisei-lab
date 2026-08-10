@@ -68,7 +68,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/guides/work-env-measurement-intro/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -82,8 +82,15 @@ try {
   }
 
   const chemicalResults = await search("化学物質管理");
-  if (!chemicalResults.some((page) => page.url.includes("/chemical-management/"))) {
-    throw new Error("Chemical management search did not return the category page.");
+  if (!chemicalResults.some((page) => page.url.includes("/guides/chemical-management-basics/"))) {
+    throw new Error("Chemical management search did not return the introduction article.");
+  }
+
+  for (const query of ["SDS", "リスクアセスメント"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/guides/chemical-management-basics/"))) {
+      throw new Error(`Chemical management introduction article is missing for query: ${query}`);
+    }
   }
 
   const measurementResults = await search("作業環境測定");
