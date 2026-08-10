@@ -12,6 +12,8 @@ updated_at: 未定
 reviewed_at: 未確認
 source_type: pending
 status: wip
+sitemap: false
+noindex: true
 tags:
   - 準備中
 audience: 衛生管理の初学者

@@ -8,7 +8,7 @@ hero:
       url: /work-environment-measurement/
       style: primary
     - label: 化学物質管理を学ぶ
-      url: /search/?q=化学物質管理
+      url: /chemical-management/
       style: secondary
     - label: YouTubeを見る
       url: https://youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
@@ -39,7 +39,7 @@ categories:
   - label: 作業環境測定
     url: /work-environment-measurement/
   - label: 化学物質管理
-    url: /search/?q=化学物質管理
+    url: /chemical-management/
   - label: 個人ばく露測定
     url: /search/?q=個人ばく露測定
   - label: 局所排気装置
@@ -57,26 +57,28 @@ articles:
     category: 作業環境測定
     description: 測定計画から評価、管理区分ごとの改善検討まで、作業環境測定士が押さえたい基本を整理します。
     url: /guides/work-env-measurement-intro/
+    status: published
   - title: 個人ばく露測定とは？作業環境測定との違いを整理
     category: 個人ばく露測定
     description: 場の測定と人のばく露をどう使い分けるか、化学物質管理の文脈で解説します。
-    status: 準備中
+    status: wip
   - title: 有機溶剤中毒予防規則とは？対象作業と管理の基本
     category: 化学物質管理
     description: 有機則の対象作業、換気、保護具、健康診断、SDS確認の入口を実務者向けにまとめます。
-    url: /guides/organic-solvent-basics/
+    status: wip
   - title: 局所排気装置とは？フード・ダクト・排風機の基本
     category: 局所排気装置
     description: 制御風速、点検、改善提案の前に理解したい局所排気装置の構成要素を整理します。
     url: /qa/local-exhaust-inspection/
+    status: published
   - title: 労働衛生コンサルタントを目指す人へ｜作業環境測定士からの学習戦略
     category: 労働衛生コンサルタント
     description: 実務経験を労働衛生工学の知識へ接続し、筆記・口述試験の準備に活かす考え方を紹介します。
-    status: 準備中
+    status: wip
   - title: AIで労働衛生を学ぶときの注意点
     category: AI活用
     description: AIの要約を活用しながら、法令・通達・一次情報で必ず確認すべきポイントをまとめます。
-    status: 準備中
+    status: wip
 quick_search:
   placeholder: "例：A測定、B測定、SDS、フィットテスト"
   chips:
