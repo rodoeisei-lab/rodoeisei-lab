@@ -19,6 +19,7 @@
 
 {% for candidate in prioritized_articles %}
   {% if related_count >= related_limit %}{% break %}{% endif %}
+  {% if candidate.status == "wip" or candidate.status == "internal" or candidate.published == false %}{% continue %}{% endif %}
   {% assign candidate_url = candidate.url | default: '' %}
   {% assign url_token = '|' | append: candidate_url | append: '|' %}
   {% if candidate_url == '' or shown_urls contains url_token %}{% continue %}{% endif %}
@@ -44,6 +45,7 @@
 {% if related_count < related_limit and current_category != '' %}
   {% for candidate in prioritized_articles %}
     {% if related_count >= related_limit %}{% break %}{% endif %}
+    {% if candidate.status == "wip" or candidate.status == "internal" or candidate.published == false %}{% continue %}{% endif %}
     {% assign candidate_url = candidate.url | default: '' %}
     {% assign url_token = '|' | append: candidate_url | append: '|' %}
   {% if candidate_url == '' or shown_urls contains url_token %}{% continue %}{% endif %}
@@ -61,6 +63,7 @@
 {% if related_count < related_limit %}
   {% for candidate in prioritized_articles %}
     {% if related_count >= related_limit %}{% break %}{% endif %}
+    {% if candidate.status == "wip" or candidate.status == "internal" or candidate.published == false %}{% continue %}{% endif %}
     {% assign candidate_url = candidate.url | default: '' %}
     {% assign url_token = '|' | append: candidate_url | append: '|' %}
   {% if candidate_url == '' or shown_urls contains url_token %}{% continue %}{% endif %}

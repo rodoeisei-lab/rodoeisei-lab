@@ -17,6 +17,7 @@ reviewed_at: 2026-08-10
 checked_at: 2026-08-10
 source_type: law
 status: published
+featured: true
 tags:
   - 作業環境測定
   - A測定
