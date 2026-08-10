@@ -18,8 +18,8 @@ layout: base
   </section>
 
   <section class="home-section" aria-labelledby="sample-articles-title">
-    <div class="home-section-heading"><p class="section-kicker">まず読む記事</p><h2 id="sample-articles-title">基礎をつかむ3つのテーマ</h2><p>公開済みの記事から、実務と学習の入口になるものを選びました。</p></div>
-    <div class="article-card-grid">{% assign shown = 0 %}{% for article in home.articles %}{% if article.url and shown < 3 %}<article class="article-card"><span class="article-category">{{ article.category }}</span><h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3><p>{{ article.description }}</p><a class="card-link" href="{{ article.url | relative_url }}">記事を読む →</a></article>{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}</div>
+    <div class="home-section-heading"><p class="section-kicker">まず読む記事</p><h2 id="sample-articles-title">公開中の入門記事</h2><p>公開済みの記事から、実務と学習の入口になるものを選びました。</p></div>
+    <div class="article-card-grid">{% assign shown = 0 %}{% for article in home.articles %}{% if article.status == "published" and article.url and shown < 3 %}<article class="article-card"><span class="article-category">{{ article.category }}</span><h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3><p>{{ article.description }}</p><a class="card-link" href="{{ article.url | relative_url }}">記事を読む →</a></article>{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}</div>
   </section>
 
   <section class="quick-search-card" aria-labelledby="quick-search-title"><div><p class="section-kicker">サイト内検索</p><h2 id="quick-search-title">キーワードから探す</h2></div><form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form><div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div></section>

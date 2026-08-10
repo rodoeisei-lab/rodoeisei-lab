@@ -68,17 +68,22 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/guides/work-env-measurement-intro/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/guides/work-env-measurement-intro/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
   }
 
-  for (const query of ["作業環境測定", "フィットテスト"]) {
+  for (const query of ["作業環境測定", "化学物質管理", "フィットテスト"]) {
     const results = await search(query);
     if (results.length === 0) {
       throw new Error(`Pagefind returned no results for required query: ${query}`);
     }
+  }
+
+  const chemicalResults = await search("化学物質管理");
+  if (!chemicalResults.some((page) => page.url.includes("/chemical-management/"))) {
+    throw new Error("Chemical management search did not return the category page.");
   }
 
   const measurementResults = await search("作業環境測定");

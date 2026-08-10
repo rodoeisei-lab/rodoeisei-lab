@@ -1,0 +1,45 @@
+- title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
+  description: 化学物質管理の全体像を実務の順番で整理します。
+  status: wip
+  url:
+  section: 全体像
+- title: SDSの読み方｜実務で確認したい項目
+  description: 危険有害性、取扱い、ばく露防止措置、法規制情報の確認点を整理します。
+  status: wip
+  url:
+  section: 把握・確認
+- title: 化学物質のリスクアセスメントとは？実施手順を解説
+  description: 危険性と健康有害性を見積もり、対策につなげる手順を整理します。
+  status: wip
+  url:
+  section: 評価・対策
+- title: 化学物質管理者と保護具着用管理責任者の役割
+  description: 選任の要否と、それぞれが担う実務を整理します。
+  status: wip
+  url:
+  section: 管理体制
+- title: 管理濃度・濃度基準値・許容濃度の違い
+  description: 目的の異なる濃度指標を混同せずに使うための基礎を整理します。
+  status: wip
+  url:
+  section: ばく露管理
+- title: CREATE-SIMPLEの基本的な使い方
+  description: 支援ツールを用いたリスクの見積りと結果の読み方を整理します。
+  status: wip
+  url:
+  section: 評価・対策
+- title: 皮膚等障害化学物質等と保護手袋の考え方
+  description: 皮膚からの吸収や障害を防ぐための確認と選定の考え方を整理します。
+  status: wip
+  url:
+  section: 保護具
+- title: 有機溶剤中毒予防規則の基本
+  description: 対象となる物質・作業と措置を確認する入口を整理します。
+  status: wip
+  url: /guides/organic-solvent-basics/
+  section: 特別規則
+- title: 特定化学物質障害予防規則の基本
+  description: 対象となる物質・作業と措置を確認する入口を整理します。
+  status: wip
+  url:
+  section: 特別規則

@@ -24,8 +24,29 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search"):
+    for route in ("learn", "regulations", "search", "chemical-management"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
+
+    require(
+        site / "index.html",
+        [
+            "/chemical-management/",
+        ],
+    )
+    home_html = (site / "index.html").read_text(encoding="utf-8")
+    if "/guides/organic-solvent-basics/" in home_html:
+        raise SystemExit("Home page links to the work-in-progress organic solvent guide")
+
+    require(
+        site / "guides" / "organic-solvent-basics" / "index.html",
+        ['<meta name="robots" content="noindex, nofollow">', "data-pagefind-ignore"],
+    )
+
+    sitemap = site / "sitemap.xml"
+    if not sitemap.is_file():
+        raise SystemExit(f"Missing generated sitemap: {sitemap}")
+    if "/guides/organic-solvent-basics/" in sitemap.read_text(encoding="utf-8"):
+        raise SystemExit("Work-in-progress organic solvent guide appeared in sitemap.xml")
 
     require(
         site / "guides" / "work-env-measurement-intro" / "index.html",

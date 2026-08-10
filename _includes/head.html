@@ -19,6 +19,7 @@
 {% assign modified_time = page.last_modified_at | default: page.updated %}
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ page_description }}">
+{% if page.noindex == true or page.status == "wip" %}<meta name="robots" content="noindex, nofollow">{% endif %}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/svg+xml" href="{{ "/assets/images/favicon.svg" | relative_url }}">
 <meta name="theme-color" content="#ffffff">
