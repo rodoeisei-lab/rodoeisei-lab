@@ -3,10 +3,10 @@
   <div class="container header-shell">
     <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-icon" aria-hidden="true">⚗</span><span>労働衛生ラボ</span></a>
     <nav class="desktop-nav" aria-label="メインナビゲーション">
-      <ul>{% for item in site.data.navigation %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+      <ul>{% for item in site.data.navigation %}<li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>{% endfor %}</ul>
     </nav>
     <div class="header-actions">
-      <a href="{{ '/search/' | relative_url }}" class="icon-btn" aria-label="検索">⌕</a>
+      <a href="{{ '/search/' | relative_url }}" class="icon-btn" aria-label="サイト内検索">⌕</a>
       <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">☰</button>
     </div>
   </div>

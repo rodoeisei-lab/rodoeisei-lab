@@ -3,7 +3,7 @@
 <head>
   {% include head.html %}
 </head>
-<body{% if page.layout == 'home' %} class="home-page"{% endif %}>
+<body class="layout-{{ page.layout | default: 'page' }}{% if page.layout == 'home' %} home-page{% endif %}">
   {% include site-header.html %}
   {% assign pagefind_excluded = false %}
   {% if page.pagefind_ignore or page.published == false or page.status == "wip" or page.status == "internal" %}
