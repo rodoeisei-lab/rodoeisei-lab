@@ -1,8 +1,8 @@
 ---
 title: 作業環境測定を体系的に学ぶ
-description: 作業環境測定の目的、デザイン、サンプリング、分析、評価、管理区分、改善までを実務の流れに沿って学べるカテゴリページ。
+description: 作業環境測定の目的、デザイン、サンプリング、分析、評価、管理区分、改善までを順に理解できるカテゴリページ。
 eyebrow: 作業環境測定
-lead: 個別の用語を断片的に調べるのではなく、測定の計画から改善までを実務の順番に沿って学ぶための入口です。
+lead: 個別の用語を断片的に調べるのではなく、測定の計画から改善までを学習の順番に沿って学ぶための入口です。
 permalink: /work-environment-measurement/
 ---
 
@@ -10,13 +10,13 @@ permalink: /work-environment-measurement/
   <section class="measurement-intro" aria-labelledby="measurement-intro-title">
     <p class="measurement-section-label">まずは全体像から</p>
     <h2 id="measurement-intro-title">測って終わりにしないための、7つのステップ</h2>
-    <p>作業環境測定は、測定点を決め、試料を採取・分析し、結果を評価して、必要な改善につなげる一連の実務です。このページでは、今どの段階を学んでいるのかを確かめながら、公開済みの記事を順番に読めます。</p>
+    <p>作業環境測定は、対象となる有害因子や作業の実態に応じて測定計画を立て、試料採取・分析または測定機器による測定を行い、結果を評価して必要な改善につなげる一連の取組です。このページでは、今どの段階を学んでいるのかを確かめながら、公開済みの記事を順番に読めます。</p>
   </section>
 
   <section class="measurement-section" aria-labelledby="learning-flow-title">
     <div class="measurement-section-heading">
       <p class="measurement-section-label">学習の流れ</p>
-      <h2 id="learning-flow-title">実務の順番で理解する</h2>
+      <h2 id="learning-flow-title">学習の順番で理解する</h2>
     </div>
     <ol class="measurement-steps">
       <li class="measurement-step measurement-step--available">
@@ -30,20 +30,8 @@ permalink: /work-environment-measurement/
       <li class="measurement-step"><span class="measurement-step-number">03</span><span><strong>サンプリング</strong><small>試料採取の方法を理解する</small></span><span class="measurement-status">準備中</span></li>
       <li class="measurement-step"><span class="measurement-step-number">04</span><span><strong>分析</strong><small>分析方法と基本事項を知る</small></span><span class="measurement-status">準備中</span></li>
       <li class="measurement-step"><span class="measurement-step-number">05</span><span><strong>評価</strong><small>測定値を評価値へつなぐ</small></span><span class="measurement-status">準備中</span></li>
-      <li class="measurement-step measurement-step--available">
-        <a href="{{ '/qa/third-control-class/' | relative_url }}">
-          <span class="measurement-step-number">06</span>
-          <span><strong>管理区分</strong><small>結果に応じた対応を判断する</small></span>
-          <span class="measurement-step-action">Q&amp;Aを読む</span>
-        </a>
-      </li>
-      <li class="measurement-step measurement-step--available">
-        <a href="{{ '/qa/local-exhaust-inspection/' | relative_url }}">
-          <span class="measurement-step-number">07</span>
-          <span><strong>改善</strong><small>設備の点検と改善へつなげる</small></span>
-          <span class="measurement-step-action">Q&amp;Aを読む</span>
-        </a>
-      </li>
+      <li class="measurement-step"><span class="measurement-step-number">06</span><span><strong>管理区分</strong><small>結果に応じた対応を判断する</small></span><span class="measurement-status">準備中</span></li>
+      <li class="measurement-step"><span class="measurement-step-number">07</span><span><strong>改善</strong><small>設備や作業方法の改善へつなげる</small></span><span class="measurement-status">準備中</span></li>
     </ol>
   </section>
 
@@ -60,7 +48,7 @@ permalink: /work-environment-measurement/
         <span>評価・管理区分</span><h3>第3管理区分に関するQ&amp;A</h3><p>第3管理区分になったとき、何を確認し、どの対策から進めるかを確認します。</p><strong>回答を見る →</strong>
       </a>
       <a class="measurement-article-card" href="{{ '/qa/local-exhaust-inspection/' | relative_url }}">
-        <span>改善</span><h3>局所排気装置の点検・改善</h3><p>局所排気装置の点検頻度と、異常を改善につなげる考え方を整理します。</p><strong>回答を見る →</strong>
+        <span>改善</span><h3>局所排気装置の定期点検記録</h3><p>点検記録で押さえたい項目と、記録を残すときの実務上の考え方を確認します。</p><strong>回答を見る →</strong>
       </a>
     </div>
   </section>
