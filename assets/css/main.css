@@ -5781,3 +5781,137 @@ body.home-page {
     max-width: 300px;
   }
 }
+/* 作業環境測定カテゴリ */
+.measurement-hub {
+  max-width: 960px;
+  margin: 0 auto;
+  color: var(--text);
+}
+.measurement-intro {
+  padding: clamp(22px, 4vw, 36px);
+  border: 1px solid #cfe0ee;
+  border-left: 5px solid #1264a3;
+  border-radius: 14px;
+  background: #f5f9fc;
+}
+.measurement-intro h2,
+.measurement-section-heading h2,
+.measurement-related-theme h2 { margin: 4px 0 10px; }
+.measurement-intro p:last-child { max-width: 760px; margin-bottom: 0; line-height: 1.9; }
+.measurement-section { margin-top: clamp(42px, 7vw, 72px); }
+.measurement-section-label {
+  margin: 0;
+  color: #1264a3;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.measurement-section-heading { margin-bottom: 20px; }
+.measurement-steps {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.measurement-step,
+.measurement-step a {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+}
+.measurement-step {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #dbe4ec;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.measurement-step a { grid-column: 1 / -1; color: inherit; text-decoration: none; }
+.measurement-step--available { border-color: #b9d4e8; background: #fff; }
+.measurement-step--available:hover { border-color: #1264a3; box-shadow: 0 6px 20px rgba(15, 57, 91, .08); }
+.measurement-step-number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e5eef5;
+  color: #174b73;
+  font-size: .8rem;
+  font-weight: 800;
+}
+.measurement-step--available .measurement-step-number { background: #1264a3; color: #fff; }
+.measurement-step strong { display: block; font-size: 1.05rem; }
+.measurement-step small { display: block; margin-top: 3px; color: var(--text-soft); line-height: 1.5; }
+.measurement-status,
+.measurement-step-action {
+  white-space: nowrap;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: .75rem;
+  font-weight: 700;
+}
+.measurement-status { background: #e9edf1; color: #667584; }
+.measurement-step-action { background: #e7f2fa; color: #07598f; }
+.measurement-article-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.measurement-article-card {
+  display: flex;
+  min-width: 0;
+  min-height: 240px;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid #d5e0e9;
+  border-radius: 14px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.measurement-article-card--primary { border-top: 4px solid #1264a3; }
+.measurement-article-card > span { color: #1264a3; font-size: .78rem; font-weight: 700; }
+.measurement-article-card h3 { margin: 8px 0; font-size: 1.1rem; }
+.measurement-article-card p { color: var(--text-soft); font-size: .9rem; line-height: 1.75; }
+.measurement-article-card > strong { margin-top: auto; color: #07598f; font-size: .88rem; }
+.measurement-article-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15, 57, 91, .1); }
+.measurement-related-theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: clamp(42px, 7vw, 72px);
+  padding: clamp(22px, 4vw, 32px);
+  border-radius: 14px;
+  background: #edf5fa;
+}
+.measurement-related-theme p:last-child { margin-bottom: 0; color: var(--text-soft); }
+.measurement-related-theme > a { flex: 0 0 auto; font-weight: 700; }
+.measurement-coming-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0; list-style: none; }
+.measurement-coming-list li { display: flex; min-width: 0; justify-content: space-between; gap: 10px; padding: 15px 16px; border-radius: 10px; background: #f3f5f7; }
+.measurement-coming-list small { flex: 0 0 auto; color: #6d7882; font-weight: 700; }
+.measurement-related-links { margin-top: clamp(42px, 7vw, 72px); }
+.measurement-related-links > div:last-child { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.measurement-related-links a { display: block; min-width: 0; padding: 18px; border: 1px solid #d5e0e9; border-radius: 10px; color: inherit; text-decoration: none; }
+.measurement-related-links strong,
+.measurement-related-links span { display: block; }
+.measurement-related-links span { margin-top: 5px; color: var(--text-soft); font-size: .8rem; }
+
+@media (max-width: 760px) {
+  .measurement-step,
+  .measurement-step a { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; }
+  .measurement-status,
+  .measurement-step-action { grid-column: 2; justify-self: start; }
+  .measurement-article-grid,
+  .measurement-coming-list,
+  .measurement-related-links > div:last-child { grid-template-columns: 1fr; }
+  .measurement-article-card { min-height: 0; }
+  .measurement-related-theme { align-items: flex-start; flex-direction: column; }
+  .measurement-related-theme > a { flex: initial; }
+}
+
+[data-theme="dark"] .measurement-intro,
+[data-theme="dark"] .measurement-step,
+[data-theme="dark"] .measurement-article-card,
+[data-theme="dark"] .measurement-related-theme,
+[data-theme="dark"] .measurement-coming-list li,
+[data-theme="dark"] .measurement-related-links a { background: var(--surface); border-color: var(--border); }
