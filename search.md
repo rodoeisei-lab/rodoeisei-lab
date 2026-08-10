@@ -21,6 +21,7 @@ pagefind_ignore: true
     var search = new PagefindUI({
       element: "#search-ui",
       bundlePath: "{{ '/pagefind/' | relative_url }}",
+      baseUrl: "{{ '/' | relative_url }}",
       showSubResults: true,
       showImages: false,
       resetStyles: false,
