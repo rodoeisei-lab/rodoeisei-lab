@@ -47,7 +47,7 @@ categories:
   - label: 保護具・フィットテスト
     url: /guides/fit-test/
   - label: 労働衛生コンサルタント
-    url: /search/?q=労働衛生コンサルタント
+    url: /occupational-health-consultant/
   - label: AI活用
     url: /ai-use/
   - label: YouTube連動記事
@@ -77,10 +77,11 @@ articles:
     description: 制御風速、点検、改善提案の前に理解したい局所排気装置の構成要素を整理します。
     url: /guides/local-exhaust-ventilation-basics/
     status: published
-  - title: 労働衛生コンサルタントを目指す人へ｜作業環境測定士からの学習戦略
+  - title: 労働衛生コンサルタントとは？試験・受験資格・登録の全体像
     category: 労働衛生コンサルタント
-    description: 実務経験を労働衛生工学の知識へ接続し、筆記・口述試験の準備に活かす考え方を紹介します。
-    status: wip
+    description: 資格の役割、受験資格、科目免除、筆記・口述試験、合格後の登録を整理します。
+    url: /guides/occupational-health-consultant-basics/
+    status: published
   - title: 生成AIを労働衛生で安全に使う方法｜実務・学習の確認手順
     category: AI活用
     description: 生成AIへ任せられる作業、機密情報・健康情報の取扱い、法令・数値・出典を確認する手順を整理します。

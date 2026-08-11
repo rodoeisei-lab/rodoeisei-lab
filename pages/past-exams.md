@@ -76,6 +76,8 @@ permalink: /past-exams/
   <div class="link-domain">www.exam.or.jp</div>
 </div>
 
+<p>制度と学習順序は当サイトの独自解説「<a href="{{ '/occupational-health-consultant/' | relative_url }}">労働衛生コンサルタントの全体像を確認する</a>」で整理しています。上記の公表試験問題（公式）とは別のページです。</p>
+
 ## その他（必要なら後で追加）
 
 - （ここに公式リンクを追記：リンクのみ）

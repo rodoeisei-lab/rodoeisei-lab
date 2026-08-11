@@ -24,13 +24,15 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search", "chemical-management", "ai-use"):
+    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
 
     require(
         site / "index.html",
         [
             "/chemical-management/",
+            "/occupational-health-consultant/",
+            "/guides/occupational-health-consultant-basics/",
         ],
     )
     home_html = (site / "index.html").read_text(encoding="utf-8")
@@ -47,6 +49,13 @@ def main() -> int:
         raise SystemExit(f"Missing generated sitemap: {sitemap}")
     if "/guides/organic-solvent-basics/" in sitemap.read_text(encoding="utf-8"):
         raise SystemExit("Work-in-progress organic solvent guide appeared in sitemap.xml")
+
+    require(
+        site / "guides" / "occupational-health-consultant-basics" / "index.html",
+        ['<meta property="og:type" content="article">', '"@type": "Article"'],
+    )
+    if "/search/?q=労働衛生コンサルタント" in home_html:
+        raise SystemExit("Home page still links consultant category to search")
 
     require(
         site / "guides" / "work-env-measurement-intro" / "index.html",

@@ -113,6 +113,8 @@ jobs:
             "/chemical-management/" \
             "/local-exhaust-ventilation/" \
             "/ai-use/" \
+            "/occupational-health-consultant/" \
+            "/guides/occupational-health-consultant-basics/" \
             "/guides/ai-use-occupational-health-basics/" \
             "/guides/local-exhaust-ventilation-basics/" \
             "/qa/local-exhaust-inspection/" \

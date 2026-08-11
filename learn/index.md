@@ -21,6 +21,12 @@ permalink: /learn/
       link_label="資格対策へ →"
     %}
     {% include list-card.html
+      title="労働衛生コンサルタント"
+      description="資格の役割、受験資格、試験区分、筆記・口述試験、登録までを整理。"
+      link_url="/occupational-health-consultant/"
+      link_label="試験の全体像を学ぶ →"
+    %}
+    {% include list-card.html
       title="動画"
       description="移動中でも学べる短尺動画をまとめます。"
       link_url="/videos/"

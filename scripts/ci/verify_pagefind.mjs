@@ -68,9 +68,16 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
+    }
+  }
+
+  for (const query of ["労働衛生コンサルタント", "受験資格", "口述試験", "労働衛生工学", "保健衛生", "作業環境測定士"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/occupational-health-consultant/") || page.url.includes("/guides/occupational-health-consultant-basics/"))) {
+      throw new Error(`Consultant category or basics article is missing for query: ${query}`);
     }
   }
 
