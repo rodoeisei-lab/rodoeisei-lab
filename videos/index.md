@@ -1,51 +1,55 @@
 ---
-title: 動画
-description: 忙しい現場担当者向けに、労働衛生の要点を短時間で学べる短尺動画と視聴ガイドをまとめたページ。
-eyebrow: 動画
-lead: 図解や現場映像を交えて、5分で要点を理解できる動画を整理します。
+title: 動画・YouTube連動記事
+description: 労働衛生×AIラボの長編解説とShortsを、作業環境測定、個人ばく露測定、資格、局所排気装置などのテーマ別に整理し、対応する詳しい解説記事へ案内します。
+eyebrow: 労働衛生×AIラボ
+lead: 動画で全体像をつかみ、対応する記事と一次情報で内容を確認できる学習ページです。
 permalink: /videos/
 ---
 
-<div class="cards">
-  <article class="card">
-    <h3>準備中のプレイリスト</h3>
-    <p>短尺解説の公開に向けて構成中です。最新の動きはSNSで告知します。</p>
-    <a href="{{ "/sns-links/" | relative_url }}">SNSリンク集へ →</a>
-  </article>
-  <article class="card">
-    <h3>視聴ガイド</h3>
-    <p>「5分で理解」「現場の判断」「法令・実務のつなぎ込み」を基準に整理。</p>
-  </article>
+{% assign youtube = site.data.youtube %}
+<div class="video-hub">
+  <section class="video-hub__intro" aria-labelledby="video-purpose">
+    <h2 id="video-purpose">動画から、詳しい記事と一次情報へ</h2>
+    <p>主要動画を入口に、テーマの全体像を短時間でつかみ、対応記事で条件・根拠・注意点を確認できます。掲載動画はYouTube上で再生され、このページでは自動再生やiframe埋め込みを行いません。</p>
+  </section>
+
+  <section aria-labelledby="featured-video">
+    <h2 id="featured-video">注目動画</h2>
+    {% for video in youtube.videos %}{% if video.featured %}<div class="video-featured">{% include video-card.html video=video featured=true %}</div>{% endif %}{% endfor %}
+  </section>
+
+  <section aria-labelledby="long-videos">
+    <h2 id="long-videos">長編解説</h2>
+    <p>背景や実務上の考え方を、順を追って学べる動画です。</p>
+    <div class="video-grid">{% for video in youtube.videos %}{% if video.format == "long" and video.featured != true %}{% include video-card.html video=video %}{% endif %}{% endfor %}</div>
+  </section>
+
+  <section aria-labelledby="short-videos">
+    <h2 id="short-videos">Shorts</h2>
+    <p>用語や判断のポイントを短く確認できる縦型動画です。</p>
+    <div class="video-grid">{% for video in youtube.videos %}{% if video.format == "short" %}{% include video-card.html video=video %}{% endif %}{% endfor %}</div>
+  </section>
+
+  <section aria-labelledby="linked-videos">
+    <h2 id="linked-videos">対応記事がある動画</h2>
+    <ul class="video-article-links">{% for video in youtube.videos %}{% if video.article_url %}<li><a href="{{ video.article_url | relative_url }}">{{ video.article_label | default: video.title }}</a><span>{{ video.topic }}</span></li>{% endif %}{% endfor %}</ul>
+  </section>
+
+  <section class="video-hub__guide" aria-labelledby="video-use">
+    <h2 id="video-use">動画と記事の使い分け</h2>
+    <div><article><h3>動画で全体像をつかむ</h3><p>初めてのテーマは、長編解説やShortsで用語と論点の位置関係を確認します。</p></article><article><h3>記事で条件を確かめる</h3><p>実務へ適用する前に、対応記事の注意点と一次情報を読み、対象・施行日・例外を確認します。</p></article></div>
+  </section>
+
+  <section class="video-channel" aria-labelledby="youtube-channel">
+    <h2 id="youtube-channel">YouTubeチャンネル</h2>
+    <p>新しい動画や、このページに掲載していない動画は「{{ youtube.channel.name }}」で確認できます。</p>
+    <a class="video-link video-link--youtube" href="{{ youtube.channel.url }}" target="_blank" rel="noopener noreferrer">労働衛生×AIラボをYouTubeで見る（外部）</a>
+  </section>
+
+  <section aria-labelledby="information-note">
+    <h2 id="information-note">情報確認上の注意</h2>
+    <p>動画は公開時点の情報を解説しています。法令・告示・通達や試験情報は改正されることがあるため、実務判断では対応記事に掲載した一次情報と最新の公式情報を確認してください。動画は法的助言や個別事業場の判断を代替するものではありません。</p>
+  </section>
+
+  <p class="video-hub__checked"><strong>最終確認日：</strong>{{ youtube.channel.checked_at | date: "%Y年%-m月%-d日" }}</p>
 </div>
-
-## 分かること
-- 短尺動画で扱うテーマの方向性と整理基準。
-- 解説記事との連携ポイント（判断・法令・現場）。
-- 追加予定のプレイリストの目的。
-
-## 対象読者
-- 移動中に要点だけ把握したい現場担当者。
-- 文章より動画で理解したい学習者。
-- 解説記事の補助教材を探している方。
-
-## 使い方
-1. まず「視聴ガイド」で動画の狙いを確認します。
-2. SNSの告知から最新動画をチェックします。
-3. 詳細が必要なら解説一覧で補足します。
-
-## FAQ
-### Q1. どのくらいの長さの動画ですか？
-**A.** 5分前後で要点を整理する想定です。
-
-### Q2. 動画の更新タイミングは？
-**A.** 重要テーマの追加時にSNSで告知します。
-
-### Q3. 動画の内容を深掘りしたい場合は？
-**A.** 解説一覧や用語集で背景を確認してください。
-
-## 関連ページ
-- [SNSリンク集]({{ "/sns-links/" | relative_url }})
-- [解説一覧]({{ "/guides/" | relative_url }})
-- [用語集]({{ "/glossary/" | relative_url }})
-- [最新アップデート]({{ "/updates/" | relative_url }})
-- [道具棚]({{ "/products/" | relative_url }})

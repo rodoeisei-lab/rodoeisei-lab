@@ -1,0 +1,133 @@
+channel:
+  name: 労働衛生×AIラボ
+  url: https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
+  feed_url: https://www.youtube.com/feeds/videos.xml?channel_id=UCT2gRzcZrwl8W64LOGUb3cw
+  checked_at: 2026-08-11
+
+videos:
+  - id: "-l2ISaUncV4"
+    title: "【前編】作業環境測定のデザイン・サンプリング｜測定点とA・B・C・D測定を基礎から解説"
+    url: https://www.youtube.com/watch?v=-l2ISaUncV4
+    published_at: 2026-08-10
+    format: long
+    topic: 作業環境測定
+    description: 測定前の調査から測定点、A・B・C・D測定の役割までを基礎から整理します。
+    featured: true
+    article_url: /guides/work-environment-measurement-design-sampling/
+    article_label: 作業環境測定のデザインとサンプリングを詳しく読む
+  - id: 7K1ZYHmhjKM
+    title: 労働衛生コンサルタントに独占業務はある？法的な位置づけと資格の価値
+    url: https://www.youtube.com/watch?v=7K1ZYHmhjKM
+    published_at: 2026-08-06
+    format: long
+    topic: 労働衛生コンサルタント
+    description: 資格の法的な位置づけと専門家としての活用場面を解説します。
+    article_url: /occupational-health-consultant/
+    article_label: 労働衛生コンサルタントの学習ページへ
+  - id: UiC5mOc5f-I
+    title: 個人ばく露測定講習は全員必要？対象者と2つの講習を解説
+    url: https://www.youtube.com/shorts/UiC5mOc5f-I
+    published_at: 2026-08-05
+    format: short
+    topic: 個人ばく露測定
+    description: 講習の対象者と二つの講習の違いを短く整理します。公開時点の情報のため、最新の法令・公式情報も確認してください。
+    article_url: /guides/personal-exposure-measurement-basics/
+    article_label: 個人ばく露測定の基礎を詳しく読む
+  - id: b8kwOV0mV1c
+    title: 冷房は28℃設定が正解？実は「室温」の目安です
+    url: https://www.youtube.com/shorts/b8kwOV0mV1c
+    published_at: 2026-08-04
+    format: short
+    topic: 職場環境
+    description: 冷房の設定温度と実際の室温を区別して確認するポイントを紹介します。
+  - id: xiIZd1445ls
+    title: 冷房28℃設定は正しい？見るべきは「設定温度」ではなく「室温」｜事務所則を解説
+    url: https://www.youtube.com/watch?v=xiIZd1445ls
+    published_at: 2026-07-31
+    format: long
+    topic: 職場環境
+    description: 事務所の温度管理を室温の実測と関係規定から解説します。公開時点の情報のため、最新の法令・公式情報も確認してください。
+  - id: nRqshwTlfWk
+    title: "【2026年10月施行】個人ばく露測定講習は誰が受ける？対象者と講習内容をわかりやすく解説"
+    url: https://www.youtube.com/watch?v=nRqshwTlfWk
+    published_at: 2026-07-25
+    format: long
+    topic: 個人ばく露測定
+    description: 2026年10月施行予定制度の対象者と講習内容を整理します。公開時点の情報のため、最新の法令・公式情報も確認してください。
+    article_url: /guides/personal-exposure-measurement-basics/
+    article_label: 個人ばく露測定の基礎を詳しく読む
+  - id: B7dxClSaL8U
+    title: "【2026年最新版】第1種衛生管理者試験の合格率は何％？簡単？難しい？"
+    url: https://www.youtube.com/watch?v=B7dxClSaL8U
+    published_at: 2026-07-17
+    format: long
+    topic: 資格
+    description: 第1種衛生管理者試験の合格率と難易度の捉え方を説明します。公開時点の情報のため、最新の公式情報も確認してください。
+    article_url: /licenses/
+    article_label: 資格情報を詳しく見る
+  - id: ExbEiEyOR4o
+    title: 騒音対策20選｜耳栓だけでは不十分です
+    url: https://www.youtube.com/watch?v=ExbEiEyOR4o
+    published_at: 2026-07-07
+    format: long
+    topic: 騒音
+    description: 発生源・伝搬経路・作業者の順に検討する騒音対策を幅広く紹介します。
+  - id: znlaYTwWewE
+    title: オキュペイショナルハイジニストの試験内容と講座内容｜93単位って何を学ぶ？
+    url: https://www.youtube.com/watch?v=znlaYTwWewE
+    published_at: 2026-07-01
+    format: long
+    topic: 資格
+    description: 試験と養成講座で扱う学習分野や単位の全体像を紹介します。
+  - id: XZVuKpPgiI0
+    title: ブルーカラーってどんな仕事？
+    url: https://www.youtube.com/shorts/XZVuKpPgiI0
+    published_at: 2026-06-30
+    format: short
+    topic: 働き方
+    description: ブルーカラーという言葉が指す仕事とその特徴を簡潔に説明します。
+  - id: 24hKLe93dtA
+    title: 労働衛生コンサルタントってどんな資格？
+    url: https://www.youtube.com/shorts/24hKLe93dtA
+    published_at: 2026-06-29
+    format: short
+    topic: 労働衛生コンサルタント
+    description: 労働衛生コンサルタントの役割と資格の概要を短く紹介します。
+    article_url: /occupational-health-consultant/
+    article_label: 労働衛生コンサルタントの学習ページへ
+  - id: 2w6T9LzJNp0
+    title: 第一種衛生管理者ってどんな資格？
+    url: https://www.youtube.com/shorts/2w6T9LzJNp0
+    published_at: 2026-06-28
+    format: short
+    topic: 資格
+    description: 第一種衛生管理者の役割と対象となる職場を短く説明します。
+    article_url: /licenses/
+    article_label: 資格情報を詳しく見る
+  - id: bKGj_WPXWrw
+    title: A測定とB測定、何が違う？
+    url: https://www.youtube.com/shorts/bKGj_WPXWrw
+    published_at: 2026-06-27
+    format: short
+    topic: 作業環境測定
+    description: 平均的な状態を見るA測定と高濃度の可能性を見るB測定の違いを説明します。
+    article_url: /guides/work-env-measurement-intro/
+    article_label: 作業環境測定の超入門を読む
+  - id: rzLxcgSHayM
+    title: 局所排気装置があっても安全とは限らない
+    url: https://www.youtube.com/shorts/rzLxcgSHayM
+    published_at: 2026-06-25
+    format: short
+    topic: 局所排気装置
+    description: 設置の有無だけでなく捕捉状態や点検を確認する重要性を説明します。
+    article_url: /guides/local-exhaust-ventilation-basics/
+    article_label: 局所排気装置の基礎を詳しく読む
+  - id: G9lGlR1i9mE
+    title: 作業環境測定士が現場で見る3つのポイント
+    url: https://www.youtube.com/shorts/G9lGlR1i9mE
+    published_at: 2026-06-24
+    format: short
+    topic: 作業環境測定
+    description: 発散源、気流、作業者の動きという現場確認の要点を紹介します。
+    article_url: /work-environment-measurement/
+    article_label: 作業環境測定の学習ページへ

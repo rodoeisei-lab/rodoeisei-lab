@@ -24,7 +24,7 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant"):
+    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant", "videos"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
 
     require(
@@ -61,6 +61,11 @@ def main() -> int:
         site / "guides" / "work-env-measurement-intro" / "index.html",
         ['<meta property="og:type" content="article">', '"@type": "Article"'],
     )
+    require(site / "videos" / "index.html", ['"@type": "WebPage"', "-l2ISaUncV4"])
+    require(site / "guides" / "work-environment-measurement-design-sampling" / "index.html", ['"@type": "Article"', "https://www.youtube.com/watch?v=-l2ISaUncV4"])
+    intro_html = (site / "guides" / "chemical-management-basics" / "index.html").read_text(encoding="utf-8")
+    if "article-youtube" in intro_html:
+        raise SystemExit("Article without youtube_videos rendered an empty video module")
     require(
         site / "search" / "index.html",
         [

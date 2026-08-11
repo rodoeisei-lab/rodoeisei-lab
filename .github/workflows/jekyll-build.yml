@@ -49,6 +49,9 @@ jobs:
         run: |
           python3 scripts/ci/check_generated_metadata.py --site-dir _site
 
+      - name: Validate YouTube data
+        run: python3 scripts/ci/check_youtube_data.py --site-dir _site
+
       - name: Block root-absolute paths without baseurl
         run: |
           BASEURL="${{ steps.config.outputs.baseurl }}"
@@ -114,6 +117,8 @@ jobs:
             "/local-exhaust-ventilation/" \
             "/ai-use/" \
             "/occupational-health-consultant/" \
+            "/videos/" \
+            "/guides/work-environment-measurement-design-sampling/" \
             "/guides/occupational-health-consultant-basics/" \
             "/guides/ai-use-occupational-health-basics/" \
             "/guides/local-exhaust-ventilation-basics/" \

@@ -50,6 +50,9 @@ layout: base
   <div class="container article">
     {% include article-target-readers.html %}
     {% include article-summary-box.html %}
+    {% if page.youtube_videos and page.youtube_videos.size > 0 %}
+      {% include article-youtube.html videos=page.youtube_videos %}
+    {% endif %}
     {{ content }}
     {% include article-use-cases.html %}
     {% include related-articles.html limit=3 %}

@@ -49,6 +49,12 @@ sources:
     url: https://www.mhlw.go.jp/content/11300000/001243055.pdf
   - label: 厚生労働省「濃度基準値」
     url: https://www.mhlw.go.jp/stf/newpage_32871.html
+youtube_videos:
+  - id: nRqshwTlfWk
+    title: 【2026年10月施行】個人ばく露測定講習は誰が受ける？対象者と講習内容をわかりやすく解説
+    url: https://www.youtube.com/watch?v=nRqshwTlfWk
+    format: long
+    published_at: 2026-07-25
 ---
 
 個人ばく露測定は、作業者の顔の近くの**呼吸域**で有害物質の濃度を測定し、作業中のばく露の程度を把握する方法です。作業者が移動する作業や、作業内容によってばく露が変わる場合に有効です。

@@ -1,0 +1,15 @@
+{% assign video = include.video %}
+<article class="video-card{% if include.featured %} video-card--featured{% endif %}">
+  <a class="video-card__thumbnail" href="{{ video.url }}" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで「{{ video.title }}」を見る（外部サイト）">
+    <img src="https://i.ytimg.com/vi/{{ video.id }}/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="「{{ video.title }}」のYouTubeサムネイル">
+  </a>
+  <div class="video-card__body">
+    <p class="video-card__meta"><span class="video-format">{% if video.format == "short" %}Shorts{% else %}長編解説{% endif %}</span><time datetime="{{ video.published_at | date: '%Y-%m-%d' }}">{{ video.published_at | date: "%Y年%-m月%-d日" }}</time><span>{{ video.topic }}</span></p>
+    <h3>{{ video.title }}</h3>
+    <p>{{ video.description }}</p>
+    <div class="video-card__actions">
+      <a class="video-link video-link--youtube" href="{{ video.url }}" target="_blank" rel="noopener noreferrer">YouTubeで見る（外部）</a>
+      {% if video.article_url %}<a class="video-link" href="{{ video.article_url | relative_url }}">詳しい記事を読む</a>{% else %}<span class="video-card__pending">対応記事は準備中</span>{% endif %}
+    </div>
+  </div>
+</article>
