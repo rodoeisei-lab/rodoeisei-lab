@@ -111,6 +111,9 @@ jobs:
             "/tools/" \
             "/work-environment-measurement/" \
             "/chemical-management/" \
+            "/local-exhaust-ventilation/" \
+            "/guides/local-exhaust-ventilation-basics/" \
+            "/qa/local-exhaust-inspection/" \
             "/past-exams/" \
             "/sns-links/" \
             "/pagefind/pagefind.js" \

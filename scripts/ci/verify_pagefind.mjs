@@ -68,7 +68,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -90,6 +90,13 @@ try {
     const results = await search(query);
     if (!results.some((page) => page.url.includes("/guides/chemical-management-basics/"))) {
       throw new Error(`Chemical management introduction article is missing for query: ${query}`);
+    }
+  }
+
+  for (const query of ["局所排気装置", "制御風速", "フード"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/local-exhaust-ventilation/") || page.url.includes("/guides/local-exhaust-ventilation-basics/"))) {
+      throw new Error(`Local exhaust ventilation content is missing for query: ${query}`);
     }
   }
 

@@ -43,7 +43,7 @@ categories:
   - label: 個人ばく露測定
     url: /personal-exposure-measurement/
   - label: 局所排気装置
-    url: /qa/local-exhaust-inspection/
+    url: /local-exhaust-ventilation/
   - label: 保護具・フィットテスト
     url: /guides/fit-test/
   - label: 労働衛生コンサルタント
@@ -75,7 +75,7 @@ articles:
   - title: 局所排気装置とは？フード・ダクト・排風機の基本
     category: 局所排気装置
     description: 制御風速、点検、改善提案の前に理解したい局所排気装置の構成要素を整理します。
-    url: /qa/local-exhaust-inspection/
+    url: /guides/local-exhaust-ventilation-basics/
     status: published
   - title: 労働衛生コンサルタントを目指す人へ｜作業環境測定士からの学習戦略
     category: 労働衛生コンサルタント
