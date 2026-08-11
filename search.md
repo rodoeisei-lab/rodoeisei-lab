@@ -11,6 +11,7 @@ pagefind_ignore: true
 <div class="search-page">
   <p class="search-page-intro">キーワードを入力すると、関連するページをすぐに表示します。</p>
   <div id="search-ui"></div>
+  <p class="search-navigator-link">文章で質問したい場合は、<a href="{{ '/navigator/' | relative_url }}">チャット型サイト案内（試験版）</a>も利用できます。</p>
 </div>
 
 <script src="{{ '/pagefind/pagefind-ui.js' | relative_url }}" defer></script>

@@ -46,6 +46,12 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build
 
+      - name: Verify chat-style navigator data
+        run: |
+          node --check assets/js/site-navigator.js
+          node --check assets/js/learning-compass.js
+          ruby scripts/ci/verify_navigator_data.rb
+
       - name: Build Pagefind index
         run: bash scripts/ci/build_pagefind.sh
 

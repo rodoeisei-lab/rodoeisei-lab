@@ -42,6 +42,12 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --baseurl "${{ steps.config.outputs.baseurl }}"
 
+      - name: Verify chat-style navigator data
+        run: |
+          node --check assets/js/site-navigator.js
+          node --check assets/js/learning-compass.js
+          ruby scripts/ci/verify_navigator_data.rb
+
       - name: Build Pagefind index
         run: bash scripts/ci/build_pagefind.sh
 
@@ -121,6 +127,7 @@ jobs:
             "/guides/work-environment-measurement-design/" \
             "/guides/work-environment-measurement-sampling/" \
             "/guides/work-environment-measurement-design-sampling/" \
+            "/navigator/" \
             "/guides/occupational-health-consultant-basics/" \
             "/guides/ai-use-occupational-health-basics/" \
             "/guides/local-exhaust-ventilation-basics/" \
