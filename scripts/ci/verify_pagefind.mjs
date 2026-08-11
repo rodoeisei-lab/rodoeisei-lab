@@ -68,9 +68,16 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
+    }
+  }
+
+  for (const query of ["生成AI", "ハルシネーション", "機密情報"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/ai-use/") || page.url.includes("/guides/ai-use-occupational-health-basics/"))) {
+      throw new Error(`AI category or basics article is missing for query: ${query}`);
     }
   }
 

@@ -33,6 +33,12 @@ permalink: /learn/
       link_label="用語集へ →"
     %}
     {% include list-card.html
+      title="AI活用"
+      description="生成AIを労働衛生の実務と学習へ安全に生かす方法を整理。"
+      link_url="/ai-use/"
+      link_label="AI活用を学ぶ →"
+    %}
+    {% include list-card.html
       title="労基署対策"
       description="指摘前に押さえる基本対応を整理。"
       link_url="/inspection/"
