@@ -1,6 +1,6 @@
 hero:
   title: "労働衛生を、現場目線でわかりやすく。"
-  description: "作業環境測定、化学物質管理、個人ばく露測定、労働衛生コンサルタントの学習を、実務者目線で整理するサイトです。"
+  description: "作業環境測定、化学物質管理、個人ばく露測定、生成AIの安全な活用と学習を、実務者目線で整理するサイトです。"
   kicker: "労働衛生・作業環境測定・化学物質管理の専門メディア"
   audience: "作業環境測定士・衛生管理者・化学物質管理担当者向け"
   actions:
@@ -49,7 +49,7 @@ categories:
   - label: 労働衛生コンサルタント
     url: /search/?q=労働衛生コンサルタント
   - label: AI活用
-    url: /search/?q=AI活用
+    url: /ai-use/
   - label: YouTube連動記事
     url: /videos/
 articles:
@@ -81,10 +81,11 @@ articles:
     category: 労働衛生コンサルタント
     description: 実務経験を労働衛生工学の知識へ接続し、筆記・口述試験の準備に活かす考え方を紹介します。
     status: wip
-  - title: AIで労働衛生を学ぶときの注意点
+  - title: 生成AIを労働衛生で安全に使う方法｜実務・学習の確認手順
     category: AI活用
-    description: AIの要約を活用しながら、法令・通達・一次情報で必ず確認すべきポイントをまとめます。
-    status: wip
+    description: 生成AIへ任せられる作業、機密情報・健康情報の取扱い、法令・数値・出典を確認する手順を整理します。
+    url: /guides/ai-use-occupational-health-basics/
+    status: published
 quick_search:
   placeholder: "例：A測定、B測定、SDS、フィットテスト"
   chips:

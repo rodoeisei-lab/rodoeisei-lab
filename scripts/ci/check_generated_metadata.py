@@ -24,7 +24,7 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search", "chemical-management"):
+    for route in ("learn", "regulations", "search", "chemical-management", "ai-use"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
 
     require(

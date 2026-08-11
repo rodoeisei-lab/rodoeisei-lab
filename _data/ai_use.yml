@@ -1,0 +1,17 @@
+- title: 生成AIを労働衛生で安全に使う方法｜実務・学習の確認手順
+  url: /guides/ai-use-occupational-health-basics/
+  section: 全体像
+  status: published
+  description: 生成AIへ任せられる作業、入力できない情報、一次情報の確認方法を整理します。
+- { title: AIで法令・通達を調べるときの確認手順, section: 法令調査, status: planned, description: 一次情報に戻って適用条件と更新日を確認する流れを扱います。 }
+- { title: AIが示した条文・出典のファクトチェック方法, section: 法令調査, status: planned, description: 条文番号と出典URLを人が検証する方法を扱います。 }
+- { title: 作業環境測定報告書の下書きにAIを使うときの注意点, section: 文書作成, status: planned, description: 機密情報を守り、最終承認を人が行う手順を扱います。 }
+- { title: 測定データの集計・計算をAIへ依頼するときの検証方法, section: 測定データ, status: planned, description: 単位、式、丸め方、検出下限の検算を扱います。 }
+- { title: SDSと化学物質管理でAIを使うときの限界, section: 化学物質, status: planned, description: 最新版SDSと作業実態を優先する方法を扱います。 }
+- { title: 生成AIへ入力してはいけない機密情報・健康情報, section: 情報管理, status: planned, description: 入力情報の分類と最小化を扱います。 }
+- { title: 匿名化・仮名化で誤解しやすいポイント, section: 情報管理, status: planned, description: 再特定リスクと法令上の用語の違いを扱います。 }
+- { title: 労働衛生をAIで学ぶときの安全な質問方法, section: 学習, status: planned, description: 架空事例と一次情報を使う学び方を扱います。 }
+- { title: 労働衛生コンサルタント学習へのAI活用, section: 学習, status: planned, description: 論点整理と口述練習への活用を扱います。 }
+- { title: AIで図解・YouTube資料を作るときの事実確認, section: 発信, status: planned, description: 技術図、引用、数値の公開前確認を扱います。 }
+- { title: AIエージェントへファイルや外部サービスを接続するときの注意点, section: 情報管理, status: planned, description: 権限と接続範囲を確認する方法を扱います。 }
+- { title: 社内の生成AI利用ルールを作る方法, section: 運用, status: planned, description: 承認、入力区分、確認責任を定める方法を扱います。 }

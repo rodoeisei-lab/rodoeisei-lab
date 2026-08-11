@@ -23,6 +23,8 @@ hide_page_hero: true
     </div>
   </section>
 
+  <p class="chemical-scope-note">生成AIで条文を整理する場合も、回答を法令根拠や適用判断にせず、<a href="{{ '/guides/ai-use-occupational-health-basics/' | relative_url }}">一次情報を人が確認する手順</a>を守ってください。</p>
+
   <section class="regulations-search-panel" aria-label="法令・規則のクイックジャンプ">
     <a class="regulations-search-field" href="https://laws.e-gov.go.jp/search/elawsSearch/elaws_search/lsg0100/" target="_blank" rel="noopener">
       <span aria-hidden="true">⌕</span>
