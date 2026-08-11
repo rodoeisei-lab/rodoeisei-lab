@@ -1,6 +1,6 @@
 ---
 title: 学習
-description: 衛生管理者・現場リーダー向けに、解説・資格対策・用語集・動画を目的別に探せる学習ハブ。
+description: 衛生管理者・現場リーダー向けに、解説・資格対策・用語集・動画・記事を目的別に探せる学習ハブ。
 permalink: /learn/
 ---
 
@@ -27,10 +27,10 @@ permalink: /learn/
       link_label="試験の全体像を学ぶ →"
     %}
     {% include list-card.html
-      title="動画"
-      description="長編解説とShortsを、対応する詳しい記事とあわせて探せます。"
+      title="動画・記事"
+      description="同じテーマをYouTube・note・サイト記事から選んで学べます。"
       link_url="/videos/"
-      link_label="動画一覧へ →"
+      link_label="動画・記事ライブラリへ →"
     %}
     {% include list-card.html
       title="用語集"

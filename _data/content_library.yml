@@ -1,0 +1,33 @@
+- slug: work-environment-measurement-sampling
+  title: 作業環境測定のサンプリングとは？物質の状態から捕集方法を考える
+  category: 作業環境測定
+  summary: 物質の状態と分析方法を踏まえ、ろ過捕集や固体捕集などから適切な捕集方法を選ぶ基本を整理します。
+  published_at: 2026-08-11
+  featured_home: true
+  site:
+    url: /guides/work-environment-measurement-sampling/
+    label: サイトで読む
+  youtube:
+    video_id: IbW6ujjJkOI
+    url: https://www.youtube.com/watch?v=IbW6ujjJkOI
+    label: YouTubeで見る
+  note:
+    url: https://note.com/eisei_ai_channel/n/nf412b8bbf037
+    label: noteで読む
+
+- slug: work-environment-measurement-design
+  title: 作業環境測定のデザインとは？測定点とA・B・C・D測定を整理
+  category: 作業環境測定
+  summary: 事前調査から単位作業場所、測定点、A・B・C・D測定の選択まで、測定計画の考え方を整理します。
+  published_at: 2026-08-10
+  featured_home: true
+  site:
+    url: /guides/work-environment-measurement-design/
+    label: サイトで読む
+  youtube:
+    video_id: "-l2ISaUncV4"
+    url: https://www.youtube.com/watch?v=-l2ISaUncV4
+    label: YouTubeで見る
+  note:
+    url: https://note.com/eisei_ai_channel/n/n15e2a9e3d3b8
+    label: noteで読む

@@ -12,6 +12,28 @@ layout: base
     </div>
   </section>
 
+  <section class="content-feature" aria-labelledby="content-feature-title">
+    <div class="home-section-heading">
+      <p class="section-kicker">YouTube・note連動</p>
+      <h2 id="content-feature-title">動画でつかみ、記事で深める</h2>
+      <p>ひとつのテーマを、動画でつかみ、noteで読み、サイトで根拠まで確認できます。</p>
+    </div>
+    <div class="content-feature__grid">
+      {% assign featured_count = 0 %}{% for item in site.data.content_library %}{% if item.featured_home and featured_count < 2 %}
+      <article class="library-card library-card--home">
+        <a class="library-card__thumbnail" href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
+          <img src="https://i.ytimg.com/vi/{{ item.youtube.video_id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async">
+        </a>
+        <div class="library-card__body">
+          <p class="library-card__meta"><span>{{ item.category }}</span><time datetime="{{ item.published_at }}">{{ item.published_at | date: "%Y年%-m月%-d日" }}</time></p>
+          <h3>{{ item.title }}</h3><p>{{ item.summary }}</p>
+          <div class="library-card__actions">{% if item.site.url %}<a class="library-card__primary" href="{{ item.site.url | relative_url }}">{{ item.site.label | default: 'サイトで読む' }}</a>{% endif %}<a href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer">{{ item.youtube.label | default: 'YouTubeで見る' }}<span class="sr-only">（外部サイト）</span></a><a href="{{ item.note.url }}" target="_blank" rel="noopener noreferrer">{{ item.note.label | default: 'noteで読む' }}<span class="sr-only">（外部サイト）</span></a></div>
+        </div>
+      </article>{% assign featured_count = featured_count | plus: 1 %}{% endif %}{% endfor %}
+    </div>
+    <a class="content-feature__cta" href="{{ '/videos/' | relative_url }}">動画・記事ライブラリを見る</a>
+  </section>
+
   <section class="home-section" aria-labelledby="home-categories-title">
     <div class="home-section-heading"><p class="section-kicker">主要カテゴリ</p><h2 id="home-categories-title">知りたいテーマから探す</h2><p>現場の課題や学びたい分野から、必要な情報へ進めます。</p></div>
     <nav class="category-grid" aria-label="カテゴリ一覧">{% for category in home.categories %}<a href="{{ category.url | relative_url }}"><strong>{{ category.label }}</strong><span>情報を見る →</span></a>{% endfor %}</nav>
@@ -24,7 +46,7 @@ layout: base
 
   <section class="quick-search-card" aria-labelledby="quick-search-title"><div><p class="section-kicker">サイト内検索</p><h2 id="quick-search-title">キーワードから探す</h2></div><form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form><div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div></section>
 
-  <section class="external-links-card" aria-labelledby="external-links-title"><div><p class="section-kicker">外部メディア</p><h2 id="external-links-title">動画・SNSでも発信しています</h2></div><div class="external-link-grid">{% for link in home.sns limit:3 %}<a href="{{ link.url }}" target="_blank" rel="noopener"><strong>{{ link.title }}</strong><span>{{ link.description }}</span></a>{% endfor %}</div></section>
+  <section class="external-links-card" aria-labelledby="external-links-title"><div><p class="section-kicker">外部メディア</p><h2 id="external-links-title">公式アカウント</h2></div><div class="external-link-grid">{% for link in home.sns limit:3 %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ link.title }}</strong><span>{{ link.description }}</span><span class="sr-only">（外部サイト）</span></a>{% endfor %}</div></section>
 
   <aside class="home-reference-note"><strong>一次情報の確認について</strong><p>本サイトは実務の参考情報です。法令や制度は改正されるため、最終判断は e-Gov 法令検索や厚生労働省などの一次情報で確認してください。</p></aside>
 </div></div>
