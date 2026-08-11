@@ -49,6 +49,7 @@ jobs:
       - name: Verify chat-style navigator data
         run: |
           node --check assets/js/site-navigator.js
+          node --check assets/js/learning-compass.js
           ruby scripts/ci/verify_navigator_data.rb
 
       - name: Build Pagefind index
