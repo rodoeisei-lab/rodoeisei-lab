@@ -22,7 +22,7 @@ permalink: /chemical-management/
       <li><span class="chemical-step-number">04</span><span><strong>管理体制の確認</strong><small>化学物質管理者、保護具着用管理責任者などの選任要否を確認する</small></span></li>
       <li><span class="chemical-step-number">05</span><span><strong>リスクアセスメント</strong><small>健康障害だけでなく、火災・爆発などの危険性も評価する</small></span></li>
       <li><span class="chemical-step-number">06</span><span><strong>リスク低減措置</strong><small>原材料・工程の変更、工学的対策、管理的対策、個人用保護具の順に検討する</small></span></li>
-      <li><span class="chemical-step-number">07</span><span><strong>ばく露状況の確認</strong><small>濃度基準値、作業環境測定、個人ばく露測定を適用条件に応じて使い分ける</small></span></li>
+      <li><span class="chemical-step-number">07</span><span><strong>ばく露状況の確認</strong><small>濃度基準値、作業環境測定、<a href="{{ '/guides/personal-exposure-measurement-basics/' | relative_url }}">個人ばく露測定</a>を適用条件に応じて使い分ける</small></span></li>
       <li><span class="chemical-step-number">08</span><span><strong>記録・周知・教育</strong><small>評価と対策を記録し、関係する労働者へ周知する</small></span></li>
       <li><span class="chemical-step-number">09</span><span><strong>定期的な見直し</strong><small>物質、工程、設備、作業方法、SDS、法令などの変更時にも見直す</small></span></li>
     </ol>
@@ -34,7 +34,7 @@ permalink: /chemical-management/
       <div><dt>自律的な化学物質管理</dt><dd>事業者がリスクを把握し、リスクアセスメントと低減措置を継続する枠組みです。特別規則の適用がなくなるという意味ではありません。</dd></div>
       <div><dt>有機則・特化則・鉛則等</dt><dd>対象物質や作業に固有の措置を定める特別規則です。対象なら、自律的管理とあわせて規定を確認します。</dd></div>
       <div><dt>作業環境測定</dt><dd>作業場の空気環境を測定・評価して改善につなげる制度です。化学物質管理全体の一要素であり、これだけで管理は完結しません。</dd></div>
-      <div><dt>個人ばく露測定</dt><dd>作業者に装着した試料採取機器などで、作業者のばく露を把握する方法です。作業環境測定とは目的や評価方法が異なります。</dd></div>
+      <div><dt>個人ばく露測定</dt><dd><a href="{{ '/guides/personal-exposure-measurement-basics/' | relative_url }}">作業者の呼吸域濃度から、作業中のばく露を把握する方法</a>です。作業環境測定とは目的や評価方法が異なります。</dd></div>
       <div><dt>管理濃度</dt><dd>作業環境測定の評価値等から管理区分を決めるための基準です。個人ばく露の許容上限値ではありません。</dd></div>
       <div><dt>濃度基準値</dt><dd>リスクアセスメント対象物のうち国が定めた物質について、労働者のばく露を基準以下とするための値です。八時間濃度基準値と短時間濃度基準値があります。</dd></div>
       <div><dt>許容濃度</dt><dd>日本産業衛生学会等が勧告する、労働衛生管理のための科学的な指標です。法令上の管理濃度や濃度基準値と同一ではありません。</dd></div>

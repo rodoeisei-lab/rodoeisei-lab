@@ -41,6 +41,9 @@ related_links:
   - title: 化学物質管理カテゴリ
     url: /chemical-management/
     group: next
+  - title: 個人ばく露測定の入門記事
+    url: /guides/personal-exposure-measurement-basics/
+    group: next
   - title: 作業環境測定カテゴリ
     url: /work-environment-measurement/
     group: next
@@ -210,7 +213,7 @@ SDSは供給者が示す一般的な製品情報です。実際の使用量、�
 - 換気設備の稼働状態、フード位置、気流などの確認
 - 簡易的なリスク評価
 - 作業環境測定
-- 個人ばく露測定
+- [個人ばく露測定]({{ "/guides/personal-exposure-measurement-basics/" | relative_url }})
 - 検知管やリアルタイムモニターなどによる確認
 - 手袋や衣服への付着を含む皮膚接触状況の確認
 

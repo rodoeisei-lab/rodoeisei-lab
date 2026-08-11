@@ -41,7 +41,7 @@ categories:
   - label: 化学物質管理
     url: /chemical-management/
   - label: 個人ばく露測定
-    url: /search/?q=個人ばく露測定
+    url: /personal-exposure-measurement/
   - label: 局所排気装置
     url: /qa/local-exhaust-inspection/
   - label: 保護具・フィットテスト
@@ -63,10 +63,11 @@ articles:
     description: 使用物質の把握からリスクアセスメント、対策、記録・見直しまで、化学物質管理の全体像を実務の順番で整理します。
     url: /guides/chemical-management-basics/
     status: published
-  - title: 個人ばく露測定とは？作業環境測定との違いを整理
+  - title: 個人ばく露測定とは？目的・進め方と作業環境測定との関係
     category: 個人ばく露測定
-    description: 場の測定と人のばく露をどう使い分けるか、化学物質管理の文脈で解説します。
-    status: wip
+    description: 測定目的、対象者の選定、呼吸域でのサンプリング、結果の評価、C測定・D測定との違いを整理します。
+    url: /guides/personal-exposure-measurement-basics/
+    status: published
   - title: 有機溶剤中毒予防規則とは？対象作業と管理の基本
     category: 化学物質管理
     description: 有機則の対象作業、換気、保護具、健康診断、SDS確認の入口を実務者向けにまとめます。
