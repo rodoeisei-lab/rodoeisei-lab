@@ -118,6 +118,8 @@ jobs:
             "/ai-use/" \
             "/occupational-health-consultant/" \
             "/videos/" \
+            "/guides/work-environment-measurement-design/" \
+            "/guides/work-environment-measurement-sampling/" \
             "/guides/work-environment-measurement-design-sampling/" \
             "/guides/occupational-health-consultant-basics/" \
             "/guides/ai-use-occupational-health-basics/" \

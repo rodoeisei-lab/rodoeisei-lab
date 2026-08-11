@@ -10,10 +10,6 @@ hero:
     - label: 化学物質管理を学ぶ
       url: /chemical-management/
       style: secondary
-    - label: YouTubeを見る
-      url: https://youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
-      style: text
-      external: true
   points:
     - A測定・B測定、管理区分を実務の流れで理解
     - SDS、リスクアセスメント、保護具の選び方まで整理
@@ -50,8 +46,6 @@ categories:
     url: /occupational-health-consultant/
   - label: AI活用
     url: /ai-use/
-  - label: YouTube連動記事
-    url: /videos/
 articles:
   - title: 作業環境測定とは？A測定・B測定・管理区分を初心者向けに解説
     category: 作業環境測定
@@ -71,7 +65,7 @@ articles:
   - title: 作業環境測定のデザインとは？測定点とA・B・C・D測定を整理
     category: 作業環境測定
     description: 事前調査、単位作業場所、測定点とA・B・C・D測定の違いを整理します。
-    url: /guides/work-environment-measurement-design-sampling/
+    url: /guides/work-environment-measurement-design/
     status: published
   - title: 有機溶剤中毒予防規則とは？対象作業と管理の基本
     category: 化学物質管理
@@ -120,15 +114,15 @@ notice:
   url: https://github.com/rodoeisei-lab/rodoeisei-lab/issues
 sns:
   - title: YouTube
-    description: 作業環境測定、化学物質管理、AI活用の解説動画を配信。
+    description: 図解と音声で、労働衛生の全体像や実務の要点を解説。
     url: https://youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
     icon: ▶
   - title: X
-    description: 法改正、更新情報、短い実務メモを共有。
+    description: 新着動画、記事更新、法改正などのお知らせ。
     url: https://x.com/rodoeiseiai?s=21
     icon: X
   - title: note
-    description: 労働衛生コンサルタント学習や実務整理の長文記事。
+    description: 動画と同じテーマを、文章で順番に読み進められる解説。
     url: https://note.com/eisei_ai_channel
     icon: n
   - title: GitHub Issues

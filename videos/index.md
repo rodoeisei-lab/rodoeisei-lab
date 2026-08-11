@@ -1,55 +1,33 @@
 ---
-title: 動画・YouTube連動記事
-description: 労働衛生×AIラボの長編解説とShortsを、作業環境測定、個人ばく露測定、資格、局所排気装置などのテーマ別に整理し、対応する詳しい解説記事へ案内します。
-eyebrow: 労働衛生×AIラボ
-lead: 動画で全体像をつかみ、対応する記事と一次情報で内容を確認できる学習ページです。
+title: 動画・記事ライブラリ
+description: YouTubeで概要をつかみ、noteで読み進め、労働衛生ラボの記事で要点・一次情報・更新内容を確認できるテーマ別ライブラリです。
+eyebrow: YouTube・note連動
+lead: ひとつのテーマを、動画でつかみ、noteで読み、サイトで要点と一次情報を確認できます。
 permalink: /videos/
 ---
 
-{% assign youtube = site.data.youtube %}
-<div class="video-hub">
-  <section class="video-hub__intro" aria-labelledby="video-purpose">
-    <h2 id="video-purpose">動画から、詳しい記事と一次情報へ</h2>
-    <p>主要動画を入口に、テーマの全体像を短時間でつかみ、対応記事で条件・根拠・注意点を確認できます。掲載動画はYouTube上で再生され、このページでは自動再生やiframe埋め込みを行いません。</p>
+{% assign library = site.data.content_library %}
+<div class="library-page">
+  <section class="library-roles" aria-labelledby="library-roles-title">
+    <h2 id="library-roles-title">3つの媒体を、学び方に合わせて</h2>
+    <div><article><h3>YouTube</h3><p>図や音声で全体像をつかむ</p></article><article><h3>note</h3><p>文章で順番に読み進める</p></article><article><h3>労働衛生ラボ</h3><p>要点・一次情報・更新内容を確認する</p></article></div>
   </section>
 
-  <section aria-labelledby="featured-video">
-    <h2 id="featured-video">注目動画</h2>
-    {% for video in youtube.videos %}{% if video.featured %}<div class="video-featured">{% include video-card.html video=video featured=true %}</div>{% endif %}{% endfor %}
+  <section aria-labelledby="latest-library-title">
+    <p class="section-kicker">新しい順に掲載</p><h2 id="latest-library-title">新着テーマ</h2>
+    <p class="library-page__notice">サイト記事は順次追加します。記事があるテーマでは、実務へ適用する前に一次情報と最終確認日も確認してください。</p>
+    <div class="library-grid">{% for item in library limit:3 %}{% include content-library-card.html item=item %}{% endfor %}</div>
   </section>
 
-  <section aria-labelledby="long-videos">
-    <h2 id="long-videos">長編解説</h2>
-    <p>背景や実務上の考え方を、順を追って学べる動画です。</p>
-    <div class="video-grid">{% for video in youtube.videos %}{% if video.format == "long" and video.featured != true %}{% include video-card.html video=video %}{% endif %}{% endfor %}</div>
-  </section>
+  <nav class="library-category-nav" aria-labelledby="library-category-title">
+    <h2 id="library-category-title">カテゴリから探す</h2>
+    <div><a href="#work-environment-measurement">作業環境測定</a><a href="#chemical-management">化学物質管理</a><a href="#personal-exposure">個人ばく露測定</a><a href="#local-exhaust">局所排気装置</a><a href="#consultant">労働衛生コンサルタント・資格</a><a href="#ai-use">AI活用</a><a href="#other">その他の労働衛生</a></div>
+  </nav>
 
-  <section aria-labelledby="short-videos">
-    <h2 id="short-videos">Shorts</h2>
-    <p>用語や判断のポイントを短く確認できる縦型動画です。</p>
-    <div class="video-grid">{% for video in youtube.videos %}{% if video.format == "short" %}{% include video-card.html video=video %}{% endif %}{% endfor %}</div>
-  </section>
+  {% assign categories = "作業環境測定|化学物質管理|個人ばく露測定|局所排気装置|労働衛生コンサルタント・資格|AI活用|その他の労働衛生" | split: "|" %}
+  {% assign category_ids = "work-environment-measurement|chemical-management|personal-exposure|local-exhaust|consultant|ai-use|other" | split: "|" %}
+  {% for category in categories %}<section class="library-category" id="{{ category_ids[forloop.index0] }}" aria-labelledby="{{ category_ids[forloop.index0] }}-title"><h2 id="{{ category_ids[forloop.index0] }}-title">{{ category }}</h2>{% assign category_count = 0 %}<div class="library-grid">{% for item in library %}{% if item.category == category %}{% include content-library-card.html item=item %}{% assign category_count = category_count | plus: 1 %}{% endif %}{% endfor %}</div>{% if category_count == 0 %}<p class="library-category__empty">このカテゴリの連動テーマは、内容とリンクを確認でき次第追加します。</p>{% endif %}</section>{% endfor %}
 
-  <section aria-labelledby="linked-videos">
-    <h2 id="linked-videos">対応記事がある動画</h2>
-    <ul class="video-article-links">{% for video in youtube.videos %}{% if video.article_url %}<li><a href="{{ video.article_url | relative_url }}">{{ video.article_label | default: video.title }}</a><span>{{ video.topic }}</span></li>{% endif %}{% endfor %}</ul>
-  </section>
-
-  <section class="video-hub__guide" aria-labelledby="video-use">
-    <h2 id="video-use">動画と記事の使い分け</h2>
-    <div><article><h3>動画で全体像をつかむ</h3><p>初めてのテーマは、長編解説やShortsで用語と論点の位置関係を確認します。</p></article><article><h3>記事で条件を確かめる</h3><p>実務へ適用する前に、対応記事の注意点と一次情報を読み、対象・施行日・例外を確認します。</p></article></div>
-  </section>
-
-  <section class="video-channel" aria-labelledby="youtube-channel">
-    <h2 id="youtube-channel">YouTubeチャンネル</h2>
-    <p>新しい動画や、このページに掲載していない動画は「{{ youtube.channel.name }}」で確認できます。</p>
-    <a class="video-link video-link--youtube" href="{{ youtube.channel.url }}" target="_blank" rel="noopener noreferrer">労働衛生×AIラボをYouTubeで見る（外部）</a>
-  </section>
-
-  <section aria-labelledby="information-note">
-    <h2 id="information-note">情報確認上の注意</h2>
-    <p>動画は公開時点の情報を解説しています。法令・告示・通達や試験情報は改正されることがあるため、実務判断では対応記事に掲載した一次情報と最新の公式情報を確認してください。動画は法的助言や個別事業場の判断を代替するものではありません。</p>
-  </section>
-
-  <p class="video-hub__checked"><strong>最終確認日：</strong>{{ youtube.channel.checked_at | date: "%Y年%-m月%-d日" }}</p>
+  <section class="library-all-links" aria-labelledby="library-all-title"><h2 id="library-all-title">それぞれの一覧を見る</h2><div><a href="https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw" target="_blank" rel="noopener noreferrer">YouTubeチャンネルをすべて見る<span class="sr-only">（外部サイト）</span></a><a href="https://note.com/eisei_ai_channel" target="_blank" rel="noopener noreferrer">noteの記事をすべて見る<span class="sr-only">（外部サイト）</span></a><a href="{{ '/guides/' | relative_url }}">サイトの解説一覧を見る</a></div></section>
+  <aside class="library-caution"><h2>一次情報の確認について</h2><p>YouTubeとnoteは理解を助ける関連教材であり、法令上の根拠資料ではありません。法令・制度は改正されるため、実務上の判断では厚生労働省、e-Gov法令検索、告示・通達などの最新の一次情報を確認してください。</p></aside>
 </div>

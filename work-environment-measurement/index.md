@@ -26,8 +26,8 @@ permalink: /work-environment-measurement/
           <span class="measurement-step-action">記事を読む</span>
         </a>
       </li>
-      <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-design-sampling/#design' | relative_url }}"><span class="measurement-step-number">02</span><span><strong>デザイン</strong><small>測定計画と測定点を考える</small></span><span class="measurement-step-action">記事を読む</span></a></li>
-      <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-design-sampling/#sampling' | relative_url }}"><span class="measurement-step-number">03</span><span><strong>サンプリング</strong><small>試料採取の方法を理解する</small></span><span class="measurement-step-action">記事を読む</span></a></li>
+      <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-design/' | relative_url }}"><span class="measurement-step-number">02</span><span><strong>デザイン</strong><small>測定計画と測定点を考える</small></span><span class="measurement-step-action">記事を読む</span></a></li>
+      <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-sampling/' | relative_url }}"><span class="measurement-step-number">03</span><span><strong>サンプリング</strong><small>試料採取の方法を理解する</small></span><span class="measurement-step-action">記事を読む</span></a></li>
       <li class="measurement-step"><span class="measurement-step-number">04</span><span><strong>分析</strong><small>分析方法と基本事項を知る</small></span><span class="measurement-status">準備中</span></li>
       <li class="measurement-step"><span class="measurement-step-number">05</span><span><strong>評価</strong><small>測定値を評価値へつなぐ</small></span><span class="measurement-status">準備中</span></li>
       <li class="measurement-step"><span class="measurement-step-number">06</span><span><strong>管理区分</strong><small>結果に応じた対応を判断する</small></span><span class="measurement-status">準備中</span></li>
@@ -38,14 +38,17 @@ permalink: /work-environment-measurement/
   <section class="measurement-section" aria-labelledby="published-articles-title">
     <div class="measurement-section-heading">
       <p class="measurement-section-label">現在公開されている記事</p>
-      <h2 id="published-articles-title">まず読める4つのテーマ</h2>
+      <h2 id="published-articles-title">基礎から順に読める記事</h2>
     </div>
     <div class="measurement-article-grid">
       <a class="measurement-article-card measurement-article-card--primary" href="{{ '/guides/work-env-measurement-intro/' | relative_url }}">
         <span>入門</span><h3>作業環境測定の超入門</h3><p>A測定・B測定、評価、管理区分まで、最初に押さえたい全体像を整理します。</p><strong>基礎から読む →</strong>
       </a>
-      <a class="measurement-article-card" href="{{ '/guides/work-environment-measurement-design-sampling/' | relative_url }}">
-        <span>デザイン・採取</span><h3>測定点とA・B・C・D測定</h3><p>事前調査、単位作業場所、測定点と各測定の役割を実務の順に整理します。</p><strong>詳しい記事を読む →</strong>
+      <a class="measurement-article-card" href="{{ '/guides/work-environment-measurement-design/' | relative_url }}">
+        <span>ステップ02</span><h3>作業環境測定のデザイン</h3><p>事前調査、単位作業場所、測定点とA・B・C・D測定の役割を整理します。</p><strong>デザインを学ぶ →</strong>
+      </a>
+      <a class="measurement-article-card" href="{{ '/guides/work-environment-measurement-sampling/' | relative_url }}">
+        <span>ステップ03</span><h3>サンプリングと捕集方法</h3><p>物質の状態と分析方法から、ろ過捕集や固体捕集などを選ぶ基本を整理します。</p><strong>サンプリングを学ぶ →</strong>
       </a>
       <a class="measurement-article-card" href="{{ '/qa/third-control-class/' | relative_url }}">
         <span>評価・管理区分</span><h3>第3管理区分に関するQ&amp;A</h3><p>第3管理区分になったとき、何を確認し、どの対策から進めるかを確認します。</p><strong>回答を見る →</strong>
