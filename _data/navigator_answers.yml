@@ -1,0 +1,249 @@
+- id: work-environment-measurement
+  question: 作業環境測定とは？
+  search_query: 作業環境測定
+  keywords:
+    - 作業環境測定
+    - 何をする
+  answer: 作業環境測定は、職場の作業環境を把握し、結果を評価して必要な改善につなげる仕組みです。労働衛生ラボでは、デザイン、サンプリング、分析・評価、管理区分、改善という流れで整理しています。
+  article_title: 作業環境測定の超入門
+  article_url: /guides/work-env-measurement-intro/
+  checked_at: 2026-08-11
+
+- id: a-and-b-measurement
+  question: A測定とB測定の違いは？
+  content_slug: work-environment-measurement-design
+  search_query: A測定 B測定
+  keywords:
+    - A測定
+    - B測定
+    - 違い
+  answer: A測定は単位作業場所の平均的な状態を把握する測定です。B測定は、発散源に近接する作業などで濃度が最も高くなると考えられる時間と作業位置の状態を把握します。B測定の要否は、対象物質や作業状況を踏まえて確認します。
+  article_title: 作業環境測定の超入門
+  article_url: /guides/work-env-measurement-intro/
+  checked_at: 2026-08-11
+
+- id: work-environment-measurement-design
+  question: 作業環境測定のデザインとは？
+  content_slug: work-environment-measurement-design
+  search_query: 作業環境測定 デザイン 測定点
+  keywords:
+    - 作業環境測定
+    - デザイン
+    - 測定点
+    - 単位作業場所
+  answer: 作業環境測定のデザインは、対象作業と有害因子を調べ、単位作業場所、測定日時、測定点、測定方式などを現場の実態に合わせて決め、その理由を測定計画へ残す工程です。図面に測定点を置くだけではありません。
+  article_title: 作業環境測定のデザインとは？測定点とA・B・C・D測定を整理
+  article_url: /guides/work-environment-measurement-design/
+  checked_at: 2026-08-11
+
+- id: work-environment-measurement-sampling
+  question: 作業環境測定のサンプリングとは？
+  content_slug: work-environment-measurement-sampling
+  search_query: 作業環境測定 サンプリング 捕集方法
+  keywords:
+    - 作業環境測定
+    - サンプリング
+    - 捕集
+    - 採気
+  answer: サンプリングは、デザインで決めた位置と時間に試料を採取し、分析可能な状態で試験室へつなぐ工程です。物質の状態、分析方法、必要試料量を踏まえて捕集材、流量、採取時間、保存・搬送条件を選びます。
+  article_title: 作業環境測定のサンプリングとは？物質の状態から捕集方法を考える
+  article_url: /guides/work-environment-measurement-sampling/
+  checked_at: 2026-08-11
+
+- id: control-class
+  question: 管理区分とは？
+  search_query: 管理区分
+  keywords:
+    - 管理区分
+    - 第1管理区分
+    - 第2管理区分
+    - 第3管理区分
+  answer: 管理区分は、作業環境測定の評価結果を第1から第3までに区分したものです。気中有害物質では、A測定から算出した評価値や、必要な場合のB測定値を管理濃度と比較して決定します。対象となる測定ごとに評価方法を確認する必要があります。
+  article_title: 作業環境測定の超入門
+  article_url: /guides/work-env-measurement-intro/
+  checked_at: 2026-08-11
+
+- id: third-control-class
+  question: 第3管理区分になったら、まず何を確認する？
+  aliases:
+    - 第3管理区分
+    - 第三管理区分
+  search_query: 第3管理区分 対応
+  keywords:
+    - 第3管理区分
+    - 第三管理区分
+    - 対応
+    - 改善
+  answer: まず測定結果と作業状況を照合して、高濃度となった場所・時間・発散源などの原因を確認します。そのうえで、適用法令に必要な措置を確認し、発散抑制や局所排気装置などの工学的対策、作業方法の見直し、対策後の効果確認へ進みます。
+  article_title: 第3管理区分になった場合の対応
+  article_url: /qa/third-control-class/
+  checked_at: 2026-08-11
+
+- id: personal-exposure-measurement
+  question: 個人ばく露測定とは？
+  search_query: 個人ばく露測定
+  keywords:
+    - 個人ばく露測定
+    - 個人曝露測定
+    - 呼吸域
+  answer: 個人ばく露測定は、労働者の呼吸域付近にサンプラーなどを装着し、作業中にどの程度の有害物質へばく露したかを把握する方法です。測定前に、目的、対象者、対象作業、測定時間、比較する基準を明確にします。
+  article_title: 個人ばく露測定とは？目的・進め方と作業環境測定との関係
+  article_url: /guides/personal-exposure-measurement-basics/
+  checked_at: 2026-08-11
+
+- id: personal-exposure-vs-work-environment
+  question: 個人ばく露測定と作業環境測定の違いは？
+  search_query: 個人ばく露測定 作業環境測定 違い
+  keywords:
+    - 個人ばく露測定
+    - 作業環境測定
+    - 違い
+  answer: 一般的な個人ばく露測定は、労働者の呼吸域でばく露の程度を把握します。一方、作業環境測定は作業場の状態を測定・評価し、管理区分などを通じて作業環境管理へつなげます。測定目的と評価方法を混同しないことが重要です。
+  article_title: 個人ばく露測定とは？目的・進め方と作業環境測定との関係
+  article_url: /guides/personal-exposure-measurement-basics/
+  checked_at: 2026-08-11
+
+- id: c-and-d-measurement
+  question: C測定・D測定と個人ばく露測定の違いは？
+  content_slug: work-environment-measurement-design
+  search_query: C測定 D測定 個人ばく露測定
+  keywords:
+    - C測定
+    - D測定
+    - 個人ばく露測定
+    - 違い
+  answer: C測定・D測定は、労働者にサンプラーを装着する個人サンプリング法による作業環境測定です。一般的な個人ばく露測定とは、目的と評価方法が異なります。C測定・D測定は作業環境評価基準に基づく作業場の評価に用います。
+  article_title: 個人ばく露測定とは？目的・進め方と作業環境測定との関係
+  article_url: /guides/personal-exposure-measurement-basics/
+  checked_at: 2026-08-11
+
+- id: chemical-management
+  question: 職場の化学物質管理は何から始める？
+  search_query: 化学物質管理 SDS リスクアセスメント
+  keywords:
+    - 化学物質管理
+    - 何から
+    - 始める
+  answer: まず職場で使用する製品と化学物質を把握し、容器ラベルと最新版のSDSを確認します。次に、法令上の対象と実際の作業条件を整理し、リスクアセスメント、対策、効果確認、記録・見直しへ進みます。
+  article_title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
+  article_url: /guides/chemical-management-basics/
+  checked_at: 2026-08-11
+
+- id: sds
+  question: SDSはどこを確認する？
+  search_query: SDS 確認
+  keywords:
+    - SDS
+    - 安全データシート
+    - どこ
+    - 確認
+  answer: まず最新版かを確かめ、危険有害性、成分、取扱い・保管、ばく露防止・保護措置、安定性・反応性、有害性、適用法令を確認します。SDSだけで完結させず、使用量、温度、作業時間、換気など実際の作業条件も合わせて確認します。
+  article_title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
+  article_url: /guides/chemical-management-basics/
+  checked_at: 2026-08-11
+
+- id: chemical-risk-assessment
+  question: 化学物質のリスクアセスメントとは？
+  search_query: 化学物質 リスクアセスメント
+  keywords:
+    - 化学物質
+    - リスクアセスメント
+    - 危険性
+    - 有害性
+  answer: 化学物質の危険性・有害性を特定し、作業者が接触・ばく露する可能性や火災・爆発などの危険を見積もり、対策の優先度を決める手順です。製品情報だけでなく、使用量、作業時間、温度、換気などの実態を反映させます。
+  article_title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
+  article_url: /guides/chemical-management-basics/
+  checked_at: 2026-08-11
+
+- id: local-exhaust-ventilation
+  question: 局所排気装置とは？
+  search_query: 局所排気装置
+  keywords:
+    - 局所排気装置
+    - 局排
+    - フード
+    - ダクト
+  answer: 局所排気装置は、有害物質が作業場へ広がる前に、発散源の近くで捕捉して屋外へ排出する設備です。主にフード、ダクト、空気清浄装置、排風機、排気口で構成され、各部を一つの系として確認します。
+  article_title: 局所排気装置とは？捕捉原理・フード・点検の基本
+  article_url: /guides/local-exhaust-ventilation-basics/
+  checked_at: 2026-08-11
+
+- id: control-velocity
+  question: 制御風速とは？
+  aliases:
+    - 局所排気装置の制御風速とは？
+  search_query: 制御風速
+  keywords:
+    - 制御風速
+    - 捕捉速度
+    - ダクト内搬送速度
+  answer: 制御風速は、法令が対象となる局所排気装置について、フード形式などに応じた位置で満たすべき速度です。捕捉速度やダクト内搬送速度とは目的と測定位置が異なり、適用規則と測定条件を特定して判断します。
+  article_title: 局所排気装置とは？捕捉原理・フード・点検の基本
+  article_url: /guides/local-exhaust-ventilation-basics/
+  checked_at: 2026-08-11
+
+- id: fit-test
+  question: フィットテストとは？
+  search_query: フィットテスト 呼吸用保護具
+  keywords:
+    - フィットテスト
+    - 呼吸用保護具
+    - マスク
+    - 密着
+  answer: フィットテストは、呼吸用保護具の面体と着用者の顔が適切に密着しているかを、定めた方法で確認するものです。装着のたびに本人が行うシールチェックとは役割が異なります。
+  article_title: フィットテスト導入の最小セット
+  article_url: /guides/fit-test/
+  checked_at: 2026-08-11
+
+- id: occupational-health-consultant
+  question: 労働衛生コンサルタントとは？
+  search_query: 労働衛生コンサルタント
+  keywords:
+    - 労働衛生コンサルタント
+    - コンサルタント
+    - 受験資格
+    - 口述試験
+  answer: 労働衛生コンサルタントは、他人の求めに応じ報酬を得て、事業場の衛生を診断し、その結果に基づく指導を行う国家資格です。試験合格だけでなく、登録までの手続を確認する必要があります。
+  article_title: 労働衛生コンサルタントとは？試験・受験資格・登録の全体像
+  article_url: /guides/occupational-health-consultant-basics/
+  checked_at: 2026-08-11
+
+- id: generative-ai-safety
+  question: 労働衛生で生成AIを安全に使うには？
+  search_query: 生成AI 労働衛生 機密情報 一次情報
+  keywords:
+    - 生成AI
+    - 労働衛生
+    - 安全
+    - 機密情報
+  answer: 入力する情報を必要最小限にし、未公開の測定結果、健康情報、事業場情報などを無断で外部サービスへ入力しないことが基本です。出力後は、法令、数値、単位、出典、施行日を一次情報で確認し、最終判断を人が行います。
+  article_title: 生成AIを労働衛生で安全に使う方法
+  article_url: /guides/ai-use-occupational-health-basics/
+  checked_at: 2026-08-11
+
+- id: hallucination
+  question: AIのハルシネーションとは？
+  search_query: AI ハルシネーション
+  keywords:
+    - AI
+    - ハルシネーション
+    - 誤回答
+    - 出典
+  answer: ハルシネーションは、AIが事実と異なる内容や存在しない出典を、もっともらしく生成することです。出典が表示されても、発行主体、本文、日付、適用条件を実際に開いて確認する必要があります。
+  article_title: 生成AIを労働衛生で安全に使う方法
+  article_url: /guides/ai-use-occupational-health-basics/
+  checked_at: 2026-08-11
+
+- id: ai-confidential-information
+  question: 生成AIに入力してはいけない情報は？
+  search_query: 生成AI 機密情報 健康情報 測定結果
+  keywords:
+    - 生成AI
+    - 入力
+    - 機密情報
+    - 健康情報
+    - 測定結果
+  answer: 組織の承認がない外部サービスには、労働者の健康情報、個人を特定できるばく露データ、事業場名、未公開の測定結果、契約上の秘密、認証情報などを入力しません。氏名を消しただけで安全と判断せず、組み合わせによる再特定の可能性も確認します。
+  article_title: 生成AIを労働衛生で安全に使う方法
+  article_url: /guides/ai-use-occupational-health-basics/
+  checked_at: 2026-08-11

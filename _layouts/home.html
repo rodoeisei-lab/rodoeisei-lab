@@ -44,7 +44,15 @@ layout: base
     <div class="article-card-grid">{% assign shown = 0 %}{% for article in home.articles %}{% if article.status == "published" and article.url and shown < 3 %}<article class="article-card"><span class="article-category">{{ article.category }}</span><h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3><p>{{ article.description }}</p><a class="card-link" href="{{ article.url | relative_url }}">記事を読む →</a></article>{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}</div>
   </section>
 
-  <section class="quick-search-card" aria-labelledby="quick-search-title"><div><p class="section-kicker">サイト内検索</p><h2 id="quick-search-title">キーワードから探す</h2></div><form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form><div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div></section>
+  <section class="quick-search-card" aria-labelledby="quick-search-title">
+    <div><p class="section-kicker">サイト内検索</p><h2 id="quick-search-title">キーワードから探す</h2></div>
+    <form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form>
+    <div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div>
+    <div class="quick-search-navigator">
+      <div><span>質問文で探したい方へ</span><p>公開中の記事から近い情報を会話形式で案内します。</p></div>
+      <a href="{{ '/navigator/' | relative_url }}">チャット型サイト案内を開く <small>試験版</small></a>
+    </div>
+  </section>
 
   <section class="external-links-card" aria-labelledby="external-links-title"><div><p class="section-kicker">外部メディア</p><h2 id="external-links-title">公式アカウント</h2></div><div class="external-link-grid">{% for link in home.sns limit:3 %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ link.title }}</strong><span>{{ link.description }}</span><span class="sr-only">（外部サイト）</span></a>{% endfor %}</div></section>
 
