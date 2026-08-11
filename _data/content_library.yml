@@ -4,6 +4,14 @@
   summary: 物質の状態と分析方法を踏まえ、ろ過捕集や固体捕集などから適切な捕集方法を選ぶ基本を整理します。
   published_at: 2026-08-11
   featured_home: true
+  purposes: [overview, practice, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 8
+    youtube: 3
+    note: 10
+  recommended_format: site
+  keywords: [作業環境測定, サンプリング, 捕集方法]
   site:
     url: /guides/work-environment-measurement-sampling/
     label: サイトで読む
@@ -21,6 +29,14 @@
   summary: 事前調査から単位作業場所、測定点、A・B・C・D測定の選択まで、測定計画の考え方を整理します。
   published_at: 2026-08-10
   featured_home: true
+  purposes: [overview, practice, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 10
+    youtube: 10
+    note: 12
+  recommended_format: youtube
+  keywords: [作業環境測定, デザイン, 測定点, A測定, B測定]
   site:
     url: /guides/work-environment-measurement-design/
     label: サイトで読む

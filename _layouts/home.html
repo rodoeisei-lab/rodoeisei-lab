@@ -18,16 +18,44 @@ layout: base
       <h2 id="content-feature-title">動画でつかみ、記事で深める</h2>
       <p>ひとつのテーマを、動画でつかみ、noteで読み、サイトで根拠まで確認できます。</p>
     </div>
+    <div class="learning-compass" data-learning-compass>
+      <div class="learning-compass__intro">
+        <p class="section-kicker">学習コンパス</p>
+        <h3>目的と時間から、今の1本を選ぶ</h3>
+        <p>知りたいことと使える時間を選ぶと、動画・note・サイト記事から適した学び方を案内します。</p>
+      </div>
+      <form class="learning-compass__form">
+        <fieldset><legend><span>1</span> 目的</legend>
+          <label><input type="radio" name="purpose" value="overview" checked><span>まず全体像を知りたい</span></label>
+          <label><input type="radio" name="purpose" value="practice"><span>実務で確認したい</span></label>
+          <label><input type="radio" name="purpose" value="qualification"><span>資格学習に使いたい</span></label>
+        </fieldset>
+        <fieldset><legend><span>2</span> 使える時間</legend>
+          <label><input type="radio" name="time" value="3" checked><span>3分</span></label>
+          <label><input type="radio" name="time" value="10"><span>10分</span></label>
+          <label><input type="radio" name="time" value="deep"><span>じっくり</span></label>
+        </fieldset>
+        <fieldset><legend><span>3</span> 学び方</legend>
+          <label><input type="radio" name="format" value="auto" checked><span>おまかせ</span></label>
+          <label><input type="radio" name="format" value="youtube"><span>動画</span></label>
+          <label><input type="radio" name="format" value="note"><span>文章</span></label>
+          <label><input type="radio" name="format" value="site"><span>一次情報まで確認</span></label>
+        </fieldset>
+      </form>
+      <div class="learning-compass__result" aria-live="polite" aria-atomic="true"></div>
+      <aside class="learning-history" data-learning-history hidden></aside>
+    </div>
+    <script type="application/json" id="learning-library-data">{{ site.data.content_library | jsonify }}</script>
     <div class="content-feature__grid">
       {% assign featured_count = 0 %}{% for item in site.data.content_library %}{% if item.featured_home and featured_count < 2 %}
       <article class="library-card library-card--home">
-        <a class="library-card__thumbnail" href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
+        <a class="library-card__thumbnail" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
           <img src="https://i.ytimg.com/vi/{{ item.youtube.video_id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async">
         </a>
         <div class="library-card__body">
           <p class="library-card__meta"><span>{{ item.category }}</span><time datetime="{{ item.published_at }}">{{ item.published_at | date: "%Y年%-m月%-d日" }}</time></p>
           <h3>{{ item.title }}</h3><p>{{ item.summary }}</p>
-          <div class="library-card__actions">{% if item.site.url %}<a class="library-card__primary" href="{{ item.site.url | relative_url }}">{{ item.site.label | default: 'サイトで読む' }}</a>{% endif %}<a href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer">{{ item.youtube.label | default: 'YouTubeで見る' }}<span class="sr-only">（外部サイト）</span></a><a href="{{ item.note.url }}" target="_blank" rel="noopener noreferrer">{{ item.note.label | default: 'noteで読む' }}<span class="sr-only">（外部サイト）</span></a></div>
+          <div class="library-card__actions">{% if item.site.url %}<a class="library-card__primary" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="site" href="{{ item.site.url | relative_url }}">{{ item.site.label | default: 'サイトで読む' }}</a>{% endif %}<a data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer">{{ item.youtube.label | default: 'YouTubeで見る' }}<span class="sr-only">（外部サイト）</span></a><a data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="note" href="{{ item.note.url }}" target="_blank" rel="noopener noreferrer">{{ item.note.label | default: 'noteで読む' }}<span class="sr-only">（外部サイト）</span></a></div>
         </div>
       </article>{% assign featured_count = featured_count | plus: 1 %}{% endif %}{% endfor %}
     </div>
