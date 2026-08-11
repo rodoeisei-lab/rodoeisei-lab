@@ -86,7 +86,7 @@
     const minutes = item.estimated_minutes?.[format];
     const related = candidates.slice(1, 3).map((other) => `<li><a data-learning-link data-slug="${escapeHtml(other.slug)}" data-title="${escapeHtml(other.title)}" data-medium="${format}" href="${escapeHtml(internalUrl(other[format]?.url || other.site?.url))}">${escapeHtml(other.title)}</a></li>`).join('');
     result.innerHTML = `<article class="compass-result-card"><p class="compass-result-card__eyebrow">おすすめ結果</p><p class="compass-result-card__reason"><strong>おすすめ理由</strong>${escapeHtml(reasonFor(purpose, format))}</p><p class="compass-result-card__category">${escapeHtml(item.category)} · ${escapeHtml(item.level === 'beginner' ? '入門' : '中級')}</p><h3>${escapeHtml(item.title)}</h3><p class="compass-result-card__time">所要時間の目安：<strong>${escapeHtml(minutes)}分</strong>（${mediumLabels[format]}）</p><p>${escapeHtml(item.summary)}</p><div class="library-card__actions">${linkHtml(item, 'site', format === 'site' ? 'library-card__primary' : '')}${linkHtml(item, 'youtube', format === 'youtube' ? 'library-card__primary' : '')}${linkHtml(item, 'note', format === 'note' ? 'library-card__primary' : '')}</div>${related ? `<div class="compass-related"><strong>関連候補</strong><ul>${related}</ul></div>` : ''}<button class="compass-reset" type="button">条件を選び直す</button></article>`;
-    result.querySelector('.compass-reset').addEventListener('click', () => { form.reset(); render(); form.querySelector('input').focus(); });
+    result.querySelector('.compass-reset').addEventListener('click', () => { form.reset(); render(); form.querySelector('select').focus(); });
   };
 
   const renderHistory = () => {
