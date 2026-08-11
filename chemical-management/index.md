@@ -21,7 +21,7 @@ permalink: /chemical-management/
       <li><span class="chemical-step-number">03</span><span><strong>適用される法令・制度の確認</strong><small>リスクアセスメント対象物、有機則・特化則・鉛則などの該当性を確認する</small></span></li>
       <li><span class="chemical-step-number">04</span><span><strong>管理体制の確認</strong><small>化学物質管理者、保護具着用管理責任者などの選任要否を確認する</small></span></li>
       <li><span class="chemical-step-number">05</span><span><strong>リスクアセスメント</strong><small>健康障害だけでなく、火災・爆発などの危険性も評価する</small></span></li>
-      <li><span class="chemical-step-number">06</span><span><strong>リスク低減措置</strong><small>原材料・工程の変更、工学的対策、管理的対策、個人用保護具の順に検討する</small></span></li>
+      <li><span class="chemical-step-number">06</span><span><strong>リスク低減措置</strong><small>原材料・工程の変更、<a href="{{ '/local-exhaust-ventilation/' | relative_url }}">局所排気装置などの工学的対策</a>、管理的対策、個人用保護具の順に検討する</small></span></li>
       <li><span class="chemical-step-number">07</span><span><strong>ばく露状況の確認</strong><small>濃度基準値、作業環境測定、<a href="{{ '/guides/personal-exposure-measurement-basics/' | relative_url }}">個人ばく露測定</a>を適用条件に応じて使い分ける</small></span></li>
       <li><span class="chemical-step-number">08</span><span><strong>記録・周知・教育</strong><small>評価と対策を記録し、関係する労働者へ周知する</small></span></li>
       <li><span class="chemical-step-number">09</span><span><strong>定期的な見直し</strong><small>物質、工程、設備、作業方法、SDS、法令などの変更時にも見直す</small></span></li>

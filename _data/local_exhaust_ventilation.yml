@@ -1,0 +1,19 @@
+- title: 局所排気装置とは？フード・ダクト・排風機の基本
+  url: /guides/local-exhaust-ventilation-basics/
+  section: 全体像
+  status: published
+  description: 捕捉の考え方、構成、性能確認と改善の基本を整理します。
+- title: 局所排気装置は、どの頻度で点検し、何を記録する？
+  url: /qa/local-exhaust-inspection/
+  section: 点検・記録
+  status: published
+  description: 適用規則ごとの点検・定期自主検査と記録を整理します。
+- { title: 囲い式・外付け式・レシーバー式フードの違い, section: フード, status: wip }
+- { title: 制御風速・捕捉速度・ダクト内搬送速度の違い, section: 速度, status: wip }
+- { title: 局所排気装置の風量と圧力損失の基本, section: 設計, status: wip }
+- { title: 局所排気装置の定期自主検査, section: 点検・記録, status: wip }
+- { title: 風速が出ないときの原因と確認手順, section: トラブル対応, status: wip }
+- { title: 共通ダクトとダンパー調整の注意点, section: 改善, status: wip }
+- { title: 作業環境測定・個人ばく露測定による効果確認, section: 効果確認, status: wip }
+- { title: 局所排気装置の設置・変更時に確認する法令と届出, section: 法令, status: wip }
+- { title: 粉じん・有機溶剤・特定化学物質・鉛で異なる設備要件, section: 法令, status: wip }

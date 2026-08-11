@@ -47,8 +47,8 @@ permalink: /work-environment-measurement/
       <a class="measurement-article-card" href="{{ '/qa/third-control-class/' | relative_url }}">
         <span>評価・管理区分</span><h3>第3管理区分に関するQ&amp;A</h3><p>第3管理区分になったとき、何を確認し、どの対策から進めるかを確認します。</p><strong>回答を見る →</strong>
       </a>
-      <a class="measurement-article-card" href="{{ '/qa/local-exhaust-inspection/' | relative_url }}">
-        <span>改善</span><h3>局所排気装置の定期点検記録</h3><p>点検記録で押さえたい項目と、記録を残すときの実務上の考え方を確認します。</p><strong>回答を見る →</strong>
+      <a class="measurement-article-card" href="{{ '/guides/local-exhaust-ventilation-basics/' | relative_url }}">
+        <span>改善</span><h3>局所排気装置の基礎</h3><p>発散源で捕捉する原理、フード・ダクト・排風機と性能確認の基本を確認します。</p><strong>基礎から読む →</strong>
       </a>
     </div>
   </section>

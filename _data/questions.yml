@@ -11,9 +11,9 @@
   status: answered
   url: /qa/third-control-class/
 
-- title: 局所排気装置の定期点検はどこまで記録すべき？
-  summary: 点検記録の最低ラインと監査対応を整理。
-  key_answer: いつ・誰が・何を点検し、どう是正したかまで残す。
+- title: 局所排気装置は、どの頻度で点検し、何を記録する？
+  summary: 適用規則ごとの点検周期と記録を整理。
+  key_answer: 作業主任者による点検と定期自主検査を区別し、法定項目と是正を記録する。
   tags:
     - 局所排気
     - 定期点検

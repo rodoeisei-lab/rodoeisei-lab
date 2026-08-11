@@ -31,7 +31,7 @@ permalink: /personal-exposure-measurement/
 <li><span class="chemical-step-number">04</span><span><strong>測定をデザインする</strong><small>物質、採取・分析方法、人数、測定時間、短時間作業、作業記録、定量下限を決めます。</small></span></li>
 <li><span class="chemical-step-number">05</span><span><strong>サンプリングを行う</strong><small>採取口を呼吸域へ配置し、適切なポンプ・捕集材を選び、前後の流量、装着状態、作業内容と時間を記録します。</small></span></li>
 <li><span class="chemical-step-number">06</span><span><strong>分析・評価する</strong><small>測定濃度、時間荷重平均、八時間・短時間濃度基準値、ばらつきと評価基準を確認します。管理濃度とは区別します。</small></span></li>
-<li><span class="chemical-step-number">07</span><span><strong>対策と再確認につなげる</strong><small>代替、密閉化、局所排気、全体換気、作業方法・時間、保護具を見直し、対策後に再測定します。</small></span></li>
+<li><span class="chemical-step-number">07</span><span><strong>対策と再確認につなげる</strong><small>代替、密閉化、<a href="{{ '/guides/local-exhaust-ventilation-basics/' | relative_url }}">局所排気</a>、全体換気、作業方法・時間、保護具を見直し、対策後に再測定します。</small></span></li>
 </ol>
 </section>
 

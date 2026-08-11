@@ -37,8 +37,8 @@ description: 現場でよく出る労働衛生の疑問を、質問→回答→�
 
     <article class="qa-list-card">
       <span class="qa-list-category">設備管理</span>
-      <h2>局所排気装置の点検は、どの頻度で確認すればよい？</h2>
-      <p>法定点検の周期を軸に、日常点検・月次確認・異常時対応を組み合わせて運用するのが実務的です。</p>
+      <h2>局所排気装置は、どの頻度で点検し、何を記録する？</h2>
+      <p>適用規則ごとに、作業主任者による点検と定期自主検査の周期・記録を区別して確認します。</p>
       <a href="{{ '/qa/local-exhaust-inspection/' | relative_url }}">回答を見る</a>
     </article>
 
