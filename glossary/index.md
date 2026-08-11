@@ -2,7 +2,7 @@
 title: 用語集
 description: 初学者と実務担当者向けに、管理濃度・TWA・フィットテストなど労働衛生キーワードを短く確認できる用語集。
 eyebrow: 用語集
-lead: 管理区分・所定地点・フィットファクタなど、最小の定義から確認できます。
+lead: 管理区分・個人ばく露測定・フィットファクタなど、最小の定義から確認できます。
 permalink: /glossary/
 ---
 
@@ -39,6 +39,9 @@ permalink: /glossary/
       {% if entry.term == "フィットテスト" or entry.term == "フィットファクタ" %}
         <p><a href="{{ '/guides/fit-test/' | relative_url }}">この用語が出てくる「フィットテスト導入ガイド」を読む</a></p>
         <p><a href="{{ '/updates/ppe-checklist/' | relative_url }}">運用面の更新情報「PPE点検ルール」を確認する</a></p>
+      {% elsif entry.term == "個人ばく露測定" or entry.term == "個人サンプリング法" or entry.term == "C測定" or entry.term == "D測定" or entry.term == "確認測定" or entry.term == "呼吸域" or entry.term == "均等ばく露作業" or entry.term == "最大ばく露労働者" or entry.term == "八時間濃度基準値" or entry.term == "短時間濃度基準値" %}
+        <p><a href="{{ '/guides/personal-exposure-measurement-basics/' | relative_url }}">個人ばく露測定の目的と進め方を入門記事で確認する</a></p>
+        <p><a href="{{ '/personal-exposure-measurement/' | relative_url }}">個人ばく露測定カテゴリを見る</a></p>
       {% elsif entry.term == "管理区分" or entry.term == "作業環境測定" %}
         <p><a href="{{ '/guides/work-env-measurement-intro/' | relative_url }}">測定評価の流れを「作業環境測定の超入門」で確認する</a></p>
         <p><a href="{{ '/updates/' | relative_url }}">測定制度に関する最新の更新情報を見る</a></p>

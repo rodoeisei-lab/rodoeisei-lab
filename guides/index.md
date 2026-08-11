@@ -33,7 +33,7 @@ permalink: /guides/
 {% endif %}
 
 <h2 id="getting-started">まず最初に読む（全体像）</h2>
-<p>はじめて読む方向けに、全体像をつかむ3本を先に案内します。</p>
+<p>初めて読む方向けに、公開中の基礎記事を先に案内します。</p>
 {% assign featured_guides = site.guides | where: "status", "published" | where: "featured", true %}
 <div class="cards guides-cards">
   {% for guide in featured_guides %}
@@ -74,7 +74,7 @@ permalink: /guides/
 
 ## FAQ
 ### Q1. どの記事から読むべきですか？
-**A.** 迷ったら「まず最初に読む（全体像）」の3本から始めるのがおすすめです。
+**A.** 迷ったら「まず最初に読む（全体像）」の公開中の記事から始めるのがおすすめです。
 
 ### Q2. 法令や数値の確認はどこでするべき？
 **A.** 記事内の一次情報の参照先を起点に、最新の法令や通達で要確認です。
