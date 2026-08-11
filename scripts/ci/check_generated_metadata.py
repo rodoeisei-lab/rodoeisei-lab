@@ -32,8 +32,11 @@ def main() -> int:
         [
             "/chemical-management/",
             "/occupational-health-consultant/",
-            "/guides/occupational-health-consultant-basics/",
         ],
+    )
+    require(
+        site / "occupational-health-consultant" / "index.html",
+        ["/guides/occupational-health-consultant-basics/"],
     )
     home_html = (site / "index.html").read_text(encoding="utf-8")
     if "/guides/organic-solvent-basics/" in home_html:
