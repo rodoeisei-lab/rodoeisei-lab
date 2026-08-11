@@ -67,6 +67,12 @@ sources:
     url: https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1
   - label: 厚生労働省「個人サンプリング法による作業環境測定の拡大等について」
     url: https://www.mhlw.go.jp/content/11201000/001181576.pdf
+youtube_videos:
+  - id: bKGj_WPXWrw
+    title: A測定とB測定、何が違う？
+    url: https://www.youtube.com/shorts/bKGj_WPXWrw
+    format: short
+    published_at: 2026-06-27
 ---
 
 ## 作業環境測定とは
@@ -117,7 +123,7 @@ sources:
 - 気中有害物質が広がると考えられる範囲
 - 換気設備の位置と稼働状況
 
-単位作業場所の設定や、測定点数・間隔などの具体的な要件は、対象と測定方法に応じて作業環境測定基準を確認する必要があります。詳しい設計方法は、今後公開予定の「デザインとサンプリング」で扱います。
+単位作業場所の設定や、測定点数・間隔などの具体的な要件は、対象と測定方法に応じて作業環境測定基準を確認する必要があります。詳しい設計方法は、[作業環境測定のデザインとサンプリング]({{ "/guides/work-environment-measurement-design-sampling/" | relative_url }})で確認できます。
 
 生成AIは確認項目や架空データの計算練習には使えますが、測定点や管理区分を決める根拠にはできません。[測定データとAI出力を人が検証する手順]({{ '/guides/ai-use-occupational-health-basics/' | relative_url }})も確認してください。
 

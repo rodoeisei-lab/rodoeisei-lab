@@ -28,7 +28,7 @@ permalink: /learn/
     %}
     {% include list-card.html
       title="動画"
-      description="移動中でも学べる短尺動画をまとめます。"
+      description="長編解説とShortsを、対応する詳しい記事とあわせて探せます。"
       link_url="/videos/"
       link_label="動画一覧へ →"
     %}

@@ -68,6 +68,11 @@ articles:
     description: 測定目的、対象者の選定、呼吸域でのサンプリング、結果の評価、C測定・D測定との違いを整理します。
     url: /guides/personal-exposure-measurement-basics/
     status: published
+  - title: 作業環境測定のデザインとは？測定点とA・B・C・D測定を整理
+    category: 作業環境測定
+    description: 事前調査、単位作業場所、測定点とA・B・C・D測定の違いを整理します。
+    url: /guides/work-environment-measurement-design-sampling/
+    status: published
   - title: 有機溶剤中毒予防規則とは？対象作業と管理の基本
     category: 化学物質管理
     description: 有機則の対象作業、換気、保護具、健康診断、SDS確認の入口を実務者向けにまとめます。

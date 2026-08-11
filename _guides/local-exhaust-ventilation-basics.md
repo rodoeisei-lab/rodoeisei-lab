@@ -33,6 +33,12 @@ sources:
   - { label: 特定化学物質障害予防規則, url: "https://laws.e-gov.go.jp/law/347M50002000039" }
   - { label: 鉛中毒予防規則, url: "https://laws.e-gov.go.jp/law/347M50002000037" }
   - { label: 粉じん障害防止規則, url: "https://laws.e-gov.go.jp/law/354M50002000018" }
+youtube_videos:
+  - id: rzLxcgSHayM
+    title: 局所排気装置があっても安全とは限らない
+    url: https://www.youtube.com/shorts/rzLxcgSHayM
+    format: short
+    published_at: 2026-06-25
 ---
 
 局所排気装置は、汚染物質が作業者の呼吸域や作業場全体へ広がる前に、**発散源の近くで捕捉して排出する設備**です。単に室内の空気を入れ替える「換気扇」ではありません。

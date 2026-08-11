@@ -68,7 +68,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/videos/", "/guides/work-environment-measurement-design-sampling/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -120,6 +120,14 @@ try {
     page.url.includes("/guides/work-env-measurement-intro/"),
   )) {
     throw new Error("Work environment measurement search did not return the category or introduction page.");
+  }
+
+
+  for (const query of ["YouTube", "動画", "Shorts", "デザイン", "サンプリング", "A測定", "B測定", "C測定", "D測定"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/videos/") || page.url.includes("/guides/work-environment-measurement-design-sampling/"))) {
+      throw new Error(`YouTube hub or design article is missing for query: ${query}`);
+    }
   }
 
   for (const query of ["GC2014", "月末在庫メモ"]) {

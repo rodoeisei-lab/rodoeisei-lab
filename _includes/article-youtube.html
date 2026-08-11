@@ -1,0 +1,15 @@
+<aside class="article-youtube" aria-labelledby="article-youtube-title">
+  <div class="article-youtube__heading">
+    <p class="article-youtube__eyebrow">動画と記事で学ぶ</p>
+    <h2 id="article-youtube-title">対応するYouTube動画</h2>
+    <p>動画で全体像を確認し、記事で根拠や注意点を確認できます。</p>
+  </div>
+  {% for video in include.videos %}
+  <article class="article-youtube__item">
+    <a class="article-youtube__thumbnail" href="{{ video.url }}" target="_blank" rel="noopener noreferrer">
+      <img src="https://i.ytimg.com/vi/{{ video.id }}/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="「{{ video.title }}」のYouTubeサムネイル">
+    </a>
+    <div><p class="video-card__meta"><span class="video-format">{% if video.format == "short" %}Shorts{% else %}長編解説{% endif %}</span><time datetime="{{ video.published_at }}">{{ video.published_at | date: "%Y年%-m月%-d日" }}</time></p><h3>{{ video.title }}</h3><a class="video-link video-link--youtube" href="{{ video.url }}" target="_blank" rel="noopener noreferrer">YouTubeで見る（外部）</a></div>
+  </article>
+  {% endfor %}
+</aside>
