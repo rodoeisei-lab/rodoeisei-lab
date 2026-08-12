@@ -189,6 +189,24 @@
   article_url: /guides/chemical-substance-manager-ppe-manager/
   checked_at: 2026-08-12
 
+- id: concentration-values-difference
+  question: 管理濃度・濃度基準値・許容濃度の違いは？
+  aliases:
+    - 管理濃度と濃度基準値の違いは？
+    - 濃度基準値と許容濃度の違いは？
+    - どの濃度基準と比較する？
+  search_query: 管理濃度 濃度基準値 許容濃度 違い
+  keywords:
+    - 管理濃度
+    - 濃度基準値
+    - 許容濃度
+    - 違い
+    - 比較
+  answer: 管理濃度は作業環境測定から管理区分を決める指標、濃度基準値は対象労働者のばく露を管理する法令上の基準、許容濃度は日本産業衛生学会の勧告値です。測定目的、平均時間、測定方法を確認して使い分けます。
+  article_title: 管理濃度・濃度基準値・許容濃度の違い｜何と比較する数値か
+  article_url: /guides/management-concentration-exposure-limits/
+  checked_at: 2026-08-12
+
 - id: local-exhaust-ventilation
   question: 局所排気装置とは？
   search_query: 局所排気装置

@@ -79,6 +79,16 @@ def main() -> int:
         ],
     )
     require(
+        site / "guides" / "management-concentration-exposure-limits" / "index.html",
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "2026年10月1日",
+            "/chemical-management/",
+            "/guides/personal-exposure-measurement-basics/",
+        ],
+    )
+    require(
         site / "search" / "index.html",
         [
             'new URLSearchParams(window.location.search).get("q")',

@@ -39,6 +39,9 @@ next_action:
   - 測定結果報告書の対象物質と単位作業場所を確認する
   - 評価値から管理区分までの記載を順にたどる
 related_links:
+  - title: 管理濃度・濃度基準値・許容濃度の違い
+    url: /guides/management-concentration-exposure-limits/
+    group: next
   - title: 個人ばく露測定の入門記事
     url: /guides/personal-exposure-measurement-basics/
     group: next

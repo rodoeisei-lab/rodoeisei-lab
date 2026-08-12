@@ -44,6 +44,9 @@ related_links:
   - title: 化学物質管理者と保護具着用管理責任者
     url: /guides/chemical-substance-manager-ppe-manager/
     group: next
+  - title: 管理濃度・濃度基準値・許容濃度の違い
+    url: /guides/management-concentration-exposure-limits/
+    group: next
   - title: 個人ばく露測定の入門記事
     url: /guides/personal-exposure-measurement-basics/
     group: next

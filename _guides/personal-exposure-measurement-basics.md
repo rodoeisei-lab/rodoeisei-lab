@@ -38,6 +38,9 @@ related_links:
   - title: 作業環境測定の超入門
     url: /guides/work-env-measurement-intro/
     group: next
+  - title: 管理濃度・濃度基準値・許容濃度の違い
+    url: /guides/management-concentration-exposure-limits/
+    group: next
 sources:
   - label: 厚生労働省「個人ばく露測定等関係」（令和8年7月30日 基発0730第2号）
     url: https://www.mhlw.go.jp/content/11300000/001732756.pdf
