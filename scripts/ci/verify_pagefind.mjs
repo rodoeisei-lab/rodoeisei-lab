@@ -69,7 +69,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -105,6 +105,13 @@ try {
     const results = await search(query);
     if (!results.some((page) => page.url.includes("/guides/chemical-management-basics/"))) {
       throw new Error(`Chemical management introduction article is missing for query: ${query}`);
+    }
+  }
+
+  for (const query of ["化学物質管理者", "保護具着用管理責任者"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/guides/chemical-substance-manager-ppe-manager/"))) {
+      throw new Error(`Chemical or PPE manager article is missing for query: ${query}`);
     }
   }
 

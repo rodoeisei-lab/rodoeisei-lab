@@ -41,6 +41,9 @@ related_links:
   - title: 化学物質管理カテゴリ
     url: /chemical-management/
     group: next
+  - title: 化学物質管理者と保護具着用管理責任者
+    url: /guides/chemical-substance-manager-ppe-manager/
+    group: next
   - title: 個人ばく露測定の入門記事
     url: /guides/personal-exposure-measurement-basics/
     group: next

@@ -70,6 +70,15 @@ def main() -> int:
     if "article-youtube" in intro_html:
         raise SystemExit("Article without youtube_videos rendered an empty video module")
     require(
+        site / "guides" / "chemical-substance-manager-ppe-manager" / "index.html",
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "選任事由の発生日から14日以内",
+            "/chemical-management/",
+        ],
+    )
+    require(
         site / "search" / "index.html",
         [
             'new URLSearchParams(window.location.search).get("q")',

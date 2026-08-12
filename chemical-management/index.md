@@ -19,7 +19,7 @@ permalink: /chemical-management/
       <li><span class="chemical-step-number">01</span><span><strong>使用製品・化学物質の把握</strong><small>製品名、使用場所、使用量、作業内容を一覧にする</small></span></li>
       <li><span class="chemical-step-number">02</span><span><strong>ラベル・SDSの確認</strong><small>危険有害性、成分、取扱方法、ばく露防止措置、法規制情報を確認する</small></span></li>
       <li><span class="chemical-step-number">03</span><span><strong>適用される法令・制度の確認</strong><small>リスクアセスメント対象物、有機則・特化則・鉛則などの該当性を確認する</small></span></li>
-      <li><span class="chemical-step-number">04</span><span><strong>管理体制の確認</strong><small>化学物質管理者、保護具着用管理責任者などの選任要否を確認する</small></span></li>
+      <li><span class="chemical-step-number">04</span><span><strong>管理体制の確認</strong><small><a href="{{ '/guides/chemical-substance-manager-ppe-manager/' | relative_url }}">化学物質管理者、保護具着用管理責任者</a>などの選任要否を確認する</small></span></li>
       <li><span class="chemical-step-number">05</span><span><strong>リスクアセスメント</strong><small>健康障害だけでなく、火災・爆発などの危険性も評価する</small></span></li>
       <li><span class="chemical-step-number">06</span><span><strong>リスク低減措置</strong><small>原材料・工程の変更、<a href="{{ '/local-exhaust-ventilation/' | relative_url }}">局所排気装置などの工学的対策</a>、管理的対策、個人用保護具の順に検討する</small></span></li>
       <li><span class="chemical-step-number">07</span><span><strong>ばく露状況の確認</strong><small>濃度基準値、作業環境測定、<a href="{{ '/guides/personal-exposure-measurement-basics/' | relative_url }}">個人ばく露測定</a>を適用条件に応じて使い分ける</small></span></li>
