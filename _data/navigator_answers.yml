@@ -225,6 +225,25 @@
   article_url: /guides/create-simple-guide/
   checked_at: 2026-08-12
 
+- id: skin-hazard-protective-gloves
+  question: 皮膚等障害化学物質等には、どの化学防護手袋を選ぶ？
+  aliases:
+    - 皮膚等障害化学物質とは？
+    - 不浸透性の保護手袋とは？
+    - ニトリル手袋なら大丈夫？
+  search_query: 皮膚等障害化学物質 化学防護手袋 選び方
+  keywords:
+    - 皮膚等障害化学物質
+    - 化学防護手袋
+    - 保護手袋
+    - 不浸透性
+    - 耐透過性能
+    - 破過時間
+  answer: まず最新版SDSと厚生労働省の公式一覧で、成分、CAS番号、含有率、適用日を確認します。手袋はニトリルなどの材質名だけで決めず、物質・濃度・作業時間・接触の程度に対する実製品の耐透過性能、耐浸透性能、厚さ、使用可能時間を確認します。
+  article_title: 皮膚等障害化学物質等とは？化学防護手袋の選び方・使い方
+  article_url: /guides/skin-hazard-chemicals-protective-gloves/
+  checked_at: 2026-08-12
+
 - id: local-exhaust-ventilation
   question: 局所排気装置とは？
   search_query: 局所排気装置

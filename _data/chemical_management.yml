@@ -30,8 +30,8 @@
   section: 評価・対策
 - title: 皮膚等障害化学物質等と保護手袋の考え方
   description: 皮膚からの吸収や障害を防ぐための確認と選定の考え方を整理します。
-  status: wip
-  url:
+  status: published
+  url: /guides/skin-hazard-chemicals-protective-gloves/
   section: 保護具
 - title: 有機溶剤中毒予防規則の基本
   description: 対象となる物質・作業と措置を確認する入口を整理します。

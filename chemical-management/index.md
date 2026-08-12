@@ -21,7 +21,7 @@ permalink: /chemical-management/
       <li><span class="chemical-step-number">03</span><span><strong>適用される法令・制度の確認</strong><small>リスクアセスメント対象物、有機則・特化則・鉛則などの該当性を確認する</small></span></li>
       <li><span class="chemical-step-number">04</span><span><strong>管理体制の確認</strong><small><a href="{{ '/guides/chemical-substance-manager-ppe-manager/' | relative_url }}">化学物質管理者、保護具着用管理責任者</a>などの選任要否を確認する</small></span></li>
       <li><span class="chemical-step-number">05</span><span><strong>リスクアセスメント</strong><small><a href="{{ '/guides/create-simple-guide/' | relative_url }}">CREATE-SIMPLEなどの支援ツール</a>も活用し、健康障害と火災・爆発などの危険性を評価する</small></span></li>
-      <li><span class="chemical-step-number">06</span><span><strong>リスク低減措置</strong><small>原材料・工程の変更、<a href="{{ '/local-exhaust-ventilation/' | relative_url }}">局所排気装置などの工学的対策</a>、管理的対策、個人用保護具の順に検討する</small></span></li>
+      <li><span class="chemical-step-number">06</span><span><strong>リスク低減措置</strong><small>原材料・工程の変更、<a href="{{ '/local-exhaust-ventilation/' | relative_url }}">局所排気装置などの工学的対策</a>、管理的対策、<a href="{{ '/guides/skin-hazard-chemicals-protective-gloves/' | relative_url }}">化学防護手袋などの個人用保護具</a>の順に検討する</small></span></li>
       <li><span class="chemical-step-number">07</span><span><strong>ばく露状況の確認</strong><small><a href="{{ '/guides/management-concentration-exposure-limits/' | relative_url }}">管理濃度・濃度基準値・許容濃度</a>を区別し、作業環境測定と個人ばく露測定を使い分ける</small></span></li>
       <li><span class="chemical-step-number">08</span><span><strong>記録・周知・教育</strong><small>評価と対策を記録し、関係する労働者へ周知する</small></span></li>
       <li><span class="chemical-step-number">09</span><span><strong>定期的な見直し</strong><small>物質、工程、設備、作業方法、SDS、法令などの変更時にも見直す</small></span></li>
@@ -78,6 +78,6 @@ permalink: /chemical-management/
   <aside class="chemical-disclaimer">
     <strong>確認上の注意</strong>
     <p>本ページは制度の全体像を整理するものです。個別の法令適用は、物質、含有率、作業内容、設備、使用条件等によって異なります。最終判断は最新の法令、告示、通達、厚生労働省資料等で確認してください。</p>
-    <p>最終確認日：2026年8月10日</p>
+    <p>最終確認日：2026年8月12日</p>
   </aside>
 </div>
