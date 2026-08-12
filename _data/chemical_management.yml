@@ -25,8 +25,8 @@
   section: ばく露管理
 - title: CREATE-SIMPLEの基本的な使い方
   description: 支援ツールを用いたリスクの見積りと結果の読み方を整理します。
-  status: wip
-  url:
+  status: published
+  url: /guides/create-simple-guide/
   section: 評価・対策
 - title: 皮膚等障害化学物質等と保護手袋の考え方
   description: 皮膚からの吸収や障害を防ぐための確認と選定の考え方を整理します。

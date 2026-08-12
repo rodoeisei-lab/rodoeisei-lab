@@ -69,7 +69,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -119,6 +119,13 @@ try {
     const results = await search(query);
     if (!results.some((page) => page.url.includes("/guides/management-concentration-exposure-limits/"))) {
       throw new Error(`Concentration values article is missing for query: ${query}`);
+    }
+  }
+
+  for (const query of ["CREATE-SIMPLE", "クリエイト・シンプル", "リスクレベルⅡ-B"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/guides/create-simple-guide/"))) {
+      throw new Error(`CREATE-SIMPLE article is missing for query: ${query}`);
     }
   }
 

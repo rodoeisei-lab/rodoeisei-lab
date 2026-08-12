@@ -44,6 +44,9 @@ related_links:
   - title: 化学物質管理者と保護具着用管理責任者
     url: /guides/chemical-substance-manager-ppe-manager/
     group: next
+  - title: CREATE-SIMPLEの使い方
+    url: /guides/create-simple-guide/
+    group: next
   - title: 管理濃度・濃度基準値・許容濃度の違い
     url: /guides/management-concentration-exposure-limits/
     group: next
@@ -194,7 +197,7 @@ SDSは供給者が示す一般的な製品情報です。実際の使用量、�
 - 皮膚や眼への接触
 - 漏えいなどの異常時、清掃時、保守時の作業
 
-厚生労働省のCREATE-SIMPLEなどの支援ツールは、情報を整理し、リスクを見積もる助けになります。ただし、入力するだけで個別の法令判断や専門的評価がすべて完了するものではありません。適用範囲と限界を理解し、必要に応じて測定や専門家の評価を組み合わせます。
+厚生労働省の[CREATE-SIMPLE]({{ '/guides/create-simple-guide/' | relative_url }})などの支援ツールは、情報を整理し、リスクを見積もる助けになります。ただし、入力するだけで個別の法令判断や専門的評価がすべて完了するものではありません。適用範囲と限界を理解し、必要に応じて測定や専門家の評価を組み合わせます。
 
 法令上の義務対象ではない製品でも、危険性・有害性があり、作業者に影響するおそれがあれば、実務上の安全対策を検討することが大切です。法的義務と自主的な改善を区別して記録します。
 
