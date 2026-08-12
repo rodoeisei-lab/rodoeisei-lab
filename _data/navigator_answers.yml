@@ -207,6 +207,24 @@
   article_url: /guides/management-concentration-exposure-limits/
   checked_at: 2026-08-12
 
+- id: create-simple
+  question: CREATE-SIMPLEの使い方は？
+  aliases:
+    - CREATE-SIMPLEとは？
+    - クリエイト・シンプルの使い方は？
+    - CREATE-SIMPLEで何ができる？
+  search_query: CREATE-SIMPLE 使い方 入力 リスクレベル
+  keywords:
+    - CREATE-SIMPLE
+    - クリエイト・シンプル
+    - リスクアセスメント
+    - リスクレベル
+    - 使い方
+  answer: CREATE-SIMPLEは、SDSの成分情報と取扱量、換気、作業時間、皮膚接触などの作業条件から、吸入・経皮ばく露と危険性を簡易に見積もる厚生労働省の無料Excelツールです。最新版を使い、作業ごとに入力して、対策後の再判定と必要な測定へつなげます。
+  article_title: CREATE-SIMPLEの使い方｜入力項目・結果の見方・注意点
+  article_url: /guides/create-simple-guide/
+  checked_at: 2026-08-12
+
 - id: local-exhaust-ventilation
   question: 局所排気装置とは？
   search_query: 局所排気装置

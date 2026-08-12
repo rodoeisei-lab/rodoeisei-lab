@@ -89,6 +89,17 @@ def main() -> int:
         ],
     )
     require(
+        site / "guides" / "create-simple-guide" / "index.html",
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "CREATE-SIMPLE ver.3.2.1",
+            "リスクレベルⅡ-B",
+            "/chemical-management/",
+            "/guides/management-concentration-exposure-limits/",
+        ],
+    )
+    require(
         site / "search" / "index.html",
         [
             'new URLSearchParams(window.location.search).get("q")',

@@ -44,6 +44,9 @@ related_links:
   - title: 労働衛生用語集
     url: /glossary/
     group: related
+  - title: CREATE-SIMPLEの使い方
+    url: /guides/create-simple-guide/
+    group: related
 sources:
   - label: 厚生労働省「作業環境評価基準」
     url: https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1
