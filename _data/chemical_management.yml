@@ -20,8 +20,8 @@
   section: 管理体制
 - title: 管理濃度・濃度基準値・許容濃度の違い
   description: 目的の異なる濃度指標を混同せずに使うための基礎を整理します。
-  status: wip
-  url:
+  status: published
+  url: /guides/management-concentration-exposure-limits/
   section: ばく露管理
 - title: CREATE-SIMPLEの基本的な使い方
   description: 支援ツールを用いたリスクの見積りと結果の読み方を整理します。
