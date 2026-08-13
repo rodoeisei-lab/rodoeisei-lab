@@ -1,95 +1,68 @@
-- title: 保護具（PPE）
-  guide:
-    - 作業内容とばく露リスクで必要性能を決める。
-    - サイズとフィット感が合うかを必ず確認する。
-    - 交換時期を基準化して在庫切れを防ぐ。
-  cards:
-    - title: 防じんマスク（基本モデル）
-      description: まず最初に検討する定番タイプ。
-      link: /amazon/#respiratory-protection
-      link_label: 商品を見る →
-      amazon_link: https://amzn.to/49ZC0XX
-    - title: フィルタ交換式面体
-      description: コストと性能のバランス重視。
-      link: /amazon/#respiratory-protection
-      link_label: 商品を見る →
-    - title: 耐薬品グローブ
-      description: 溶剤作業向けに材質を選ぶ。
-      link: /amazon/#hand-protection
-      link_label: 商品を見る →
-      amazon_link: https://amzn.to/4qvyMkW
-  alternatives:
-    - 安い: 使い捨て簡易マスク
-    - 軽い: 軽量バルブ付きマスク
-    - 頑丈: 再利用前提の高耐久面体
-- title: 測定器材
-  guide:
-    - 測定対象（粉じん/溶剤）で機器の型式を選ぶ。
-    - 校正の手順と頻度を現場に合わせて明記する。
-    - 記録フォーマットを1種類に統一する。
-  cards:
-    - title: サンプリングポンプ
-      description: 携帯性と連続稼働時間を重視。
-      link: /amazon/#measurement-inspection
-      link_label: 商品を見る →
-    - title: 校正用流量計
-      description: 測定前後の確認を簡略化。
-      link: /amazon/#measurement-inspection
-      link_label: 商品を見る →
-      amazon_link: https://amzn.to/4jLNtgZ
-    - title: サンプルホルダー
-      description: 現場で扱いやすい標準タイプ。
-      link: /amazon/#measurement-inspection
-      link_label: 商品を見る →
-  alternatives:
-    - 安い: 手動ポンプ式の簡易セット
-    - 軽い: 小型バッテリー内蔵モデル
-    - 頑丈: 防塵ケース付きモデル
-- title: 記録・点検テンプレ
-  guide:
-    - 誰が見ても同じ判断ができる項目に絞る。
-    - 現場で書ける分量に抑える。
-    - 保存ルールと管理者を先に決める。
-  cards:
-    - title: フィットテスト記録シート
-      description: 面体・実施者・結果を1枚で管理。
-    - title: 作業環境測定ログ
-      description: 測定条件と結果を時系列で残す。
-    - title: 保護具点検チェック
-      description: 日次で抜け漏れが起きない設計。
-  alternatives:
-    - 安い: 既存Excelを最小項目にする
-    - 軽い: A4 1枚の簡易版
-    - 頑丈: 記録責任者印入りの正式版
-- title: 掲示・教育ツール
-  guide:
-    - 現場で1分で読めるサイズにする。
-    - 禁止事項より「やるべきこと」を先に書く。
-    - 更新日を必ず明記して差し替える。
-  cards:
-    - title: 保護具の着用ルール掲示
-      description: 着脱手順を図で示せるタイプ。
-    - title: 作業環境測定の注意喚起
-      description: 測定時の禁止行動を簡潔にまとめる。
-    - title: 教育用チェックリスト
-      description: 新人向けに基本項目を網羅。
-  alternatives:
-    - 安い: ラミネート掲示のみで運用
-    - 軽い: QRコードで電子配布
-    - 頑丈: 屋外対応の耐候素材
-- title: 現場共有ツール
-  guide:
-    - 担当者と締切が見える形式にする。
-    - 共有先を1つに集約して迷子を減らす。
-    - 更新履歴を残せる方法を選ぶ。
-  cards:
-    - title: 週次点検の進捗ボード
-      description: 誰が対応中か一目でわかる。
-    - title: 持ち出しチェック表
-      description: 保護具の貸出・返却を記録。
-    - title: 更新通知テンプレ
-      description: 法改正の共有を漏らさない。
-  alternatives:
-    - 安い: ホワイトボード運用
-    - 軽い: 共有チャットの固定メッセージ
-    - 頑丈: 紙と電子の二重管理
+- title: 呼吸用保護具
+  id: respiratory-protection
+  summary: 粒子、ガス・蒸気、酸欠など、空気中の危険性に応じて種類と性能を決めます。
+  checks:
+    - label: 対象物と状態
+      detail: 粉じん・ミストなどの粒子か、ガス・蒸気かを区別し、酸素濃度や濃度範囲も確認します。
+    - label: 必要な保護性能
+      detail: 指定防護係数、国家検定区分、ろ過材・吸収缶の種類が作業条件を満たすか確認します。
+    - label: 顔へのフィット
+      detail: 面体のサイズ、ひげや眼鏡の影響、シールチェック、対象作業で必要なフィットテストを確認します。
+  warning: DS2防じんマスクは粒子用です。有機溶剤蒸気・特定のガス・酸素欠乏空気には使用できません。酸欠のおそれがある作業では、作業条件に適合する送気マスク等を選定します。
+  amazon_url: /amazon/#respiratory-protection
+  related_url: /guides/fit-test/
+  related_label: フィットテストの解説
+
+- title: 目の保護具
+  id: eye-protection
+  summary: 飛来物、粉じん、液体飛沫などの侵入経路に合わせて、めがね形・ゴーグル形などを選びます。
+  checks:
+    - label: 危険源
+      detail: 飛来物、浮遊粉じん、薬液飛沫、光など、目に入る可能性があるものを特定します。
+    - label: 覆う範囲
+      detail: 側面保護、ガスケット、密閉性が必要かを確認し、通常の一眼形で足りるか判断します。
+    - label: 装着性
+      detail: 顔幅、鼻パッド、度付き眼鏡との併用、くもりやすさ、長時間着用時のずれを確認します。
+  warning: 一眼形保護めがねにはすき間があります。微細粉じんや液体飛沫では、リスクに応じてゴーグル形などを検討します。
+  amazon_url: /amazon/#eye-protection
+
+- title: 聴覚保護具
+  id: hearing-protection
+  summary: 騒音レベルと作業時間を基に、必要な遮音性能と着用を続けられる形状を選びます。
+  checks:
+    - label: 騒音ばく露
+      detail: 騒音レベル、周波数、ばく露時間を確認し、必要な減音量を見積もります。
+    - label: 遮音性能
+      detail: 耳栓・イヤーマフの性能表示を確認し、警報や会話が聞こえない過剰遮音も避けます。
+    - label: 装着と交換
+      detail: 正しい挿入方法、耳の形との相性、衛生管理、使い捨て・再使用の交換ルールを決めます。
+  warning: 高性能な耳栓でも、正しく挿入できなければ十分な遮音は得られません。着用教育と装着確認を組み合わせます。
+  amazon_url: /amazon/#hearing-protection
+
+- title: 作業用手袋・化学防護手袋
+  id: hand-protection
+  summary: 滑り止め、切創、熱、化学物質など、守る対象ごとに別の性能を確認します。
+  checks:
+    - label: 守る対象
+      detail: 摩擦・切創・熱・薬品のどれが主なリスクかを分け、一般作業用と化学防護用を混同しません。
+    - label: 材質と実製品
+      detail: 化学物質では材質名だけで決めず、物質、濃度、温度、接触時間に対する耐透過性能を確認します。
+    - label: 作業性と交換
+      detail: サイズ、指先感覚、袖口、再使用可否、汚染時の交換・脱ぎ方・廃棄方法を決めます。
+  warning: Amazon掲載の「アトム タフレッド」は一般作業用のグリップ手袋であり、化学防護手袋として紹介している商品ではありません。
+  amazon_url: /amazon/#hand-protection
+  related_url: /guides/skin-hazard-chemicals-protective-gloves/
+  related_label: 化学防護手袋の選び方
+
+- title: 簡易測定器
+  id: measurement-inspection
+  summary: 日常点検の目安に使う機器と、法令・正式記録に使う測定機器を区別します。
+  checks:
+    - label: 測定目的
+      detail: 異常の早期発見、改善前後の比較、法令上の判定など、何のために測るかを先に決めます。
+    - label: 測定範囲と精度
+      detail: 測定範囲、分解能、精度、応答時間が目的を満たすかを仕様書で確認します。
+    - label: 校正と記録
+      detail: 校正証明やトレーサビリティの要否、点検方法、測定位置・時刻を残せる運用かを確認します。
+  warning: 安価な簡易測定器の値だけで、法令適合や健康影響を断定しません。正式な判定には目的に合う測定方法と管理された機器が必要です。
+  amazon_url: /amazon/#measurement-inspection

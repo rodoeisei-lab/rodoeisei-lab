@@ -1,127 +1,82 @@
 - title: 呼吸用保護具
   id: respiratory-protection
-  guide:
-    - 作業の粉じん・蒸気の種類に合わせて区分を確認
-    - フィット性と装着負荷のバランスを重視
-    - 交換・保守の運用が回るタイプを選ぶ
+  selection_note: 対象物質と必要な保護性能を確認し、顔に合うサイズを選びます。
   items:
-    - name: DS2防じんマスク
-      note: 用途：粉じん作業の標準対策に。
-      bullets:
-        - 区分の目安を周知しやすい
-        - 短時間作業の導入に向く
-        - 交換運用を決めやすい
-      url: "https://amzn.to/49ZC0XX"
-    - name: 取替え式防じん防毒マスク
-      note: 用途：粉じんとガスが混在する作業に。
-      bullets:
-        - カートリッジ交換で継続運用が可能
-        - 面体サイズの選定がしやすい
-        - 教育用マニュアルに合わせやすい
-      url: ""
-    - name: 折りたたみ式防じんマスク
-      note: 用途：携行性を重視する現場に。
-      bullets:
-        - 収納性が高く配布しやすい
-        - 個包装で衛生管理が簡単
-      url: ""
+    - name: 3M Vフレックス 防じんマスク 9105J-DS2（20枚）
+      asin: B00AEZILG6
+      use_case: 粒子状物質に対する使い捨て式防じんマスクを検討するとき。
+      checks:
+        - 国家検定区分DS2が作業に必要な区分を満たすか
+        - レギュラーサイズが着用者の顔に合うか
+        - 正しい装着方法と交換ルールを運用できるか
+      caution: 有機溶剤蒸気・特定のガス・酸素欠乏空気には使用できません。対象物質、濃度、酸素濃度に応じて、防毒マスクや送気マスクなどを選びます。
+      url: https://amzn.to/49ZC0XX
+      source_label: 3M製品情報
+      source_url: https://www.3mcompany.jp/3M/ja_JP/p/d/b00037946/
+      checked_at: 2026-08-13
+
 - title: 目の保護
   id: eye-protection
-  guide:
-    - 粉じん・飛来物のリスクに合わせて密閉度を選ぶ
-    - くもり対策と視界の確保を優先
-    - 眼鏡併用の可否を確認
+  selection_note: 飛来物、粉じん、液体飛沫などに対して、必要な覆い方とフィットを確認します。
   items:
-    - name: 密閉型ゴーグル
-      note: 用途：粉じんや飛散物の多い作業に。
-      bullets:
-        - 目の周囲を広くカバー
-        - フィット感の調整がしやすい
-      url: ""
-    - name: 防曇保護めがね
-      note: 用途：屋内外の視界確保に。
-      bullets:
-        - くもりを抑えて作業効率を維持
-        - 軽量で長時間装着向き
-      url: "https://amzn.to/49FNU83"
-    - name: フェイスシールド
-      note: 用途：顔全体の飛沫・飛散対策に。
-      bullets:
-        - 広い視野で作業しやすい
-        - マスクや眼鏡と併用しやすい
-      url: ""
+    - name: 山本光学 SN-610 PAF 一眼形保護めがね
+      asin: B0D5YGFY1J
+      use_case: 飛来物や粉じんに対する一眼形保護めがねを検討するとき。
+      checks:
+        - 通常のSN-610とガスケット付きSN-610Gのどちらが作業に合うか
+        - 顔幅、鼻パッド、つるを調整してずれにくいか
+        - 必要な側面保護とレンズ性能を満たすか
+      caution: 微細粉じんや液体飛沫など、すき間からの侵入が問題になる作業では、ゴーグル形なども検討します。
+      url: https://amzn.to/49FNU83
+      source_label: 山本光学製品情報
+      source_url: https://yamamoto-kogaku.co.jp/safety/product/category01.php
+      checked_at: 2026-08-13
+
 - title: 騒音対策
   id: hearing-protection
-  guide:
-    - 現場の騒音レベルに合わせて遮音性能を確認
-    - 付け外しの頻度と装着性を考える
-    - 使い捨てか再利用かで運用を決める
+  selection_note: 必要な減音量と、正しい装着を継続できる形状の両方を確認します。
   items:
-    - name: イヤーマフ
-      note: 用途：高騒音エリアの定番対策に。
-      bullets:
-        - 装着確認がしやすい
-        - 教育・周知の標準化に向く
-      url: ""
-    - name: フォーム耳栓
-      note: 用途：携帯性重視の騒音対策に。
-      bullets:
-        - 使い切り運用で衛生管理が容易
-        - 予備を現場に配布しやすい
-      url: "https://amzn.to/3YMOZGd"
-    - name: 連結コード付き耳栓
-      note: 用途：頻繁な着脱がある作業に。
-      bullets:
-        - 紛失対策として扱いやすい
-        - 短時間作業の切替に便利
-      url: ""
+    - name: 3M E-A-R クラシック 耳栓（10ペア）
+      asin: B019CCJHT6
+      use_case: 使い捨てフォームタイプの耳栓を少量から試すとき。
+      checks:
+        - 現場の騒音に対して必要な遮音性能を満たすか
+        - 正しい挿入方法で耳にフィットするか
+        - 1日を目安とする交換を含め、衛生的に管理できるか
+      caution: 耳栓の性能値だけで決めず、警報音や会話の聞こえ方、実際の装着状態も確認します。
+      url: https://amzn.to/3YMOZGd
+      source_label: 3M製品情報
+      source_url: https://www.3mcompany.jp/3M/ja_JP/p/d/b00017635/
+      checked_at: 2026-08-13
+
 - title: 手の保護
   id: hand-protection
-  guide:
-    - 作業リスクに合わせて耐切創・耐薬品を確認
-    - サイズ展開と着脱のしやすさを重視
-    - 使い捨てと再利用の区分を明確にする
+  selection_note: 一般作業用のグリップ手袋と、化学防護手袋を明確に区別します。
   items:
-    - name: ニトリル手袋
-      note: 用途：軽作業や清掃の標準対策に。
-      bullets:
-        - 使い捨て運用で衛生管理が容易
-        - グリップ感があり作業しやすい
-      url: ""
-    - name: 耐切創手袋
-      note: 用途：刃物や鋭利材の取り扱いに。
-      bullets:
-        - 切創リスクの低減に役立つ
-        - 反復作業でも耐久性を確保
-      url: ""
-    - name: 作業用グリップ手袋
-      note: 用途：薬品の取り扱い作業に。
-      bullets:
-        - 取り扱い薬品に合わせて選定可能
-        - 長時間作業の安全確保に
-      url: "https://amzn.to/4qvyMkW"
-- title: 測定・点検
+    - name: アトム タフレッド 3双組 1470-3P
+      asin: B003AQDR1A
+      use_case: 運搬、流通、園芸などで、通気性と滑り止めを重視する一般作業。
+      checks:
+        - SSからLまでのサイズから手に合うものを選べるか
+        - 天然ゴムの手のひらコーティングが作業に適するか
+        - 切創、熱、化学物質など別の保護性能が必要ではないか
+      caution: この商品を化学防護手袋として紹介しているものではありません。薬品作業では、対象物質に対する実製品の耐透過性能などを別途確認します。
+      url: https://amzn.to/4qvyMkW
+      source_label: アトム製品情報
+      source_url: https://www.atom-glove.co.jp/products/list/detail?id=709
+      checked_at: 2026-08-13
+
+- title: 簡易測定
   id: measurement-inspection
-  guide:
-    - 日常点検は簡易計測で回せるかを確認
-    - 記録の残しやすさを優先
-    - 校正や点検の運用を見据える
+  selection_note: 日常点検の目安と、法令上・正式記録用の測定を区別します。
   items:
-    - name: 騒音計（簡易チェック用）
-      note: 用途：現場の一次スクリーニングに。
-      bullets:
-        - 点検記録のベース作りに役立つ
-        - 社内共有の説明資料に使える
-      url: ""
-    - name: 照度計
-      note: 用途：作業場の明るさ確認に。
-      bullets:
-        - 点検項目に入れやすい
-        - 記録の比較がしやすい
-      url: "https://amzn.to/4jLNtgZ"
-    - name: CO2濃度計
-      note: 用途：換気状態の目安確認に。
-      bullets:
-        - 定期チェックの指標に使える
-        - 目安値の周知に向く
-      url: ""
+    - name: FieldNew デジタル照度計
+      asin: B0CVRWB5C1
+      use_case: 作業場所の明るさを日常点検で確認し、場所や時期による変化を見るとき。
+      checks:
+        - 測定範囲、分解能、精度が目的を満たすか
+        - センサーの向きと測定位置をそろえて記録できるか
+        - 校正証明やトレーサビリティが必要な測定ではないか
+      caution: 簡易チェック用として掲載しています。法令上の適否判定や証明が必要な測定では、目的に合う校正・管理された機器と測定方法を用います。
+      url: https://amzn.to/4jLNtgZ
+      checked_at: 2026-08-13

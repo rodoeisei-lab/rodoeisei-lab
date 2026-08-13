@@ -24,7 +24,7 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant", "videos"):
+    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant", "videos", "tools", "products", "amazon"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
 
     require(
@@ -99,6 +99,49 @@ def main() -> int:
             "/guides/management-concentration-exposure-limits/",
         ],
     )
+
+    tools_html = (site / "tools" / "index.html").read_text(encoding="utf-8")
+    require(
+        site / "tools" / "index.html",
+        [
+            "/products/",
+            "/amazon/",
+            "選定基準と商品一覧を混ぜない",
+        ],
+    )
+    products_html = (site / "products" / "index.html").read_text(encoding="utf-8")
+    require(
+        site / "products" / "index.html",
+        [
+            "作業条件から道具を絞る",
+            "化学防護手袋として紹介している商品ではありません",
+            "/amazon/#hand-protection",
+        ],
+    )
+    if "amzn.to" in products_html:
+        raise SystemExit("Products page contains a direct Amazon affiliate link; keep affiliate links on /amazon/")
+
+    amazon_html = (site / "amazon" / "index.html").read_text(encoding="utf-8")
+    require(
+        site / "amazon" / "index.html",
+        [
+            "Amazonのアソシエイトとして、労働衛生ラボは適格販売により収入を得ています。",
+            "B00AEZILG6",
+            "B0D5YGFY1J",
+            "B019CCJHT6",
+            "B003AQDR1A",
+            "B0CVRWB5C1",
+        ],
+    )
+    if amazon_html.count("https://amzn.to/") != 5:
+        raise SystemExit("Amazon page must preserve exactly the five existing affiliate links")
+    if amazon_html.count('rel="noopener noreferrer sponsored"') != 5:
+        raise SystemExit("Every Amazon affiliate link must be marked sponsored")
+    if amazon_html.count("Amazonリンクはアフィリエイトリンクです。") != 5:
+        raise SystemExit("Every Amazon affiliate link needs a nearby disclosure")
+    if "薬品の取り扱い作業に" in amazon_html or "薬品の取り扱い作業に" in tools_html:
+        raise SystemExit("General-purpose grip gloves must not be described as chemical-protection gloves")
+
     require(
         site / "search" / "index.html",
         [

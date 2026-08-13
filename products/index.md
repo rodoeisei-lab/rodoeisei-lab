@@ -1,82 +1,67 @@
 ---
-title: 道具棚
-description: 衛生管理者・現場リーダー向けに、保護具・測定器材・記録テンプレの選定と更新ポイントを整理。
+title: 道具棚｜保護具・簡易測定器の選び方
+description: 呼吸用保護具、保護めがね、耳栓、作業用手袋、簡易測定器を商品名から選ばないための確認項目を整理。
 eyebrow: 道具棚
-lead: 現場で迷いやすい「選定・更新・保守」をシンプルに整理します。
+lead: 商品を見る前に、対象物・必要性能・サイズ・管理方法を確認するためのページです。
 permalink: /products/
 ---
 
-{% for section in site.data.products %}
-<section class="tools-category">
-  <h2>{{ section.title }}</h2>
-  <ul class="tools-guide">
-    {% for line in section.guide %}
-    <li>{{ line }}</li>
-    {% endfor %}
-  </ul>
-  <div class="cards">
-    {% for card in section.cards %}
-      {% assign link_url = card.link %}
-      {% assign meta_text = nil %}
-      {% if link_url == nil %}
-        {% assign meta_text = "準備中" %}
-      {% endif %}
-      {% capture card_body %}
-      {% if card.amazon_link %}
-      <p><a class="card-link" href="{{ card.amazon_link }}" target="_blank" rel="noopener noreferrer sponsored">Amazonリンク →</a></p>
-      {% endif %}
-      {% endcapture %}
-      {% include list-card.html
-        class="product-card"
-        title=card.title
-        description=card.description
-        meta=meta_text
-        body=card_body
-        link_url=link_url
-        link_label=card.link_label
-      %}
-    {% endfor %}
-  </div>
-  <div class="tools-alternatives">
+<div class="tools-shelf">
+  <section class="tools-intro" aria-labelledby="shelf-start-title">
+    <p class="section-kicker">使い方</p>
+    <h2 id="shelf-start-title">作業条件から道具を絞る</h2>
+    <ol class="tool-selection-steps">
+      <li><strong>危険源を確認</strong><span>粉じん、ガス・蒸気、飛来物、騒音、薬品などを特定します。</span></li>
+      <li><strong>必要性能を決定</strong><span>法令、リスクアセスメント、SDS、メーカー資料から必要な区分や性能を決めます。</span></li>
+      <li><strong>着用者・運用に合わせる</strong><span>サイズ、フィット、交換、保守、教育まで現場で回るかを確認します。</span></li>
+      <li><strong>商品を確認</strong><span>条件を満たす候補として、商品ページや販売ページを確認します。</span></li>
+    </ol>
+    <p><a class="cta-secondary" href="{{ '/amazon/' | relative_url }}">掲載中のAmazon商品5件を見る</a></p>
+  </section>
+
+  <nav class="tool-category-nav" aria-label="道具棚のカテゴリ">
+    <span>カテゴリ</span>
     <ul>
-      {% for alt in section.alternatives %}
-        {% for option in alt %}
-        <li><strong>{{ option[0] }}</strong>: {{ option[1] }}</li>
-        {% endfor %}
+      {% for section in site.data.products %}
+      <li><a href="#{{ section.id }}">{{ section.title }}</a></li>
       {% endfor %}
     </ul>
-  </div>
-</section>
-{% endfor %}
+  </nav>
 
-## 分かること
-- 保護具・測定器材・テンプレの選定基準と更新タイミング。
-- 現場で迷いやすい比較ポイント（費用・適合・運用負荷）。
-- 選定後の維持管理で必要な記録の観点。
+  {% for section in site.data.products %}
+  <section class="tools-category" id="{{ section.id }}">
+    <header class="tools-category-header">
+      <p class="section-kicker">{{ forloop.index | prepend: '0' }}</p>
+      <h2>{{ section.title }}</h2>
+      <p>{{ section.summary }}</p>
+    </header>
 
-## 対象読者
-- これから保護具や測定機器を選定する担当者。
-- 既存の道具を更新・見直したい管理者。
-- 記録テンプレを整えたい現場リーダー。
+    <div class="tool-check-grid">
+      {% for check in section.checks %}
+      <article class="tool-check-item">
+        <span class="tool-check-number" aria-hidden="true">{{ forloop.index }}</span>
+        <div>
+          <h3>{{ check.label }}</h3>
+          <p>{{ check.detail }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
 
-## 使い方
-1. カテゴリごとに必要な道具の概要を把握します。
-2. カードの解説とリンクで選定ポイントを確認します。
-3. 迷う場合は「代替案」の候補から再検討します。
+    <p class="tool-warning"><strong>注意：</strong>{{ section.warning }}</p>
 
-## FAQ
-### Q1. どの道具が必須か判断できません。
-**A.** 取り扱う物質と作業工程により変わるため、解説ページで要点を確認してから選定してください。
+    <div class="tool-category-actions">
+      <a class="cta-secondary" href="{{ section.amazon_url | relative_url }}">関連するAmazon掲載商品を見る</a>
+      {% if section.related_url %}
+      <a class="link-action" href="{{ section.related_url | relative_url }}">{{ section.related_label }} →</a>
+      {% endif %}
+    </div>
+  </section>
+  {% endfor %}
 
-### Q2. 購入後に見直すタイミングは？
-**A.** 法令改正、設備更新、現場の不具合が出たときが見直しの合図です。
-
-### Q3. テンプレはどこで活用すべきですか？
-**A.** 点検記録や教育記録の基礎として、監督署対応の資料整理にも使えます。
-
-## 関連ページ
-- [解説一覧]({{ "/guides/" | relative_url }})
-- [用語集]({{ "/glossary/" | relative_url }})
-- [労基署対策]({{ "/inspection/" | relative_url }})
-- [資格対策]({{ "/licenses/" | relative_url }})
-- [最新アップデート]({{ "/updates/" | relative_url }})
+  <section class="tools-policy" aria-labelledby="shelf-final-title">
+    <p class="section-kicker">最終確認</p>
+    <h2 id="shelf-final-title">販売ページだけで選定を完結させない</h2>
+    <p>Amazonの商品説明やレビューは候補確認には便利ですが、法令への適合、使用可能時間、必要な保護性能を保証する資料ではありません。正式な選定では、メーカーの仕様書・取扱説明書と現場条件を照合してください。</p>
+  </section>
+</div>
