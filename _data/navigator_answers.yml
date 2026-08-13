@@ -244,6 +244,24 @@
   article_url: /guides/skin-hazard-chemicals-protective-gloves/
   checked_at: 2026-08-12
 
+- id: tools-shelf-amazon
+  question: 道具棚とAmazon商品一覧はどう使い分ける？
+  aliases:
+    - 労働衛生の道具はどこで探す？
+    - 保護具の選び方と商品を見たい
+    - Amazonの掲載商品を見たい
+  search_query: 道具棚 Amazon 保護具 選び方 商品
+  keywords:
+    - 道具棚
+    - Amazon
+    - 保護具
+    - 簡易測定器
+    - 選び方
+  answer: 先に道具棚で、対象物、必要性能、サイズ、交換・管理方法を確認します。その条件を満たす候補を探す段階でAmazon商品一覧を使います。Amazon掲載順はランキングではなく、販売ページだけで法令適合や保護性能を判断しません。
+  article_title: ツール｜道具棚とAmazon商品一覧
+  article_url: /tools/
+  checked_at: 2026-08-13
+
 - id: local-exhaust-ventilation
   question: 局所排気装置とは？
   search_query: 局所排気装置
