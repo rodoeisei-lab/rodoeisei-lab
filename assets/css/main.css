@@ -152,13 +152,9 @@ button,a,input,select,textarea{touch-action:manipulation}
 .lev-airflow{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;padding:0;list-style:none;counter-reset:airflow}
 .lev-airflow li{display:flex;align-items:center;min-height:48px;padding:10px 14px;border:1px solid var(--color-border);border-radius:10px;background:#f8fafc;font-weight:750}
 .lev-airflow li:not(:last-child)::after{content:"→";margin-left:18px;color:var(--color-primary)}
-.qa-mobile-mockup{max-width:960px;margin:auto}
-.ios-browser-bar{display:none}
-.qa-hero-card,.qa-search-card{padding:20px;background:var(--color-blue-soft);border:1px solid var(--color-border)}
-.qa-hero-card h2{margin:0;font-size:26px}
-.qa-search-card input{width:100%;min-height:50px;padding:10px 14px;border:1px solid var(--color-border);border-radius:10px;font-size:16px}
-.qa-filter-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.qa-filter-chip{font-size:14px}
+.qa-hub{max-width:960px;margin:auto}
+.qa-hub>.filter-search{margin-top:24px}
+.qa-hub>.card:last-of-type{margin-top:24px}
 .qa-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
 .regulations-table-wrap,.comparison-table-wrap{max-width:100%;overflow:auto}
 .regulations-list,.regulations-related__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
