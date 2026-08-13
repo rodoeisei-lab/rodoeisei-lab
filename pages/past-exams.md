@@ -1,83 +1,66 @@
 ---
 layout: page
-title: 過去問（公式）リンク集
+title: 過去問（公式）
 permalink: /past-exams/
+description: 作業環境測定士、衛生管理者、労働衛生コンサルタントの公表試験問題を、公式ページから確認できるリンク集です。
+eyebrow: 資格対策
+lead: 受験する資格を選び、公式の問題・正答へ進めます。
+updated_at: 2026-08-14
 ---
 
-## 過去問（公式）リンク集（外部リンク）
-
-<div class="notice-box past-exams-contribute">
-<strong>このページを一緒に育てる</strong><br>
-リンクの追加提案や、リンク切れ・誤記の報告を歓迎しています。
-<div class="cta-buttons past-exams-actions">
-  <a class="btn-step-primary" href="{{ site.community.question_issue_url }}" target="_blank" rel="noopener noreferrer">リンク追加</a>
-  <a class="btn-step" href="{{ site.qa_form_url }}" target="_blank" rel="noopener noreferrer">リンク切れ/誤記報告</a>
-</div>
+<div class="card">
+  <h2>公式の過去問を選ぶ</h2>
+  <p>安全衛生技術試験協会が公開している、公表試験問題の一覧ページを資格別にまとめています。</p>
+  <p><small>リンク確認：{{ page.updated_at | date: "%Y年%-m月%-d日" }}</small></p>
 </div>
 
-このページは、各団体が公開している「公表試験問題」等の**公式ページへのリンク集**です。
-このページの目的は、学習に必要な一次情報へ最短で辿れるようにすることです。
+<div class="cards">
+  <article class="card">
+    <h2>作業環境測定士</h2>
+    <p>第一種・第二種の共通科目と、第一種の選択科目の問題・正答を確認できます。</p>
+    <a class="link-action" href="https://www.exam.or.jp/emkohyo/" target="_blank" rel="noopener noreferrer">公式の公表試験問題を開く ↗</a>
+  </article>
 
-<div class="exam-page-lead">
-  <p><strong>資格対策をすぐ始めたい方へ。</strong> 作業環境測定士・第1種衛生管理者・労働衛生コンサルタントの<strong>公式ページへの外部リンク</strong>をまとめています。</p>
+  <article class="card">
+    <h2>衛生管理者</h2>
+    <p>免許試験の一覧ページ内に、第一種・第二種衛生管理者の問題・正答があります。</p>
+    <a class="link-action" href="https://www.exam.or.jp/lckohyo/" target="_blank" rel="noopener noreferrer">公式の公表試験問題を開く ↗</a>
+  </article>
+
+  <article class="card">
+    <h2>労働衛生コンサルタント</h2>
+    <p>労働衛生一般・関係法令・健康管理・労働衛生工学の問題を確認できます。</p>
+    <a class="link-action" href="https://www.exam.or.jp/cskohyo/" target="_blank" rel="noopener noreferrer">公式の公表試験問題を開く ↗</a>
+  </article>
 </div>
 
-<details class="past-exams-about">
-<summary>このページについて（解説）</summary>
+## 過去問の使い方
 
-- 本ページは**リンクのみ**を掲載します（PDF/問題文/解答の転載・再配布はしません）。
-- 掲載先は**外部サイト（各団体の公式ページ）**のみです。
-- URLは変更されることがあります。リンク切れ時は各団体トップページから辿ってください。
-
-</details>
+1. 公式ページで、受験する資格・科目の問題と正答を開きます。
+2. まず1回分を解き、間違えた問題を「論点・根拠・間違えた理由」に分けます。
+3. 現行の法令や制度を確認してから、同じ論点を解き直します。
 
 <div class="notice-box">
-<strong>重要（著作権・運用）</strong><br>
-- 本ページは<strong>リンクのみ</strong>を掲載します（PDF/問題文/解答の転載・再配布はしません）。<br>
-- すべて<strong>外部サイト（各団体の公式ページ）</strong>へのリンクです。<br>
-- URLは変更されることがあります。リンク切れの場合は、各団体のトップから辿ってください。
+  <strong>確認上の注意</strong><br>
+  公表試験問題は、出題・掲載された時点の内容です。法令改正後の学習では、公式ページの注意事項と最新の法令・試験案内を確認してください。本ページは問題文やPDFを転載せず、公式ページへのリンクのみを掲載しています。
 </div>
 
-## 作業環境測定士
+## 関連ページ
 
-<div class="link-card">
-  <div class="link-title">公表試験問題（作業環境測定士）｜公益財団法人 安全衛生技術試験協会</div>
-  <a class="link-action" href="https://www.exam.or.jp/emkohyo/" target="_blank" rel="noopener noreferrer">公式ページを開く ↗</a>
-  <div class="link-domain">www.exam.or.jp</div>
+<div class="cards">
+  <article class="card">
+    <h3>資格対策</h3>
+    <p>資格ごとの学習の焦点と、過去問を復習するときの記録方法を確認します。</p>
+    <a href="{{ '/licenses/' | relative_url }}">資格対策を見る →</a>
+  </article>
+  <article class="card">
+    <h3>作業環境測定</h3>
+    <p>デザイン・サンプリングなど、測定の流れを解説記事から学べます。</p>
+    <a href="{{ '/work-environment-measurement/' | relative_url }}">作業環境測定を学ぶ →</a>
+  </article>
+  <article class="card">
+    <h3>労働衛生コンサルタント</h3>
+    <p>資格の役割、受験資格、筆記・口述試験、登録までの全体像を確認します。</p>
+    <a href="{{ '/occupational-health-consultant/' | relative_url }}">試験の全体像を見る →</a>
+  </article>
 </div>
-
-<div class="link-card">
-  <div class="link-title">（予備）安全衛生技術試験協会 トップ</div>
-  <a class="link-action" href="https://www.exam.or.jp/" target="_blank" rel="noopener noreferrer">公式ページを開く ↗</a>
-  <div class="link-domain">www.exam.or.jp</div>
-</div>
-
-## 衛生管理者
-
-<div class="link-card">
-  <div class="link-title">公表試験問題（第一種衛生管理者）｜公益財団法人 安全衛生技術試験協会（外部リンク）</div>
-  <a class="link-action" href="https://www.exam.or.jp/lckohyo/" target="_blank" rel="noopener noreferrer">公式ページを開く ↗</a>
-  <div class="link-domain">www.exam.or.jp</div>
-  <div class="link-note">※一覧ページ内に「第一種衛生管理者（令和7年10月掲載）」があります。</div>
-</div>
-
-<div class="link-card">
-  <div class="link-title">【最新版】第一種衛生管理者（令和7年10月掲載）PDF｜安全衛生技術試験協会（外部リンク）</div>
-  <a class="link-action" href="https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252114.pdf" target="_blank" rel="noopener noreferrer">公式ページを開く ↗</a>
-  <div class="link-domain">www.exam.or.jp</div>
-</div>
-
-## 労働衛生コンサルタント
-
-<div class="link-card">
-  <div class="link-title">労働衛生コンサルタント（公表試験問題）｜公益財団法人 安全衛生技術試験協会（外部リンク）</div>
-  <div class="link-note">公益財団法人 安全衛生技術試験協会の公式ページです。外部リンク。</div>
-  <a class="link-action" href="https://www.exam.or.jp/cskohyo/" target="_blank" rel="noopener noreferrer">公式ページを開く ↗</a>
-  <div class="link-domain">www.exam.or.jp</div>
-</div>
-
-<p>制度と学習順序は当サイトの独自解説「<a href="{{ '/occupational-health-consultant/' | relative_url }}">労働衛生コンサルタントの全体像を確認する</a>」で整理しています。上記の公表試験問題（公式）とは別のページです。</p>
-
-## その他（必要なら後で追加）
-
-- （ここに公式リンクを追記：リンクのみ）
