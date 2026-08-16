@@ -39,6 +39,7 @@
 {% if is_article and modified_time %}
 <meta property="article:modified_time" content="{{ modified_time | date_to_xmlschema }}">
 {% endif %}
+{% if is_article %}<meta name="author" content="労働衛生ラボ編集部">{% endif %}
 <meta name="twitter:card" content="summary_large_image">
 
 <script type="application/ld+json">
@@ -48,6 +49,16 @@
   "name": {{ site.title | jsonify }},
   {% if is_article and page.title %}
   "headline": {{ page.title | jsonify }},
+  "author": {
+    "@type": "Organization",
+    "name": "労働衛生ラボ編集部",
+    "url": {{ '/about/' | absolute_url | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }}
+  },
   {% endif %}
   "url": {{ page.url | absolute_url | jsonify }}{% if is_article and published_time %},
   "datePublished": {{ published_time | date_to_xmlschema | jsonify }}{% endif %}{% if is_article and modified_time %},

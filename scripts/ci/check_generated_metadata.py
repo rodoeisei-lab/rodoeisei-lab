@@ -24,7 +24,7 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant", "videos", "tools", "products", "amazon"):
+    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant", "videos", "tools", "products", "amazon", "about", "privacy", "contact"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
 
     require(
@@ -32,7 +32,18 @@ def main() -> int:
         [
             "/chemical-management/",
             "/occupational-health-consultant/",
+            "/about/",
+            "/privacy/",
+            "/contact/",
         ],
+    )
+    require(
+        site / "about" / "index.html",
+        ["第一種作業環境測定士", "臨床検査技師", "生成AIの利用方針"],
+    )
+    require(
+        site / "privacy" / "index.html",
+        ["GitHub Pagesのアクセスログ", "localStorage", "Googleフォーム"],
     )
     require(
         site / "occupational-health-consultant" / "index.html",
@@ -62,7 +73,14 @@ def main() -> int:
 
     require(
         site / "guides" / "work-env-measurement-intro" / "index.html",
-        ['<meta property="og:type" content="article">', '"@type": "Article"'],
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            '<meta name="author" content="労働衛生ラボ編集部">',
+            '"author":',
+            "執筆・編集：",
+            "/about/",
+        ],
     )
     require(site / "videos" / "index.html", ['"@type": "WebPage"', "-l2ISaUncV4"])
     require(site / "guides" / "work-environment-measurement-design-sampling" / "index.html", ['"@type": "Article"', "https://www.youtube.com/watch?v=-l2ISaUncV4"])
