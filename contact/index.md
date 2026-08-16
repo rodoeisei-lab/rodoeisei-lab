@@ -4,7 +4,10 @@ description: 企業担当者・読者向けに、労働衛生の相談、取材�
 eyebrow: お問い合わせ
 lead: 現場の課題相談、記事リクエスト、コラボレーションのご連絡はこちらから。
 permalink: /contact/
+updated_at: 2026-08-16
 ---
+
+<div class="notice-box"><strong>送信前に確認してください。</strong>個人名、事業場名、健康情報、未公開の測定結果、図面、写真など、本人や事業場を特定できる情報は必要以上に送らないでください。詳しくは<a href="{{ '/privacy/' | relative_url }}">プライバシーポリシー</a>をご確認ください。</div>
 
 <div class="cards">
   <article class="card">
@@ -20,7 +23,7 @@ permalink: /contact/
 物質（粉じん/溶剤など）：
 困りごと：
 期限：
-資料の有無（写真/計測結果など）：</code></pre>
+共有可能な資料の有無（機密情報を除く）：</code></pre>
   </article>
   <article class="card">
     <h3>返信までの目安</h3>
@@ -51,7 +54,7 @@ permalink: /contact/
 **A.** 件名に「至急」と入れていただければ優先度を確認します。
 
 ### Q3. 匿名での相談はできますか？
-**A.** まずは相談内容だけでも送ってください。必要に応じて後から確認します。
+**A.** 氏名を記載しない相談は可能です。ただし、メールでは送信元メールアドレスが運営者に伝わります。公開時は、個人や事業場を特定できる情報を掲載しません。
 
 ## 関連ページ
 - [解説一覧]({{ "/guides/" | relative_url }})
@@ -59,3 +62,4 @@ permalink: /contact/
 - [労基署対策]({{ "/inspection/" | relative_url }})
 - [資格対策]({{ "/licenses/" | relative_url }})
 - [SNSリンク集]({{ "/sns-links/" | relative_url }})
+- [プライバシーポリシー]({{ "/privacy/" | relative_url }})
