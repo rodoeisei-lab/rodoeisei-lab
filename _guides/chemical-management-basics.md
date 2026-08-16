@@ -2,6 +2,7 @@
 layout: article
 title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
 description: 職場の化学物質管理について、使用物質の把握、ラベル・SDSの確認、リスクアセスメント、リスク低減措置、ばく露状況の確認、記録・見直しまでを初心者向けに解説します。
+og_image: /assets/images/og/articles/chemical-management-basics.png
 article_type: guide
 summary:
   - 化学物質管理は、使用物質の把握から対策の効果確認、記録、変更時の見直しまでを継続する取組です。

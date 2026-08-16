@@ -2,6 +2,7 @@
 layout: article
 title: 作業環境測定の超入門
 description: 作業環境測定の目的と全体の流れ、気中有害物質のA測定・B測定、評価値、管理区分を初心者向けに解説。
+og_image: /assets/images/og/articles/work-env-measurement-intro.png
 article_type: guide
 summary:
   - 作業環境測定は、現状を把握し、評価結果を作業環境の改善につなげるために行う。

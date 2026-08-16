@@ -2,6 +2,7 @@
 layout: article
 title: 皮膚等障害化学物質等とは？化学防護手袋の選び方・使い方
 description: 皮膚等障害化学物質等の確認方法と、安衛則594条の2・594条の3の違い、不浸透性、耐透過・耐浸透性能、化学防護手袋の選定・交換・廃棄を厚生労働省の第3版マニュアルに沿って解説します。
+og_image: /assets/images/og/articles/skin-hazard-chemicals-protective-gloves.png
 article_type: guide
 summary:
   - 皮膚等障害化学物質等を製造・取り扱う対象業務では、作業と有害性に応じた不浸透性の保護具を使用させる義務があります。

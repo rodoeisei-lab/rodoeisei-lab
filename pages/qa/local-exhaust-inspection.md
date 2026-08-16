@@ -3,6 +3,7 @@ layout: article
 title: 局所排気装置は、どの頻度で点検し、何を記録する？
 permalink: /qa/local-exhaust-inspection/
 description: 局所排気装置の点検、作業主任者による点検、定期自主検査を区別し、適用規則ごとの周期と記録を整理します。
+og_image: /assets/images/og/articles/local-exhaust-inspection.png
 article_type: qa
 category: 局所排気装置
 level: 実務

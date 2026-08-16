@@ -2,6 +2,7 @@
 layout: article
 title: 作業環境測定のデザインとは？測定点とA・B・C・D測定を整理
 description: 作業環境測定におけるデザインとサンプリングについて、事前調査、単位作業場所、測定点、A測定・B測定、個人サンプリング法によるC測定・D測定の違いを初心者向けに解説します。
+og_image: /assets/images/og/articles/work-environment-measurement-design-sampling.png
 article_type: guide
 category: 作業環境測定
 level: 入門

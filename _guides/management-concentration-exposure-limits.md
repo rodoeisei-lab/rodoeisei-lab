@@ -2,6 +2,7 @@
 layout: article
 title: 管理濃度・濃度基準値・許容濃度の違い｜何と比較する数値か
 description: 管理濃度、濃度基準値、許容濃度について、目的、法的な位置づけ、対象となる測定、比較方法、実務での使い分けを初心者向けに整理します。
+og_image: /assets/images/og/articles/management-concentration-exposure-limits.png
 article_type: guide
 summary:
   - 管理濃度は、法令に基づく作業環境測定の結果から管理区分を決めるための指標です。

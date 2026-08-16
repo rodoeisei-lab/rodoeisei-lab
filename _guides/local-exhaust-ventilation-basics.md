@@ -2,6 +2,7 @@
 layout: article
 title: 局所排気装置とは？フード・ダクト・排風機の基本
 description: 局所排気装置の捕捉原理、フード・ダクト・空気清浄装置・排風機、性能確認と改善の基本を解説します。
+og_image: /assets/images/og/articles/local-exhaust-ventilation-basics.png
 article_type: guide
 summary:
   - 局所排気装置は、汚染物質が作業場へ拡散する前に発散源の近くで捕捉する設備です。

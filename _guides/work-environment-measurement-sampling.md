@@ -2,6 +2,7 @@
 layout: article
 title: 作業環境測定のサンプリングとは？物質の状態から捕集方法を考える
 description: 作業環境測定のサンプリングについて、粒子状物質・ガス・蒸気の状態と分析方法を踏まえて捕集方法を選ぶ基本を解説します。
+og_image: /assets/images/og/articles/work-environment-measurement-sampling.png
 article_type: guide
 category: 作業環境測定
 level: 入門

@@ -2,6 +2,7 @@
 layout: article
 title: フィットテスト導入の最小セット
 description: 安全衛生管理者向けに、呼吸用保護具フィットテストの導入手順、記録方法、再評価の実務ポイントを解説。
+og_image: /assets/images/og/articles/fit-test.png
 article_type: guide
 summary:
   - 制度導入の目的と対象を1分で把握できる。

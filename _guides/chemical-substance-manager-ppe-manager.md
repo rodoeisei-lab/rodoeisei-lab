@@ -2,6 +2,7 @@
 layout: article
 title: 化学物質管理者と保護具着用管理責任者とは？選任要件・役割の違い
 description: 化学物質管理者と保護具着用管理責任者について、選任が必要な事業場、14日以内の選任、資格・講習、職務、兼任、周知方法を初心者向けに整理します。
+og_image: /assets/images/og/articles/chemical-substance-manager-ppe-manager.png
 article_type: guide
 summary:
   - 化学物質管理者は、リスクアセスメント対象物に関する事業場全体の技術的事項を管理します。
