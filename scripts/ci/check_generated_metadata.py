@@ -4,7 +4,10 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
+import json
 from pathlib import Path
+import re
 
 
 def require(path: Path, snippets: list[str]) -> None:
@@ -14,6 +17,27 @@ def require(path: Path, snippets: list[str]) -> None:
     missing = [snippet for snippet in snippets if snippet not in html]
     if missing:
         raise SystemExit(f"{path} is missing expected content: {missing}")
+
+
+def article_structured_data(html: str) -> dict[str, object] | None:
+    for raw_json in re.findall(
+        r'<script type="application/ld\+json">\s*(\{.*?\})\s*</script>',
+        html,
+        flags=re.DOTALL,
+    ):
+        payload = json.loads(raw_json)
+        if payload.get("@type") == "Article":
+            return payload
+    return None
+
+
+def parse_iso_date(value: object, path: Path, field: str) -> datetime:
+    if not isinstance(value, str):
+        raise SystemExit(f"{path} has a non-string {field}")
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise SystemExit(f"{path} has an invalid {field}: {value}") from exc
 
 
 def main() -> int:
@@ -80,8 +104,25 @@ def main() -> int:
             '"author":',
             "執筆・編集：",
             "/about/",
+            '<meta property="article:published_time" content="2026-01-20T00:00:00+00:00">',
+            '<meta property="article:modified_time" content="2026-08-10T00:00:00+00:00">',
+            '"datePublished": "2026-01-20T00:00:00+00:00"',
+            '"dateModified": "2026-08-10T00:00:00+00:00"',
+            "公開日：2026-01-20",
+            "更新日：2026-08-10",
         ],
     )
+    for article_path in site.rglob("index.html"):
+        article_html = article_path.read_text(encoding="utf-8")
+        structured_data = article_structured_data(article_html)
+        if structured_data is None or '<meta name="robots" content="noindex, nofollow">' in article_html:
+            continue
+        if "datePublished" not in structured_data or "dateModified" not in structured_data:
+            raise SystemExit(f"{article_path} must include stable publication and modification dates")
+        published_at = parse_iso_date(structured_data["datePublished"], article_path, "datePublished")
+        modified_at = parse_iso_date(structured_data["dateModified"], article_path, "dateModified")
+        if published_at > modified_at:
+            raise SystemExit(f"{article_path} has datePublished after dateModified")
     require(site / "videos" / "index.html", ['"@type": "WebPage"', "-l2ISaUncV4"])
     public_routes_without_placeholders = (
         "guides",

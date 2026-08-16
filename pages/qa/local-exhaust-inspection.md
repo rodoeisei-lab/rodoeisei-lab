@@ -8,6 +8,7 @@ category: 局所排気装置
 level: 実務
 reading_time: 約8分
 minutes: 8
+published_at: 2026-03-12
 updated: 2026-08-11
 updated_at: 2026-08-11
 reviewed_at: 2026-08-11

@@ -7,6 +7,7 @@ category: 作業環境測定
 level: 入門
 status: published
 source_type: law
+published_at: 2026-08-11
 updated: 2026-08-11
 updated_at: 2026-08-11
 reviewed_at: 2026-08-11
