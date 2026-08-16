@@ -12,6 +12,7 @@ category: 個人ばく露測定
 level: 入門
 reading_time: 約10分
 minutes: 10
+published_at: 2026-08-11
 updated: 2026-08-11
 updated_at: 2026-08-11
 reviewed_at: 2026-08-11

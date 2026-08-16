@@ -21,6 +21,7 @@ layout: base
     <div class="article-meta">
       <span class="badge">{{ inferred_article_type }}</span>
       {% if page.reading_time %}<span class="badge">{{ page.reading_time }}</span>{% endif %}
+      {% assign hero_published = page.published_at %}
       {% assign hero_updated = page.updated_at | default: page.updated %}
       {% assign hero_checked = page.checked_at | default: page.source_checked_at | default: page.reviewed_at %}
       {% assign show_unchecked_legal_date = page.show_unchecked_legal_date | default: site.show_unchecked_legal_date %}
@@ -28,18 +29,23 @@ layout: base
       {% if page.sources and page.sources.size > 0 %}
         {% assign has_sources = true %}
       {% endif %}
-      {% if hero_updated or hero_checked or show_unchecked_legal_date or has_sources %}
+      {% if hero_published or hero_updated or hero_checked or show_unchecked_legal_date or has_sources %}
       <p class="article-meta-dates">
-        {% if hero_updated %}
-        <span class="article-meta-dates__item">更新日：{{ hero_updated }}</span>
+        {% assign has_prior_date = false %}
+        {% if hero_published and hero_published != hero_updated %}
+        <span class="article-meta-dates__item">公開日：{{ hero_published }}</span>
+        {% assign has_prior_date = true %}
         {% endif %}
-        {% if hero_updated and hero_checked %}
-        <span class="article-meta-dates__separator" aria-hidden="true">｜</span>
+        {% if hero_updated %}
+        {% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
+        <span class="article-meta-dates__item">更新日：{{ hero_updated }}</span>
+        {% assign has_prior_date = true %}
         {% endif %}
         {% if hero_checked %}
+        {% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
         <span class="article-meta-dates__item article-meta-dates__item--checked" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：{{ hero_checked }}</span>
         {% elsif show_unchecked_legal_date %}
-        {% if hero_updated %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
+        {% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
         <span class="article-meta-dates__item article-meta-dates__item--pending" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：未確認</span>
         {% endif %}
         {% if has_sources %}

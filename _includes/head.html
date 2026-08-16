@@ -15,8 +15,17 @@
 {% if page.title and page.title != site.title %}
   {% assign page_title = page.title | append: " | " | append: site.title %}
 {% endif %}
-{% assign published_time = page.date %}
-{% assign modified_time = page.last_modified_at | default: page.updated %}
+{% assign published_time = page.published_at %}
+{% if published_time == nil and page.collection == "posts" %}
+  {% assign published_time = page.date %}
+{% endif %}
+{% assign modified_time = page.last_modified_at | default: page.updated_at | default: page.updated %}
+{% if published_time == "未定" or published_time == "未確認" %}
+  {% assign published_time = nil %}
+{% endif %}
+{% if modified_time == "未定" or modified_time == "未確認" %}
+  {% assign modified_time = nil %}
+{% endif %}
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ page_description }}">
 {% if page.noindex == true or page.status == "wip" %}<meta name="robots" content="noindex, nofollow">{% endif %}

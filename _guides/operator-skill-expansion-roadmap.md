@@ -11,6 +11,7 @@ category: Guides
 level: 実務
 reading_time: 9分
 minutes: 9
+published_at: 2026-02-13
 updated: 2026-02-13
 updated_at: 2026-02-13
 reviewed_at: 2026-02-13

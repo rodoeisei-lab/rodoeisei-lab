@@ -13,6 +13,7 @@ reading_time: 約12分
 minutes: 12
 status: published
 featured: true
+published_at: 2026-08-11
 updated: 2026-08-11
 updated_at: 2026-08-11
 reviewed_at: 2026-08-11

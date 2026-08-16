@@ -8,6 +8,7 @@ level: 入門
 status: published
 featured: true
 source_type: law
+published_at: 2026-08-11
 updated: 2026-08-11
 updated_at: 2026-08-11
 reviewed_at: 2026-08-11

@@ -11,6 +11,7 @@ category: Guides
 level: 入門
 reading_time: 8分
 minutes: 8
+published_at: 2026-01-20
 updated: 2026-08-10
 updated_at: 2026-08-10
 reviewed_at: 2026-08-10

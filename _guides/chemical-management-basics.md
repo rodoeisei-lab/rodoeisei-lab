@@ -12,6 +12,7 @@ category: 化学物質管理
 level: 入門
 reading_time: 10分
 minutes: 10
+published_at: 2026-08-10
 updated: 2026-08-10
 updated_at: 2026-08-10
 reviewed_at: 2026-08-10
