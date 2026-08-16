@@ -114,6 +114,16 @@ def main() -> int:
     )
     for article_path in site.rglob("index.html"):
         article_html = article_path.read_text(encoding="utf-8")
+        feedback_section = re.search(
+            r'<section class="article-feedback".*?</section>',
+            article_html,
+            flags=re.DOTALL,
+        )
+        if feedback_section and re.search(
+            r'<a\b[^>]*\bhref\s*=\s*["\']\s*["\'][^>]*>',
+            feedback_section.group(0),
+        ):
+            raise SystemExit(f"{article_path} contains an empty feedback link")
         structured_data = article_structured_data(article_html)
         if structured_data is None or '<meta name="robots" content="noindex, nofollow">' in article_html:
             continue
