@@ -38,9 +38,6 @@ related_links:
   - title: 学習ハブで導入テーマを横断して確認する
     url: /learn/
     group: next
-  - title: PPE点検ルールの再確認ポイント
-    url: /updates/ppe-checklist/
-    group: next
   - title: 運営者スキル拡充ロードマップ
     url: /guides/operator-skill-expansion-roadmap/
     group: related

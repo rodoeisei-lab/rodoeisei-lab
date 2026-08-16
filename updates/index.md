@@ -1,13 +1,17 @@
 ---
 title: 最新アップデート
-description: 衛生管理者向けに、法改正・通達・JIS/ISO更新の要点、対象読者、施行時期を短時間で確認できる一覧。
+description: 労働衛生に関する法改正・通達・公的資料のうち、一次情報と内容を確認できた更新だけを掲載するページです。
 eyebrow: 更新情報
-lead: 「何が変わる？誰に影響？いつから？」の3点だけ先に掴める一覧を目指します。
+lead: 一次情報、対象、施行時期を確認できた更新から掲載します。
 permalink: /updates/
+updated_at: 2026-08-16
+noindex: true
+pagefind_ignore: true
 ---
 
-{% assign updates_sorted = site.updates | sort: "updated" | reverse %}
+{% assign updates_sorted = site.updates | where: "status", "published" | sort: "updated" | reverse %}
 
+{% if updates_sorted.size > 0 %}
 <div class="filter-search">
   <label class="sr-only" for="cardSearch">検索</label>
   <input id="cardSearch" type="search" name="q" placeholder="例：改正、省令、管理濃度…">
@@ -65,29 +69,19 @@ permalink: /updates/
     {% endfor %}
   </div>
 </section>
-
-<section class="section updates-template">
-  <h2>更新追加のテンプレ</h2>
-  <div class="card">
-    <p>タイトル未入力でも一覧が崩れないようにしていますが、追加時は以下の項目を埋めてください。</p>
-    <pre><code>---
-layout: article
-title: ここに更新タイトル
-summary: 変更点の要約（1〜2行）
-category: Updates
-impact: "影響: 中"
-updated: 2025-04-01
-target: 対象（例: 衛生管理者）
-effective_from: 2025-04-15
-lead: 先に伝えたい結論や注意点（任意）
----</code></pre>
-  </div>
-</section>
+{% else %}
+<div class="card">
+  <h2>現在、公開中の更新情報はありません</h2>
+  <p>法改正や通達について、一次情報、対象、施行時期を確認できたものから追加します。</p>
+  <p>現行の法令を確認する場合は、法令・規則ページからe-Gov法令検索などの公式情報へ進んでください。</p>
+  <p><a href="{{ '/regulations/' | relative_url }}">法令・規則を確認する →</a></p>
+</div>
+{% endif %}
 
 ## 分かること
 - 法改正・通達・JIS/ISOの更新概要と影響範囲。
 - いつから適用か、誰に影響があるかの整理。
-- 追加更新時の記載ルールとテンプレ。
+- 内容確認に使用した一次情報。
 
 ## 対象読者
 - 法改正の影響を素早く把握したい管理者。
