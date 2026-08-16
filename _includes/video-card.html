@@ -9,7 +9,7 @@
     <p>{{ video.description }}</p>
     <div class="video-card__actions">
       <a class="video-link video-link--youtube" href="{{ video.url }}" target="_blank" rel="noopener noreferrer">YouTubeで見る（外部）</a>
-      {% if video.article_url %}<a class="video-link" href="{{ video.article_url | relative_url }}">詳しい記事を読む</a>{% else %}<span class="video-card__pending">対応記事は準備中</span>{% endif %}
+      {% if video.article_url %}<a class="video-link" href="{{ video.article_url | relative_url }}">詳しい記事を読む</a>{% endif %}
     </div>
   </div>
 </article>

@@ -46,9 +46,4 @@ permalink: /tools/
     </ul>
   </section>
 
-  <section class="tools-coming" aria-labelledby="tools-coming-title">
-    <p class="section-kicker">今後追加</p>
-    <h2 id="tools-coming-title">テンプレート・チェックリスト</h2>
-    <p>点検記録や持ち出し確認に使えるテンプレートは準備中です。公開後、このページから案内します。</p>
-  </section>
 </div>

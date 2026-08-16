@@ -31,7 +31,7 @@ updated_at: 2026-08-14
 
   <article class="card">
     <h3>第一種衛生管理者</h3>
-    <p>現在は、公式過去問と共通の法令・用語解説から学べます。専用解説は順次追加します。</p>
+    <p>公式過去問と、公開中の法令・用語解説を組み合わせて学習できます。</p>
     <p><a href="{{ '/past-exams/' | relative_url }}">公式過去問へ →</a></p>
     <p><a href="{{ '/regulations/' | relative_url }}">主な法令・規則を確認する →</a></p>
   </article>

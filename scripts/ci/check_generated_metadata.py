@@ -83,7 +83,42 @@ def main() -> int:
         ],
     )
     require(site / "videos" / "index.html", ['"@type": "WebPage"', "-l2ISaUncV4"])
+    public_routes_without_placeholders = (
+        "guides",
+        "work-environment-measurement",
+        "chemical-management",
+        "personal-exposure-measurement",
+        "ai-use",
+        "occupational-health-consultant",
+        "local-exhaust-ventilation",
+        "tools",
+        "videos",
+        "licenses",
+    )
+    placeholder_phrases = ("準備中", "今後追加予定の記事", "次回追加予定")
+    for route in public_routes_without_placeholders:
+        route_html = (site / route / "index.html").read_text(encoding="utf-8")
+        found = [phrase for phrase in placeholder_phrases if phrase in route_html]
+        if found:
+            raise SystemExit(f"Public route /{route}/ exposes unfinished content: {found}")
+
+    videos_html = (site / "videos" / "index.html").read_text(encoding="utf-8")
+    if "library-category__empty" in videos_html:
+        raise SystemExit("Videos page renders an empty category")
+    content_library = Path("_data/content_library.yml").read_text(encoding="utf-8")
+    populated_categories = {
+        line.split(":", 1)[1].strip().strip('"\'')
+        for line in content_library.splitlines()
+        if line.startswith("  category:")
+    }
+    if videos_html.count('class="library-category"') != len(populated_categories):
+        raise SystemExit("Videos page must render only categories that currently contain items")
+
     require(site / "guides" / "work-environment-measurement-design-sampling" / "index.html", ['"@type": "Article"', "https://www.youtube.com/watch?v=-l2ISaUncV4"])
+    require(
+        site / "guides" / "work-environment-measurement-sampling" / "index.html",
+        ["/guides/management-concentration-exposure-limits/"],
+    )
     intro_html = (site / "guides" / "chemical-management-basics" / "index.html").read_text(encoding="utf-8")
     if "article-youtube" in intro_html:
         raise SystemExit("Article without youtube_videos rendered an empty video module")

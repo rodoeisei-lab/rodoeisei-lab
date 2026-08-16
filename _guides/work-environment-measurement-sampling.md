@@ -25,7 +25,8 @@ related_links:
   - title: 前に読む：作業環境測定のデザイン
     url: /guides/work-environment-measurement-design/
     group: previous
-  - title: 分析の基本（次回追加予定）
+  - title: 次に読む：管理濃度・濃度基準値・許容濃度の違い
+    url: /guides/management-concentration-exposure-limits/
     group: next
 sources:
   - label: e-Gov法令検索「作業環境測定法」
@@ -95,7 +96,7 @@ YouTubeとnoteは理解を助ける教材です。法令上の根拠は、ペー
 
 前の記事：[作業環境測定のデザイン]({{ '/guides/work-environment-measurement-design/' | relative_url }})
 
-次の記事：**分析の基本（次回追加予定）**
+次の記事：[管理濃度・濃度基準値・許容濃度の違い]({{ '/guides/management-concentration-exposure-limits/' | relative_url }})
 
 ## 最終更新日と確認日
 
