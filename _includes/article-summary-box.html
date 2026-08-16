@@ -11,6 +11,7 @@
 
 {% assign audience = page.audience | default: page.target %}
 {% assign takeaway = page.takeaway | default: page.lead | default: page.description %}
+{% assign conclusion_text = page.conclusion | to_s | strip %}
 {% assign next_action = page.next_action %}
 {% assign has_related_links = false %}
 {% if page.related_links and page.related_links.size > 0 %}
@@ -38,7 +39,7 @@
     </div>
     {% endif %}
 
-    {% if takeaway %}
+    {% if takeaway and conclusion_text == "" %}
     <div class="article-summary-box__item">
       <p class="article-summary-box__label">この記事の結論</p>
       <p class="article-summary-box__value">{{ takeaway }}</p>

@@ -66,15 +66,19 @@ button,a,input,select,textarea{touch-action:manipulation}
 .article th,.regulations-table th{background:var(--color-blue-soft)}
 .article blockquote,.notice-box{margin:24px 0;padding:16px 18px;border-left:4px solid var(--color-primary);background:var(--color-blue-soft)}
 .article-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px}
-.article-meta-dates{display:flex;flex-wrap:wrap;gap:6px;margin:0;color:var(--color-text-secondary);font-size:14px}
+.article-meta-dates{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:0;color:var(--color-text-secondary);font-size:14px}
+.article-meta-source-link{display:inline-flex;align-items:center;min-height:30px;margin-left:2px;color:var(--color-primary);font-weight:700}
 .badge,.guide-tag,.tag-chip,.article-category,.qa-list-category{display:inline-flex;align-items:center;min-height:30px;padding:3px 10px;border-radius:999px;background:var(--color-blue-soft);color:var(--color-primary);font-size:14px;font-weight:700}
-.article-target-readers,.article-summary-box__panel,.article-conclusion,.article-sources,.article-feedback,.related-articles,.article-use-cases,.article-trust-meta{margin:24px 0;padding:18px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff}
+.article-target-readers,.article-summary-box__panel,.article-conclusion,.article-sources,.article-feedback,.related-articles,.article-use-cases{margin:24px 0;padding:18px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff}
 .article-summary-box__panel{border-left:4px solid var(--color-primary)}
+.article-sources{scroll-margin-top:80px}
+.article-disclaimer{margin:20px 0;color:var(--color-text-secondary);font-size:14px}
+.article-disclaimer__note{margin:0}
 .article-feedback-actions,.article-footer-nav__grid{display:flex;flex-wrap:wrap;gap:12px}
 .article-footer-nav{margin-top:32px}
 .article-footer-nav__item{flex:1;min-width:220px}
 .article-sources__list,.article-target-readers__list{padding-left:22px}
-.article-meta-header__chips,.guide-tags,.tag-chips,.chips{display:flex;flex-wrap:wrap;gap:8px}
+.guide-tags,.tag-chips,.chips{display:flex;flex-wrap:wrap;gap:8px}
 .article img{border-radius:10px}
 
 

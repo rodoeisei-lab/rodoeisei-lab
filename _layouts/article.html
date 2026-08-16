@@ -24,7 +24,11 @@ layout: base
       {% assign hero_updated = page.updated_at | default: page.updated %}
       {% assign hero_checked = page.checked_at | default: page.source_checked_at | default: page.reviewed_at %}
       {% assign show_unchecked_legal_date = page.show_unchecked_legal_date | default: site.show_unchecked_legal_date %}
-      {% if hero_updated or hero_checked or show_unchecked_legal_date %}
+      {% assign has_sources = false %}
+      {% if page.sources and page.sources.size > 0 %}
+        {% assign has_sources = true %}
+      {% endif %}
+      {% if hero_updated or hero_checked or show_unchecked_legal_date or has_sources %}
       <p class="article-meta-dates">
         {% if hero_updated %}
         <span class="article-meta-dates__item">更新日：{{ hero_updated }}</span>
@@ -38,10 +42,12 @@ layout: base
         {% if hero_updated %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
         <span class="article-meta-dates__item article-meta-dates__item--pending" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：未確認</span>
         {% endif %}
+        {% if has_sources %}
+        <a class="article-meta-source-link" href="#article-sources">一次情報を見る（{{ page.sources.size }}件）</a>
+        {% endif %}
       </p>
       {% endif %}
     </div>
-    {% include article-meta-header.html %}
     {% include article-conclusion.html %}
   </div>
 </section>
@@ -54,6 +60,10 @@ layout: base
       {% include article-youtube.html videos=page.youtube_videos %}
     {% endif %}
     {{ content }}
+    {% include article-sources.html %}
+    <aside class="article-disclaimer" aria-label="記事利用上の注意">
+      {% include article-disclaimer.html variant=page.disclaimer_variant %}
+    </aside>
     {% include article-use-cases.html %}
     {% include related-articles.html limit=3 %}
     {% include article-footer-nav.html %}
