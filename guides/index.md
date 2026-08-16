@@ -49,14 +49,6 @@ permalink: /guides/
   {% endfor %}
 </div>
 
-<h2>準備中</h2>
-{% assign wip_guides = site.guides | where: "status", "wip" | sort: "title" %}
-<div class="cards guides-cards">
-  {% for guide in wip_guides %}
-    {% include guide_card.html guide=guide %}
-  {% endfor %}
-</div>
-
 ## 分かること
 - 粉じん・有機溶剤・測定・法令対応の論点整理。
 - 目的別（入門/現場判断/監督署対応）の読み分け。

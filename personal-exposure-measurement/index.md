@@ -36,13 +36,8 @@ permalink: /personal-exposure-measurement/
 </section>
 
 <section class="chemical-section" aria-labelledby="published-title">
-<div class="chemical-section-heading"><p class="chemical-section-label">記事ロードマップ</p><h2 id="published-title">公開中の記事</h2></div>
+<div class="chemical-section-heading"><p class="chemical-section-label">関連記事</p><h2 id="published-title">現在読める解説</h2></div>
 <ul class="chemical-roadmap">{% for article in site.data.personal_exposure_measurement %}{% if article.status == "published" and article.url %}<li class="chemical-roadmap__item--published"><a href="{{ article.url | relative_url }}"><span>{{ article.section }}</span><strong>{{ article.title }}</strong><p>{{ article.description }}</p><small class="chemical-status chemical-status--published">公開中・記事を読む</small></a></li>{% endif %}{% endfor %}</ul>
-</section>
-
-<section class="chemical-section" aria-labelledby="planned-title">
-<div class="chemical-section-heading"><h2 id="planned-title">今後追加予定の記事</h2></div>
-<ul class="chemical-roadmap">{% for article in site.data.personal_exposure_measurement %}{% unless article.status == "published" and article.url %}<li><div><span>{{ article.section }}</span><strong>{{ article.title }}</strong><p>{{ article.description }}</p></div><small class="chemical-status">準備中</small></li>{% endunless %}{% endfor %}</ul>
 </section>
 
 <section class="chemical-section" aria-labelledby="related-fields"><div class="chemical-section-heading"><p class="chemical-section-label">使い分け</p><h2 id="related-fields">作業環境測定・化学物質管理との関係</h2></div>
