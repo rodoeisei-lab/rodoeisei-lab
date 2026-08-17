@@ -2,6 +2,7 @@
 layout: article
 title: 生成AIを労働衛生で安全に使う方法｜実務・学習の確認手順
 description: 生成AIを労働衛生の実務や学習に使う際の、利用できる作業、機密情報・健康情報の取扱い、ハルシネーション、一次情報と数値の確認手順を解説します。
+og_image: /assets/images/og/articles/ai-use-occupational-health-basics.png
 article_type: guide
 summary:
   - 生成AIは公開資料の整理、文章・チェックリストの下書き、架空事例による学習の補助に使います。

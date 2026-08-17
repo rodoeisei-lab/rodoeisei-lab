@@ -2,6 +2,7 @@
 layout: article
 title: 労働衛生コンサルタントとは？試験・受験資格・登録の全体像
 description: 労働衛生コンサルタントの役割、試験区分、受験資格、科目免除、筆記・口述試験、合格後の登録を一次情報に基づいて解説します。
+og_image: /assets/images/og/articles/occupational-health-consultant-basics.png
 article_type: guide
 category: 労働衛生コンサルタント
 level: 入門

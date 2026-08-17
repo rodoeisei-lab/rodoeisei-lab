@@ -2,6 +2,7 @@
 layout: article
 title: 個人ばく露測定とは？目的・進め方と作業環境測定との関係
 description: 個人ばく露測定について、測定目的、対象者の選定、呼吸域でのサンプリング、時間荷重平均、濃度基準値、作業環境測定やC測定・D測定との関係を初心者向けに解説します。
+og_image: /assets/images/og/articles/personal-exposure-measurement-basics.png
 article_type: guide
 summary:
   - 個人ばく露測定は、作業者の顔の近くの呼吸域で有害物質濃度を測り、作業中のばく露の程度を把握する方法です。

@@ -1,7 +1,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% assign page_description = page.description | default: site.description %}
-{% assign og_image = page.og_image | default: "/assets/images/og-default.svg" %}
+{% assign og_image = page.og_image | default: "/assets/images/og-default.png" %}
+{% assign og_image_alt = page.og_image_alt | default: page.title | default: site.title %}
+{% assign og_image_type = page.og_image_type | default: "image/png" %}
+{% assign og_image_width = page.og_image_width | default: 1200 %}
+{% assign og_image_height = page.og_image_height | default: 630 %}
 {% if og_image contains "://" %}
   {% assign og_image_url = og_image %}
 {% else %}
@@ -42,6 +46,10 @@
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:image" content="{{ og_image_url }}">
+<meta property="og:image:type" content="{{ og_image_type }}">
+<meta property="og:image:width" content="{{ og_image_width }}">
+<meta property="og:image:height" content="{{ og_image_height }}">
+<meta property="og:image:alt" content="{{ og_image_alt }}">
 {% if is_article and published_time %}
 <meta property="article:published_time" content="{{ published_time | date_to_xmlschema }}">
 {% endif %}
@@ -50,6 +58,8 @@
 {% endif %}
 {% if is_article %}<meta name="author" content="労働衛生ラボ編集部">{% endif %}
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ og_image_url }}">
+<meta name="twitter:image:alt" content="{{ og_image_alt }}">
 
 <script type="application/ld+json">
 {

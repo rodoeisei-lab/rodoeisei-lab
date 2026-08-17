@@ -2,6 +2,7 @@
 layout: article
 title: 運営者スキル拡充ロードマップ（Jekyll・SEO・外部連携）
 description: 小さく試して高速に改善するために、Jekyllテーマ運用、GitHub Actions、SEO/WCAG 2.2、パフォーマンス、検索、SNS・外部導線連携を一気通貫で学ぶ実践計画。
+og_image: /assets/images/og/articles/operator-skill-expansion-roadmap.png
 article_type: guide
 summary:
   - 8週間で運営スキルを拡張する実践ロードマップ。

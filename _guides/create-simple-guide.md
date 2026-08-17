@@ -2,6 +2,7 @@
 layout: article
 title: CREATE-SIMPLEの使い方｜入力項目・結果の見方・注意点
 description: 厚生労働省のCREATE-SIMPLEについて、最新版の入手、SDSと作業条件の入力、リスクレベルの読み方、対策後の再判定、記録、過小評価を避ける注意点を実務の順番で解説します。
+og_image: /assets/images/og/articles/create-simple-guide.png
 article_type: guide
 summary:
   - CREATE-SIMPLEは、作業条件から吸入・経皮ばく露と危険性のリスクを簡易に見積もる、厚生労働省の無料Excelツールです。

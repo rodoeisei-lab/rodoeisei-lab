@@ -8,6 +8,8 @@ from datetime import datetime
 import json
 from pathlib import Path
 import re
+import struct
+from urllib.parse import urlsplit
 
 
 def require(path: Path, snippets: list[str]) -> None:
@@ -38,6 +40,34 @@ def parse_iso_date(value: object, path: Path, field: str) -> datetime:
         return datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError as exc:
         raise SystemExit(f"{path} has an invalid {field}: {value}") from exc
+
+
+def meta_content(html: str, attribute: str, key: str, path: Path) -> str:
+    match = re.search(
+        rf'<meta\s+{attribute}="{re.escape(key)}"\s+content="([^"]*)"\s*/?>',
+        html,
+    )
+    if not match or not match.group(1).strip():
+        raise SystemExit(f"{path} is missing non-empty {key} metadata")
+    return match.group(1).strip()
+
+
+def built_asset_path(site: Path, url: str, path: Path) -> Path:
+    parts = [part for part in urlsplit(url).path.split("/") if part]
+    try:
+        asset_index = parts.index("assets")
+    except ValueError as exc:
+        raise SystemExit(f"{path} has an image outside /assets/: {url}") from exc
+    return site.joinpath(*parts[asset_index:])
+
+
+def png_dimensions(path: Path) -> tuple[int, int]:
+    if not path.is_file():
+        raise SystemExit(f"Missing generated OGP image: {path}")
+    header = path.read_bytes()[:24]
+    if len(header) < 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
+        raise SystemExit(f"OGP image is not a valid PNG: {path}")
+    return struct.unpack(">II", header[16:24])
 
 
 def main() -> int:
@@ -74,6 +104,21 @@ def main() -> int:
         ["/guides/occupational-health-consultant-basics/"],
     )
     home_html = (site / "index.html").read_text(encoding="utf-8")
+    home_og_image = meta_content(home_html, "property", "og:image", site / "index.html")
+    if not urlsplit(home_og_image).path.endswith("/assets/images/og-default.png"):
+        raise SystemExit(f"Home page must use the raster default OGP image: {home_og_image}")
+    if meta_content(home_html, "name", "twitter:image", site / "index.html") != home_og_image:
+        raise SystemExit("Home page OGP and X card images must match")
+    if meta_content(home_html, "property", "og:image:type", site / "index.html") != "image/png":
+        raise SystemExit("Home page must declare image/png")
+    if meta_content(home_html, "property", "og:image:width", site / "index.html") != "1200":
+        raise SystemExit("Home page must declare a 1200px OGP image width")
+    if meta_content(home_html, "property", "og:image:height", site / "index.html") != "630":
+        raise SystemExit("Home page must declare a 630px OGP image height")
+    meta_content(home_html, "property", "og:image:alt", site / "index.html")
+    meta_content(home_html, "name", "twitter:image:alt", site / "index.html")
+    if png_dimensions(built_asset_path(site, home_og_image, site / "index.html")) != (1200, 630):
+        raise SystemExit("Home page OGP image must be exactly 1200x630")
     if "/guides/organic-solvent-basics/" in home_html:
         raise SystemExit("Home page links to the work-in-progress organic solvent guide")
 
@@ -112,6 +157,7 @@ def main() -> int:
             "更新日：2026-08-10",
         ],
     )
+    article_images: dict[Path, str] = {}
     for article_path in site.rglob("index.html"):
         article_html = article_path.read_text(encoding="utf-8")
         feedback_section = re.search(
@@ -127,12 +173,41 @@ def main() -> int:
         structured_data = article_structured_data(article_html)
         if structured_data is None or '<meta name="robots" content="noindex, nofollow">' in article_html:
             continue
+        og_image = meta_content(article_html, "property", "og:image", article_path)
+        twitter_image = meta_content(article_html, "name", "twitter:image", article_path)
+        og_image_alt = meta_content(article_html, "property", "og:image:alt", article_path)
+        twitter_image_alt = meta_content(article_html, "name", "twitter:image:alt", article_path)
+        if not urlsplit(og_image).path.endswith(".png"):
+            raise SystemExit(f"{article_path} must use a PNG OGP image: {og_image}")
+        if "/assets/images/og/articles/" not in urlsplit(og_image).path:
+            raise SystemExit(f"{article_path} must use an article-specific OGP image: {og_image}")
+        if twitter_image != og_image or structured_data.get("image") != og_image:
+            raise SystemExit(f"{article_path} has inconsistent OGP, X card, and JSON-LD images")
+        if twitter_image_alt != og_image_alt:
+            raise SystemExit(f"{article_path} has inconsistent OGP and X image alt text")
+        if meta_content(article_html, "property", "og:image:type", article_path) != "image/png":
+            raise SystemExit(f"{article_path} must declare image/png")
+        if meta_content(article_html, "property", "og:image:width", article_path) != "1200":
+            raise SystemExit(f"{article_path} must declare a 1200px OGP image width")
+        if meta_content(article_html, "property", "og:image:height", article_path) != "630":
+            raise SystemExit(f"{article_path} must declare a 630px OGP image height")
+        image_path = built_asset_path(site, og_image, article_path)
+        if png_dimensions(image_path) != (1200, 630):
+            raise SystemExit(f"{article_path} OGP image must be exactly 1200x630: {image_path}")
+        article_images[article_path] = og_image
         if "datePublished" not in structured_data or "dateModified" not in structured_data:
             raise SystemExit(f"{article_path} must include stable publication and modification dates")
         published_at = parse_iso_date(structured_data["datePublished"], article_path, "datePublished")
         modified_at = parse_iso_date(structured_data["dateModified"], article_path, "dateModified")
         if published_at > modified_at:
             raise SystemExit(f"{article_path} has datePublished after dateModified")
+    if len(set(article_images.values())) != len(article_images):
+        duplicates = sorted(
+            image
+            for image in set(article_images.values())
+            if list(article_images.values()).count(image) > 1
+        )
+        raise SystemExit(f"Public articles must not share OGP images: {duplicates}")
     require(site / "videos" / "index.html", ['"@type": "WebPage"', "-l2ISaUncV4"])
     public_routes_without_placeholders = (
         "guides",

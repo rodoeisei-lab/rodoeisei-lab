@@ -40,7 +40,10 @@ class RefCollector(HTMLParser):
         if tag == "meta" and attr_map.get("content"):
             p = (attr_map.get("property") or "").lower()
             n = (attr_map.get("name") or "").lower()
-            if p.startswith("og:image") or n in {"twitter:image", "twitter:image:src"}:
+            if p in {"og:image", "og:image:url", "og:image:secure_url"} or n in {
+                "twitter:image",
+                "twitter:image:src",
+            }:
                 self.refs.append(("meta@content", attr_map["content"]))
 
 
