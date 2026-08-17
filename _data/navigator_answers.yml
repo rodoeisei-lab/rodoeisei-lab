@@ -11,7 +11,7 @@
 
 - id: a-and-b-measurement
   question: A測定とB測定の違いは？
-  content_slug: work-environment-measurement-design
+  content_slug: work-environment-measurement-design-sampling
   search_query: A測定 B測定
   keywords:
     - A測定
@@ -24,7 +24,7 @@
 
 - id: work-environment-measurement-design
   question: 作業環境測定のデザインとは？
-  content_slug: work-environment-measurement-design
+  content_slug: work-environment-measurement-design-sampling
   search_query: 作業環境測定 デザイン 測定点
   keywords:
     - 作業環境測定
@@ -105,7 +105,7 @@
 
 - id: c-and-d-measurement
   question: C測定・D測定と個人ばく露測定の違いは？
-  content_slug: work-environment-measurement-design
+  content_slug: work-environment-measurement-design-sampling
   search_query: C測定 D測定 個人ばく露測定
   keywords:
     - C測定

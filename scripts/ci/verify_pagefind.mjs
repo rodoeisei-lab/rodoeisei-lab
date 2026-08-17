@@ -166,6 +166,11 @@ try {
     }
   }
 
+  const overviewResults = await search("デザイン サンプリング");
+  if (!overviewResults.some((page) => page.url.includes("/guides/work-environment-measurement-design-sampling/"))) {
+    throw new Error("Design and sampling overview article is missing for its primary query.");
+  }
+
   for (const query of ["GC2014", "月末在庫メモ"]) {
     const results = await search(query);
     const excludedResult = results.find((page) =>

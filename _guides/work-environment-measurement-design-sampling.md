@@ -1,7 +1,8 @@
 ---
 layout: article
-title: 作業環境測定のデザインとは？測定点とA・B・C・D測定を整理
-description: 作業環境測定におけるデザインとサンプリングについて、事前調査、単位作業場所、測定点、A測定・B測定、個人サンプリング法によるC測定・D測定の違いを初心者向けに解説します。
+title: 作業環境測定のデザイン・サンプリング｜測定計画の全体像
+description: 作業環境測定のデザインとサンプリングを、事前調査、単位作業場所、測定点、A・B・C・D測定、採取条件のつながりから整理します。
+lead: 動画とあわせて、測定計画から試料採取までの全体像をつかむための総合解説です。
 og_image: /assets/images/og/articles/work-environment-measurement-design-sampling.png
 article_type: guide
 category: 作業環境測定
@@ -30,9 +31,15 @@ next_actions:
   - 発散源、気流、作業者の位置と時間変化を現場で記録する
   - 単位作業場所と測定方式を選んだ根拠を測定計画へ残す
 related_links:
+  - title: デザインを詳しく読む
+    url: /guides/work-environment-measurement-design/
+    group: next
+  - title: サンプリングを詳しく読む
+    url: /guides/work-environment-measurement-sampling/
+    group: next
   - title: 作業環境測定の超入門
     url: /guides/work-env-measurement-intro/
-    group: next
+    group: previous
   - title: 個人ばく露測定の基礎
     url: /guides/personal-exposure-measurement-basics/
     group: next
@@ -63,6 +70,10 @@ youtube_videos:
 作業環境測定のデザインは、図面へ格子を描くだけではありません。**対象作業と有害因子を確認し、単位作業場所を設定し、いつ・どこで・どの方法により測るかを決め、その理由を記録する工程**です。作業環境測定は、デザイン、サンプリング、分析（解析を含む）から成ります。
 
 A・B測定とC・D測定にはそれぞれ適用条件があります。現場の都合だけで相互に置き換えず、対象物質・作業に適用される作業環境測定基準と評価基準を確認します。
+
+## このページの位置づけ
+
+このページは、デザインとサンプリングのつながりを一つの流れでつかむ、動画連動の総合解説です。測定点・AからD測定を詳しく確認したい場合は[デザインの記事]({{ '/guides/work-environment-measurement-design/' | relative_url }})、捕集方法や採取条件を詳しく確認したい場合は[サンプリングの記事]({{ '/guides/work-environment-measurement-sampling/' | relative_url }})へ進んでください。
 
 ## 作業環境測定におけるデザインとは {#design}
 

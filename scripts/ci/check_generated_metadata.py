@@ -158,6 +158,7 @@ def main() -> int:
         ],
     )
     article_images: dict[Path, str] = {}
+    article_titles: dict[Path, str] = {}
     for article_path in site.rglob("index.html"):
         article_html = article_path.read_text(encoding="utf-8")
         feedback_section = re.search(
@@ -173,6 +174,10 @@ def main() -> int:
         structured_data = article_structured_data(article_html)
         if structured_data is None or '<meta name="robots" content="noindex, nofollow">' in article_html:
             continue
+        headline = structured_data.get("headline")
+        if not isinstance(headline, str) or not headline.strip():
+            raise SystemExit(f"{article_path} must include a non-empty Article headline")
+        article_titles[article_path] = headline.strip()
         og_image = meta_content(article_html, "property", "og:image", article_path)
         twitter_image = meta_content(article_html, "name", "twitter:image", article_path)
         og_image_alt = meta_content(article_html, "property", "og:image:alt", article_path)
@@ -208,6 +213,13 @@ def main() -> int:
             if list(article_images.values()).count(image) > 1
         )
         raise SystemExit(f"Public articles must not share OGP images: {duplicates}")
+    duplicate_titles = sorted(
+        title
+        for title in set(article_titles.values())
+        if list(article_titles.values()).count(title) > 1
+    )
+    if duplicate_titles:
+        raise SystemExit(f"Public articles must not share the same title: {duplicate_titles}")
     require(site / "videos" / "index.html", ['"@type": "WebPage"', "-l2ISaUncV4"])
     public_routes_without_placeholders = (
         "guides",

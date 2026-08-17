@@ -84,8 +84,9 @@ TITLE_LINES = {
         "化学防護手袋の選び方・使い方",
     ],
     "work-environment-measurement-design-sampling": [
-        "作業環境測定のデザインとは？",
-        "測定点とA・B・C・D測定を整理",
+        "作業環境測定の",
+        "デザイン・サンプリング",
+        "測定計画の全体像",
     ],
     "work-environment-measurement-design": [
         "作業環境測定のデザインとは？",

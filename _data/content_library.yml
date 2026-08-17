@@ -23,10 +23,10 @@
     url: https://note.com/eisei_ai_channel/n/nf412b8bbf037
     label: noteで読む
 
-- slug: work-environment-measurement-design
-  title: 作業環境測定のデザインとは？測定点とA・B・C・D測定を整理
+- slug: work-environment-measurement-design-sampling
+  title: 作業環境測定のデザイン・サンプリング｜測定計画の全体像
   category: 作業環境測定
-  summary: 事前調査から単位作業場所、測定点、A・B・C・D測定の選択まで、測定計画の考え方を整理します。
+  summary: 事前調査から測定点、A・B・C・D測定、試料採取まで、デザインとサンプリングのつながりを整理します。
   published_at: 2026-08-10
   featured_home: true
   purposes: [overview, practice, qualification]
@@ -36,9 +36,9 @@
     youtube: 10
     note: 12
   recommended_format: youtube
-  keywords: [作業環境測定, デザイン, 測定点, A測定, B測定]
+  keywords: [作業環境測定, デザイン, サンプリング, 測定点, A測定, B測定]
   site:
-    url: /guides/work-environment-measurement-design/
+    url: /guides/work-environment-measurement-design-sampling/
     label: サイトで読む
   youtube:
     video_id: "-l2ISaUncV4"
