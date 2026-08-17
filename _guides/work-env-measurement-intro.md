@@ -128,7 +128,7 @@ youtube_videos:
 - 気中有害物質が広がると考えられる範囲
 - 換気設備の位置と稼働状況
 
-単位作業場所の設定や、測定点数・間隔などの具体的な要件は、対象と測定方法に応じて作業環境測定基準を確認する必要があります。詳しい設計方法は、[作業環境測定のデザインとサンプリング]({{ "/guides/work-environment-measurement-design-sampling/" | relative_url }})で確認できます。
+単位作業場所の設定や、測定点数・間隔などの具体的な要件は、対象と測定方法に応じて作業環境測定基準を確認する必要があります。詳しい設計方法は、[作業環境測定のデザイン]({{ "/guides/work-environment-measurement-design/" | relative_url }})で確認できます。
 
 生成AIは確認項目や架空データの計算練習には使えますが、測定点や管理区分を決める根拠にはできません。[測定データとAI出力を人が検証する手順]({{ '/guides/ai-use-occupational-health-basics/' | relative_url }})も確認してください。
 
