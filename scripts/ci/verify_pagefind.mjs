@@ -14,6 +14,8 @@ const excludedPaths = [
   "/skills/",
   "/reports/",
   "/guides/organic-solvent-basics/",
+  "/templates/",
+  "/pages/qa-template/",
   "/search/",
   "/navigator/",
   "/404.html",

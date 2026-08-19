@@ -7,6 +7,18 @@ permalink: pretty
 plugins:
   - jekyll-sitemap
 
+# `exclude` を設定するとJekyll標準の除外一覧を上書きするため、標準値も明示する。
+# 編集用の原稿テンプレートはリポジトリには保持し、公開サイトには含めない。
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - templates
+
 collections:
   guides:
     output: true
