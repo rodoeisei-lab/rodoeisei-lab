@@ -130,8 +130,27 @@ def main() -> int:
     sitemap = site / "sitemap.xml"
     if not sitemap.is_file():
         raise SystemExit(f"Missing generated sitemap: {sitemap}")
-    if "/guides/organic-solvent-basics/" in sitemap.read_text(encoding="utf-8"):
+    sitemap_html = sitemap.read_text(encoding="utf-8")
+    if "/guides/organic-solvent-basics/" in sitemap_html:
         raise SystemExit("Work-in-progress organic solvent guide appeared in sitemap.xml")
+    for private_route in ("/templates/qa-article/", "/pages/qa-template/"):
+        if private_route in sitemap_html:
+            raise SystemExit(f"Editorial Q&A template appeared in sitemap.xml: {private_route}")
+
+    editorial_template_markers = (
+        "Q&A記事テンプレート（編集用）",
+        "Q&Aテンプレート: ここに質問タイトル",
+    )
+    for generated_page in site.rglob("*.html"):
+        generated_html = generated_page.read_text(encoding="utf-8")
+        marker = next(
+            (candidate for candidate in editorial_template_markers if candidate in generated_html),
+            None,
+        )
+        if marker:
+            raise SystemExit(
+                f"Editorial Q&A template leaked into the public site: {generated_page} ({marker})"
+            )
 
     require(
         site / "guides" / "occupational-health-consultant-basics" / "index.html",

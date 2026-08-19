@@ -7,6 +7,10 @@ permalink: pretty
 plugins:
   - jekyll-sitemap
 
+# 編集用の原稿テンプレートはリポジトリには保持し、公開サイトには含めない。
+exclude:
+  - templates
+
 collections:
   guides:
     output: true
