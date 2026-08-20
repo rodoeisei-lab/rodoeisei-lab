@@ -119,7 +119,8 @@ def main() -> int:
     meta_content(home_html, "name", "twitter:image:alt", site / "index.html")
     if png_dimensions(built_asset_path(site, home_og_image, site / "index.html")) != (1200, 630):
         raise SystemExit("Home page OGP image must be exactly 1200x630")
-    if "/guides/organic-solvent-basics/" in home_html:
+    work_in_progress_guide_route = "/guides/organic-solvent-basics/"
+    if work_in_progress_guide_route in home_html:
         raise SystemExit("Home page links to the work-in-progress organic solvent guide")
 
     require(
@@ -131,7 +132,7 @@ def main() -> int:
     if not sitemap.is_file():
         raise SystemExit(f"Missing generated sitemap: {sitemap}")
     sitemap_html = sitemap.read_text(encoding="utf-8")
-    if "/guides/organic-solvent-basics/" in sitemap_html:
+    if work_in_progress_guide_route in sitemap_html:
         raise SystemExit("Work-in-progress organic solvent guide appeared in sitemap.xml")
     for private_route in ("/templates/qa-article/", "/pages/qa-template/"):
         if private_route in sitemap_html:
@@ -151,6 +152,29 @@ def main() -> int:
             raise SystemExit(
                 f"Editorial Q&A template leaked into the public site: {generated_page} ({marker})"
             )
+        if '<meta name="robots" content="noindex, nofollow">' in generated_html:
+            continue
+        if re.search(
+            rf'<a\b[^>]*\bhref\s*=\s*["\'][^"\']*{re.escape(work_in_progress_guide_route)}',
+            generated_html,
+            flags=re.IGNORECASE,
+        ):
+            raise SystemExit(
+                f"Public page links to the work-in-progress organic solvent guide: {generated_page}"
+            )
+
+    require(
+        site / "qa" / "third-control-class" / "index.html",
+        [
+            "/inspection/",
+            "/guides/work-env-measurement-intro/",
+            "/guides/management-concentration-exposure-limits/",
+        ],
+    )
+    require(
+        site / "glossary" / "index.html",
+        ["/guides/chemical-management-basics/"],
+    )
 
     require(
         site / "guides" / "occupational-health-consultant-basics" / "index.html",

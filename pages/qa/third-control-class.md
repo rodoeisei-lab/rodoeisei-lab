@@ -38,4 +38,5 @@ tags:
 ## 関連記事
 
 - [労基署対策]({{ '/inspection/' | relative_url }})
-- [有機溶剤の基礎]({{ '/guides/organic-solvent-basics/' | relative_url }})
+- [作業環境測定の超入門]({{ '/guides/work-env-measurement-intro/' | relative_url }})
+- [管理濃度・濃度基準値・許容濃度の違い]({{ '/guides/management-concentration-exposure-limits/' | relative_url }})

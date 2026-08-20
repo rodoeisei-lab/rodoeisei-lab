@@ -45,7 +45,7 @@ permalink: /glossary/
         <p><a href="{{ '/guides/work-env-measurement-intro/' | relative_url }}">測定評価の流れを「作業環境測定の超入門」で確認する</a></p>
         <p><a href="{{ '/updates/' | relative_url }}">測定制度に関する最新の更新情報を見る</a></p>
       {% elsif entry.term == "有機溶剤中毒予防規則" %}
-        <p><a href="{{ '/guides/organic-solvent-basics/' | relative_url }}">有機溶剤の基本対策をガイドで確認する</a></p>
+        <p><a href="{{ '/guides/chemical-management-basics/' | relative_url }}">有機則を含む化学物質管理の全体像を入門記事で確認する</a></p>
         <p><a href="{{ '/updates/' | relative_url }}">規則改正の有無を最新アップデートで確認する</a></p>
       {% endif %}
     {% endcapture %}
