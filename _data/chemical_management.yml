@@ -33,9 +33,9 @@
   status: published
   url: /guides/skin-hazard-chemicals-protective-gloves/
   section: 保護具
-- title: 有機溶剤中毒予防規則の基本
-  description: 対象となる物質・作業と措置を確認する入口を整理します。
-  status: wip
+- title: 有機溶剤中毒予防規則の基本｜SDS確認から現場管理の進め方
+  description: SDS・作業内容・換気設備を起点に、適用確認から現場管理までの基本を整理します。
+  status: published
   url: /guides/organic-solvent-basics/
   section: 特別規則
 - title: 特定化学物質障害予防規則の基本

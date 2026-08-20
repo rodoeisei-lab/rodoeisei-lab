@@ -119,20 +119,27 @@ def main() -> int:
     meta_content(home_html, "name", "twitter:image:alt", site / "index.html")
     if png_dimensions(built_asset_path(site, home_og_image, site / "index.html")) != (1200, 630):
         raise SystemExit("Home page OGP image must be exactly 1200x630")
-    if "/guides/organic-solvent-basics/" in home_html:
-        raise SystemExit("Home page links to the work-in-progress organic solvent guide")
-
+    organic_solvent_guide_route = "/guides/organic-solvent-basics/"
+    organic_solvent_guide = site / "guides" / "organic-solvent-basics" / "index.html"
     require(
-        site / "guides" / "organic-solvent-basics" / "index.html",
-        ['<meta name="robots" content="noindex, nofollow">', "data-pagefind-ignore"],
+        organic_solvent_guide,
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "製品名だけで「有機則の対象だろう」",
+            "/guides/chemical-management-basics/",
+        ],
     )
+    organic_solvent_html = organic_solvent_guide.read_text(encoding="utf-8")
+    if '<meta name="robots" content="noindex, nofollow">' in organic_solvent_html:
+        raise SystemExit("Published organic solvent guide is still marked noindex")
 
     sitemap = site / "sitemap.xml"
     if not sitemap.is_file():
         raise SystemExit(f"Missing generated sitemap: {sitemap}")
     sitemap_html = sitemap.read_text(encoding="utf-8")
-    if "/guides/organic-solvent-basics/" in sitemap_html:
-        raise SystemExit("Work-in-progress organic solvent guide appeared in sitemap.xml")
+    if organic_solvent_guide_route not in sitemap_html:
+        raise SystemExit("Published organic solvent guide is missing from sitemap.xml")
     for private_route in ("/templates/qa-article/", "/pages/qa-template/"):
         if private_route in sitemap_html:
             raise SystemExit(f"Editorial Q&A template appeared in sitemap.xml: {private_route}")
@@ -151,6 +158,33 @@ def main() -> int:
             raise SystemExit(
                 f"Editorial Q&A template leaked into the public site: {generated_page} ({marker})"
             )
+
+    require(
+        site / "qa" / "third-control-class" / "index.html",
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "原因確認、発散源・設備・工程の改善",
+            "/inspection/",
+            "/guides/work-env-measurement-intro/",
+            "/guides/management-concentration-exposure-limits/",
+            "/guides/organic-solvent-basics/",
+        ],
+    )
+    require(
+        site / "qa" / "hygiene-committee-agenda" / "index.html",
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "担当者・期限・確認方法",
+            "毎月1回以上",
+            "/contact/",
+        ],
+    )
+    require(
+        site / "glossary" / "index.html",
+        ["/guides/organic-solvent-basics/"],
+    )
 
     require(
         site / "guides" / "occupational-health-consultant-basics" / "index.html",
@@ -193,6 +227,8 @@ def main() -> int:
         structured_data = article_structured_data(article_html)
         if structured_data is None or '<meta name="robots" content="noindex, nofollow">' in article_html:
             continue
+        if "/contact/" not in article_html:
+            raise SystemExit(f"{article_path} is missing the article-to-contact path")
         headline = structured_data.get("headline")
         if not isinstance(headline, str) or not headline.strip():
             raise SystemExit(f"{article_path} must include a non-empty Article headline")

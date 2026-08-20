@@ -13,7 +13,6 @@ const excludedPaths = [
   "/inventory-memo.html",
   "/skills/",
   "/reports/",
-  "/guides/organic-solvent-basics/",
   "/templates/",
   "/pages/qa-template/",
   "/search/",
@@ -71,7 +70,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/organic-solvent-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/qa/third-control-class/", "/qa/hygiene-committee-agenda/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -101,6 +100,20 @@ try {
   const chemicalResults = await search("化学物質管理");
   if (!chemicalResults.some((page) => page.url.includes("/guides/chemical-management-basics/"))) {
     throw new Error("Chemical management search did not return the introduction article.");
+  }
+
+  for (const query of ["有機則", "有機溶剤中毒予防規則"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/guides/organic-solvent-basics/"))) {
+      throw new Error(`Organic solvent guide is missing for query: ${query}`);
+    }
+  }
+
+  for (const [query, expectedPath] of [["第3管理区分", "/qa/third-control-class/"], ["衛生委員会", "/qa/hygiene-committee-agenda/"]]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes(expectedPath))) {
+      throw new Error(`Public Q&A is missing for query: ${query}`);
+    }
   }
 
   for (const query of ["SDS", "リスクアセスメント"]) {
