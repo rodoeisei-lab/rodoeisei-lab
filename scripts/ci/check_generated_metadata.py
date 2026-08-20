@@ -126,7 +126,7 @@ def main() -> int:
         [
             '<meta property="og:type" content="article">',
             '"@type": "Article"',
-            "有機則の適用は、製品名だけで決めず",
+            "製品名だけで「有機則の対象だろう」",
             "/guides/chemical-management-basics/",
         ],
     )
