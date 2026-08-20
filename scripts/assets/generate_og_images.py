@@ -54,6 +54,10 @@ TITLE_LINES = {
         "入力項目・結果の見方・注意点",
     ],
     "fit-test": ["フィットテスト導入の", "最小セット"],
+    "hygiene-committee-agenda": [
+        "衛生委員会の議題を",
+        "現場改善につなげる方法",
+    ],
     "local-exhaust-inspection": [
         "局所排気装置は、どの頻度で",
         "点検し、何を記録する？",
@@ -71,6 +75,10 @@ TITLE_LINES = {
         "労働衛生コンサルタントとは？",
         "試験・受験資格・登録の全体像",
     ],
+    "organic-solvent-basics": [
+        "有機溶剤中毒予防規則の基本",
+        "SDS確認から現場管理まで",
+    ],
     "operator-skill-expansion-roadmap": [
         "運営者スキル拡充ロードマップ",
         "Jekyll・SEO・外部連携",
@@ -82,6 +90,10 @@ TITLE_LINES = {
     "skin-hazard-chemicals-protective-gloves": [
         "皮膚等障害化学物質等とは？",
         "化学防護手袋の選び方・使い方",
+    ],
+    "third-control-class": [
+        "第3管理区分になったら？",
+        "原因確認から改善・再測定まで",
     ],
     "work-environment-measurement-design-sampling": [
         "作業環境測定の",
@@ -386,11 +398,18 @@ def make_card(title: str, category: str, theme_name: str, slug: str, font_path: 
     return image
 
 
-def generate(font_path: Path) -> int:
+def generate(font_path: Path, selected_slugs: set[str] | None = None) -> int:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     articles = public_articles()
     if not articles:
         raise SystemExit("No public articles found")
+
+    if selected_slugs is not None:
+        available_slugs = {path.stem for path, _ in articles}
+        unknown_slugs = sorted(selected_slugs - available_slugs)
+        if unknown_slugs:
+            raise SystemExit(f"Unknown public article slug(s): {', '.join(unknown_slugs)}")
+        articles = [(path, meta) for path, meta in articles if path.stem in selected_slugs]
 
     for path, meta in articles:
         title = meta.get("title")
@@ -403,25 +422,33 @@ def generate(font_path: Path) -> int:
         image.save(output, format="PNG", optimize=True)
         print(f"generated {output.relative_to(ROOT)}")
 
-    default = make_card(
-        "現場と法令のあいだをつなぐ学習サイト",
-        "労働衛生",
-        "measurement",
-        "og-default",
-        font_path,
-    )
-    default.save(ROOT / "assets" / "images" / "og-default.png", format="PNG", optimize=True)
-    print("generated assets/images/og-default.png")
+    if selected_slugs is None:
+        default = make_card(
+            "現場と法令のあいだをつなぐ学習サイト",
+            "労働衛生",
+            "measurement",
+            "og-default",
+            font_path,
+        )
+        default.save(ROOT / "assets" / "images" / "og-default.png", format="PNG", optimize=True)
+        print("generated assets/images/og-default.png")
     return 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--font", required=True, type=Path, help="Japanese TrueType/OpenType font")
+    parser.add_argument(
+        "--slug",
+        action="append",
+        default=[],
+        help="Generate only this public article slug. Repeat for multiple cards.",
+    )
     args = parser.parse_args()
     if not args.font.is_file():
         raise SystemExit(f"Font not found: {args.font}")
-    return generate(args.font)
+    selected_slugs = set(args.slug) if args.slug else None
+    return generate(args.font, selected_slugs)
 
 
 if __name__ == "__main__":
