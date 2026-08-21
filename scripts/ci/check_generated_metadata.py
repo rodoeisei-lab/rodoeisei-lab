@@ -78,7 +78,7 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search", "chemical-management", "ai-use", "occupational-health-consultant", "videos", "tools", "products", "amazon", "about", "privacy", "contact"):
+    for route in ("learn", "regulations", "search", "chemical-management", "substances", "ai-use", "occupational-health-consultant", "videos", "tools", "products", "amazon", "about", "privacy", "contact"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
 
     require(
@@ -185,6 +185,52 @@ def main() -> int:
         site / "glossary" / "index.html",
         ["/guides/organic-solvent-basics/"],
     )
+
+    substance_registry_path = Path("_data/substance_registry.json")
+    if not substance_registry_path.is_file():
+        raise SystemExit("Missing generated substance registry data")
+    substance_registry = json.loads(substance_registry_path.read_text(encoding="utf-8"))
+    records = substance_registry.get("records")
+    if substance_registry.get("schema_version") != 1 or not isinstance(records, list):
+        raise SystemExit("Substance registry data has an unsupported schema")
+    expected_system_counts = {
+        "organic-solvent": 45,
+        "specified-chemical": 75,
+        "concentration-standard": 270,
+    }
+    actual_system_counts = {
+        system_key: sum(
+            1 for record in records if record.get("system_key") == system_key
+        )
+        for system_key in expected_system_counts
+    }
+    if actual_system_counts != expected_system_counts:
+        raise SystemExit(
+            "Substance registry record counts changed; review the official-source update: "
+            f"{actual_system_counts}"
+        )
+    for record in records:
+        if not all(record.get(field) for field in ("id", "name", "system_key", "category", "source_url")):
+            raise SystemExit(f"Substance registry record is missing required data: {record}")
+
+    substance_page = site / "substances" / "index.html"
+    require(
+        substance_page,
+        [
+            "対象物質・制度検索",
+            "第2種有機溶剤",
+            "アセトン",
+            "溶接ヒューム",
+            "アクリル酸",
+            "濃度基準値設定物質",
+            "CAS RNは参考情報",
+            "確認測定を含むばく露状況の確認方法",
+            "/assets/js/substance-registry.js",
+        ],
+    )
+    substance_html = substance_page.read_text(encoding="utf-8")
+    if "個人ばく露測定対象物質" in substance_html:
+        raise SystemExit("Substance page must not call a whole list individual-exposure-measurement targets")
 
     require(
         site / "guides" / "occupational-health-consultant-basics" / "index.html",

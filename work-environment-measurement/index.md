@@ -63,6 +63,7 @@ permalink: /work-environment-measurement/
   <nav class="measurement-related-links" aria-labelledby="related-pages-title">
     <div class="measurement-section-heading"><p class="measurement-section-label">調べる・深める</p><h2 id="related-pages-title">関連ページ</h2></div>
     <div>
+      <a href="{{ '/substances/' | relative_url }}"><strong>対象物質・制度検索</strong><span>有機則・特化則・濃度基準値を確認</span></a>
       <a href="{{ '/regulations/' | relative_url }}"><strong>法令・規則</strong><span>関係する規則を確認</span></a>
       <a href="{{ '/glossary/' | relative_url }}"><strong>用語集</strong><span>専門用語を確認</span></a>
       <a href="{{ '/qa/' | relative_url }}"><strong>Q&amp;A</strong><span>現場の疑問から探す</span></a>

@@ -122,6 +122,7 @@ jobs:
             "/amazon/" \
             "/work-environment-measurement/" \
             "/chemical-management/" \
+            "/substances/" \
             "/local-exhaust-ventilation/" \
             "/ai-use/" \
             "/occupational-health-consultant/" \
