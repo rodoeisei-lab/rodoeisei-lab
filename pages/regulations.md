@@ -24,6 +24,7 @@ hide_page_hero: true
   </section>
 
   <p class="chemical-scope-note">生成AIで条文を整理する場合も、回答を法令根拠や適用判断にせず、<a href="{{ '/guides/ai-use-occupational-health-basics/' | relative_url }}">一次情報を人が確認する手順</a>を守ってください。</p>
+  <p class="chemical-scope-note"><strong>物質から制度を確認する場合：</strong><a href="{{ '/substances/' | relative_url }}">対象物質・制度検索</a>で、第2種有機溶剤・特定化学物質・濃度基準値設定物質を制度別に調べられます。</p>
 
   <section class="regulations-search-panel" aria-label="法令・規則のクイックジャンプ">
     <a class="regulations-search-field" href="https://laws.e-gov.go.jp/search/elawsSearch/elaws_search/lsg0100/" target="_blank" rel="noopener">
