@@ -46,6 +46,7 @@ permalink: /chemical-management/
     <div class="chemical-section-heading"><p class="chemical-section-label">対象物質を調べる</p><h2 id="substance-registry-title">制度から対象物質を確認する</h2><p>第2種有機溶剤、特定化学物質、濃度基準値設定物質を制度別に検索できます。法令適用の最終判断は、製品SDSと一次情報で確認してください。</p></div>
     <div class="chemical-official-links">
       <a href="{{ '/substances/' | relative_url }}"><strong>対象物質・制度検索</strong><span>物質名・CAS RN・制度区分から確認する</span></a>
+      <a href="{{ '/substances/check-flow/' | relative_url }}"><strong>検索結果の後に確認すること</strong><span>作業環境測定・確認測定・リスクアセスメントを分ける</span></a>
       <a href="{{ '/guides/management-concentration-exposure-limits/' | relative_url }}"><strong>濃度の指標を整理する</strong><span>管理濃度・濃度基準値・許容濃度の違い</span></a>
     </div>
   </section>

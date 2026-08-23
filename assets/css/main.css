@@ -160,6 +160,48 @@ button,a,input,select,textarea{touch-action:manipulation}
 .chemical-official-links span{color:var(--color-text-secondary);font-size:14px}
 .chemical-disclaimer{margin-top:44px}
 .chemical-disclaimer p{margin:.4em 0 0}
+.substance-check-flow{max-width:960px;margin:auto;overflow-wrap:anywhere}
+.substance-check-flow__intro,.substance-check-flow__section,.substance-check-flow__sources{padding:22px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff}
+.substance-check-flow__intro{background:linear-gradient(135deg,#fff 0%,#f0f9ff 100%)}
+.substance-check-flow__eyebrow{margin:0 0 6px;color:var(--color-primary);font-size:14px;font-weight:800;letter-spacing:.04em}
+.substance-check-flow__intro h2,.substance-check-flow__heading h2,.substance-check-flow__sources h2{margin:0;font-size:clamp(23px,4vw,30px);line-height:1.4}
+.substance-check-flow__intro>p:not(.substance-check-flow__eyebrow),.substance-check-flow__heading>p:last-child{max-width:800px;color:var(--color-text-secondary)}
+.substance-check-flow__intro-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.substance-check-flow__jump{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:24px 0}
+.substance-check-flow__jump a{display:flex;flex-direction:column;justify-content:center;min-height:70px;padding:10px 12px;border:1px solid var(--color-border);border-radius:10px;background:#fff;color:var(--color-text);font-size:14px;font-weight:750;line-height:1.45;text-decoration:none}
+.substance-check-flow__jump a:hover{border-color:var(--color-primary);color:var(--color-primary);background:#f0f9ff}
+.substance-check-flow__jump span{display:block;margin-bottom:2px;color:var(--color-primary);font-size:13px;font-weight:850}
+.substance-check-flow__section{margin-top:24px}
+.substance-check-flow__checklist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 0;padding:0;list-style:none}
+.substance-check-flow__checklist li{padding:16px;border:1px solid var(--color-border);border-radius:12px;background:#f8fafc}
+.substance-check-flow__checklist strong,.substance-check-flow__checklist span{display:block}
+.substance-check-flow__checklist strong{color:var(--color-primary)}
+.substance-check-flow__checklist span{margin-top:5px;color:var(--color-text-secondary);font-size:15px;line-height:1.65}
+.substance-check-flow__route-grid,.substance-registry__route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.substance-check-flow__route-card,.substance-registry__route-card{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid var(--color-border);border-radius:12px;background:#fff}
+.substance-check-flow__route-card--accent,.substance-registry__route-card--accent{border-color:#9fcbdc;background:#f0f9ff}
+.substance-check-flow__route-label,.substance-registry__route-card>span{margin:0;color:var(--color-primary);font-size:14px;font-weight:800}
+.substance-check-flow__route-card h3{margin:6px 0 0;font-size:20px;line-height:1.45}
+.substance-check-flow__route-card>p:not(.substance-check-flow__route-label){margin:10px 0 0;color:var(--color-text-secondary);font-size:15px;line-height:1.7}
+.substance-check-flow__route-note{padding:10px 12px;border-left:3px solid #b45309;background:#fffaf0;color:#7c2d12!important}
+.substance-check-flow__route-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:16px}
+.substance-check-flow__route-links a{display:inline-flex;align-items:center;min-height:36px;padding:6px 9px;border:1px solid #b7dce6;border-radius:8px;background:#fff;color:var(--color-primary);font-size:14px;font-weight:750;line-height:1.45;text-decoration:none}
+.substance-check-flow__table{margin:20px 0 0}
+.substance-check-flow__table th[scope=row]{min-width:150px}
+.substance-check-flow__notice{margin-top:18px;padding:16px 18px;border-left:4px solid #b45309;background:#fffaf0}
+.substance-check-flow__notice p{margin:.45em 0 0;color:#7c2d12}
+.substance-check-flow__steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px 0 0;padding:0;list-style:none}
+.substance-check-flow__steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:16px;border:1px solid var(--color-border);border-radius:12px;background:#f8fafc}
+.substance-check-flow__steps li>span{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--color-primary);color:#fff;font-weight:850}
+.substance-check-flow__steps strong{display:block}
+.substance-check-flow__steps p{margin:3px 0 0;color:var(--color-text-secondary);font-size:15px;line-height:1.65}
+.substance-check-flow__sources{margin-top:24px}
+.substance-check-flow__sources ul{display:grid;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.substance-check-flow__sources li{display:flex;flex-wrap:wrap;gap:5px 10px;padding:10px 0;border-top:1px solid var(--color-border)}
+.substance-check-flow__sources li:first-child{border-top:0}
+.substance-check-flow__sources a{font-weight:750}
+.substance-check-flow__sources li>span,.substance-check-flow__sources>p{color:var(--color-text-secondary);font-size:14px}
+.substance-check-flow__sources>p{margin:16px 0 0}
 .substance-registry{max-width:1100px;margin:auto;overflow-wrap:anywhere}
 .substance-registry__intro,.substance-registry__notice,.substance-filter-controls,.substance-registry__scope,.substance-registry__source-panel{border:1px solid var(--color-border);border-radius:var(--radius);background:#fff}
 .substance-registry__intro{padding:24px}
@@ -174,6 +216,14 @@ button,a,input,select,textarea{touch-action:manipulation}
 .substance-registry__notice ul{margin:12px 0;padding-left:22px}
 .substance-registry__notice li+li{margin-top:6px}
 .substance-registry__notice p{margin:12px 0 0;color:#7c2d12}
+.substance-registry__routes{margin-top:24px;padding:20px;border:1px solid var(--color-border);border-radius:var(--radius);background:#f8fafc}
+.substance-registry__routes .substance-registry__section-heading{margin-bottom:0}
+.substance-registry__routes .substance-registry__section-heading>p:last-child{max-width:760px;margin-bottom:0;color:var(--color-text-secondary)}
+.substance-registry__route-card{min-height:148px;color:var(--color-text);text-decoration:none;box-shadow:0 2px 10px rgba(15,76,120,.04)}
+.substance-registry__route-card:hover{border-color:var(--color-primary);color:var(--color-primary);transform:translateY(-1px);box-shadow:var(--shadow)}
+.substance-registry__route-card strong{display:block;margin-top:5px;font-size:18px;line-height:1.45}
+.substance-registry__route-card small{display:block;margin-top:7px;color:var(--color-text-secondary);font-size:14px;line-height:1.55}
+.substance-registry__route-action{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;color:var(--color-primary);font-weight:800}
 .substance-registry__search{margin-top:44px}
 .substance-registry__section-heading{margin-bottom:18px}
 .substance-filter-controls{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,1fr);gap:16px;padding:18px}
@@ -291,7 +341,7 @@ button,a,input,select,textarea{touch-action:manipulation}
 .tool-check-grid{grid-template-columns:1fr}
 }
 
-@media(max-width:720px){.substance-registry__intro-links,.substance-filter-controls,.substance-registry__scope{grid-template-columns:1fr}
+@media(max-width:720px){.substance-check-flow__jump,.substance-check-flow__checklist,.substance-check-flow__route-grid,.substance-registry__route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.substance-check-flow__steps{grid-template-columns:1fr}.substance-registry__intro-links,.substance-filter-controls,.substance-registry__scope{grid-template-columns:1fr}
 .substance-select-grid{grid-column:auto}
 }
 
@@ -304,8 +354,10 @@ button,a,input,select,textarea{touch-action:manipulation}
 .measurement-step,.measurement-step a{grid-template-columns:40px 1fr}
 .measurement-step-action,.measurement-status{grid-column:2}
 .measurement-coming-list,.measurement-related-links>div:last-child{grid-template-columns:1fr}
-.chemical-definitions,.chemical-roadmap,.chemical-official-links{grid-template-columns:1fr}
+.chemical-definitions,.chemical-roadmap,.chemical-official-links,.substance-check-flow__jump,.substance-check-flow__checklist,.substance-check-flow__route-grid,.substance-registry__route-grid{grid-template-columns:1fr}
 .chemical-roadmap li{flex-direction:column}
+.substance-check-flow__intro,.substance-check-flow__section,.substance-check-flow__sources,.substance-registry__routes{padding:18px}
+.substance-check-flow__intro-actions{align-items:stretch;flex-direction:column}.substance-check-flow__intro-actions a{width:100%}
 .substance-registry__intro{padding:20px}
 .substance-registry__intro-links,.substance-filter-controls,.substance-registry__scope{grid-template-columns:1fr}
 .substance-filter-controls{padding:16px}

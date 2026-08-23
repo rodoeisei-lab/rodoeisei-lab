@@ -31,6 +31,32 @@ permalink: /substances/
     <p><strong>CAS RNは参考情報です。</strong>濃度基準値等一覧でも、対象物質の当否はCAS RNではなく物質名で確認するよう示されています。</p>
   </aside>
 
+  <section class="substance-registry__routes" aria-labelledby="substance-registry-routes-title">
+    <div class="substance-registry__section-heading">
+      <p class="substance-registry__eyebrow">検索結果の次に</p>
+      <h2 id="substance-registry-routes-title">確認する制度と測定を、目的で分ける</h2>
+      <p>物質が見つかっただけで、測定の要否・方法は決まりません。製品SDSと作業条件を合わせて、次の確認ルートへ進みます。</p>
+    </div>
+    <div class="substance-registry__route-grid">
+      <a class="substance-registry__route-card" href="{{ '/substances/check-flow/#special-regulations' | relative_url }}">
+        <span>第2種有機溶剤・特定化学物質</span>
+        <strong>特別規則と指定作業場を確認</strong>
+        <small>含有率、対象作業、作業場所、適用除外を合わせて確認</small>
+      </a>
+      <a class="substance-registry__route-card substance-registry__route-card--accent" href="{{ '/substances/check-flow/#concentration-standard' | relative_url }}">
+        <span>濃度基準値設定物質</span>
+        <strong>リスクアセスメントから確認測定へ</strong>
+        <small>超過のおそれと屋内作業の条件から、必要な確認を考える</small>
+      </a>
+      <a class="substance-registry__route-card" href="{{ '/substances/check-flow/#risk-assessment' | relative_url }}">
+        <span>検索で見つからない物質</span>
+        <strong>SDS・公式対象物質検索を確認</strong>
+        <small>掲載外でもリスクアセスメント対象外とは限らない</small>
+      </a>
+    </div>
+    <a class="substance-registry__route-action" href="{{ '/substances/check-flow/' | relative_url }}">物質検索の後の確認フローを見る <span aria-hidden="true">→</span></a>
+  </section>
+
   <section class="substance-registry__search" aria-labelledby="substance-search-title">
     <div class="substance-registry__section-heading">
       <p class="substance-registry__eyebrow">検索・絞り込み</p>
@@ -103,7 +129,7 @@ permalink: /substances/
     <div>
       <p class="substance-registry__eyebrow">この第1版の範囲</p>
       <h2 id="substance-registry-scope-title">制度確認の入口から、順次拡張します</h2>
-      <p>現在は、有機則・特化則・濃度基準値を掲載しています。リスクアセスメント対象物の網羅、特別管理物質・特別有機溶剤などの細分類、作業環境測定の対象業務の案内は、根拠資料を確認しながら追加します。</p>
+      <p>現在は、有機則・特化則・濃度基準値を掲載しています。リスクアセスメント対象物の網羅、特別管理物質・特別有機溶剤などの細分類、作業環境測定の対象業務の詳細一覧は、根拠資料を確認しながら追加します。</p>
     </div>
     <div class="substance-registry__source-panel">
       <strong>データ更新日：{{ registry.generated_at | escape }}</strong>

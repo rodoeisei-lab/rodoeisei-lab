@@ -231,6 +231,20 @@ def main() -> int:
     substance_html = substance_page.read_text(encoding="utf-8")
     if "個人ばく露測定対象物質" in substance_html:
         raise SystemExit("Substance page must not call a whole list individual-exposure-measurement targets")
+    substance_check_flow = site / "substances" / "check-flow" / "index.html"
+    require(
+        substance_check_flow,
+        [
+            "物質検索の後の確認フロー",
+            "濃度基準値設定物質",
+            "確認測定",
+            "指定作業場",
+            "掲載がないことは、リスクアセスメント、ラベル表示、SDS交付などの対象外を意味しません。",
+            "/substances/",
+        ],
+    )
+    if "個人ばく露測定対象物質" in substance_check_flow.read_text(encoding="utf-8"):
+        raise SystemExit("Substance check flow must not call a whole list individual-exposure-measurement targets")
 
     require(
         site / "guides" / "occupational-health-consultant-basics" / "index.html",
