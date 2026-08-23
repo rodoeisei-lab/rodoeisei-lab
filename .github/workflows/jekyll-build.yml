@@ -123,6 +123,7 @@ jobs:
             "/work-environment-measurement/" \
             "/chemical-management/" \
             "/substances/" \
+            "/substances/check-flow/" \
             "/local-exhaust-ventilation/" \
             "/ai-use/" \
             "/occupational-health-consultant/" \
