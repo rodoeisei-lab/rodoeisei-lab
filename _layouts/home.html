@@ -15,31 +15,15 @@ layout: base
   <section class="content-feature" aria-labelledby="content-feature-title">
     <div class="home-section-heading">
       <p class="section-kicker">YouTube・note連動</p>
-      <h2 id="content-feature-title">動画でつかみ、記事で深める</h2>
-      <p>ひとつのテーマを、動画でつかみ、noteで読み、サイトで根拠まで確認できます。</p>
+      <h2 id="content-feature-title">動画から、根拠の確認までつなぐ</h2>
     </div>
-    <details class="learning-compass" data-learning-compass data-baseurl="{{ site.baseurl }}">
-      <summary>
-        <span class="learning-compass__summary-copy">
-          <span class="section-kicker">学習コンパス</span>
-          <strong>目的と時間から、今の1本を選ぶ</strong>
-          <span>3つの条件から、動画・note・サイト記事を案内します。</span>
-        </span>
-        <span class="learning-compass__summary-action" aria-hidden="true"><span>条件を選ぶ</span><span>閉じる</span></span>
-      </summary>
-      <div class="learning-compass__body">
-        <form class="learning-compass__form">
-          <label><span><b>1</b>目的</span><select name="purpose"><option value="overview">まず全体像を知りたい</option><option value="practice">実務で確認したい</option><option value="qualification">資格学習に使いたい</option></select></label>
-          <label><span><b>2</b>使える時間</span><select name="time"><option value="3">3分</option><option value="10">10分</option><option value="deep">じっくり</option></select></label>
-          <label><span><b>3</b>学び方</span><select name="format"><option value="auto">おまかせ</option><option value="youtube">動画</option><option value="note">文章</option><option value="site">一次情報まで確認</option></select></label>
-        </form>
-        <div class="learning-compass__result" aria-live="polite" aria-atomic="true"></div>
-        <aside class="learning-history" data-learning-history hidden></aside>
-      </div>
-    </details>
-    <script type="application/json" id="learning-library-data">{{ site.data.content_library | jsonify }}</script>
+    <ol class="content-feature__flow" aria-label="テーマを深める流れ">
+      <li><strong>YouTube</strong><span>全体像をつかむ</span></li>
+      <li><strong>note</strong><span>順番に理解する</span></li>
+      <li><strong>サイト記事</strong><span>要点と根拠を確認</span></li>
+    </ol>
     <div class="content-feature__grid">
-      {% assign featured_count = 0 %}{% for item in site.data.content_library %}{% if item.featured_home and featured_count < 2 %}
+      {% assign featured_count = 0 %}{% for item in site.data.content_library %}{% if item.featured_home and featured_count < 1 %}
       <article class="library-card library-card--home">
         <a class="library-card__thumbnail" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
           <img src="https://i.ytimg.com/vi/{{ item.youtube.video_id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async">
@@ -51,7 +35,7 @@ layout: base
         </div>
       </article>{% assign featured_count = featured_count | plus: 1 %}{% endif %}{% endfor %}
     </div>
-    <a class="content-feature__cta" href="{{ '/videos/' | relative_url }}">動画・記事ライブラリを見る</a>
+    <a class="content-feature__cta" href="{{ '/videos/' | relative_url }}">テーマ別ライブラリを見る <span aria-hidden="true">→</span></a>
   </section>
 
   <section class="home-section" aria-labelledby="home-categories-title">
