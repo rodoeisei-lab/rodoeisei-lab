@@ -13,6 +13,27 @@ permalink: /videos/
     <div><article><h3>YouTube</h3><p>図や音声で全体像をつかむ</p></article><article><h3>note</h3><p>文章で順番に読み進める</p></article><article><h3>労働衛生ラボ</h3><p>要点・一次情報・更新内容を確認する</p></article></div>
   </section>
 
+  <details class="learning-compass" data-learning-compass data-baseurl="{{ site.baseurl }}">
+    <summary>
+      <span class="learning-compass__summary-copy">
+        <span class="section-kicker">学習コンパス</span>
+        <strong>目的と時間から、今の1本を選ぶ</strong>
+        <span>3つの条件から、動画・note・サイト記事を案内します。</span>
+      </span>
+      <span class="learning-compass__summary-action" aria-hidden="true"><span>条件を選ぶ</span><span>閉じる</span></span>
+    </summary>
+    <div class="learning-compass__body">
+      <form class="learning-compass__form">
+        <label><span><b>1</b>目的</span><select name="purpose"><option value="overview">まず全体像を知りたい</option><option value="practice">実務で確認したい</option><option value="qualification">資格学習に使いたい</option></select></label>
+        <label><span><b>2</b>使える時間</span><select name="time"><option value="3">3分</option><option value="10">10分</option><option value="deep">じっくり</option></select></label>
+        <label><span><b>3</b>学び方</span><select name="format"><option value="auto">おまかせ</option><option value="youtube">動画</option><option value="note">文章</option><option value="site">一次情報まで確認</option></select></label>
+      </form>
+      <div class="learning-compass__result" aria-live="polite" aria-atomic="true"></div>
+      <aside class="learning-history" data-learning-history hidden></aside>
+    </div>
+  </details>
+  <script type="application/json" id="learning-library-data">{{ site.data.content_library | jsonify }}</script>
+
   <section aria-labelledby="latest-library-title">
     <p class="section-kicker">新しい順に掲載</p><h2 id="latest-library-title">新着テーマ</h2>
     <p class="library-page__notice">サイト記事を実務へ適用する前に、一次情報と最終確認日も確認してください。</p>
