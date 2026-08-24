@@ -405,6 +405,17 @@ def main() -> int:
             "/guides/management-concentration-exposure-limits/",
         ],
     )
+    require(
+        site / "guides" / "sds-reading" / "index.html",
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "SDSは「保管資料」ではなく、現場確認の出発点",
+            "第3項",
+            "/substances/",
+            "/substances/check-flow/",
+        ],
+    )
 
     tools_html = (site / "tools" / "index.html").read_text(encoding="utf-8")
     require(

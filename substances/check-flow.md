@@ -14,6 +14,7 @@ permalink: /substances/check-flow/
     <div class="substance-check-flow__intro-actions">
       <a class="cta-secondary" href="{{ '/substances/' | relative_url }}">対象物質・制度検索に戻る</a>
       <a class="cta-tertiary" href="{{ '/chemical-management/' | relative_url }}">化学物質管理の全体像を見る</a>
+      <a class="cta-tertiary" href="{{ '/guides/sds-reading/' | relative_url }}">SDSの確認ポイントを見る</a>
     </div>
   </section>
 
@@ -28,7 +29,7 @@ permalink: /substances/check-flow/
     <div class="substance-check-flow__heading">
       <p class="substance-check-flow__eyebrow">01｜出発点</p>
       <h2 id="prepare-title">製品情報と作業条件をそろえる</h2>
-      <p>物質名だけでなく、SDSと現場の使い方を同じ単位で確認します。製品名で検索結果が出なくても、成分名で確認する必要があります。</p>
+      <p>物質名だけでなく、SDSと現場の使い方を同じ単位で確認します。製品名で検索結果が出なくても、成分名で確認する必要があります。SDSの項目ごとの確認は、<a href="{{ '/guides/sds-reading/' | relative_url }}">SDSの読み方</a>を参照してください。</p>
     </div>
     <ul class="substance-check-flow__checklist">
       <li><strong>製品・成分</strong><span>製品名、供給者、最新版のSDS、成分名、含有率、CAS RN、危険有害性情報</span></li>

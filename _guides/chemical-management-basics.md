@@ -46,6 +46,9 @@ related_links:
   - title: 化学物質管理者と保護具着用管理責任者
     url: /guides/chemical-substance-manager-ppe-manager/
     group: next
+  - title: SDSの読み方｜実務で確認したい項目
+    url: /guides/sds-reading/
+    group: next
   - title: CREATE-SIMPLEの使い方
     url: /guides/create-simple-guide/
     group: next
@@ -161,7 +164,7 @@ SDSでは、まず次の大枠を読みます。
 - 有害性
 - 適用法令
 
-各項目の詳しい読み方は、今後公開する「SDSの読み方」で扱います。
+各項目の詳しい読み方は、[SDSの読み方｜実務で確認したい項目]({{ '/guides/sds-reading/' | relative_url }})で扱います。
 
 SDSは供給者が示す一般的な製品情報です。実際の使用量、温度、噴霧の有無、容器を開ける時間、作業者と発散源の距離、換気の状態までは、自社の作業に即して別に確認します。
 

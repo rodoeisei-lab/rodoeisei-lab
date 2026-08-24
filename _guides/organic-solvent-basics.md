@@ -37,6 +37,9 @@ related_links:
   - title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
     url: /guides/chemical-management-basics/
     group: next
+  - title: SDSの読み方｜実務で確認したい項目
+    url: /guides/sds-reading/
+    group: next
   - title: 局所排気装置の基礎
     url: /guides/local-exhaust-ventilation-basics/
     group: next
