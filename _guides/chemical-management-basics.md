@@ -49,6 +49,9 @@ related_links:
   - title: SDSの読み方｜実務で確認したい項目
     url: /guides/sds-reading/
     group: next
+  - title: 化学物質のリスクアセスメントとは？実施手順を解説
+    url: /guides/chemical-risk-assessment-basics/
+    group: next
   - title: CREATE-SIMPLEの使い方
     url: /guides/create-simple-guide/
     group: next

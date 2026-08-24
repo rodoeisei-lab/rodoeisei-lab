@@ -416,6 +416,17 @@ def main() -> int:
             "/substances/check-flow/",
         ],
     )
+    require(
+        site / "guides" / "chemical-risk-assessment-basics" / "index.html",
+        [
+            '<meta property="og:type" content="article">',
+            '"@type": "Article"',
+            "リスクアセスメントは「書類作成」ではなく、対策を決める工程",
+            "製品単位ではなく「作業単位」で分ける",
+            "/guides/sds-reading/",
+            "/substances/check-flow/",
+        ],
+    )
 
     tools_html = (site / "tools" / "index.html").read_text(encoding="utf-8")
     require(

@@ -46,6 +46,9 @@ related_links:
   - title: CREATE-SIMPLEの基本的な使い方
     url: /guides/create-simple-guide/
     group: next
+  - title: 化学物質のリスクアセスメントとは？実施手順を解説
+    url: /guides/chemical-risk-assessment-basics/
+    group: next
   - title: 有機溶剤中毒予防規則の基本
     url: /guides/organic-solvent-basics/
     group: related

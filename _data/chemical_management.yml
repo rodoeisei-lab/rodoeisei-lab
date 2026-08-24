@@ -10,8 +10,8 @@
   section: 把握・確認
 - title: 化学物質のリスクアセスメントとは？実施手順を解説
   description: 危険性と健康有害性を見積もり、対策につなげる手順を整理します。
-  status: wip
-  url:
+  status: published
+  url: /guides/chemical-risk-assessment-basics/
   section: 評価・対策
 - title: 化学物質管理者と保護具着用管理責任者とは？選任要件・役割の違い
   description: 選任対象、資格・講習、職務、兼任、選任後の対応を整理します。
