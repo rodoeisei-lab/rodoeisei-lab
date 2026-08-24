@@ -70,7 +70,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/substances/", "/substances/check-flow/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/organic-solvent-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/qa/third-control-class/", "/qa/hygiene-committee-agenda/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/substances/", "/substances/check-flow/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/sds-reading/", "/guides/organic-solvent-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/qa/third-control-class/", "/qa/hygiene-committee-agenda/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -134,6 +134,13 @@ try {
     const results = await search(query);
     if (!results.some((page) => page.url.includes("/guides/chemical-management-basics/"))) {
       throw new Error(`Chemical management introduction article is missing for query: ${query}`);
+    }
+  }
+
+  for (const query of ["SDSの読み方", "第3項", "第15項"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/guides/sds-reading/"))) {
+      throw new Error(`SDS reading guide is missing for query: ${query}`);
     }
   }
 

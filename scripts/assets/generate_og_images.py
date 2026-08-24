@@ -87,6 +87,10 @@ TITLE_LINES = {
         "個人ばく露測定とは？",
         "目的・進め方と作業環境測定との関係",
     ],
+    "sds-reading": [
+        "SDSの読み方",
+        "実務で確認したい項目",
+    ],
     "skin-hazard-chemicals-protective-gloves": [
         "皮膚等障害化学物質等とは？",
         "化学防護手袋の選び方・使い方",

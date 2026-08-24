@@ -5,8 +5,8 @@
   section: 全体像
 - title: SDSの読み方｜実務で確認したい項目
   description: 危険有害性、取扱い、ばく露防止措置、法規制情報の確認点を整理します。
-  status: wip
-  url:
+  status: published
+  url: /guides/sds-reading/
   section: 把握・確認
 - title: 化学物質のリスクアセスメントとは？実施手順を解説
   description: 危険性と健康有害性を見積もり、対策につなげる手順を整理します。
