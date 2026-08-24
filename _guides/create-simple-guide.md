@@ -34,6 +34,9 @@ related_links:
   - title: 職場の化学物質管理とは？
     url: /guides/chemical-management-basics/
     group: next
+  - title: 化学物質のリスクアセスメントとは？実施手順を解説
+    url: /guides/chemical-risk-assessment-basics/
+    group: next
   - title: 管理濃度・濃度基準値・許容濃度の違い
     url: /guides/management-concentration-exposure-limits/
     group: next

@@ -44,6 +44,11 @@ TITLE_LINES = {
         "職場の化学物質管理とは？",
         "SDS確認から対策・見直しまで",
     ],
+    "chemical-risk-assessment-basics": [
+        "化学物質の",
+        "リスクアセスメントとは？",
+        "実施手順を解説",
+    ],
     "chemical-substance-manager-ppe-manager": [
         "化学物質管理者と",
         "保護具着用管理責任者とは？",
