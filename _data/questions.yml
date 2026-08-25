@@ -11,6 +11,67 @@
   status: answered
   url: /qa/third-control-class/
 
+- title: 個人サンプリング法は、A・B測定の代わりになる？
+  summary: 個人サンプリング法によるC・D測定とA・B測定の使い分けを整理。
+  key_answer: 対象物質・指定作業場などの条件を満たす測定では選択できるが、一般的な個人ばく露測定を一律に代用するものではない。
+  tags:
+    - 作業環境測定
+    - 個人サンプリング法
+    - 個人ばく露測定
+    - A測定
+    - B測定
+  date: 2026-08-25
+  status: answered
+  url: /qa/personal-sampling-ab-measurement/
+
+- title: 2026年10月から、個人ばく露測定は誰が実施する？
+  summary: 制度改正後の対象測定と実施体制の確認点を整理。
+  key_answer: 一定の法令上の測定では、デザイン・サンプリング・分析を要件を満たす実施者が担う。すべての自主測定が一律の対象ではない。
+  tags:
+    - 個人ばく露測定
+    - 作業環境測定士
+    - オキュペイショナルハイジニスト
+    - 制度改正
+  date: 2026-08-25
+  status: answered
+  url: /qa/personal-exposure-measurement-2026/
+
+- title: 化学物質のリスクアセスメントは、毎年見直す必要がある？
+  summary: 製品・工程・SDSなどの変更時に行う見直しを整理。
+  key_answer: 一律の年次周期ではなく、新規採用・変更、作業手順の変更、危険有害性情報の変化などを見直しのきっかけにする。
+  tags:
+    - 化学物質管理
+    - リスクアセスメント
+    - SDS
+    - 濃度基準値
+  date: 2026-08-25
+  status: answered
+  url: /qa/risk-assessment-review/
+
+- title: SDSは、第15項だけ確認すればよい？
+  summary: SDSを現場の化学物質管理に使うための確認順を整理。
+  key_answer: 第15項は入口。製品・改訂日、成分・含有率、危険有害性、ばく露防止情報を現場の作業条件と照合する。
+  tags:
+    - SDS
+    - 安全データシート
+    - 化学物質管理
+    - リスクアセスメント
+  date: 2026-08-25
+  status: answered
+  url: /qa/sds-check-order/
+
+- title: 第2種有機溶剤かどうかは、どう確認する？
+  summary: SDSの成分・含有率と現行法令を照合する手順を整理。
+  key_answer: 製品名ではなくSDS第3項の成分を確認し、対象物質検索と現行法令に照合する。区分だけで必要な措置を確定しない。
+  tags:
+    - 第2種有機溶剤
+    - 有機則
+    - SDS
+    - 化学物質管理
+  date: 2026-08-25
+  status: answered
+  url: /qa/second-organic-solvent-check/
+
 - title: 局所排気装置は、どの頻度で点検し、何を記録する？
   summary: 適用規則ごとの点検周期と記録を整理。
   key_answer: 作業主任者による点検と定期自主検査を区別し、法定項目と是正を記録する。

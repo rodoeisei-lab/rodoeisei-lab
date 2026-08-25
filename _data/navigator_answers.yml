@@ -103,6 +103,36 @@
   article_url: /guides/personal-exposure-measurement-basics/
   checked_at: 2026-08-11
 
+- id: personal-sampling-and-ab-measurement
+  question: 個人サンプリング法はA測定・B測定の代わりになる？
+  search_query: 個人サンプリング法 A測定 B測定 代わり
+  keywords:
+    - 個人サンプリング法
+    - A測定
+    - B測定
+    - C測定
+    - D測定
+    - 代わり
+  answer: 対象物質・指定作業場などの条件を満たす測定では、個人サンプリング法によるC・D測定を作業環境測定として選択できます。ただし、一般的な個人ばく露測定をすべてのA・B測定の代わりにできるわけではありません。目的と評価方法を先に確認します。
+  article_title: 個人サンプリング法は、A・B測定の代わりになる？
+  article_url: /qa/personal-sampling-ab-measurement/
+  checked_at: 2026-08-25
+
+- id: personal-exposure-measurement-2026
+  question: 2026年10月から個人ばく露測定は誰が実施する？
+  search_query: 個人ばく露測定 2026年10月 資格 実施者
+  keywords:
+    - 個人ばく露測定
+    - 2026年10月
+    - 資格
+    - 実施者
+    - 作業環境測定士
+    - オキュペイショナルハイジニスト
+  answer: 2026年10月1日から、一定の法令上の個人ばく露測定・個人サンプリング法は、定められた資格・登録区分を持つ者が実施します。すべての自主測定が一律に対象ではないため、測定目的、根拠となる規則、デザイン・サンプリング・分析の担当を確認します。
+  article_title: 2026年10月から、個人ばく露測定は誰が実施する？
+  article_url: /qa/personal-exposure-measurement-2026/
+  checked_at: 2026-08-25
+
 - id: c-and-d-measurement
   question: C測定・D測定と個人ばく露測定の違いは？
   content_slug: work-environment-measurement-design-sampling
@@ -154,6 +184,51 @@
   article_title: 職場の化学物質管理とは？SDS確認から対策・見直しまで
   article_url: /guides/chemical-management-basics/
   checked_at: 2026-08-11
+
+- id: chemical-risk-assessment-review
+  question: 化学物質のリスクアセスメントは毎年見直す必要がある？
+  search_query: 化学物質 リスクアセスメント 見直し 毎年 SDS 更新
+  keywords:
+    - 化学物質
+    - リスクアセスメント
+    - 見直し
+    - 毎年
+    - SDS
+    - 更新
+  answer: 同じ化学物質を同じ作業条件・作業手順で扱う場合に、一律の年次見直し周期は定められていません。新規採用・変更、作業方法の変更、SDSによる新たな危険有害性情報、濃度基準値の設定などをきっかけに見直します。
+  article_title: 化学物質のリスクアセスメントは、毎年見直す必要がある？
+  article_url: /qa/risk-assessment-review/
+  checked_at: 2026-08-25
+
+- id: sds-check-order
+  question: SDSは第15項だけ確認すればよい？
+  search_query: SDS 第15項 第3項 確認 順番
+  keywords:
+    - SDS
+    - 安全データシート
+    - 第15項
+    - 第3項
+    - 確認
+    - 順番
+  answer: SDS第15項は法令確認の入口ですが、それだけでは足りません。製品と改訂日を確認し、第3項の成分・含有率、第2項・第8〜11項の危険有害性とばく露防止情報を、実際の作業条件と照合します。
+  article_title: SDSは、第15項だけ確認すればよい？
+  article_url: /qa/sds-check-order/
+  checked_at: 2026-08-25
+
+- id: second-organic-solvent-check
+  question: 第2種有機溶剤かどうかは、どう確認する？
+  search_query: 第2種有機溶剤 確認 SDS 成分 含有率
+  keywords:
+    - 第2種有機溶剤
+    - 有機溶剤
+    - 有機則
+    - SDS
+    - 成分
+    - 含有率
+  answer: 製品名ではなく、最新版SDSの第3項にある成分名・含有率を確認し、対象物質検索と現行の労働安全衛生法施行令別表第六の二・有機則に照合します。区分だけで必要な措置を確定せず、作業内容・作業場所・設備も確認します。
+  article_title: 第2種有機溶剤かどうかは、どう確認する？
+  article_url: /qa/second-organic-solvent-check/
+  checked_at: 2026-08-25
 
 - id: chemical-substance-manager
   question: 化学物質管理者はいつ必要？

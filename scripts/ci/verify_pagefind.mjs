@@ -70,7 +70,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/substances/", "/substances/check-flow/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/sds-reading/", "/guides/chemical-risk-assessment-basics/", "/guides/organic-solvent-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/qa/third-control-class/", "/qa/hygiene-committee-agenda/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/substances/", "/substances/check-flow/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/sds-reading/", "/guides/chemical-risk-assessment-basics/", "/guides/organic-solvent-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/qa/third-control-class/", "/qa/hygiene-committee-agenda/", "/qa/personal-sampling-ab-measurement/", "/qa/personal-exposure-measurement-2026/", "/qa/risk-assessment-review/", "/qa/sds-check-order/", "/qa/second-organic-solvent-check/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -123,7 +123,7 @@ try {
     }
   }
 
-  for (const [query, expectedPath] of [["第3管理区分", "/qa/third-control-class/"], ["衛生委員会", "/qa/hygiene-committee-agenda/"]]) {
+  for (const [query, expectedPath] of [["第3管理区分", "/qa/third-control-class/"], ["衛生委員会", "/qa/hygiene-committee-agenda/"], ["個人サンプリング法", "/qa/personal-sampling-ab-measurement/"], ["2026年10月 個人ばく露測定", "/qa/personal-exposure-measurement-2026/"], ["リスクアセスメント 見直し", "/qa/risk-assessment-review/"], ["SDS 第15項", "/qa/sds-check-order/"], ["第2種有機溶剤 どう確認", "/qa/second-organic-solvent-check/"]]) {
     const results = await search(query);
     if (!results.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Public Q&A is missing for query: ${query}`);
