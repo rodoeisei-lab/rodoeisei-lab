@@ -92,6 +92,30 @@ TITLE_LINES = {
         "個人ばく露測定とは？",
         "目的・進め方と作業環境測定との関係",
     ],
+    "personal-exposure-measurement-2026": [
+        "2026年10月から",
+        "個人ばく露測定は",
+        "誰が実施する？",
+    ],
+    "personal-sampling-ab-measurement": [
+        "個人サンプリング法は、",
+        "A・B測定の代わりに",
+        "なる？",
+    ],
+    "risk-assessment-review": [
+        "リスクアセスメントは、",
+        "毎年見直す",
+        "必要がある？",
+    ],
+    "sds-check-order": [
+        "SDSは、",
+        "第15項だけ確認すれば",
+        "よい？",
+    ],
+    "second-organic-solvent-check": [
+        "第2種有機溶剤かどうかは、",
+        "どう確認する？",
+    ],
     "sds-reading": [
         "SDSの読み方",
         "実務で確認したい項目",
@@ -157,7 +181,7 @@ def article_theme(path: Path, meta: dict[str, str]) -> str:
         return "roadmap"
     if slug == "fit-test":
         return "fit"
-    if "化学物質" in category:
+    if "化学物質" in category or "有機溶剤" in category:
         return "chemical"
     if "局所排気" in category:
         return "ventilation"
