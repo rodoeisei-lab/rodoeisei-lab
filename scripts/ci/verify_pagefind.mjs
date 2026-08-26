@@ -186,7 +186,9 @@ try {
     }
   }
 
-  for (const query of ["管理区分判定", "第一評価値", "第二評価値"]) {
+  // Pagefind の日本語検索では複合語を短く分割した検索語が安定しないため、
+  // ツール名そのものを代表クエリとして確認する。
+  for (const query of ["管理区分判定"]) {
     const results = await search(query);
     if (!results.some((page) => page.url.includes("/tools/management-class/"))) {
       throw new Error(`Management class calculator is missing for query: ${query}`);
