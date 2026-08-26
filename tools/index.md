@@ -10,7 +10,7 @@ permalink: /tools/
   <section class="tools-intro" aria-labelledby="tools-purpose-title">
     <p class="section-kicker">まず目的を選ぶ</p>
     <h2 id="tools-purpose-title">まず、計算・確認したいことを選ぶ</h2>
-    <p>管理区分の計算、保護具・測定器の選定、掲載商品の確認は、それぞれ必要な情報が異なります。目的に合う入口から進んでください。</p>
+    <p>管理区分の計算、保護具・測定器の選定、掲載商品の確認は、それぞれ必要な情報が異なります。選定基準と商品一覧を混ぜない構成で、目的に合う入口から進めます。</p>
 
     <article class="tool-path-card tool-path-card--featured">
       <span class="tool-path-number" aria-hidden="true">1</span>
