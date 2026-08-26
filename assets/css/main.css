@@ -341,12 +341,35 @@ button,a,input,select,textarea{touch-action:manipulation}
 .management-class-tool__field{display:grid;gap:6px;min-width:0}
 .management-class-tool__field>span{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--color-text);font-size:15px;font-weight:800}
 .management-class-tool__field em{display:inline-flex;align-items:center;min-height:24px;padding:2px 7px;border-radius:999px;background:var(--color-blue-soft);color:var(--color-primary);font-size:12px;font-style:normal;font-weight:800}
-.management-class-tool__field input,.management-class-tool__field textarea{width:100%;border:1px solid var(--color-border);border-radius:10px;background:#fff;color:var(--color-text);font:inherit}
-.management-class-tool__field input{min-height:50px;padding:10px 12px}
+.management-class-tool__field input,.management-class-tool__field textarea,.management-class-tool__field select{width:100%;border:1px solid var(--color-border);border-radius:10px;background:#fff;color:var(--color-text);font:inherit}
+.management-class-tool__field input,.management-class-tool__field select{min-height:50px;padding:10px 12px}
 .management-class-tool__field textarea{min-height:150px;padding:11px 12px;resize:vertical;line-height:1.65}
 .management-class-tool__b-panel .management-class-tool__field textarea{min-height:100px}
-.management-class-tool__field input:focus-visible,.management-class-tool__field textarea:focus-visible{outline:3px solid #f2b84b;outline-offset:2px}
+.management-class-tool__field input:focus-visible,.management-class-tool__field textarea:focus-visible,.management-class-tool__field select:focus-visible{outline:3px solid #f2b84b;outline-offset:2px}
 .management-class-tool__field small{color:var(--color-text-secondary);font-size:13px;line-height:1.55}
+.management-class-tool__mode-selector,.management-class-tool__input-panel{margin:0;padding:16px;border:1px solid var(--color-border);border-radius:12px;background:#f8fafc}
+.management-class-tool__mode-selector legend,.management-class-tool__dust-input-mode legend{padding:0 4px;color:var(--color-text);font-size:15px;font-weight:800}
+.management-class-tool__mode-selector legend em{display:inline-flex;align-items:center;min-height:24px;margin-left:6px;padding:2px 7px;border-radius:999px;background:var(--color-blue-soft);color:var(--color-primary);font-size:12px;font-style:normal;font-weight:800}
+.management-class-tool__mode-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.management-class-tool__mode-options label,.management-class-tool__dust-input-mode label{display:flex;align-items:flex-start;gap:10px;padding:13px;border:1px solid #c9dfed;border-radius:10px;background:#fff;cursor:pointer}
+.management-class-tool__mode-options input,.management-class-tool__dust-input-mode input{flex:none;width:20px;height:20px;margin:2px 0 0;accent-color:var(--color-primary)}
+.management-class-tool__mode-options strong,.management-class-tool__mode-options small,.management-class-tool__dust-input-mode strong,.management-class-tool__dust-input-mode small{display:block}
+.management-class-tool__mode-options strong,.management-class-tool__dust-input-mode strong{font-size:15px}
+.management-class-tool__mode-options small,.management-class-tool__dust-input-mode small{margin-top:3px;color:var(--color-text-secondary);font-size:12px;line-height:1.5}
+.management-class-tool__mode-help{margin:11px 0 0;color:var(--color-text-secondary);font-size:13px;line-height:1.55}
+.management-class-tool__input-panel{display:grid;gap:14px;background:#fff}
+.management-class-tool__dust-panel{border-color:#a8d2e4;background:#f0f9ff}
+.management-class-tool__substance-grid{display:grid;grid-template-columns:minmax(170px,.72fr) minmax(0,1.28fr);gap:12px}
+.management-class-tool__substance-note,.management-class-tool__input-notice,.management-class-tool__measurement-status{margin:0;padding:10px 12px;border-radius:9px;font-size:13px;line-height:1.55}
+.management-class-tool__substance-note{border:1px solid #c9dfed;background:#f0f9ff;color:#145981}
+.management-class-tool__input-notice{border:1px solid #f3d19b;background:#fffbeb;color:#7c4b12}
+.management-class-tool__measurement-status{border:1px solid #c9dfed;background:#f8fafc;color:var(--color-text-secondary);font-weight:700}
+.management-class-tool__field>.management-class-tool__measurement-status{display:block;align-items:initial;justify-content:initial;color:var(--color-text-secondary);font-size:13px;font-weight:700}
+.management-class-tool__measurement-status.is-invalid{border-color:#fecaca;background:#fef2f2;color:#991b1b}
+.management-class-tool__field-grid--dust{grid-template-columns:repeat(2,minmax(0,1fr))}
+.management-class-tool__dust-preview{display:flex;align-items:center;padding:14px;border:1px solid #b7dce6;border-radius:10px;background:rgba(255,255,255,.84);color:#145981;font-size:14px;font-weight:750;line-height:1.6}
+.management-class-tool__dust-input-mode{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:14px;border:1px solid #b7dce6;border-radius:11px;background:rgba(255,255,255,.56)}
+.management-class-tool__dust-input-mode legend{grid-column:1/-1}
 .management-class-tool__toggle{display:flex;align-items:flex-start;gap:10px;padding:14px 15px;border:1px solid var(--color-border);border-radius:11px;background:#f8fafc;cursor:pointer}
 .management-class-tool__toggle input{flex:none;width:20px;height:20px;margin:3px 0 0;accent-color:var(--color-primary)}
 .management-class-tool__toggle strong,.management-class-tool__toggle small{display:block}
@@ -374,6 +397,7 @@ button,a,input,select,textarea{touch-action:manipulation}
 .management-class-tool__result.is-class-2{border-color:#b45309;background:#fffbeb}
 .management-class-tool__result.is-class-3{border-color:#b91c1c;background:#fef2f2}
 .management-class-tool__result-kicker{margin:0;color:var(--color-primary);font-size:14px;font-weight:800}
+.management-class-tool__result-subject{margin:.75em 0 0;color:var(--color-text-secondary);font-size:13px;font-weight:800;line-height:1.5}
 .management-class-tool__result.is-class-1 .management-class-tool__result-kicker{color:#0f766e}
 .management-class-tool__result.is-class-2 .management-class-tool__result-kicker{color:#b45309}
 .management-class-tool__result.is-class-3 .management-class-tool__result-kicker{color:#b91c1c}
@@ -450,7 +474,7 @@ button,a,input,select,textarea{touch-action:manipulation}
 .substance-registry__scope{padding:20px}
 .tool-path-grid,.tool-selection-steps{grid-template-columns:1fr}
 .management-class-tool__intro,.management-class-tool__rules,.management-class-tool__scope,.management-class-tool__references,.management-class-tool__calculator{padding:18px}
-.management-class-tool__field-grid,.management-class-tool__rule-grid,.management-class-tool__scope-grid,.management-class-tool__result-values{grid-template-columns:1fr}
+.management-class-tool__field-grid,.management-class-tool__substance-grid,.management-class-tool__mode-options,.management-class-tool__dust-input-mode,.management-class-tool__rule-grid,.management-class-tool__scope-grid,.management-class-tool__result-values{grid-template-columns:1fr}
 .management-class-tool__actions{align-items:stretch;flex-direction:column}.management-class-tool__submit,.management-class-tool__secondary,.management-class-tool__text-button{width:100%}
 .tool-category-nav,.amazon-category-nav{display:block}
 .tool-category-nav>span,.amazon-category-nav>span{display:block;margin-bottom:8px;padding:0}
