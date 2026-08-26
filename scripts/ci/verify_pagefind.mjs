@@ -70,7 +70,7 @@ try {
     throw new Error(`Pagefind indexed only ${allPages.length} page(s); expected multiple public pages.`);
   }
 
-  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/substances/", "/substances/check-flow/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/sds-reading/", "/guides/chemical-risk-assessment-basics/", "/guides/organic-solvent-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/qa/third-control-class/", "/qa/hygiene-committee-agenda/", "/qa/personal-sampling-ab-measurement/", "/qa/personal-exposure-measurement-2026/", "/qa/risk-assessment-review/", "/qa/sds-check-order/", "/qa/second-organic-solvent-check/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
+  for (const expectedPath of ["/learn/", "/regulations/", "/tools/", "/tools/management-class/", "/products/", "/amazon/", "/work-environment-measurement/", "/chemical-management/", "/substances/", "/substances/check-flow/", "/local-exhaust-ventilation/", "/ai-use/", "/occupational-health-consultant/", "/guides/work-env-measurement-intro/", "/guides/chemical-management-basics/", "/guides/sds-reading/", "/guides/chemical-risk-assessment-basics/", "/guides/organic-solvent-basics/", "/guides/chemical-substance-manager-ppe-manager/", "/guides/management-concentration-exposure-limits/", "/guides/create-simple-guide/", "/guides/skin-hazard-chemicals-protective-gloves/", "/guides/local-exhaust-ventilation-basics/", "/guides/ai-use-occupational-health-basics/", "/guides/occupational-health-consultant-basics/", "/qa/third-control-class/", "/qa/hygiene-committee-agenda/", "/qa/personal-sampling-ab-measurement/", "/qa/personal-exposure-measurement-2026/", "/qa/risk-assessment-review/", "/qa/sds-check-order/", "/qa/second-organic-solvent-check/", "/videos/", "/guides/work-environment-measurement-design/", "/guides/work-environment-measurement-sampling/"]) {
     if (!allPages.some((page) => page.url.includes(expectedPath))) {
       throw new Error(`Major public page is missing from Pagefind: ${expectedPath}`);
     }
@@ -183,6 +183,15 @@ try {
     const results = await search(query);
     if (!results.some((page) => page.url.includes("/tools/") || page.url.includes("/products/") || page.url.includes("/amazon/"))) {
       throw new Error(`Tools, shelf, or Amazon page is missing for query: ${query}`);
+    }
+  }
+
+  // Pagefind の日本語検索では複合語を短く分割した検索語が安定しないため、
+  // ツール名そのものを代表クエリとして確認する。
+  for (const query of ["管理区分判定"]) {
+    const results = await search(query);
+    if (!results.some((page) => page.url.includes("/tools/management-class/"))) {
+      throw new Error(`Management class calculator is missing for query: ${query}`);
     }
   }
 

@@ -1,20 +1,30 @@
 ---
 title: ツール
-description: 労働衛生で使う保護具や簡易測定器について、選び方を確認する道具棚とAmazon掲載商品への入口を整理。
+description: 管理区分の参考計算、保護具や簡易測定器の選び方、Amazon掲載商品への入口を整理。
 eyebrow: ツール
-lead: 選び方を確認したいときと、掲載商品を見たいときで入口を分けています。
+lead: 計算・確認ツール、選び方、掲載商品の入口を目的ごとに分けています。
 permalink: /tools/
 ---
 
 <div class="tools-hub">
   <section class="tools-intro" aria-labelledby="tools-purpose-title">
     <p class="section-kicker">まず目的を選ぶ</p>
-    <h2 id="tools-purpose-title">選定基準と商品一覧を混ぜない</h2>
-    <p>保護具や測定器は、商品名からではなく、対象物質・作業・必要性能から選びます。基準を確認してから、必要に応じてAmazon掲載商品へ進んでください。</p>
+    <h2 id="tools-purpose-title">まず、計算・確認したいことを選ぶ</h2>
+    <p>管理区分の計算、保護具・測定器の選定、掲載商品の確認は、それぞれ必要な情報が異なります。選定基準と商品一覧を混ぜない構成で、目的に合う入口から進めます。</p>
+
+    <article class="tool-path-card tool-path-card--featured">
+      <span class="tool-path-number" aria-hidden="true">1</span>
+      <div>
+        <p class="tool-path-label">計算・確認する</p>
+        <h3>管理区分判定ツール</h3>
+        <p>1日測定のA測定値、任意のB測定値、管理濃度から、第一・第二評価値と管理区分を参考計算します。</p>
+        <a class="cta-secondary" href="{{ '/tools/management-class/' | relative_url }}">管理区分を判定する</a>
+      </div>
+    </article>
 
     <div class="tool-path-grid">
       <article class="tool-path-card">
-        <span class="tool-path-number" aria-hidden="true">1</span>
+        <span class="tool-path-number" aria-hidden="true">2</span>
         <div>
           <p class="tool-path-label">選び方を確認する</p>
           <h3>道具棚</h3>
@@ -24,7 +34,7 @@ permalink: /tools/
       </article>
 
       <article class="tool-path-card">
-        <span class="tool-path-number" aria-hidden="true">2</span>
+        <span class="tool-path-number" aria-hidden="true">3</span>
         <div>
           <p class="tool-path-label">掲載商品を確認する</p>
           <h3>Amazon商品一覧</h3>
