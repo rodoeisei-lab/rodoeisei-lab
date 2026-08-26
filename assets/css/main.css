@@ -326,6 +326,88 @@ button,a,input,select,textarea{touch-action:manipulation}
 .affiliate-inline,.amazon-product-meta{margin:.7em 0 0;color:var(--color-text-muted);font-size:13px}
 .amazon-final-note{border-left:4px solid var(--color-primary)}
 
+/* Management class calculator */
+.management-class-tool{max-width:960px;margin:auto}
+.management-class-tool__intro,.management-class-tool__rules,.management-class-tool__scope,.management-class-tool__references{padding:24px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff}
+.management-class-tool__intro{background:linear-gradient(135deg,#fff 0%,#f0f9ff 100%)}
+.management-class-tool__intro h2,.management-class-tool__heading h2,.management-class-tool__rules h2,.management-class-tool__scope h2,.management-class-tool__references h2{margin:.15em 0 .45em;font-size:clamp(23px,4vw,30px);line-height:1.4}
+.management-class-tool__intro>p:not(.section-kicker),.management-class-tool__heading>p:last-child,.management-class-tool__scope>div:first-child>p:last-child{max-width:780px;color:var(--color-text-secondary)}
+.management-class-tool__intro-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0 0;padding:0;list-style:none}
+.management-class-tool__intro-list li{padding:13px 14px;border:1px solid #c9dfed;border-radius:10px;background:rgba(255,255,255,.86);color:var(--color-text-secondary);font-size:14px;line-height:1.65}
+.management-class-tool__calculator{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:20px;align-items:start;margin-top:32px;padding:24px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff}
+.management-class-tool__form-wrap,.management-class-tool__result-wrap{min-width:0}
+.management-class-tool__form{display:grid;gap:16px;margin-top:22px}
+.management-class-tool__field-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,.48fr);gap:12px}
+.management-class-tool__field{display:grid;gap:6px;min-width:0}
+.management-class-tool__field>span{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--color-text);font-size:15px;font-weight:800}
+.management-class-tool__field em{display:inline-flex;align-items:center;min-height:24px;padding:2px 7px;border-radius:999px;background:var(--color-blue-soft);color:var(--color-primary);font-size:12px;font-style:normal;font-weight:800}
+.management-class-tool__field input,.management-class-tool__field textarea{width:100%;border:1px solid var(--color-border);border-radius:10px;background:#fff;color:var(--color-text);font:inherit}
+.management-class-tool__field input{min-height:50px;padding:10px 12px}
+.management-class-tool__field textarea{min-height:150px;padding:11px 12px;resize:vertical;line-height:1.65}
+.management-class-tool__b-panel .management-class-tool__field textarea{min-height:100px}
+.management-class-tool__field input:focus-visible,.management-class-tool__field textarea:focus-visible{outline:3px solid #f2b84b;outline-offset:2px}
+.management-class-tool__field small{color:var(--color-text-secondary);font-size:13px;line-height:1.55}
+.management-class-tool__toggle{display:flex;align-items:flex-start;gap:10px;padding:14px 15px;border:1px solid var(--color-border);border-radius:11px;background:#f8fafc;cursor:pointer}
+.management-class-tool__toggle input{flex:none;width:20px;height:20px;margin:3px 0 0;accent-color:var(--color-primary)}
+.management-class-tool__toggle strong,.management-class-tool__toggle small{display:block}
+.management-class-tool__toggle strong{font-size:15px}
+.management-class-tool__toggle small{margin-top:2px;color:var(--color-text-secondary);font-size:13px;line-height:1.5}
+.management-class-tool__b-panel{padding:16px;border:1px solid #b7dce6;border-radius:12px;background:#f0f9ff}
+.management-class-tool__error{margin:0;padding:12px 14px;border-left:4px solid #b91c1c;background:#fef2f2;color:#991b1b;font-size:14px;font-weight:700;line-height:1.6}
+.management-class-tool__actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.management-class-tool__submit,.management-class-tool__secondary,.management-class-tool__copy{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border-radius:10px;font:inherit;font-size:15px;font-weight:800;cursor:pointer}
+.management-class-tool__submit{border:1px solid var(--color-primary);background:var(--color-primary);color:#fff}
+.management-class-tool__submit:hover{background:var(--color-primary-hover)}
+.management-class-tool__secondary,.management-class-tool__copy{border:1px solid var(--color-primary);background:#fff;color:var(--color-primary)}
+.management-class-tool__secondary:hover,.management-class-tool__copy:hover{background:var(--color-blue-soft)}
+.management-class-tool__text-button{min-height:44px;padding:8px;border:0;background:transparent;color:var(--color-link);font:inherit;font-size:14px;font-weight:750;cursor:pointer;text-decoration:underline;text-underline-offset:.18em}
+.management-class-tool__result-wrap{position:sticky;top:80px}
+.management-class-tool__result-guide,.management-class-tool__result{padding:20px;border:1px solid var(--color-border);border-radius:14px;background:#f8fafc;box-shadow:var(--shadow)}
+.management-class-tool__result-guide h2,.management-class-tool__result h2{margin:.15em 0 .35em;font-size:clamp(23px,4vw,29px);line-height:1.35}
+.management-class-tool__result-guide>p:last-of-type{margin-bottom:18px;color:var(--color-text-secondary)}
+.management-class-tool__result-guide dl{display:grid;gap:9px;margin:0}
+.management-class-tool__result-guide dl>div{padding-top:9px;border-top:1px solid var(--color-border)}
+.management-class-tool__result-guide dt{font-size:14px;font-weight:800}
+.management-class-tool__result-guide dd{margin:2px 0 0;color:var(--color-text-secondary);font-size:13px;line-height:1.55}
+.management-class-tool__result{border-left:5px solid var(--color-primary);background:#fff}
+.management-class-tool__result.is-class-1{border-color:#0f766e;background:#f0fdfa}
+.management-class-tool__result.is-class-2{border-color:#b45309;background:#fffbeb}
+.management-class-tool__result.is-class-3{border-color:#b91c1c;background:#fef2f2}
+.management-class-tool__result-kicker{margin:0;color:var(--color-primary);font-size:14px;font-weight:800}
+.management-class-tool__result.is-class-1 .management-class-tool__result-kicker{color:#0f766e}
+.management-class-tool__result.is-class-2 .management-class-tool__result-kicker{color:#b45309}
+.management-class-tool__result.is-class-3 .management-class-tool__result-kicker{color:#b91c1c}
+.management-class-tool__result-summary{margin:.4em 0;color:var(--color-text);font-weight:750}
+.management-class-tool__result-input{margin:.8em 0 0;color:var(--color-text-secondary);font-size:13px;line-height:1.5}
+.management-class-tool__result-values{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
+.management-class-tool__result-values>div{padding:10px;border:1px solid rgba(148,163,184,.65);border-radius:9px;background:rgba(255,255,255,.8)}
+.management-class-tool__result-values dt{color:var(--color-text-secondary);font-size:12px;font-weight:700;line-height:1.45}
+.management-class-tool__result-values dd{margin:3px 0 0;color:var(--color-text);font-size:16px;font-weight:800;line-height:1.35;overflow-wrap:anywhere}
+.management-class-tool__reason{display:grid;gap:7px;margin:16px 0}
+.management-class-tool__reason p{margin:0;padding-top:7px;border-top:1px solid rgba(148,163,184,.65);font-size:13px;line-height:1.55}
+.management-class-tool__next-action{padding:13px 14px;border-radius:10px;background:rgba(255,255,255,.78)}
+.management-class-tool__next-action strong{font-size:14px}
+.management-class-tool__next-action p{margin:.25em 0 0;font-size:14px;line-height:1.6}
+.management-class-tool__copy{width:100%;margin-top:14px;background:rgba(255,255,255,.9)}
+.management-class-tool__rules,.management-class-tool__scope,.management-class-tool__references{margin-top:32px}
+.management-class-tool__rule-grid,.management-class-tool__scope-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.management-class-tool__rule-grid article,.management-class-tool__scope-grid article{padding:18px;border:1px solid var(--color-border);border-radius:12px;background:#f8fafc}
+.management-class-tool__rule-grid h3,.management-class-tool__scope-grid h3{margin:0 0 12px;font-size:18px;line-height:1.45}
+.management-class-tool__rule-grid dl{display:grid;gap:9px;margin:0}
+.management-class-tool__rule-grid dl>div{padding-top:9px;border-top:1px solid var(--color-border)}
+.management-class-tool__rule-grid dt{font-size:14px;font-weight:800}
+.management-class-tool__rule-grid dd{margin:3px 0 0;color:var(--color-text-secondary);font-size:14px;line-height:1.55}
+.management-class-tool__scope-grid ul{margin:0;padding-left:20px;color:var(--color-text-secondary);font-size:14px;line-height:1.65}
+.management-class-tool__scope-grid li+li{margin-top:6px}
+.management-class-tool__formula{margin-top:16px;border:1px solid var(--color-border);border-radius:11px;background:#fff}
+.management-class-tool__formula summary{padding:13px 15px;color:var(--color-primary);font-weight:800;cursor:pointer}
+.management-class-tool__formula>div{padding:0 15px 14px;color:var(--color-text-secondary);font-size:14px;line-height:1.6}
+.management-class-tool__formula p{margin:.55em 0}
+.management-class-tool__references ul{display:grid;gap:10px;margin:18px 0 0;padding-left:22px}
+.management-class-tool__references li{color:var(--color-text-secondary);font-size:15px;line-height:1.65}
+.management-class-tool__references a{font-weight:750}
+.tool-path-card--featured{margin-top:22px;border-color:#9fc9de;background:linear-gradient(135deg,#f0f9ff 0%,#f8fafc 100%)}
+
 
 /* Footer */
 .footer{margin-top:48px;padding:32px 0;background:#eaf2f8;border-top:1px solid var(--color-border)}
@@ -339,6 +421,9 @@ button,a,input,select,textarea{touch-action:manipulation}
 .header-actions{margin-left:auto}
 .cards,.guides-cards,.entry-cards,.updates-cards,.glossary-cards,.template-card-grid,.products-grid,.measurement-article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .tool-check-grid{grid-template-columns:1fr}
+.management-class-tool__intro-list{grid-template-columns:1fr}
+.management-class-tool__calculator{grid-template-columns:1fr}
+.management-class-tool__result-wrap{position:static}
 }
 
 @media(max-width:720px){.substance-check-flow__jump,.substance-check-flow__checklist,.substance-check-flow__route-grid,.substance-registry__route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.substance-check-flow__steps{grid-template-columns:1fr}.substance-registry__intro-links,.substance-filter-controls,.substance-registry__scope{grid-template-columns:1fr}
@@ -364,6 +449,9 @@ button,a,input,select,textarea{touch-action:manipulation}
 .substance-select-grid{grid-column:auto}
 .substance-registry__scope{padding:20px}
 .tool-path-grid,.tool-selection-steps{grid-template-columns:1fr}
+.management-class-tool__intro,.management-class-tool__rules,.management-class-tool__scope,.management-class-tool__references,.management-class-tool__calculator{padding:18px}
+.management-class-tool__field-grid,.management-class-tool__rule-grid,.management-class-tool__scope-grid,.management-class-tool__result-values{grid-template-columns:1fr}
+.management-class-tool__actions{align-items:stretch;flex-direction:column}.management-class-tool__submit,.management-class-tool__secondary,.management-class-tool__text-button{width:100%}
 .tool-category-nav,.amazon-category-nav{display:block}
 .tool-category-nav>span,.amazon-category-nav>span{display:block;margin-bottom:8px;padding:0}
 .tool-category-actions,.amazon-product-actions{align-items:stretch;flex-direction:column}

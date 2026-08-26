@@ -46,6 +46,8 @@ jobs:
         run: |
           node --check assets/js/site-navigator.js
           node --check assets/js/learning-compass.js
+          node --check assets/js/management-class-calculator.mjs
+          node scripts/ci/test_management_class_calculator.mjs
           ruby scripts/ci/verify_navigator_data.rb
 
       - name: Build Pagefind index
@@ -118,6 +120,7 @@ jobs:
             "/learn/" \
             "/qa/" \
             "/tools/" \
+            "/tools/management-class/" \
             "/products/" \
             "/amazon/" \
             "/work-environment-measurement/" \
