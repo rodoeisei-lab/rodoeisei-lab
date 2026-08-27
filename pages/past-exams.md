@@ -5,32 +5,35 @@ permalink: /past-exams/
 description: 作業環境測定士、衛生管理者、労働衛生コンサルタントの公表試験問題を、公式ページから確認できるリンク集です。
 eyebrow: 資格対策
 lead: 受験する資格を選び、公式の問題・正答へ進めます。
-updated_at: 2026-08-14
+updated_at: 2026-08-28
 ---
 
 <div class="card">
-  <h2>公式の過去問を選ぶ</h2>
-  <p>安全衛生技術試験協会が公開している、公表試験問題の一覧ページを資格別にまとめています。</p>
-  <p><small>リンク確認：{{ page.updated_at | date: "%Y年%-m月%-d日" }}</small></p>
+  <h2>最新の公式過去問を選ぶ</h2>
+  <p>安全衛生技術試験協会が公開している、現在の最新の公表試験問題を資格別に案内します。</p>
+  <p><small>最新分の確認：{{ page.updated_at | date: "%Y年%-m月%-d日" }}</small></p>
 </div>
 
 <div class="cards">
   <article class="card">
     <h2>作業環境測定士</h2>
+    <p>最新：令和8年8月19日実施分（共通科目）・令和8年8月20日実施分（第一種の選択科目）</p>
     <p>第一種・第二種の共通科目と、第一種の選択科目の問題・正答を確認できます。</p>
-    <a class="link-action" href="https://www.exam.or.jp/emkohyo/" target="_blank" rel="noopener noreferrer">公式の公表試験問題を開く ↗</a>
+    <a class="link-action" href="https://www.exam.or.jp/emkohyo/" target="_blank" rel="noopener noreferrer">公式の最新公表試験問題を開く ↗</a>
   </article>
 
   <article class="card">
     <h2>衛生管理者</h2>
+    <p>最新：令和8年4月掲載分（令和7年7月～12月実施分）</p>
     <p>免許試験の一覧ページ内に、第一種・第二種衛生管理者の問題・正答があります。</p>
-    <a class="link-action" href="https://www.exam.or.jp/lckohyo/" target="_blank" rel="noopener noreferrer">公式の公表試験問題を開く ↗</a>
+    <a class="link-action" href="https://www.exam.or.jp/lckohyo/" target="_blank" rel="noopener noreferrer">公式の最新公表試験問題を開く ↗</a>
   </article>
 
   <article class="card">
     <h2>労働衛生コンサルタント</h2>
+    <p>最新：令和7年10月21日実施分</p>
     <p>労働衛生一般・関係法令・健康管理・労働衛生工学の問題を確認できます。</p>
-    <a class="link-action" href="https://www.exam.or.jp/cskohyo/" target="_blank" rel="noopener noreferrer">公式の公表試験問題を開く ↗</a>
+    <a class="link-action" href="https://www.exam.or.jp/cskohyo/" target="_blank" rel="noopener noreferrer">公式の最新公表試験問題を開く ↗</a>
   </article>
 </div>
 
