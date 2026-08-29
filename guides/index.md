@@ -32,8 +32,8 @@ permalink: /guides/
 </div>
 {% endif %}
 
-<h2 id="getting-started">まず最初に読む（全体像）</h2>
-<p>初めて読む方向けに、公開中の基礎記事を先に案内します。</p>
+<h2 id="getting-started">まずはこの3本（作業環境測定）</h2>
+<p>初めて学ぶ方は、全体像 → 測定デザイン → サンプリングの順に読んでください。</p>
 {% assign featured_guides = site.guides | where: "status", "published" | where: "featured", true %}
 <div class="cards guides-cards">
   {% for guide in featured_guides %}
