@@ -8,7 +8,7 @@ article_type: guide
 category: 作業環境測定
 level: 入門
 status: published
-featured: true
+featured: false
 source_type: law
 published_at: 2026-08-11
 updated: 2026-08-11
