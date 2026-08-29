@@ -14,7 +14,7 @@ level: 入門
 reading_time: 約14分
 minutes: 14
 status: published
-featured: true
+featured: false
 published_at: 2026-08-11
 updated: 2026-08-11
 updated_at: 2026-08-11
