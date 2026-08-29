@@ -46,6 +46,15 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build
 
+      - name: Verify internal-only files are not published
+        run: |
+          for path in skills reports work-ops-hub inventory-memo.html; do
+            if test -e "_site/$path"; then
+              echo "Internal-only path was published: /$path"
+              exit 1
+            fi
+          done
+
       - name: Verify chat-style navigator data
         run: |
           node --check assets/js/site-navigator.js

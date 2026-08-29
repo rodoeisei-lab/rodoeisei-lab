@@ -7,7 +7,7 @@ article_type: guide
 category: 労働衛生コンサルタント
 level: 入門
 status: published
-featured: true
+featured: false
 source_type: law
 published_at: 2026-08-11
 updated: 2026-08-11

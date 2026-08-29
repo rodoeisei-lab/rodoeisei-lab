@@ -20,7 +20,7 @@ reviewed_at: 2026-08-10
 checked_at: 2026-08-10
 source_type: law
 status: published
-featured: true
+featured: false
 tags:
   - 化学物質管理
   - SDS
