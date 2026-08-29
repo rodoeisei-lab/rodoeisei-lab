@@ -21,7 +21,7 @@ checked_at: 2026-08-11
 scheduled_review_at: 2026-10-01
 source_type: law
 status: published
-featured: true
+featured: false
 tags: [個人ばく露測定, 呼吸域, 濃度基準値, 均等ばく露作業, 作業環境測定, 個人サンプリング法]
 audience: [個人ばく露測定を初めて学ぶ人, 化学物質管理者, 衛生管理者, 作業環境測定士]
 takeaway: 目的と評価基準を先に定め、代表性のある対象者と作業を選び、呼吸域濃度と作業記録を対策へつなげる流れが分かります。
