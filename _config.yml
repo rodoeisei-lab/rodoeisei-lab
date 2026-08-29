@@ -18,6 +18,11 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - templates
+  # 公開用サイトに含めない運用・作業用ファイル
+  - skills
+  - reports
+  - work-ops-hub
+  - inventory-memo.html
 
 collections:
   guides:
