@@ -42,6 +42,15 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --baseurl "${{ steps.config.outputs.baseurl }}"
 
+      - name: Verify internal-only files are not published
+        run: |
+          for path in skills reports work-ops-hub inventory-memo.html; do
+            if test -e "_site/$path"; then
+              echo "Internal-only path was published: /$path"
+              exit 1
+            fi
+          done
+
       - name: Verify chat-style navigator data
         run: |
           node --check assets/js/site-navigator.js
@@ -150,9 +159,7 @@ jobs:
             "/sns-links/" \
             "/pagefind/pagefind.js" \
             "/pagefind/pagefind-ui.js" \
-            "/pagefind/pagefind-ui.css" \
-            "/work-ops-hub/" \
-            "/inventory-memo.html"; do
+            "/pagefind/pagefind-ui.css"; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:4000${path}")
             echo "$path -> $code"
             test "$code" = "200"
