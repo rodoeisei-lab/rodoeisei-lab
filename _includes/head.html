@@ -16,7 +16,9 @@
   {% assign is_article = true %}
 {% endif %}
 {% assign page_title = site.title %}
-{% if page.title and page.title != site.title %}
+{% if page.seo_title %}
+  {% assign page_title = page.seo_title %}
+{% elsif page.title and page.title != site.title %}
   {% assign page_title = page.title | append: " | " | append: site.title %}
 {% endif %}
 {% assign published_time = page.published_at %}
@@ -33,6 +35,7 @@
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ page_description }}">
 {% if page.noindex == true or page.status == "wip" %}<meta name="robots" content="noindex, nofollow">{% endif %}
+{% if site.verification.google_search_console and site.verification.google_search_console != "" %}<meta name="google-site-verification" content="{{ site.verification.google_search_console }}">{% endif %}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/svg+xml" href="{{ "/assets/images/favicon.svg" | relative_url }}">
 <meta name="theme-color" content="#103b5c">
