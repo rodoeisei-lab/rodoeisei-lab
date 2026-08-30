@@ -55,6 +55,9 @@ analytics:
   matomo_url: ""
   matomo_site_id: ""
 
+verification:
+  google_search_console: ""
+
 feedback:
   article_form_url: "https://forms.gle/VkhwitiNsNXyNQ2C9"
   article_survey_url: ""
