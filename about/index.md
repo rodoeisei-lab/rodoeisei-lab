@@ -4,12 +4,12 @@ description: 労働衛生ラボの運営者、保有資格、実務範囲、記�
 eyebrow: サイトについて
 lead: 誰が、どのような根拠と手順で情報を公開しているかを説明します。
 permalink: /about/
-updated_at: 2026-08-16
+updated_at: 2026-08-30
 ---
 
 <div class="trust-page" markdown="1">
 
-<p class="trust-page__updated">最終更新：2026年8月16日</p>
+<p class="trust-page__updated">最終更新：2026年8月30日</p>
 
 <div class="notice-box"><strong>労働衛生ラボ</strong>は、作業環境測定・化学物質管理・労働衛生を、実務と学習の両面から確認できる個人運営の専門サイトです。</div>
 
@@ -20,7 +20,6 @@ updated_at: 2026-08-16
 ### 保有資格
 
 - 第一種作業環境測定士（有機溶剤、特定化学物質、金属類、粉じん）
-- 臨床検査技師
 
 ### 実務範囲
 
