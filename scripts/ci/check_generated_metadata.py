@@ -93,7 +93,7 @@ def main() -> int:
     )
     require(
         site / "about" / "index.html",
-        ["第一種作業環境測定士", "臨床検査技師", "生成AIの利用方針"],
+        ["第一種作業環境測定士", "生成AIの利用方針"],
     )
     require(
         site / "privacy" / "index.html",
