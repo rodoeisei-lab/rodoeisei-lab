@@ -6,8 +6,7 @@ permalink: /sns-links/
 ---
 {% assign home = site.data.home %}
 
-<div class="sns-collection" id="main">
-  <h1>SNSリンク集</h1>
+<div class="sns-collection">
   <p class="sns-lead">X、YouTube、noteなど、労働衛生ラボの関連リンクをまとめています。</p>
 
   <article class="primary-topic-card sns-primary-topic">
