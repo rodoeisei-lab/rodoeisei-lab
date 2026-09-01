@@ -6,19 +6,19 @@ lead: 個別の用語を断片的に調べるのではなく、測定の計画�
 permalink: /work-environment-measurement/
 ---
 
-<div class="measurement-hub">
-  <section class="measurement-intro" aria-labelledby="measurement-intro-title">
-    <p class="measurement-section-label">まずは全体像から</p>
+<div class="topic-hub topic-hub--measurement measurement-hub">
+  <section class="topic-hub__intro measurement-intro" aria-labelledby="measurement-intro-title">
+    <p class="topic-hub__label measurement-section-label">まずは全体像から</p>
     <h2 id="measurement-intro-title">測って終わりにしないための、一連の流れ</h2>
     <p>作業環境測定は、対象となる有害因子や作業の実態に応じて測定計画を立て、試料採取・分析または測定機器による測定を行い、結果を評価して必要な改善につなげる一連の取組です。このページでは、今どの段階を学んでいるのかを確かめながら、公開済みの記事を順番に読めます。</p>
   </section>
 
-  <section class="measurement-section" aria-labelledby="learning-flow-title">
-    <div class="measurement-section-heading">
-      <p class="measurement-section-label">学習の流れ</p>
+  <section class="topic-hub__section measurement-section" aria-labelledby="learning-flow-title">
+    <div class="topic-hub__heading measurement-section-heading">
+      <p class="topic-hub__label measurement-section-label">学習の流れ</p>
       <h2 id="learning-flow-title">公開中の記事を順番に読む</h2>
     </div>
-    <ol class="measurement-steps">
+    <ol class="topic-hub__steps measurement-steps">
       <li class="measurement-step measurement-step--available">
         <a href="{{ '/guides/work-env-measurement-intro/' | relative_url }}">
           <span class="measurement-step-number">01</span>
@@ -31,9 +31,9 @@ permalink: /work-environment-measurement/
     </ol>
   </section>
 
-  <section class="measurement-section" aria-labelledby="published-articles-title">
-    <div class="measurement-section-heading">
-      <p class="measurement-section-label">現在公開されている記事</p>
+  <section class="topic-hub__section measurement-section" aria-labelledby="published-articles-title">
+    <div class="topic-hub__heading measurement-section-heading">
+      <p class="topic-hub__label measurement-section-label">現在公開されている記事</p>
       <h2 id="published-articles-title">基礎から順に読める記事</h2>
     </div>
     <div class="measurement-article-grid">
@@ -58,13 +58,13 @@ permalink: /work-environment-measurement/
     </div>
   </section>
 
-  <aside class="measurement-related-theme" aria-labelledby="related-theme-title">
-    <div><p class="measurement-section-label">関連する実務テーマ</p><h2 id="related-theme-title">呼吸用保護具のフィットテスト</h2><p>フィットテストは測定の本線とは分けて、保護具管理の実務として確認できます。</p></div>
+  <aside class="topic-hub__notice measurement-related-theme" aria-labelledby="related-theme-title">
+    <div><p class="topic-hub__label measurement-section-label">関連する実務テーマ</p><h2 id="related-theme-title">呼吸用保護具のフィットテスト</h2><p>フィットテストは測定の本線とは分けて、保護具管理の実務として確認できます。</p></div>
     <a href="{{ '/guides/fit-test/' | relative_url }}">フィットテスト導入の最小セットを読む →</a>
   </aside>
 
-  <nav class="measurement-related-links" aria-labelledby="related-pages-title">
-    <div class="measurement-section-heading"><p class="measurement-section-label">調べる・深める</p><h2 id="related-pages-title">関連ページ</h2></div>
+  <nav class="topic-hub__links measurement-related-links" aria-labelledby="related-pages-title">
+    <div class="topic-hub__heading measurement-section-heading"><p class="topic-hub__label measurement-section-label">調べる・深める</p><h2 id="related-pages-title">関連ページ</h2></div>
     <div>
       <a href="{{ '/substances/' | relative_url }}"><strong>対象物質・制度検索</strong><span>有機則・特化則・濃度基準値を確認</span></a>
       <a href="{{ '/regulations/' | relative_url }}"><strong>法令・規則</strong><span>関係する規則を確認</span></a>

@@ -6,16 +6,16 @@ lead: 化学物質の把握からリスクアセスメント、対策、記録�
 permalink: /chemical-management/
 ---
 
-<div class="chemical-hub">
-  <section class="chemical-intro" aria-labelledby="chemical-intro-title">
-    <p class="chemical-section-label">まずは全体像から</p>
+<div class="topic-hub topic-hub--chemical chemical-hub">
+  <section class="topic-hub__intro chemical-intro" aria-labelledby="chemical-intro-title">
+    <p class="topic-hub__label chemical-section-label">まずは全体像から</p>
     <h2 id="chemical-intro-title">把握・評価・対策を、継続して見直す</h2>
     <p>SDSは重要な出発点ですが、入手しただけでリスクアセスメントが完了するわけではありません。使用実態と法令を確認し、危険性と健康有害性を評価して、より効果の高い対策から実施します。</p>
   </section>
 
-  <section class="chemical-section" aria-labelledby="chemical-flow-title">
-    <div class="chemical-section-heading"><p class="chemical-section-label">実務の流れ</p><h2 id="chemical-flow-title">9つのステップで全体像をつかむ</h2></div>
-    <ol class="chemical-steps">
+  <section class="topic-hub__section chemical-section" aria-labelledby="chemical-flow-title">
+    <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">実務の流れ</p><h2 id="chemical-flow-title">9つのステップで全体像をつかむ</h2></div>
+    <ol class="topic-hub__steps chemical-steps">
       <li><span class="chemical-step-number">01</span><span><strong>使用製品・化学物質の把握</strong><small>製品名、使用場所、使用量、作業内容を一覧にする</small></span></li>
       <li><span class="chemical-step-number">02</span><span><strong>ラベル・SDSの確認</strong><small>危険有害性、成分、取扱方法、ばく露防止措置、法規制情報を確認する</small></span></li>
       <li><span class="chemical-step-number">03</span><span><strong>適用される法令・制度の確認</strong><small>リスクアセスメント対象物、有機則・特化則・鉛則などの該当性を確認する</small></span></li>
@@ -28,8 +28,8 @@ permalink: /chemical-management/
     </ol>
   </section>
 
-  <section class="chemical-section" aria-labelledby="systems-title">
-    <div class="chemical-section-heading"><p class="chemical-section-label">制度と指標</p><h2 id="systems-title">目的の違いを押さえる</h2><p>一つの制度や測定だけで管理が完結するものではありません。該当する仕組みを組み合わせます。</p></div>
+  <section class="topic-hub__section chemical-section" aria-labelledby="systems-title">
+    <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">制度と指標</p><h2 id="systems-title">目的の違いを押さえる</h2><p>一つの制度や測定だけで管理が完結するものではありません。該当する仕組みを組み合わせます。</p></div>
     <dl class="chemical-definitions">
       <div><dt>自律的な化学物質管理</dt><dd>事業者がリスクを把握し、リスクアセスメントと低減措置を継続する枠組みです。特別規則の適用がなくなるという意味ではありません。</dd></div>
       <div><dt>有機則・特化則・鉛則等</dt><dd>対象物質や作業に固有の措置を定める特別規則です。対象なら、自律的管理とあわせて規定を確認します。</dd></div>
@@ -42,17 +42,17 @@ permalink: /chemical-management/
     <p class="chemical-scope-note"><strong>適用条件を確認：</strong>法令の適用は、物質、含有率、作業内容、使用量、作業場所などによって異なります。</p>
   </section>
 
-  <section class="chemical-section" aria-labelledby="substance-registry-title">
-    <div class="chemical-section-heading"><p class="chemical-section-label">対象物質を調べる</p><h2 id="substance-registry-title">制度から対象物質を確認する</h2><p>第2種有機溶剤、特定化学物質、濃度基準値設定物質を制度別に検索できます。法令適用の最終判断は、製品SDSと一次情報で確認してください。</p></div>
-    <div class="chemical-official-links">
+  <section class="topic-hub__section chemical-section" aria-labelledby="substance-registry-title">
+    <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">対象物質を調べる</p><h2 id="substance-registry-title">制度から対象物質を確認する</h2><p>第2種有機溶剤、特定化学物質、濃度基準値設定物質を制度別に検索できます。法令適用の最終判断は、製品SDSと一次情報で確認してください。</p></div>
+    <div class="topic-hub__links chemical-official-links">
       <a href="{{ '/substances/' | relative_url }}"><strong>対象物質・制度検索</strong><span>物質名・CAS RN・制度区分から確認する</span></a>
       <a href="{{ '/substances/check-flow/' | relative_url }}"><strong>検索結果の後に確認すること</strong><span>作業環境測定・確認測定・リスクアセスメントを分ける</span></a>
       <a href="{{ '/guides/management-concentration-exposure-limits/' | relative_url }}"><strong>濃度の指標を整理する</strong><span>管理濃度・濃度基準値・許容濃度の違い</span></a>
     </div>
   </section>
 
-  <section class="chemical-section" aria-labelledby="roadmap-title">
-    <div class="chemical-section-heading"><p class="chemical-section-label">関連記事</p><h2 id="roadmap-title">現在読める解説</h2><p>全体像を確認したあと、必要なテーマの詳しい解説へ進めます。</p></div>
+  <section class="topic-hub__section chemical-section" aria-labelledby="roadmap-title">
+    <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">関連記事</p><h2 id="roadmap-title">現在読める解説</h2><p>全体像を確認したあと、必要なテーマの詳しい解説へ進めます。</p></div>
     <ul class="chemical-roadmap">
       {% for article in site.data.chemical_management %}
       {% if article.status == "published" and article.url %}
@@ -62,9 +62,9 @@ permalink: /chemical-management/
     </ul>
   </section>
 
-  <section class="chemical-section" aria-labelledby="official-title">
-    <div class="chemical-section-heading"><p class="chemical-section-label">一次情報</p><h2 id="official-title">公式情報・確認ツール</h2><p>制度や対象物質は更新されます。実務では必ず最新情報を確認してください。</p></div>
-    <div class="chemical-official-links">
+  <section class="topic-hub__section chemical-section" aria-labelledby="official-title">
+    <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">一次情報</p><h2 id="official-title">公式情報・確認ツール</h2><p>制度や対象物質は更新されます。実務では必ず最新情報を確認してください。</p></div>
+    <div class="topic-hub__links chemical-official-links">
       <a href="https://chemiguide.mhlw.go.jp/"><strong>厚生労働省 ケミガイド</strong><span>化学物質管理の実務情報</span></a>
       <a href="https://anzeninfo.mhlw.go.jp/user/anzen/kag/kagaku_index.html"><strong>職場の化学物質管理に関する情報</strong><span>厚生労働省 職場のあんぜんサイト</span></a>
       <a href="https://anzeninfo.mhlw.go.jp/user/anzen/kag/ankgc07.htm"><strong>リスクアセスメント実施支援</strong><span>手法と支援ツールを確認</span></a>
@@ -75,7 +75,7 @@ permalink: /chemical-management/
     </div>
   </section>
 
-  <aside class="chemical-disclaimer">
+  <aside class="topic-hub__notice chemical-disclaimer">
     <strong>確認上の注意</strong>
     <p>本ページは制度の全体像を整理するものです。個別の法令適用は、物質、含有率、作業内容、設備、使用条件等によって異なります。最終判断は最新の法令、告示、通達、厚生労働省資料等で確認してください。</p>
     <p>最終確認日：2026年8月12日</p>
