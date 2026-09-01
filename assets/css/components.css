@@ -7,6 +7,7 @@
 .hero-kicker{display:inline-flex;align-items:center;min-height:20px;margin:0 0 12px;padding:0;color:var(--color-primary);font-size:13px;font-weight:850;letter-spacing:.06em}
 .home-hero h1{max-width:760px;margin:0;font-size:clamp(34px,5vw,52px);line-height:1.2;letter-spacing:-.03em}
 .hero-lead{max-width:720px;margin:14px 0 0;color:var(--color-text-secondary);font-size:clamp(17px,2vw,19px);line-height:1.7}
+.hero-audience{display:inline-flex;max-width:100%;margin:12px 0 0;padding:7px 10px;border-left:3px solid var(--color-accent);background:var(--color-accent-soft);color:var(--color-text-secondary);font-size:14px;font-weight:700}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .hero-primary-btn,.hero-secondary-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:10px 20px;border:1px solid var(--color-primary);border-radius:11px;font-size:16px;font-weight:800;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease}
 .hero-primary-btn{background:var(--color-primary);color:#fff}
@@ -17,7 +18,7 @@
 .home-section-heading{max-width:760px}
 .home-section-heading h2,.quick-search-card h2,.external-links-card h2{margin:0;font-size:clamp(24px,4vw,32px);line-height:1.4;letter-spacing:-.02em}
 .home-section-heading>p:last-child{margin:8px 0 0;color:var(--color-text-secondary);font-size:16px}
-.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .category-grid a{display:flex;flex-direction:column;justify-content:space-between;min-height:112px;padding:16px;border:1px solid var(--color-border);border-top:3px solid var(--category-accent,var(--color-primary));border-radius:12px;background:#fff;color:var(--color-text);box-shadow:none;text-decoration:none;transition:transform .18s ease,border-color .18s ease}
 .category-grid a:nth-child(n){--category-accent:var(--color-primary)}.category-grid a:first-child{--category-accent:var(--color-accent)}
 .category-grid a:hover{border-color:var(--category-accent);box-shadow:none;transform:translateY(-1px)}
@@ -175,3 +176,29 @@
 .library-roles{border-left:4px solid var(--color-accent);background:linear-gradient(135deg,#eaf4f8 0%,#f8fbfc 72%,#fff8e7 100%)}
 .library-page__notice,.library-caution{border-left-color:var(--color-accent);background:var(--color-accent-soft)}
 .video-hub__intro,.video-channel,.video-hub__guide,.article-youtube{border-top:3px solid #b8d4e5;background:#fff;box-shadow:var(--shadow)}
+
+
+/* Guides hub */
+.guides-hub{display:grid;gap:52px;max-width:1040px;margin-inline:auto}
+.guides-hub__intro{max-width:780px;padding-left:18px;border-left:4px solid var(--color-accent)}
+.guides-hub__intro h2,.guides-hub__heading h2,.guides-hub__search h2{margin:0;font-size:clamp(24px,4vw,30px);line-height:1.4}
+.guides-hub__intro>p:last-child,.guides-hub__heading>p:last-child{margin:8px 0 0;color:var(--color-text-secondary)}
+.guides-hub__search{padding:20px;border:1px solid #c9dce8;border-radius:14px;background:var(--color-blue-soft)}
+.guides-hub__search .filter-search{margin:14px 0 0;padding:0;border:0;background:transparent}
+.guides-hub__search .filter-search label{display:block;margin-bottom:6px;color:var(--color-text);font-size:14px;font-weight:800}
+.guides-hub__section{min-width:0}
+.guides-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.guides-topic-grid a{display:flex;min-height:112px;padding:16px;border:1px solid var(--color-border);border-top:3px solid var(--color-primary);border-radius:12px;background:#fff;color:var(--color-text);flex-direction:column;justify-content:space-between;text-decoration:none}
+.guides-topic-grid a:first-child{border-top-color:var(--color-accent)}
+.guides-topic-grid a:hover{border-color:#b6cdda;transform:translateY(-1px)}
+.guides-topic-grid strong{font-size:18px}
+.guides-topic-grid span{margin-top:8px;color:var(--color-text-secondary);font-size:14px;line-height:1.55}
+.guides-cards--recent{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.guides-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){
+  .hero-audience{display:block}
+  .guides-hub{gap:40px}
+  .guides-hub__search{padding:16px}
+  .guides-topic-grid{grid-template-columns:1fr;gap:8px}
+  .guides-topic-grid a{min-height:0;padding:14px}
+}
