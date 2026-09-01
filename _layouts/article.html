@@ -14,12 +14,17 @@ layout: base
 
 <section class="page-hero">
   <div class="container">
-    <p class="page-eyebrow">{{ page.category | default: "Article" }}</p>
+    {% assign display_category = page.category | default: "解説" %}
+    {% if display_category == "Guides" %}{% assign display_category = "解説" %}{% endif %}
+    <p class="page-eyebrow">{{ display_category }}</p>
     {% assign page_title = page.title | default: page.slug | default: page.basename | default: "更新情報" %}
     <h1>{{ page_title }}</h1>
     {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
     <div class="article-meta">
-      <span class="badge">{{ inferred_article_type }}</span>
+      {% assign article_type_label = "記事" %}
+      {% if inferred_article_type == "guide" %}{% assign article_type_label = "解説" %}{% endif %}
+      {% if inferred_article_type == "update" %}{% assign article_type_label = "更新情報" %}{% endif %}
+      <span class="badge">{{ article_type_label }}</span>
       {% if page.reading_time %}<span class="badge">{{ page.reading_time }}</span>{% endif %}
       {% assign hero_published = page.published_at %}
       {% assign hero_updated = page.updated_at | default: page.updated %}
@@ -29,6 +34,7 @@ layout: base
       {% if page.sources and page.sources.size > 0 %}
         {% assign has_sources = true %}
       {% endif %}
+      {% if hero_checked %}<span class="badge badge--verified">法令確認済み</span>{% endif %}
       {% if hero_published or hero_updated or hero_checked or show_unchecked_legal_date or has_sources %}
       <p class="article-meta-dates">
         {% assign has_prior_date = false %}
