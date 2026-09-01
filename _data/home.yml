@@ -1,6 +1,6 @@
 hero:
   title: "労働衛生を、現場目線でわかりやすく。"
-  description: "作業環境測定、化学物質管理、個人ばく露測定、生成AIの安全な活用と学習を、実務者目線で整理するサイトです。"
+  description: "作業環境測定、化学物質管理、個人ばく露測定を、実務者目線でわかりやすく整理する専門サイトです。"
   kicker: "労働衛生・作業環境測定・化学物質管理の専門メディア"
   audience: "作業環境測定士・衛生管理者・化学物質管理担当者向け"
   actions:
@@ -44,8 +44,6 @@ categories:
     url: /guides/fit-test/
   - label: 労働衛生コンサルタント
     url: /occupational-health-consultant/
-  - label: AI活用
-    url: /ai-use/
 articles:
   - title: 作業環境測定とは？A測定・B測定・管理区分を初心者向けに解説
     category: 作業環境測定
