@@ -7,6 +7,7 @@ layout: base
     <p class="hero-kicker">{{ home.hero.kicker }}</p>
     <h1 id="home-title">{{ home.hero.title }}</h1>
     <p class="hero-lead">{{ home.hero.description }}</p>
+    {% if home.hero.audience %}<p class="hero-audience">{{ home.hero.audience }}</p>{% endif %}
     <div class="hero-actions">
       {% for action in home.hero.actions limit:2 %}<a class="hero-{{ action.style }}-btn" href="{{ action.url | relative_url }}">{{ action.label }}</a>{% endfor %}
     </div>
