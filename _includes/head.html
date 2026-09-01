@@ -68,7 +68,8 @@
 {
   "@context": "https://schema.org",
   "@type": "{% if is_article %}Article{% elsif page.layout == 'home' %}WebSite{% else %}WebPage{% endif %}",
-  "name": {{ site.title | jsonify }},
+  "name": {% if page.layout == 'home' %}{{ site.title | jsonify }}{% else %}{{ page.title | default: site.title | jsonify }}{% endif %},
+  "description": {{ page_description | jsonify }},
   {% if is_article and page.title %}
   "headline": {{ page.title | jsonify }},
   "author": {
