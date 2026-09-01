@@ -77,6 +77,7 @@ button,a,input,select,textarea{touch-action:manipulation}
 .article-byline{margin:10px 0 0;color:var(--color-text-secondary);font-size:14px}
 .article-byline a{font-weight:700}
 .badge,.guide-tag,.tag-chip,.article-category,.qa-list-category{display:inline-flex;align-items:center;min-height:30px;padding:3px 10px;border:1px solid #c8dce8;border-radius:999px;background:#f5fafc;color:var(--color-primary);font-size:14px;font-weight:750}
+.badge--verified{border-color:#e2bb65;background:var(--color-accent-soft);color:var(--color-accent-strong)}
 .article-target-readers,.article-summary-box__panel,.article-conclusion,.article-sources,.article-feedback,.related-articles,.article-use-cases{margin:24px 0;padding:18px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff}
 .article-summary-box__panel{border-left:4px solid var(--color-primary)}
 .article-sources{scroll-margin-top:80px}
@@ -112,6 +113,21 @@ button,a,input,select,textarea{touch-action:manipulation}
 .tag-chip{min-height:44px;text-decoration:none}
 .status,.card-status,.article-status,.measurement-status{display:inline-flex;align-items:center;min-height:30px;padding:3px 9px;border:1px solid var(--color-border);border-radius:7px;background:#f1f5f9;color:var(--color-text-secondary);font-size:14px;font-weight:700}
 
+
+/* Shared topic hubs */
+.topic-hub{max-width:960px;margin:auto;overflow-wrap:anywhere}
+.topic-hub__intro{padding:22px;border:1px solid var(--color-border);border-left:4px solid var(--color-accent);border-radius:var(--radius);background:#fff}
+.topic-hub__intro h2,.topic-hub__heading h2{margin:0;font-size:clamp(23px,4vw,29px);line-height:1.4}
+.topic-hub__intro>p:last-child,.topic-hub__heading>p:last-child{max-width:760px;color:var(--color-text-secondary)}
+.topic-hub__section{margin-top:48px}
+.topic-hub__label{display:inline-flex;align-items:center;min-height:20px;margin:0 0 8px;color:var(--color-primary);font-size:13px;font-weight:800;letter-spacing:.06em}
+.topic-hub__notice{border-left-color:var(--color-accent);background:var(--color-blue-soft)}
+.topic-hub .chemical-roadmap .chemical-roadmap__item--published{border-color:var(--color-border);background:#fff;box-shadow:none}
+.topic-hub .chemical-status--published{border-color:#c8dce8;background:var(--color-blue-soft);color:var(--color-primary)}
+@media(max-width:600px){
+  .topic-hub__intro{padding:18px}
+  .topic-hub__section{margin-top:40px}
+}
 
 /* Specialized public pages */
 .measurement-hub,.regulations-page{max-width:960px;margin:auto}
