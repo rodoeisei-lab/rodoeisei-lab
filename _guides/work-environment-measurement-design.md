@@ -25,6 +25,9 @@ audience: [作業環境測定を初めて学ぶ人, 衛生管理者, 作業環�
 takeaway: 現場調査から測定方式と測定点を選び、選択理由を測定計画へ残す基本が分かります。
 conclusion: 良いデザインとは、作業の実態と適用要件を調べ、測定結果が何を代表するか説明できる計画です。
 related_links:
+  - title: 個人サンプリング法の対象物質を確認する
+    url: /guides/personal-sampling-target-substances/
+    group: next
   - title: 作業環境測定の超入門
     url: /guides/work-env-measurement-intro/
     group: previous

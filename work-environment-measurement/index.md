@@ -46,6 +46,9 @@ permalink: /work-environment-measurement/
       <a class="measurement-article-card" href="{{ '/guides/work-environment-measurement-sampling/' | relative_url }}">
         <span>ステップ03</span><h3>サンプリングと捕集方法</h3><p>物質の状態と分析方法から、ろ過捕集や固体捕集などを選ぶ基本を整理します。</p><strong>サンプリングを学ぶ →</strong>
       </a>
+      <a class="measurement-article-card" href="{{ '/guides/personal-sampling-target-substances/' | relative_url }}">
+        <span>C・D測定</span><h3>個人サンプリング法の対象物質</h3><p>対象特化物、鉛、有機溶剤等、粉じんの4区分と現行の対象一覧を整理します。</p><strong>対象物質を確認する →</strong>
+      </a>
       <a class="measurement-article-card" href="{{ '/qa/third-control-class/' | relative_url }}">
         <span>評価・管理区分</span><h3>第3管理区分に関するQ&amp;A</h3><p>第3管理区分になったとき、何を確認し、どの対策から進めるかを確認します。</p><strong>回答を見る →</strong>
       </a>

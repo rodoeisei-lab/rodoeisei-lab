@@ -3,6 +3,11 @@
   status: published
   url: /guides/personal-exposure-measurement-basics/
   section: 全体像
+- title: 個人サンプリング法の対象物質は？特化物・鉛・有機溶剤・粉じんを整理
+  description: C測定・D測定を選択できる対象物質を、現行制度の4区分と一覧で整理します。
+  status: published
+  url: /guides/personal-sampling-target-substances/
+  section: 作業環境測定
 - title: 均等ばく露作業と測定対象者の選び方
   description: ばく露が同程度と見込まれる作業の整理と対象者選定を解説します。
   status: wip
