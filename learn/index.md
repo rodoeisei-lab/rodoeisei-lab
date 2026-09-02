@@ -4,7 +4,7 @@ description: 作業環境測定、化学物質管理などのテーマ、資格�
 eyebrow: 学習ガイド
 lead: 知りたいテーマ、受験する資格、学びやすい形式から入口を選べます。
 permalink: /learn/
-updated_at: 2026-08-14
+updated_at: 2026-09-02
 ---
 
 <div class="card">
@@ -68,6 +68,12 @@ updated_at: 2026-08-14
     description="資格の役割、受験資格、筆記・口述試験、登録までの全体像を確認します。"
     link_url="/occupational-health-consultant/"
     link_label="試験の全体像を学ぶ →"
+  %}
+  {% include list-card.html
+    title="オキュペイショナルハイジニスト"
+    description="役割、93単位の養成講座、認定要件、評価試験、5年更新、個人ばく露測定との関係を確認します。"
+    link_url="/guides/occupational-hygienist-basics/"
+    link_label="認定制度を学ぶ →"
   %}
 </div>
 
