@@ -2,6 +2,8 @@
 layout: article
 title: 個人サンプリング法の対象物質は？特化物・鉛・有機溶剤・粉じんを整理
 description: 個人サンプリング法による作業環境測定（C測定・D測定）の対象物質を、個人サンプリング法対象特化物、鉛、有機溶剤等、粉じんに分けて整理します。2025年1月の対象拡大後の現行制度に対応。
+og_image: /assets/images/og/articles/personal-sampling-target-substances.png
+og_image_alt: 個人サンプリング法の対象物質を特化物・鉛・有機溶剤・粉じんに分けて解説する労働衛生ラボの記事カード
 article_type: guide
 category: 作業環境測定
 level: 実務
