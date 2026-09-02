@@ -1,10 +1,10 @@
 ---
 title: 資格対策
-description: 労働衛生コンサルタント、第一種衛生管理者、作業環境測定士の学習入口と、公式過去問を使った復習方法を整理します。
+description: 労働衛生コンサルタント、第一種衛生管理者、作業環境測定士、オキュペイショナルハイジニストの学習入口と、公式過去問を使った復習方法を整理します。
 eyebrow: 資格・試験
 lead: 受験する資格を選び、公式過去問と公開中の解説から学習を始められます。
 permalink: /licenses/
-updated_at: 2026-08-14
+updated_at: 2026-09-02
 ---
 
 <p><small>最終更新：{{ page.updated_at | date: "%Y年%-m月%-d日" }}</small></p>
@@ -41,6 +41,12 @@ updated_at: 2026-08-14
     <p>測定の全体像、デザイン、サンプリングなど、公開中の解説を学習順に確認できます。</p>
     <p><a href="{{ '/work-environment-measurement/' | relative_url }}">作業環境測定を学ぶ →</a></p>
     <p><a href="{{ '/past-exams/' | relative_url }}">公式過去問へ →</a></p>
+  </article>
+
+  <article class="card">
+    <h3>オキュペイショナルハイジニスト</h3>
+    <p>IOHA認証日測協認定制度の役割、93単位、評価試験、認定要件、更新制度を整理しています。</p>
+    <p><a href="{{ '/guides/occupational-hygienist-basics/' | relative_url }}">認定制度の全体像を確認する →</a></p>
   </article>
 </div>
 
