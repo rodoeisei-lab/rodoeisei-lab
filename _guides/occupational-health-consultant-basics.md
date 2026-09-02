@@ -37,6 +37,9 @@ next_actions:
   - 経歴等証明書と科目免除に必要な書類を別々に確認する
   - 選択区分の試験科目と公式公表試験問題を確認する
 related_links:
+  - title: オキュペイショナルハイジニストとは？仕事内容・取得要件・93単位
+    url: /guides/occupational-hygienist-basics/
+    group: related
   - title: 労働衛生コンサルタント専用カテゴリ
     url: /occupational-health-consultant/
     group: next
