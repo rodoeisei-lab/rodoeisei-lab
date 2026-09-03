@@ -1,6 +1,6 @@
 (() => {
   const root = document.querySelector('[data-library-filter]');
-  const cards = [...document.querySelectorAll('[data-library-card]')];
+  const cards = [...document.querySelectorAll('[data-library-results] [data-library-card]')];
   const countNode = document.querySelector('[data-library-count]');
   const emptyNode = document.querySelector('[data-library-empty]');
   if (!root || !cards.length || !countNode) return;
