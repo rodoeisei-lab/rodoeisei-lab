@@ -50,7 +50,7 @@ permalink: /guides/
       <a href="{{ '/personal-exposure-measurement/' | relative_url }}"><strong>個人ばく露測定</strong><span>呼吸域、対象者選定、評価と対策</span></a>
       <a href="{{ '/local-exhaust-ventilation/' | relative_url }}"><strong>局所排気装置</strong><span>フード、ダクト、制御風速、改善</span></a>
       <a href="{{ '/guides/fit-test/' | relative_url }}"><strong>保護具・フィットテスト</strong><span>呼吸用保護具の選択と密着性確認</span></a>
-      <a href="{{ '/ai-use/' | relative_url }}"><strong>AI活用</strong><span>労働衛生で安全に使うための確認手順</span></a>
+      <a href="{{ '/licenses/' | relative_url }}"><strong>資格・キャリア</strong><span>作業環境測定士、オキュペイショナルハイジニスト、労働衛生コンサルタント</span></a>
     </nav>
   </section>
 
