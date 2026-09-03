@@ -28,6 +28,7 @@ permalink: /work-environment-measurement/
       </li>
       <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-design/' | relative_url }}"><span class="measurement-step-number">02</span><span><strong>デザイン</strong><small>測定計画と測定点を考える</small></span><span class="measurement-step-action">記事を読む</span></a></li>
       <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-sampling/' | relative_url }}"><span class="measurement-step-number">03</span><span><strong>サンプリング</strong><small>試料採取の方法を理解する</small></span><span class="measurement-step-action">記事を読む</span></a></li>
+      <li class="measurement-step measurement-step--available"><a href="{{ '/analysis/' | relative_url }}"><span class="measurement-step-number">04</span><span><strong>分析</strong><small>検量線・定量・精度管理を理解する</small></span><span class="measurement-step-action">分析を学ぶ</span></a></li>
     </ol>
   </section>
 
@@ -45,6 +46,9 @@ permalink: /work-environment-measurement/
       </a>
       <a class="measurement-article-card" href="{{ '/guides/work-environment-measurement-sampling/' | relative_url }}">
         <span>ステップ03</span><h3>サンプリングと捕集方法</h3><p>物質の状態と分析方法から、ろ過捕集や固体捕集などを選ぶ基本を整理します。</p><strong>サンプリングを学ぶ →</strong>
+      </a>
+      <a class="measurement-article-card" href="{{ '/analysis/' | relative_url }}">
+        <span>ステップ04</span><h3>作業環境測定の分析</h3><p>試料受入れ、前処理、GC・原子吸光、検量線、定量下限、精度管理を体系的に整理します。</p><strong>分析を学ぶ →</strong>
       </a>
       <a class="measurement-article-card" href="{{ '/guides/personal-sampling-target-substances/' | relative_url }}">
         <span>C・D測定</span><h3>個人サンプリング法の対象物質</h3><p>対象特化物、鉛、有機溶剤等、粉じんの4区分と現行の対象一覧を整理します。</p><strong>対象物質を確認する →</strong>
@@ -69,6 +73,7 @@ permalink: /work-environment-measurement/
   <nav class="topic-hub__links measurement-related-links" aria-labelledby="related-pages-title">
     <div class="topic-hub__heading measurement-section-heading"><p class="topic-hub__label measurement-section-label">調べる・深める</p><h2 id="related-pages-title">関連ページ</h2></div>
     <div>
+      <a href="{{ '/analysis/' | relative_url }}"><strong>分析</strong><span>GC・原子吸光・検量線・定量下限を確認</span></a>
       <a href="{{ '/substances/' | relative_url }}"><strong>対象物質・制度検索</strong><span>有機則・特化則・濃度基準値を確認</span></a>
       <a href="{{ '/regulations/' | relative_url }}"><strong>法令・規則</strong><span>関係する規則を確認</span></a>
       <a href="{{ '/glossary/' | relative_url }}"><strong>用語集</strong><span>専門用語を確認</span></a>
