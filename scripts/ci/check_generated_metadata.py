@@ -385,6 +385,14 @@ def main() -> int:
 
     require(site / "guides" / "work-environment-measurement-design-sampling" / "index.html", ['"@type": "Article"', "https://www.youtube.com/watch?v=-l2ISaUncV4"])
     require(
+        site / "guides" / "personal-exposure-measurement-basics" / "index.html",
+        ["nRqshwTlfWk", "UiC5mOc5f-I"],
+    )
+    require(
+        site / "guides" / "occupational-hygienist-93-credits" / "index.html",
+        ["znlaYTwWewE"],
+    )
+    require(
         site / "guides" / "work-environment-measurement-sampling" / "index.html",
         ["/guides/management-concentration-exposure-limits/"],
     )
