@@ -35,6 +35,12 @@ updated_at: 2026-09-03
     link_label="個人ばく露測定を学ぶ →"
   %}
   {% include list-card.html
+    title="分析"
+    description="試料の前処理、GC、原子吸光、検量線、定量下限、精度管理を体系的に確認します。"
+    link_url="/analysis/"
+    link_label="分析を学ぶ →"
+  %}
+  {% include list-card.html
     title="局所排気装置"
     description="構成、フード、気流、点検など、設備管理の基本を確認します。"
     link_url="/local-exhaust-ventilation/"
