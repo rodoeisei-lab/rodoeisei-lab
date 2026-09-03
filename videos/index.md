@@ -40,6 +40,7 @@ permalink: /videos/
       <label><span>分野</span><select data-library-category>
         <option value="">すべて</option>
         <option value="作業環境測定">作業環境測定</option>
+        <option value="分析">分析</option>
         <option value="個人ばく露測定">個人ばく露測定</option>
         <option value="局所排気装置">局所排気装置</option>
         <option value="資格・キャリア">資格・キャリア</option>
