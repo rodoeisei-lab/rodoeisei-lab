@@ -345,9 +345,19 @@ def main() -> int:
     if duplicate_titles:
         raise SystemExit(f"Public articles must not share the same title: {duplicate_titles}")
     require(site / "videos" / "index.html", ['"@type": "WebPage"', "-l2ISaUncV4"])
+    require(
+        site / "analysis" / "index.html",
+        [
+            "/guides/work-environment-analysis-basics/",
+            "/guides/gc-analysis-basics/",
+            "/guides/atomic-absorption-analysis-basics/",
+            "/guides/analytical-limits-basics/",
+        ],
+    )
     public_routes_without_placeholders = (
         "guides",
         "work-environment-measurement",
+        "analysis",
         "chemical-management",
         "personal-exposure-measurement",
         "ai-use",
