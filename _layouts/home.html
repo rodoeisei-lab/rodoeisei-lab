@@ -15,28 +15,42 @@ layout: base
 
   <section class="content-feature" aria-labelledby="content-feature-title">
     <div class="home-section-heading">
-      <p class="section-kicker">YouTube・note連動</p>
-      <h2 id="content-feature-title">動画から根拠まで確認する</h2>
+      <p class="section-kicker">動画・記事ライブラリ</p>
+      <h2 id="content-feature-title">動画でつかみ、記事で確かめる</h2>
+      <p>同じテーマをYouTube・サイト記事・noteから選んで学べます。</p>
     </div>
     <ol class="content-feature__flow" aria-label="テーマを深める流れ">
       <li><strong>YouTube</strong><span>全体像をつかむ</span></li>
-      <li><strong>note</strong><span>順番に理解する</span></li>
       <li><strong>サイト記事</strong><span>要点と根拠を確認</span></li>
+      <li><strong>note</strong><span>あるテーマは文章で読む</span></li>
     </ol>
     <div class="content-feature__grid">
-      {% assign featured_count = 0 %}{% for item in site.data.content_library %}{% if item.featured_home and featured_count < 1 %}
+      {% assign featured_library = site.data.content_library | sort: "published_at" | reverse %}
+      {% assign featured_count = 0 %}
+      {% for item in featured_library %}
+      {% if item.featured_home and featured_count < 1 %}
+      {% assign youtube_video = site.data.youtube.videos | where: "id", item.youtube_id | first %}
       <article class="library-card library-card--home">
-        <a class="library-card__thumbnail" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
-          <img src="https://i.ytimg.com/vi/{{ item.youtube.video_id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async">
+        {% if youtube_video %}
+        <a class="library-card__thumbnail" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ youtube_video.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
+          <img src="https://i.ytimg.com/vi/{{ youtube_video.id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async">
         </a>
+        {% endif %}
         <div class="library-card__body">
           <p class="library-card__meta"><span>{{ item.category }}</span><time datetime="{{ item.published_at }}">{{ item.published_at | date: "%Y年%-m月%-d日" }}</time></p>
           <h3>{{ item.title }}</h3><p>{{ item.summary }}</p>
-          <div class="library-card__actions">{% if item.site.url %}<a class="library-card__primary" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="site" href="{{ item.site.url | relative_url }}">{{ item.site.label | default: 'サイトで読む' }}</a>{% endif %}<a data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ item.youtube.url }}" target="_blank" rel="noopener noreferrer">{{ item.youtube.label | default: 'YouTubeで見る' }}<span class="sr-only">（外部サイト）</span></a><a data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="note" href="{{ item.note.url }}" target="_blank" rel="noopener noreferrer">{{ item.note.label | default: 'noteで読む' }}<span class="sr-only">（外部サイト）</span></a></div>
+          <div class="library-card__actions">
+            {% if item.site.url %}<a class="{% if item.recommended_format == 'site' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="site" href="{{ item.site.url | relative_url }}">{{ item.site.label | default: 'サイトで読む' }}</a>{% endif %}
+            {% if youtube_video %}<a class="{% if item.recommended_format == 'youtube' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ youtube_video.url }}" target="_blank" rel="noopener noreferrer">YouTubeで見る<span class="sr-only">（外部サイト）</span></a>{% endif %}
+            {% if item.note.url %}<a class="{% if item.recommended_format == 'note' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="note" href="{{ item.note.url }}" target="_blank" rel="noopener noreferrer">{{ item.note.label | default: 'noteで読む' }}<span class="sr-only">（外部サイト）</span></a>{% endif %}
+          </div>
         </div>
-      </article>{% assign featured_count = featured_count | plus: 1 %}{% endif %}{% endfor %}
+      </article>
+      {% assign featured_count = featured_count | plus: 1 %}
+      {% endif %}
+      {% endfor %}
     </div>
-    <a class="content-feature__cta" href="{{ '/videos/' | relative_url }}">テーマ別ライブラリを見る <span aria-hidden="true">→</span></a>
+    <a class="content-feature__cta" href="{{ '/videos/' | relative_url }}">動画・記事ライブラリを見る <span aria-hidden="true">→</span></a>
   </section>
 
   <section class="home-section" aria-labelledby="home-categories-title">
