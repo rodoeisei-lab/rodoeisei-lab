@@ -1,3 +1,18 @@
+- slug: work-environment-analysis-basics
+  title: 作業環境測定の分析とは？検量線・定量・精度管理までの全体像
+  category: 分析
+  summary: 試料受入れ、前処理、標準液、検量線、測定、定量、精度管理、濃度換算までを一つの流れで整理します。
+  published_at: 2026-09-03
+  purposes: [overview, practice, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 9
+  recommended_format: site
+  keywords: [分析, 作業環境測定, GC, 原子吸光, 検量線, 定量下限, 精度管理]
+  site:
+    url: /guides/work-environment-analysis-basics/
+    label: 分析の全体像を読む
+
 - slug: work-environment-measurement-sampling
   title: 作業環境測定のサンプリングとは？物質の状態から捕集方法を考える
   category: 作業環境測定
