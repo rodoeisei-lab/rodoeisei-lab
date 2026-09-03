@@ -48,6 +48,7 @@ permalink: /guides/
       <a href="{{ '/work-environment-measurement/' | relative_url }}"><strong>作業環境測定</strong><span>A・B・C・D測定、デザイン、サンプリング</span></a>
       <a href="{{ '/chemical-management/' | relative_url }}"><strong>化学物質管理</strong><span>SDS、リスクアセスメント、濃度基準値</span></a>
       <a href="{{ '/personal-exposure-measurement/' | relative_url }}"><strong>個人ばく露測定</strong><span>呼吸域、対象者選定、評価と対策</span></a>
+      <a href="{{ '/analysis/' | relative_url }}"><strong>分析</strong><span>GC、原子吸光、検量線、定量下限、精度管理</span></a>
       <a href="{{ '/local-exhaust-ventilation/' | relative_url }}"><strong>局所排気装置</strong><span>フード、ダクト、制御風速、改善</span></a>
       <a href="{{ '/guides/fit-test/' | relative_url }}"><strong>保護具・フィットテスト</strong><span>呼吸用保護具の選択と密着性確認</span></a>
       <a href="{{ '/licenses/' | relative_url }}"><strong>資格・キャリア</strong><span>作業環境測定士、オキュペイショナルハイジニスト、労働衛生コンサルタント</span></a>
