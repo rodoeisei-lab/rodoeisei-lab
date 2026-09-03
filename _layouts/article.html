@@ -69,7 +69,10 @@ layout: base
   <div class="container article">
     {% include article-target-readers.html %}
     {% include article-summary-box.html %}
-    {% if page.youtube_videos and page.youtube_videos.size > 0 %}
+    {% assign auto_youtube_videos = site.data.youtube.videos | where: "article_url", page.url %}
+    {% if auto_youtube_videos and auto_youtube_videos.size > 0 %}
+      {% include article-youtube.html videos=auto_youtube_videos %}
+    {% elsif page.youtube_videos and page.youtube_videos.size > 0 %}
       {% include article-youtube.html videos=page.youtube_videos %}
     {% endif %}
     {{ content }}

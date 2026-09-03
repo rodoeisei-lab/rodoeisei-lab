@@ -2,9 +2,18 @@ channel:
   name: 労働衛生×AIラボ
   url: https://www.youtube.com/channel/UCT2gRzcZrwl8W64LOGUb3cw
   feed_url: https://www.youtube.com/feeds/videos.xml?channel_id=UCT2gRzcZrwl8W64LOGUb3cw
-  checked_at: 2026-08-11
+  checked_at: 2026-09-03
 
 videos:
+  - id: IbW6ujjJkOI
+    title: 作業環境測定のサンプリングとは？捕集方法を基礎から解説
+    url: https://www.youtube.com/watch?v=IbW6ujjJkOI
+    published_at: 2026-08-11
+    format: long
+    topic: 作業環境測定
+    description: 物質の状態と分析方法を踏まえ、ろ過捕集や固体捕集などのサンプリング方法を基礎から整理します。
+    article_url: /guides/work-environment-measurement-sampling/
+    article_label: サンプリングの記事を読む
   - id: "-l2ISaUncV4"
     title: "【前編】作業環境測定のデザイン・サンプリング｜測定点とA・B・C・D測定を基礎から解説"
     url: https://www.youtube.com/watch?v=-l2ISaUncV4
@@ -79,6 +88,8 @@ videos:
     format: long
     topic: 資格
     description: 試験と養成講座で扱う学習分野や単位の全体像を紹介します。
+    article_url: /guides/occupational-hygienist-93-credits/
+    article_label: 93単位と取得ロードマップを読む
   - id: XZVuKpPgiI0
     title: ブルーカラーってどんな仕事？
     url: https://www.youtube.com/shorts/XZVuKpPgiI0

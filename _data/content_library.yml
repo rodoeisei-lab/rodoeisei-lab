@@ -11,14 +11,11 @@
     youtube: 3
     note: 10
   recommended_format: site
-  keywords: [作業環境測定, サンプリング, 捕集方法]
+  keywords: [作業環境測定, サンプリング, 捕集方法, ろ過捕集, 固体捕集]
   site:
     url: /guides/work-environment-measurement-sampling/
     label: サイトで読む
-  youtube:
-    video_id: IbW6ujjJkOI
-    url: https://www.youtube.com/watch?v=IbW6ujjJkOI
-    label: YouTubeで見る
+  youtube_id: IbW6ujjJkOI
   note:
     url: https://note.com/eisei_ai_channel/n/nf412b8bbf037
     label: noteで読む
@@ -36,14 +33,156 @@
     youtube: 10
     note: 12
   recommended_format: youtube
-  keywords: [作業環境測定, デザイン, サンプリング, 測定点, A測定, B測定]
+  keywords: [作業環境測定, デザイン, サンプリング, 測定点, A測定, B測定, C測定, D測定]
   site:
     url: /guides/work-environment-measurement-design-sampling/
     label: サイトで読む
-  youtube:
-    video_id: "-l2ISaUncV4"
-    url: https://www.youtube.com/watch?v=-l2ISaUncV4
-    label: YouTubeで見る
+  youtube_id: "-l2ISaUncV4"
   note:
     url: https://note.com/eisei_ai_channel/n/n15e2a9e3d3b8
     label: noteで読む
+
+- slug: occupational-health-consultant-role
+  title: 労働衛生コンサルタントの役割と資格の価値
+  category: 資格・キャリア
+  summary: 独占業務の有無、法的な位置づけ、専門家としてどのような場面で活用される資格なのかを整理します。
+  published_at: 2026-08-06
+  purposes: [overview, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 8
+    youtube: 8
+  recommended_format: site
+  keywords: [労働衛生コンサルタント, 資格, 独占業務, 口述試験, キャリア]
+  site:
+    url: /occupational-health-consultant/
+    label: 専用ページで学ぶ
+  youtube_id: 7K1ZYHmhjKM
+
+- slug: personal-exposure-measurement-training
+  title: 個人ばく露測定講習は誰が受ける？対象者と講習を整理
+  category: 個人ばく露測定
+  summary: 個人ばく露測定に関する講習の対象者と、制度上の位置づけを基礎記事と動画から確認します。
+  published_at: 2026-07-25
+  purposes: [overview, practice, qualification]
+  level: intermediate
+  estimated_minutes:
+    site: 10
+    youtube: 9
+  recommended_format: site
+  keywords: [個人ばく露測定, 講習, デザイン, サンプリング, 2026年10月]
+  site:
+    url: /guides/personal-exposure-measurement-basics/
+    label: 基礎記事を読む
+  youtube_id: nRqshwTlfWk
+
+- slug: first-class-health-supervisor-pass-rate
+  title: 第一種衛生管理者の合格率と資格の全体像
+  category: 資格・キャリア
+  summary: 第一種衛生管理者試験の合格率と難易度の捉え方を確認し、資格学習の入口へつなげます。
+  published_at: 2026-07-17
+  purposes: [overview, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 6
+    youtube: 7
+  recommended_format: youtube
+  keywords: [第一種衛生管理者, 衛生管理者, 合格率, 資格, 試験]
+  site:
+    url: /licenses/
+    label: 資格・キャリアを見る
+  youtube_id: B7dxClSaL8U
+
+- slug: noise-control-20
+  title: 騒音対策20選｜発生源・伝搬経路・作業者で考える
+  category: 職場環境・騒音
+  summary: 耳栓だけに頼らず、発生源、伝搬経路、作業者の順で騒音対策を考える視点を動画で整理します。
+  published_at: 2026-07-07
+  purposes: [overview, practice]
+  level: intermediate
+  estimated_minutes:
+    youtube: 12
+  recommended_format: youtube
+  keywords: [騒音, 騒音対策, 耳栓, 工学的対策, 作業環境]
+  youtube_id: ExbEiEyOR4o
+
+- slug: occupational-hygienist-93-credits
+  title: オキュペイショナルハイジニスト｜93単位・養成講座・評価試験
+  category: 資格・キャリア
+  summary: オキュペイショナルハイジニストの93単位、養成講座、評価試験、認定までの流れを体系的に確認します。
+  published_at: 2026-07-01
+  purposes: [overview, qualification]
+  level: intermediate
+  estimated_minutes:
+    site: 7
+    youtube: 10
+  recommended_format: site
+  keywords: [オキュペイショナルハイジニスト, 93単位, 養成講座, 評価試験, IOHA]
+  site:
+    url: /guides/occupational-hygienist-93-credits/
+    label: 93単位の記事を読む
+  youtube_id: znlaYTwWewE
+
+- slug: a-b-measurement-difference
+  title: A測定とB測定は何が違う？
+  category: 作業環境測定
+  summary: 平均的な状態を見るA測定と、高濃度となる可能性を把握するB測定の役割を短く整理します。
+  published_at: 2026-06-27
+  purposes: [overview, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 8
+    youtube: 1
+  recommended_format: youtube
+  keywords: [A測定, B測定, 作業環境測定, 管理区分, 測定点]
+  site:
+    url: /guides/work-env-measurement-intro/
+    label: 超入門を読む
+  youtube_id: bKGj_WPXWrw
+
+- slug: local-exhaust-basics
+  title: 局所排気装置があっても安全とは限らない
+  category: 局所排気装置
+  summary: 設置の有無だけでなく、フード、気流、作業位置、点検まで含めて局所排気装置の基本を確認します。
+  published_at: 2026-06-25
+  purposes: [overview, practice, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 12
+    youtube: 1
+  recommended_format: site
+  keywords: [局所排気装置, フード, 制御風速, 捕捉, 気流]
+  site:
+    url: /guides/local-exhaust-ventilation-basics/
+    label: 基礎記事を読む
+  youtube_id: rzLxcgSHayM
+
+- slug: work-environment-measurer-field-points
+  title: 作業環境測定士が現場で見る3つのポイント
+  category: 作業環境測定
+  summary: 発散源、気流、作業者の動きという、測定前の現場確認で押さえたい3つの視点を整理します。
+  published_at: 2026-06-24
+  purposes: [overview, practice, qualification]
+  level: beginner
+  estimated_minutes:
+    site: 8
+    youtube: 1
+  recommended_format: youtube
+  keywords: [作業環境測定士, 発散源, 気流, 作業者, 現場調査]
+  site:
+    url: /work-environment-measurement/
+    label: 作業環境測定を学ぶ
+  youtube_id: G9lGlR1i9mE
+
+- slug: office-temperature-28
+  title: 冷房28℃設定は正しい？見るべきは設定温度ではなく室温
+  category: 職場環境・騒音
+  summary: 冷房の設定温度と実際の室温を分けて考え、職場の温度管理で何を確認するかを整理します。
+  published_at: 2026-07-31
+  purposes: [overview, practice]
+  level: beginner
+  estimated_minutes:
+    youtube: 8
+  recommended_format: youtube
+  keywords: [冷房, 室温, 28度, 事務所則, 職場環境]
+  youtube_id: xiIZd1445ls

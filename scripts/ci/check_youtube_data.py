@@ -16,7 +16,7 @@ def main():
     result = subprocess.run(['ruby', '-e', ruby], text=True, capture_output=True, check=True)
     data=json.loads(result.stdout)
     videos=data.get('videos') or []; errors=[]; ids=set(); urls=set(); featured=0
-    if len(videos)!=15: errors.append(f'expected 15 videos, got {len(videos)}')
+    if len(videos)!=16: errors.append(f'expected 16 videos, got {len(videos)}')
     for i,v in enumerate(videos,1):
         vid=str(v.get('id','')); url=str(v.get('url','')); published=v.get('published_at')
         if not ID.fullmatch(vid): errors.append(f'video {i}: invalid id {vid!r}')
