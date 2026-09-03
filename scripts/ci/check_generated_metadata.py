@@ -78,7 +78,7 @@ def main() -> int:
 
     website = ['<meta property="og:type" content="website">']
     require(site / "index.html", website + ['"@type": "WebSite"'])
-    for route in ("learn", "regulations", "search", "chemical-management", "substances", "ai-use", "occupational-health-consultant", "videos", "tools", "products", "amazon", "about", "privacy", "contact"):
+    for route in ("learn", "regulations", "search", "chemical-management", "substances", "ai-use", "occupational-health-consultant", "occupational-hygienist", "videos", "tools", "products", "amazon", "about", "privacy", "contact"):
         require(site / route / "index.html", website + ['"@type": "WebPage"'])
 
     require(
@@ -102,6 +102,15 @@ def main() -> int:
     require(
         site / "occupational-health-consultant" / "index.html",
         ["/guides/occupational-health-consultant-basics/"],
+    )
+    require(
+        site / "occupational-hygienist" / "index.html",
+        [
+            "/guides/occupational-hygienist-basics/",
+            "/guides/occupational-hygienist-93-credits/",
+            "/guides/occupational-hygienist-evaluation-exam/",
+            "/guides/occupational-hygienist-from-measurer/",
+        ],
     )
     home_html = (site / "index.html").read_text(encoding="utf-8")
     home_og_image = meta_content(home_html, "property", "og:image", site / "index.html")
