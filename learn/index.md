@@ -4,7 +4,7 @@ description: 作業環境測定、化学物質管理などのテーマ、資格�
 eyebrow: 学習ガイド
 lead: 知りたいテーマ、受験する資格、学びやすい形式から入口を選べます。
 permalink: /learn/
-updated_at: 2026-09-02
+updated_at: 2026-09-03
 ---
 
 <div class="card">
@@ -48,7 +48,7 @@ updated_at: 2026-09-02
   %}
 </div>
 
-## 資格・試験から学ぶ
+## 資格・キャリアから学ぶ
 
 <div class="cards">
   {% include list-card.html
@@ -58,10 +58,10 @@ updated_at: 2026-09-02
     link_label="公式過去問を選ぶ →"
   %}
   {% include list-card.html
-    title="資格対策"
-    description="受験する資格を選び、過去問と公開中の解説から学習を始めます。"
+    title="資格・キャリア"
+    description="資格ごとの役割と専門性を比較し、次に学ぶテーマや資格を選べます。"
     link_url="/licenses/"
-    link_label="資格対策へ →"
+    link_label="資格・キャリアを見る →"
   %}
   {% include list-card.html
     title="労働衛生コンサルタント"
