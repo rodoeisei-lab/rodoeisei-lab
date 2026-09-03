@@ -40,6 +40,12 @@ next_actions:
   - 12コース93単位の履修計画を作る
   - 2026年10月以降に個人ばく露測定へ関わる場合は作業環境測定士登録との関係も確認する
 related_links:
+  - title: オキュペイショナルハイジニスト専用ページ
+    url: /occupational-hygienist/
+    group: next
+  - title: 93単位・養成講座の進め方
+    url: /guides/occupational-hygienist-93-credits/
+    group: next
   - title: 作業環境測定を体系的に学ぶ
     url: /work-environment-measurement/
     group: related

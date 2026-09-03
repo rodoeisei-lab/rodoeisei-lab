@@ -33,7 +33,7 @@ updated_at: 2026-09-03
         <span class="article-category">ばく露・リスク管理</span>
         <h3>オキュペイショナルハイジニスト</h3>
         <p>有害因子の予測・認識・評価・管理を横断し、ばく露評価からリスク低減までつなげる専門家です。</p>
-        <p><a href="{{ '/guides/occupational-hygienist-basics/' | relative_url }}">役割・93単位・認定要件を見る →</a></p>
+        <p><a href="{{ '/occupational-hygienist/' | relative_url }}">専用ページで学ぶ →</a></p>
       </article>
 
       <article class="card">
@@ -56,7 +56,7 @@ updated_at: 2026-09-03
         <thead><tr><th>資格・認定</th><th>制度・位置づけ</th><th>主な専門性</th><th>サイト内の入口</th></tr></thead>
         <tbody>
           <tr><td><strong>作業環境測定士</strong></td><td>作業環境測定法に基づく資格</td><td>測定デザイン、サンプリング、分析、評価</td><td><a href="{{ '/work-environment-measurement/' | relative_url }}">作業環境測定</a></td></tr>
-          <tr><td><strong>オキュペイショナルハイジニスト</strong></td><td>日測協認定・IOHA認証プログラム</td><td>有害因子の予測、ばく露評価、リスク評価、管理</td><td><a href="{{ '/guides/occupational-hygienist-basics/' | relative_url }}">認定制度の解説</a></td></tr>
+          <tr><td><strong>オキュペイショナルハイジニスト</strong></td><td>日測協認定・IOHA認証プログラム</td><td>有害因子の予測、ばく露評価、リスク評価、管理</td><td><a href="{{ '/occupational-hygienist/' | relative_url }}">専用ページ</a></td></tr>
           <tr><td><strong>労働衛生コンサルタント</strong></td><td>労働安全衛生法に基づく資格</td><td>事業場の衛生の診断と指導</td><td><a href="{{ '/occupational-health-consultant/' | relative_url }}">専用カテゴリ</a></td></tr>
           <tr><td><strong>第一種衛生管理者</strong></td><td>労働安全衛生法に基づく免許</td><td>事業場内の労働衛生管理</td><td><a href="{{ '/past-exams/' | relative_url }}">公式過去問</a></td></tr>
         </tbody>
