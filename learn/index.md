@@ -72,8 +72,8 @@ updated_at: 2026-09-03
   {% include list-card.html
     title="オキュペイショナルハイジニスト"
     description="役割、93単位の養成講座、認定要件、評価試験、5年更新、個人ばく露測定との関係を確認します。"
-    link_url="/guides/occupational-hygienist-basics/"
-    link_label="認定制度を学ぶ →"
+    link_url="/occupational-hygienist/"
+    link_label="専用ページで学ぶ →"
   %}
 </div>
 
