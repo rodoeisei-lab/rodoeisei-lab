@@ -99,6 +99,8 @@ quick_search:
       url: /guides/fit-test/
     - label: 保護具
       url: /search/?q=保護具
+    - label: 検量線・定量下限
+      url: /analysis/
 primary_card:
   label: 学習導線
   title: 作業環境測定の入門から、化学物質管理の実務へ
