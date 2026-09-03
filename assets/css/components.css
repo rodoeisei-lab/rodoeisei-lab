@@ -207,3 +207,6 @@
   .guides-topic-grid{grid-template-columns:1fr;gap:8px}
   .guides-topic-grid a{min-height:0;padding:14px}
 }
+
+.table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-scroll .comparison-table{min-width:720px}
