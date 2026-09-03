@@ -28,8 +28,8 @@ features:
   - title: 化学物質管理の実務に対応
     description: 自律的管理、リスクアセスメント、濃度基準値、保護具、SDSの読み方などを整理。
     icon: 🧭
-  - title: 労働衛生コンサルタント学習にも活用
-    description: 労働衛生工学の勉強、口述試験対策、実務経験の整理に役立つ情報を蓄積。
+  - title: 資格と専門性を次のキャリアへ
+    description: 作業環境測定士、オキュペイショナルハイジニスト、労働衛生コンサルタントなどの役割と学び方を整理。
     icon: 📘
 categories:
   - label: 作業環境測定
@@ -42,8 +42,8 @@ categories:
     url: /local-exhaust-ventilation/
   - label: 保護具・フィットテスト
     url: /guides/fit-test/
-  - label: 労働衛生コンサルタント
-    url: /occupational-health-consultant/
+  - label: 資格・キャリア
+    url: /licenses/
 articles:
   - title: 作業環境測定とは？A測定・B測定・管理区分を初心者向けに解説
     category: 作業環境測定
