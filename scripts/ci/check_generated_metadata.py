@@ -85,7 +85,7 @@ def main() -> int:
         site / "index.html",
         [
             "/chemical-management/",
-            "/occupational-health-consultant/",
+            "/licenses/",
             "/about/",
             "/privacy/",
             "/contact/",
