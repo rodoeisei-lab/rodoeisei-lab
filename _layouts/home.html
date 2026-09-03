@@ -49,6 +49,30 @@ layout: base
     <div class="article-card-grid">{% assign shown = 0 %}{% for article in home.articles %}{% if article.status == "published" and article.url and shown < 3 %}<article class="article-card"><span class="article-category">{{ article.category }}</span><h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3><p>{{ article.description }}</p><a class="card-link" href="{{ article.url | relative_url }}">記事を読む →</a></article>{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}</div>
   </section>
 
+  <section class="home-section" aria-labelledby="recent-articles-title">
+    <div class="home-section-heading">
+      <p class="section-kicker">新着・更新</p>
+      <h2 id="recent-articles-title">最近更新した記事</h2>
+      <p>新しく公開した記事と、内容を見直した記事を確認できます。</p>
+    </div>
+    {% assign recent_guides = site.guides | where: "status", "published" | sort: "updated" | reverse %}
+    <div class="article-card-grid">
+      {% for guide in recent_guides limit:3 %}
+      <article class="article-card">
+        <div class="article-card-meta">
+          <span class="article-category">{{ guide.category | default: "解説" }}</span>
+          {% assign recent_date = guide.updated_at | default: guide.updated | default: guide.published_at %}
+          {% if recent_date %}<time datetime="{{ recent_date }}">{{ recent_date | date: "%Y年%-m月%-d日" }}</time>{% endif %}
+        </div>
+        <h3><a href="{{ guide.url | relative_url }}">{{ guide.title }}</a></h3>
+        <p>{{ guide.description | default: guide.takeaway }}</p>
+        <a class="card-link" href="{{ guide.url | relative_url }}">記事を読む →</a>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="home-section-more"><a href="{{ '/guides/' | relative_url }}">解説をすべて見る →</a></p>
+  </section>
+
   <section class="quick-search-card" aria-labelledby="quick-search-title">
     <div><p class="section-kicker">サイト内検索</p><h2 id="quick-search-title">キーワードから探す</h2></div>
     <form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form>
