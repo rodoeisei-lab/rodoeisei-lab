@@ -365,16 +365,23 @@ def main() -> int:
             raise SystemExit(f"Public route /{route}/ exposes unfinished content: {found}")
 
     videos_html = (site / "videos" / "index.html").read_text(encoding="utf-8")
-    if "library-category__empty" in videos_html:
-        raise SystemExit("Videos page renders an empty category")
+    require(
+        site / "videos" / "index.html",
+        [
+            "data-library-filter",
+            "data-library-results",
+            "/assets/js/content-library-filter.js",
+            "learning-youtube-data",
+        ],
+    )
     content_library = Path("_data/content_library.yml").read_text(encoding="utf-8")
-    populated_categories = {
-        line.split(":", 1)[1].strip().strip('"\'')
-        for line in content_library.splitlines()
-        if line.startswith("  category:")
-    }
-    if videos_html.count('class="library-category"') != len(populated_categories):
-        raise SystemExit("Videos page must render only categories that currently contain items")
+    library_item_count = sum(
+        1 for line in content_library.splitlines() if line.startswith("- slug:")
+    )
+    if library_item_count < 10:
+        raise SystemExit(f"Content library is unexpectedly small: {library_item_count}")
+    if videos_html.count("data-library-card") < library_item_count:
+        raise SystemExit("Videos page does not render every content-library theme")
 
     require(site / "guides" / "work-environment-measurement-design-sampling" / "index.html", ['"@type": "Article"', "https://www.youtube.com/watch?v=-l2ISaUncV4"])
     require(
