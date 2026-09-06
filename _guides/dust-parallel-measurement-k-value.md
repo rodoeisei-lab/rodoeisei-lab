@@ -2,6 +2,11 @@
 layout: article
 title: 粉じんの並行測定とK値とは？質量濃度へ換算する実務
 description: デジタル粉じん計とろ過捕集・重量分析を同時に行う理由、K値（質量濃度変換係数）の求め方、計算例、実務上の注意点を解説します。
+og_image: /assets/images/og/articles/dust-parallel-measurement-k-value.png
+og_image_alt: 粉じんの並行測定とK値を表す図
+og_image_type: image/png
+og_image_width: 1200
+og_image_height: 630
 article_type: guide
 category: 作業環境測定
 level: 実務
