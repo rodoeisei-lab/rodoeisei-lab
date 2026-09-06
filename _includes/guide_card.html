@@ -1,4 +1,4 @@
-{% assign description = guide.summary | default: guide.excerpt | strip_html %}
+{% assign description = guide.description | default: guide.takeaway | default: guide.excerpt | strip_html %}
 {% assign tag_list = "" %}
 {% if guide.tags %}
   {% assign tag_list = guide.tags | join: "|" %}
