@@ -2,6 +2,11 @@
 layout: article
 title: 騒音測定結果の読み方｜A測定・B測定・管理区分から改善まで
 description: 騒音のA測定・B測定、85dB・90dBの見方、第Ⅰ〜第Ⅲ管理区分、測定後の改善の考え方を2023年改訂ガイドラインに沿って整理します。
+og_image: /assets/images/og/articles/noise-measurement-results-improvement.png
+og_image_alt: 騒音測定のA測定・B測定と改善を表す図
+og_image_type: image/png
+og_image_width: 1200
+og_image_height: 630
 article_type: guide
 category: 作業環境測定
 level: 実務
