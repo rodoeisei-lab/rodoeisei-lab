@@ -18,7 +18,7 @@ layout: base
     {% if display_category == "Guides" %}{% assign display_category = "解説" %}{% endif %}
     <p class="page-eyebrow">{{ display_category }}</p>
     {% assign page_title = page.title | default: page.slug | default: page.basename | default: "更新情報" %}
-    <h1>{{ page_title }}</h1>
+    <h1 data-pagefind-weight="10">{{ page_title }}</h1>
     {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
     <div class="article-meta">
       {% assign article_type_label = "記事" %}
