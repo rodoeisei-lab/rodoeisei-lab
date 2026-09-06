@@ -9,7 +9,7 @@
   {% endif %}
 {% endif %}
 
-{% assign audience = page.audience | default: page.target %}
+{% assign audience = page.audience | default: page.target | default: page.target_readers %}
 {% assign takeaway = page.takeaway | default: page.lead | default: page.description %}
 {% assign conclusion_text = page.conclusion | to_s | strip %}
 {% assign next_action = page.next_action %}
@@ -30,12 +30,20 @@
 {% endif %}
 
 {% if has_summary_box %}
-<section class="article-summary-box" aria-label="この記事の要約">
+<section class="article-summary-box" aria-label="この記事の補助情報">
   <div class="article-summary-box__panel">
     {% if article_type != "update" and audience %}
     <div class="article-summary-box__item">
       <p class="article-summary-box__label">対象者</p>
+      {% if audience.first %}
+      <ul class="article-summary-box__list">
+        {% for reader in audience limit:5 %}
+        <li>{{ reader }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
       <p class="article-summary-box__value">{{ audience }}</p>
+      {% endif %}
     </div>
     {% endif %}
 

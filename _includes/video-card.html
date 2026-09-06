@@ -1,7 +1,8 @@
 {% assign video = include.video %}
+{% assign video_fallback = '/assets/images/og-default.png' | relative_url %}
 <article class="video-card{% if include.featured %} video-card--featured{% endif %}">
   <a class="video-card__thumbnail" href="{{ video.url }}" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで「{{ video.title }}」を見る（外部サイト）">
-    <img src="https://i.ytimg.com/vi/{{ video.id }}/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="「{{ video.title }}」のYouTubeサムネイル">
+    <img src="https://i.ytimg.com/vi/{{ video.id }}/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="「{{ video.title }}」のYouTubeサムネイル" onerror="this.onerror=null;this.src='{{ video_fallback }}';this.alt='YouTubeサムネイルを表示できないため標準画像を表示しています';">
   </a>
   <div class="video-card__body">
     <p class="video-card__meta"><span class="video-format">{% if video.format == "short" %}Shorts{% else %}長編解説{% endif %}</span><time datetime="{{ video.published_at | date: '%Y-%m-%d' }}">{{ video.published_at | date: "%Y年%-m月%-d日" }}</time><span>{{ video.topic }}</span></p>

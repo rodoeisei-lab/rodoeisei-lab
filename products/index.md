@@ -16,7 +16,7 @@ permalink: /products/
       <li><strong>着用者・運用に合わせる</strong><span>サイズ、フィット、交換、保守、教育まで現場で回るかを確認します。</span></li>
       <li><strong>商品を確認</strong><span>条件を満たす候補として、商品ページや販売ページを確認します。</span></li>
     </ol>
-    <p><a class="cta-secondary" href="{{ '/amazon/' | relative_url }}">掲載中のAmazon商品5件を見る</a></p>
+    <p><a class="cta-secondary" href="{{ '/amazon/' | relative_url }}">用途別のAmazon商品一覧を見る</a></p>
   </section>
 
   <nav class="tool-category-nav" aria-label="道具棚のカテゴリ">

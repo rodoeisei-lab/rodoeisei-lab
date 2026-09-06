@@ -1,8 +1,8 @@
 ---
 title: Amazonで探せる労働衛生の道具
-description: 防じんマスク、保護めがね、耳栓、作業用手袋、照度計のAmazon掲載商品5件を用途と注意点付きで紹介。
+description: 防じんマスク、保護めがね、耳栓、作業用手袋、照度計のAmazon掲載商品を用途と注意点付きで紹介。
 eyebrow: Amazon商品一覧
-lead: 既存の5商品を、購入前の確認事項とメーカー情報が分かる形に整理しました。
+lead: 用途別に、購入前の確認事項とメーカー情報を確認できます。
 permalink: /amazon/
 ---
 
@@ -15,7 +15,7 @@ permalink: /amazon/
 
   <section class="amazon-listing-policy" id="fixed-recommendations" aria-labelledby="amazon-policy-title">
     <p class="section-kicker">掲載ルール</p>
-    <h2 id="amazon-policy-title">5件を用途別に掲載</h2>
+    <h2 id="amazon-policy-title">用途別に確認する</h2>
     <ul>
       <li>価格は掲載せず、販売状況と価格はAmazonの商品ページで確認します。</li>
       <li>掲載順はランキングではありません。</li>

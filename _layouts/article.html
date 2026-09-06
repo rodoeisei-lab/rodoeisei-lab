@@ -31,32 +31,15 @@ layout: base
       {% assign hero_checked = page.checked_at | default: page.source_checked_at | default: page.reviewed_at %}
       {% assign show_unchecked_legal_date = page.show_unchecked_legal_date | default: site.show_unchecked_legal_date %}
       {% assign has_sources = false %}
-      {% if page.sources and page.sources.size > 0 %}
-        {% assign has_sources = true %}
-      {% endif %}
+      {% if page.sources and page.sources.size > 0 %}{% assign has_sources = true %}{% endif %}
       {% if hero_checked %}<span class="badge badge--verified">法令確認済み</span>{% endif %}
       {% if hero_published or hero_updated or hero_checked or show_unchecked_legal_date or has_sources %}
       <p class="article-meta-dates">
         {% assign has_prior_date = false %}
-        {% if hero_published and hero_published != hero_updated %}
-        <span class="article-meta-dates__item">公開日：{{ hero_published }}</span>
-        {% assign has_prior_date = true %}
-        {% endif %}
-        {% if hero_updated %}
-        {% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
-        <span class="article-meta-dates__item">更新日：{{ hero_updated }}</span>
-        {% assign has_prior_date = true %}
-        {% endif %}
-        {% if hero_checked %}
-        {% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
-        <span class="article-meta-dates__item article-meta-dates__item--checked" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：{{ hero_checked }}</span>
-        {% elsif show_unchecked_legal_date %}
-        {% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}
-        <span class="article-meta-dates__item article-meta-dates__item--pending" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：未確認</span>
-        {% endif %}
-        {% if has_sources %}
-        <a class="article-meta-source-link" href="#article-sources">一次情報を見る（{{ page.sources.size }}件）</a>
-        {% endif %}
+        {% if hero_published and hero_published != hero_updated %}<span class="article-meta-dates__item">公開日：{{ hero_published }}</span>{% assign has_prior_date = true %}{% endif %}
+        {% if hero_updated %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item">更新日：{{ hero_updated }}</span>{% assign has_prior_date = true %}{% endif %}
+        {% if hero_checked %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item article-meta-dates__item--checked" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：{{ hero_checked }}</span>{% elsif show_unchecked_legal_date %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item article-meta-dates__item--pending" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：未確認</span>{% endif %}
+        {% if has_sources %}<a class="article-meta-source-link" href="#article-sources">一次情報を見る（{{ page.sources.size }}件）</a>{% endif %}
       </p>
       {% endif %}
     </div>
@@ -67,16 +50,18 @@ layout: base
 
 <section class="section">
   <div class="container article">
-    {% include article-target-readers.html %}
-    {% include article-summary-box.html %}
+    {{ content }}
+    {% include article-sources.html %}
+
     {% assign auto_youtube_videos = site.data.youtube.videos | where: "article_url", page.url %}
     {% if auto_youtube_videos and auto_youtube_videos.size > 0 %}
       {% include article-youtube.html videos=auto_youtube_videos %}
     {% elsif page.youtube_videos and page.youtube_videos.size > 0 %}
       {% include article-youtube.html videos=page.youtube_videos %}
     {% endif %}
-    {{ content }}
-    {% include article-sources.html %}
+
+    {% include article-summary-box.html %}
+
     <aside class="article-disclaimer" aria-label="記事利用上の注意">
       {% include article-disclaimer.html variant=page.disclaimer_variant %}
     </aside>
@@ -91,12 +76,8 @@ layout: base
       <h2>この記事は役に立ちましたか？</h2>
       <p>改善のため、感想・不足点・次に読みたいテーマを教えてください。</p>
       <div class="article-feedback-actions">
-        {% if feedback_form_url != "" %}
-        <a class="cta-secondary" href="{{ feedback_form_url }}" target="_blank" rel="noopener">フィードバックフォームを送る</a>
-        {% endif %}
-        {% if feedback_survey_url != "" %}
-        <a class="cta-tertiary" href="{{ feedback_survey_url }}" target="_blank" rel="noopener">アンケートに回答する</a>
-        {% endif %}
+        {% if feedback_form_url != "" %}<a class="cta-secondary" href="{{ feedback_form_url }}" target="_blank" rel="noopener">フィードバックフォームを送る</a>{% endif %}
+        {% if feedback_survey_url != "" %}<a class="cta-tertiary" href="{{ feedback_survey_url }}" target="_blank" rel="noopener">アンケートに回答する</a>{% endif %}
       </div>
     </section>
     {% endif %}
