@@ -10,6 +10,13 @@
     return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
   }
 
+  function parseNonNegative(value) {
+    const normalized = String(value ?? "").trim().replace(/,/g, "");
+    if (!normalized) return null;
+    const parsed = Number(normalized);
+    return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
+  }
+
   function formatNumber(value) {
     if (!Number.isFinite(value)) return "—";
     if (value !== 0 && (Math.abs(value) >= 1e6 || Math.abs(value) < 1e-4)) {
@@ -162,7 +169,7 @@
           ["採取流量", `${formatNumber(flow)} L/min`],
           ["必要採気量", `${formatNumber(requiredLiters)} L`],
         ],
-        formula: `必要採気量 = 分析下限 ÷ 目標気中濃度、必要時間 = 必要採気量 ÷ 流量。前処理回収率、希釈、ブランク等は別途反映してください。`,
+        formula: "必要採気量 = 分析下限 ÷ 目標気中濃度、必要時間 = 必要採気量 ÷ 流量。前処理回収率、希釈、ブランク等は別途反映してください。",
       });
     });
 
@@ -281,10 +288,10 @@
         const concentrationRaw = row.querySelector("[data-twa-concentration]").value.trim();
         const durationRaw = row.querySelector("[data-twa-duration]").value.trim();
         if (!concentrationRaw && !durationRaw) return;
-        const concentration = parsePositive(concentrationRaw);
+        const concentration = parseNonNegative(concentrationRaw);
         const durationValue = parsePositive(durationRaw);
         const durationUnit = row.querySelector("[data-twa-duration-unit]").value;
-        if (!concentration || !durationValue) {
+        if (concentration === null || !durationValue) {
           invalid = true;
           return;
         }
@@ -293,7 +300,7 @@
       });
 
       if (invalid || entries.length === 0) {
-        showError(error, "濃度とばく露時間を、区間ごとに両方入力してください。空欄の区間は無視されます。");
+        showError(error, "濃度は0以上、ばく露時間は0より大きい数値で、区間ごとに両方入力してください。空欄の区間は無視されます。");
         return;
       }
 
