@@ -2,6 +2,7 @@
 layout: base
 ---
 {% assign home = site.data.home %}
+{% assign video_fallback = '/assets/images/og-default.png' | relative_url %}
 <div class="home-main"><div class="container home-stack">
   <section class="home-hero" aria-labelledby="home-title">
     <p class="hero-kicker">{{ home.hero.kicker }}</p>
@@ -10,6 +11,20 @@ layout: base
     {% if home.hero.audience %}<p class="hero-audience">{{ home.hero.audience }}</p>{% endif %}
     <div class="hero-actions">
       {% for action in home.hero.actions limit:2 %}<a class="hero-{{ action.style }}-btn" href="{{ action.url | relative_url }}">{{ action.label }}</a>{% endfor %}
+    </div>
+  </section>
+
+  <section class="quick-search-card" aria-labelledby="quick-search-title">
+    <div><p class="section-kicker">サイト内検索・実務ツール</p><h2 id="quick-search-title">必要な情報へすぐ進む</h2><p>キーワード検索のほか、よく使う実務ページへ直接進めます。</p></div>
+    <form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form>
+    <div class="hero-actions">
+      <a class="hero-secondary-btn" href="{{ '/work-environment-measurement/' | relative_url }}">測定方法を調べる</a>
+      <a class="hero-primary-btn" href="{{ '/tools/management-class/' | relative_url }}">管理区分を計算する</a>
+    </div>
+    <div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div>
+    <div class="quick-search-navigator">
+      <div><span>質問文で探したい方へ</span><p>公開中の記事から近い情報を会話形式で案内します。</p></div>
+      <a href="{{ '/navigator/' | relative_url }}">チャット型サイト案内を開く <small>試験版</small></a>
     </div>
   </section>
 
@@ -33,7 +48,7 @@ layout: base
       <article class="library-card library-card--home">
         {% if youtube_video %}
         <a class="library-card__thumbnail" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ youtube_video.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
-          <img src="https://i.ytimg.com/vi/{{ youtube_video.id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async">
+          <img src="https://i.ytimg.com/vi/{{ youtube_video.id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ video_fallback }}';this.alt='YouTubeサムネイルを表示できないため標準画像を表示しています';">
         </a>
         {% endif %}
         <div class="library-card__body">
@@ -54,7 +69,7 @@ layout: base
   </section>
 
   <section class="home-section" aria-labelledby="home-categories-title">
-    <div class="home-section-heading"><p class="section-kicker">主要カテゴリ</p><h2 id="home-categories-title">知りたいテーマから探す</h2><p>現場の課題や学びたい分野から、必要な情報へ進めます。</p></div>
+    <div class="home-section-heading"><p class="section-kicker">主要カテゴリ</p><h2 id="home-categories-title">知りたいテーマから探す</h2><p>上部メニューと同じ分類から、必要な情報へ進めます。</p></div>
     <nav class="category-grid" aria-label="カテゴリ一覧">{% for category in home.categories %}<a href="{{ category.url | relative_url }}"><strong>{{ category.label }}</strong><span>情報を見る →</span></a>{% endfor %}</nav>
   </section>
 
@@ -85,16 +100,6 @@ layout: base
       {% endfor %}
     </div>
     <p class="home-section-more"><a href="{{ '/guides/' | relative_url }}">解説をすべて見る →</a></p>
-  </section>
-
-  <section class="quick-search-card" aria-labelledby="quick-search-title">
-    <div><p class="section-kicker">サイト内検索</p><h2 id="quick-search-title">キーワードから探す</h2></div>
-    <form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form>
-    <div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div>
-    <div class="quick-search-navigator">
-      <div><span>質問文で探したい方へ</span><p>公開中の記事から近い情報を会話形式で案内します。</p></div>
-      <a href="{{ '/navigator/' | relative_url }}">チャット型サイト案内を開く <small>試験版</small></a>
-    </div>
   </section>
 
   <section class="external-links-card" aria-labelledby="external-links-title"><div><p class="section-kicker">外部メディア</p><h2 id="external-links-title">公式アカウント</h2></div><div class="external-link-grid">{% for link in home.sns limit:3 %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ link.title }}</strong><span>{{ link.description }}</span><span class="sr-only">（外部サイト）</span></a>{% endfor %}</div></section>
