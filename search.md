@@ -23,7 +23,7 @@ pagefind_ignore: true
       element: "#search-ui",
       bundlePath: "{{ '/pagefind/' | relative_url }}",
       baseUrl: "{{ '/' | relative_url }}",
-      showSubResults: true,
+      showSubResults: false,
       showImages: false,
       resetStyles: false,
       translations: {

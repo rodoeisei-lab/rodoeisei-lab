@@ -4,3 +4,7 @@ base_url: /rodoeisei-lab
 root_selector: "main"
 exclude_selectors:
   - "[data-pagefind-ignore]"
+  - ".related-articles"
+  - ".article-footer-nav"
+  - ".article-feedback"
+  - ".article-disclaimer"
