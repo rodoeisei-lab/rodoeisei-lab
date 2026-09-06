@@ -66,7 +66,8 @@ permalink: /tools/
 
   <section class="tools-policy" aria-labelledby="tools-selection-title">
     <p class="section-kicker">道具を選ぶ</p>
-    <h2 id="tools-selection-title">保護具・簡易測定器を確認する</h2>
+    <h2 id="tools-selection-title">選定基準と商品一覧を混ぜない</h2>
+    <p>まず道具棚で必要性能と選定基準を確認し、その後に商品一覧で候補を確認します。</p>
     <ul>
       <li><a href="{{ '/products/' | relative_url }}">道具棚</a>：呼吸用保護具、保護めがね、耳栓、手袋、簡易測定器の選定ポイントを確認します。</li>
       <li><a href="{{ '/amazon/' | relative_url }}">Amazon商品一覧</a>：掲載商品の用途・注意点・メーカー情報を確認します。</li>
