@@ -56,7 +56,7 @@ permalink: /tools/measurement-method-selector/
     <aside id="measurementSelectorResult" class="practical-tool__result" aria-live="polite" tabindex="-1">
       <p class="section-kicker">確認先</p>
       <h2 id="measurementSelectorResultTitle">目的を選択してください</h2>
-      <p id="measurementSelectorResultPrimary" class="practical-tool__result-primary">測定名より先に、何を評価するかを決めます。</p>
+      <p id="measurementSelectorResultPrimary" class="practical-tool__result-summary">測定名より先に、何を評価するかを決めます。</p>
       <div id="measurementSelectorResultBody" class="practical-tool__reference">
         <p>選択後に、候補となる測定、評価対象、次に確認するページを表示します。</p>
       </div>
