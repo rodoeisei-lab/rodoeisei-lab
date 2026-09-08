@@ -1,8 +1,8 @@
 ---
 title: 対象物質・制度検索
-description: 第2種有機溶剤、特定化学物質、濃度基準値設定物質を制度別に検索し、作業環境測定・リスクアセスメントの確認入口を見つけるページです。
+description: 第2種有機溶剤、特定化学物質、濃度基準値設定物質を制度別に検索し、2026年10月施行予定物質も絞り込めるページです。
 eyebrow: Chemical substances
-lead: 物質名・CAS RN・制度区分から、確認する法令と濃度基準値を探せます。
+lead: 物質名・CAS RN・制度区分・施行状況から、確認する法令と濃度基準値を探せます。
 permalink: /substances/
 ---
 
@@ -17,7 +17,7 @@ permalink: /substances/
     <div class="substance-registry__intro-links">
       <a href="{{ '/chemical-management/' | relative_url }}"><strong>化学物質管理の流れ</strong><span>把握からリスク低減までを確認</span></a>
       <a href="{{ '/work-environment-measurement/' | relative_url }}"><strong>作業環境測定の基礎</strong><span>測定計画と改善の考え方</span></a>
-      <a href="{{ '/guides/personal-exposure-measurement-basics/' | relative_url }}"><strong>個人ばく露測定の基礎</strong><span>目的と使い分けを確認</span></a>
+      <a href="{{ '/tools/measurement-method-selector/' | relative_url }}"><strong>測定方法の選択ナビ</strong><span>A/B、C/D、個人ばく露・確認測定を整理</span></a>
     </div>
   </section>
 
@@ -27,6 +27,7 @@ permalink: /substances/
       <li><strong>第2種有機溶剤：</strong>有機則第1条の区分と、安衛令別表第六の二を確認する入口です。</li>
       <li><strong>特定化学物質：</strong>安衛令別表第三の類別を表示します。特別管理物質などの細分類は、個別の法令で確認してください。</li>
       <li><strong>濃度基準値：</strong>八時間・短時間濃度基準値、採取・分析方法を確認できます。確認測定を含むばく露状況の確認方法は、作業条件に応じて検討します。</li>
+      <li><strong>2026年10月施行：</strong>現在のデータで「施行予定」として登録している濃度基準値設定物質だけをワンタップで絞り込めます。</li>
     </ul>
     <p><strong>CAS RNは参考情報です。</strong>濃度基準値等一覧でも、対象物質の当否はCAS RNではなく物質名で確認するよう示されています。</p>
   </aside>
@@ -69,6 +70,7 @@ permalink: /substances/
         <button class="substance-filter-button" type="button" data-substance-filter="organic-second" aria-pressed="false">第2種有機溶剤</button>
         <button class="substance-filter-button" type="button" data-substance-filter="specified" aria-pressed="false">特化則</button>
         <button class="substance-filter-button" type="button" data-substance-filter="concentration" aria-pressed="false">濃度基準値</button>
+        <button class="substance-filter-button" type="button" data-substance-filter="upcoming-2026" aria-pressed="false">2026年10月施行</button>
       </div>
       <label class="substance-search-field" for="substanceSearch">
         <span>物質名・別名・CAS RNで検索</span>
