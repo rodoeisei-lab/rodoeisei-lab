@@ -65,8 +65,8 @@ permalink: /tools/measurement-method-selector/
 
   <section class="practical-tool__section" aria-labelledby="measurement-selector-comparison-title">
     <h2 id="measurement-selector-comparison-title">名称が似ている測定を区別する</h2>
-    <div class="practical-tool__reference practical-tool__table-wrap">
-      <table>
+    <div class="record-table-wrap">
+      <table class="record-table">
         <thead><tr><th>測定</th><th>主な評価対象</th><th>結果の使い方</th></tr></thead>
         <tbody>
           <tr><td>A・B測定</td><td>単位作業場所</td><td>作業環境評価基準に基づき管理区分を評価</td></tr>
