@@ -51,12 +51,15 @@ jobs:
             fi
           done
 
-      - name: Verify chat-style navigator data
+      - name: Verify interactive tool JavaScript
         run: |
           node --check assets/js/site-navigator.js
           node --check assets/js/learning-compass.js
           node --check assets/js/management-class-substances.mjs
           node --check assets/js/management-class-calculator.mjs
+          node --check assets/js/measurement-method-selector.mjs
+          node --check assets/js/respirator-protection-factor.mjs
+          node --check assets/js/substance-registry.js
           node scripts/ci/test_management_class_calculator.mjs
           ruby scripts/ci/verify_navigator_data.rb
 
@@ -131,12 +134,15 @@ jobs:
             "/qa/" \
             "/tools/" \
             "/tools/management-class/" \
+            "/tools/measurement-method-selector/" \
+            "/tools/respirator-protection-factor/" \
             "/products/" \
             "/amazon/" \
             "/work-environment-measurement/" \
             "/chemical-management/" \
             "/substances/" \
             "/substances/check-flow/" \
+            "/personal-exposure-measurement/" \
             "/local-exhaust-ventilation/" \
             "/ai-use/" \
             "/occupational-health-consultant/" \
@@ -153,6 +159,7 @@ jobs:
             "/guides/chemical-risk-assessment-basics/" \
             "/guides/organic-solvent-basics/" \
             "/qa/third-control-class/" \
+            "/qa/personal-exposure-measurement-2026/" \
             "/qa/hygiene-committee-agenda/" \
             "/qa/local-exhaust-inspection/" \
             "/past-exams/" \
