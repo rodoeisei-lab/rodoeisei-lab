@@ -11,7 +11,7 @@
 
   const cards = Array.from(document.querySelectorAll("[data-substance-card]"));
   const filterButtons = Array.from(document.querySelectorAll("[data-substance-filter]"));
-  const filterValues = new Set(["all", "organic-second", "specified", "concentration"]);
+  const filterValues = new Set(["all", "organic-second", "specified", "concentration", "upcoming-2026"]);
   const params = new URLSearchParams(window.location.search);
 
   const normalizeText = (value) => {
@@ -40,6 +40,9 @@
       return card.dataset.system === "organic-solvent" && card.dataset.category === "第2種有機溶剤";
     }
     if (quickFilter === "specified") return card.dataset.system === "specified-chemical";
+    if (quickFilter === "upcoming-2026") {
+      return card.dataset.system === "concentration-standard" && card.dataset.status === "upcoming";
+    }
     return card.dataset.system === "concentration-standard";
   };
 
@@ -95,6 +98,7 @@
     button.addEventListener("click", () => {
       quickFilter = button.dataset.substanceFilter || "all";
       systemSelect.value = "all";
+      statusSelect.value = "all";
       updateResults();
     });
   });
@@ -108,7 +112,10 @@
     quickFilter = "all";
     updateResults();
   });
-  statusSelect.addEventListener("change", updateResults);
+  statusSelect.addEventListener("change", () => {
+    quickFilter = "all";
+    updateResults();
+  });
 
   updateResults();
 })();
