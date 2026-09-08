@@ -9,6 +9,10 @@ import {
   determineManagementClass,
 } from "../../assets/js/management-class-calculator.mjs";
 import {
+  calculateMixedOrganicManagementClass,
+  getMixedOrganicSolventSubstances,
+} from "../../assets/js/mixed-organic-solvent-calculator.mjs";
+import {
   MANAGEMENT_CONCENTRATION_SUBSTANCES,
   formatManagementConcentration,
   getManagementConcentrationSubstance,
@@ -103,5 +107,81 @@ assert.equal(formatManagementConcentration(toluene), "20 ppm");
 
 const lead = getManagementConcentrationSubstance("lead");
 assert.equal(formatManagementConcentration(lead), "鉛として 0.05 mg/m³");
+
+const mixedOrganicSubstances = getMixedOrganicSolventSubstances();
+assert.ok(mixedOrganicSubstances.some((substance) => substance.id === "toluene"));
+assert.ok(mixedOrganicSubstances.some((substance) => substance.id === "ethylbenzene"));
+
+const mixedTwoSolventExample = calculateMixedOrganicManagementClass({
+  components: [
+    {
+      id: "toluene",
+      name: "トルエン",
+      managementConcentration: 20,
+      unit: "ppm",
+      aMeasurements: [4, 5, 6, 5, 4],
+    },
+    {
+      id: "xylene",
+      name: "キシレン",
+      managementConcentration: 50,
+      unit: "ppm",
+      aMeasurements: [5, 7, 9, 8, 6],
+    },
+  ],
+});
+assert.equal(mixedTwoSolventExample.level, 2);
+assert.deepEqual(
+  mixedTwoSolventExample.convertedAMeasurements.map((value) => Number(value.toFixed(2))),
+  [0.3, 0.39, 0.48, 0.41, 0.32],
+);
+assertClose(mixedTwoSolventExample.managementConcentration, 1);
+
+const mixedThreeSolventExample = calculateMixedOrganicManagementClass({
+  components: [
+    { name: "A", managementConcentration: 100, aMeasurements: [1, 1, 1, 1, 1] },
+    { name: "B", managementConcentration: 50, aMeasurements: [1, 1, 1, 1, 1] },
+    { name: "C", managementConcentration: 20, aMeasurements: [1, 1, 1, 1, 1] },
+  ],
+});
+assert.equal(mixedThreeSolventExample.level, 1);
+assert.deepEqual(mixedThreeSolventExample.convertedAMeasurements, [0.08, 0.08, 0.08, 0.08, 0.08]);
+
+const mixedBThirdClassExample = calculateMixedOrganicManagementClass({
+  includeB: true,
+  components: [
+    {
+      name: "トルエン",
+      managementConcentration: 20,
+      aMeasurements: [1, 1, 1, 1, 1],
+      bMeasurements: [20],
+    },
+    {
+      name: "キシレン",
+      managementConcentration: 50,
+      aMeasurements: [1, 1, 1, 1, 1],
+      bMeasurements: [30],
+    },
+  ],
+});
+assertClose(mixedBThirdClassExample.bResult.maximum, 1.6);
+assert.equal(mixedBThirdClassExample.level, 3);
+
+assert.throws(
+  () => calculateMixedOrganicManagementClass({
+    components: [
+      { managementConcentration: 20, aMeasurements: [1, 1, 1, 1, 1] },
+      { managementConcentration: 50, aMeasurements: [1, 1, 1, 1, 1, 1] },
+    ],
+  }),
+  /同じ測定点数/,
+);
+
+assert.throws(
+  () => calculateMixedOrganicManagementClass({
+    components: [{ managementConcentration: 20, aMeasurements: [1, 1, 1, 1, 1] }],
+  }),
+  /2種類以上/,
+);
 
 console.log("Management class calculator tests passed.");
