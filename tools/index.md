@@ -1,6 +1,6 @@
 ---
 title: ツール
-description: 採気量・気中濃度・TWA・管理区分の計算、測定頻度と記録保存期間の確認、保護具や簡易測定器の選び方を整理。
+description: 採気量・気中濃度・TWA・管理区分・混合有機溶剤の換算計算、測定頻度と記録保存期間の確認、保護具や簡易測定器の選び方を整理。
 eyebrow: ツール
 lead: 計算・確認ツールと、道具選びの入口を目的ごとに分けています。
 permalink: /tools/
@@ -45,6 +45,16 @@ permalink: /tools/
 
       <article class="tool-path-card">
         <span class="tool-path-number" aria-hidden="true">4</span>
+        <div>
+          <p class="tool-path-label">混合有機溶剤</p>
+          <h3>換算値・管理区分計算ツール</h3>
+          <p>2種類以上の有機溶剤について、測定点ごとの換算値から第一・第二評価値と管理区分まで確認します。</p>
+          <a class="cta-secondary" href="{{ '/tools/mixed-organic-solvent/' | relative_url }}">混合有機溶剤を計算する</a>
+        </div>
+      </article>
+
+      <article class="tool-path-card">
+        <span class="tool-path-number" aria-hidden="true">5</span>
         <div>
           <p class="tool-path-label">年間予定・記録</p>
           <h3>測定・点検頻度と保存期間の早見表</h3>
