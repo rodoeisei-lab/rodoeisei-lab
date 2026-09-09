@@ -1,14 +1,14 @@
 hero:
-  title: "労働衛生を、現場目線で。"
-  description: "作業環境測定、化学物質管理、個人ばく露測定を、実務者目線でわかりやすく整理する専門サイトです。"
-  kicker: "労働衛生・作業環境測定・化学物質管理の専門メディア"
+  title: "労働衛生を、現場で使える知識に。"
+  description: "作業環境測定・化学物質管理・個人ばく露測定を分かりやすく。調べる・学ぶ・計算するを、日々の実務につなげます。"
+  kicker: "測定・ばく露評価・化学物質管理の実務ポータル"
   audience: "作業環境測定士・衛生管理者・化学物質管理担当者向け"
   actions:
     - label: 作業環境測定を学ぶ
       url: /work-environment-measurement/
       style: primary
-    - label: 化学物質管理を学ぶ
-      url: /chemical-management/
+    - label: 実務ツールを使う
+      url: /tools/
       style: secondary
   points:
     - A測定・B測定、管理区分を実務の流れで理解
@@ -34,18 +34,51 @@ features:
 categories:
   - label: 作業環境測定
     url: /work-environment-measurement/
-  - label: 分析
-    url: /analysis/
+    description: 測定方法・管理区分・結果の読み方
   - label: 化学物質管理
     url: /chemical-management/
-  - label: 個人ばく露測定
+    description: SDS・リスクアセスメント・管理の流れ
+  - label: 個人ばく露測定／個人サンプリング測定
     url: /personal-exposure-measurement/
-  - label: 学習
-    url: /learn/
-  - label: 法令・規則
-    url: /regulations/
-  - label: ツール
+    description: 目的・測定方法・制度の違い
+  - label: 局所排気装置
+    url: /local-exhaust-ventilation/
+    description: 仕組み・点検・改善の考え方
+  - label: 保護具・フィットテスト
+    url: /guides/fit-test/
+    description: 呼吸用保護具の密着性を確認
+  - label: 実務ツール
     url: /tools/
+    description: 濃度換算・計算・管理区分の判定
+needs:
+  - label: 管理区分を判定したい
+    url: /tools/management-class/
+    description: 測定値から評価値・管理区分を計算
+  - label: 化学物質の管理方法を確認したい
+    url: /chemical-management/
+    description: 物質の把握から対策・見直しまで
+  - label: 混合有機溶剤を計算したい
+    url: /tools/mixed-organic-solvent/
+    description: 成分ごとの濃度から換算値を計算
+  - label: 個人ばく露測定について知りたい
+    url: /personal-exposure-measurement/
+    description: 作業環境測定との違いを確認
+  - label: 第3管理区分の対策を考えたい
+    url: /qa/third-control-class/
+    description: 結果を受けて確認すること・改善の進め方
+  - label: 保護具について調べたい
+    url: /guides/skin-hazard-chemicals-protective-gloves/
+    description: 皮膚への有害性と化学防護手袋の選び方
+tools:
+  - label: 管理区分判定
+    url: /tools/management-class/
+    description: A測定・B測定の値から、評価値と管理区分を確認。
+  - label: 混合有機溶剤の計算
+    url: /tools/mixed-organic-solvent/
+    description: 複数成分の濃度を換算し、管理区分の評価につなげる。
+  - label: 採気量・濃度換算
+    url: /tools/air-sampling-calculator/
+    description: 流量・採取時間から採気量を求め、濃度を換算。
 articles:
   - title: 作業環境測定とは？A測定・B測定・管理区分を初心者向けに解説
     category: 作業環境測定
@@ -131,3 +164,4 @@ sns:
     description: 質問・改善提案はこちら。
     url: https://github.com/rodoeisei-lab/rodoeisei-lab/issues
     icon: 💬
+

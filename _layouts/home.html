@@ -12,69 +12,32 @@ layout: base
     <div class="hero-actions">
       {% for action in home.hero.actions limit:2 %}<a class="hero-{{ action.style }}-btn" href="{{ action.url | relative_url }}">{{ action.label }}</a>{% endfor %}
     </div>
-  </section>
-
-  <section class="quick-search-card" aria-labelledby="quick-search-title">
-    <div><p class="section-kicker">サイト内検索・実務ツール</p><h2 id="quick-search-title">必要な情報へすぐ進む</h2><p>キーワード検索のほか、よく使う実務ページへ直接進めます。</p></div>
-    <form action="{{ '/search/' | relative_url }}" method="get" class="search-field"><label class="sr-only" for="home-search">サイト内検索キーワード</label><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></form>
-    <div class="hero-actions">
-      <a class="hero-secondary-btn" href="{{ '/work-environment-measurement/' | relative_url }}">測定方法を調べる</a>
-      <a class="hero-primary-btn" href="{{ '/tools/management-class/' | relative_url }}">管理区分を計算する</a>
-    </div>
-    <div class="chips">{% for chip in home.quick_search.chips %}<a href="{{ chip.url | relative_url }}">{{ chip.label }}</a>{% endfor %}</div>
-    <div class="quick-search-navigator">
-      <div><span>質問文で探したい方へ</span><p>公開中の記事から近い情報を会話形式で案内します。</p></div>
-      <a href="{{ '/navigator/' | relative_url }}">チャット型サイト案内を開く <small>試験版</small></a>
-    </div>
-  </section>
-
-  <section class="content-feature" aria-labelledby="content-feature-title">
-    <div class="home-section-heading">
-      <p class="section-kicker">動画・記事ライブラリ</p>
-      <h2 id="content-feature-title">動画でつかみ、記事で確かめる</h2>
-      <p>同じテーマをYouTube・サイト記事・noteから選んで学べます。</p>
-    </div>
-    <ol class="content-feature__flow" aria-label="テーマを深める流れ">
-      <li><strong>YouTube</strong><span>全体像をつかむ</span></li>
-      <li><strong>サイト記事</strong><span>要点と根拠を確認</span></li>
-      <li><strong>note</strong><span>あるテーマは文章で読む</span></li>
-    </ol>
-    <div class="content-feature__grid">
-      {% assign featured_library = site.data.content_library | sort: "published_at" | reverse %}
-      {% assign featured_count = 0 %}
-      {% for item in featured_library %}
-      {% if item.featured_home and featured_count < 1 %}
-      {% assign youtube_video = site.data.youtube.videos | where: "id", item.youtube_id | first %}
-      <article class="library-card library-card--home">
-        {% if youtube_video %}
-        <a class="library-card__thumbnail" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ youtube_video.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
-          <img src="https://i.ytimg.com/vi/{{ youtube_video.id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ video_fallback }}';this.alt='YouTubeサムネイルを表示できないため標準画像を表示しています';">
-        </a>
-        {% endif %}
-        <div class="library-card__body">
-          <p class="library-card__meta"><span>{{ item.category }}</span><time datetime="{{ item.published_at }}">{{ item.published_at | date: "%Y年%-m月%-d日" }}</time></p>
-          <h3>{{ item.title }}</h3><p>{{ item.summary }}</p>
-          <div class="library-card__actions">
-            {% if item.site.url %}<a class="{% if item.recommended_format == 'site' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="site" href="{{ item.site.url | relative_url }}">{{ item.site.label | default: 'サイトで読む' }}</a>{% endif %}
-            {% if youtube_video %}<a class="{% if item.recommended_format == 'youtube' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ youtube_video.url }}" target="_blank" rel="noopener noreferrer">YouTubeで見る<span class="sr-only">（外部サイト）</span></a>{% endif %}
-            {% if item.note.url %}<a class="{% if item.recommended_format == 'note' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="note" href="{{ item.note.url }}" target="_blank" rel="noopener noreferrer">{{ item.note.label | default: 'noteで読む' }}<span class="sr-only">（外部サイト）</span></a>{% endif %}
-          </div>
-        </div>
-      </article>
-      {% assign featured_count = featured_count | plus: 1 %}
-      {% endif %}
-      {% endfor %}
-    </div>
-    <a class="content-feature__cta" href="{{ '/videos/' | relative_url }}">動画・記事ライブラリを見る <span aria-hidden="true">→</span></a>
+    <form action="{{ '/search/' | relative_url }}" method="get" class="home-portal-search">
+      <label for="home-search">サイト内を検索</label>
+      <div class="search-field"><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></div>
+    </form>
   </section>
 
   <section class="home-section" aria-labelledby="home-categories-title">
-    <div class="home-section-heading"><p class="section-kicker">主要カテゴリ</p><h2 id="home-categories-title">知りたいテーマから探す</h2><p>上部メニューと同じ分類から、必要な情報へ進めます。</p></div>
-    <nav class="category-grid" aria-label="カテゴリ一覧">{% for category in home.categories %}<a href="{{ category.url | relative_url }}"><strong>{{ category.label }}</strong><span>情報を見る →</span></a>{% endfor %}</nav>
+    <div class="home-section-heading"><p class="section-kicker">調べる・学ぶ</p><h2 id="home-categories-title">分野から探す</h2><p>測定の基礎から、評価・対策まで。</p></div>
+    <nav class="category-grid" aria-label="カテゴリ一覧">{% for category in home.categories %}<a href="{{ category.url | relative_url }}"><strong>{{ category.label }}</strong><span>{{ category.description }}</span></a>{% endfor %}</nav>
+  </section>
+
+  <section class="home-section" aria-labelledby="home-needs-title">
+    <div class="home-section-heading"><h2 id="home-needs-title">こんなときに使えます</h2></div>
+    <nav class="home-task-list" aria-label="困りごとから探す">{% for item in home.needs %}<a href="{{ item.url | relative_url }}"><strong>{{ item.label }}</strong><span>{{ item.description }}</span></a>{% endfor %}</nav>
+    <p class="home-section-more"><a href="{{ '/navigator/' | relative_url }}">質問文で探す：チャット型サイト案内（試験版）</a></p>
+  </section>
+
+  <section class="home-section home-tool-section" aria-labelledby="home-tools-title">
+    <div class="home-section-heading"><p class="section-kicker">計算する・現場で使う</p><h2 id="home-tools-title">実務ツール</h2><p>測定値を入力して、濃度の換算や管理区分の判定へ。</p></div>
+    <div class="article-card-grid">{% for tool in home.tools %}<article class="article-card"><h3><a href="{{ tool.url | relative_url }}">{{ tool.label }}</a></h3><p>{{ tool.description }}</p><a class="card-link" href="{{ tool.url | relative_url }}">ツールを使う →</a></article>{% endfor %}</div>
+    <p>計算結果は入力条件と各ツールの適用範囲を確認してご利用ください。</p>
+    <p class="home-section-more"><a href="{{ '/tools/' | relative_url }}">すべての実務ツールを見る →</a></p>
   </section>
 
   <section class="home-section" aria-labelledby="sample-articles-title">
-    <div class="home-section-heading"><p class="section-kicker">まず読む記事</p><h2 id="sample-articles-title">公開中の入門記事</h2><p>公開済みの記事から、実務と学習の入口になるものを選びました。</p></div>
+    <div class="home-section-heading"><p class="section-kicker">まず読む記事</p><h2 id="sample-articles-title">おすすめの入門記事</h2><p>公開済みの記事から、実務と学習の入口になるものを選びました。</p></div>
     <div class="article-card-grid">{% assign shown = 0 %}{% for article in home.articles %}{% if article.status == "published" and article.url and shown < 3 %}<article class="article-card"><span class="article-category">{{ article.category }}</span><h3><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h3><p>{{ article.description }}</p><a class="card-link" href="{{ article.url | relative_url }}">記事を読む →</a></article>{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}</div>
   </section>
 
@@ -102,7 +65,50 @@ layout: base
     <p class="home-section-more"><a href="{{ '/guides/' | relative_url }}">解説をすべて見る →</a></p>
   </section>
 
+  <section class="content-feature" aria-labelledby="content-feature-title">
+    <div class="home-section-heading">
+      <p class="section-kicker">動画・記事ライブラリ</p>
+      <h2 id="content-feature-title">動画でつかみ、記事で確かめる</h2>
+      <p>動画で全体像をつかみ、関連記事で根拠を確認。計算が必要なときは実務ツールへ進めます。</p>
+    </div>
+    <div class="content-feature__grid">
+      {% assign featured_library = site.data.content_library | sort: "published_at" | reverse %}
+      {% assign featured_count = 0 %}
+      {% for item in featured_library %}
+      {% if item.featured_home and featured_count < 1 %}
+      {% assign youtube_video = site.data.youtube.videos | where: "id", item.youtube_id | first %}
+      <article class="library-card library-card--home">
+        {% if youtube_video %}
+        <a class="library-card__thumbnail" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ youtube_video.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ item.title }}をYouTubeで見る（外部サイト）">
+          <img src="https://i.ytimg.com/vi/{{ youtube_video.id }}/mqdefault.jpg" alt="{{ item.title }}のYouTube動画サムネイル" width="320" height="180" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ video_fallback }}';this.alt='YouTubeサムネイルを表示できないため標準画像を表示しています';">
+        </a>
+        {% endif %}
+        <div class="library-card__body">
+          <p class="library-card__meta"><span>{{ item.category }}</span><time datetime="{{ item.published_at }}">{{ item.published_at | date: "%Y年%-m月%-d日" }}</time></p>
+          <h3>{{ item.title }}</h3><p>{{ item.summary }}</p>
+          <div class="library-card__actions">
+            {% if item.site.url %}<a class="{% if item.recommended_format == 'site' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="site" href="{{ item.site.url | relative_url }}">{{ item.site.label | default: 'サイトで読む' }}</a>{% endif %}
+            {% if youtube_video %}<a class="{% if item.recommended_format == 'youtube' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="youtube" href="{{ youtube_video.url }}" target="_blank" rel="noopener noreferrer">YouTubeで見る<span class="sr-only">（外部サイト）</span></a>{% endif %}
+            {% if item.note.url %}<a class="{% if item.recommended_format == 'note' %}library-card__primary{% endif %}" data-learning-link data-slug="{{ item.slug }}" data-title="{{ item.title | escape }}" data-medium="note" href="{{ item.note.url }}" target="_blank" rel="noopener noreferrer">{{ item.note.label | default: 'noteで読む' }}<span class="sr-only">（外部サイト）</span></a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% assign featured_count = featured_count | plus: 1 %}
+      {% endif %}
+      {% endfor %}
+    </div>
+    <p><a class="card-link" href="{{ '/tools/air-sampling-calculator/' | relative_url }}">採取条件から、採気量・濃度を計算する →</a></p>
+    <a class="content-feature__cta" href="{{ '/videos/' | relative_url }}">動画・記事ライブラリを見る <span aria-hidden="true">→</span></a>
+  </section>
+
   <section class="external-links-card" aria-labelledby="external-links-title"><div><p class="section-kicker">外部メディア</p><h2 id="external-links-title">公式アカウント</h2></div><div class="external-link-grid">{% for link in home.sns limit:3 %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ link.title }}</strong><span>{{ link.description }}</span><span class="sr-only">（外部サイト）</span></a>{% endfor %}</div></section>
+
+  <section class="home-section" aria-labelledby="home-policy-title">
+    <div class="home-section-heading"><h2 id="home-policy-title">現場の経験と、一次資料をもとに</h2><p>作業環境測定の実務経験をベースに、測定・ばく露評価・化学物質管理を分かりやすく整理しています。</p></div>
+    <p>法令や制度は公的資料を重視し、測定結果の理解から計算・対策の検討まで、実務で使える情報を届けます。</p>
+    <p class="home-section-more"><a href="{{ '/about/' | relative_url }}">サイトの運営方針を見る →</a></p>
+  </section>
 
   <aside class="home-reference-note"><strong>一次情報の確認について</strong><p>本サイトは実務の参考情報です。法令や制度は改正されるため、最終判断は e-Gov 法令検索や厚生労働省などの一次情報で確認してください。</p></aside>
 </div></div>
+
