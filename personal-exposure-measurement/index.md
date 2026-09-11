@@ -14,6 +14,8 @@ permalink: /personal-exposure-measurement/
 <p><a href="{{ '/tools/measurement-method-selector/' | relative_url }}"><strong>測定方法の選択ナビ</strong></a>を使うと、A・B測定、C・D測定、個人ばく露測定、確認測定、第3管理区分の測定を目的から整理できます。</p>
 </section>
 
+{% include learning-path.html path="exposure" %}
+
 <section class="topic-hub__section chemical-section" aria-labelledby="exposure-differences">
 <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">目的を混同しない</p><h2 id="exposure-differences">最初に区別したい測定</h2></div>
 <dl class="chemical-definitions">

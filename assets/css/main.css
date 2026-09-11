@@ -695,3 +695,9 @@ button,a,input,select,textarea{touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *,*::before,*::after{scroll-behavior:auto;transition-duration:.01ms;animation-duration:.01ms;animation-iteration-count:1}
 }
+
+/* Phase-one learning routes: reuse existing grids and allow comfortable touch targets. */
+.learning-path .measurement-step a,.ppe-hub .measurement-step a{min-height:44px}
+.learning-path .measurement-step a>span,.ppe-hub .measurement-step a>span{min-width:0;overflow-wrap:anywhere}
+.article-learning-nav li a,.article-learning-nav>p a{display:flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
+.article-learning-nav .article-summary-links__group{min-width:0}

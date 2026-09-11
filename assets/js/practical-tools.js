@@ -216,12 +216,22 @@
     const placeholder = root.querySelector("#twaPlaceholder");
     const unitInput = root.querySelector("#twaUnit");
     const limitInput = root.querySelector("#twaLimit");
+    const targetInput = root.querySelector("#twaTargetHours");
     let rowId = 0;
 
     if (!form || !rowsContainer) return;
 
+    function invalidateResult() {
+      result.hidden = true;
+      placeholder.hidden = false;
+      clearError(error);
+    }
+    form.addEventListener("input", invalidateResult);
+    form.addEventListener("change", invalidateResult);
+
     function addRow(concentration = "", duration = "", durationUnit = "h") {
       if (rowsContainer.children.length >= 12) return;
+      invalidateResult();
       rowId += 1;
       const row = document.createElement("div");
       row.className = "twa-row";
@@ -273,6 +283,7 @@
       if (!button) return;
       const row = button.closest("[data-twa-row]");
       if (row && rowsContainer.children.length > 1) {
+        invalidateResult();
         row.remove();
         renumberRows();
       }
@@ -280,7 +291,7 @@
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      clearError(error);
+      invalidateResult();
       const entries = [];
       let invalid = false;
 
@@ -300,32 +311,40 @@
       });
 
       if (invalid || entries.length === 0) {
-        showError(error, "濃度は0以上、ばく露時間は0より大きい数値で、区間ごとに両方入力してください。空欄の区間は無視されます。");
+        showError(error, "濃度は0以上、ばく露時間は0より大きい数値で、区間ごとに両方入力してください。未把握の時間を濃度0で埋めないでください。");
         return;
       }
 
-      const totalHours = entries.reduce((sum, entry) => sum + entry.hours, 0);
-      if (totalHours > 24) {
-        showError(error, "入力したばく露時間の合計が24時間を超えています。時間単位を確認してください。");
+      const unit = unitInput.value.trim();
+      const limitRaw = limitInput.value.trim();
+      const limit = limitRaw ? parsePositive(limitRaw) : null;
+      if (!unit || (limitRaw && limit === null)) {
+        showError(error, "濃度の単位を入力してください。ばく露限度は空欄、または0より大きい数値にしてください。");
         return;
       }
-      const dose = entries.reduce((sum, entry) => sum + (entry.concentration * entry.hours), 0);
-      const observedTwa = dose / totalHours;
-      const eightHourTwa = dose / 8;
-      const unit = unitInput.value.trim() || "入力単位";
-      const limit = parsePositive(limitInput.value);
-      const ratio = limit ? eightHourTwa / limit : null;
-
-      root.querySelector("#twaResultPrimary").textContent = `${formatNumber(eightHourTwa)} ${unit}`;
-      root.querySelector("#twaObserved").textContent = `${formatNumber(observedTwa)} ${unit}`;
-      root.querySelector("#twaTotalHours").textContent = `${formatNumber(totalHours)} h`;
+      let calculated;
+      const targetHours = parsePositive(targetInput.value);
+      try {
+        calculated = window.TwaCore.calculate(entries, targetHours, limit);
+      } catch (cause) {
+        showError(error, cause.message);
+        return;
+      }
+      const { totalHours, missingHours, dose, observed, complete, eightHour, ratio } = calculated;
+      root.querySelector("#twaResultPrimary").textContent = complete ? `${formatNumber(eightHour)} ${unit}` : "8時間TWAは未算出";
+      root.querySelector("#twaObserved").textContent = `${formatNumber(observed)} ${unit}`;
+      root.querySelector("#twaTotalHours").textContent = `${formatNumber(totalHours)} h ／ 対象 ${formatNumber(targetHours)} h`;
+      root.querySelector("#twaMissingHours").textContent = complete ? "なし（対象時間分の入力あり）" : `${formatNumber(missingHours)} h（ばく露不明）`;
       root.querySelector("#twaDose").textContent = `${formatNumber(dose)} ${unit}・h`;
-      root.querySelector("#twaRatio").textContent = ratio ? `${formatNumber(ratio * 100)} %` : "ばく露限度未入力";
-      const warning = totalHours > 8
-        ? "入力時間が8時間を超えています。ここに表示する8時間TWAは単純な8時間換算参考値です。長時間勤務に対する限度値の補正方法は別途確認してください。"
-        : "未入力時間をばく露0として8時間に換算しています。休憩中もばく露がある場合は、その区間も入力してください。";
-      root.querySelector("#twaResultSummary").textContent = warning;
-      root.querySelector("#twaResultFormula").textContent = `8時間TWA = Σ（濃度 × 時間）÷ 8 = ${formatNumber(dose)} ÷ 8 = ${formatNumber(eightHourTwa)} ${unit}`;
+      root.querySelector("#twaRatio").textContent = !complete ? "未算出（未把握時間あり）" : ratio !== null ? `${formatNumber(ratio)} %` : "ばく露限度未入力";
+      root.querySelector("#twaResultSummary").textContent = !complete
+        ? "対象時間の一部が未入力です。入力区間だけの平均を表示しています。残りのばく露を確認するまで8時間TWAと限度比は表示しません。"
+        : targetHours > 8
+          ? "対象時間全体を8で割った単純な8時間換算参考値です。長時間勤務の限度値補正は行いません。基準の適用方法は別途確認してください。"
+          : "8時間分の入力に基づく参考値です。区間の重複や測定・推定の根拠を確認してください。限度比だけで安全性や法令適合を判定するものではありません。";
+      root.querySelector("#twaResultFormula").textContent = complete
+        ? `8時間TWA = Σ（濃度 × 時間）÷ 8 = ${formatNumber(dose)} ÷ 8 = ${formatNumber(eightHour)} ${unit}`
+        : `入力区間の加重平均 = ${formatNumber(dose)} ÷ ${formatNumber(totalHours)} = ${formatNumber(observed)} ${unit}（8時間TWAではありません）`;
       placeholder.hidden = true;
       result.hidden = false;
       result.focus({ preventScroll: true });
@@ -337,6 +356,7 @@
       addRow("20", "2", "h");
       addRow("5", "3", "h");
       addRow("1", "3", "h");
+      targetInput.value = "8";
       unitInput.value = "ppm";
       limitInput.value = "10";
       form.requestSubmit();

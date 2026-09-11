@@ -1,0 +1,410 @@
+{
+  "paths": {
+    "measurement": {
+      "url": "/work-environment-measurement/",
+      "title": "作業環境測定",
+      "stages": [
+        {
+          "title": "初心者｜目的を理解する",
+          "goal": "測定と評価の全体像を説明できるようにします。",
+          "links": [
+            {
+              "url": "/guides/work-env-measurement-intro/",
+              "title": "作業環境測定の全体像"
+            },
+            {
+              "url": "/guides/management-concentration-exposure-limits/",
+              "title": "管理濃度・濃度基準値・許容濃度の違い"
+            }
+          ]
+        },
+        {
+          "title": "実務者｜計画・採取・分析へ進む",
+          "goal": "自分の測定に必要な条件と記録を整理します。",
+          "links": [
+            {
+              "url": "/guides/work-environment-measurement-design/",
+              "title": "測定計画と測定点"
+            },
+            {
+              "url": "/guides/work-environment-measurement-sampling/",
+              "title": "サンプリングと捕集方法"
+            },
+            {
+              "url": "/tools/air-sampling-calculator/",
+              "title": "採気量・必要採取時間を計算する"
+            },
+            {
+              "url": "/guides/work-environment-analysis-basics/",
+              "title": "分析・定量・精度管理"
+            }
+          ]
+        },
+        {
+          "title": "専門家へ｜評価から改善につなぐ",
+          "goal": "測定目的と評価指標を区別し、対策後の再評価まで考えます。",
+          "links": [
+            {
+              "url": "/tools/measurement-method-selector/",
+              "title": "測定方法の選択ナビを使う"
+            },
+            {
+              "url": "/local-exhaust-ventilation/",
+              "title": "局所排気による改善を学ぶ"
+            },
+            {
+              "url": "/personal-exposure-measurement/",
+              "title": "個人ばく露評価へ進む"
+            }
+          ]
+        }
+      ]
+    },
+    "chemical": {
+      "url": "/chemical-management/",
+      "title": "化学物質管理",
+      "stages": [
+        {
+          "title": "初心者｜物質と制度を知る",
+          "goal": "使用物質・SDS・管理体制を把握します。",
+          "links": [
+            {
+              "url": "/guides/chemical-management-basics/",
+              "title": "化学物質管理の基本"
+            },
+            {
+              "url": "/guides/sds-reading/",
+              "title": "SDSの読み方"
+            }
+          ]
+        },
+        {
+          "title": "実務者｜評価し、対策する",
+          "goal": "作業条件を整理してリスクアセスメントと対策に使います。",
+          "links": [
+            {
+              "url": "/guides/chemical-risk-assessment-basics/",
+              "title": "リスクアセスメントの進め方"
+            },
+            {
+              "url": "/guides/create-simple-guide/",
+              "title": "CREATE-SIMPLEの使い方"
+            },
+            {
+              "url": "/ppe/",
+              "title": "保護具を目的から選ぶ"
+            }
+          ]
+        },
+        {
+          "title": "専門家へ｜対策の効果を確かめる",
+          "goal": "工学的対策と測定を組み合わせ、見直しにつなげます。",
+          "links": [
+            {
+              "url": "/local-exhaust-ventilation/",
+              "title": "局所排気による改善を学ぶ"
+            },
+            {
+              "url": "/guides/management-concentration-exposure-limits/",
+              "title": "管理濃度・濃度基準値・許容濃度の違い"
+            },
+            {
+              "url": "/personal-exposure-measurement/",
+              "title": "個人ばく露測定で対策を確かめる"
+            }
+          ]
+        }
+      ]
+    },
+    "exposure": {
+      "url": "/personal-exposure-measurement/",
+      "title": "個人ばく露測定",
+      "stages": [
+        {
+          "title": "初心者｜測定の目的を区別する",
+          "goal": "個人ばく露測定と作業環境測定の違いを確認します。",
+          "links": [
+            {
+              "url": "/guides/personal-exposure-measurement-basics/",
+              "title": "個人ばく露測定の基本"
+            },
+            {
+              "url": "/guides/management-concentration-exposure-limits/",
+              "title": "管理濃度・濃度基準値・許容濃度の違い"
+            }
+          ]
+        },
+        {
+          "title": "実務者｜測定条件と時間を整理する",
+          "goal": "採取方法・時間・未把握区間を確認して計算します。",
+          "links": [
+            {
+              "url": "/guides/work-environment-measurement-sampling/",
+              "title": "サンプリングと捕集方法"
+            },
+            {
+              "url": "/tools/air-sampling-calculator/",
+              "title": "採気量・必要採取時間を計算する"
+            },
+            {
+              "url": "/tools/twa-calculator/",
+              "title": "時間を確認してTWAを計算する"
+            }
+          ]
+        },
+        {
+          "title": "専門家へ｜評価の限界と改善を考える",
+          "goal": "平均値だけで結論を出さず、分析下限や対策も確認します。",
+          "links": [
+            {
+              "url": "/guides/analytical-limits-basics/",
+              "title": "検出下限・定量下限と結果の読み方"
+            },
+            {
+              "url": "/local-exhaust-ventilation/",
+              "title": "局所排気による改善を学ぶ"
+            },
+            {
+              "url": "/ppe/",
+              "title": "保護具を目的から選ぶ"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "articles": [
+    {
+      "url": "/guides/work-env-measurement-intro/",
+      "path": "measurement",
+      "next": [
+        {
+          "url": "/guides/work-environment-measurement-design/",
+          "title": "測定計画と測定点"
+        }
+      ],
+      "use": [
+        {
+          "url": "/tools/measurement-method-selector/",
+          "title": "測定方法の選択ナビを使う"
+        },
+        {
+          "url": "/tools/air-sampling-calculator/",
+          "title": "採気量・必要採取時間を計算する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/work-environment-measurement-design/",
+      "path": "measurement",
+      "next": [
+        {
+          "url": "/guides/work-environment-measurement-sampling/",
+          "title": "サンプリングと捕集方法"
+        }
+      ],
+      "use": [
+        {
+          "url": "/tools/measurement-method-selector/",
+          "title": "測定方法の選択ナビを使う"
+        },
+        {
+          "url": "/tools/air-sampling-calculator/",
+          "title": "採気量・必要採取時間を計算する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/work-environment-measurement-sampling/",
+      "path": "measurement",
+      "next": [
+        {
+          "url": "/guides/work-environment-analysis-basics/",
+          "title": "分析・定量・精度管理"
+        }
+      ],
+      "use": [
+        {
+          "url": "/tools/measurement-method-selector/",
+          "title": "測定方法の選択ナビを使う"
+        },
+        {
+          "url": "/tools/air-sampling-calculator/",
+          "title": "採気量・必要採取時間を計算する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/work-environment-analysis-basics/",
+      "path": "measurement",
+      "next": [
+        {
+          "url": "/work-environment-measurement/",
+          "title": "学習経路で評価・改善へ進む"
+        }
+      ],
+      "use": [
+        {
+          "url": "/tools/measurement-method-selector/",
+          "title": "測定方法の選択ナビを使う"
+        },
+        {
+          "url": "/tools/air-sampling-calculator/",
+          "title": "採気量・必要採取時間を計算する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/chemical-management-basics/",
+      "path": "chemical",
+      "next": [
+        {
+          "url": "/guides/sds-reading/",
+          "title": "SDSの読み方"
+        }
+      ],
+      "use": [
+        {
+          "url": "/guides/create-simple-guide/",
+          "title": "CREATE-SIMPLEの使い方"
+        },
+        {
+          "url": "/ppe/",
+          "title": "保護具を目的から選ぶ"
+        }
+      ]
+    },
+    {
+      "url": "/guides/sds-reading/",
+      "path": "chemical",
+      "next": [
+        {
+          "url": "/guides/chemical-risk-assessment-basics/",
+          "title": "リスクアセスメントの進め方"
+        }
+      ],
+      "use": [
+        {
+          "url": "/substances/",
+          "title": "対象物質・制度を検索する"
+        },
+        {
+          "url": "/substances/check-flow/",
+          "title": "SDSと作業条件から該当制度を確認する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/chemical-risk-assessment-basics/",
+      "path": "chemical",
+      "next": [
+        {
+          "url": "/guides/create-simple-guide/",
+          "title": "CREATE-SIMPLEの使い方"
+        },
+        {
+          "url": "/guides/sds-reading/",
+          "title": "評価に必要なSDSの読み方を確認する"
+        }
+      ],
+      "use": [
+        {
+          "url": "/substances/check-flow/",
+          "title": "対象物質・制度の確認フローを使う"
+        },
+        {
+          "url": "/ppe/",
+          "title": "必要な保護具を確認する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/create-simple-guide/",
+      "path": "chemical",
+      "next": [
+        {
+          "url": "/guides/management-concentration-exposure-limits/",
+          "title": "測定・評価に使う指標の違いを確認する"
+        }
+      ],
+      "use": [
+        {
+          "url": "/ppe/",
+          "title": "保護具を目的から選ぶ"
+        }
+      ]
+    },
+    {
+      "url": "/guides/personal-exposure-measurement-basics/",
+      "path": "exposure",
+      "next": [
+        {
+          "url": "/guides/management-concentration-exposure-limits/",
+          "title": "管理濃度・濃度基準値・許容濃度の違い"
+        }
+      ],
+      "use": [
+        {
+          "url": "/tools/air-sampling-calculator/",
+          "title": "採気量・必要採取時間を計算する"
+        },
+        {
+          "url": "/tools/twa-calculator/",
+          "title": "時間を確認してTWAを計算する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/management-concentration-exposure-limits/",
+      "path": "exposure",
+      "next": [
+        {
+          "url": "/guides/personal-exposure-measurement-basics/",
+          "title": "評価指標を個人ばく露測定につなげる"
+        }
+      ],
+      "use": [
+        {
+          "url": "/tools/air-sampling-calculator/",
+          "title": "採気量・必要採取時間を計算する"
+        },
+        {
+          "url": "/tools/twa-calculator/",
+          "title": "時間を確認してTWAを計算する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/fit-test/",
+      "path": "chemical",
+      "next": [
+        {
+          "url": "/ppe/",
+          "title": "保護具を目的から選ぶ"
+        }
+      ],
+      "use": [
+        {
+          "url": "/products/#respiratory-protection",
+          "title": "呼吸用保護具の種類を確認する"
+        }
+      ]
+    },
+    {
+      "url": "/guides/skin-hazard-chemicals-protective-gloves/",
+      "path": "chemical",
+      "next": [
+        {
+          "url": "/ppe/",
+          "title": "保護具を目的から選ぶ"
+        }
+      ],
+      "use": [
+        {
+          "url": "/guides/sds-reading/",
+          "title": "SDSの読み方"
+        }
+      ]
+    }
+  ]
+}

@@ -60,6 +60,9 @@ jobs:
           node --check assets/js/measurement-method-selector.mjs
           node --check assets/js/respirator-protection-factor.mjs
           node --check assets/js/substance-registry.js
+          node --check assets/js/practical-tools.js
+          node --check assets/js/twa-core.js
+          node scripts/ci/test_twa_calculator.cjs
           node scripts/ci/test_management_class_calculator.mjs
           ruby scripts/ci/verify_navigator_data.rb
 

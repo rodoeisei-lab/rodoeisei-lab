@@ -1,0 +1,17 @@
+{% assign learning_path = site.data.learning_paths.paths[include.path] %}
+<section class="topic-hub__section learning-path" aria-labelledby="learning-path-title">
+  <div class="topic-hub__heading">
+    <p class="topic-hub__label">初心者から実務、専門性を深める学習経路</p>
+    <h2 id="learning-path-title">{{ learning_path.title }}を段階的に学ぶ</h2>
+    <p>初めての方は上から、経験のある方は必要な段階から進めます。既存の記事・ツールを使い、最後に評価と改善へつなげます。</p>
+  </div>
+  {% for stage in learning_path.stages %}
+  <h3>{{ stage.title }}</h3>
+  <p>{{ stage.goal }}</p>
+  <ol class="measurement-steps">
+    {% for item in stage.links %}
+    <li class="measurement-step"><a href="{{ item.url | relative_url }}"><span class="measurement-step-number">{{ forloop.index }}</span><span><strong>{{ item.title }}</strong></span><span class="measurement-step-action">進む →</span></a></li>
+    {% endfor %}
+  </ol>
+  {% endfor %}
+</section>
