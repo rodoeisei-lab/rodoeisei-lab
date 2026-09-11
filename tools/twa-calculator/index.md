@@ -15,7 +15,7 @@ permalink: /tools/twa-calculator/
     <p>作業1、作業2、休憩前後など、濃度が異なる区間を入力すると、入力区間の時間加重平均と8時間TWA参考値を計算します。任意でばく露限度を入力すれば、その値に対する比率も表示します。</p>
     <ul class="practical-tool__notes">
       <li>すべての濃度は同じ単位で入力してください。</li>
-      <li>8時間TWAは Σ（濃度×時間）÷8 で計算します。入力していない時間は、ばく露0として扱います。</li>
+      <li>8時間TWAは Σ（濃度×時間）÷8 で計算します。未入力時間は「ばく露不明」です。対象時間分がそろうまで8時間TWAと限度比は表示しません。</li>
       <li>ばく露限度の選択、長時間勤務時の補正、短時間ばく露限度や天井値の評価は、この計算とは別に確認してください。</li>
     </ul>
   </section>
@@ -41,6 +41,13 @@ permalink: /tools/twa-calculator/
           </label>
         </div>
 
+        <label class="practical-tool__field">
+          <span>対象時間（時間）</span>
+          <input id="twaTargetHours" type="text" inputmode="decimal" value="8" aria-describedby="twa-time-help">
+          <small id="twa-time-help">通常は8時間。8時間超の勤務は勤務全体の時間を入力します（上限24時間）。分母は常に8時間です。</small>
+        </label>
+        <p>区間は重複させず、休憩なども含めて入力してください。勤務が8時間未満の場合も、残りの時間のばく露を確認します。<strong>ばく露0と判断できる区間だけ、濃度「0」と時間を明示入力</strong>してください。未測定・不明・定量下限未満を自動的に0にしないでください。両方空欄の行は区間として数えません。</p>
+
         <div id="twaRows" class="twa-rows" aria-label="濃度とばく露時間の入力行"></div>
         <button id="twaAddRow" class="practical-tool__secondary twa-add-row" type="button">区間を追加</button>
 
@@ -64,6 +71,7 @@ permalink: /tools/twa-calculator/
         <p id="twaResultPrimary" class="practical-tool__result-primary"></p>
         <p id="twaResultSummary" class="practical-tool__result-summary"></p>
         <dl class="practical-tool__result-details">
+          <div><dt>未把握時間</dt><dd id="twaMissingHours"></dd></div>
           <div><dt>入力時間合計</dt><dd id="twaTotalHours"></dd></div>
           <div><dt>入力区間の加重平均</dt><dd id="twaObserved"></dd></div>
           <div><dt>Σ（濃度×時間）</dt><dd id="twaDose"></dd></div>
@@ -80,7 +88,7 @@ permalink: /tools/twa-calculator/
       <h3>入力区間の加重平均</h3>
       <p>入力した時間だけを分母にします。例えば4時間分だけ測定・推定した場合、その4時間内の平均濃度を確認する値です。</p>
       <h3>8時間TWA</h3>
-      <p>濃度×時間の総和を8時間で割った値です。残り時間をばく露0とみなして8時間に規格化するため、個人ばく露の整理でよく使われます。</p>
+      <p>濃度×時間の総和を8時間で割った値です。このツールでは対象時間全体の入力を確認してから8時間に規格化します。例えば濃度10で4時間だけ入力した場合、入力区間の平均は10ですが、残り4時間が不明なら8時間TWAは算出しません。残り4時間のばく露0が確認でき、0×4時間を追加した場合に限り、8時間TWAは5になります。</p>
       <h3>短時間ばく露は別評価</h3>
       <p>8時間TWAが低くても、短時間に高濃度へばく露する作業は別の基準で確認が必要な場合があります。このツールはSTELや天井値の判定を行いません。</p>
     </div>
@@ -98,4 +106,5 @@ permalink: /tools/twa-calculator/
   </section>
 </div>
 
+<script src="{{ '/assets/js/twa-core.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/practical-tools.js' | relative_url }}" defer></script>

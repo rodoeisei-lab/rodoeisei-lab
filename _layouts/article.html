@@ -60,14 +60,19 @@ layout: base
       {% include article-youtube.html videos=page.youtube_videos %}
     {% endif %}
 
-    {% include article-summary-box.html %}
+    {% assign learning_nav = site.data.learning_paths.articles | where: "url", page.url | first %}
+    {% include article-summary-box.html hide_links=learning_nav %}
 
     <aside class="article-disclaimer" aria-label="記事利用上の注意">
       {% include article-disclaimer.html variant=page.disclaimer_variant %}
     </aside>
     {% include article-use-cases.html %}
-    {% include related-articles.html limit=3 %}
-    {% include article-footer-nav.html %}
+    {% if learning_nav %}
+      {% include article-learning-nav.html nav=learning_nav %}
+    {% else %}
+      {% include related-articles.html limit=3 %}
+      {% include article-footer-nav.html %}
+    {% endif %}
 
     {% assign feedback_form_url = page.feedback_form_url | default: site.feedback.article_form_url | default: "" | strip %}
     {% assign feedback_survey_url = page.feedback_survey_url | default: site.feedback.article_survey_url | default: "" | strip %}

@@ -70,6 +70,7 @@
     {% endif %}
   </div>
 
+  {% unless include.hide_links %}
   <div class="article-summary-links">
     <div class="article-summary-links__group">
       <p class="article-summary-box__label">次に読む</p>
@@ -130,5 +131,6 @@
       </ul>
     </div>
   </div>
+  {% endunless %}
 </section>
 {% endif %}

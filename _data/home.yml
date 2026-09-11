@@ -45,8 +45,8 @@ categories:
     url: /local-exhaust-ventilation/
     description: 仕組み・点検・改善の考え方
   - label: 保護具・フィットテスト
-    url: /guides/fit-test/
-    description: 呼吸用保護具の密着性を確認
+    url: /ppe/
+    description: 呼吸用保護具・手袋・密着性の確認へ
   - label: 実務ツール
     url: /tools/
     description: 濃度換算・計算・管理区分の判定

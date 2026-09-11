@@ -13,24 +13,7 @@ permalink: /work-environment-measurement/
     <p>作業環境測定は、対象となる有害因子や作業の実態に応じて測定計画を立て、試料採取・分析または測定機器による測定を行い、結果を評価して必要な改善につなげる一連の取組です。このページでは、今どの段階を学んでいるのかを確かめながら、公開済みの記事を順番に読めます。</p>
   </section>
 
-  <section class="topic-hub__section measurement-section" aria-labelledby="learning-flow-title">
-    <div class="topic-hub__heading measurement-section-heading">
-      <p class="topic-hub__label measurement-section-label">学習の流れ</p>
-      <h2 id="learning-flow-title">公開中の記事を順番に読む</h2>
-    </div>
-    <ol class="topic-hub__steps measurement-steps">
-      <li class="measurement-step measurement-step--available">
-        <a href="{{ '/guides/work-env-measurement-intro/' | relative_url }}">
-          <span class="measurement-step-number">01</span>
-          <span><strong>作業環境測定とは</strong><small>目的と全体の流れをつかむ</small></span>
-          <span class="measurement-step-action">記事を読む</span>
-        </a>
-      </li>
-      <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-design/' | relative_url }}"><span class="measurement-step-number">02</span><span><strong>デザイン</strong><small>測定計画と測定点を考える</small></span><span class="measurement-step-action">記事を読む</span></a></li>
-      <li class="measurement-step measurement-step--available"><a href="{{ '/guides/work-environment-measurement-sampling/' | relative_url }}"><span class="measurement-step-number">03</span><span><strong>サンプリング</strong><small>試料採取の方法を理解する</small></span><span class="measurement-step-action">記事を読む</span></a></li>
-      <li class="measurement-step measurement-step--available"><a href="{{ '/analysis/' | relative_url }}"><span class="measurement-step-number">04</span><span><strong>分析</strong><small>検量線・定量・精度管理を理解する</small></span><span class="measurement-step-action">分析を学ぶ</span></a></li>
-    </ol>
-  </section>
+  {% include learning-path.html path="measurement" %}
 
   <section class="topic-hub__section measurement-section" aria-labelledby="published-articles-title">
     <div class="topic-hub__heading measurement-section-heading">

@@ -13,6 +13,8 @@ permalink: /chemical-management/
     <p>SDSは重要な出発点ですが、入手しただけでリスクアセスメントが完了するわけではありません。使用実態と法令を確認し、危険性と健康有害性を評価して、より効果の高い対策から実施します。</p>
   </section>
 
+{% include learning-path.html path="chemical" %}
+
   <section class="topic-hub__section chemical-section" aria-labelledby="chemical-flow-title">
     <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">実務の流れ</p><h2 id="chemical-flow-title">9つのステップで全体像をつかむ</h2></div>
     <ol class="topic-hub__steps chemical-steps">

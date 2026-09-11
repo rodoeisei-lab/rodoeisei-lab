@@ -1,0 +1,14 @@
+{% assign current_path = site.data.learning_paths.paths[include.nav.path] %}
+<nav class="article-footer-nav" aria-label="この記事から次の学習と実務へ">
+  <div class="article-summary-links">
+    <section class="article-summary-links__group">
+      <h2>次に学ぶ</h2>
+      <ul>{% for item in include.nav.next %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+    </section>
+    <section class="article-summary-links__group">
+      <h2>実務で使う</h2>
+      <ul>{% for item in include.nav.use %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+    </section>
+  </div>
+  <p><a href="{{ current_path.url | relative_url }}">{{ current_path.title }}の学習経路に戻る</a></p>
+</nav>
