@@ -285,12 +285,12 @@
       ],
       "use": [
         {
-          "url": "/guides/create-simple-guide/",
-          "title": "CREATE-SIMPLEの使い方"
+          "url": "/substances/",
+          "title": "対象物質・制度を検索する"
         },
         {
-          "url": "/ppe/",
-          "title": "保護具を目的から選ぶ"
+          "url": "/substances/check-flow/",
+          "title": "SDSと作業条件から該当制度を確認する"
         }
       ]
     },
@@ -301,16 +301,20 @@
         {
           "url": "/guides/create-simple-guide/",
           "title": "CREATE-SIMPLEの使い方"
+        },
+        {
+          "url": "/guides/sds-reading/",
+          "title": "評価に必要なSDSの読み方を確認する"
         }
       ],
       "use": [
         {
-          "url": "/guides/create-simple-guide/",
-          "title": "CREATE-SIMPLEの使い方"
+          "url": "/substances/check-flow/",
+          "title": "対象物質・制度の確認フローを使う"
         },
         {
           "url": "/ppe/",
-          "title": "保護具を目的から選ぶ"
+          "title": "必要な保護具を確認する"
         }
       ]
     },
@@ -319,8 +323,8 @@
       "path": "chemical",
       "next": [
         {
-          "url": "/chemical-management/",
-          "title": "学習経路で評価・改善へ進む"
+          "url": "/guides/management-concentration-exposure-limits/",
+          "title": "測定・評価に使う指標の違いを確認する"
         }
       ],
       "use": [
@@ -355,8 +359,8 @@
       "path": "exposure",
       "next": [
         {
-          "url": "/personal-exposure-measurement/",
-          "title": "学習経路で評価・改善へ進む"
+          "url": "/guides/personal-exposure-measurement-basics/",
+          "title": "評価指標を個人ばく露測定につなげる"
         }
       ],
       "use": [

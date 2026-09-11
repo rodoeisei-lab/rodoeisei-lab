@@ -6,7 +6,7 @@ lead: 有害因子とばく露経路を確認し、選定・着用・性能確�
 permalink: /ppe/
 ---
 
-<div class="topic-hub chemical-hub">
+<div class="topic-hub chemical-hub ppe-hub">
 <section class="topic-hub__intro">
 <h2>何から身体を守るかを確認する</h2>
 <p>まず物質・作業・ばく露経路を把握し、代替や密閉、局所排気などによるリスク低減を検討します。必要な保護具は、濃度や作業条件、他の保護具との組合せを確認して選びます。</p>
