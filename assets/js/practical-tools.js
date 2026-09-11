@@ -189,7 +189,42 @@
         root.querySelector("#airSamplingTarget").value = "0.1";
         root.querySelector("#airSamplingTargetUnit").value = "mgm3";
         root.querySelector("#airSamplingRequiredFlow").value = "1";
-  …303 tokens truncated…clearError(error);
+      }
+      form.requestSubmit();
+    });
+
+    reset?.addEventListener("click", () => {
+      form.reset();
+      syncPanels();
+      clearError(error);
+      result.hidden = true;
+      placeholder.hidden = false;
+    });
+
+    modeInputs.forEach((input) => input.addEventListener("change", syncPanels));
+    syncPanels();
+  }
+
+  function initTwaCalculator(root) {
+    const form = root.querySelector("#twaForm");
+    const rowsContainer = root.querySelector("#twaRows");
+    const addButton = root.querySelector("#twaAddRow");
+    const exampleButton = root.querySelector("#twaExample");
+    const resetButton = root.querySelector("#twaReset");
+    const error = root.querySelector("#twaError");
+    const result = root.querySelector("#twaResult");
+    const placeholder = root.querySelector("#twaPlaceholder");
+    const unitInput = root.querySelector("#twaUnit");
+    const limitInput = root.querySelector("#twaLimit");
+    const targetInput = root.querySelector("#twaTargetHours");
+    let rowId = 0;
+
+    if (!form || !rowsContainer) return;
+
+    function invalidateResult() {
+      result.hidden = true;
+      placeholder.hidden = false;
+      clearError(error);
     }
     form.addEventListener("input", invalidateResult);
     form.addEventListener("change", invalidateResult);
