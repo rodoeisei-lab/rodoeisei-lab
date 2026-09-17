@@ -36,6 +36,7 @@ THEMES = {
 }
 
 TITLE_LINES = {
+    "confirmation-measurement": ["確認測定はいつ必要？", "濃度基準値・対象者・", "実施頻度の判断手順"],
     "respirator-selection": ["呼吸用保護具の選び方", "防じん・防毒と", "要求防護係数の考え方"],
     "gas-cartridge-replacement": ["吸収缶はいつ交換する？", "破過時間と", "使用記録の考え方"],
     "local-exhaust-airflow-calculation": ["局所排気装置の風量計算", "開口面積・ダクト径・", "圧力損失の基礎"],

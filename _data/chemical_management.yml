@@ -54,3 +54,9 @@
   status: published
   url: /guides/gas-cartridge-replacement/
   section: 保護具
+
+- title: 確認測定はいつ必要？濃度基準値・対象者・実施頻度の判断手順
+  description: 実施判断の目安、最大ばく露労働者、測定時間、結果を受けた対策と頻度を整理します。
+  status: published
+  url: /guides/confirmation-measurement/
+  section: ばく露管理

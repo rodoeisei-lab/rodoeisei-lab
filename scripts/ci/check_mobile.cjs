@@ -9,7 +9,7 @@ const path = require('node:path');
   fs.mkdirSync('mobile-review', { recursive: true });
   const routes = ['/', '/guides/', '/chemical-management/', '/local-exhaust-ventilation/',
     '/guides/respirator-selection/', '/guides/gas-cartridge-replacement/',
-    '/guides/local-exhaust-airflow-calculation/', '/guides/fit-test/'];
+    '/guides/local-exhaust-airflow-calculation/', '/guides/confirmation-measurement/', '/guides/fit-test/'];
   for (const route of routes) {
     await page.goto(`http://127.0.0.1:4000/rodoeisei-lab${route}`, { waitUntil: 'networkidle' });
     const state = await page.evaluate(() => ({
