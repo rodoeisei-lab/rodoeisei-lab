@@ -36,6 +36,9 @@ THEMES = {
 }
 
 TITLE_LINES = {
+    "respirator-selection": ["呼吸用保護具の選び方", "防じん・防毒と", "要求防護係数の考え方"],
+    "gas-cartridge-replacement": ["吸収缶はいつ交換する？", "破過時間と", "使用記録の考え方"],
+    "local-exhaust-airflow-calculation": ["局所排気装置の風量計算", "開口面積・ダクト径・", "圧力損失の基礎"],
     "ai-use-occupational-health-basics": [
         "生成AIを労働衛生で安全に使う方法",
         "実務・学習の確認手順",
@@ -179,7 +182,7 @@ def article_theme(path: Path, meta: dict[str, str]) -> str:
     category = meta.get("category", "")
     if slug == "operator-skill-expansion-roadmap":
         return "roadmap"
-    if slug == "fit-test":
+    if slug in {"fit-test", "respirator-selection", "gas-cartridge-replacement"}:
         return "fit"
     if "化学物質" in category or "有機溶剤" in category:
         return "chemical"

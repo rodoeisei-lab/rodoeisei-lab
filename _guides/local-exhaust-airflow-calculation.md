@@ -2,6 +2,7 @@
 layout: article
 title: 局所排気装置の風量計算｜開口面積・ダクト径・圧力損失の基礎
 description: Q＝A×vの単位換算、囲い式フードと外付け式の違い、ダクト内速度、圧力損失と排風機の選定を計算例で解説。設計値と現場の捕捉性能を混同しないための入門記事です。
+og_image: /assets/images/og/articles/local-exhaust-airflow-calculation.png
 article_type: guide
 category: 局所排気装置
 status: published
@@ -16,6 +17,7 @@ summary:
   - 風量は断面積と、その断面の平均風速から求めます。m³/sとm³/minを区別します。
   - 外付け式フードの発散源での速度は、開口面の平均風速と別のものです。
 conclusion: 風量計算の基本は「断面積×断面の平均風速」です。ただし、必要風量の設計には捕捉条件、ダクトの抵抗、補給空気まで確認が必要です。計算結果だけでは、発散源を捕捉できることや法令適合を証明できません。
+audience: [作業環境測定士, 衛生管理者, 化学物質管理担当者, 労働衛生を学ぶ人]
 related_links:
   - {title: 局所排気装置の構成と捕捉の基本, url: /guides/local-exhaust-ventilation-basics/, group: next}
   - {title: 局所排気装置の点検と記録, url: /qa/local-exhaust-inspection/, group: next}

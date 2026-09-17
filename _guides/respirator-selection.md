@@ -2,6 +2,7 @@
 layout: article
 title: 呼吸用保護具の選び方｜防じん・防毒と要求防護係数の考え方
 description: 防じんマスクと防毒マスクを、物質の状態・濃度・作業条件から選ぶ手順。要求防護係数とフィットファクタの違い、混在する有害物質、選定後の管理を具体例で解説します。
+og_image: /assets/images/og/articles/respirator-selection.png
 article_type: guide
 category: 保護具・フィットテスト
 status: published
@@ -18,6 +19,7 @@ summary:
   - 物質名だけでなく、粒子・ガス・蒸気の状態、濃度、酸素欠乏のおそれを確認して選びます。
   - 必要な防護性能の選定と、本人の顔への密着性確認は別の工程です。
 conclusion: 呼吸用保護具は「何を、どの程度、どの条件で吸い込む可能性があるか」から選びます。物質の状態に合う種類を決め、要求防護係数を上回る指定防護係数と製品の使用条件を確認し、密着性と交換・保守管理まで整えます。
+audience: [作業環境測定士, 衛生管理者, 化学物質管理担当者, 労働衛生を学ぶ人]
 related_links:
   - {title: 吸収缶の交換時期と使用時間の管理, url: /guides/gas-cartridge-replacement/, group: next}
   - {title: フィットテストの対象と実施手順, url: /guides/fit-test/, group: next}

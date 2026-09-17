@@ -2,6 +2,7 @@
 layout: article
 title: 防毒マスクの吸収缶はいつ交換する？破過時間と使用記録の考え方
 description: 吸収缶の交換時期を臭いで決めず、対象物質・濃度・温湿度・メーカー情報から設定する手順。破過時間と使用限度時間の違い、再使用、保管、記録例を解説します。
+og_image: /assets/images/og/articles/gas-cartridge-replacement.png
 article_type: guide
 category: 保護具・フィットテスト
 status: published
@@ -18,6 +19,7 @@ summary:
   - 使用限度時間は、対象物質と現場条件に合う情報から事前に決めます。
   - 臭いがしないことは、除毒能力が残っている証明になりません。
 conclusion: 吸収缶は「臭いがしたら交換」ではなく、製造者の破過データと現場条件から余裕を持った使用限度時間を決め、使用時間を記録して管理します。再使用できるかどうかも、物質・製品・保管条件ごとに確認します。
+audience: [作業環境測定士, 衛生管理者, 化学物質管理担当者, 労働衛生を学ぶ人]
 related_links:
   - {title: 呼吸用保護具の選び方, url: /guides/respirator-selection/, group: next}
   - {title: SDSで確認する項目, url: /guides/sds-reading/, group: related}

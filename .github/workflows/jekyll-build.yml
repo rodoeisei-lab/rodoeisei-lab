@@ -200,7 +200,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Preserve built site for pull request review
-        if: github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: reviewed-site
