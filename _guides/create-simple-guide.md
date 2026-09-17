@@ -31,6 +31,7 @@ next_action:
   - 評価する作業を一つ決め、SDSと取扱量・換気・作業時間を準備する
   - 現状と対策後を再判定し、採用する措置・期限・確認方法を記録する
 related_links:
+  - { title: 確認測定の実施判断・対象者・頻度, url: /guides/confirmation-measurement/, group: next }
   - title: 職場の化学物質管理とは？
     url: /guides/chemical-management-basics/
     group: next
@@ -277,3 +278,7 @@ STEP 1からSTEP 3を入力して「リスクを判定」を実行すると、�
 - リスクレベルを対策の優先順位と必要な測定へつなげる
 - 対策後を再判定し、実施内容・期限・確認方法を記録する
 - 推定結果を、法令判断、実測値、法定措置の代わりにしない
+
+## 確認測定が必要か迷ったときは
+
+濃度基準値との比較に進む際は、[確認測定の実施判断・対象者・頻度]({{ '/guides/confirmation-measurement/' | relative_url }})で、実施の目安から測定後の対策まで確認してください。
