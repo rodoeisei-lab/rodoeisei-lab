@@ -43,3 +43,14 @@
   status: wip
   url:
   section: 特別規則
+
+- title: 呼吸用保護具の選び方
+  description: 物質の状態・濃度から種類と防護性能を決め、密着性確認へつなげます。
+  status: published
+  url: /guides/respirator-selection/
+  section: 保護具
+- title: 防毒マスクの吸収缶はいつ交換する？
+  description: 破過時間、使用限度時間、再使用、保管と記録を整理します。
+  status: published
+  url: /guides/gas-cartridge-replacement/
+  section: 保護具

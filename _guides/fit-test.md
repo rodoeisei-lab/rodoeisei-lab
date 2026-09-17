@@ -14,8 +14,8 @@ level: 実務
 reading_time: 約10分
 minutes: 10
 published_at: 2025-03-01
-updated: 2026-08-28
-updated_at: 2026-08-28
+updated: 2026-09-17
+updated_at: 2026-09-17
 reviewed_at: 2026-08-28
 checked_at: 2026-08-28
 scheduled_review_at: 2027-08-28
@@ -169,3 +169,7 @@ lead: 「誰に、いつ、どの面体で」確認するかを、法令上の�
 - [解説一覧に戻る]({{ '/guides/' | relative_url }})
 - [化学物質管理者と保護具着用管理責任者の役割を確認する]({{ '/guides/chemical-substance-manager-ppe-manager/' | relative_url }})
 - [管理濃度・濃度基準値・許容濃度の違いを確認する]({{ '/guides/management-concentration-exposure-limits/' | relative_url }})
+
+## 要求防護係数とフィットファクタを混同しない
+
+要求防護係数は、対象作業で必要となる防護の程度を濃度から求める指標です。フィットファクタは、本人と面体の密着性を評価する指標です。フィットテストの結果が良くても、作業に必要な種類・防護性能や、吸収缶の適合・交換管理が不十分なら対策は成立しません。[保護具の選定手順]({{ '/guides/respirator-selection/' | relative_url }})と[吸収缶の交換管理]({{ '/guides/gas-cartridge-replacement/' | relative_url }})を先に確認します。

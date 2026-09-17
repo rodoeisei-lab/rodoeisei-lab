@@ -45,8 +45,8 @@ categories:
     url: /local-exhaust-ventilation/
     description: 仕組み・点検・改善の考え方
   - label: 保護具・フィットテスト
-    url: /guides/fit-test/
-    description: 呼吸用保護具の密着性を確認
+    url: /guides/respirator-selection/
+    description: 呼吸用保護具の選定・交換・密着性
   - label: 実務ツール
     url: /tools/
     description: 濃度換算・計算・管理区分の判定
@@ -103,7 +103,8 @@ articles:
   - title: 有機溶剤中毒予防規則とは？対象作業と管理の基本
     category: 化学物質管理
     description: 有機則の対象作業、換気、保護具、健康診断、SDS確認の入口を実務者向けにまとめます。
-    status: wip
+    url: /guides/organic-solvent-basics/
+    status: published
   - title: 局所排気装置とは？フード・ダクト・排風機の基本
     category: 局所排気装置
     description: 制御風速、点検、改善提案の前に理解したい局所排気装置の構成要素を整理します。

@@ -10,7 +10,7 @@
   description: 適用規則ごとの点検・定期自主検査と記録を整理します。
 - { title: 囲い式・外付け式・レシーバー式フードの違い, section: フード, status: wip }
 - { title: 制御風速・捕捉速度・ダクト内搬送速度の違い, section: 速度, status: wip }
-- { title: 局所排気装置の風量と圧力損失の基本, section: 設計, status: wip }
+- { title: 局所排気装置の風量計算｜開口面積・ダクト径・圧力損失の基礎, url: /guides/local-exhaust-airflow-calculation/, section: 設計, status: published, description: 単位換算と計算例から、風量・ダクト内速度・排風機の関係を学びます。 }
 - { title: 局所排気装置の定期自主検査, section: 点検・記録, status: wip }
 - { title: 風速が出ないときの原因と確認手順, section: トラブル対応, status: wip }
 - { title: 共通ダクトとダンパー調整の注意点, section: 改善, status: wip }

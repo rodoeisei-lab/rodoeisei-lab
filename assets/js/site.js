@@ -5,12 +5,14 @@ const navOverlay = document.getElementById('navOverlay');
 
 const openNav = () => {
   if (!mobileNav || !navOverlay || !menuBtn) return;
+  mobileNav.inert = false;
   mobileNav.classList.add('open');
   navOverlay.classList.add('show');
   navOverlay.hidden = false;
   mobileNav.setAttribute('aria-hidden', 'false');
   menuBtn.setAttribute('aria-expanded', 'true');
   document.body.classList.add('nav-open');
+  closeBtn?.focus();
 };
 
 const closeNav = () => {
@@ -23,6 +25,7 @@ const closeNav = () => {
   menuBtn.setAttribute('aria-expanded', 'false');
   document.body.classList.remove('nav-open');
   if (wasOpen) menuBtn.focus();
+  mobileNav.inert = true;
 };
 
 if (menuBtn) {
@@ -44,6 +47,18 @@ if (mobileNav) {
 }
 
 window.addEventListener('keydown', (event) => {
+  if (event.key === 'Tab' && mobileNav?.classList.contains('open')) {
+    const items = [...mobileNav.querySelectorAll('a[href], button:not([disabled])')];
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
+  }
   if (event.key === 'Escape') {
     closeNav();
   }
@@ -93,3 +108,8 @@ const sendSearchAnalytics = () => {
 };
 
 sendSearchAnalytics();
+
+// Close the mobile drawer when switching to the desktop navigation.
+window.matchMedia('(min-width: 1081px)').addEventListener('change', (event) => {
+  if (event.matches) closeNav();
+});
