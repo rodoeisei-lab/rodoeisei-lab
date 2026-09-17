@@ -21,6 +21,11 @@ exclude:
   # 公開用サイトに含めない運用・作業用ファイル
   - skills
   - reports
+  - AGENTS.md
+  - DESIGN.md
+  - README.md
+  - scripts
+  - tests
   - work-ops-hub
   - inventory-memo.html
 

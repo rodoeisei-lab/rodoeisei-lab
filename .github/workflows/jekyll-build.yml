@@ -178,3 +178,31 @@ jobs:
             --site-dir _site \
             --baseurl "${{ steps.config.outputs.baseurl }}" \
             --exclude-prefix /pagefind/
+
+      - name: Check mobile layout and menu keyboard behavior
+        run: |
+          npm install --prefix "$RUNNER_TEMP/lab-browser" --no-save playwright@1.58.2
+          "$RUNNER_TEMP/lab-browser/node_modules/.bin/playwright" install --with-deps chromium
+          mkdir -p "$RUNNER_TEMP/lab-preview"
+          ln -s "$GITHUB_WORKSPACE/_site" "$RUNNER_TEMP/lab-preview/rodoeisei-lab"
+          python3 -m http.server 4000 --directory "$RUNNER_TEMP/lab-preview" >/tmp/mobile-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/lab-browser/node_modules/playwright" node scripts/ci/check_mobile.cjs
+
+      - name: Preserve mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-review
+          path: mobile-review/
+          retention-days: 3
+          if-no-files-found: ignore
+
+      - name: Preserve built site for pull request review
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-site
+          path: _site/
+          retention-days: 3

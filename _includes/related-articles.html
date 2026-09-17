@@ -11,6 +11,8 @@
   {% assign all_articles = all_articles | concat: site.updates %}
 {% endif %}
 
+{% assign article_pages = site.pages | where: "layout", "article" %}
+{% assign all_articles = all_articles | concat: article_pages %}
 {% assign prioritized_articles = all_articles %}
 
 {% assign shown_urls = '|' | append: current_url | append: '|' %}

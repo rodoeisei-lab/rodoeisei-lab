@@ -15,8 +15,8 @@ minutes: 12
 status: published
 featured: false
 published_at: 2026-08-11
-updated: 2026-08-11
-updated_at: 2026-08-11
+updated: 2026-09-17
+updated_at: 2026-09-17
 reviewed_at: 2026-08-11
 checked_at: 2026-08-11
 source_type: law
@@ -129,3 +129,7 @@ youtube_videos:
 局所排気装置の性能は、排風機の強さだけでは決まりません。発散源で捕捉するフード、空気を運び処理する系統、補給空気、作業者の位置、保守管理を組み合わせ、通常作業で効果を確認します。点検については、[適用規則ごとの周期と記録を整理したQ&A]({{ '/qa/local-exhaust-inspection/' | relative_url }})も確認してください。
 
 <aside class="chemical-disclaimer"><strong>法令確認上の注意</strong><p>設備要件と性能、点検、定期自主検査は、対象物質・作業・装置と適用規則で異なります。最終法令確認日：2026年8月11日。個別の判断では最新のe-Gov法令検索と厚生労働省の一次情報を確認してください。</p></aside>
+
+## 風量とダクト径を計算で確認する
+
+囲い式フードの開口面積と平均風速から風量を求めるときは、m³/sとm³/minの換算に注意します。外付け式の発散源における速度を、そのまま開口面の平均風速として使うことはできません。[風量・ダクト内速度・圧力損失の計算例]({{ '/guides/local-exhaust-airflow-calculation/' | relative_url }})で、式の使える範囲を確認してください。
