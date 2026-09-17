@@ -31,7 +31,6 @@ next_action:
   - 評価する作業を一つ決め、SDSと取扱量・換気・作業時間を準備する
   - 現状と対策後を再判定し、採用する措置・期限・確認方法を記録する
 related_links:
-  - { title: 確認測定の実施判断・対象者・頻度, url: /guides/confirmation-measurement/, group: next }
   - title: 職場の化学物質管理とは？
     url: /guides/chemical-management-basics/
     group: next

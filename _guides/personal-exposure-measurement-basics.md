@@ -31,7 +31,6 @@ next_actions:
   - 使用物質、作業時間、発散源、換気、作業者の動きを調査する
   - 対象作業・対象者の選定根拠と作業記録様式を決める
 related_links:
-  - { title: 確認測定の実施判断・対象者・頻度, url: /guides/confirmation-measurement/, group: next }
   - title: 個人ばく露測定カテゴリ
     url: /personal-exposure-measurement/
     group: next
