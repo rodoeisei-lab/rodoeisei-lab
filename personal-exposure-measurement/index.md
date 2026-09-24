@@ -11,13 +11,14 @@ permalink: /personal-exposure-measurement/
 <p class="topic-hub__label chemical-section-label">基礎</p>
 <h2 id="exposure-about">個人ばく露測定とは</h2>
 <p>代表的には、作業者の身体に試料採取機器を装着し、顔の近くの<strong>呼吸域の空気中にある有害物質濃度</strong>を把握する測定です。作業者の移動や作業内容の変化を含めて確認できますが、体内へ実際に吸収された量や健康影響を直接測る検査ではありません。</p>
+<p>2026年10月1日から、個人ばく露測定は法令上、作業環境測定の一部として明確に位置づけられます。C・D測定とは目的・デザイン・評価方法が異なるため、身体に機器を装着する点だけで同じ測定と判断しないことが重要です。</p>
 <p><a href="{{ '/tools/measurement-method-selector/' | relative_url }}"><strong>測定方法の選択ナビ</strong></a>を使うと、A・B測定、C・D測定、個人ばく露測定、確認測定、第3管理区分の測定を目的から整理できます。</p>
 </section>
 
 <section class="topic-hub__section chemical-section" aria-labelledby="exposure-differences">
 <div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">目的を混同しない</p><h2 id="exposure-differences">最初に区別したい測定</h2></div>
 <dl class="chemical-definitions">
-<div><dt>個人ばく露測定</dt><dd>呼吸域濃度から作業中のばく露の程度を把握し、リスク評価や対策に用います。目的と根拠に応じて評価指標・実施者要件を確認します。</dd></div>
+<div><dt>個人ばく露測定</dt><dd>呼吸域濃度から作業中のばく露の程度を把握し、リスク評価や対策に用います。2026年10月1日から作業環境測定の一部として法令上明確に位置づけられ、該当する測定では実施者の登録区分も確認します。</dd></div>
 <div><dt>確認測定</dt><dd>濃度基準値が定められた物質について、リスクアセスメントの結果等から必要と判断した場合に、労働者のばく露の程度を確認する測定です。すべての物質・作業に一律に必要なものではありません。</dd></div>
 <div><dt>個人サンプリング法による作業環境測定</dt><dd>労働者に機器を装着しますが、個人の健康リスクそのものではなく作業場を評価する法定の作業環境測定です。C測定・D測定の結果を作業環境評価基準に基づく管理区分の決定に用います。</dd></div>
 <div><dt>第3管理区分の保護具選定用測定</dt><dd>改善が困難と判断された第3管理区分の場所で、個別規則に基づく濃度測定を行い、要求防護係数と呼吸用保護具の性能確認につなげます。</dd></div>
@@ -43,16 +44,18 @@ permalink: /personal-exposure-measurement/
 </section>
 
 <section class="topic-hub__section chemical-section" aria-labelledby="related-fields"><div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">使い分け</p><h2 id="related-fields">作業環境測定・化学物質管理との関係</h2></div>
-<p>個人ばく露測定は、化学物質管理で実際の作業条件におけるばく露を把握する手段の一つです。法定の作業環境測定、確認測定、自主測定は、根拠・目的・評価方法を確認して使い分けます。</p>
+<p>個人ばく露測定は、化学物質管理で実際の作業条件におけるばく露を把握する手段の一つです。A・B測定、C・D測定、確認測定、個人ばく露測定、簡易的・予備的な測定は、根拠・目的・必要な精度・評価方法を確認して使い分けます。</p>
 <p><a href="{{ '/work-environment-measurement/' | relative_url }}">作業環境測定を基礎から学ぶ</a> ／ <a href="{{ '/chemical-management/' | relative_url }}">化学物質管理を基礎から学ぶ</a></p></section>
 
 <section class="topic-hub__section chemical-section" aria-labelledby="reform-title"><div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">2026年10月1日</p><h2 id="reform-title">制度改正は「全事業場で一律測定」ではない</h2></div>
-<aside class="topic-hub__notice chemical-disclaimer"><strong>2026年9月8日時点：施行日は2026年10月1日</strong><p>一定の個人ばく露測定について実施者要件の確認が必要になります。同日には新たに78物質へ濃度基準値が適用されますが、濃度基準値が設定されたことだけを理由に、すべての事業場へ一律に個人ばく露測定が義務付けられるわけではありません。目的、対象作業、対象物質、根拠法令・指針を分けて確認してください。</p></aside>
+<aside class="topic-hub__notice chemical-disclaimer"><strong>2026年9月24日時点：政令・省令・告示は公布済み、2026年10月1日施行</strong><p>個人ばく露測定は作業環境測定の一部として明確に位置づけられ、安衛法第65条の3に基づいて指定作業場で行う測定では、個人ばく露測定に係る登録区分を持つ作業環境測定士等の実施者要件を確認します。同日には新たに78物質へ濃度基準値が適用されますが、濃度基準値が設定されたことだけを理由に、すべての事業場へ一律に個人ばく露測定が義務付けられるわけではありません。</p><p>簡易的・予備的な測定など、一定の測定精度を求めない測定は、安衛法第65条の3第1項・第3項の作業環境測定に含まれないと厚生労働省通達で示されています。名称だけでなく、測定目的と要求される精度を確認してください。</p></aside>
 <p><a href="{{ '/qa/personal-exposure-measurement-2026/' | relative_url }}"><strong>2026年10月改正の詳しい整理を見る</strong></a> ／ <a href="{{ '/substances/?filter=upcoming-2026' | relative_url }}"><strong>2026年10月施行の濃度基準値設定物質を絞り込む</strong></a></p>
 </section>
 
 <section class="topic-hub__section chemical-section" aria-labelledby="official-title"><div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">根拠を確認</p><h2 id="official-title">一次情報</h2></div>
 <div class="topic-hub__links chemical-official-links">
+<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/an-eihou/index_00001.html"><strong>労働安全衛生法の改正について</strong><span>厚生労働省・R8.10.1施行政省令等</span></a>
+<a href="https://www.mhlw.go.jp/content/11300000/001732756.pdf"><strong>個人ばく露測定等関係（基発0730第2号）</strong><span>厚生労働省</span></a>
 <a href="https://jsite.mhlw.go.jp/tottori-roudoukyoku/newpage_02867.html"><strong>個人ばく露測定等関連（令和8年10月～）</strong><span>鳥取労働局</span></a>
 <a href="https://www.mhlw.go.jp/web/t_doc?dataId=00tc9363&amp;dataType=1&amp;pageNo=1"><strong>2026年10月適用の濃度基準値告示等</strong><span>厚生労働省・78物質追加</span></a>
 <a href="https://www.mhlw.go.jp/web/t_doc?dataId=74087000&amp;dataType=0&amp;pageNo=1"><strong>作業環境測定基準</strong><span>厚生労働省</span></a>
@@ -62,5 +65,5 @@ permalink: /personal-exposure-measurement/
 </div></section>
 
 <section class="topic-hub__section chemical-section" aria-labelledby="review-title"><div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">利用上の注意</p><h2 id="review-title">最終確認日と注意事項</h2></div>
-<p>最終確認日：2026年9月8日。個別の適用は物質、作業、場所、測定目的等で異なります。最新の法令、告示、通達、技術上の指針を確認してください。施行後に登録・運用情報を再確認します。</p></section>
+<p>最終確認日：2026年9月24日。個別の適用は物質、作業、場所、測定目的等で異なります。最新の法令、告示、通達、技術上の指針を確認してください。施行日の2026年10月1日以降も、登録・運用情報を再確認します。</p></section>
 </div>
