@@ -66,9 +66,9 @@ needs:
   - label: 第3管理区分の対策を考えたい
     url: /qa/third-control-class/
     description: 結果を受けて確認すること・改善の進め方
-  - label: 保護具について調べたい
-    url: /guides/skin-hazard-chemicals-protective-gloves/
-    description: 皮膚への有害性と化学防護手袋の選び方
+  - label: 呼吸用保護具を選びたい
+    url: /guides/respirator-selection/
+    description: 防じん・防毒マスクの選定とフィットの基本を確認
 tools:
   - label: 管理区分判定
     url: /tools/management-class/
@@ -165,4 +165,3 @@ sns:
     description: 質問・改善提案はこちら。
     url: https://github.com/rodoeisei-lab/rodoeisei-lab/issues
     icon: 💬
-
