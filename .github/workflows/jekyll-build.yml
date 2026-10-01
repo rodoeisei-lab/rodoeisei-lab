@@ -61,6 +61,7 @@ jobs:
           node --check assets/js/respirator-protection-factor.mjs
           node --check assets/js/substance-registry.js
           node scripts/ci/test_management_class_calculator.mjs
+          node scripts/ci/test_exposure_calculations.mjs
           ruby scripts/ci/verify_navigator_data.rb
 
       - name: Build Pagefind index
@@ -189,6 +190,7 @@ jobs:
           SERVER_PID=$!
           trap 'kill "$SERVER_PID"' EXIT
           PLAYWRIGHT_MODULE="$RUNNER_TEMP/lab-browser/node_modules/playwright" node scripts/ci/check_mobile.cjs
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/lab-browser/node_modules/playwright" node scripts/ci/check_learning_hub.cjs
 
       - name: Preserve mobile screenshots
         if: always()

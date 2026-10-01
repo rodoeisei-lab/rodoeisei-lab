@@ -49,7 +49,7 @@ permalink: /personal-exposure-measurement/
 
 <section class="topic-hub__section chemical-section" aria-labelledby="reform-title"><div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">2026年10月1日</p><h2 id="reform-title">制度改正は「全事業場で一律測定」ではない</h2></div>
 <aside class="topic-hub__notice chemical-disclaimer"><strong>2026年9月24日時点：政令・省令・告示は公布済み、2026年10月1日施行</strong><p>個人ばく露測定は作業環境測定の一部として明確に位置づけられ、安衛法第65条の3に基づいて指定作業場で行う測定では、個人ばく露測定に係る登録区分を持つ作業環境測定士等の実施者要件を確認します。同日には新たに78物質へ濃度基準値が適用されますが、濃度基準値が設定されたことだけを理由に、すべての事業場へ一律に個人ばく露測定が義務付けられるわけではありません。</p><p>簡易的・予備的な測定など、一定の測定精度を求めない測定は、安衛法第65条の3第1項・第3項の作業環境測定に含まれないと厚生労働省通達で示されています。名称だけでなく、測定目的と要求される精度を確認してください。</p></aside>
-<p><a href="{{ '/qa/personal-exposure-measurement-2026/' | relative_url }}"><strong>2026年10月改正の詳しい整理を見る</strong></a> ／ <a href="{{ '/substances/?filter=upcoming-2026' | relative_url }}"><strong>2026年10月施行の濃度基準値設定物質を絞り込む</strong></a></p>
+<p><a href="{{ '/qa/personal-exposure-measurement-2026/' | relative_url }}"><strong>2026年10月改正の詳しい整理を見る</strong></a> ／ <a href="{{ '/substances/?filter=applied-2026' | relative_url }}"><strong>2026年10月施行の濃度基準値設定物質を絞り込む</strong></a></p>
 </section>
 
 <section class="topic-hub__section chemical-section" aria-labelledby="official-title"><div class="topic-hub__heading chemical-section-heading"><p class="topic-hub__label chemical-section-label">根拠を確認</p><h2 id="official-title">一次情報</h2></div>

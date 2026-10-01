@@ -1,11 +1,11 @@
 hero:
-  title: "労働衛生を、現場で使える知識に。"
+  title: "作業環境測定と労働衛生を、基礎から実務へ。"
   description: "作業環境測定・化学物質管理・個人ばく露測定を分かりやすく。調べる・学ぶ・計算するを、日々の実務につなげます。"
   kicker: "測定・ばく露評価・化学物質管理の実務ポータル"
-  audience: "作業環境測定士・衛生管理者・化学物質管理担当者向け"
+  audience: "測定を依頼する担当者から、測定士・衛生管理者まで"
   actions:
-    - label: 作業環境測定を学ぶ
-      url: /work-environment-measurement/
+    - label: はじめての方：学習の順番を見る
+      url: /learn/
       style: primary
     - label: 実務ツールを使う
       url: /tools/
@@ -32,24 +32,33 @@ features:
     description: 作業環境測定士、オキュペイショナルハイジニスト、労働衛生コンサルタントなどの役割と学び方を整理。
     icon: 📘
 categories:
-  - label: 作業環境測定
-    url: /work-environment-measurement/
-    description: 測定方法・管理区分・結果の読み方
-  - label: 化学物質管理
-    url: /chemical-management/
-    description: SDS・リスクアセスメント・管理の流れ
-  - label: 個人ばく露測定／個人サンプリング測定
-    url: /personal-exposure-measurement/
-    description: 目的・測定方法・制度の違い
-  - label: 局所排気装置
-    url: /local-exhaust-ventilation/
-    description: 仕組み・点検・改善の考え方
-  - label: 保護具・フィットテスト
-    url: /guides/respirator-selection/
-    description: 呼吸用保護具の選定・交換・密着性
-  - label: 実務ツール
-    url: /tools/
-    description: 濃度換算・計算・管理区分の判定
+- label: 作業環境測定
+  url: /work-environment-measurement/
+  description: A・B・C・D測定、管理区分、報告書
+- label: 有機溶剤
+  url: /guides/organic-solvent-basics/
+  description: 有機則・換気・吸収缶の基本
+- label: 粉じん・溶接ヒューム
+  url: /dust/
+  description: 遊離けい酸、K値、マンガン、粉じん対策
+- label: 特定化学物質・金属
+  url: /substances/
+  description: 物質名・CAS番号から規則と基準を確認
+- label: 個人ばく露測定
+  url: /personal-exposure-measurement/
+  description: 測定目的、8時間TWA、確認測定
+- label: 呼吸用保護具
+  url: /respiratory-protection/
+  description: 防じん・防毒、必要性能、フィットテスト
+- label: 局所排気装置
+  url: /local-exhaust-ventilation/
+  description: フード・気流・風量・点検
+- label: 化学物質管理
+  url: /chemical-management/
+  description: SDS、リスクアセスメント、管理体制
+- label: 分析
+  url: /analysis/
+  description: GC・原子吸光、検量線、ND・定量下限
 needs:
   - label: 管理区分を判定したい
     url: /tools/management-class/

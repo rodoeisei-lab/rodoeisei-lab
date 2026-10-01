@@ -3,11 +3,14 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE);
 const fs = require('node:fs');
 const path = require('node:path');
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE } : {}) });
   const page = await browser.newPage({ viewport: { width: 360, height: 800 } });
   const failures = [];
   fs.mkdirSync('mobile-review', { recursive: true });
-  const routes = ['/', '/guides/', '/chemical-management/', '/local-exhaust-ventilation/',
+  const routes = ['/', '/learn/', '/guides/', '/dust/', '/respiratory-protection/', '/reading-list/', '/substances/?filter=applied-2026', '/chemical-management/', '/local-exhaust-ventilation/',
+    '/guides/dust-control-basics/', '/guides/welding-fume-manganese/',
+    '/guides/twa-short-term-exposure/', '/guides/management-class-results/',
+    '/tools/twa-calculator/', '/tools/respirator-protection-factor/',
     '/guides/respirator-selection/', '/guides/gas-cartridge-replacement/',
     '/guides/local-exhaust-airflow-calculation/', '/guides/confirmation-measurement/', '/guides/fit-test/'];
   for (const route of routes) {

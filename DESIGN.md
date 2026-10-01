@@ -41,8 +41,8 @@ Codexや開発者がページ、ツール、記事UI、ナビゲーション、C
 2. **白と淡いブルーの余白**  
    専門情報を読みやすく整理する。
 
-3. **黄の小さなアクセント**  
-   重要箇所、注意、視線の起点に限定して使う。
+3. **青緑の学習導線と、黄の注意表現**
+   青緑は学習段階や学習入口に、黄は注意・重要確認に限定して使う。
 
 4. **過度に飾らない情報設計**  
    カード、影、アイコンを増やすより、見出し・余白・整列で差をつける。
@@ -139,12 +139,13 @@ Codexや開発者がページ、ツール、記事UI、ナビゲーション、C
 | Muted surface | `--color-surface-muted` | `#edf3f7` | 補助領域 |
 | Text | `--color-text` | `#152238` | 本文・主要文字 |
 | Secondary text | `--color-text-secondary` | `#48586c` | 補足 |
-| Muted text | `--color-text-muted` | `#6b7a8d` | メタ情報 |
+| Muted text | `--color-text-muted` | `#56677c` | メタ情報 |
+| Learning | `--color-teal` | `#006b70` | 学習段階・学習入口 |
 | Primary | `--color-primary` | `#103b5c` | 見出し・主要操作 |
 | Primary hover | `--color-primary-hover` | `#092c47` | hover |
 | Link | `--color-link` | `#0b6093` | テキストリンク |
 | Blue soft | `--color-blue-soft` | `#eaf3f8` | 情報補助 |
-| Accent | `--color-accent` | `#e0a12d` | 視線の起点 |
+| Accent | `--color-accent` | `#e0a12d` | 注意表現 |
 | Accent strong | `--color-accent-strong` | `#8b5700` | 黄系背景上の文字 |
 | Accent soft | `--color-accent-soft` | `#fff4da` | 注意・アクセント背景 |
 | Border | `--color-border` | `#d3e0e9` | 境界線 |
@@ -152,8 +153,8 @@ Codexや開発者がページ、ツール、記事UI、ナビゲーション、C
 
 ### Usage rules
 
-- 基本構成は **white + navy/blue + small yellow accent**。
-- 黄は主役ではなく、視線誘導のためのアクセントとして使う。
+- 基本構成は **white + navy/blue + restrained teal**。
+- 黄は、注意事項の表示に限定して使う。
 - 同一セクション内でネイビー、黄、別色をすべて主役にしない。
 - 広い背景は白、`--color-bg`、`--color-blue-soft`を優先する。
 - リンク色と主要CTA色を役割で使い分ける。
@@ -718,3 +719,13 @@ Codexなどのcoding agentは、UI実装前に次を行います。
 
 DESIGN.mdは「雰囲気の説明」ではなく、**AIと人間が同じ基準でUIを判断するためのdesign contract**として扱います。
 
+
+## 21. 読書と学習の導線（2026-10-01）
+
+- トップの検索直後に入門ルートを置き、分野別入口へ進める。
+- 学習ルートは `_data/learning_paths.yml` を共通の根拠にする。記事末尾は「基礎から確認する」「次に学ぶ」「実務で使う」の3つに集約する。
+- 関係のない記事を件数合わせで関連記事に表示しない。
+- パンくず・目次・保存ボタンは本文とは分け、本文検索に重複を入れない。
+- 目次はHTMLのdetailsを使い、スマホの画面を固定要素で狭めない。
+- 記事の表で横スクロールが必要なときは表内に限定し、説明とキーボード操作を用意する。
+- メタ情報の文字色は白・淡い背景上で4.5:1以上を保つ。

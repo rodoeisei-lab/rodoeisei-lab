@@ -9,5 +9,5 @@
     <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
     {% endfor %}
   </ul>
-  <div class="menu-cta-grid"><a href="{{ '/search/' | relative_url }}">サイト内検索</a><a href="{{ '/past-exams/' | relative_url }}">過去問</a></div>
+  <div class="menu-cta-grid"><a href="{{ '/search/' | relative_url }}">サイト内検索</a><a href="{{ '/reading-list/' | relative_url }}">保存した記事</a></div>
 </nav>

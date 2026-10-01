@@ -95,3 +95,6 @@
   .practical-tool__panel,.practical-tool__result,.practical-tool__reference{padding:16px}
   .practical-tool__compound{grid-template-columns:minmax(0,1fr) 84px}
 }
+
+.twa-coverage{display:flex;align-items:flex-start;gap:12px;min-height:44px;padding:12px;border-left:3px solid var(--color-teal);background:var(--color-blue-soft);cursor:pointer}
+.twa-coverage input{flex:none;width:24px;height:24px;margin:2px 0;accent-color:var(--color-primary)}

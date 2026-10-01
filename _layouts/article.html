@@ -1,6 +1,7 @@
 ---
 layout: base
 ---
+{% include article-context.html %}
 {% assign inferred_article_type = page.article_type | default: nil %}
 {% if inferred_article_type == nil or inferred_article_type == "" %}
   {% if page.collection == "guides" or page.category == "Guides" %}
@@ -14,6 +15,9 @@ layout: base
 
 <section class="page-hero">
   <div class="container">
+    <nav class="breadcrumbs" aria-label="パンくずリスト" data-pagefind-ignore>
+      <ol><li><a href="{{ '/' | relative_url }}">ホーム</a></li><li><a href="{% if article_path %}{{ article_path.hub | relative_url }}{% else %}{{ '/guides/' | relative_url }}{% endif %}">{% if article_path %}{{ article_path.title }}{% else %}解説{% endif %}</a></li><li aria-current="page">{{ page.title }}</li></ol>
+    </nav>
     {% assign display_category = page.category | default: "解説" %}
     {% if display_category == "Guides" %}{% assign display_category = "解説" %}{% endif %}
     <p class="page-eyebrow">{{ display_category }}</p>
@@ -32,13 +36,14 @@ layout: base
       {% assign show_unchecked_legal_date = page.show_unchecked_legal_date | default: site.show_unchecked_legal_date %}
       {% assign has_sources = false %}
       {% if page.sources and page.sources.size > 0 %}{% assign has_sources = true %}{% endif %}
-      {% if hero_checked %}<span class="badge badge--verified">法令確認済み</span>{% endif %}
+      {% assign checked_label = "出典" %}{% if page.source_type == "law" or page.source_type == "notice" %}{% assign checked_label = "法令" %}{% endif %}
+      {% if hero_checked %}<span class="badge badge--verified">{{ checked_label }}確認済み</span>{% endif %}
       {% if hero_published or hero_updated or hero_checked or show_unchecked_legal_date or has_sources %}
       <p class="article-meta-dates">
         {% assign has_prior_date = false %}
         {% if hero_published and hero_published != hero_updated %}<span class="article-meta-dates__item">公開日：{{ hero_published }}</span>{% assign has_prior_date = true %}{% endif %}
         {% if hero_updated %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item">更新日：{{ hero_updated }}</span>{% assign has_prior_date = true %}{% endif %}
-        {% if hero_checked %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item article-meta-dates__item--checked" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：{{ hero_checked }}</span>{% elsif show_unchecked_legal_date %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item article-meta-dates__item--pending" title="この日付は、法令・通達などの一次情報を確認した日です">法令確認日：未確認</span>{% endif %}
+        {% if hero_checked %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item article-meta-dates__item--checked" title="この日付は、記事の出典を確認した日です">{{ checked_label }}確認日：{{ hero_checked }}</span>{% elsif show_unchecked_legal_date %}{% if has_prior_date %}<span class="article-meta-dates__separator" aria-hidden="true">｜</span>{% endif %}<span class="article-meta-dates__item article-meta-dates__item--pending" title="この日付は、記事の出典を確認した日です">法令確認日：未確認</span>{% endif %}
         {% if has_sources %}<a class="article-meta-source-link" href="#article-sources">一次情報を見る（{{ page.sources.size }}件）</a>{% endif %}
       </p>
       {% endif %}
@@ -50,7 +55,15 @@ layout: base
 
 <section class="section">
   <div class="container article">
-    {{ content }}
+    <div class="article-reading-actions" data-pagefind-ignore>
+      <button type="button" class="btn-step" data-save-article aria-pressed="false" hidden>この記事を保存</button>
+      <a href="{{ '/reading-list/' | relative_url }}">保存した記事・閲覧履歴</a>
+      <p class="sr-only" data-reading-status role="status"></p>
+    </div>
+    <details class="article-toc" data-article-toc data-pagefind-ignore hidden>
+      <summary>この記事の目次</summary><nav aria-label="この記事の目次"><ol></ol></nav>
+    </details>
+    <div class="article-content">{{ content }}</div>
     {% include article-sources.html %}
 
     {% assign auto_youtube_videos = site.data.youtube.videos | where: "article_url", page.url %}
@@ -83,3 +96,5 @@ layout: base
     {% endif %}
   </div>
 </section>
+<script type="application/json" id="reading-current">{"url":{{ page.url | relative_url | jsonify }},"title":{{ page.title | jsonify }}}</script>
+<script src="{{ '/assets/js/article-reading.js' | relative_url }}" defer></script>

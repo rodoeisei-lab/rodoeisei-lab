@@ -8,7 +8,7 @@
   {% assign tag_text = guide.tags | join: " " %}
 {% endif %}
 {% assign search_text = guide.title | append: " " | append: description | append: " " | append: tag_text | strip | strip_newlines %}
-{% capture data_attrs %}data-filter-card data-search="{{ search_text | escape }}" data-tags="{{ tag_list | escape }}"{% endcapture %}
+{% capture data_attrs %}data-filter-card data-search="{{ search_text | escape }}" data-tags="{{ tag_list | escape }}" data-category="{{ guide.category | escape }}" data-level="{{ guide.level | escape }}"{% endcapture %}
 {% assign card_updated = guide.updated_at | default: guide.updated | default: guide.last_updated %}
 {% capture meta %}
   {% if card_updated %}更新日: {{ card_updated }}{% endif %}

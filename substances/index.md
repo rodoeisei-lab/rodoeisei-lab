@@ -1,6 +1,6 @@
 ---
 title: 対象物質・制度検索
-description: 第2種有機溶剤、特定化学物質、濃度基準値設定物質を制度別に検索し、2026年10月施行予定物質も絞り込めるページです。
+description: 第2種有機溶剤、特定化学物質、濃度基準値設定物質を制度別に検索し、2026年10月適用の追加・変更分も絞り込めるページです。
 eyebrow: Chemical substances
 lead: 物質名・CAS RN・制度区分・施行状況から、確認する法令と濃度基準値を探せます。
 permalink: /substances/
@@ -27,7 +27,7 @@ permalink: /substances/
       <li><strong>第2種有機溶剤：</strong>有機則第1条の区分と、安衛令別表第六の二を確認する入口です。</li>
       <li><strong>特定化学物質：</strong>安衛令別表第三の類別を表示します。特別管理物質などの細分類は、個別の法令で確認してください。</li>
       <li><strong>濃度基準値：</strong>八時間・短時間濃度基準値、採取・分析方法を確認できます。確認測定を含むばく露状況の確認方法は、作業条件に応じて検討します。</li>
-      <li><strong>2026年10月施行：</strong>現在のデータで「施行予定」として登録している濃度基準値設定物質だけをワンタップで絞り込めます。</li>
+      <li><strong>2026年10月施行：</strong>2026年10月1日適用の濃度基準値の追加・変更分79件をワンタップで絞り込めます。</li>
     </ul>
     <p><strong>CAS RNは参考情報です。</strong>濃度基準値等一覧でも、対象物質の当否はCAS RNではなく物質名で確認するよう示されています。</p>
   </aside>
@@ -70,7 +70,7 @@ permalink: /substances/
         <button class="substance-filter-button" type="button" data-substance-filter="organic-second" aria-pressed="false">第2種有機溶剤</button>
         <button class="substance-filter-button" type="button" data-substance-filter="specified" aria-pressed="false">特化則</button>
         <button class="substance-filter-button" type="button" data-substance-filter="concentration" aria-pressed="false">濃度基準値</button>
-        <button class="substance-filter-button" type="button" data-substance-filter="upcoming-2026" aria-pressed="false">2026年10月施行</button>
+        <button class="substance-filter-button" type="button" data-substance-filter="applied-2026" aria-pressed="false">2026年10月施行</button>
       </div>
       <label class="substance-search-field" for="substanceSearch">
         <span>物質名・別名・CAS RNで検索</span>
@@ -78,7 +78,7 @@ permalink: /substances/
       </label>
       <div class="substance-select-grid">
         <label for="substanceSystem"><span>制度</span><select id="substanceSystem"><option value="all">すべて</option><option value="organic-solvent">有機則</option><option value="specified-chemical">特化則</option><option value="concentration-standard">濃度基準値</option></select></label>
-        <label for="substanceStatus"><span>施行状況</span><select id="substanceStatus"><option value="all">すべて</option><option value="current">施行済み・現行</option><option value="upcoming">施行予定</option></select></label>
+        <label for="substanceStatus"><span>施行状況</span><select id="substanceStatus"><option value="all">すべて</option><option value="current">施行済み・現行</option>{% assign upcoming_records = records | where: "status", "upcoming" %}{% if upcoming_records.size > 0 %}<option value="upcoming">施行予定</option>{% endif %}</select></label>
       </div>
     </div>
 
@@ -87,7 +87,7 @@ permalink: /substances/
 
     <div id="substanceResults" class="substance-results">
       {% for record in records %}
-      <article class="substance-card" data-substance-card data-search="{{ record.search_text | escape }}" data-system="{{ record.system_key }}" data-category="{{ record.category | escape }}" data-status="{{ record.status }}">
+      <article class="substance-card" data-substance-card data-search="{{ record.search_text | escape }}" data-system="{{ record.system_key }}" data-category="{{ record.category | escape }}" data-status="{{ record.status }}" data-effective-date="{{ record.effective_date }}">
         <header class="substance-card__header">
           <div class="substance-card__badges">
             <span class="substance-badge substance-badge--system">{{ record.system | escape }}</span>
@@ -134,7 +134,8 @@ permalink: /substances/
       <p>現在は、有機則・特化則・濃度基準値を掲載しています。リスクアセスメント対象物の網羅、特別管理物質・特別有機溶剤などの細分類、作業環境測定の対象業務の詳細一覧は、根拠資料を確認しながら追加します。</p>
     </div>
     <div class="substance-registry__source-panel">
-      <strong>データ更新日：{{ registry.generated_at | escape }}</strong>
+      <strong>濃度・区分の原データ更新日：{{ registry.generated_at | escape }}</strong>
+      <p>適用日の状態確認：{{ registry.status_checked_at | default: registry.generated_at | escape }}。施行状況を更新した日と、濃度・区分の原データ更新日を分けて表示しています。</p>
       <p>制度改正や告示の更新により内容が変わります。最終確認は一次情報で行ってください。</p>
       <ul>
         {% for source in registry.sources %}

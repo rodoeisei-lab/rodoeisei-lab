@@ -1,0 +1,9 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+Gemfile.lock
+mobile-review/
+node_modules/
+__pycache__/
+*.pyc

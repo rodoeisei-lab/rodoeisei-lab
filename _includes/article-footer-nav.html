@@ -1,50 +1,32 @@
-{% assign article_type = page.article_type | default: nil %}
-{% if article_type == nil or article_type == "" %}
-  {% if page.collection == "guides" or page.category == "Guides" %}
-    {% assign article_type = "guide" %}
-  {% elsif page.collection == "updates" or page.category == "Updates" %}
-    {% assign article_type = "update" %}
-  {% else %}
-    {% assign article_type = "article" %}
-  {% endif %}
-{% endif %}
-
-<section class="article-footer-nav" aria-label="記事末尾ナビゲーション">
+{% include article-context.html %}
+{% assign next_step = nil %}{% assign current_found = false %}
+{% for step in article_path.steps %}
+  {% if current_found %}{% assign next_step = step %}{% break %}{% endif %}
+  {% if step.url == page.url %}{% assign current_found = true %}{% endif %}
+{% endfor %}
+<nav class="article-footer-nav" aria-label="学習を続ける" data-pagefind-ignore>
   <div class="article-footer-nav__grid">
     <div class="article-footer-nav__item">
-      <h2>関連ページ</h2>
+      <h2>基礎から確認する</h2>
       <ul>
-        {% if article_type == "update" %}
-        <li><a href="{{ '/updates/' | relative_url }}">更新一覧で他の変更も確認する</a></li>
-        <li><a href="{{ '/guides/' | relative_url }}">対応手順をガイドで確認する</a></li>
-        {% else %}
-        <li><a href="{{ '/guides/' | relative_url }}">解説一覧に戻る</a></li>
-        <li><a href="{{ '/updates/' | relative_url }}">最新アップデートを見る</a></li>
-        {% endif %}
-        <li><a href="{{ '/glossary/' | relative_url }}">用語集で専門語を確認する</a></li>
+        {% if article_path %}<li><a href="{{ article_path.hub | relative_url }}">{{ article_path.title }}の学習入口</a></li>
+        {% assign first_step = article_path.steps | first %}{% if first_step.url != page.url %}<li><a href="{{ first_step.url | relative_url }}">{{ first_step.title }}</a></li>{% endif %}
+        {% else %}<li><a href="{{ '/learn/' | relative_url }}">学習ロードマップ</a></li>{% endif %}
+        <li><a href="{{ '/glossary/' | relative_url }}">用語の意味を確認する</a></li>
       </ul>
     </div>
-
     <div class="article-footer-nav__item">
-      <h2>次に読む</h2>
+      <h2>次に学ぶ</h2>
       <ul>
-        {% if article_type == "update" %}
-        <li><a href="{{ '/guides/fit-test/' | relative_url }}">フィットテスト導入の最小セット</a></li>
-        <li><a href="{{ '/guides/operator-skill-expansion-roadmap/' | relative_url }}">運営者スキル拡充ロードマップ</a></li>
-        {% else %}
-        <li><a href="{{ '/learn/' | relative_url }}">学習ハブでテーマ別に学ぶ</a></li>
-        <li><a href="{{ '/updates/' | relative_url }}">制度変更の最新情報を確認する</a></li>
-        {% endif %}
+        {% if next_step %}<li><a href="{{ next_step.url | relative_url }}">{{ next_step.title }}</a></li>
+        {% else %}{% assign next_count = 0 %}{% for link in page.related_links %}{% if link.group == 'next' and link.url != page.url and next_count < 2 %}<li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>{% assign next_count = next_count | plus: 1 %}{% endif %}{% endfor %}
+        {% if next_count == 0 %}<li><a href="{{ '/learn/' | relative_url }}">次のテーマを学習ロードマップから選ぶ</a></li>{% endif %}{% endif %}
       </ul>
     </div>
-
     <div class="article-footer-nav__item">
-      <h2>実務に活かす</h2>
-      <ul>
-        <li><a href="{{ '/learn/' | relative_url }}">学習ハブへ</a></li>
-        <li><a href="{{ '/qa/' | relative_url }}">公開Q&Aを見る</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}">現場の課題を相談する</a></li>
-      </ul>
+      <h2>実務で使う</h2>
+      <ul>{% if article_path.tools.size > 0 %}{% for tool in article_path.tools limit:2 %}<li><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></li>{% endfor %}
+      {% else %}<li><a href="{{ '/tools/' | relative_url }}">実務ツールを選ぶ</a></li>{% endif %}</ul>
     </div>
   </div>
-</section>
+</nav>

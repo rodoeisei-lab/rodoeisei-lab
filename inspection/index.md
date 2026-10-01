@@ -52,20 +52,20 @@ permalink: /inspection/
 ※業種・規模・取扱いにより変わります。ここでは“抜けやすい順”のたたき台。
 
 ### 体制・運用
-- [ ] 安全衛生管理体制（選任・委員会等）が説明できる
-- [ ] 社内ルール（手順書・作業標準）が現場と一致している
-- [ ] 年間計画／点検計画（簡単でOK、更新日が新しい）
+- <label class="checklist-item"><input type="checkbox"> <span>安全衛生管理体制（選任・委員会等）が説明できる</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>社内ルール（手順書・作業標準）が現場と一致している</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>年間計画／点検計画（簡単でOK、更新日が新しい）</span></label>
 
 ### 記録（最重要）
-- [ ] 教育記録（日時・対象・内容が1枚で追える）
-- [ ] 点検記録（局排・換気・保護具など。補修の履歴があると強い）
-- [ ] 健康診断・事後措置（未受診フォロー含む）
-- [ ] リスクアセスメント（見直し日・優先順位が説明できる）
+- <label class="checklist-item"><input type="checkbox"> <span>教育記録（日時・対象・内容が1枚で追える）</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>点検記録（局排・換気・保護具など。補修の履歴があると強い）</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>健康診断・事後措置（未受診フォロー含む）</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>リスクアセスメント（見直し日・優先順位が説明できる）</span></label>
 
 ### 化学物質・有害要因（該当する場合）
-- [ ] SDS（最新版）と現場の品名・ラベルが一致
-- [ ] 保護具の選定根拠（何を基準にそのマスク/手袋か）
-- [ ] 測定（作業環境測定／個人ばく露等）：計画→実施→評価→改善の流れが追える
+- <label class="checklist-item"><input type="checkbox"> <span>SDS（最新版）と現場の品名・ラベルが一致</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>保護具の選定根拠（何を基準にそのマスク/手袋か）</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>測定（作業環境測定／個人ばく露等）：計画→実施→評価→改善の流れが追える</span></label>
 
 <a id="onsite"></a>
 ## 当日対応の型（言い方・記録・提出）

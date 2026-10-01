@@ -1,3 +1,4 @@
+import { calculateTwa } from './exposure-calculations.mjs';
 (() => {
   "use strict";
 
@@ -216,6 +217,7 @@
     const placeholder = root.querySelector("#twaPlaceholder");
     const unitInput = root.querySelector("#twaUnit");
     const limitInput = root.querySelector("#twaLimit");
+    const coverageInput = root.querySelector("#twaCoverageConfirmed");
     let rowId = 0;
 
     if (!form || !rowsContainer) return;
@@ -254,7 +256,11 @@
       const rows = [...rowsContainer.querySelectorAll("[data-twa-row]")];
       rows.forEach((row, index) => {
         row.querySelector(".twa-row__number").textContent = String(index + 1);
+        row.querySelector('[data-twa-concentration]').setAttribute('aria-label', `区間${index + 1}の濃度`);
+        row.querySelector('[data-twa-duration]').setAttribute('aria-label', `区間${index + 1}のばく露時間`);
+        row.querySelector('[data-twa-duration-unit]').setAttribute('aria-label', `区間${index + 1}の時間単位`);
         const remove = row.querySelector("[data-twa-remove]");
+        remove.setAttribute('aria-label', `区間${index + 1}を削除`);
         remove.disabled = rows.length <= 1;
       });
     }
@@ -281,55 +287,39 @@
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       clearError(error);
-      const entries = [];
-      let invalid = false;
-
-      [...rowsContainer.querySelectorAll("[data-twa-row]")].forEach((row) => {
-        const concentrationRaw = row.querySelector("[data-twa-concentration]").value.trim();
-        const durationRaw = row.querySelector("[data-twa-duration]").value.trim();
-        if (!concentrationRaw && !durationRaw) return;
-        const concentration = parseNonNegative(concentrationRaw);
-        const durationValue = parsePositive(durationRaw);
-        const durationUnit = row.querySelector("[data-twa-duration-unit]").value;
-        if (concentration === null || !durationValue) {
-          invalid = true;
-          return;
-        }
-        const hours = durationUnit === "min" ? durationValue / 60 : durationValue;
-        entries.push({ concentration, hours });
-      });
-
-      if (invalid || entries.length === 0) {
-        showError(error, "濃度は0以上、ばく露時間は0より大きい数値で、区間ごとに両方入力してください。空欄の区間は無視されます。");
-        return;
-      }
-
-      const totalHours = entries.reduce((sum, entry) => sum + entry.hours, 0);
-      if (totalHours > 24) {
-        showError(error, "入力したばく露時間の合計が24時間を超えています。時間単位を確認してください。");
-        return;
-      }
-      const dose = entries.reduce((sum, entry) => sum + (entry.concentration * entry.hours), 0);
-      const observedTwa = dose / totalHours;
-      const eightHourTwa = dose / 8;
-      const unit = unitInput.value.trim() || "入力単位";
-      const limit = parsePositive(limitInput.value);
-      const ratio = limit ? eightHourTwa / limit : null;
-
-      root.querySelector("#twaResultPrimary").textContent = `${formatNumber(eightHourTwa)} ${unit}`;
-      root.querySelector("#twaObserved").textContent = `${formatNumber(observedTwa)} ${unit}`;
-      root.querySelector("#twaTotalHours").textContent = `${formatNumber(totalHours)} h`;
-      root.querySelector("#twaDose").textContent = `${formatNumber(dose)} ${unit}・h`;
-      root.querySelector("#twaRatio").textContent = ratio ? `${formatNumber(ratio * 100)} %` : "ばく露限度未入力";
-      const warning = totalHours > 8
-        ? "入力時間が8時間を超えています。ここに表示する8時間TWAは単純な8時間換算参考値です。長時間勤務に対する限度値の補正方法は別途確認してください。"
-        : "未入力時間をばく露0として8時間に換算しています。休憩中もばく露がある場合は、その区間も入力してください。";
-      root.querySelector("#twaResultSummary").textContent = warning;
-      root.querySelector("#twaResultFormula").textContent = `8時間TWA = Σ（濃度 × 時間）÷ 8 = ${formatNumber(dose)} ÷ 8 = ${formatNumber(eightHourTwa)} ${unit}`;
+      result.hidden = true;
+      placeholder.hidden = false;
+      try {
+        const entries = [...rowsContainer.querySelectorAll('[data-twa-row]')].map(row => ({
+          concentration: row.querySelector('[data-twa-concentration]').value.trim(),
+          duration: row.querySelector('[data-twa-duration]').value.trim(),
+          durationUnit: row.querySelector('[data-twa-duration-unit]').value,
+        })).filter(entry => entry.concentration || entry.duration);
+        const { totalHours, dose, observedTwa, eightHourTwa, ratio } = calculateTwa(entries, { coverageConfirmed: coverageInput?.checked === true, limit: limitInput.value });
+        const unit = unitInput.value;
+        root.querySelector('#twaResultPrimary').textContent = eightHourTwa === null ? '8時間TWAは未確定' : `${formatNumber(eightHourTwa)} ${unit}`;
+        root.querySelector('#twaObserved').textContent = `${formatNumber(observedTwa)} ${unit}`;
+        root.querySelector('#twaTotalHours').textContent = `${formatNumber(totalHours)} h`;
+        root.querySelector('#twaDose').textContent = `${formatNumber(dose)} ${unit}・h`;
+        root.querySelector('#twaRatio').textContent = eightHourTwa === null ? '全ばく露時間の確認後に比較' : ratio !== null ? `${formatNumber(ratio * 100)} %` : 'ばく露限度未入力';
+        root.querySelector('#twaResultSummary').textContent = eightHourTwa === null
+          ? '勤務全体のばく露を確認していないため、入力区間の平均だけを表示します。未知の時間をゼロとして扱わず、8時間TWAと限度比は表示しません。'
+          : totalHours > 8 ? '入力時間が8時間を超えています。全ばく露区間を8時間で規格化した参考値です。長時間勤務の基準の適用や補正は別途確認してください。'
+          : '全ばく露区間を入力し、入力外の時間のばく露がないと確認した条件で8時間に規格化しています。短時間ばく露は別に評価してください。';
+        root.querySelector('#twaResultFormula').textContent = eightHourTwa === null
+          ? `入力区間の加重平均 = ${formatNumber(dose)} ÷ ${formatNumber(totalHours)} = ${formatNumber(observedTwa)} ${unit}`
+          : `8時間TWA = Σ（濃度 × 時間）÷ 8 = ${formatNumber(dose)} ÷ 8 = ${formatNumber(eightHourTwa)} ${unit}`;
       placeholder.hidden = true;
       result.hidden = false;
       result.focus({ preventScroll: true });
+      } catch (failure) { showError(error, failure.message); }
     });
+
+    const invalidateTwa = () => { result.hidden = true; placeholder.hidden = false; clearError(error); };
+    form.addEventListener('input', invalidateTwa);
+    form.addEventListener('change', invalidateTwa);
+    addButton?.addEventListener('click', invalidateTwa);
+    rowsContainer.addEventListener('click', event => { if (event.target.closest('[data-twa-remove]')) invalidateTwa(); });
 
     exampleButton?.addEventListener("click", () => {
       rowsContainer.innerHTML = "";
@@ -339,6 +329,7 @@
       addRow("1", "3", "h");
       unitInput.value = "ppm";
       limitInput.value = "10";
+      if (coverageInput) coverageInput.checked = true;
       form.requestSubmit();
     });
 

@@ -62,6 +62,7 @@ jobs:
           node --check assets/js/management-class-substances.mjs
           node --check assets/js/management-class-calculator.mjs
           node scripts/ci/test_management_class_calculator.mjs
+          node scripts/ci/test_exposure_calculations.mjs
           ruby scripts/ci/verify_navigator_data.rb
 
       - name: Build Pagefind index
