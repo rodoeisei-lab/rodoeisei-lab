@@ -18,6 +18,17 @@
 {% assign shown_urls = '|' | append: current_url | append: '|' %}
 {% assign related_count = 0 %}
 {% capture related_cards %}{% endcapture %}
+{% if page.related_links.size > 0 %}
+<section class="related-articles" aria-labelledby="curated-related-title" data-pagefind-ignore>
+  <div class="related-articles__header"><h2 id="curated-related-title">あわせて読む</h2><p>この記事とつながる解説・確認先</p></div>
+  <ul class="article-related-links">
+  {% for link in page.related_links %}
+    {% assign link_token = '|' | append: link.url | append: '|' %}
+    {% unless shown_urls contains link_token %}<li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>{% assign shown_urls = shown_urls | append: link.url | append: '|' %}{% endunless %}
+  {% endfor %}
+  </ul>
+</section>
+{% else %}
 
 {% for candidate in prioritized_articles %}
   {% if related_count >= related_limit %}{% break %}{% endif %}
@@ -62,23 +73,6 @@
   {% endfor %}
 {% endif %}
 
-{% if related_count < related_limit %}
-  {% for candidate in prioritized_articles %}
-    {% if related_count >= related_limit %}{% break %}{% endif %}
-    {% if candidate.status == "wip" or candidate.status == "internal" or candidate.published == false %}{% continue %}{% endif %}
-    {% assign candidate_url = candidate.url | default: '' %}
-    {% assign url_token = '|' | append: candidate_url | append: '|' %}
-  {% if candidate_url == '' or shown_urls contains url_token %}{% continue %}{% endif %}
-
-    {% assign shown_urls = shown_urls | append: candidate_url | append: '|' %}
-    {% assign related_count = related_count | plus: 1 %}
-    {% capture related_cards %}
-      {{ related_cards }}
-      {% include related-articles-item.html article=candidate %}
-    {% endcapture %}
-  {% endfor %}
-{% endif %}
-
 <section class="related-articles" aria-label="関連記事">
   <div class="related-articles__header">
     <h2>関連記事</h2>
@@ -93,3 +87,4 @@
   <p class="related-articles__empty"><a href="{{ '/guides/' | relative_url }}">解説一覧から他のテーマを見る</a></p>
   {% endif %}
 </section>
+{% endif %}

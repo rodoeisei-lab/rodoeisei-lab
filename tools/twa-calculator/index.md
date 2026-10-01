@@ -15,7 +15,7 @@ permalink: /tools/twa-calculator/
     <p>作業1、作業2、休憩前後など、濃度が異なる区間を入力すると、入力区間の時間加重平均と8時間TWA参考値を計算します。任意でばく露限度を入力すれば、その値に対する比率も表示します。</p>
     <ul class="practical-tool__notes">
       <li>すべての濃度は同じ単位で入力してください。</li>
-      <li>8時間TWAは Σ（濃度×時間）÷8 で計算します。入力していない時間は、ばく露0として扱います。</li>
+      <li>8時間TWAは Σ（濃度×時間）÷8 で計算します。勤務全体のばく露と、入力外の時間にばく露がないことを確認した場合に限り8時間TWAを表示します。未測定・不明はゼロ扱いしません。</li>
       <li>ばく露限度の選択、長時間勤務時の補正、短時間ばく露限度や天井値の評価は、この計算とは別に確認してください。</li>
     </ul>
   </section>
@@ -31,7 +31,7 @@ permalink: /tools/twa-calculator/
         <div class="practical-tool__field-grid">
           <label class="practical-tool__field">
             <span>濃度の単位</span>
-            <input id="twaUnit" type="text" autocomplete="off" placeholder="例：ppm または mg/m³">
+            <select id="twaUnit"><option value="ppm">ppm</option><option value="mg/m³">mg/m³</option><option value="µg/m³">µg/m³</option></select>
             <small>各区間で共通の単位を入力します。</small>
           </label>
           <label class="practical-tool__field">
@@ -44,6 +44,8 @@ permalink: /tools/twa-calculator/
         <div id="twaRows" class="twa-rows" aria-label="濃度とばく露時間の入力行"></div>
         <button id="twaAddRow" class="practical-tool__secondary twa-add-row" type="button">区間を追加</button>
 
+        <label class="twa-coverage"><input type="checkbox" id="twaCoverageConfirmed"><span>勤務中のばく露区間を全て入力し、入力外の時間にばく露がないことを確認した</span></label>
+        <p class="practical-tool__formula">確認前は入力区間の加重平均のみを表示します。濃度が不明な区間は、測定・根拠のある推定等で補ってください。</p>
         <p id="twaError" class="practical-tool__error" role="alert" hidden></p>
         <div class="practical-tool__actions">
           <button class="practical-tool__submit" type="submit">TWAを計算する</button>
@@ -80,7 +82,7 @@ permalink: /tools/twa-calculator/
       <h3>入力区間の加重平均</h3>
       <p>入力した時間だけを分母にします。例えば4時間分だけ測定・推定した場合、その4時間内の平均濃度を確認する値です。</p>
       <h3>8時間TWA</h3>
-      <p>濃度×時間の総和を8時間で割った値です。残り時間をばく露0とみなして8時間に規格化するため、個人ばく露の整理でよく使われます。</p>
+      <p>濃度×時間の総和を8時間で割った値です。勤務中の全ばく露を把握したうえで、8時間に規格化します。残り時間の非ばく露を確認できない場合は、測定済み区間だけで勤務全体を評価できません。</p>
       <h3>短時間ばく露は別評価</h3>
       <p>8時間TWAが低くても、短時間に高濃度へばく露する作業は別の基準で確認が必要な場合があります。このツールはSTELや天井値の判定を行いません。</p>
     </div>
@@ -90,6 +92,7 @@ permalink: /tools/twa-calculator/
     <h2 id="twa-related-title">関連ページ</h2>
     <div class="practical-tool__reference">
       <ul>
+        <li><a href="{{ '/guides/twa-short-term-exposure/' | relative_url }}">8時間TWAと短時間ばく露の違い</a></li>
         <li><a href="{{ '/personal-exposure-measurement/' | relative_url }}">個人ばく露測定を確認する</a></li>
         <li><a href="{{ '/guides/management-concentration-exposure-limits/' | relative_url }}">管理濃度・濃度基準値・許容濃度の違い</a></li>
         <li><a href="{{ '/tools/air-sampling-calculator/' | relative_url }}">採気量・必要採取時間を計算する</a></li>
@@ -98,4 +101,4 @@ permalink: /tools/twa-calculator/
   </section>
 </div>
 
-<script src="{{ '/assets/js/practical-tools.js' | relative_url }}" defer></script>
+<script type="module" src="{{ '/assets/js/practical-tools.js' | relative_url }}"></script>

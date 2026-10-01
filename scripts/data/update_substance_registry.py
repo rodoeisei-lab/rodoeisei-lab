@@ -267,6 +267,9 @@ def parse_application_date(value: object) -> tuple[date | None, str]:
             return parsed, f"{parsed.year}年{parsed.month}月{parsed.day}日"
 
     normalized = unicodedata.normalize("NFKC", raw)
+    gregorian = re.search(r"(\d{4})(?:年|[-/])(\d{1,2})(?:月|[-/])(\d{1,2})日?", normalized)
+    if gregorian:
+        return date(*(int(part) for part in gregorian.groups())), raw
     match = re.search(r"令和\s*(\d+)年\s*(\d+)月\s*(\d+)日", normalized)
     if match:
         year, month, day = (int(value) for value in match.groups())
@@ -279,6 +282,7 @@ def application_date_details(value: object, today: date) -> dict[str, str]:
     if effective_date is None:
         return {
             "application_date": "",
+            "effective_date": "",
             "application_date_source": source_text,
             "status": "unknown",
             "status_label": "適用期日を公式一覧で確認",
@@ -292,6 +296,7 @@ def application_date_details(value: object, today: date) -> dict[str, str]:
         status = "current"
     return {
         "application_date": rendered,
+        "effective_date": effective_date.isoformat(),
         "application_date_source": source_text,
         "status": status,
         "status_label": rendered if status == "upcoming" else "施行済み",
@@ -396,6 +401,7 @@ def main() -> int:
     payload = {
         "schema_version": 1,
         "generated_at": today.isoformat(),
+        "status_checked_at": today.isoformat(),
         "scope": [
             "有機溶剤中毒予防規則（有機則）の区分",
             "特定化学物質障害予防規則（特化則）に関係する安衛令別表第三の物質",

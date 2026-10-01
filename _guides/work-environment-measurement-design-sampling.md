@@ -173,14 +173,14 @@ C測定・D測定は、サンプラーを労働者へ装着する**個人サン�
 
 ## 実施前チェックリスト
 
-- [ ] 対象物質・作業と適用される最新の規定を確認した
-- [ ] 単位作業場所の設定根拠を説明できる
-- [ ] 通常作業と非定常作業、時間変化を確認した
-- [ ] 発散源、気流、換気、労働者の動きを現場で確認した
-- [ ] A・BまたはC・D測定の適用条件と選択理由を確認した
-- [ ] 点数、間隔、高さ、時間を対象別の規定で確認した
-- [ ] 採取方法と分析方法、必要試料量が整合している
-- [ ] 結果へ影響する操業条件を記録する準備がある
+- <label class="checklist-item"><input type="checkbox"> <span>対象物質・作業と適用される最新の規定を確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>単位作業場所の設定根拠を説明できる</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>通常作業と非定常作業、時間変化を確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>発散源、気流、換気、労働者の動きを現場で確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>A・BまたはC・D測定の適用条件と選択理由を確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>点数、間隔、高さ、時間を対象別の規定で確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>採取方法と分析方法、必要試料量が整合している</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>結果へ影響する操業条件を記録する準備がある</span></label>
 
 ## まとめ
 

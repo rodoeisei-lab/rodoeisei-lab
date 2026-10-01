@@ -14,8 +14,15 @@ layout: base
     </div>
     <form action="{{ '/search/' | relative_url }}" method="get" class="home-portal-search">
       <label for="home-search">サイト内を検索</label>
-      <div class="search-field"><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}"><button type="submit">検索</button></div>
+      <div class="search-field"><input id="home-search" type="search" name="q" placeholder="{{ home.quick_search.placeholder }}" maxlength="100" required><button type="submit">検索</button></div>
     </form>
+  </section>
+
+  <section class="home-section home-learning-start" aria-labelledby="home-start-title">
+    <div class="home-section-heading"><h2 id="home-start-title">初めての方は、この順で</h2><p>測定の目的を知り、計画・採取・評価をひとつの流れで学べます。</p></div>
+    {% assign start_path = site.data.learning_paths | where: 'id', 'measurement' | first %}
+    {% include learning-path.html path=start_path %}
+    <p class="home-section-more"><a href="{{ '/learn/' | relative_url }}">テーマ別の学習ロードマップを見る →</a></p>
   </section>
 
   <section class="home-section" aria-labelledby="home-categories-title">

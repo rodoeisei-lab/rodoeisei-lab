@@ -111,4 +111,4 @@ permalink: /tools/measurement-records/
   </section>
 </div>
 
-<script src="{{ '/assets/js/practical-tools.js' | relative_url }}" defer></script>
+<script type="module" src="{{ '/assets/js/practical-tools.js' | relative_url }}"></script>

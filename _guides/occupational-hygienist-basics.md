@@ -259,13 +259,13 @@ sources:
 
 認定を目指す場合は、まず次を確認します。
 
-- [ ] 認定対象となる資格を持っているか、または取得予定か
-- [ ] 労働衛生管理に関する実務経験が5年以上あるか
-- [ ] 学士等の要件を満たしているか
-- [ ] 93単位をどの期間で履修するか
-- [ ] 評価試験の受験時期をいつにするか
-- [ ] 合格後2年以内に認定申請できる見込みがあるか
-- [ ] 認定後の5年更新も含めて継続学習できるか
+- <label class="checklist-item"><input type="checkbox"> <span>認定対象となる資格を持っているか、または取得予定か</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>労働衛生管理に関する実務経験が5年以上あるか</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>学士等の要件を満たしているか</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>93単位をどの期間で履修するか</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>評価試験の受験時期をいつにするか</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>合格後2年以内に認定申請できる見込みがあるか</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>認定後の5年更新も含めて継続学習できるか</span></label>
 
 受講開始時点では資格・実務経験が不足していても、養成講座自体は受講できます。将来の認定時点から逆算して計画すると整理しやすくなります。
 

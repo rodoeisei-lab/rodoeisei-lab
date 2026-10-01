@@ -8,7 +8,7 @@ summary:
   - 8週間で運営スキルを拡張する実践ロードマップ。
   - 実装・計測・改善を同時に進める運用設計。
   - 壊れても戻せる前提でスピード優先に前進する。
-category: Guides
+category: サイト運営
 level: 実務
 reading_time: 9分
 minutes: 9
@@ -17,7 +17,10 @@ updated: 2026-02-13
 updated_at: 2026-02-13
 reviewed_at: 2026-02-13
 source_type: practical
-status: published
+status: internal
+noindex: true
+sitemap: false
+pagefind_ignore: true
 featured: false
 tags:
   - サイト運営
@@ -113,10 +116,10 @@ lead: 「壊れても戻せる」運用を前提に、学習と実装を同時�
 - 404/検索語/人気記事から、次の1本を決める仕組み
 
 ## チェックリスト（週次）
-- [ ] 今週の改善テーマを1つに絞った
-- [ ] 変更は小さなPRに分けて差分を追える形にした
-- [ ] 実装後に指標（404/PV/検索語/速度）を1つ以上確認した
-- [ ] 失敗時の戻し方（revert手順）を残した
+- <label class="checklist-item"><input type="checkbox"> <span>今週の改善テーマを1つに絞った</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>変更は小さなPRに分けて差分を追える形にした</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>実装後に指標（404/PV/検索語/速度）を1つ以上確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>失敗時の戻し方（revert手順）を残した</span></label>
 
 ## 週間成果物（Definition of Done）
 - 毎週1つ “ユーザーが体感できる改善” を出す（例：404が消えた、読み込みが速くなった、検索で見つかる等）

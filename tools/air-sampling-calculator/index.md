@@ -132,4 +132,4 @@ permalink: /tools/air-sampling-calculator/
   </section>
 </div>
 
-<script src="{{ '/assets/js/practical-tools.js' | relative_url }}" defer></script>
+<script type="module" src="{{ '/assets/js/practical-tools.js' | relative_url }}"></script>

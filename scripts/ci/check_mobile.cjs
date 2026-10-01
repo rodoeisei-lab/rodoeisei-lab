@@ -3,11 +3,14 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE);
 const fs = require('node:fs');
 const path = require('node:path');
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE } : {}) });
   const page = await browser.newPage({ viewport: { width: 360, height: 800 } });
   const failures = [];
   fs.mkdirSync('mobile-review', { recursive: true });
-  const routes = ['/', '/guides/', '/chemical-management/', '/local-exhaust-ventilation/',
+  const routes = ['/', '/learn/', '/guides/', '/dust/', '/respiratory-protection/', '/reading-list/', '/substances/?filter=applied-2026', '/chemical-management/', '/local-exhaust-ventilation/',
+    '/guides/dust-control-basics/', '/guides/welding-fume-manganese/',
+    '/guides/twa-short-term-exposure/', '/guides/management-class-results/',
+    '/tools/twa-calculator/', '/tools/respirator-protection-factor/',
     '/guides/respirator-selection/', '/guides/gas-cartridge-replacement/',
     '/guides/local-exhaust-airflow-calculation/', '/guides/confirmation-measurement/', '/guides/fit-test/'];
   for (const route of routes) {
@@ -20,7 +23,8 @@ const path = require('node:path');
     }));
     console.log(route, state);
     if (state.width > state.viewport + 1 || state.h1 !== 1) failures.push({ route, ...state });
-    await page.screenshot({ path: path.join('mobile-review', route.replaceAll('/', '_') + '.png'), fullPage: true });
+    const filename = route.replace(/[^a-zA-Z0-9_-]/g, '_') + '.png';
+    await page.screenshot({ path: path.join('mobile-review', filename), fullPage: true });
   }
   await page.goto('http://127.0.0.1:4000/rodoeisei-lab/');
   if (!(await page.locator('#mobileNav').evaluate(el => el.inert))) failures.push('Closed menu is not inert');

@@ -1,0 +1,7 @@
+{% assign path = include.path %}
+<ol class="learning-route">
+  {% for step in path.steps %}
+  <li><span class="learning-route__stage">{{ step.stage }}</span><a href="{{ step.url | relative_url }}">{{ step.title }}</a></li>
+  {% endfor %}
+</ol>
+{% if path.tools.size > 0 %}<p class="learning-route__tools">実務で使う：{% for tool in path.tools %}<a href="{{ tool.url | relative_url }}">{{ tool.title }}</a>{% unless forloop.last %}<span aria-hidden="true"> ／ </span>{% endunless %}{% endfor %}</p>{% endif %}

@@ -10,6 +10,7 @@ pagefind_ignore: true
 
 <div class="search-page">
   <p class="search-page-intro">キーワードを入力すると、関連するページをすぐに表示します。</p>
+  <label class="search-query-label" for="site-search-query">検索キーワード</label>
   <div id="search-ui"></div>
   <p class="search-navigator-link">文章で質問したい場合は、<a href="{{ '/navigator/' | relative_url }}">チャット型サイト案内（試験版）</a>も利用できます。</p>
 </div>
@@ -30,6 +31,9 @@ pagefind_ignore: true
         placeholder: "例: 有機溶剤 / 騒音 / 作業環境測定"
       }
     });
+
+    var input = document.querySelector("#search-ui input");
+    if (input) { input.id = "site-search-query"; input.setAttribute("aria-label", "サイト内検索のキーワード"); }
 
     var query = new URLSearchParams(window.location.search).get("q");
     if (query) search.triggerSearch(query.replace(/\+/g, " "));

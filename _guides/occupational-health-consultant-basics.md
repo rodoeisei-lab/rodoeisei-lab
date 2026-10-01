@@ -181,14 +181,14 @@ sources:
 
 ## 最初に行うチェックリスト
 
-- [ ] 受験区分を比較した
-- [ ] 自分が該当する受験資格の項目を特定した
-- [ ] 実務経験の起算点と必要年数を確認した
-- [ ] 経歴等証明書の様式・証明者を確認した
-- [ ] 科目免除を受験資格とは別に確認した
-- [ ] 筆記と口述の科目を区別した
-- [ ] 合格後の名簿登録を確認した
-- [ ] 受験年度の法令基準日と最新日程を確認した
+- <label class="checklist-item"><input type="checkbox"> <span>受験区分を比較した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>自分が該当する受験資格の項目を特定した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>実務経験の起算点と必要年数を確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>経歴等証明書の様式・証明者を確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>科目免除を受験資格とは別に確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>筆記と口述の科目を区別した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>合格後の名簿登録を確認した</span></label>
+- <label class="checklist-item"><input type="checkbox"> <span>受験年度の法令基準日と最新日程を確認した</span></label>
 
 ## まとめ
 

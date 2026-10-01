@@ -8,7 +8,7 @@ og_image_type: image/png
 og_image_width: 1200
 og_image_height: 630
 article_type: guide
-category: 作業環境測定
+category: 粉じん・溶接ヒューム
 level: 実務
 status: published
 featured: false

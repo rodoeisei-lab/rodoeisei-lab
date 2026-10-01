@@ -1,0 +1,8 @@
+{% assign article_path = nil %}
+{% for path in site.data.learning_paths %}
+  {% if page.learning_path == path.id %}
+    {% assign article_path = path %}{% break %}
+  {% elsif page.learning_path == nil and path.categories contains page.category %}
+    {% assign article_path = path %}{% break %}
+  {% endif %}
+{% endfor %}

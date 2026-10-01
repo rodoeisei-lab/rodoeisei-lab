@@ -1,0 +1,205 @@
+- id: measurement
+  title: 作業環境測定
+  hub: /work-environment-measurement/
+  categories:
+  - 作業環境測定
+  - Guides
+  description: 測定の目的から、計画・採取・結果の読み方へ。
+  steps:
+  - stage: 入門
+    title: 作業環境測定の全体像
+    url: /guides/work-env-measurement-intro/
+  - stage: 基礎
+    title: 測定計画とデザイン
+    url: /guides/work-environment-measurement-design/
+  - stage: 実務
+    title: サンプリングと捕集方法
+    url: /guides/work-environment-measurement-sampling/
+  - stage: 実務
+    title: 管理区分と報告書の読み方
+    url: /guides/management-class-results/
+  - stage: 専門
+    title: 個人サンプリング法の対象物質
+    url: /guides/personal-sampling-target-substances/
+  tools:
+  - title: 管理区分判定
+    url: /tools/management-class/
+  - title: 採気量・濃度換算
+    url: /tools/air-sampling-calculator/
+- id: chemistry
+  title: 化学物質管理
+  hub: /chemical-management/
+  categories:
+  - 化学物質管理
+  - 有機溶剤
+  - 安全衛生体制
+  description: SDSを読み、リスクを見積もり、対策と見直しへ。
+  steps:
+  - stage: 入門
+    title: 化学物質管理の全体像
+    url: /guides/chemical-management-basics/
+  - stage: 基礎
+    title: SDSの読み方
+    url: /guides/sds-reading/
+  - stage: 実務
+    title: リスクアセスメントの手順
+    url: /guides/chemical-risk-assessment-basics/
+  - stage: 実務
+    title: CREATE-SIMPLEの使い方
+    url: /guides/create-simple-guide/
+  - stage: 専門
+    title: 管理濃度・濃度基準値・許容濃度
+    url: /guides/management-concentration-exposure-limits/
+  tools:
+  - title: 対象物質・制度検索
+    url: /substances/
+  - title: 混合有機溶剤の換算値
+    url: /tools/mixed-organic-solvent/
+- id: exposure
+  title: 個人ばく露測定
+  hub: /personal-exposure-measurement/
+  categories:
+  - 個人ばく露測定
+  description: 目的を定め、呼吸域濃度と時間から評価へ。
+  steps:
+  - stage: 入門
+    title: 個人ばく露測定と作業環境測定
+    url: /guides/personal-exposure-measurement-basics/
+  - stage: 基礎
+    title: 8時間TWAと短時間ばく露
+    url: /guides/twa-short-term-exposure/
+  - stage: 実務
+    title: 確認測定が必要な場面
+    url: /guides/confirmation-measurement/
+  - stage: 専門
+    title: 2026年10月施行の実施者要件
+    url: /qa/personal-exposure-measurement-2026/
+  tools:
+  - title: TWA計算
+    url: /tools/twa-calculator/
+  - title: 測定方法の選び方
+    url: /tools/measurement-method-selector/
+- id: dust
+  title: 粉じん・溶接ヒューム
+  hub: /dust/
+  categories:
+  - 粉じん・溶接ヒューム
+  - 粉じん
+  description: 粒子の性質、測定、設備と保護具をつなげる。
+  steps:
+  - stage: 入門
+    title: 粉じん対策の基礎
+    url: /guides/dust-control-basics/
+  - stage: 基礎
+    title: 並行測定とK値
+    url: /guides/dust-parallel-measurement-k-value/
+  - stage: 実務
+    title: 溶接ヒュームの測定と対策
+    url: /guides/welding-fume-manganese/
+  - stage: 専門
+    title: 呼吸用保護具の選定
+    url: /guides/respirator-selection/
+  tools:
+  - title: 採気量・濃度換算
+    url: /tools/air-sampling-calculator/
+  - title: 要求防護係数の計算
+    url: /tools/respirator-protection-factor/
+- id: ppe
+  title: 呼吸用保護具
+  hub: /respiratory-protection/
+  categories:
+  - 保護具・フィットテスト
+  description: 種類と必要性能を選び、密着性・交換・保守まで管理。
+  steps:
+  - stage: 入門
+    title: 防じん・防毒マスクの選び方
+    url: /guides/respirator-selection/
+  - stage: 基礎
+    title: フィットテストの対象と実施
+    url: /guides/fit-test/
+  - stage: 実務
+    title: 吸収缶の交換と記録
+    url: /guides/gas-cartridge-replacement/
+  - stage: 専門
+    title: 第3管理区分での対応
+    url: /qa/third-control-class/
+  tools:
+  - title: 要求防護係数と指定防護係数の比較
+    url: /tools/respirator-protection-factor/
+- id: ventilation
+  title: 局所排気装置
+  hub: /local-exhaust-ventilation/
+  categories:
+  - 局所排気装置
+  description: 発散源を捕捉する仕組みから、風量・点検へ。
+  steps:
+  - stage: 入門
+    title: フード・ダクト・排風機の基礎
+    url: /guides/local-exhaust-ventilation-basics/
+  - stage: 基礎
+    title: 風量と圧力損失の考え方
+    url: /guides/local-exhaust-airflow-calculation/
+  - stage: 実務
+    title: 点検の頻度と記録
+    url: /qa/local-exhaust-inspection/
+  tools:
+  - title: 測定・点検記録の項目
+    url: /tools/measurement-records/
+- id: analysis
+  title: 分析
+  hub: /analysis/
+  categories:
+  - 分析
+  description: 前処理・検量線・定量下限を押さえ、分析結果を読む。
+  steps:
+  - stage: 入門
+    title: 作業環境測定の分析の全体像
+    url: /guides/work-environment-analysis-basics/
+  - stage: 基礎
+    title: GC分析の基礎
+    url: /guides/gc-analysis-basics/
+  - stage: 実務
+    title: 原子吸光分析の基礎
+    url: /guides/atomic-absorption-analysis-basics/
+  - stage: 専門
+    title: 検出下限・定量下限・ND
+    url: /guides/analytical-limits-basics/
+  tools:
+  - title: 採気量・気中濃度の換算
+    url: /tools/air-sampling-calculator/
+- id: career
+  title: 資格・キャリア
+  hub: /licenses/
+  categories:
+  - 資格・キャリア
+  - 労働衛生コンサルタント
+  description: 資格の役割と、次に必要な専門性を確認する。
+  steps:
+  - stage: 入門
+    title: オキュペイショナルハイジニストの役割
+    url: /guides/occupational-hygienist-basics/
+  - stage: 基礎
+    title: 測定士から目指す意味
+    url: /guides/occupational-hygienist-from-measurer/
+  - stage: 実務
+    title: 93単位の学習計画
+    url: /guides/occupational-hygienist-93-credits/
+  - stage: 専門
+    title: 労働衛生コンサルタントの全体像
+    url: /guides/occupational-health-consultant-basics/
+  tools:
+  - title: 公式過去問
+    url: /past-exams/
+- id: ai
+  title: AI活用
+  hub: /ai-use/
+  categories:
+  - AI活用
+  description: 出典と機密性を確認しながら実務・学習に使う。
+  steps:
+  - stage: 基礎
+    title: 労働衛生でAIを使う確認手順
+    url: /guides/ai-use-occupational-health-basics/
+  tools:
+  - title: 測定・点検記録の項目
+    url: /tools/measurement-records/
