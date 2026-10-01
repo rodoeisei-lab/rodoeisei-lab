@@ -239,7 +239,7 @@
 .home-page .home-main{background:var(--color-surface)}
 .home-page .home-hero{max-width:none;padding-bottom:24px}
 .home-page .home-hero::after{display:none}
-.home-page .home-hero h1{max-width:900px;line-height:1.4;font-size:clamp(30px,4vw,46px)}
+.home-page .home-hero h1{max-width:900px;line-height:1.4;font-size:clamp(30px,4vw,46px);text-wrap:balance}
 .home-page .hero-kicker{font-size:14px;letter-spacing:0}
 .home-page .hero-secondary-btn{background:var(--color-surface);border-color:var(--color-primary);color:var(--color-primary)}
 .home-page .hero-secondary-btn:hover{background:var(--color-blue-soft)}
