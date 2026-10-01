@@ -23,7 +23,8 @@ const path = require('node:path');
     }));
     console.log(route, state);
     if (state.width > state.viewport + 1 || state.h1 !== 1) failures.push({ route, ...state });
-    await page.screenshot({ path: path.join('mobile-review', route.replaceAll('/', '_') + '.png'), fullPage: true });
+    const filename = route.replace(/[^a-zA-Z0-9_-]/g, '_') + '.png';
+    await page.screenshot({ path: path.join('mobile-review', filename), fullPage: true });
   }
   await page.goto('http://127.0.0.1:4000/rodoeisei-lab/');
   if (!(await page.locator('#mobileNav').evaluate(el => el.inert))) failures.push('Closed menu is not inert');

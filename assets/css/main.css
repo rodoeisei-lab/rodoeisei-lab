@@ -100,7 +100,7 @@ button,a,input,select,textarea{touch-action:manipulation}
 
 /* Shared components and lists */
 .cards,.guides-cards,.entry-cards,.updates-cards,.glossary-cards,.template-card-grid,.products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0}
-.card,.guide-card,.entry-card,.update-card,.glossary-card,.template-card,.product-card,.qa-list-card{padding:20px;border:1px solid var(--color-border);border-radius:12px;background:#fff;box-shadow:none;transition:transform .18s ease,border-color .18s ease}
+.card,.guide-card,.entry-card,.update-card,.glossary-card,.template-card,.product-card,.qa-list-card{min-width:0;padding:20px;border:1px solid var(--color-border);border-radius:12px;background:#fff;box-shadow:none;transition:transform .18s ease,border-color .18s ease}
 .card:hover,.guide-card:hover,.entry-card:hover,.update-card:hover,.glossary-card:hover,.template-card:hover,.product-card:hover,.qa-list-card:hover{border-color:#b6cdda;box-shadow:none;transform:translateY(-1px)}
 .card h2,.card h3,.guide-card h2,.guide-card h3,.qa-list-card h2{margin:.35em 0;font-size:19px;line-height:1.45}
 .card p,.guide-card p,.qa-list-card p{color:var(--color-text-secondary);font-size:16px}
